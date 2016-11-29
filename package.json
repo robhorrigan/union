@@ -1,6 +1,6 @@
 {
-  "name": "codename-lee",
-  "version": "1.0.0",
+  "name": "@xogroup/union",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
