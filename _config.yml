@@ -31,3 +31,14 @@ exclude:
   - Gemfile
   - Gemfile.lock
 destination: docs
+collections:
+  foundation_pages:
+    output: true
+    permalink: /foundations/:path/
+
+defaults:
+  - scope:
+      type: "foundation_pages"
+    values:
+      layout: page
+
