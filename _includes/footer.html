@@ -1,4 +1,11 @@
 <footer>
-  <p><p>{{ site.description | escape }}</p></p>
-  <p>©{{ site.time | date: '%Y' }}</p>
+  <p>
+    {{ site.description | remove: 'by XO Group' | escape }}
+  </p>
+  <p>
+    ©{{ site.time | date: '%Y' }}
+    <a href="http://xogroupinc.com/" target="_blank">
+      <img src="{{ "/assets/svg/xo-logo.svg" | relative_url}}" height="18">
+    </a>
+  </p>
 </footer>

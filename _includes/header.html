@@ -1,7 +1,9 @@
-<nav class="navbar navbar-static-top navbar-light bg-faded">
-  <a class="navbar-brand" href="{{ "/" | relative_url}}">{{ site.title | escape }}</a>
+<nav class="navbar navbar-light navbar-sticky-top bg-nav">
+  <a class="navbar-brand" href="{{ "/" | relative_url}}">
+    <img src="{{ "/assets/svg/tk-logo.svg" | relative_url}}" height="40" class="align-baseline">
+    <span>{{ site.title | escape }}</span>
+  </a>
   <form class="form-inline float-xs-right">
     <input class="form-control" type="text" placeholder="Search">
-    <button class="btn btn-outline-success" type="submit">Search</button>
   </form>
 </nav>
