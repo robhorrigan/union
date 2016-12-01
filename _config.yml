@@ -35,6 +35,9 @@ collections:
   foundation_pages:
     output: true
     permalink: /foundations/:path/
+  content_patterns:
+    output: true
+    permalink: /content-patterns/:path/
 
 defaults:
   - scope:
@@ -42,3 +45,7 @@ defaults:
     values:
       layout: page
 
+  - scope:
+      type: "content_patterns"
+    values:
+      layout: page
