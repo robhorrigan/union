@@ -24,4 +24,4 @@ permalink: /foundations/typography/
 <p><strong>This line rendered as bold text.</strong></p>
 <p><em>This line rendered as italicized text.</em></p>
 
-<img src="https://s3.amazonaws.com/theknot.com/union/tk-typography_2x-min.jpg" alt="typography" height="9122" width="10003">
+<img src="https://s3.amazonaws.com/theknot.com/union/tk-typography_2x-min.jpg" alt="typography" height="9122" width="1003">
