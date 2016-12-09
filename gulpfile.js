@@ -7,13 +7,13 @@ var importOnce = require('node-sass-import-once');
 var config = {
     bootstrapDir: './node_modules/bootstrap',
     publicDir: './stylesheets',
-    srcFile: './css/core.scss'
+    srcFile: './css/*.scss'
 };
 
 gulp.task('css', function() {
     return gulp.src(config.srcFile)
     .pipe(sass({
-      includePaths: [config.bootstrapDir + '/scss'],
+      includePaths: ['./node_modules'],
       outputStyle: 'nested',
       importer: importOnce,
       importOnce: {
