@@ -1,3 +1,8 @@
+@import "tk-core";
+@import "tk-type";
+
+@include tk-font-faces;
+
 .bg-nav {
   background-color: #dfdfdf;
 }

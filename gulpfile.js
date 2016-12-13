@@ -15,6 +15,7 @@ gulp.task('css', function() {
     .pipe(sass({
       includePaths: ['./node_modules'],
       outputStyle: 'nested',
+      sourceComments: true,
       importer: importOnce,
       importOnce: {
         index: false,

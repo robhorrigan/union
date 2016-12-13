@@ -1,0 +1,120 @@
+$font-url-prefix: "/assets/fonts/";
+
+/* Included as a mixin so that $font-location can be overridden */
+@mixin tk-font-faces {
+  @font-face {
+    font-family: 'tisa';
+    src:
+      url('#{$font-url-prefix}tisa-light.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'tisa';
+    src:
+      url('#{$font-url-prefix}tisa-medium.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'tisa sans';
+    src:
+      url('#{$font-url-prefix}tisa-sans-regular.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-sans-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal; }
+}
+
+p {
+  font-size: 1.125rem;
+}
+
+//
+// Headings
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1, .h1 { font-size: $font-size-h1; }
+h2, .h2 { font-size: $font-size-h2; }
+h3, .h3 { font-size: $font-size-h3; }
+h4, .h4 { font-size: $font-size-h4; }
+h5, .h5 { font-size: $font-size-h5; }
+h6, .h6 { font-size: $font-size-h6; }
+    .h7 { font-size: $font-size-h7; }
+    .h8 { font-size: $font-size-h8; }
+    .h9 { font-size: $font-size-h9; }
+    .h10 { font-size: $font-size-h10; }
+
+//
+// Horizontal rules
+//
+
+hr {
+  margin-top: $spacer-y;
+  margin-bottom: $spacer-y;
+  border: 0;
+  border-top: $hr-border-width solid $hr-border-color;
+}
+
+
+//
+// Emphasis
+//
+
+small,
+.small {
+  font-size: $small-font-size;
+  font-weight: normal;
+}
+
+mark,
+.mark {
+  padding: $mark-padding;
+  background-color: $mark-bg;
+}
+
+
+//
+// Lists
+//
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @include list-unstyled;
+}
+.list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $list-inline-padding;
+  }
+}
+
+//
+// Misc
+//
+
+@if not $enable-flex {
+  // Clean up some horizontal `<dl>`s built with grids
+  // scss-lint:disable QualifyingElement
+  dl.row {
+    > dd + dt {
+      clear: left;
+    }
+  }
+  // scss-lint:enable QualifyingElement
+}
