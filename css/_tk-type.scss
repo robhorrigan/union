@@ -1,4 +1,4 @@
-$font-url-prefix: "/assets/fonts/";
+$font-url-prefix: "../assets/fonts/";
 
 /* Included as a mixin so that $font-location can be overridden */
 @mixin tk-font-faces {
