@@ -12,8 +12,7 @@ permalink: /foundations/typography/
 
 <div class="mt-2"></div>
 
-You like `<hr>`s? I mean, who doesn't love a nifty `<hr>`
-<hr>
+
 
 You can also use `.h1` through `.h10` to apply font sizes. Pro-Tip: `h8` is `1rem` and the modular scale goes up or down by 1.125
 
@@ -28,6 +27,8 @@ You can also use `.h1` through `.h10` to apply font sizes. Pro-Tip: `h8` is `1re
 <div class="h9">Pack my box with five dozen liquor jugs</div>
 <div class="h10">Pack my box with five dozen liquor jugs</div>
 
-<hr>
+<div class="mt-2"></div>
+
+<p>1234567890</p>
 
 <img src="https://s3.amazonaws.com/theknot.com/union/tk-typography_2x-min.jpg" alt="typography" height="9122" width="1003">

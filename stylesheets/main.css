@@ -6333,13 +6333,6 @@ h6, .h6 {
 .h10 {
   font-size: 0.79rem; }
 
-/* line 62, /Users/pkelly/work/union/css/_tk-type.scss */
-hr {
-  margin-top: 1rem;
-  margin-bottom: 1rem;
-  border: 0;
-  border-top: 1px solid rgba(0, 0, 0, 0.1); }
-
 /* line 74, /Users/pkelly/work/union/css/_tk-type.scss */
 small,
 .small {
