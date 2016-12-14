@@ -6362,6 +6362,10 @@ mark,
   .list-inline-item:not(:last-child) {
     margin-right: 5px; }
 
+/* line 111, /Users/pkelly/work/union/css/_tk-type.scss */
+.lh-header {
+  line-height: 1.25; }
+
 @font-face {
   font-family: 'tisa';
   src: url("../assets/fonts/tisa-light.woff2") format("woff2"), url("../assets/fonts/tisa-light.woff") format("woff");
