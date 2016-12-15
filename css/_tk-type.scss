@@ -28,7 +28,7 @@ $font-url-prefix: "../assets/fonts/";
 }
 
 p {
-  font-size: 1.125rem;
+  font-size: $tk-font-up-1;
 }
 
 //
@@ -44,16 +44,33 @@ h1, h2, h3, h4, h5, h6,
   color: $headings-color;
 }
 
-h1, .h1 { font-size: $font-size-h1; }
-h2, .h2 { font-size: $font-size-h2; }
-h3, .h3 { font-size: $font-size-h3; }
-h4, .h4 { font-size: $font-size-h4; }
-h5, .h5 { font-size: $font-size-h5; }
-h6, .h6 { font-size: $font-size-h6; }
-    .h7 { font-size: $font-size-h7; }
-    .h8 { font-size: $font-size-h8; }
-    .h9 { font-size: $font-size-h9; }
-    .h10 { font-size: $font-size-h10; }
+h1, .h1 { font-size: $tk-font-up-7; }
+h2, .h2 { font-size: $tk-font-up-6; }
+h3, .h3 { font-size: $tk-font-up-5; }
+h4, .h4 { font-size: $tk-font-up-4; }
+h5, .h5 { font-size: $tk-font-up-3; }
+h6, .h6 { font-size: $tk-font-up-2; }
+
+//
+// Font scale
+//
+
+.font-up-10 { font-size: $tk-font-up-10; }
+.font-up-9 { font-size: $tk-font-up-9; }
+.font-up-8 { font-size: $tk-font-up-8; }
+.font-up-7 { font-size: $tk-font-up-7; }
+.font-up-6 { font-size: $tk-font-up-6; }
+.font-up-5 { font-size: $tk-font-up-5; }
+.font-up-4 { font-size: $tk-font-up-4; }
+.font-up-3 { font-size: $tk-font-up-3; }
+.font-up-2 { font-size: $tk-font-up-2; }
+.font-up-1 { font-size: $tk-font-up-1; }
+
+.font-down-1 { font-size: $tk-font-down-1; }
+.font-down-2 { font-size: $tk-font-down-2; }
+.font-down-3 { font-size: $tk-font-down-3; }
+.font-down-4 { font-size: $tk-font-down-4; }
+.font-down-5 { font-size: $tk-font-down-5; }
 
 //
 // Horizontal rules

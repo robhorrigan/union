@@ -1,0 +1,25 @@
+// Math
+
+@function pow($number, $exponent) {
+  $value: 1;
+
+  @if $exponent > 0 {
+    @for $i from 1 through $exponent {
+      $value: $value * $number;
+    }
+  }
+
+  @return $value;
+}
+
+@function div-x-times($number, $times) {
+  $value: 1;
+
+  @if $times > 0 {
+    @for $i from 1 through $times {
+      $value: $value / $number;
+    }
+  }
+
+  @return $value;
+}

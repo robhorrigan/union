@@ -6295,74 +6295,118 @@ h1, h2, h3, h4, h5, h6,
 
 /* line 47, /Users/pkelly/work/union/css/_tk-type.scss */
 h1, .h1 {
-  font-size: 2.28rem; }
+  font-size: 2.2807rem; }
 
 /* line 48, /Users/pkelly/work/union/css/_tk-type.scss */
 h2, .h2 {
-  font-size: 2.03rem; }
+  font-size: 2.02729rem; }
 
 /* line 49, /Users/pkelly/work/union/css/_tk-type.scss */
 h3, .h3 {
-  font-size: 1.8rem; }
+  font-size: 1.80203rem; }
 
 /* line 50, /Users/pkelly/work/union/css/_tk-type.scss */
 h4, .h4 {
-  font-size: 1.6rem; }
+  font-size: 1.60181rem; }
 
 /* line 51, /Users/pkelly/work/union/css/_tk-type.scss */
 h5, .h5 {
-  font-size: 1.42rem; }
+  font-size: 1.42383rem; }
 
 /* line 52, /Users/pkelly/work/union/css/_tk-type.scss */
 h6, .h6 {
-  font-size: 1.27rem; }
+  font-size: 1.26562rem; }
 
-/* line 53, /Users/pkelly/work/union/css/_tk-type.scss */
-.h7 {
+/* line 58, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-10 {
+  font-size: 3.24732rem; }
+
+/* line 59, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-9 {
+  font-size: 2.88651rem; }
+
+/* line 60, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-8 {
+  font-size: 2.56578rem; }
+
+/* line 61, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-7 {
+  font-size: 2.2807rem; }
+
+/* line 62, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-6 {
+  font-size: 2.02729rem; }
+
+/* line 63, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-5 {
+  font-size: 1.80203rem; }
+
+/* line 64, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-4 {
+  font-size: 1.60181rem; }
+
+/* line 65, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-3 {
+  font-size: 1.42383rem; }
+
+/* line 66, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-2 {
+  font-size: 1.26562rem; }
+
+/* line 67, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-up-1 {
   font-size: 1.125rem; }
 
-/* line 54, /Users/pkelly/work/union/css/_tk-type.scss */
-.h8 {
-  font-size: 1rem; }
+/* line 69, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-down-1 {
+  font-size: 0.88889rem; }
 
-/* line 55, /Users/pkelly/work/union/css/_tk-type.scss */
-.h9 {
-  font-size: 0.89rem; }
+/* line 70, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-down-2 {
+  font-size: 0.79012rem; }
 
-/* line 56, /Users/pkelly/work/union/css/_tk-type.scss */
-.h10 {
-  font-size: 0.79rem; }
+/* line 71, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-down-3 {
+  font-size: 0.70233rem; }
 
-/* line 74, /Users/pkelly/work/union/css/_tk-type.scss */
+/* line 72, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-down-4 {
+  font-size: 0.6243rem; }
+
+/* line 73, /Users/pkelly/work/union/css/_tk-type.scss */
+.font-down-5 {
+  font-size: 0.55493rem; }
+
+/* line 91, /Users/pkelly/work/union/css/_tk-type.scss */
 small,
 .small {
   font-size: 80%;
   font-weight: normal; }
 
-/* line 80, /Users/pkelly/work/union/css/_tk-type.scss */
+/* line 97, /Users/pkelly/work/union/css/_tk-type.scss */
 mark,
 .mark {
   padding: 0.2em;
   background-color: #fcf8e3; }
 
-/* line 91, /Users/pkelly/work/union/css/_tk-type.scss */
+/* line 108, /Users/pkelly/work/union/css/_tk-type.scss */
 .list-unstyled {
   padding-left: 0;
   list-style: none; }
 
-/* line 96, /Users/pkelly/work/union/css/_tk-type.scss */
+/* line 113, /Users/pkelly/work/union/css/_tk-type.scss */
 .list-inline {
   padding-left: 0;
   list-style: none; }
 
-/* line 99, /Users/pkelly/work/union/css/_tk-type.scss */
+/* line 116, /Users/pkelly/work/union/css/_tk-type.scss */
 .list-inline-item {
   display: inline-block; }
-  /* line 102, /Users/pkelly/work/union/css/_tk-type.scss */
+  /* line 119, /Users/pkelly/work/union/css/_tk-type.scss */
   .list-inline-item:not(:last-child) {
     margin-right: 5px; }
 
-/* line 111, /Users/pkelly/work/union/css/_tk-type.scss */
+/* line 128, /Users/pkelly/work/union/css/_tk-type.scss */
 .lh-header {
   line-height: 1.25; }
 

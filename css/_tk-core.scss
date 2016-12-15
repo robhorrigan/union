@@ -1,5 +1,9 @@
+@import "tk-variables";
+@import "tk-mixins";
+
 // Custom bootstrap vars
-@import "variables";
+@import "custom";
+@import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
 
 // Reset and dependencies
