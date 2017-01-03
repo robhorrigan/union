@@ -379,8 +379,8 @@ a {
   text-decoration: none; }
   /* line 21, /Users/pkelly/work/union/node_modules/bootstrap/scss/mixins/_hover.scss */
   a:focus, a:hover {
-    color: #014c8c;
-    text-decoration: underline; }
+    color: #0275d8;
+    text-decoration: none; }
   /* line 169, /Users/pkelly/work/union/node_modules/bootstrap/scss/_reboot.scss */
   a:focus {
     outline: 5px auto -webkit-focus-ring-color;
@@ -2564,8 +2564,8 @@ fieldset[disabled] a.btn {
     border-color: transparent; }
   /* line 21, /Users/pkelly/work/union/node_modules/bootstrap/scss/mixins/_hover.scss */
   .btn-link:focus, .btn-link:hover {
-    color: #014c8c;
-    text-decoration: underline;
+    color: #0275d8;
+    text-decoration: none;
     background-color: transparent; }
   /* line 21, /Users/pkelly/work/union/node_modules/bootstrap/scss/mixins/_hover.scss */
   .btn-link:disabled:focus, .btn-link:disabled:hover {
@@ -4101,7 +4101,7 @@ tbody.collapse.in {
   border: 1px solid #ddd; }
   /* line 21, /Users/pkelly/work/union/node_modules/bootstrap/scss/mixins/_hover.scss */
   .page-link:focus, .page-link:hover {
-    color: #014c8c;
+    color: #0275d8;
     background-color: #eceeef;
     border-color: #ddd; }
 
