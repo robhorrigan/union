@@ -1,6 +1,6 @@
 $font-url-prefix: "../assets/fonts/";
 
-/* Included as a mixin so that $font-location can be overridden */
+/* Included as a mixin so that $font-url-prefix can be overridden */
 @mixin tk-font-faces {
   @font-face {
     font-family: 'tisa';
@@ -71,6 +71,25 @@ h6, .h6 { font-size: $tk-font-up-2; }
 .font-down-3 { font-size: $tk-font-down-3; }
 .font-down-4 { font-size: $tk-font-down-4; }
 .font-down-5 { font-size: $tk-font-down-5; }
+
+//
+// Font Faces
+//
+
+.tisa-light {
+  font-family: $font-family-serif;
+  font-weight: 300;
+}
+
+.tisa-med {
+  font-family: $font-family-serif;
+  font-weight: 500;
+}
+
+.tisa-sans {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+}
 
 //
 // Horizontal rules
