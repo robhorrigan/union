@@ -30,6 +30,7 @@ gems:
 exclude:
   - Gemfile
   - Gemfile.lock
+  - node_modules
 destination: docs
 collections:
   foundation_pages:
