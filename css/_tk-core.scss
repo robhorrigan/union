@@ -1,7 +1,14 @@
 @import "tk-variables";
 @import "tk-mixins";
 
-// Custom bootstrap vars
+/*!
+ * Bootstrap v4.0.0-alpha.6 (https://getbootstrap.com)
+ * Copyright 2011-2017 The Bootstrap Authors
+ * Copyright 2011-2017 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+// Core variables and mixins
 @import "custom";
 @import "bootstrap/scss/variables";
 @import "bootstrap/scss/mixins";
@@ -21,7 +28,7 @@
 @import "bootstrap/scss/buttons";
 
 // Components
-@import "bootstrap/scss/animation";
+@import "bootstrap/scss/transitions";
 @import "bootstrap/scss/dropdown";
 @import "bootstrap/scss/button-group";
 @import "bootstrap/scss/input-group";
@@ -31,7 +38,7 @@
 @import "bootstrap/scss/card";
 @import "bootstrap/scss/breadcrumb";
 @import "bootstrap/scss/pagination";
-@import "bootstrap/scss/tags";
+@import "bootstrap/scss/badge";
 @import "bootstrap/scss/jumbotron";
 @import "bootstrap/scss/alert";
 @import "bootstrap/scss/progress";

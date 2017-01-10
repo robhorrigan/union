@@ -10,14 +10,14 @@ permalink: /foundations/typography/
 <h5>h5. heading</h5>
 <h6>h6. heading</h6>
 
-<div class="mt-2"></div>
+<div class="mt-5"></div>
 
 ## Font Utility Classes
 - <div class="tisa-med font-up-4">Tisa Medium (font-weight: 500)</div> `tisa-med`
 - <div class="tisa-light font-up-4">Tisa Light (font-weight: 300)</div> `tisa-light`
 - <div class="tisa-sans font-up-4">Tisa Sans (font-weight: 400, default face)</div> `tisa-sans`
 
-<div class="mt-2"></div>
+<div class="mt-5"></div>
 
 Our root font size is `16px` which corresponds to `1rem`.
 
@@ -56,7 +56,7 @@ The modular font scale uses a ratio of `1.125 / 8:9`. There are utility classes 
 <div class="font-down-5">Pack my box with five dozen liquor jugs</div>
 `font-down-5`
 
-<div class="mt-2"></div>
+<div class="mt-5"></div>
 
 Base line height is 1.55, however the header line height (1.25) can be applied with `lh-header`
 
@@ -65,4 +65,4 @@ Base line height is 1.55, however the header line height (1.25) can be applied w
 <div class="font-up-4 lh-header">1234567890</div>
 {% endhighlight %}
 
-<img src="https://s3.amazonaws.com/theknot.com/union/tk-typography_2x-min.jpg" alt="typography" height="9122" width="1003">
+<img src="https://s3.amazonaws.com/theknot.com/union/tk-typography_2x-min.jpg" alt="typography" class="img-fluid">
