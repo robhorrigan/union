@@ -1,0 +1,8 @@
+pairs:
+  pk: Philip Kelly; phil
+  st: Silvia Tueros-Cossio; silvia
+email:
+  prefix: pair
+  domain: xogrp.com
+
+--global: true
