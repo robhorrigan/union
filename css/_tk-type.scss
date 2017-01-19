@@ -2,95 +2,6 @@
 // New styles are welcome to this file, however comments are favored
 // over deletions for easier future Bootstrap upgrades on BS styles
 
-// Begin TK additions
-
-$font-url-prefix: "../assets/fonts/";
-$font-size-root: 16px !default;
-
-/* Included as a mixin so that $font-url-prefix can be overridden */
-@mixin tk-font-faces {
-  @font-face {
-    font-family: 'tisa';
-    src:
-      url('#{$font-url-prefix}tisa-light.woff2') format('woff2'),
-      url('#{$font-url-prefix}tisa-light.woff') format('woff');
-    font-weight: 300;
-    font-style: normal; }
-
-  @font-face {
-    font-family: 'tisa';
-    src:
-      url('#{$font-url-prefix}tisa-medium.woff2') format('woff2'),
-      url('#{$font-url-prefix}tisa-medium.woff') format('woff');
-    font-weight: 500;
-    font-style: normal; }
-
-  @font-face {
-    font-family: 'tisa sans';
-    src:
-      url('#{$font-url-prefix}tisa-sans-regular.woff2') format('woff2'),
-      url('#{$font-url-prefix}tisa-sans-regular.woff') format('woff');
-    font-weight: 400;
-    font-style: normal; }
-}
-
-html {
-  font-size: $font-size-root;
-}
-
-p {
-  font-size: $tk-font-up-1;
-}
-
-//
-// Font scale
-//
-
-.font-up-10 { font-size: $tk-font-up-10; }
-.font-up-9 { font-size: $tk-font-up-9; }
-.font-up-8 { font-size: $tk-font-up-8; }
-.font-up-7 { font-size: $tk-font-up-7; }
-.font-up-6 { font-size: $tk-font-up-6; }
-.font-up-5 { font-size: $tk-font-up-5; }
-.font-up-4 { font-size: $tk-font-up-4; }
-.font-up-3 { font-size: $tk-font-up-3; }
-.font-up-2 { font-size: $tk-font-up-2; }
-.font-up-1 { font-size: $tk-font-up-1; }
-
-.font-down-1 { font-size: $tk-font-down-1; }
-.font-down-2 { font-size: $tk-font-down-2; }
-.font-down-3 { font-size: $tk-font-down-3; }
-.font-down-4 { font-size: $tk-font-down-4; }
-.font-down-5 { font-size: $tk-font-down-5; }
-
-//
-// Font faces
-//
-
-.tisa-light {
-  font-family: $font-family-serif;
-  font-weight: 300;
-}
-
-.tisa-med {
-  font-family: $font-family-serif;
-  font-weight: 500;
-}
-
-.tisa-sans {
-  font-family: $font-family-sans-serif;
-  font-weight: 400;
-}
-
-//
-// Utilities
-//
-
-.lh-header {
-  line-height: $headings-line-height;
-}
-
-// End TK additions
 
 // Begin bootstrap/scss/type
 
@@ -107,7 +18,10 @@ h1, h2, h3, h4, h5, h6,
   color: $headings-color;
 }
 
-h1, .h1 { font-size: $tk-font-up-7; }
+h1, .h1 {
+  @extend .tisa-med;
+  font-size: $tk-font-up-7;
+}
 h2, .h2 { font-size: $tk-font-up-6; }
 h3, .h3 { font-size: $tk-font-up-5; }
 h4, .h4 { font-size: $tk-font-up-4; }
@@ -239,3 +153,95 @@ mark,
 // }
 
 // End bootstrap/scss/type
+
+// Begin TK additions
+
+$font-url-prefix: "../assets/fonts/";
+$font-size-root: 16px !default;
+
+/* Included as a mixin so that $font-url-prefix can be overridden */
+@mixin tk-font-faces {
+  @font-face {
+    font-family: 'tisa';
+    src:
+      url('#{$font-url-prefix}tisa-light.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'tisa';
+    src:
+      url('#{$font-url-prefix}tisa-medium.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'tisa sans';
+    src:
+      url('#{$font-url-prefix}tisa-sans-regular.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-sans-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal; }
+}
+
+html {
+  font-size: $font-size-root;
+}
+
+p {
+  font-size: $tk-font-up-1;
+}
+
+//
+// Font scale
+//
+
+.font-up-10  { font-size: $tk-font-up-10; }
+.font-up-9   { font-size: $tk-font-up-9; }
+.font-up-8   { font-size: $tk-font-up-8; }
+.font-up-7   { font-size: $tk-font-up-7; }
+.font-up-6   { font-size: $tk-font-up-6; }
+.font-up-5   { font-size: $tk-font-up-5; }
+.font-up-4   { font-size: $tk-font-up-4; }
+.font-up-3   { font-size: $tk-font-up-3; }
+.font-up-2   { font-size: $tk-font-up-2; }
+.font-up-1   { font-size: $tk-font-up-1; }
+.font-up-0   { font-size: $font-size-root; }
+.font-down-0 { font-size: $font-size-root; }
+.font-down-1 { font-size: $tk-font-down-1; }
+.font-down-2 { font-size: $tk-font-down-2; }
+.font-down-3 { font-size: $tk-font-down-3; }
+.font-down-4 { font-size: $tk-font-down-4; }
+.font-down-5 { font-size: $tk-font-down-5; }
+
+//
+// Font faces
+//
+
+.tisa-light {
+  font-family: $font-family-serif;
+  font-weight: 300;
+}
+
+.tisa-med {
+  font-family: $font-family-serif;
+  font-weight: 500;
+}
+
+.tisa-sans {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+}
+
+//
+// Utilities
+//
+
+.lh-header {
+  line-height: $headings-line-height;
+}
+
+// End TK additions
+
