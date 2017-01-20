@@ -17,6 +17,19 @@ $baby-min-width: initial;
   padding-right: 3rem;
 }
 
+.btn--mama {
+  line-height: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.btn--baby {
+  font-size: $tk-font-down-2;
+  line-height: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
 .btn--primary {
   color: $white;
   background: $coral-tint-20;
@@ -77,10 +90,26 @@ $baby-min-width: initial;
     min-width: $papa-min-width;
     display: inline-block;
   }
+  .btn--mama-xl-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--baby-xl-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
 }
 
 @include media-breakpoint-up(lg) {
   .btn--papa-lg-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--mama-lg-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--baby-lg-fitted {
     min-width: $papa-min-width;
     display: inline-block;
   }
@@ -91,6 +120,14 @@ $baby-min-width: initial;
     min-width: $papa-min-width;
     display: inline-block;
   }
+  .btn--mama-md-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--baby-md-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
 }
 
 @include media-breakpoint-up(sm) {
@@ -98,10 +135,26 @@ $baby-min-width: initial;
     min-width: $papa-min-width;
     display: inline-block;
   }
+  .btn--mama-sm-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--baby-sm-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
 }
 
 @include media-breakpoint-up(xs) {
   .btn--papa-xs-fitted {
+    min-width: $papa-min-width !important;
+    display: inline-block;
+  }
+  .btn--mama-xs-fitted {
+    min-width: $papa-min-width !important;
+    display: inline-block;
+  }
+  .btn--baby-xs-fitted {
     min-width: $papa-min-width !important;
     display: inline-block;
   }
