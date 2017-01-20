@@ -1,14 +1,13 @@
 const path = require('path');
 const [major] = require('./package.json').version.split(/[.-]/);
 
-
 const cssQuery = {
   camelize: true,
   scopedNameFormat: `<%= moduleAbbreviatedName %>-${major}-[hash:3]__[local]`
 };
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.scss'),
+  entry: path.resolve(__dirname, 'src', 'index.css'),
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
@@ -22,7 +21,7 @@ module.exports = {
     loaders: [
       {
         test: /\.css$/,
-        loader: 'a-css,
+        loader: 'a-css',
         query: cssQuery
       }
     ]
