@@ -1,0 +1,21 @@
+{
+  "name": "generator-union",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "extend": "^3.0.0",
+    "pascal-case": "^2.0.0",
+    "yeoman-generator": "^1.0.1"
+  },
+  "devDependencies": {
+    "yeoman-assert": "^2.2.2",
+    "yeoman-test": "^1.6.0"
+  }
+}
