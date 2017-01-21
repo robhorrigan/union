@@ -22,4 +22,8 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
       this.fs.copyTpl(from, to, new AnswersPresenter(this.answers));
     }
   }
+
+  install() {
+    this.installInPackage([ 'css-module-builder' ], { 'save': true });
+  }
 };

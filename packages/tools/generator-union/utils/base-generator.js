@@ -28,4 +28,8 @@ module.exports = class BaseGenerator extends Generator {
   ask(questions) {
     return this.prompt(questions).then((answers) => this.storeAnswers(answers));
   }
+
+  installInPackage(packages, options) {
+    this.npmInstall(packages, options, null, { cwd: this.packageRootPath() });
+  }
 }

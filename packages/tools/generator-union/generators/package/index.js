@@ -4,10 +4,12 @@ const { packageNameQuestion, categoryQuestion } = require('../../utils/questions
 
 module.exports = class PackageGenerator extends BaseGenerator {
   prompting() {
-    return this.ask([
-      categoryQuestion,
-      packageNameQuestion
-    ]);
+    const questions = [packageNameQuestion];
+
+    if (!this.answers.category) {
+      questions.unshift(categoryQuestion);
+    }
+    return this.ask(questions);
   }
 
   writing() {

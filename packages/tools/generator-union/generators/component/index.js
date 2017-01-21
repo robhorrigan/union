@@ -4,6 +4,8 @@ const { AnswersPresenter } = require('./src/answers');
 
 module.exports = class ReactComponentGenerator extends BaseGenerator {
   initializing() {
+    this.storeAnswers({ category: 'components' });
+
     this.composeWith(require.resolve('../package'), { answers: this.answers });
   }
 
@@ -22,5 +24,9 @@ module.exports = class ReactComponentGenerator extends BaseGenerator {
     for (const [from, to] of fileMapping) {
       this.fs.copyTpl(from, to, new AnswersPresenter(this.answers));
     }
+  }
+
+  install() {
+    this.installInPackage([ 'react' ], { 'save': true });
   }
 };
