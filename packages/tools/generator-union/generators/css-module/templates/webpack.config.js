@@ -17,6 +17,16 @@ module.exports = {
   externals: {
     'css-module-builder': true
   },
+  resolve: {
+    extensions: [
+      '',
+      '.js',
+      '.css'
+    ],
+    root: [
+      path.resolve(__dirname, 'src')
+    ]
+  },
   module: {
     loaders: [
       {

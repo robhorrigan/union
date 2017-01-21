@@ -2,7 +2,7 @@ const CSS_MODULES_CHOICE = exports.CSS_MODULES_CHOICE = 'css module';
 const REACT_COMPONENT_CHOICE = exports.REACT_COMPONENT_CHOICE = 'react component';
 const TOOL_CHOICE = exports.TOOL_CHOICE = 'tool';
 const CORE_CHOICE = exports.CORE_CHOICE = 'core';
-const COMPONENT_CHOICE = exports.COMPONENT_CHOICE = 'component';
+const COMPONENT_CHOICE = exports.COMPONENT_CHOICE = 'components';
 
 exports.newPageQuestion = {
   name: 'createNewPage',

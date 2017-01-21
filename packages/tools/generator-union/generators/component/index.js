@@ -2,7 +2,7 @@ const Generator = require('yeoman-generator');
 const BaseGenerator = require('../../utils/base-generator');
 const { AnswersPresenter } = require('./src/answers');
 
-module.exports = class CssModuleGenerator extends BaseGenerator {
+module.exports = class ReactComponentGenerator extends BaseGenerator {
   initializing() {
     this.composeWith(require.resolve('../package'), { answers: this.answers });
   }
@@ -14,8 +14,9 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
     } = this.answers;
 
     const fileMapping = [
-      this.templatePathMapping('src', 'index.css'),
+      this.templatePathMapping('src', 'index.js'),
       this.templatePathMapping('webpack.config.js'),
+      this.templatePathMapping('.babelrc')
     ];
 
     for (const [from, to] of fileMapping) {
