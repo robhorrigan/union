@@ -4,12 +4,19 @@ const asyncTest = require('./support/async-test');
 const { COMPONENT_CHOICE } = require('../utils/questions');
 
 const GENERATOR_PATH = require.resolve('../generators/component');
+const Generator = require(GENERATOR_PATH);
 
 describe('component-generator', () => {
   beforeEach(function () {
+    /* Skip install step
+    * Currently, the install steo doesn't work in this test environment
+    * */
+    spyOn(Generator.prototype, 'install');
+
     this.promise = helpers.run(GENERATOR_PATH)
       .withPrompts({
-        packageName: 'test'
+        packageName: 'test',
+        wantsToCreateCssModule: false
       })
   });
 

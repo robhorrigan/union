@@ -12,7 +12,7 @@ describe('css-module-generator', () => {
   beforeEach(function () {
     this.promise = helpers.run(GENERATOR_PATH)
       .withPrompts({
-        category: CORE_CHOICE,
+        packageType: CORE_CHOICE,
         packageName: 'test'
       })
   });

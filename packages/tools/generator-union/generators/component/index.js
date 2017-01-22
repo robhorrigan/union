@@ -8,6 +8,10 @@ const {
 } = require('../../utils/questions');
 
 module.exports = class ComponentGenerator extends BaseGenerator {
+  _packageType() {
+    return COMPONENT_CHOICE;
+  }
+
   _answers() {
     return new AnswersPresenter(this.answers);
   }
@@ -15,7 +19,7 @@ module.exports = class ComponentGenerator extends BaseGenerator {
   _cssModuleWriting() {
     this.composeWith(require.resolve('../css-module'), {
       answers: {
-        category: 'components',
+        packageType: COMPONENT_CHOICE,
         packageName: this._answers().cssModuleName
       }
     });
@@ -24,8 +28,6 @@ module.exports = class ComponentGenerator extends BaseGenerator {
   /* Run loop methods */
 
   prompting() {
-    this.storeAnswers({ category: COMPONENT_CHOICE })
-
     return this.ask([
       packageNameQuestion,
       createCssModuleQuestion
@@ -36,11 +38,6 @@ module.exports = class ComponentGenerator extends BaseGenerator {
     if (this.answers.wantsToCreateCssModule) {
       this._cssModuleWriting();
     }
-
-    const {
-      category,
-      packageName
-    } = this.answers;
 
     const fileMapping = [
       this.templatePathMapping('package.json'),

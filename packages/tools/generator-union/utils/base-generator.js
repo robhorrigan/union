@@ -2,6 +2,11 @@ const extend = require('extend');
 const Generator = require('yeoman-generator');
 
 module.exports = class BaseGenerator extends Generator {
+  /* May be overriden */
+  _packageType() {
+    return this.answers.packageType;
+  }
+
   constructor(args, opts) {
     super(args, opts);
 
@@ -16,9 +21,9 @@ module.exports = class BaseGenerator extends Generator {
   }
 
   packageRootPath(...path) {
-    const { category, packageName } = this.answers;
+    const { packageName } = this.answers;
 
-    return this.packagesPath(category, packageName, ...path);
+    return this.packagesPath(this._packageType(), packageName, ...path);
   }
 
   packagesPath(...path) {

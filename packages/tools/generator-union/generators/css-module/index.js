@@ -3,7 +3,7 @@ const BaseGenerator = require('../../utils/base-generator');
 const { AnswersPresenter } = require('./src/answers');
 const {
   packageNameQuestion,
-  categoryQuestion
+  packageTypeQuestion
 } = require('../../utils/questions');
 
 module.exports = class CssModuleGenerator extends BaseGenerator {
@@ -14,19 +14,14 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
       questions.unshift(packageNameQuestion);
     }
 
-    if (!this.answers.category) {
-      questions.unshift(categoryQuestion);
+    if (!this.answers.packageType) {
+      questions.unshift(packageTypeQuestion);
     }
 
     return this.ask(questions);
   }
 
   writing() {
-    const {
-      category,
-      packageName
-    } = this.answers;
-
     const fileMapping = [
       this.templatePathMapping('package.json'),
       this.templatePathMapping('src', 'index.css'),

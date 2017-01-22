@@ -11,8 +11,8 @@ exports.newPageQuestion = {
   default: false
 };
 
-exports.categoryQuestion = {
-  name: 'category',
+exports.packageTypeQuestion = {
+  name: 'packageType',
   message: 'Which of these best describes the package?',
   type: 'list',
   choices: [
