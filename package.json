@@ -36,6 +36,7 @@
     "bootstrap": "4.0.0-alpha.6",
     "bootstrap-sass": "^3.3.7",
     "css-byebye": "^1.0.1",
+    "glob-all": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
     "html-webpack-plugin": "^2.26.0",
