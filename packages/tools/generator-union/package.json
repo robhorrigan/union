@@ -10,6 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "camelize": "^1.0.0",
     "extend": "^3.0.0",
     "npm-link-save": "GeorgeTaveras1231/npm-link-save#patch-1",
     "pascal-case": "^2.0.0",

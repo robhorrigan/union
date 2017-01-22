@@ -26,10 +26,10 @@
  *    console.log(myCssModule.testClass); // Logs hashed class name
  * */
 
-.test-class {
+.<%= componentOrModuleName %> {
   border: 1px solid red;
 }
 
-.test-class::before {
+.<%= componentOrModuleName %>::before {
   content: my-variable;
 }

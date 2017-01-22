@@ -4,7 +4,7 @@ import styles from '<%= cssModulePackageName %>';
 
 export default function <%= moduleName %>() {
   return (
-    <div className={styles.testClass}>
+    <div className={styles.<%= camelizedModuleName %>}>
     </div>
   );
 }
