@@ -9,8 +9,7 @@ describe('component-generator', () => {
   beforeEach(function () {
     this.promise = helpers.run(GENERATOR_PATH)
       .withPrompts({
-        packageName: 'test',
-        category: COMPONENT_CHOICE
+        packageName: 'test'
       })
   });
 

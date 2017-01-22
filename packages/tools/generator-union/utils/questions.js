@@ -48,3 +48,10 @@ exports.packageNameQuestion = {
   }
 };
 
+exports.createCssModuleQuestion = {
+  name: 'wantsToCreateCssModule',
+  type: 'confirm',
+  message: 'Do you also want to create a css-module? You probably want to add css to this component.',
+  default: true
+}
+

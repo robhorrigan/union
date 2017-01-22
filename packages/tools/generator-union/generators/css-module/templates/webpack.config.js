@@ -3,7 +3,7 @@ const [major] = require('./package.json').version.split(/[.-]/);
 
 const cssQuery = {
   camelize: true,
-  scopedNameFormat: `<%= moduleAbbreviatedName %>-${major}-[hash:3]__[local]`
+  scopedNameFormat: `<%= componentOrModuleName %>-${major}-[hash:3]__[local]`
 };
 
 module.exports = {

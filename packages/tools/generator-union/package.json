@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "extend": "^3.0.0",
+    "npm-link-save": "GeorgeTaveras1231/npm-link-save#patch-1",
     "pascal-case": "^2.0.0",
     "yeoman-generator": "^1.0.1"
   },

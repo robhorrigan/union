@@ -1,10 +1,24 @@
 const Generator = require('yeoman-generator');
 const BaseGenerator = require('../../utils/base-generator');
 const { AnswersPresenter } = require('./src/answers');
+const {
+  packageNameQuestion,
+  categoryQuestion
+} = require('../../utils/questions');
 
 module.exports = class CssModuleGenerator extends BaseGenerator {
-  initializing() {
-    this.composeWith(require.resolve('../package'), { answers: this.answers });
+  prompting() {
+    const questions = [];
+
+    if (!this.answers.packageName) {
+      questions.unshift(packageNameQuestion);
+    }
+
+    if (!this.answers.category) {
+      questions.unshift(categoryQuestion);
+    }
+
+    return this.ask(questions);
   }
 
   writing() {
@@ -14,6 +28,7 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
     } = this.answers;
 
     const fileMapping = [
+      this.templatePathMapping('package.json'),
       this.templatePathMapping('src', 'index.css'),
       this.templatePathMapping('webpack.config.js'),
     ];
@@ -24,6 +39,6 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
   }
 
   install() {
-    this.installInPackage([ 'css-module-builder' ], { 'save': true });
+    this.installInPackage([ 'css-module-builder' ], { save: true });
   }
 };

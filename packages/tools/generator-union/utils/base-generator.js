@@ -18,7 +18,11 @@ module.exports = class BaseGenerator extends Generator {
   packageRootPath(...path) {
     const { category, packageName } = this.answers;
 
-    return this.destinationPath('packages', category, packageName, ...path);
+    return this.packagesPath(category, packageName, ...path);
+  }
+
+  packagesPath(...path) {
+    return this.destinationPath('packages', ...path)
   }
 
   storeAnswers(answers) {
