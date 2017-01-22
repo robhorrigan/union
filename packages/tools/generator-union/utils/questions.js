@@ -5,10 +5,10 @@ const CORE_CHOICE = exports.CORE_CHOICE = 'core';
 const COMPONENT_CHOICE = exports.COMPONENT_CHOICE = 'components';
 
 exports.newPageQuestion = {
-  name: 'createNewPage',
+  name: 'wantsToCreateNewPage',
   message: 'Do you want to add a new docs page?',
   type: 'confirm',
-  default: false
+  default: true
 };
 
 exports.packageTypeQuestion = {

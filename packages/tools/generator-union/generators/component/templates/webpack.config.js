@@ -19,6 +19,9 @@ module.exports = {
     ]
   },
   externals: {
+    <% if (wantsToCreateCssModule) { %>
+    '<%= cssModulePackageName %>': true,
+    <% } %>
     react: {
       commonjs: 'react',
       commonjs2: 'react',
