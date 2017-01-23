@@ -45,6 +45,8 @@ module.exports = class ComponentGenerator extends BaseGenerator {
   }
 
   writing() {
+    const answers = this._answers();
+
     if (this.answers.wantsToCreateCssModule) {
       this._cssModuleWriting();
     }
@@ -63,6 +65,18 @@ module.exports = class ComponentGenerator extends BaseGenerator {
           this.packagesPath('docs', 'articles', this.answers.pagePath)
         ]
       );
+    }
+
+    if (this.answers.wantsToCreateCssModule && this.answers.wantsToCreateNewPage) {
+      const externalCssModulesPath = this.packagesPath('docs', 'external-cssmodules.json');
+
+      const externalCssModules = require(externalCssModulesPath);
+      externalCssModules.push(answers.cssModulePackageName);
+
+      this.fs.write(
+        externalCssModulesPath,
+        JSON.stringify(externalCssModules, null, 2)
+      )
     }
 
     for (const [from, to] of fileMapping) {
