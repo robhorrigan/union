@@ -1,10 +1,17 @@
 const pascalize = require('pascal-case');
+const titleize = require('titleize');
 
 exports.AnswersPresenter = class AnswersPresenter {
   constructor(answers) {
-    this.moduleName = pascalize(answers.packageName);
     this.packageName = answers.packageName;
+    this.wantsToCreateNewPage = answers.wantsToCreateNewPage;
+    this.pagePath = answers.pagePath;
+
+    this.moduleName = pascalize(answers.packageName);
     this.componentOrModuleName = answers.packageName.replace(/-css$/, '');
+    this.documentationTitle = titleize(answers.packageName);
+
+    this.cssModulePackageName = `@union/${this.packageName}`;
   }
 };
 

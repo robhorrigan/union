@@ -10,20 +10,12 @@ const {
   newPagePathQuestion
 } = require('../../utils/questions');
 
+const updateDocsCssModulesManifest = require('../../utils/update-docs-css-modules-manifest');
+const writeDocumentationFiles = require('../../utils/write-documentation-files');
+
 module.exports = class ComponentGenerator extends BaseGenerator {
   _collectedData() {
     return new AnswersPresenter(this.answers);
-  }
-
-  _updateDocsCssModulesManifest() {
-    const externalCssModulesPath = this.packagesPath('docs', 'external-cssmodules.json');
-    const { cssModulePackageName } = this._collectedData();
-
-    const modulesJSON = this.fs.readJSON(externalCssModulesPath, { modules: [] });
-
-    modulesJSON.modules.push(cssModulePackageName);
-
-    this.fs.writeJSON(externalCssModulesPath, modulesJSON);
   }
 
   _packageType() {
@@ -36,7 +28,8 @@ module.exports = class ComponentGenerator extends BaseGenerator {
     this.composeWith(require.resolve('../css-module'), {
       answers: {
         packageType: COMPONENT_CHOICE,
-        packageName: cssModuleName
+        packageName: cssModuleName,
+        wantsToCreateNewPage: false
       }
     });
   }
@@ -71,21 +64,14 @@ module.exports = class ComponentGenerator extends BaseGenerator {
       this.templatePathMapping('.babelrc')
     ];
 
-    if (wantsToCreateNewPage) {
-      fileMapping.push(
-        [
-          this.templatePath('documentation.md'),
-          this.packagesPath('docs', 'articles', pagePath)
-        ]
-      );
-    }
+    writeDocumentationFiles(this);
 
     for (const [from, to] of fileMapping) {
       this.fs.copyTpl(from, to, collectedData);
     }
 
     if (wantsToCreateCssModule && wantsToCreateNewPage) {
-      this._updateDocsCssModulesManifest();
+      updateDocsCssModulesManifest(this);
     }
   }
 
