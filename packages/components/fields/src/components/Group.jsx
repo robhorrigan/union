@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '@union/field-styles';
+import styles from '@union/fields-css';
 
 export default function Group({ children, ...props }) {
   return (

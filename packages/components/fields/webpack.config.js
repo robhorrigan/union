@@ -24,7 +24,7 @@ module.exports = {
       commonjs2: 'react',
       amd: 'react'
     },
-    '@union/field-styles': true
+    '@union/fields-css': true
   },
   module: {
     loaders: [
