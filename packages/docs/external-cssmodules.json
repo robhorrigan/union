@@ -5,6 +5,5 @@
   "@union/bootstrap/lib/nav",
   "@union/bootstrap/lib/utilities",
   "@union/typography",
-  "@union/field-styles",
-  "@union/buttons-css"
+  "@union/field-styles"
 ]
