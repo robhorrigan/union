@@ -63,6 +63,43 @@ describe('component-generator', () => {
     }));
   });
 
+  describe('with doc page', () => {
+    beforeEach(function () {
+      this.promise = helpers.run(GENERATOR_PATH)
+        .withPrompts({
+          packageName: 'test',
+          wantsToCreateCssModule: false,
+          wantsToCreateNewPage: true
+        })
+    });
+
+    it('creates an index.js file', asyncTest((...things) => {
+      assert.file([
+        'packages/docs/articles/foundations/test.md'
+      ]);
+
+      assert.fileContent( 'packages/docs/articles/foundations/test.md',
+        new RegExp([
+          'imports:',
+          "'Test': '@union/test'",
+          '---',
+          '# Test',
+          '### Install',
+          '```',
+          'npm install --save @union/test',
+          '```',
+          '### Usage',
+          '```render jsx',
+          '<Test />',
+          '```',
+          '### Development',
+          'To make changes to this component, go to: `./packages/components/test`.'
+        ].join('\\s+'))
+      );
+    }));
+  });
+
+
   describe('with a css-module', () => {
     beforeEach(function () {
       this.promise = helpers.run(GENERATOR_PATH)

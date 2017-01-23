@@ -4,6 +4,7 @@ const titleize = require('titleize');
 exports.AnswersPresenter = class AnswersPresenter {
   constructor(answers) {
     this.packageName = answers.packageName;
+    this.packageType = answers.packageType;
     this.wantsToCreateNewPage = answers.wantsToCreateNewPage;
     this.pagePath = answers.pagePath;
 
