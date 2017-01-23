@@ -3,3 +3,7 @@ _site
 .jekyll-metadata
 node_modules
 public/css
+*.sw?
+
+packages/**/lib
+packages/demos/build

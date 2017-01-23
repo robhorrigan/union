@@ -1,0 +1,8 @@
+{
+  "files": {
+    "root": "./articles/",
+    "globs": [
+      "**/*.md"
+    ]
+  }
+}

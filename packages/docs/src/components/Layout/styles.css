@@ -1,0 +1,4 @@
+.sidenav {
+  composes: col-md-2 from '@union/bootstrap/lib/grid';
+  composes: py-3 from '@union/bootstrap/lib/utilities';
+}

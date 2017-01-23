@@ -1,0 +1,37 @@
+@value ( gray-55, gray-90, black ) from '@union/colors';
+
+.dropdown-item {
+  composes: medium-font-size from 'shared/fonts';
+
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  color: gray-55;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.dropdown-item-is-focused {
+  composes: dropdown-item;
+
+  background-color: gray-90;
+  color: black;
+  font-weight: 500;
+
+  .dropdown-item-check {
+    display: inline-block;
+  }
+}
+
+.dropdown-item-check {
+  composes: icon-general-checkmark-selected-state from '@union/icons';
+
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 15px;
+  font-size: 10px;
+}

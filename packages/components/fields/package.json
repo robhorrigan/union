@@ -1,0 +1,19 @@
+{
+  "name": "@union/fields",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack",
+    "start": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": { },
+  "dependencies": {
+    "@union/field-styles": "^1.0.0",
+    "humanize-string": "^1.0.1",
+    "react": "^15.4.1"
+  }
+}

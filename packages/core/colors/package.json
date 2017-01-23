@@ -1,0 +1,18 @@
+{
+  "name": "@union/colors",
+  "version": "1.0.1",
+  "description": "Colors for theknot",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/sass-lint -v",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@git.xogrp.com:engagement/tk-colors.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {},
+  "dependencies": {}
+}

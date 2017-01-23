@@ -1,0 +1,19 @@
+{
+  "name": "directory-loader",
+  "version": "1.0.0",
+  "description": "A webpack loader that loads all files in a folder",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "dependencies": {
+    "glob-all": "^3.1.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine": "^2.5.3",
+    "require-from-string": "^1.2.1"
+  }
+}

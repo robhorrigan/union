@@ -1,0 +1,8 @@
+@value ( black, coral-tint-80 ) from '@union/colors';
+@value ( gray-1, gray-2 ) from 'shared/colors';
+
+/* Borders */
+@value solid-border: 1px solid;
+@value black-border: solid-border black;
+@value gray-1-border: solid-border gray-1;
+@value gray-2-border: solid-border gray-2;

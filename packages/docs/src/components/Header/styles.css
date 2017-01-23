@@ -1,0 +1,15 @@
+@value ( gray-85, black ) from '@union/colors';
+
+.header {
+  composes: navbar navbar-toggleable from '@union/bootstrap/lib/navbar';
+  background-color: gray-85;
+}
+
+.link {
+  composes: navbar-brand from '@union/bootstrap/lib/navbar';
+  color: black;
+}
+
+.link:hover {
+  color: black;
+}

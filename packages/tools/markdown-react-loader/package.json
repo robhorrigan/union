@@ -1,0 +1,20 @@
+{
+  "name": "markdown-react-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "except": "^0.1.3",
+    "front-matter": "^2.1.1",
+    "imports-loader": "^0.7.0",
+    "loader-utils": "^0.2.16",
+    "markdown-to-react-components": "^0.2.3",
+    "react": "^15.4.2"
+  }
+}
