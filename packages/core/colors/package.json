@@ -1,6 +1,6 @@
 {
   "name": "@union/colors",
-  "version": "1.0.1",
+  "version": "1.0.0",
   "description": "Colors for theknot",
   "main": "lib/index.js",
   "scripts": {

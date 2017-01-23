@@ -19,6 +19,8 @@
     "start": "pm2 start $npm_package_config_process_config_file",
     "status": "pm2 status",
     "stop": "pm2 stop all",
+    "new-css-module": "yo union:css-module",
+    "new-component": "yo union:component",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -36,6 +38,7 @@
     "bootstrap": "4.0.0-alpha.6",
     "bootstrap-sass": "^3.3.7",
     "css-byebye": "^1.0.1",
+    "generator-union": "^1.0.0",
     "glob-all": "^3.1.0",
     "gulp": "^3.9.1",
     "gulp-sass": "^2.3.2",
@@ -50,6 +53,7 @@
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
     "webpack": "^1.14.0",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "yo": "^1.8.5"
   }
 }
