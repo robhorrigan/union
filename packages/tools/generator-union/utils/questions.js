@@ -1,8 +1,14 @@
-const CSS_MODULES_CHOICE = exports.CSS_MODULES_CHOICE = 'css module';
-const REACT_COMPONENT_CHOICE = exports.REACT_COMPONENT_CHOICE = 'react component';
-const TOOL_CHOICE = exports.TOOL_CHOICE = 'tool';
+const path = require('path');
 const CORE_CHOICE = exports.CORE_CHOICE = 'core';
 const COMPONENT_CHOICE = exports.COMPONENT_CHOICE = 'components';
+
+exports.newPagePathQuestion = {
+  name: 'pagePath',
+  message: 'Where should this page live?',
+  type: 'input',
+  when: (answers) => answers.wantsToCreateNewPage,
+  default: (answers) => path.join('foundations', answers.packageName + '.md')
+};
 
 exports.newPageQuestion = {
   name: 'wantsToCreateNewPage',
@@ -18,17 +24,6 @@ exports.packageTypeQuestion = {
   choices: [
     CORE_CHOICE,
     COMPONENT_CHOICE
-  ]
-};
-
-exports.typeQuestion = {
-  name: 'type',
-  message: 'What type of package do you want to create?',
-  type: 'list',
-  choices: [
-    CSS_MODULES_CHOICE,
-    REACT_COMPONENT_CHOICE,
-    TOOL_CHOICE
   ]
 };
 

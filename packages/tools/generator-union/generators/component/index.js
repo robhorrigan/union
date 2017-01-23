@@ -6,23 +6,37 @@ const {
   COMPONENT_CHOICE,
   packageNameQuestion,
   createCssModuleQuestion,
-  newPageQuestion
+  newPageQuestion,
+  newPagePathQuestion
 } = require('../../utils/questions');
 
 module.exports = class ComponentGenerator extends BaseGenerator {
+  _collectedData() {
+    return new AnswersPresenter(this.answers);
+  }
+
+  _updateDocsCssModulesManifest() {
+    const externalCssModulesPath = this.packagesPath('docs', 'external-cssmodules.json');
+    const { cssModulePackageName } = this._collectedData();
+
+    const modulesJSON = this.fs.readJSON(externalCssModulesPath, { modules: [] });
+
+    modulesJSON.modules.push(cssModulePackageName);
+
+    this.fs.writeJSON(externalCssModulesPath, modulesJSON);
+  }
+
   _packageType() {
     return COMPONENT_CHOICE;
   }
 
-  _answers() {
-    return new AnswersPresenter(this.answers);
-  }
-
   _cssModuleWriting() {
+    const { cssModuleName } = this._collectedData();
+
     this.composeWith(require.resolve('../css-module'), {
       answers: {
         packageType: COMPONENT_CHOICE,
-        packageName: this._answers().cssModuleName
+        packageName: cssModuleName
       }
     });
   }
@@ -34,20 +48,19 @@ module.exports = class ComponentGenerator extends BaseGenerator {
       packageNameQuestion,
       createCssModuleQuestion,
       newPageQuestion,
-      {
-        name: 'pagePath',
-        message: 'Where should this page live?',
-        type: 'input',
-        when: (answers) => answers.wantsToCreateNewPage,
-        default: (answers) => path.join('foundations', answers.packageName + '.md')
-      }
+      newPagePathQuestion
     ]);
   }
 
   writing() {
-    const answers = this._answers();
+    const collectedData = this._collectedData();
+    const {
+      wantsToCreateCssModule,
+      wantsToCreateNewPage,
+      pagePath
+    } = collectedData;
 
-    if (this.answers.wantsToCreateCssModule) {
+    if (wantsToCreateCssModule) {
       this._cssModuleWriting();
     }
 
@@ -58,54 +71,46 @@ module.exports = class ComponentGenerator extends BaseGenerator {
       this.templatePathMapping('.babelrc')
     ];
 
-    if (this.answers.wantsToCreateNewPage) {
+    if (wantsToCreateNewPage) {
       fileMapping.push(
         [
           this.templatePath('documentation.md'),
-          this.packagesPath('docs', 'articles', this.answers.pagePath)
+          this.packagesPath('docs', 'articles', pagePath)
         ]
       );
     }
 
-    if (this.answers.wantsToCreateCssModule && this.answers.wantsToCreateNewPage) {
-      const externalCssModulesPath = this.packagesPath('docs', 'external-cssmodules.json');
-
-      const externalCssModules = require(externalCssModulesPath);
-      externalCssModules.push(answers.cssModulePackageName);
-
-      this.fs.write(
-        externalCssModulesPath,
-        JSON.stringify(externalCssModules, null, 2)
-      )
+    for (const [from, to] of fileMapping) {
+      this.fs.copyTpl(from, to, collectedData);
     }
 
-    for (const [from, to] of fileMapping) {
-      this.fs.copyTpl(from, to, this._answers());
+    if (wantsToCreateCssModule && wantsToCreateNewPage) {
+      this._updateDocsCssModulesManifest();
     }
   }
 
   install() {
     const npmLinkSave = require.resolve('npm-link-save');
-    const answers = this._answers();
+    const { cssModuleName, wantsToCreateNewPage, wantsToCreateCssModule } = this._collectedData();
 
     /* Setup external dependencies */
     this.installInPackage([ 'react' ], { 'save': true });
 
-    if (this.answers.wantsToCreateNewPage) {
+    if (wantsToCreateNewPage) {
       const dependenciesOfDocs = [
         this.packageRootPath()
       ];
 
-      if (this.answers.wantsToCreateCssModule) {
-        dependenciesOfDocs.push(this.packagesPath('components', answers.cssModuleName))
+      if (wantsToCreateCssModule) {
+        dependenciesOfDocs.push(this.packagesPath('components', cssModuleName))
       }
 
       /* Save dependency in docs project */
       this.spawnCommand(npmLinkSave, dependenciesOfDocs, { cwd: this.packagesPath('docs') })
     }
 
-    if (this.answers.wantsToCreateCssModule) {
-      const pathToCssModule = this.packagesPath('components', answers.cssModuleName);
+    if (wantsToCreateCssModule) {
+      const pathToCssModule = this.packagesPath('components', cssModuleName);
 
       /* Setup css-module dependency */
       this.spawnCommand(npmLinkSave, [pathToCssModule], { cwd: this.packageRootPath() })

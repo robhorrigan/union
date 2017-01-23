@@ -1,9 +1,11 @@
-[
-  "@union/bootstrap",
-  "@union/bootstrap/lib/grid",
-  "@union/bootstrap/lib/navbar",
-  "@union/bootstrap/lib/nav",
-  "@union/bootstrap/lib/utilities",
-  "@union/typography",
-  "@union/field-styles"
-]
+{
+  "modules": [
+    "@union/bootstrap",
+    "@union/bootstrap/lib/grid",
+    "@union/bootstrap/lib/navbar",
+    "@union/bootstrap/lib/nav",
+    "@union/bootstrap/lib/utilities",
+    "@union/typography",
+    "@union/field-styles"
+  ]
+}

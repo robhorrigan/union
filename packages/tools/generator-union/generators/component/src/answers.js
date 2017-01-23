@@ -6,6 +6,9 @@ exports.AnswersPresenter = class AnswersPresenter {
   constructor(answers) {
     this.componentName = answers.packageName;
     this.wantsToCreateCssModule = answers.wantsToCreateCssModule;
+    this.wantsToCreateNewPage = answers.wantsToCreateNewPage;
+    this.pagePath = answers.pagePath;
+
     this.moduleName = pascalize(answers.packageName);
     this.camelizedModuleName = camelize(answers.packageName);
 

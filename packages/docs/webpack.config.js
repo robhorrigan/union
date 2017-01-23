@@ -4,7 +4,7 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const A_CSS_LOADER = 'a-css?camelize';
 const ARTICLES_DIR_CONFIG_PATH = require.resolve('./articles-directory.config.json');
 
-const EXTERNALS_CSS_MODULES_PATHS = require('./external-cssmodules.json').map((path) => {
+const EXTERNAL_CSS_MODULES_PATHS = require('./external-cssmodules.json').modules.map((path) => {
   return require.resolve(path);
 });
 
@@ -51,7 +51,7 @@ module.exports = {
         /*
          *  Tell webpack to parse these external modules as css
          * */
-        test: EXTERNALS_CSS_MODULES_PATHS,
+        test: EXTERNAL_CSS_MODULES_PATHS,
         loader: 'style'
       },
       {
