@@ -21,7 +21,7 @@ npm install --save @union/fields
     <div className={bsGrid.col6}>
       <Field name="email" />
     </div>
-    
+
     <div className={bsGrid.col6}>
       <Field name="domain" />
     </div>
