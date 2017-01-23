@@ -12,6 +12,7 @@ const {
 
 const updateDocsCssModulesManifest = require('../../utils/update-docs-css-modules-manifest');
 const writeDocumentationFiles = require('../../utils/write-documentation-files');
+const annouceNewPage = require('../../utils/announce-new-page');
 
 module.exports = class ComponentGenerator extends BaseGenerator {
   _collectedData() {
@@ -104,12 +105,6 @@ module.exports = class ComponentGenerator extends BaseGenerator {
   }
 
   end() {
-    if (this.answers.wantsToCreateNewPage) {
-      const expectedPath = this.answers.pagePath.replace(/\.[^.]+$/, '');
-
-      this.log('A new page has been created for this component');
-      this.log('  To see it, run `npm restart` at the root of the xogroup/union project');
-      this.log(`  Then visit http://localhost:8080/#/${expectedPath}`);
-    }
+    annouceNewPage(this);
   }
 };

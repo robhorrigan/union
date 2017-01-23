@@ -10,6 +10,7 @@ const {
 
 const updateDocsCssModulesManifest = require('../../utils/update-docs-css-modules-manifest');
 const writeDocumentationFiles = require('../../utils/write-documentation-files');
+const annouceNewPage = require('../../utils/announce-new-page');
 
 module.exports = class CssModuleGenerator extends BaseGenerator {
   _collectedData() {
@@ -65,5 +66,9 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
     if (wantsToCreateNewPage) {
       this.spawnCommand(npmLinkSave, [this.packageRootPath()], { cwd: this.packagesPath('docs') })
     }
+  }
+
+  end() {
+    annouceNewPage(this);
   }
 };
