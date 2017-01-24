@@ -9,6 +9,7 @@ module.exports = {
     grid: './grid.scss',
     navbar: './navbar.scss',
     nav: './nav.scss',
+    tables: './tables.scss',
     utilities: './utilities.scss'
   },
   output: {

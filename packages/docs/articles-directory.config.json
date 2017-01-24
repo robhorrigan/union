@@ -2,7 +2,8 @@
   "files": {
     "root": "./articles/",
     "globs": [
-      "**/*.md"
+      "**/*.md",
+      "**/*.jsx"
     ]
   }
 }

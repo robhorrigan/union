@@ -74,6 +74,7 @@ module.exports = {
           require.resolve('@union/bootstrap/lib/navbar'),
           require.resolve('@union/bootstrap/lib/nav'),
           require.resolve('@union/bootstrap/lib/utilities'),
+          require.resolve('@union/bootstrap/lib/tables'),
           require.resolve('@union/typography'),
           require.resolve('@union/field-styles')
         ],
