@@ -59,3 +59,31 @@ npm run open
 ```sh
 npm restart
 ```
+
+### Generators
+
+These generators will help you create new modules
+
+```bash
+npm run new-component
+```
+
+This generators will try to:
+
+- Create a new react component package
+- Create a new css-module package
+- Create a new documentation page
+- Link everything together
+
+
+You can also run
+
+```bash
+npm run new-css-module
+```
+
+This generators will try to:
+
+- Create a new css-module package
+- Create a new documentation page
+- Link everything together
