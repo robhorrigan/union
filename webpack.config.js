@@ -7,5 +7,5 @@ module.exports = [
 
   /* Components */
   require('./packages/components/field-styles/webpack.config.js'),
-  require('./packages/components/fields/webpack.config.js')
+  ...require('./packages/components/fields/webpack.config.js'),
 ];
