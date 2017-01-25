@@ -46,7 +46,12 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 ### Dropdown Component
 
 <Demo>
-  <Dropdown name="email" />
+  <Dropdown name="Season">
+    <DropdownItem label="Winter" />
+    <DropdownItem label="Spring" />
+    <DropdownItem label="Summer" />
+    <DropdownItem label="Fall" />
+  </Dropdown>
 </Demo>
 
 #### Properties
