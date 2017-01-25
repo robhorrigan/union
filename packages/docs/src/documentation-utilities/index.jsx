@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import jsxToString from 'jsx-to-string';
+import jsxToString from 'jsx-to-string-2';
 import PrismJs from 'prismjs';
 import '!imports-loader?Prism=prismjs!prismjs/components/prism-jsx';
 import '!imports-loader?Prism=prismjs!prismjs/components/prism-bash';
