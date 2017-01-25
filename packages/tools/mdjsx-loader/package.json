@@ -1,0 +1,17 @@
+{
+  "name": "mdjsx-loader",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "front-matter": "^2.1.1",
+    "react": "^15.4.2",
+    "react-remarkable": "^1.1.1"
+  }
+}
