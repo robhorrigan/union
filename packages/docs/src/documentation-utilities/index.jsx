@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import bsTables from '@union/bootstrap/lib/tables';
 import jsxToString from 'jsx-to-string';
 import PrismJs from 'prismjs';
 import '!imports-loader?Prism=prismjs!prismjs/components/prism-jsx';
@@ -58,62 +57,4 @@ export class Snippet extends Component {
       </pre>
     )
   }
-}
-
-export function PropTypesTable({ metadata }) {
-  const tableBody = [];
-
-  for (const prop in metadata) {
-    if (Object.prototype.hasOwnProperty.call(metadata, prop)) {
-      const defaultValue = metadata[prop].defaultValue;
-      const type = metadata[prop].type;
-      const name = metadata[prop].required ? `* ${prop}` : prop
-      const description = metadata[prop].description
-
-      tableBody.push(
-        <tr key={prop}>
-          <td>
-            {name}
-          </td>
-
-          <td>
-            {type && type.name}
-          </td>
-
-          <td>
-            {description}
-          </td>
-
-          <td>
-            {defaultValue && defaultValue.value}
-          </td>
-        </tr>
-      );
-    }
-  }
-
-  return (
-    <table className={[bsTables.table, bsTables.tableInverse, bsTables.tableBordered].join(' ')}>
-      <thead>
-        <tr>
-          <th>
-            name
-          </th>
-          <th>
-            type
-          </th>
-          <th>
-            description
-          </th>
-
-          <th>
-            default
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        {tableBody}
-      </tbody>
-    </table>
-  );
 }

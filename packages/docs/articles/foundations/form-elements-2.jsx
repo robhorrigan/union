@@ -1,8 +1,9 @@
 import React from 'react';
-import Markdown from 'react-remarkable';
 import * as Meta from '@union/fields/lib/meta';
 import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
-import { Demo, Snippet, PropTypesTable } from 'documentation-utilities';
+import Markdown from 'react-remarkable';
+import { Demo, Snippet } from 'documentation-utilities';
+import PropTypesTable from 'documentation-utilities/PropTypesTable';
 import bsGrid from '@union/bootstrap/lib/grid';
 import bsUtils from '@union/bootstrap/lib/utilities';
 
@@ -12,37 +13,57 @@ export default () =>
     Form Elements
   </h1>
 
-  <h3>
+  <h2>
+    Usage
+  </h2>
+
+  <h4>
     Install
-  </h3>
+  </h4>
 
   <Snippet lang="bash">
     npm install --save @union/fields
   </Snippet>
+
+  <h4>
+    Import
+  </h4>
+
+  <Snippet lang="javascript">
+    import {"{ Field, Dropdown, DropdownItem, Textarea }"} from '@union/fields';
+  </Snippet>
+
+  <h2>
+    Field
+  </h2>
+
+  <Demo>
+    <Field name="email" />
+  </Demo>
+
+  <h2>
+    Properties
+  </h2>
+
+  <PropTypesTable metadata={Meta.Field.props} />
+
+  <h4>
+    States
+  </h4>
+
+  <h5>
+    Invalid
+  </h5>
+
+  <Demo>
+    <Field name="email" valid={false} validationMessage="Something went wrong" />
+  </Demo>
 
   <h3>
     Demo
   </h3>
 
   <FormFieldLargeDemo />
-
-  <h3>
-    Field
-  </h3>
-
-  <h6>
-    PropTypes
-  </h6>
-
-  <PropTypesTable metadata={Meta.Field.props} />
-
-  <Demo>
-    <Field name="email" />
-  </Demo>
-
-  <Demo>
-    <Field name="email" valid={false} validationMessage="Something went wrong" />
-  </Demo>
 </div>
 
 /* Documentation end */
