@@ -12,25 +12,26 @@ imports:
 
 ## Usage
 
-#### Install
+###### Install
 
 <Snippet lang="bash">
 npm install --save @union/fields
 </Snippet>
 
-#### Import
+###### Import
 
 <Snippet lang="javascript">
 import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 </Snippet>
 
-#### Render
+
+### Field Component
 
 <Demo>
   <Field name="email" />
 </Demo>
 
-## Properties
+#### Properties
 
 <PropTypesTable metadata={Meta.Field.props} />
 
@@ -41,6 +42,16 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 <Demo>
   <Field name="email" valid={false} validationMessage="Something went wrong" />
 </Demo>
+
+### Dropdown Component
+
+<Demo>
+  <Dropdown name="email" />
+</Demo>
+
+#### Properties
+
+<PropTypesTable metadata={Meta.Dropdown.props} />
 
 ### Demo
 

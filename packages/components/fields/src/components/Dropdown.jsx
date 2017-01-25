@@ -7,6 +7,32 @@ export default class Dropdown extends Component {
     selectedValue: T.any
   };
 
+  static propTypes = {
+    /**
+     * Name used for input
+     */
+    name: T.string.isRequired,
+    /**
+     * Value to set on input element.
+     * This is also provided to child elements as context.selectedValue
+     */
+    value: T.string,
+    /**
+     * The input's label string
+     */
+    label: T.string,
+    /**
+     * Should more than likely be DropdownItem components
+     */
+    children: T.arrayOf(T.node)
+  };
+
+  getDefaultProps() {
+    const { name } = this.props;
+
+    return { label: humamize(name) };
+  }
+
   getChildContext() {
     return { selectedValue: this.props.value };
   }
@@ -15,7 +41,7 @@ export default class Dropdown extends Component {
     const {
       name,
       value,
-      label = humanize(name),
+      label,
       children,
       ...props
     } = this.props;

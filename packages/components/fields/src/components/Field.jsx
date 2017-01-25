@@ -39,7 +39,7 @@ Field.propTypes = {
    */
   valid: T.bool,
   /**
-   * Validation message
+   * Validation message used when field is invalid
    */
   validationMessage: T.string
 };

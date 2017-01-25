@@ -1,6 +1,14 @@
 import React from 'react';
 import bsTables from '@union/bootstrap/lib/tables';
 
+function parseType({ type = {} }) {
+  if (type.value) {
+    return `${type.name}(${type.value.name})`;
+  }
+
+  return type.name;
+}
+
 function TableRow({ columns = [], header = false, ...props }) {
   const columnElement = header ? 'th' : 'td';
 
@@ -18,16 +26,19 @@ function TableRow({ columns = [], header = false, ...props }) {
 function PropTypesRow({ propMetadata, propName }) {
   const {
     defaultValue,
-    type,
     description
   } = propMetadata;
 
   const name = propMetadata.required ? `* ${propName}` : propName;
   const defaultValueString = defaultValue && defaultValue.value;
-  const typeString = type && type.name;
 
   return (
-    <TableRow columns={[ name, typeString, description, defaultValueString ]} />
+    <TableRow columns={[
+      name,
+      parseType(propMetadata),
+      description,
+      defaultValueString
+    ]} />
   );
 }
 
