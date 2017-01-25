@@ -62,6 +62,13 @@ npm restart
 
 ### Generators
 
+*First step*
+
+> This is a temporary step, likely to be removed in the future
+```bash
+npm run bootstrap-generators
+```
+
 These generators will help you create new modules
 
 ```bash
