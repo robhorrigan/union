@@ -49,6 +49,8 @@ Hello world
     Hello world
   </Component1>
 
+<Component1>Hello world</Component1>
+
 #### Test
 <Component1/>
 `;
@@ -63,6 +65,8 @@ Hello world
   <Component1>
 {"    Hello world"}
   </Component1>
+{""}
+<Component1>Hello world</Component1>
 {""}
 {"#### Test"}
 <Component1/>

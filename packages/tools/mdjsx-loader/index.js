@@ -1,5 +1,6 @@
 const frontMatter = require('front-matter');
 const OPENED_OR_SELF_CLOSED_COMPONENT = /^\s*<[^\/]+(:?\/)?>\s*$/;
+const SINGLE_LINE_COMPONENT = /^\s*<[^>]+>[^<]*<\/[^>]+>\s*$/;
 const CLOSED_COMPONENT = /^\s*<\/[^>]+>\s*$/;
 
 function importsToJs(imports) {
@@ -18,7 +19,7 @@ module.exports = function mdjsx(source) {
   const lines = body.split('\n');
 
   const normalizedLines = lines.map((line) => {
-    if (OPENED_OR_SELF_CLOSED_COMPONENT.test(line) || CLOSED_COMPONENT.test(line)) {
+    if (SINGLE_LINE_COMPONENT.test(line) || OPENED_OR_SELF_CLOSED_COMPONENT.test(line) || CLOSED_COMPONENT.test(line)) {
       return line;
     } else {
       return `{${JSON.stringify(line)}}`;
