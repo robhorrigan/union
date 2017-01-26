@@ -1,7 +1,7 @@
 {
   "name": "@union/bootstrap",
   "version": "1.0.0",
-  "description": "Typography for theknot",
+  "description": "Bootstrap wrapped as a set of css-modules",
   "license": "UNLICENSED",
   "main": "lib/reboot.js",
   "scripts": {

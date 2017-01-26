@@ -1,6 +1,6 @@
 import React from 'react';
 import humanize from 'humanize-string';
-import styles from '@union/field-styles';
+import styles from '@union/fields-css';
 
 export default function Textarea({ name, label = humanize(name), ...props }) {
   const id = name + Date.now();

@@ -1,11 +1,8 @@
-module.exports = [
-  /* Core */
-  require('./packages/core/icons/webpack.config.js'),
-  require('./packages/core/typography/webpack.config.js'),
-  require('./packages/core/colors/webpack.config.js'),
-  require('./packages/core/bootstrap/webpack.config.js'),
+const glob = require('glob-all');
 
-  /* Components */
-  require('./packages/components/field-styles/webpack.config.js'),
-  ...require('./packages/components/fields/webpack.config.js'),
-];
+const webpackFiles = glob.sync([
+  './packages/core/**/webpack.config.js',
+  './packages/components/**/webpack.config.js'
+]);
+
+module.exports = webpackFiles.map((path) => require(path));

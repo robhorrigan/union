@@ -1,5 +1,5 @@
 import React, { Component,  PropTypes as T } from 'react';
-import styles from '@union/field-styles';
+import styles from '@union/fields-css';
 import humanize from 'humanize-string';
 
 export default class Dropdown extends Component {

@@ -10,9 +10,9 @@
   },
   "author": "",
   "license": "ISC",
-  "devDependencies": { },
+  "devDependencies": {},
   "dependencies": {
-    "@union/field-styles": "^1.0.0",
+    "@union/fields-css": "^1.0.0",
     "humanize-string": "^1.0.1",
     "react": "^15.4.1"
   }
