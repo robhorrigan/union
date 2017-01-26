@@ -37,14 +37,15 @@ a: b
 `;
 
     const result = mdjsx.call(loaderMock, source);
-    expect(result).toContain('export const attributes = {"a":"b"};');
+    expect(result).toContain('exports.attributes = $attributes;');
+    expect(result).toContain('const $attributes = {"a":"b"};');
   });
 
   it('passes down the component props ', () => {
     const source = ``;
 
     const result = mdjsx.call(loaderMock, source);
-    expect(result).toContain('export default ($props) =>');
+    expect(result).toContain('exports.default = ($props) =>');
   })
 
 

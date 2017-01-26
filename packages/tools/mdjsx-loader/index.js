@@ -35,8 +35,10 @@ import React from 'react';
 import Markdown from ${JSON.stringify(reactRemarkablePath)};
 ${importsToJs($imports)}
 
-export const attributes = ${JSON.stringify(restOfFrontMatter)};
-export default ($props) =>
+const $attributes = ${JSON.stringify(restOfFrontMatter)};
+
+exports.attributes = $attributes;
+exports.default = ($props) =>
 <Markdown>
 ${normalizedLines.join('\n')}
 </Markdown>
