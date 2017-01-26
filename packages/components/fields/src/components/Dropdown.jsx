@@ -18,7 +18,7 @@ export default class Dropdown extends Component {
      */
     value: T.string,
     /**
-     * The input's label string
+     * The input's label string, defaults to `humanized` version of name propType
      */
     label: T.string,
     /**
@@ -26,12 +26,6 @@ export default class Dropdown extends Component {
      */
     children: T.arrayOf(T.node)
   };
-
-  getDefaultProps() {
-    const { name } = this.props;
-
-    return { label: humamize(name) };
-  }
 
   getChildContext() {
     return { selectedValue: this.props.value };
@@ -41,7 +35,7 @@ export default class Dropdown extends Component {
     const {
       name,
       value,
-      label,
+      label = humanize(name),
       children,
       ...props
     } = this.props;

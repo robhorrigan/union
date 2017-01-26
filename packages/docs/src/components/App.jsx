@@ -1,5 +1,5 @@
 import React from 'react';
-import { Router, Route, IndexRoute, hashHistory } from 'react-router';
+import { Router, Route, hashHistory } from 'react-router';
 
 import Layout from 'components/Layout';
 import generateRoutes from 'utils/generateRoutes';

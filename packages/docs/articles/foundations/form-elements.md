@@ -2,10 +2,12 @@
 imports:
   '{ Field, Dropdown, DropdownItem, Textarea }': '@union/fields'
   '* as Meta': '@union/fields/lib/meta'
-  '{ Demo, Snippet }': 'documentation-utilities'
-  PropTypesTable: 'documentation-utilities/PropTypesTable'
   bsGrid: '@union/bootstrap/lib/grid'
   bsUtils: '@union/bootstrap/lib/utilities'
+
+  '{ Demo }': 'doc-components'
+  Snippet: 'doc-components/Snippet'
+  PropTypesTable: 'doc-components/PropTypesTable'
 ---
 
 # Form Elements
@@ -60,7 +62,7 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 
 ### Demo
 
-<Demo dependsOn={{ bsUtils, bsGrid }}>
+<Demo cssDependencies={{ bsUtils, bsGrid }}>
   <div>
     <div className={bsUtils.mb3}>
       <div className={bsGrid.row}>
