@@ -3,7 +3,7 @@
 }
 
 .field-container {
-  composes: sans-serif text-left from '@union/typography';
+  composes: text-left from '@union/typography';
   composes: container;
 
   * {

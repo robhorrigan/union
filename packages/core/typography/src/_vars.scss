@@ -1,0 +1,21 @@
+@import "mixins";
+
+// Font scale
+// largest to smallest
+$tk-font-ratio: 1.125;
+$tk-font-up-10: pow($tk-font-ratio, 10) * 1rem !default;
+$tk-font-up-9: pow($tk-font-ratio, 9) * 1rem !default;
+$tk-font-up-8: pow($tk-font-ratio, 8) * 1rem !default;
+$tk-font-up-7: pow($tk-font-ratio, 7) * 1rem !default;
+$tk-font-up-6: pow($tk-font-ratio, 6) * 1rem !default;
+$tk-font-up-5: pow($tk-font-ratio, 5) * 1rem !default;
+$tk-font-up-4: pow($tk-font-ratio, 4) * 1rem !default;
+$tk-font-up-3: pow($tk-font-ratio, 3) * 1rem !default;
+$tk-font-up-2: pow($tk-font-ratio, 2) * 1rem !default;
+$tk-font-up-1: pow($tk-font-ratio, 1) * 1rem !default;
+
+$tk-font-down-1: div-x-times($tk-font-ratio, 1) * 1rem !default;
+$tk-font-down-2: div-x-times($tk-font-ratio, 2) * 1rem !default;
+$tk-font-down-3: div-x-times($tk-font-ratio, 3) * 1rem !default;
+$tk-font-down-4: div-x-times($tk-font-ratio, 4) * 1rem !default;
+$tk-font-down-5: div-x-times($tk-font-ratio, 5) * 1rem !default;
