@@ -17,7 +17,7 @@ export default class Article {
   }
 
   moduleName() {
-    return pascalize(this.title());
+    return pascalize(this.pathInfo.name);
   }
 
   title() {

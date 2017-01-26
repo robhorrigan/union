@@ -1,21 +1,19 @@
 ---
-imports:
+$imports:
   '{ Snippet, Demo, PropTypesTable }': 'doc-components'
   PropTypesTableMetadata: '!!react-docgen!doc-components/PropTypesTable'
   SnippetsMetadata: '!!react-docgen!doc-components/Snippet'
   DemoMetadata: '!!react-docgen!doc-components/Demo'
 ---
 
-# Doc Components
+<h1>{$props.article.title()}</h1>
 
 > These are components used to build this documentation
 
 ## PropTypesTable Component
 
-<span dangerouslySetInnerHTML={{__html: PropTypesTableMetadata.description}} />
+<span>{PropTypesTableMetadata.description}</span>
 
-<br/>
-<br/>
 
 #### Properties and Demo
 
@@ -27,7 +25,7 @@ imports:
 
 ## Snippet Component
 
-<span dangerouslySetInnerHTML={{__html: SnippetsMetadata.description}} />
+<span>{SnippetsMetadata.description}</span>
 
 #### Demo
 
@@ -43,7 +41,7 @@ imports:
 
 ## Demo Component
 
-<span dangerouslySetInnerHTML={{__html: DemoMetadata.description}} />
+<span>{DemoMetadata.description}</span>
 
 #### Demo
 

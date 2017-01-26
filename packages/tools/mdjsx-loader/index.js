@@ -1,3 +1,4 @@
+const except = require('except');
 const frontMatter = require('front-matter');
 const OPENED_OR_SELF_CLOSED_COMPONENT = /^\s*<[^\/]+(:?\/)?>\s*$/;
 const SINGLE_LINE_COMPONENT = /^\s*<[^>]+>[^<]*<\/[^>]+>\s*$/;
@@ -18,6 +19,9 @@ module.exports = function mdjsx(source) {
   const { attributes, body } = frontMatter(source);
   const lines = body.split('\n');
 
+  const { $imports } = attributes;
+  const restOfFrontMatter = except(attributes, '$imports');
+
   const normalizedLines = lines.map((line) => {
     if (SINGLE_LINE_COMPONENT.test(line) || OPENED_OR_SELF_CLOSED_COMPONENT.test(line) || CLOSED_COMPONENT.test(line)) {
       return line;
@@ -29,10 +33,10 @@ module.exports = function mdjsx(source) {
   const code = `
 import React from 'react';
 import Markdown from ${JSON.stringify(reactRemarkablePath)};
-${importsToJs(attributes.imports)}
+${importsToJs($imports)}
 
-export const attributes = ${JSON.stringify(attributes)};
-export default () =>
+export const attributes = ${JSON.stringify(restOfFrontMatter)};
+export default ($props) =>
 <Markdown>
 ${normalizedLines.join('\n')}
 </Markdown>

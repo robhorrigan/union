@@ -16,7 +16,7 @@ describe('mdjsx-loader', () => {
   it('creates import expressions from the front matter', () => {
     const source =
 `---
-imports:
+$imports:
     '* as A': 'module'
     '{ B, C, D }': 'module2'
     E: 'module3'
@@ -38,7 +38,15 @@ a: b
 
     const result = mdjsx.call(loaderMock, source);
     expect(result).toContain('export const attributes = {"a":"b"};');
+  });
+
+  it('passes down the component props ', () => {
+    const source = ``;
+
+    const result = mdjsx.call(loaderMock, source);
+    expect(result).toContain('export default ($props) =>');
   })
+
 
   it('normalizes each line', () => {
     const source = `

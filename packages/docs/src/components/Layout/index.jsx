@@ -13,11 +13,11 @@ export default function Layout({ children }) {
         <div className={bsGrid.row}>
           <SideNav className={styles.sidenav} />
 
-          <div className={bsGrid.col}>
+          <div className={styles.article}>
             {children}
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }

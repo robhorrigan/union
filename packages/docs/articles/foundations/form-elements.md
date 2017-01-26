@@ -1,16 +1,14 @@
 ---
-imports:
+$imports:
   '{ Field, Dropdown, DropdownItem, Textarea }': '@union/fields'
   '* as Meta': '@union/fields/lib/meta'
   bsGrid: '@union/bootstrap/lib/grid'
   bsUtils: '@union/bootstrap/lib/utilities'
 
-  '{ Demo }': 'doc-components'
-  Snippet: 'doc-components/Snippet'
-  PropTypesTable: 'doc-components/PropTypesTable'
+  '{ Demo, Snippet, PropTypesTable }': 'doc-components'
 ---
 
-# Form Elements
+<h1>{$props.article.title()}</h1>
 
 ## Usage
 
