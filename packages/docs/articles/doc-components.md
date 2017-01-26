@@ -6,7 +6,7 @@ $imports:
   DemoMetadata: '!!react-docgen!doc-components/Demo'
 ---
 
-<h1>{$props.article.title()}</h1>
+<h1>{$props.title}</h1>
 
 > These are components used to build this documentation
 
