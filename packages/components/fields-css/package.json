@@ -1,5 +1,5 @@
 {
-  "name": "@union/field-styles",
+  "name": "@union/fields-css",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -11,9 +11,9 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "devDependencies": { },
+  "devDependencies": {},
   "dependencies": {
-    "@union/colors": "^1.0.1",
+    "@union/colors": "^1.0.0",
     "@union/typography": "^1.0.0",
     "@union/icons": "^1.0.0"
   }

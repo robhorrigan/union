@@ -5,7 +5,8 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.join(__dirname, 'lib'),
-    libraryTarget: 'umd'
+    libraryTarget: 'umd',
+    libraryName: ['Union', '<%= moduleName %>']
   },
   resolve: {
     extensions: [
@@ -18,13 +19,15 @@ module.exports = {
     ]
   },
   externals: {
+    <% if (wantsToCreateCssModule) { %>
+    '<%= cssModulePackageName %>': true,
+    <% } %>
     react: {
-      root: 'React',
       commonjs: 'react',
       commonjs2: 'react',
-      amd: 'react'
-    },
-    '@union/fields-css': true
+      amd: 'react',
+      root: 'React'
+    }
   },
   module: {
     loaders: [
