@@ -4,10 +4,6 @@ const HTMLWebpackPlugin = require('html-webpack-plugin');
 const A_CSS_LOADER = 'a-css?camelize';
 const ARTICLES_DIR_CONFIG_PATH = require.resolve('./articles-directory.config.json');
 
-const EXTERNAL_CSS_MODULES_PATHS = require('./external-cssmodules.json').modules.map((path) => {
-  return require.resolve(path);
-});
-
 module.exports = {
   context: __dirname,
   entry: './src/index.jsx',
@@ -25,7 +21,8 @@ module.exports = {
     extensions: [
       '',
       '.js',
-      '.jsx'
+      '.jsx',
+      '.cssm'
     ],
     root: [
       path.resolve(__dirname, 'src'),
@@ -48,10 +45,7 @@ module.exports = {
         loader: 'directory'
       },
       {
-        /*
-         *  Tell webpack to parse these external modules as css
-         * */
-        test: EXTERNAL_CSS_MODULES_PATHS,
+        test: /\.cssm$/,
         loader: 'style'
       },
       {

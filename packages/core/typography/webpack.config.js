@@ -4,7 +4,7 @@ const major = require('./package.json').version.split(/[.-]/)[0];
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.scss'),
   output: {
-    filename: 'index.js',
+    filename: 'index.cssm',
     path: path.resolve(__dirname, 'lib'),
     libraryTarget: 'umd'
   },

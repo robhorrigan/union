@@ -2,7 +2,7 @@
   "name": "@union/icons",
   "version": "1.0.0",
   "description": "Icons for theknot",
-  "main": "lib/index.js",
+  "main": "lib/index.cssm",
   "license": "UNLICENSED",
   "scripts": {
     "test": "./node_modules/.bin/sass-lint -v",

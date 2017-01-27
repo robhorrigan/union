@@ -13,7 +13,7 @@ module.exports = {
     utilities: './utilities.scss'
   },
   output: {
-    filename: '[name].js',
+    filename: '[name].cssm',
     path: path.resolve(__dirname, 'lib'),
     libraryTarget: 'umd',
     libraryName: ['Union', 'Bootstrap', '[name]']
