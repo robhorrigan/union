@@ -1,5 +1,5 @@
-import React, { Component,  PropTypes as T } from 'react';
-import styles from '@union/field-styles';
+import React, { Component, PropTypes as T } from 'react';
+import styles from '@union/fields-css';
 
 export default class DropdownItem extends Component {
   static contextTypes = {

@@ -1,10 +1,9 @@
 const path = require('path');
-const v = require('./package.json').version.replace(/\./g, '_');
-const webpack = require('webpack');
+const major = require('./package.json').version.split('.')[0];
 
 const cssQuery = {
   camelize: true,
-  scopedNameFormat: `ff-${v}--[hash:3]__[local]`
+  scopedNameFormat: `ff-${major}--[hash:3]__[local]`
 }
 
 module.exports = {
@@ -13,7 +12,7 @@ module.exports = {
     filename: 'index.js',
     path: path.join(__dirname, 'lib'),
     libraryTarget: 'umd',
-    library: ['XO', 'FormFields', 'Styles']
+    library: ['Union', 'FieldsCss']
   },
   resolve: {
     extensions: [

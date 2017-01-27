@@ -1,7 +1,8 @@
 ---
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea }': '@union/fields'
-  '* as Meta': '@union/fields/lib/meta'
+  FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
+  DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
   bsGrid: '@union/bootstrap/lib/grid'
   bsUtils: '@union/bootstrap/lib/utilities'
 
@@ -33,7 +34,7 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 
 #### Properties
 
-<PropTypesTable metadata={Meta.Field.props} />
+<PropTypesTable metadata={FieldMeta.props} />
 
 #### States
 
@@ -56,7 +57,7 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 
 #### Properties
 
-<PropTypesTable metadata={Meta.Dropdown.props} />
+<PropTypesTable metadata={DropdownMeta.props} />
 
 ### Demo
 

@@ -14,7 +14,8 @@
   "devDependencies": {},
   "dependencies": {
     "@union/colors": "^1.0.0",
+    "@union/icons": "^1.0.0",
     "@union/typography": "^1.0.0",
-    "@union/icons": "^1.0.0"
+    "css-module-builder": "^1.0.0-beta.4"
   }
 }
