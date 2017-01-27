@@ -1,25 +1,24 @@
 ---
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea }': '@union/fields'
+  packageJson: '@union/fields/package.json'
   FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
   DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
   bsGrid: '@union/bootstrap/lib/grid'
   bsUtils: '@union/bootstrap/lib/utilities'
 
-  '{ Demo, Snippet, PropTypesTable }': 'doc-components'
+  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
 ---
 
 <h1>{$props.title}</h1>
 
 ## Usage
 
-###### Install
+#### Install
 
-<Snippet lang="bash">
-npm install --save @union/fields
-</Snippet>
+<InstallSnippet packageJson={packageJson} />
 
-###### Import
+#### Import
 
 <Snippet lang="javascript">
 import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
@@ -36,9 +35,7 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 
 <PropTypesTable metadata={FieldMeta.props} />
 
-#### States
-
-##### Invalid
+#### Invalid State
 
 <Demo>
   <Field name="email" valid={false} validationMessage="Something went wrong" />

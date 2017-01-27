@@ -1,9 +1,10 @@
 ---
 $imports:
-  '{ Snippet, Demo, PropTypesTable }': 'doc-components'
+  '{ Snippet, Demo, PropTypesTable, InstallSnippet }': 'doc-components'
   PropTypesTableMetadata: '!!react-docgen!doc-components/PropTypesTable'
   SnippetsMetadata: '!!react-docgen!doc-components/Snippet'
   DemoMetadata: '!!react-docgen!doc-components/Demo'
+  InstallSnippetMetadata: '!!react-docgen!doc-components/InstallSnippet'
 ---
 
 <h1>{$props.title}</h1>
@@ -58,3 +59,19 @@ Hello Demo
 #### Properties
 
 <PropTypesTable metadata={DemoMetadata.props} exclude={["default"]} />
+
+## InstallSnippet Component
+
+<span>{InstallSnippetMetadata.description}</span>
+
+#### Demo
+
+This is a demo of the Demo component, we added a pink border to make the representation clearer.
+
+<Demo>
+  <InstallSnippet packageJson={{name: "test-package", version: "1.0.0"}} />
+</Demo>
+
+#### Properties
+
+<PropTypesTable metadata={InstallSnippetMetadata.props} exclude={["default"]} />
