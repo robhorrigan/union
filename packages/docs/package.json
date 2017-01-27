@@ -33,7 +33,6 @@
   "dependencies": {
     "@union/bootstrap": "^1.0.0",
     "@union/colors": "^1.0.0",
-    "@union/fields-css": "^1.0.0",
     "@union/fields": "^1.0.0",
     "@union/typography": "^1.0.0",
     "humanize-string": "^1.0.1",
