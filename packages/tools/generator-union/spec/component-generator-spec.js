@@ -36,14 +36,20 @@ describe('component-generator', () => {
 
       assert.fileContent('packages/components/test/src/index.js',
         new RegExp([
-          "import React from 'react';",
-          'export default function Test\\(\\) \\{',
+          "import React, { PropTypes } from 'react';",
+          'export default function Test\\(props\\) \\{',
           'return \\(',
-          '<div>',
+          '<div \\{...props\\}>',
           'Hello World',
           '</div>',
           '\\);',
-          '\\}'
+          '\\}',
+          'Test.propTypes = \\{',
+          '\\/\\*\\*',
+          '\\* Remove this propType :\\)',
+          '\\*\\/',
+          'className: PropTypes.string',
+          '};'
         ].join('\\s+'))
       );
     }));
@@ -73,25 +79,27 @@ describe('component-generator', () => {
         })
     });
 
-    it('creates an index.js file', asyncTest((...things) => {
+    it('creates a documentation file', asyncTest((...things) => {
       assert.file([
         'packages/docs/articles/foundations/test.md'
       ]);
 
       assert.fileContent( 'packages/docs/articles/foundations/test.md',
         new RegExp([
-          'imports:',
+          '\\$imports:',
           "'Test': '@union/test'",
+          "packageJson: '@union/test/package.json'",
+          "'\\{ InstallSnippet, Demo, PropTypesTable \\}': 'doc-components'",
+          "'TestMetadata': '!!react-docgen!@union/test/src/index'",
           '---',
-          '# Test',
+          '<h1>\\{\\$props\\.title\\}</h1>',
           '### Install',
-          '```',
-          'npm install --save @union/test',
-          '```',
+          '<InstallSnippet packageJson=\\{packageJson\\} />',
           '### Usage',
-          '```render jsx',
+          '<Demo>',
           '<Test />',
-          '```',
+          '</Demo>',
+          '<PropTypesTable metadata=\\{TestMetadata.props\\} />',
           '### Development',
           'To make changes to this component, go to: `./packages/components/test`.'
         ].join('\\s+'))
@@ -129,12 +137,11 @@ describe('component-generator', () => {
 
       assert.fileContent('packages/components/test/src/index.js',
         new RegExp([
-          "import React from 'react';",
+          "import React, { PropTypes } from 'react';",
           "import styles from '@union/test-css';",
-          'export default function Test\\(\\) \\{',
+          'export default function Test\\(props\\) \\{',
           'return \\(',
-          '<div className={styles.test}>',
-          '</div>',
+          '<div className={styles.test} {...props} />',
           '\\);',
           '\\}'
         ].join('\\s+'))
