@@ -1,6 +1,6 @@
 ---
 $imports:
-  '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup }': '@union/fields'
+  '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup, FormTheme }': '@union/fields'
   bsGrid: '@union/bootstrap/lib/grid'
 
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
@@ -21,14 +21,16 @@ $imports:
 #### Import
 
 <Snippet lang="javascript">
-import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
+import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/fields';
 </Snippet>
 
 
 ### Field Component
 
 <Demo>
-  <Field name="email" />
+  <FormTheme>
+    <Field name="email" />
+  </FormTheme>
 </Demo>
 
 #### Properties
@@ -44,12 +46,14 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 ### Dropdown Component
 
 <Demo>
-  <Dropdown name="Season">
-    <DropdownItem label="Winter" />
-    <DropdownItem label="Spring" />
-    <DropdownItem label="Summer" />
-    <DropdownItem label="Fall" />
-  </Dropdown>
+  <FormTheme>
+    <Dropdown name="Season">
+      <DropdownItem label="Winter" />
+      <DropdownItem label="Spring" />
+      <DropdownItem label="Summer" />
+      <DropdownItem label="Fall" isSelected={true} />
+    </Dropdown>
+  </FormTheme>
 </Demo>
 
 #### Properties
@@ -61,7 +65,7 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 <p>{FieldGroupMeta.description}</p>
 
 <Demo cssDependencies={{ bsGrid }}>
-  <div>
+  <FormTheme>
     <FieldGroup>
       <div className={bsGrid.col6}>
         <Field name="email" />
@@ -77,7 +81,7 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
         <Field name="password" />
       </div>
     </FieldGroup>
-  </div>
+  </FormTheme>
 </Demo>
 
 #### Properties
@@ -87,7 +91,7 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 ### Demo
 
 <Demo cssDependencies={{ bsGrid }}>
-  <div>
+  <FormTheme>
     <FieldGroup>
       <div className={bsGrid.col6}>
         <Field name="email" />
@@ -120,5 +124,5 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
         <Textarea name="description-1" />
       </div>
     </FieldGroup>
-  </div>
+  </FormTheme>
 </Demo>

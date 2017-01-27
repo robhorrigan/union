@@ -7,7 +7,7 @@ const cssQuery = {
 }
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.css'),
+  entry: path.resolve(__dirname, 'src', 'index.scss'),
   output: {
     filename: 'index.cssm',
     path: path.join(__dirname, 'lib'),
