@@ -9,7 +9,7 @@ const cssQuery = {
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.css'),
   output: {
-    filename: 'index.js',
+    filename: 'index.cssm',
     path: path.resolve(__dirname, 'lib'),
     libraryTarget: 'umd',
     libraryName: ['Union', '<%= moduleName %>']
