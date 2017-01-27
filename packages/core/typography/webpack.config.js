@@ -1,5 +1,5 @@
 const path = require('path');
-const [major, minor, patch] = require('./package.json').version.split(/[.-]/);
+const major = require('./package.json').version.split(/[.-]/)[0];
 
 module.exports = {
   entry: path.resolve(__dirname, 'src', 'index.scss'),
@@ -16,7 +16,7 @@ module.exports = {
       {
         test: /\.scss$/,
         loaders: [
-          `a-css?camelize&scopedNameFormat=typ-${major}_${minor}_${patch}-[hash:3]__[local]&mode=local`,
+          `a-css?camelize&scopedNameFormat=typ-${major}-[hash:3]__[local]&mode=local`,
           'postcss-loader',
           'sass'
         ]

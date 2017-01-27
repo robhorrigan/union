@@ -1,7 +1,7 @@
 const path = require('path');
-const [major, minor, patch] = require('./package.json').version.split(/[.-]/);
+const major = require('./package.json').version.split(/[.-]/)[0];
 
-const A_CSS_LOADER = `a-css?camelize&scopedNameFormat=bs-${major}_${minor}_${patch}-[hash:3]__[local]&mode=local`;
+const A_CSS_LOADER = `a-css?camelize&scopedNameFormat=bs-${major}-[hash:3]__[local]&mode=local`;
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
@@ -16,7 +16,7 @@ module.exports = {
     filename: '[name].js',
     path: path.resolve(__dirname, 'lib'),
     libraryTarget: 'umd',
-    libraryName: ['XO', 'Union', 'Bootstrap', '[name]']
+    libraryName: ['Union', 'Bootstrap', '[name]']
   },
   resolve: {
     root: [
@@ -33,12 +33,6 @@ module.exports = {
         loaders: [
           A_CSS_LOADER,
           'sass'
-        ]
-      },
-      {
-        test: /\.css$/,
-        loaders: [
-          A_CSS_LOADER
         ]
       }
     ]
