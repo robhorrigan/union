@@ -1,14 +1,13 @@
 ---
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup }': '@union/fields'
+  bsGrid: '@union/bootstrap/lib/grid'
+
+  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
   packageJson: '@union/fields/package.json'
   FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
   DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
   FieldGroupMeta: '!!react-docgen!@union/fields/src/components/FieldGroup'
-  bsGrid: '@union/bootstrap/lib/grid'
-  bsUtils: '@union/bootstrap/lib/utilities'
-
-  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
 ---
 
 <h1>{$props.title}</h1>
