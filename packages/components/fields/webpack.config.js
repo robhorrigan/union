@@ -25,6 +25,18 @@ module.exports = {
       amd: '@union/fields-css',
       root: ['Union', 'FieldsCss'],
     },
+    '@union/bootstrap/lib/grid': {
+      commonjs: '@union/bootstrap/lib/grid',
+      commonjs2: '@union/bootstrap/lib/grid',
+      amd: '@union/bootstrap/lib/grid',
+      root: ['Union', 'Bootstrap', 'grid'],
+    },
+    '@union/bootstrap/lib/utilities': {
+      commonjs: '@union/bootstrap/lib/utilities',
+      commonjs2: '@union/bootstrap/lib/utilities',
+      amd: '@union/bootstrap/lib/utilities',
+      root: ['Union', 'Bootstrap', 'utilities'],
+    },
     react: {
       commonjs: 'react',
       commonjs2: 'react',

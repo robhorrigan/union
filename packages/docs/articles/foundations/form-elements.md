@@ -1,9 +1,10 @@
 ---
 $imports:
-  '{ Field, Dropdown, DropdownItem, Textarea }': '@union/fields'
+  '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup }': '@union/fields'
   packageJson: '@union/fields/package.json'
   FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
   DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
+  FieldGroupMeta: '!!react-docgen!@union/fields/src/components/FieldGroup'
   bsGrid: '@union/bootstrap/lib/grid'
   bsUtils: '@union/bootstrap/lib/utilities'
 
@@ -56,49 +57,69 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 
 <PropTypesTable metadata={DropdownMeta.props} />
 
+### FieldGroup Component
+
+<p>{FieldGroupMeta.description}</p>
+
+<Demo cssDependencies={{ bsGrid }}>
+  <div>
+    <FieldGroup>
+      <div className={bsGrid.col6}>
+        <Field name="email" />
+      </div>
+
+      <div className={bsGrid.col6}>
+        <Field name="domain" />
+      </div>
+    </FieldGroup>
+
+    <FieldGroup>
+      <div className={bsGrid.col12}>
+        <Field name="password" />
+      </div>
+    </FieldGroup>
+  </div>
+</Demo>
+
+#### Properties
+
+<PropTypesTable metadata={FieldGroupMeta.props} />
+
 ### Demo
 
-<Demo cssDependencies={{ bsUtils, bsGrid }}>
+<Demo cssDependencies={{ bsGrid }}>
   <div>
-    <div className={bsUtils.mb3}>
-      <div className={bsGrid.row}>
-        <div className={bsGrid.col6}>
-          <Field name="email" />
-        </div>
-
-        <div className={bsGrid.col6}>
-          <Field name="domain" />
-        </div>
+    <FieldGroup>
+      <div className={bsGrid.col6}>
+        <Field name="email" />
       </div>
-    </div>
 
-    <div className={bsUtils.mb3}>
-      <div className={bsGrid.row}>
-        <div className={bsGrid.col12}>
-          <Field name="password" />
-        </div>
+      <div className={bsGrid.col6}>
+        <Field name="domain" />
       </div>
-    </div>
+    </FieldGroup>
 
-    <div className={bsUtils.mb3}>
-      <div className={bsGrid.row}>
-        <div className={bsGrid.col12}>
-          <Dropdown name="season">
-            <DropdownItem label="Winter" />
-            <DropdownItem label="Spring" />
-            <DropdownItem label="Summer" />
-            <DropdownItem label="Fall" />
-          </Dropdown>
-        </div>
+    <FieldGroup>
+      <div className={bsGrid.col12}>
+        <Field name="password" />
       </div>
-    </div>
+    </FieldGroup>
 
-    <div className={bsUtils.mb3}>
-      <div className={bsGrid.row}>
-        <div className={bsGrid.col12}>
-          <Textarea name="description-1" />
-        </div>
+    <FieldGroup>
+      <div className={bsGrid.col12}>
+        <Dropdown name="season">
+          <DropdownItem label="Winter" />
+          <DropdownItem label="Spring" />
+          <DropdownItem label="Summer" />
+          <DropdownItem label="Fall" />
+        </Dropdown>
       </div>
-    </div>
+    </FieldGroup>
+
+    <FieldGroup>
+      <div className={bsGrid.col12}>
+        <Textarea name="description-1" />
+      </div>
+    </FieldGroup>
   </div>
 </Demo>
