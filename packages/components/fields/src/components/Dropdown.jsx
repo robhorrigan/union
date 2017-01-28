@@ -1,6 +1,6 @@
 import React, { Component,  PropTypes as T } from 'react';
 import styles from '@union/fields-css';
-import humanize from 'humanize-string';
+import labelize from 'utilities/labelize';
 
 export default class Dropdown extends Component {
   static childContextTypes = {
@@ -19,7 +19,7 @@ export default class Dropdown extends Component {
      */
     value: T.string,
     /**
-     * The input's label string, defaults to `humanized` version of name propType
+     * The input's label string, default value is assumed from 'name'.
      */
     label: T.string,
     /**
@@ -49,7 +49,7 @@ export default class Dropdown extends Component {
   render() {
     const {
       name,
-      label = humanize(name),
+      label = labelize(name),
       children,
       // Remove from props
       value,

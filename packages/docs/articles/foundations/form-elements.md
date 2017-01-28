@@ -83,6 +83,12 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/field
   <Field name="address" state="valid" defaultValue="232 Boerum St." />
 </Demo>
 
+#### Disabled State
+
+<Demo>
+  <Field name="email" disabled />
+</Demo>
+
 ### Dropdown Component
 
 <Demo>

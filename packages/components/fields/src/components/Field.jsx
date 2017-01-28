@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from 'react';
-import humanize from 'humanize-string';
+import labelize from 'utilities/labelize';
 import styles from '@union/fields-css';
 
 const classMap = {
@@ -11,7 +11,7 @@ const classMap = {
 export default function Field({
   name,
   validationMessage,
-  label = humanize(name),
+  label = labelize(name),
   state = 'neutral',
   type = 'text',
   ...props
@@ -21,7 +21,7 @@ export default function Field({
   const inputClass = classMap[state];
 
   if (!inputClass) {
-    throw new Error(`${state} is not supported`);
+    throw new Error(`${state} state is not supported`);
   }
 
   return (

@@ -2,9 +2,11 @@
 @value light-blue: #eef7f8;
 
 .demo-for-gray-theme {
+  composes: py3 from '@union/bootstrap/lib/utilities';
   background-color: white;
 }
 
 .demo-for-white-theme {
+  composes: py3 from '@union/bootstrap/lib/utilities';
   background-color: light-blue;
 }

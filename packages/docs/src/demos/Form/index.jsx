@@ -12,6 +12,29 @@ import bsGrid from '@union/bootstrap/lib/grid';
 import bsUtils from '@union/bootstrap/lib/utilities';
 import styles from './styles.css';
 
+const themeClassMap = {
+  gray: styles.demoForGrayTheme,
+  white: styles.demoForWhiteTheme
+};
+
+function FormContainer({ children }) {
+  const columnClasses = [
+    bsGrid.col12,
+    bsGrid.colMd6,
+    bsUtils.justifyContentEnd
+  ].join(' ');
+
+  return (
+    <div className={bsGrid.row}>
+      <div className={columnClasses}>
+      </div>
+      <div className={columnClasses}>
+        {children}
+      </div>
+    </div>
+  );
+}
+
 export default class FormDemo extends Component {
   state = {
     theme: 'gray'
@@ -21,63 +44,77 @@ export default class FormDemo extends Component {
     this.setState({ theme });
   };
 
-  themeClass() {
-    if (this.state.theme === 'gray') {
-      return styles.demoForGrayTheme;
-    }
-
-    return styles.demoForWhiteTheme;
-  }
-
   render() {
     const { theme } = this.state;
 
-    const containerClasses = [this.themeClass(), bsUtils.py3].join(' ');
-
     return (
-      <div className={containerClasses}>
+      <div className={themeClassMap[theme]}>
         <FormTheme name={theme} className={bsGrid.container}>
-          <FieldGroup>
-            <div className={bsGrid.col12}>
-              <Dropdown name="theme" value={theme} onSelect={this._updateTheme}>
-                <DropdownItem label="gray" />
-                <DropdownItem label="white" />
-              </Dropdown>
-            </div>
-          </FieldGroup>
+          <FormContainer>
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <Dropdown name="theme" value={theme} onSelect={this._updateTheme}>
+                  <DropdownItem label="gray" />
+                  <DropdownItem label="white" />
+                </Dropdown>
+              </div>
+            </FieldGroup>
 
-          <FieldGroup>
-            <div className={bsGrid.col6}>
-              <Field name="email" state="invalid" validationMessage="Must be a valid email" defaultValue="email@email.com" />
-            </div>
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <Field
+                  name="email"
+                  state="invalid"
+                  validationMessage="Must be a valid email"
+                  defaultValue="email@email.com" />
+              </div>
+            </FieldGroup>
 
-            <div className={bsGrid.col6}>
-              <Field name="address" state="valid" defaultValue="232 Boerum St." />
-            </div>
-          </FieldGroup>
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <Field name="address" state="valid" defaultValue="232 Boerum St." />
+              </div>
+            </FieldGroup>
 
-          <FieldGroup>
-            <div className={bsGrid.col12}>
-              <Field name="password" />
-            </div>
-          </FieldGroup>
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <Field name="city" />
+              </div>
+            </FieldGroup>
 
-          <FieldGroup>
-            <div className={bsGrid.col12}>
-              <Dropdown name="season">
-                <DropdownItem label="Winter" />
-                <DropdownItem label="Spring" />
-                <DropdownItem label="Summer" />
-                <DropdownItem label="Fall" />
-              </Dropdown>
-            </div>
-          </FieldGroup>
+            <FieldGroup>
+              <div className={bsGrid.col7}>
+                <Field name="state" />
+              </div>
 
-          <FieldGroup>
-            <div className={bsGrid.col12}>
-              <Textarea name="description-1" />
-            </div>
-          </FieldGroup>
+              <div className={bsGrid.col5}>
+                <Field name="zipcode" />
+              </div>
+            </FieldGroup>
+
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <Field name="country" disabled />
+              </div>
+            </FieldGroup>
+
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <Dropdown name="wedding-season">
+                  <DropdownItem label="Winter" />
+                  <DropdownItem label="Spring" />
+                  <DropdownItem label="Summer" />
+                  <DropdownItem label="Fall" />
+                </Dropdown>
+              </div>
+            </FieldGroup>
+
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <Textarea name="optional-message" />
+              </div>
+            </FieldGroup>
+          </FormContainer>
         </FormTheme>
       </div>
     );
