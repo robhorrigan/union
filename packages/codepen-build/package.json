@@ -5,10 +5,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "dependencies": {
-    "@union/fields": "^1.0.0"
+    "@union/fields": "^1.0.0",
+    "@union/bootstrap": "^1.0.0"
   },
   "keywords": [],
   "author": "",
