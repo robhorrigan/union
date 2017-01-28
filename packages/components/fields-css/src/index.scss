@@ -1,7 +1,6 @@
 /* Static classes */
 @value ( container, field-container ) from 'styles/container';
 @value ( field-label, invalid-field, valid-field, requirements ) from 'styles/field';
-@value ( textarea-label, textarea-without-label, textarea-with-label ) from 'styles/textarea';
 @value ( dropdown-caret ) from 'styles/dropdown-field';
 @value ( dropdown-item, dropdown-item-check ) from 'styles/dropdown-item';
 @value ( group ) from 'styles/group';
@@ -13,6 +12,8 @@
   dropdown-field,
   dropdown-list,
   textarea-with-label,
+  textarea-without-label,
+  textarea-label,
   dropdown-item-is-focused,
   /* Themes */
   gray-theme,

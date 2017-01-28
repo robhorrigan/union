@@ -1,6 +1,22 @@
 @value ( gray-2 ) from 'shared/colors';
 @value ( gray-90, white, gray-95 ) from '@union/colors';
 
+@mixin theme($base, $accent) {
+  .field,
+  .dropdown-field,
+  .dropdown-list,
+  .textarea-with-label,
+  .textarea-without-label,
+  .textarea-label
+  {
+    background-color: $base;
+  }
+
+  .dropdown-item-is-focused {
+    background-color: $accent;
+  }
+}
+
 .field {
   composes: field from 'styles/field';
 }
@@ -17,26 +33,22 @@
   composes: textarea-with-label from 'styles/textarea';
 }
 
+.textarea-without-label {
+  composes: textarea-without-label from 'styles/textarea';
+}
+
+.textarea-label {
+  composes: textarea-label from 'styles/textarea';
+}
+
 .dropdown-item-is-focused {
   composes: dropdown-item-is-focused from 'styles/dropdown-item';
 }
 
 .gray-theme {
-  .field, .dropdown-field, .dropdown-list, .textarea-with-label {
-    background-color: gray-2;
-  }
-
-  .dropdown-item-is-focused {
-    background-color: gray-90;
-  }
+  @include theme(gray-2, gray-90);
 }
 
 .white-theme {
-  .field, .dropdown-field, .dropdown-list, .textarea-with-label {
-    background-color: white;
-  }
-
-  .dropdown-item-is-focused {
-    background-color: gray-95;
-  }
+  @include theme(white, gray-95);
 }

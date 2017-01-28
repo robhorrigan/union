@@ -5,7 +5,8 @@ import {
   Field,
   Dropdown,
   DropdownItem,
-  Textarea
+  Textarea,
+  TextareaWithoutLabel
 } from '@union/fields';
 
 import bsGrid from '@union/bootstrap/lib/grid';
@@ -112,6 +113,12 @@ export default class FormDemo extends Component {
             <FieldGroup>
               <div className={bsGrid.col12}>
                 <Textarea name="optional-message" />
+              </div>
+            </FieldGroup>
+
+            <FieldGroup>
+              <div className={bsGrid.col12}>
+                <TextareaWithoutLabel name="optional-message" rows="5" placeholder="Example note: Hi! Thank you so much for inviting us to your wedding. See you soon!" />
               </div>
             </FieldGroup>
           </FormContainer>
