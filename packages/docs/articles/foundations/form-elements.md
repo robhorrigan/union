@@ -8,11 +8,16 @@ $imports:
   packageJson: '@union/fields/package.json'
   FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
   DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
+  DropdownItemMeta: '!!react-docgen!@union/fields/src/components/DropdownItem'
   FieldGroupMeta: '!!react-docgen!@union/fields/src/components/FieldGroup'
   FormThemeMeta: '!!react-docgen!@union/fields/src/components/FormTheme'
+
+  FormDemo: 'demos/Form'
 ---
 
 <h1>{$props.title}</h1>
+
+<FormDemo />
 
 ## Usage
 
@@ -80,14 +85,19 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/field
       <DropdownItem label="Winter" />
       <DropdownItem label="Spring" />
       <DropdownItem label="Summer" />
-      <DropdownItem label="Fall" isSelected={true} />
+      <DropdownItem label="Fall"/>
     </Dropdown>
   </FormTheme>
 </Demo>
 
 #### Properties
 
-<PropTypesTable metadata={DropdownMeta.props} />
+##### Dropdown
+<PropTypesTable metadata={DropdownMeta.props} exclude={["default"]}/>
+
+##### DropdownItem
+<PropTypesTable metadata={DropdownItemMeta.props} exclude={["default"]}/>
+
 
 ### FieldGroup Component
 
@@ -115,43 +125,4 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/field
 
 #### Properties
 
-<PropTypesTable metadata={FieldGroupMeta.props} />
-
-### Demo
-
-<Demo cssDependencies={{ bsGrid }}>
-  <FormTheme>
-    <FieldGroup>
-      <div className={bsGrid.col6}>
-        <Field name="email" />
-      </div>
-
-      <div className={bsGrid.col6}>
-        <Field name="domain" />
-      </div>
-    </FieldGroup>
-
-    <FieldGroup>
-      <div className={bsGrid.col12}>
-        <Field name="password" />
-      </div>
-    </FieldGroup>
-
-    <FieldGroup>
-      <div className={bsGrid.col12}>
-        <Dropdown name="season">
-          <DropdownItem label="Winter" />
-          <DropdownItem label="Spring" />
-          <DropdownItem label="Summer" />
-          <DropdownItem label="Fall" />
-        </Dropdown>
-      </div>
-    </FieldGroup>
-
-    <FieldGroup>
-      <div className={bsGrid.col12}>
-        <Textarea name="description-1" />
-      </div>
-    </FieldGroup>
-  </FormTheme>
-</Demo>
+<PropTypesTable metadata={FieldGroupMeta.props} exclude={["default"]} />

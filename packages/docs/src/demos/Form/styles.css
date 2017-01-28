@@ -1,0 +1,9 @@
+@value ( white, lilac-tint-80 ) from '@union/colors';
+
+.demo-for-gray-theme {
+  background-color: white;
+}
+
+.demo-for-white-theme {
+  background-color: lilac-tint-80;
+}

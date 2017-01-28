@@ -2,8 +2,24 @@ import React, { Component, PropTypes as T } from 'react';
 import styles from '@union/fields-css';
 
 export default class DropdownItem extends Component {
+  static propTypes = {
+    /**
+     * Item label
+     */
+    label: T.string,
+    /**
+     * Value to set on top level Dropdown component. (Defaults to the value of label)
+     */
+    value: T.any
+  };
+
   static contextTypes = {
-    selectedValue: T.any
+    selectedValue: T.any,
+    updateDropdown: T.func
+  };
+
+  _onMouseDown = (event) => {
+    this.context.updateDropdown(event.target.dataset.value);
   };
 
   isSelected() {
@@ -32,7 +48,7 @@ export default class DropdownItem extends Component {
     }
 
     return (
-      <li className={className} data-value={value}>
+      <li className={className} data-value={value} onMouseDown={this._onMouseDown}>
         {label}
         <span className={styles.dropdownItemCheck} />
       </li>

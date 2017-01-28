@@ -4,7 +4,8 @@ import humanize from 'humanize-string';
 
 export default class Dropdown extends Component {
   static childContextTypes = {
-    selectedValue: T.any
+    selectedValue: T.any,
+    updateDropdown: T.func
   };
 
   static propTypes = {
@@ -24,19 +25,31 @@ export default class Dropdown extends Component {
     /**
      * Should more than likely be DropdownItem components
      */
-    children: T.arrayOf(T.node)
+    children: T.node
   };
 
+  state = {
+    value: this.props.value
+  }
+
   getChildContext() {
-    return { selectedValue: this.props.value };
+    return {
+      selectedValue: this.state.value,
+      updateDropdown: (value) => {
+        this.setState({ value });
+        this.props.onSelect(value);
+      }
+    };
   }
 
   render() {
     const {
       name,
-      value,
       label = humanize(name),
       children,
+      // Remove from props
+      value,
+      onSelect,
       ...props
     } = this.props;
 
@@ -44,7 +57,16 @@ export default class Dropdown extends Component {
 
     return (
       <div className={styles.fieldContainer}>
-        <input className={styles.dropdownField} id={id} name={name} value={value} readOnly placeholder=" " {...props} />
+        <input
+          className={styles.dropdownField}
+          id={id}
+          name={name}
+          value={this.state.value}
+          readOnly
+          placeholder=" "
+          {...props}
+        />
+
         <label className={styles.fieldLabel} htmlFor={id}>{ label }</label>
         <span className={styles.dropdownCaret} />
 

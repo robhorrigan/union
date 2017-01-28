@@ -4,15 +4,15 @@ import styles from '@union/fields-css';
 /**
  * Theme provider for the form fields.
  */
-export default function FormTheme({ children, name = 'gray', ...props }) {
-  let className = styles[`${name}Theme`];
+export default function FormTheme({ className, children, name = 'gray', ...props }) {
+  let themeClass = styles[`${name}Theme`];
 
-  if (!className) {
+  if (!themeClass) {
     throw new Error(`${name} theme is not defined`);
   }
 
   return (
-    <div className={className} {...props}>
+    <div className={[themeClass, className].join(' ')} {...props}>
       {children}
     </div>
   );
