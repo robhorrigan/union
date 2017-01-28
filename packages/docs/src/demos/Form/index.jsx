@@ -48,11 +48,11 @@ export default class FormDemo extends Component {
 
           <FieldGroup>
             <div className={bsGrid.col6}>
-              <Field name="email" />
+              <Field name="email" state="invalid" validationMessage="Must be a valid email" defaultValue="email@email.com" />
             </div>
 
             <div className={bsGrid.col6}>
-              <Field name="domain" />
+              <Field name="address" state="valid" defaultValue="232 Boerum St." />
             </div>
           </FieldGroup>
 

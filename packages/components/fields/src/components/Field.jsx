@@ -2,18 +2,25 @@ import React, { PropTypes as T } from 'react';
 import humanize from 'humanize-string';
 import styles from '@union/fields-css';
 
+const classMap = {
+  neutral: styles.field,
+  invalid: styles.invalidField,
+  valid: styles.validField
+};
+
 export default function Field({
   name,
   validationMessage,
   label = humanize(name),
-  valid = true,
+  state = 'neutral',
   ...props
 }) {
   const id = name + Date.now();
-  let inputClass = styles.field ;
 
-  if (!valid) {
-    inputClass = styles.invalidField;
+  const inputClass = classMap[state];
+
+  if (!inputClass) {
+    throw new Error(`${state} is not supported`);
   }
 
   return (
@@ -35,9 +42,9 @@ Field.propTypes = {
    */
   label: T.string,
   /**
-   * Render valid state
+   * Render state
    */
-  valid: T.bool,
+  state: T.oneOf(['neutral', 'valid', 'invalid']),
   /**
    * Validation message used when field is invalid
    */

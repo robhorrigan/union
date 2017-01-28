@@ -74,7 +74,13 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/field
 #### Invalid State
 
 <Demo>
-  <Field name="email" valid={false} validationMessage="Something went wrong" />
+  <Field name="email" state="invalid" validationMessage="Something went wrong" />
+</Demo>
+
+#### Successful State
+
+<Demo>
+  <Field name="address" state="valid" value="232 Boerum St." />
 </Demo>
 
 ### Dropdown Component
