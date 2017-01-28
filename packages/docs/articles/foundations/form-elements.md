@@ -1,16 +1,19 @@
 ---
 $imports:
-  '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup, FormTheme }': '@union/fields'
+  '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@union/fields'
   bsGrid: '@union/bootstrap/lib/grid'
   colors: '@union/colors'
 
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
   packageJson: '@union/fields/package.json'
+
   FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
   DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
   DropdownItemMeta: '!!react-docgen!@union/fields/src/components/DropdownItem'
   FieldGroupMeta: '!!react-docgen!@union/fields/src/components/FieldGroup'
   FormThemeMeta: '!!react-docgen!@union/fields/src/components/FormTheme'
+  TextareaMeta: '!!react-docgen!@union/fields/src/components/Textarea'
+  TextareaWithoutLabelMeta: '!!react-docgen!@union/fields/src/components/TextareaWithoutLabel'
 
   FormDemo: 'demos/Form'
 ---
@@ -138,3 +141,27 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/field
 #### Properties
 
 <PropTypesTable metadata={FieldGroupMeta.props} exclude={["default"]} />
+
+### Textarea Component(s)
+
+<p>{TextareaMeta.description}</p>
+
+<Demo cssDependencies={{ bsGrid }}>
+  <FormTheme>
+    <Textarea name="optional-message" />
+  </FormTheme>
+</Demo>
+
+<Demo cssDependencies={{ bsGrid }}>
+  <FormTheme>
+    <TextareaWithoutLabel name="optional-message" placeholder="Optional message" />
+  </FormTheme>
+</Demo>
+
+#### Properties
+
+###### Textarea
+<PropTypesTable metadata={TextareaMeta.props} />
+
+###### TextareaWithoutLabel
+<PropTypesTable metadata={TextareaWithoutLabelMeta.props} exclude={["default"]} />

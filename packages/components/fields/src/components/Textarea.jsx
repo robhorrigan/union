@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import labelize from 'utilities/labelize';
 import styles from '@union/fields-css';
 
@@ -13,3 +13,13 @@ export default function Textarea({ name, label = labelize(name), ...props }) {
   )
 }
 
+Textarea.propTypes = {
+  /**
+   * Used to generate the field's name, id and label
+   **/
+  name: PropTypes.string.isRequired,
+  /**
+    * Override the default label (which is derived from the name)
+    **/
+  label: PropTypes.string
+};

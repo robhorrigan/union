@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from '@union/fields-css';
 
 export default function TextareaWithoutLabel({ name, ...props }) {
@@ -11,3 +11,9 @@ export default function TextareaWithoutLabel({ name, ...props }) {
   )
 }
 
+TextareaWithoutLabel.propTypes = {
+  /**
+   * Used to generate id and name attributes
+   */
+  name: PropTypes.string.isRequired
+};
