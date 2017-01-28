@@ -15,11 +15,11 @@ import styles from './styles.css';
 export default class FormDemo extends Component {
   state = {
     theme: 'gray'
-  }
+  };
 
   _updateTheme = (theme) => {
-    this.setState({ theme })
-  }
+    this.setState({ theme });
+  };
 
   themeClass() {
     if (this.state.theme === 'gray') {
