@@ -1,7 +1,4 @@
-@value ( gray-2 ) from 'shared/colors';
-@value ( gray-90, white, gray-95 ) from '@union/colors';
-
-/* Static */
+/* Static classes */
 @value ( container, field-container ) from 'styles/container';
 @value ( field-label, invalid-field, requirements ) from 'styles/field';
 @value ( textarea-label, textarea-without-label, textarea-with-label ) from 'styles/textarea';
@@ -9,42 +6,15 @@
 @value ( dropdown-item, dropdown-item-check ) from 'styles/dropdown-item';
 @value ( group ) from 'styles/group';
 
-.field {
-  composes: field from 'styles/field';
-}
 
-.dropdown-field {
-  composes: dropdown-field from 'styles/dropdown-field';
-}
-
-.dropdown-list {
-  composes: dropdown-list from 'styles/dropdown-field';
-}
-
-.textarea-with-label {
-  composes: textarea-with-label from 'styles/textarea';
-}
-
-.dropdown-item-is-focused {
-  composes: dropdown-item-is-focused from 'styles/dropdown-item';
-}
-
-.gray-theme {
-  .field, .dropdown-field, .dropdown-list, .textarea-with-label {
-    background-color: gray-2;
-  }
-
-  .dropdown-item-is-focused {
-    background-color: gray-90;
-  }
-}
-
-.white-theme {
-  .field, .dropdown-field, .dropdown-list, .textarea-with-label {
-    background-color: white;
-  }
-
-  .dropdown-item-is-focused {
-    background-color: gray-95;
-  }
-}
+@value (
+  /* Themeble classes */
+  field,
+  dropdown-field,
+  dropdown-list,
+  textarea-with-label,
+  dropdown-item-is-focused,
+  /* Themes */
+  gray-theme,
+  white-theme
+) from 'themes';

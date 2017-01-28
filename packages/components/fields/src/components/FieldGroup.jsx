@@ -21,5 +21,5 @@ FieldGroup.propTypes = {
    * The first level children should more than likely be divs using bootstrap's grid classes.
    * The second level children should be fields.
    */
-  children: PropTypes.arrayOf(PropTypes.node)
+  children: PropTypes.node
 };

@@ -2,12 +2,14 @@
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup, FormTheme }': '@union/fields'
   bsGrid: '@union/bootstrap/lib/grid'
+  colors: '@union/colors'
 
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
   packageJson: '@union/fields/package.json'
   FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
   DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
   FieldGroupMeta: '!!react-docgen!@union/fields/src/components/FieldGroup'
+  FormThemeMeta: '!!react-docgen!@union/fields/src/components/FormTheme'
 ---
 
 <h1>{$props.title}</h1>
@@ -24,6 +26,33 @@ $imports:
 import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/fields';
 </Snippet>
 
+### FormTheme component
+
+<p>{FormThemeMeta.description}</p>
+
+<Demo cssDependencies={{ bsGrid }}>
+  <div>
+    <FormTheme>
+      <FieldGroup>
+        <div className={bsGrid.col12}>
+          <Field name="email" />
+        </div>
+      </FieldGroup>
+    </FormTheme>
+
+    <FormTheme name="white">
+      <FieldGroup>
+        <div className={bsGrid.col12}>
+          <Field name="email" />
+        </div>
+      </FieldGroup>
+    </FormTheme>
+  </div>
+</Demo>
+
+#### Properties
+
+<PropTypesTable metadata={FormThemeMeta.props} />
 
 ### Field Component
 

@@ -14,6 +14,8 @@ function parseType({ name, raw, value } = {}) {
     return raw;
   } else if (name === 'arrayOf') {
     return `${name}(${parseType(value)})`;
+  } else if (name === 'enum') {
+    return value.map((v) => JSON.stringify(v.value)).join(' | ');
   } else {
     return name;
   }
