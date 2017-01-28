@@ -13,6 +13,7 @@ export default function Field({
   validationMessage,
   label = humanize(name),
   state = 'neutral',
+  type = 'text',
   ...props
 }) {
   const id = name + Date.now();
@@ -25,7 +26,7 @@ export default function Field({
 
   return (
     <div className={styles.fieldContainer}>
-      <input className={inputClass} id={id} name={name} {...props} placeholder=" " />
+      <input type="text" className={inputClass} id={id} name={name} {...props} placeholder=" " />
       <label className={styles.fieldLabel} htmlFor={id} > { label } </label>
       <div className={styles.requirements}>{validationMessage}</div>
     </div>

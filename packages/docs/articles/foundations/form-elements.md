@@ -80,7 +80,7 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/field
 #### Successful State
 
 <Demo>
-  <Field name="address" state="valid" value="232 Boerum St." />
+  <Field name="address" state="valid" defaultValue="232 Boerum St." />
 </Demo>
 
 ### Dropdown Component

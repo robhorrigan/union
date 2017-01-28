@@ -1,9 +1,10 @@
 @value ( white, lilac-tint-80 ) from '@union/colors';
+@value light-blue: #eef7f8;
 
 .demo-for-gray-theme {
   background-color: white;
 }
 
 .demo-for-white-theme {
-  background-color: lilac-tint-80;
+  background-color: light-blue;
 }

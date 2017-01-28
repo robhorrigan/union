@@ -29,15 +29,19 @@ export default class Dropdown extends Component {
   };
 
   state = {
-    value: this.props.value
+    value: this.props.value || ''
   }
 
   getChildContext() {
     return {
       selectedValue: this.state.value,
       updateDropdown: (value) => {
+        const {
+          onSelect = () => {}
+        } = this.props;
+
         this.setState({ value });
-        this.props.onSelect(value);
+        onSelect(value);
       }
     };
   }
@@ -64,6 +68,7 @@ export default class Dropdown extends Component {
           value={this.state.value}
           readOnly
           placeholder=" "
+          type="text"
           {...props}
         />
 
