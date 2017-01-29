@@ -21,8 +21,7 @@ const themeClassMap = {
 function FormContainer({ children }) {
   const columnClasses = [
     bsGrid.col12,
-    bsGrid.colMd6,
-    bsUtils.justifyContentEnd
+    bsGrid.colMd6
   ].join(' ');
 
   return (
