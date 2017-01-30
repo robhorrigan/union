@@ -15,7 +15,7 @@ export default class Snippet extends Component {
     /**
      * Code string
      */
-    children: PropTypes.string
+    children: PropTypes.node
   };
 
   componentDidMount() {

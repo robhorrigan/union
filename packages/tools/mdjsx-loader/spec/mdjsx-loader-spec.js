@@ -54,7 +54,7 @@ a: b
 # Test
 Hello world
 
-  <Component1>
+  <Component1 prop="a/b">
     Hello world
   </Component1>
 
@@ -71,7 +71,7 @@ Hello world
 {"# Test"}
 {"Hello world"}
 {""}
-  <Component1>
+  <Component1 prop="a/b">
 {"    Hello world"}
   </Component1>
 {""}

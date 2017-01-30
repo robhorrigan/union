@@ -18,7 +18,7 @@ function NavLink({ href, children }, { router }) {
     className = customStyles.activeNavLink;
   }
 
-  return (<Link className={className} to={href}>{children}</Link>);
+  return (<Link className={className} to={"/" + href}>{children}</Link>);
 }
 
 NavLink.contextTypes = {

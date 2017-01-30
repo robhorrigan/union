@@ -1,16 +1,26 @@
 ---
 $imports:
-  '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup }': '@union/fields'
+  '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@union/fields'
   bsGrid: '@union/bootstrap/lib/grid'
+  colors: '@union/colors'
 
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
   packageJson: '@union/fields/package.json'
+
   FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
   DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
+  DropdownItemMeta: '!!react-docgen!@union/fields/src/components/DropdownItem'
   FieldGroupMeta: '!!react-docgen!@union/fields/src/components/FieldGroup'
+  FormThemeMeta: '!!react-docgen!@union/fields/src/components/FormTheme'
+  TextareaMeta: '!!react-docgen!@union/fields/src/components/Textarea'
+  TextareaWithoutLabelMeta: '!!react-docgen!@union/fields/src/components/TextareaWithoutLabel'
+
+  FormDemo: 'demos/Form'
 ---
 
 <h1>{$props.title}</h1>
+
+<FormDemo />
 
 ## Usage
 
@@ -21,14 +31,43 @@ $imports:
 #### Import
 
 <Snippet lang="javascript">
-import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
+import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/fields';
 </Snippet>
 
+### FormTheme component
+
+<p>{FormThemeMeta.description}</p>
+
+<Demo cssDependencies={{ bsGrid }}>
+  <div>
+    <FormTheme>
+      <FieldGroup>
+        <div className={bsGrid.col12}>
+          <Field name="email" />
+        </div>
+      </FieldGroup>
+    </FormTheme>
+
+    <FormTheme name="white">
+      <FieldGroup>
+        <div className={bsGrid.col12}>
+          <Field name="email" />
+        </div>
+      </FieldGroup>
+    </FormTheme>
+  </div>
+</Demo>
+
+#### Properties
+
+<PropTypesTable metadata={FormThemeMeta.props} />
 
 ### Field Component
 
 <Demo>
-  <Field name="email" />
+  <FormTheme>
+    <Field name="email" />
+  </FormTheme>
 </Demo>
 
 #### Properties
@@ -38,30 +77,49 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
 #### Invalid State
 
 <Demo>
-  <Field name="email" valid={false} validationMessage="Something went wrong" />
+  <Field name="email" state="invalid" validationMessage="Something went wrong" />
+</Demo>
+
+#### Successful State
+
+<Demo>
+  <Field name="address" state="valid" defaultValue="232 Boerum St." />
+</Demo>
+
+#### Disabled State
+
+<Demo>
+  <Field name="email" disabled />
 </Demo>
 
 ### Dropdown Component
 
 <Demo>
-  <Dropdown name="Season">
-    <DropdownItem label="Winter" />
-    <DropdownItem label="Spring" />
-    <DropdownItem label="Summer" />
-    <DropdownItem label="Fall" />
-  </Dropdown>
+  <FormTheme>
+    <Dropdown name="Season">
+      <DropdownItem label="Winter" />
+      <DropdownItem label="Spring" />
+      <DropdownItem label="Summer" />
+      <DropdownItem label="Fall"/>
+    </Dropdown>
+  </FormTheme>
 </Demo>
 
 #### Properties
 
-<PropTypesTable metadata={DropdownMeta.props} />
+##### Dropdown
+<PropTypesTable metadata={DropdownMeta.props} exclude={["default"]}/>
+
+##### DropdownItem
+<PropTypesTable metadata={DropdownItemMeta.props} exclude={["default"]}/>
+
 
 ### FieldGroup Component
 
 <p>{FieldGroupMeta.description}</p>
 
 <Demo cssDependencies={{ bsGrid }}>
-  <div>
+  <FormTheme>
     <FieldGroup>
       <div className={bsGrid.col6}>
         <Field name="email" />
@@ -77,48 +135,33 @@ import { Field, Dropdown, DropdownItem, Textarea } from '@union/fields';
         <Field name="password" />
       </div>
     </FieldGroup>
-  </div>
+  </FormTheme>
 </Demo>
 
 #### Properties
 
-<PropTypesTable metadata={FieldGroupMeta.props} />
+<PropTypesTable metadata={FieldGroupMeta.props} exclude={["default"]} />
 
-### Demo
+### Textarea Component(s)
+
+<p>{TextareaMeta.description}</p>
 
 <Demo cssDependencies={{ bsGrid }}>
-  <div>
-    <FieldGroup>
-      <div className={bsGrid.col6}>
-        <Field name="email" />
-      </div>
-
-      <div className={bsGrid.col6}>
-        <Field name="domain" />
-      </div>
-    </FieldGroup>
-
-    <FieldGroup>
-      <div className={bsGrid.col12}>
-        <Field name="password" />
-      </div>
-    </FieldGroup>
-
-    <FieldGroup>
-      <div className={bsGrid.col12}>
-        <Dropdown name="season">
-          <DropdownItem label="Winter" />
-          <DropdownItem label="Spring" />
-          <DropdownItem label="Summer" />
-          <DropdownItem label="Fall" />
-        </Dropdown>
-      </div>
-    </FieldGroup>
-
-    <FieldGroup>
-      <div className={bsGrid.col12}>
-        <Textarea name="description-1" />
-      </div>
-    </FieldGroup>
-  </div>
+  <FormTheme>
+    <Textarea name="optional-message" />
+  </FormTheme>
 </Demo>
+
+<Demo cssDependencies={{ bsGrid }}>
+  <FormTheme>
+    <TextareaWithoutLabel name="optional-message" placeholder="Optional message" />
+  </FormTheme>
+</Demo>
+
+#### Properties
+
+###### Textarea
+<PropTypesTable metadata={TextareaMeta.props} />
+
+###### TextareaWithoutLabel
+<PropTypesTable metadata={TextareaWithoutLabelMeta.props} exclude={["default"]} />

@@ -9,7 +9,8 @@ module.exports = {
   entry: './src/index.jsx',
   output: {
     filename: './index.js',
-    path: path.join(__dirname, 'build')
+    path: path.join(__dirname, 'build'),
+    publicPath: '/'
   },
   plugins: [
     new HTMLWebpackPlugin({
@@ -73,5 +74,8 @@ module.exports = {
         loaders: [ 'babel', 'mdjsx-loader' ]
       }
     ]
+  },
+  devServer: {
+    historyApiFallback: true
   }
 };

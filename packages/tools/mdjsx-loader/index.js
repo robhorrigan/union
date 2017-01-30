@@ -1,6 +1,6 @@
 const except = require('except');
 const frontMatter = require('front-matter');
-const OPENED_OR_SELF_CLOSED_COMPONENT = /^\s*<[^\/]+(:?\/)?>\s*$/;
+const OPENED_OR_SELF_CLOSED_COMPONENT = /^\s*<.+(:?\/)?>\s*$/;
 const SINGLE_LINE_COMPONENT = /^\s*<[^>]+>[^<]*<\/[^>]+>\s*$/;
 const CLOSED_COMPONENT = /^\s*<\/[^>]+>\s*$/;
 

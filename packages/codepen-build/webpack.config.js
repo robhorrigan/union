@@ -7,7 +7,7 @@ module.exports = {
     filename: 'index.js',
     path: path.resolve(__dirname, 'lib'),
     libraryTarget: 'umd',
-    library: 'Union'
+    target: 'browser'
   },
   resolve: {
     extensions: [
