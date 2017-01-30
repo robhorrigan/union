@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Typography for theknot",
   "license": "UNLICENSED",
-  "main": "lib/index.js",
+  "main": "lib/index.cssm",
   "scripts": {
     "test": "./node_modules/.bin/sass-lint -v",
     "build": "webpack",

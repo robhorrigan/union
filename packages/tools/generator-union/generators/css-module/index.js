@@ -8,7 +8,6 @@ const {
   newPagePathQuestion
 } = require('../../utils/questions');
 
-const updateDocsCssModulesManifest = require('../../utils/update-docs-css-modules-manifest');
 const writeDocumentationFiles = require('../../utils/write-documentation-files');
 const annouceNewPage = require('../../utils/announce-new-page');
 
@@ -48,10 +47,6 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
 
     for (const [from, to] of fileMapping) {
       this.fs.copyTpl(from, to, this._collectedData());
-    }
-
-    if (wantsToCreateNewPage) {
-      updateDocsCssModulesManifest(this);
     }
 
     writeDocumentationFiles(this);

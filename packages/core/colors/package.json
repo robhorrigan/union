@@ -2,7 +2,7 @@
   "name": "@union/colors",
   "version": "1.0.0",
   "description": "Colors for theknot",
-  "main": "lib/index.js",
+  "main": "lib/index.cssm",
   "scripts": {
     "test": "./node_modules/.bin/sass-lint -v",
     "build": "webpack"

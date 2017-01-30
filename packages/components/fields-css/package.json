@@ -2,7 +2,7 @@
   "name": "@union/fields-css",
   "version": "1.0.0",
   "description": "",
-  "main": "lib/index.js",
+  "main": "lib/index.cssm",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
@@ -14,7 +14,7 @@
   "devDependencies": {},
   "dependencies": {
     "@union/colors": "^1.0.0",
-    "@union/typography": "^1.0.0",
-    "@union/icons": "^1.0.0"
+    "@union/icons": "^1.0.0",
+    "@union/typography": "^1.0.0"
   }
 }

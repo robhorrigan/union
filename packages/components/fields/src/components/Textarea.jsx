@@ -1,8 +1,8 @@
-import React from 'react';
-import humanize from 'humanize-string';
+import React, { PropTypes } from 'react';
+import labelize from 'utilities/labelize';
 import styles from '@union/fields-css';
 
-export function Textarea({ name, label = humanize(name), ...props }) {
+export default function Textarea({ name, label = labelize(name), ...props }) {
   const id = name + Date.now();
 
   return (
@@ -13,10 +13,13 @@ export function Textarea({ name, label = humanize(name), ...props }) {
   )
 }
 
-export function TextareaWithoutLabel(props) {
-  return (
-    <div className={styles.container}>
-      <textarea className={styles.textareaWithoutLabel} {...props}/>
-    </div>
-  )
-}
+Textarea.propTypes = {
+  /**
+   * Used to generate the field's name, id and label
+   **/
+  name: PropTypes.string.isRequired,
+  /**
+    * Override the default label (which is derived from the name)
+    **/
+  label: PropTypes.string
+};

@@ -3,7 +3,8 @@
   coral-tint-30,
   white,
   gray-55,
-  black
+  black,
+  mint-tint-80
 ) from '@union/colors';
 
 @value ( solid-border ) from 'shared/borders';
@@ -39,9 +40,14 @@
 .invalid-field {
   composes: field;
 
-  background: coral-tint-80;
+  background-color: coral-tint-80;
   border: solid-border coral-tint-80;
   transition: all 0.2s ease-out 1.5s;
+}
+
+.valid-field {
+  composes: field;
+  background-color: mint-tint-80;
 }
 
 .requirements {

@@ -10,7 +10,6 @@ const {
   newPagePathQuestion
 } = require('../../utils/questions');
 
-const updateDocsCssModulesManifest = require('../../utils/update-docs-css-modules-manifest');
 const writeDocumentationFiles = require('../../utils/write-documentation-files');
 const annouceNewPage = require('../../utils/announce-new-page');
 
@@ -70,10 +69,6 @@ module.exports = class ComponentGenerator extends BaseGenerator {
     for (const [from, to] of fileMapping) {
       this.fs.copyTpl(from, to, collectedData);
     }
-
-    if (wantsToCreateCssModule && wantsToCreateNewPage) {
-      updateDocsCssModulesManifest(this);
-    }
   }
 
   install() {
@@ -87,10 +82,6 @@ module.exports = class ComponentGenerator extends BaseGenerator {
       const dependenciesOfDocs = [
         this.packageRootPath()
       ];
-
-      if (wantsToCreateCssModule) {
-        dependenciesOfDocs.push(this.packagesPath('components', cssModuleName))
-      }
 
       /* Save dependency in docs project */
       this.spawnCommand(npmLinkSave, dependenciesOfDocs, { cwd: this.packagesPath('docs') })

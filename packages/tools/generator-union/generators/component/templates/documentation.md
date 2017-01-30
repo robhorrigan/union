@@ -1,21 +1,24 @@
 ---
-  imports:
-    '<%= moduleName %>': '<%= packageName %>'
+$imports:
+  '<%= moduleName %>': '<%= packageName %>'
+  packageJson: '<%= packageName %>/package.json'
+  '{ InstallSnippet, Demo, PropTypesTable }': 'doc-components'
+  '<%= moduleName %>Metadata': '!!react-docgen!<%= packageName %>/src/index'
 ---
 
-# <%= documentationTitle %>
+<h1>{$props.title}</h1>
 
 ### Install
 
-```
-npm install --save <%= packageName  %>
-```
+<InstallSnippet packageJson={packageJson} />
 
 ### Usage
 
-```render jsx
-<<%= moduleName %> />
-```
+<Demo>
+  <<%= moduleName %> />
+</Demo>
+
+<PropTypesTable metadata={<%= moduleName %>Metadata.props} />
 
 ### Development
 

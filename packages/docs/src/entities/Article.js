@@ -17,7 +17,7 @@ export default class Article {
   }
 
   moduleName() {
-    return pascalize(this.title());
+    return pascalize(this.pathInfo.name);
   }
 
   title() {
@@ -26,5 +26,11 @@ export default class Article {
 
   permalink() {
     return this.attributes.permalink || this.pathInfo.relativeName;
+  }
+
+  toProps() {
+    return {
+      title: this.title()
+    }
   }
 }

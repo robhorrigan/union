@@ -1,19 +1,18 @@
 const path = require('path');
-const v = require('./package.json').version.replace(/\./g, '_');
-const webpack = require('webpack');
+const major = require('./package.json').version.split('.')[0];
 
 const cssQuery = {
   camelize: true,
-  scopedNameFormat: `ff-${v}--[hash:3]__[local]`
+  scopedNameFormat: `ff-${major}--[hash:3]__[local]`
 }
 
 module.exports = {
-  entry: path.resolve(__dirname, 'src', 'index.css'),
+  entry: path.resolve(__dirname, 'src', 'index.scss'),
   output: {
-    filename: 'index.js',
+    filename: 'index.cssm',
     path: path.join(__dirname, 'lib'),
     libraryTarget: 'umd',
-    library: ['XO', 'FormFields', 'Styles']
+    library: ['Union', 'FieldsCss']
   },
   resolve: {
     extensions: [

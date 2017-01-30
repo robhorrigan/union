@@ -1,0 +1,17 @@
+{
+  "name": "@union/codepen-build",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack"
+  },
+  "dependencies": {
+    "@union/fields": "^1.0.0",
+    "@union/bootstrap": "^1.0.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

@@ -2,7 +2,8 @@ import React from 'react';
 import { LinkGroup } from 'components/SideNav/utils';
 import {
   GettingStarted,
-  FormElements
+  FormElements,
+  DocComponents
 } from 'components/SideNav/dynamicallyGeneratedArticleLinks';
 
 export default function SideNavLinks()  {
@@ -10,6 +11,7 @@ export default function SideNavLinks()  {
     <div>
       <LinkGroup>
         <GettingStarted />
+        <DocComponents />
       </LinkGroup>
 
       <LinkGroup label="Foundations">

@@ -1,22 +1,59 @@
 import React, { Component,  PropTypes as T } from 'react';
 import styles from '@union/fields-css';
-import humanize from 'humanize-string';
+import labelize from 'utilities/labelize';
 
-export class Dropdown extends Component {
+export default class Dropdown extends Component {
   static childContextTypes = {
-    selectedValue: T.any
+    selectedValue: T.any,
+    updateDropdown: T.func
   };
 
+  static propTypes = {
+    /**
+     * Name used for input
+     */
+    name: T.string.isRequired,
+    /**
+     * Value to set on input element.
+     * This is also provided to child elements as context.selectedValue
+     */
+    value: T.string,
+    /**
+     * The input's label string, default value is assumed from 'name'.
+     */
+    label: T.string,
+    /**
+     * Should more than likely be DropdownItem components
+     */
+    children: T.node
+  };
+
+  state = {
+    value: this.props.value || ''
+  }
+
   getChildContext() {
-    return { selectedValue: this.props.value };
+    return {
+      selectedValue: this.state.value,
+      updateDropdown: (value) => {
+        const {
+          onSelect = () => {}
+        } = this.props;
+
+        this.setState({ value });
+        onSelect(value);
+      }
+    };
   }
 
   render() {
     const {
       name,
-      value,
-      label = humanize(name),
+      label = labelize(name),
       children,
+      // Remove from props
+      value,
+      onSelect,
       ...props
     } = this.props;
 
@@ -24,7 +61,17 @@ export class Dropdown extends Component {
 
     return (
       <div className={styles.fieldContainer}>
-        <input className={styles.dropdownField} id={id} name={name} value={value} readOnly placeholder=" " {...props} />
+        <input
+          className={styles.dropdownField}
+          id={id}
+          name={name}
+          value={this.state.value}
+          readOnly
+          placeholder=" "
+          type="text"
+          {...props}
+        />
+
         <label className={styles.fieldLabel} htmlFor={id}>{ label }</label>
         <span className={styles.dropdownCaret} />
 
@@ -38,41 +85,3 @@ export class Dropdown extends Component {
   }
 }
 
-export class DropdownItem extends Component {
-  static contextTypes = {
-    selectedValue: T.any
-  };
-
-  isSelected() {
-    const { value, label } = this.props;
-
-    if (this.props.isSelected) {
-      return this.props.isSelected;
-    }
-
-    if (this.context.selectedValue === (value || label)) {
-      return true;
-    }
-
-    return false;
-  }
-
-  render() {
-    let className = styles.dropdownItem;
-    const {
-      label,
-      value = label
-    } = this.props;
-
-    if (this.isSelected()) {
-      className = styles.dropdownItemIsFocused;
-    }
-
-    return (
-      <li className={className} data-value={value}>
-        {label}
-        <span className={styles.dropdownItemCheck} />
-      </li>
-    );
-  }
-}
