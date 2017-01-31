@@ -3,3 +3,7 @@ export function labelize(string) {
     return word.replace(/^(\w)/, (w) => w.toUpperCase());
   }).join(' ');
 }
+
+export function fieldId(name) {
+  return `__ff-${name}__`;
+}

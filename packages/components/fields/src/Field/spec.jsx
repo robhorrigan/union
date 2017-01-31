@@ -95,5 +95,5 @@ describe('<Field>', () => {
       expect(subject1.textContent).toEqual('Test');
       expect(subject2.textContent).toEqual('Test Case');
     });
-  })
+  });
 });

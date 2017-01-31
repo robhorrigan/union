@@ -15,21 +15,21 @@ export default class DropdownItem extends Component {
 
   static contextTypes = {
     selectedValue: T.any,
-    updateDropdown: T.func
+    updateDropdownValue: T.func
   };
 
+  value = this.props.value || this.props.label;
+
   _onMouseDown = (event) => {
-    this.context.updateDropdown(event.target.dataset.value);
+    this.context.updateDropdownValue(this.value);
   };
 
   isSelected() {
-    const { value, label } = this.props;
-
     if (this.props.isSelected) {
       return this.props.isSelected;
     }
 
-    if (this.context.selectedValue === (value || label)) {
+    if (this.context.selectedValue === this.value) {
       return true;
     }
 
@@ -38,17 +38,14 @@ export default class DropdownItem extends Component {
 
   render() {
     let className = styles.dropdownItem;
-    const {
-      label,
-      value = label
-    } = this.props;
+    const { label } = this.props;
 
     if (this.isSelected()) {
       className = styles.dropdownItemIsFocused;
     }
 
     return (
-      <li className={className} data-value={value} onMouseDown={this._onMouseDown}>
+      <li className={className} onMouseDown={this._onMouseDown}>
         {label}
         <span className={styles.dropdownItemCheck} />
       </li>

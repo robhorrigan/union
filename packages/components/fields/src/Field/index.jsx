@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from 'react';
-import { labelize } from '../utilities';
+import { labelize, fieldId } from '../utilities';
 import styles from '@union/fields-css';
 
 const classMap = {
@@ -14,7 +14,7 @@ export default function Field({
   label = labelize(name),
   state = 'neutral',
   type = 'text',
-  id = `__ff-${name}__`,
+  id = fieldId(name),
   ...props
 }) {
 

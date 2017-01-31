@@ -1,11 +1,11 @@
 import React, { Component,  PropTypes as T } from 'react';
 import styles from '@union/fields-css';
-import { labelize } from '../utilities';
+import { labelize, fieldId } from '../utilities';
 
 export default class Dropdown extends Component {
   static childContextTypes = {
     selectedValue: T.any,
-    updateDropdown: T.func
+    updateDropdownValue: T.func
   };
 
   static propTypes = {
@@ -35,7 +35,7 @@ export default class Dropdown extends Component {
   getChildContext() {
     return {
       selectedValue: this.state.value,
-      updateDropdown: (value) => {
+      updateDropdownValue: (value) => {
         const {
           onSelect = () => {}
         } = this.props;
@@ -50,14 +50,13 @@ export default class Dropdown extends Component {
     const {
       name,
       label = labelize(name),
+      id = fieldId(name),
       children,
       // Remove from props
       value,
       onSelect,
       ...props
     } = this.props;
-
-    const id = name + Date.now();
 
     return (
       <div className={styles.fieldContainer}>
