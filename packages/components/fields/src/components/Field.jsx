@@ -14,9 +14,9 @@ export default function Field({
   label = labelize(name),
   state = 'neutral',
   type = 'text',
+  id = `__ff-${name}__`,
   ...props
 }) {
-  const id = name + Date.now();
 
   const inputClass = classMap[state];
 
@@ -26,8 +26,8 @@ export default function Field({
 
   return (
     <div className={styles.fieldContainer}>
-      <input type="text" className={inputClass} id={id} name={name} {...props} placeholder=" " />
-      <label className={styles.fieldLabel} htmlFor={id} > { label } </label>
+      <input type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
+      <label className={styles.fieldLabel} htmlFor={id}>{label}</label>
       <div className={styles.requirements}>{validationMessage}</div>
     </div>
   );
