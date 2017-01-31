@@ -13,9 +13,6 @@ module.exports = {
       '',
       '.jsx',
       '.js'
-    ],
-    root: [
-      path.resolve(__dirname, 'src')
     ]
   },
   externals: {

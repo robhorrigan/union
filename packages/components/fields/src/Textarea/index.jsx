@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import labelize from 'utilities/labelize';
+import { labelize } from '../utilities';
 import styles from '@union/fields-css';
 
 export default function Textarea({ name, label = labelize(name), ...props }) {

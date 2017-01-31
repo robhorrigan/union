@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from 'react';
-import labelize from 'utilities/labelize';
+import { labelize } from '../utilities';
 import styles from '@union/fields-css';
 
 const classMap = {

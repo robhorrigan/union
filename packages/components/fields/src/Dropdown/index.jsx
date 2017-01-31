@@ -1,6 +1,6 @@
 import React, { Component,  PropTypes as T } from 'react';
 import styles from '@union/fields-css';
-import labelize from 'utilities/labelize';
+import { labelize } from '../utilities';
 
 export default class Dropdown extends Component {
   static childContextTypes = {

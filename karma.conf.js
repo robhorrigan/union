@@ -12,9 +12,6 @@ module.exports = function(config) {
           '.js',
           '.jsx',
           '.cssm'
-        ],
-        root: [
-          path.resolve(__dirname, 'packages', 'components', 'fields', 'src')
         ]
       },
       module: {
