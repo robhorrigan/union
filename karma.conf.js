@@ -1,3 +1,5 @@
+const glob = require('glob-all');
+const path = require('path');
 // Karma configuration
 // Generated on Mon Jan 30 2017 23:48:56 GMT-0500 (EST)
 
@@ -8,7 +10,11 @@ module.exports = function(config) {
         extensions: [
           '',
           '.js',
+          '.jsx',
           '.cssm'
+        ],
+        root: [
+          path.resolve(__dirname, 'packages', 'components', 'fields', 'src')
         ]
       },
       module: {
@@ -39,7 +45,7 @@ module.exports = function(config) {
 
     // list of files / patterns to load in the browser
     files: [
-      './index.js'
+      './test-index.js'
     ],
 
 
@@ -51,7 +57,7 @@ module.exports = function(config) {
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
     preprocessors: {
-      './index.js': 'webpack'
+      './test-index.js': 'webpack'
     },
 
 
