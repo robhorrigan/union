@@ -1,19 +1,8 @@
 import React, { PropTypes } from 'react';
-import styles from '@union/fields-css';
+import FieldsCss from '@union/fields-css';
 
-export default function TextareaWithoutLabel({ name, ...props }) {
-  const id = name + Date.now();
-
+export default function TextareaWithoutLabel({ ...props }) {
   return (
-    <div className={styles.fieldContainer}>
-      <textarea className={styles.textareaWithoutLabel} id={id} name={name} {...props}/>
-    </div>
+    <textarea className={FieldsCss.textareaWithoutLabel} {...props} />
   )
 }
-
-TextareaWithoutLabel.propTypes = {
-  /**
-   * Used to generate id and name attributes
-   */
-  name: PropTypes.string.isRequired
-};

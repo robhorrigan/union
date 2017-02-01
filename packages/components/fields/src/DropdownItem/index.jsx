@@ -1,53 +1,55 @@
-import React, { Component, PropTypes as T } from 'react';
-import styles from '@union/fields-css';
+import React, { Component, PropTypes } from 'react';
+import FieldsCss from '@union/fields-css';
 
 export default class DropdownItem extends Component {
   static propTypes = {
     /**
      * Item label
      */
-    label: T.string,
+    label: PropTypes.string.isRequired,
     /**
      * Value to set on top level Dropdown component. (Defaults to the value of label)
      */
-    value: T.any
+    value: PropTypes.any
   };
 
   static contextTypes = {
-    selectedValue: T.any,
-    updateDropdownValue: T.func
+    selectedValue: PropTypes.any,
+    updateDropdownValue: PropTypes.func
   };
 
-  value = this.props.value || this.props.label;
+  get value() {
+    return this.props.value || this.props.label;
+  }
 
-  _onMouseDown = (event) => {
-    this.context.updateDropdownValue(this.value);
-  };
+  get onMouseDownHandler() {
+    const {
+      updateDropdownValue = () => {}
+    } = this.context;
 
-  isSelected() {
+    return () => updateDropdownValue(this.value);
+  }
+
+  get isSelected() {
     if (this.props.isSelected) {
       return this.props.isSelected;
     }
 
-    if (this.context.selectedValue === this.value) {
-      return true;
-    }
-
-    return false;
+    return this.context.selectedValue === this.value;
   }
 
   render() {
-    let className = styles.dropdownItem;
+    let className = FieldsCss.dropdownItem;
     const { label } = this.props;
 
-    if (this.isSelected()) {
-      className = styles.dropdownItemIsFocused;
+    if (this.isSelected) {
+      className = FieldsCss.dropdownItemIsSelected;
     }
 
     return (
-      <li className={className} onMouseDown={this._onMouseDown}>
+      <li className={className} onMouseDown={this.onMouseDownHandler}>
         {label}
-        <span className={styles.dropdownItemCheck} />
+        <span className={FieldsCss.dropdownItemCheck} />
       </li>
     );
   }

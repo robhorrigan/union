@@ -1,14 +1,17 @@
 import React, { PropTypes } from 'react';
-import { labelize } from '../utilities';
-import styles from '@union/fields-css';
+import { labelize, fieldId } from '../utilities';
+import FieldsCss from '@union/fields-css';
 
-export default function Textarea({ name, label = labelize(name), ...props }) {
-  const id = name + Date.now();
-
+export default function Textarea({
+  name,
+  label = labelize(name),
+  id = fieldId(name),
+  ...props
+}) {
   return (
-    <div className={styles.fieldContainer}>
-      <textarea className={styles.textareaWithLabel} id={id} name={name} {...props}/>
-      <label className={styles.textareaLabel} htmlFor={id}>{ label }</label>
+    <div className={FieldsCss.fieldContainer}>
+      <textarea className={FieldsCss.textareaWithLabel} id={id} name={name} {...props} />
+      <label className={FieldsCss.textareaLabel} htmlFor={id}>{ label }</label>
     </div>
   )
 }

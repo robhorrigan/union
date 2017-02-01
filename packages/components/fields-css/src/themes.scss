@@ -12,7 +12,7 @@
     background-color: $base;
   }
 
-  .dropdown-item-is-focused {
+  .dropdown-item-is-selected {
     background-color: $accent;
   }
 }
@@ -41,8 +41,8 @@
   composes: textarea-label from 'styles/textarea';
 }
 
-.dropdown-item-is-focused {
-  composes: dropdown-item-is-focused from 'styles/dropdown-item';
+.dropdown-item-is-selected {
+  composes: dropdown-item-is-selected from 'styles/dropdown-item';
 }
 
 .gray-theme {
