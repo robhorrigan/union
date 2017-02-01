@@ -1,5 +1,5 @@
 {
-  "name": "@union/fields",
+  "name": "@union/doc-utils",
   "version": "1.0.0",
   "description": "",
   "main": "lib/index.js",
@@ -8,7 +8,8 @@
   "devDependencies": {},
   "dependencies": {
     "@union/bootstrap": "^1.0.0",
-    "@union/fields-css": "^1.0.0",
+    "jsx-to-string-2": "^1.0.0",
+    "prismjs": "^1.6.0",
     "react": "^15.4.1"
   }
 }
