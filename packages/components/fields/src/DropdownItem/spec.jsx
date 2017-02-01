@@ -39,7 +39,7 @@ describe('<DropdownItem>', () => {
     });
 
     describe('when value doesnt match the selectedValue from context', () => {
-      it('returns true', () => {
+      it('returns false', () => {
         const subject = mount(<DropdownItem label="test" />, {
           context: {
             selectedValue: 'anotherVal'
