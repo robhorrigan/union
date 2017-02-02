@@ -1,25 +1,6 @@
 import React, { PropTypes } from 'react';
 import bsTables from '@union/bootstrap/lib/tables';
-
-function parseType({ name, raw, value } = {}) {
-  if (name === 'shape') {
-    const nestedProps = [];
-
-    for (const prop in value) {
-      nestedProps.push(`${prop} : ${parseType(value[prop])}`);
-    }
-
-    return `${name}(${nestedProps.join(', ')})`;
-  } else if (name === 'custom') {
-    return raw;
-  } else if (name === 'arrayOf') {
-    return `${name}(${parseType(value)})`;
-  } else if (name === 'enum') {
-    return value.map((v) => v.value).join(' | ');
-  } else {
-    return name;
-  }
-}
+import { parseType } from '../utils';
 
 function TableRow({ columns = [], header = false, ...props }) {
   const columnElement = header ? 'th' : 'td';
@@ -45,8 +26,8 @@ function propTypesData({ data, name }) {
   const defaultValueString = defaultValue && defaultValue.value;
 
   return {
-    name: propName,
     description,
+    name: propName,
     type: parseType(data.type),
     default: defaultValueString
   };
