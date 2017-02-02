@@ -11,8 +11,13 @@ Short version
 ```sh
 npm install
 npm run bootstrap
+
+# Run tests
+npm test
+
 # Start dev server
 npm start
+
 # Open docs page
 npm run open
 
