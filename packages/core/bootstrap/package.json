@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bootstrap wrapped as a set of css-modules",
   "license": "UNLICENSED",
-  "main": "lib/reboot.cssm",
+  "main": "lib/tk_reboot.cssm",
   "scripts": {
     "build": "webpack",
     "prepublish": "webpack"

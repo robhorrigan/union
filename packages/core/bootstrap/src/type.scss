@@ -1,0 +1,150 @@
+@import 'global';
+@import 'vars';
+
+// Based on bootstrap/scss/type
+
+//
+// Headings
+//
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  margin-bottom: $headings-margin-bottom;
+  font-family: $headings-font-family;
+  font-weight: $headings-font-weight;
+  line-height: $headings-line-height;
+  color: $headings-color;
+}
+
+h1, .h1 {
+  @extend .tisa-med;
+  font-size: $tk-font-up-7;
+}
+h2, .h2 { font-size: $tk-font-up-6; }
+h3, .h3 { font-size: $tk-font-up-5; }
+h4, .h4 { font-size: $tk-font-up-4; }
+h5, .h5 { font-size: $tk-font-up-3; }
+h6, .h6 { font-size: $tk-font-up-2; }
+
+small,
+.small {
+  font-size: $small-font-size;
+  font-weight: $font-weight-normal;
+}
+
+mark,
+.mark {
+  padding: $mark-padding;
+  background-color: $mark-bg;
+}
+
+
+//
+// Lists
+//
+
+.list-unstyled {
+  @include list-unstyled;
+}
+
+// Inline turns list items into inline-block
+.list-inline {
+  @include list-unstyled;
+}
+.list-inline-item {
+  display: inline-block;
+
+  &:not(:last-child) {
+    margin-right: $list-inline-padding;
+  }
+}
+
+
+$font-url-prefix: "//static.xoedge.com/union/fonts/";
+$font-size-root: 16px !default;
+
+/* Included as a mixin so that $font-url-prefix can be overridden */
+@mixin tk-font-faces {
+  @font-face {
+    font-family: 'tisa';
+    src:
+      url('#{$font-url-prefix}tisa-light.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-light.woff') format('woff');
+    font-weight: 300;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'tisa';
+    src:
+      url('#{$font-url-prefix}tisa-medium.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal; }
+
+  @font-face {
+    font-family: 'tisa sans';
+    src:
+      url('#{$font-url-prefix}tisa-sans-regular.woff2') format('woff2'),
+      url('#{$font-url-prefix}tisa-sans-regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal; }
+}
+
+@include tk-font-faces;
+
+html {
+  font-size: $font-size-root;
+}
+
+p {
+  font-size: $tk-font-up-1;
+}
+
+//
+// Font scale
+//
+
+.font-up-10  { font-size: $tk-font-up-10; }
+.font-up-9   { font-size: $tk-font-up-9; }
+.font-up-8   { font-size: $tk-font-up-8; }
+.font-up-7   { font-size: $tk-font-up-7; }
+.font-up-6   { font-size: $tk-font-up-6; }
+.font-up-5   { font-size: $tk-font-up-5; }
+.font-up-4   { font-size: $tk-font-up-4; }
+.font-up-3   { font-size: $tk-font-up-3; }
+.font-up-2   { font-size: $tk-font-up-2; }
+.font-up-1   { font-size: $tk-font-up-1; }
+.font-up-0   { font-size: $font-size-root; }
+.font-down-0 { font-size: $font-size-root; }
+.font-down-1 { font-size: $tk-font-down-1; }
+.font-down-2 { font-size: $tk-font-down-2; }
+.font-down-3 { font-size: $tk-font-down-3; }
+.font-down-4 { font-size: $tk-font-down-4; }
+.font-down-5 { font-size: $tk-font-down-5; }
+
+//
+// Font faces
+//
+
+.tisa-light {
+  font-family: $font-family-serif;
+  font-weight: 300;
+}
+
+.tisa-med {
+  font-family: $font-family-serif;
+  font-weight: 500;
+}
+
+.tisa-sans {
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+}
+
+//
+// Utilities
+//
+
+.lh-header {
+  line-height: $headings-line-height;
+}

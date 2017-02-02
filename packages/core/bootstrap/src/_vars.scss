@@ -14,6 +14,9 @@ $tk-font-up-3: pow($tk-font-ratio, 3) * 1rem !default;
 $tk-font-up-2: pow($tk-font-ratio, 2) * 1rem !default;
 $tk-font-up-1: pow($tk-font-ratio, 1) * 1rem !default;
 
+$tk-font-up-0: 1rem !default;
+$tk-font-down-0: 1rem !default;
+
 $tk-font-down-1: div-x-times($tk-font-ratio, 1) * 1rem !default;
 $tk-font-down-2: div-x-times($tk-font-ratio, 2) * 1rem !default;
 $tk-font-down-3: div-x-times($tk-font-ratio, 3) * 1rem !default;
