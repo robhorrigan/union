@@ -1,49 +1,8 @@
-import React, { PropTypes } from 'react';
+import React, { PropTypes, createElement } from 'react';
 import bsTables from '@union/bootstrap/lib/tables';
 import { parseType } from '../utils';
 
-function TableRow({ columns = [], header = false, ...props }) {
-  const columnElement = header ? 'th' : 'td';
-
-  return (
-    <tr>
-      {
-        columns.map((element, key) => {
-          return React.createElement(columnElement, { key }, element);
-        })
-      }
-    </tr>
-  );
-}
-
-function propTypesData({ data, name }) {
-  const {
-    defaultValue,
-    description
-  } = data;
-
-  const propName = data.required ? `* ${name}` : name;
-  const defaultValueString = defaultValue && defaultValue.value;
-
-  return {
-    description,
-    name: propName,
-    type: parseType(data.type),
-    default: defaultValueString
-  };
-}
-
 const has = Object.prototype.hasOwnProperty;
-function propTypesDictionary(propTypesMetadata) {
-  const data = [];
-  for (const name in propTypesMetadata) {
-    if (has.call(propTypesMetadata, name)) {
-      data.push(propTypesData({ name, data: propTypesMetadata[name] }));
-    }
-  }
-
-  return data;
-}
 
 /**
  * Use this component to render a table describing a component's propTypes
@@ -52,20 +11,12 @@ export default function PropTypesTable({ metadata, exclude = [] }) {
   const shouldStay = columnName => exclude.indexOf(columnName) < 0;
   const columnsNames = ['name', 'description', 'type', 'default'].filter(shouldStay);
 
-  const tableBody = propTypesDictionary(metadata).map((propTypeMetadata, key) => {
-    const columnValues = columnsNames.map((columnName) => propTypeMetadata[columnName]);
-
-    return <TableRow columns={columnValues} key={key} />
-  });
-
   return (
     <table className={[bsTables.table, bsTables.tableInverse, bsTables.tableBordered].join(' ')}>
       <thead>
         <TableRow columns={columnsNames} header={true} />
       </thead>
-      <tbody>
-        {tableBody}
-      </tbody>
+      <PropTypesTableBody metadata={metadata} columns={columnsNames} />
     </table>
   );
 }
@@ -93,3 +44,57 @@ PropTypesTable.propTypes = {
    */
   exclude: PropTypes.arrayOf(PropTypes.string)
 }
+
+function PropTypesTableBody({ metadata, columns }) {
+  const tableBody = propTypesDictionary(metadata).map((propTypeMetadata, key) => {
+    const columnValues = columns.map((columnName) => propTypeMetadata[columnName]);
+
+    return <TableRow columns={columnValues} key={key} />
+  });
+
+  return (
+    <tbody>
+      {tableBody}
+    </tbody>
+  );
+}
+
+function TableRow({ columns = [], header = false, ...props }) {
+  const columnElement = header ? 'th' : 'td';
+  const createRowElement = (element, key) => createElement(columnElement, { key }, element);
+
+  return (
+    <tr>
+      {columns.map(createRowElement)}
+    </tr>
+  );
+}
+
+function propTypesData({ data, name }) {
+  const {
+    defaultValue,
+    description
+  } = data;
+
+  const propName = data.required ? `* ${name}` : name;
+  const defaultValueString = defaultValue && defaultValue.value;
+
+  return {
+    description,
+    name: propName,
+    type: parseType(data.type),
+    default: defaultValueString
+  };
+}
+
+function propTypesDictionary(propTypesMetadata) {
+  const data = [];
+  for (const name in propTypesMetadata) {
+    if (has.call(propTypesMetadata, name)) {
+      data.push(propTypesData({ name, data: propTypesMetadata[name] }));
+    }
+  }
+
+  return data;
+}
+
