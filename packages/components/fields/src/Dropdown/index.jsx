@@ -1,5 +1,5 @@
 import React, { Component,  PropTypes as T } from 'react';
-import styles from '@union/fields-css';
+import FieldsCss from '@union/fields-css';
 import { labelize, fieldId } from '../utilities';
 
 export default class Dropdown extends Component {
@@ -59,9 +59,9 @@ export default class Dropdown extends Component {
     } = this.props;
 
     return (
-      <div className={styles.fieldContainer}>
+      <div className={FieldsCss.fieldContainer}>
         <input
-          className={styles.dropdownField}
+          className={FieldsCss.dropdownField}
           id={id}
           name={name}
           value={this.state.value}
@@ -71,11 +71,11 @@ export default class Dropdown extends Component {
           {...props}
         />
 
-        <label className={styles.fieldLabel} htmlFor={id}>{ label }</label>
-        <span className={styles.dropdownCaret} />
+        <label className={FieldsCss.fieldLabel} htmlFor={id}>{ label }</label>
+        <span className={FieldsCss.dropdownCaret} />
 
-        <div className={styles.container}>
-          <ul className={styles.dropdownList}>
+        <div className={FieldsCss.container}>
+          <ul className={FieldsCss.dropdownList}>
             {children}
           </ul>
         </div>

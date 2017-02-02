@@ -1,11 +1,11 @@
 import React, { PropTypes as T } from 'react';
 import { labelize, fieldId } from '../utilities';
-import styles from '@union/fields-css';
+import FieldsCss from '@union/fields-css';
 
 const classMap = {
-  neutral: styles.field,
-  invalid: styles.invalidField,
-  valid: styles.validField
+  neutral: FieldsCss.field,
+  invalid: FieldsCss.invalidField,
+  valid: FieldsCss.validField
 };
 
 export default function Field({
@@ -25,10 +25,10 @@ export default function Field({
   }
 
   return (
-    <div className={styles.fieldContainer}>
+    <div className={FieldsCss.fieldContainer}>
       <input type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
-      <label className={styles.fieldLabel} htmlFor={id}>{label}</label>
-      <div className={styles.requirements}>{validationMessage}</div>
+      <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
+      <div className={FieldsCss.requirements}>{validationMessage}</div>
     </div>
   );
 }

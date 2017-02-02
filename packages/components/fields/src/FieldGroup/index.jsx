@@ -1,5 +1,4 @@
 import React, { PropTypes } from 'react';
-import styles from '@union/fields-css';
 import bsGrid from '@union/bootstrap/lib/grid';
 import bsUtils from '@union/bootstrap/lib/utilities';
 
