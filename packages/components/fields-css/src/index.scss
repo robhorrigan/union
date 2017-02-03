@@ -5,7 +5,6 @@
 @value ( dropdown-item, dropdown-item-check ) from 'styles/dropdown-item';
 @value ( group ) from 'styles/group';
 
-
 @value (
   /* Themeble classes */
   field,
@@ -14,7 +13,7 @@
   textarea-with-label,
   textarea-without-label,
   textarea-label,
-  dropdown-item-is-focused,
+  dropdown-item-is-selected,
   /* Themes */
   gray-theme,
   white-theme

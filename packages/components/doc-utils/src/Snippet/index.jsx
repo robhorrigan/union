@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react';
 import PrismJs from 'prismjs';
-import '!!imports-loader?Prism=prismjs!prismjs/components/prism-jsx';
-import '!!imports-loader?Prism=prismjs!prismjs/components/prism-bash';
+import '!!imports-loader?prismjs=>Prism!prismjs/components/prism-jsx';
+import '!!imports-loader?prismjs=>Prism!prismjs/components/prism-bash';
 
 /**
  * Use this component to render code snippets

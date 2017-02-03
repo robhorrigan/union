@@ -1,10 +1,10 @@
 ---
 $imports:
-  '{ Snippet, Demo, PropTypesTable, InstallSnippet }': 'doc-components'
-  PropTypesTableMetadata: '!!react-docgen!doc-components/PropTypesTable'
-  SnippetsMetadata: '!!react-docgen!doc-components/Snippet'
-  DemoMetadata: '!!react-docgen!doc-components/Demo'
-  InstallSnippetMetadata: '!!react-docgen!doc-components/InstallSnippet'
+  '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '@union/doc-utils'
+  PropTypesTableMetadata: '!!react-docgen!@union/doc-utils/src/PropTypesTable'
+  SnippetsMetadata: '!!react-docgen!@union/doc-utils/src/Snippet'
+  DemoMetadata: '!!react-docgen!@union/doc-utils/src/Demo'
+  InstallSnippetMetadata: '!!react-docgen!@union/doc-utils/src/InstallSnippet'
 ---
 
 <h1>{$props.title}</h1>

@@ -11,8 +11,13 @@ Short version
 ```sh
 npm install
 npm run bootstrap
+
+# Run tests
+npm test
+
 # Start dev server
 npm start
+
 # Open docs page
 npm run open
 
@@ -94,3 +99,20 @@ This generators will try to:
 - Create a new css-module package
 - Create a new documentation page
 - Link everything together
+
+### Test Driven Development
+> You have two options when running tests. The following command does a single run of all unit tests. NOTE: Make sure packages are bootstrapped before running tests.
+
+```sh
+npm test
+npm t # Works too
+```
+
+> For something more interactive, you can run this command, which will watch your files for changes and automatically run all tests. This the best way to get immediate feedback from your changes.
+
+```sh
+npm run test:watch
+```
+
+> In order to improve the test output, make sure to `focus` on the tests which you are currently working on. You do this by using [`jasmine`'s focus feature](https://jasmine.github.io/2.1/focused_specs.html).
+

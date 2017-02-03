@@ -6,7 +6,7 @@ module.exports = {
     filename: 'index.js',
     path: path.join(__dirname, 'lib'),
     libraryTarget: 'umd',
-    libraryName: ['Union', 'Fields']
+    libraryName: ['Union', 'DocUtils']
   },
   resolve: {
     extensions: [
@@ -16,9 +16,8 @@ module.exports = {
     ]
   },
   externals: {
-    '@union/fields-css': true,
-    '@union/bootstrap/lib/grid': true,
-    '@union/bootstrap/lib/utilities': true,
+    '@union/bootstrap/lib/tables': true,
+    'jsx-to-string-2': true,
     react: {
       commonjs: 'react',
       commonjs2: 'react',

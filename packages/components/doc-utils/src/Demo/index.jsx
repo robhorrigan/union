@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import jsxToString from 'jsx-to-string-2';
-import Snippet from 'doc-components/Snippet';
+import Snippet from '../Snippet';
 
 function classNameLookup(dependencies) {
   const lookup = {};

@@ -7,3 +7,4 @@ public/css
 
 packages/**/lib
 packages/demos/build
+*.log

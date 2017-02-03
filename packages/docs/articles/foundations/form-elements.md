@@ -4,16 +4,16 @@ $imports:
   bsGrid: '@union/bootstrap/lib/grid'
   colors: '@union/colors'
 
-  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': 'doc-components'
+  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '@union/doc-utils'
   packageJson: '@union/fields/package.json'
 
-  FieldMeta: '!!react-docgen!@union/fields/src/components/Field'
-  DropdownMeta: '!!react-docgen!@union/fields/src/components/Dropdown'
-  DropdownItemMeta: '!!react-docgen!@union/fields/src/components/DropdownItem'
-  FieldGroupMeta: '!!react-docgen!@union/fields/src/components/FieldGroup'
-  FormThemeMeta: '!!react-docgen!@union/fields/src/components/FormTheme'
-  TextareaMeta: '!!react-docgen!@union/fields/src/components/Textarea'
-  TextareaWithoutLabelMeta: '!!react-docgen!@union/fields/src/components/TextareaWithoutLabel'
+  FieldMeta: '!!react-docgen!@union/fields/src/Field'
+  DropdownMeta: '!!react-docgen!@union/fields/src/Dropdown'
+  DropdownItemMeta: '!!react-docgen!@union/fields/src/DropdownItem'
+  FieldGroupMeta: '!!react-docgen!@union/fields/src/FieldGroup'
+  FormThemeMeta: '!!react-docgen!@union/fields/src/FormTheme'
+  TextareaMeta: '!!react-docgen!@union/fields/src/Textarea'
+  TextareaWithoutLabelMeta: '!!react-docgen!@union/fields/src/TextareaWithoutLabel'
 
   FormDemo: 'demos/Form'
 ---
@@ -162,6 +162,3 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@union/field
 
 ###### Textarea
 <PropTypesTable metadata={TextareaMeta.props} />
-
-###### TextareaWithoutLabel
-<PropTypesTable metadata={TextareaWithoutLabelMeta.props} exclude={["default"]} />
