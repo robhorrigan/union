@@ -30,6 +30,13 @@ module.exports = function(config) {
         'react/lib/ReactContext': true
       }
     },
+    browserNoActivityTimeout: 100000000,
+    customLaunchers: {
+      ChromeWithDevTools: {
+        base: 'Chrome',
+        flags: ['--auto-open-devtools-for-tabs']
+      }
+    },
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
     basePath: '',

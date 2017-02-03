@@ -25,7 +25,7 @@
     "status": "pm2 status",
     "stop": "pm2 stop all",
     "test:watch": "karma start",
-    "test:chrome": "karma start --browsers=Chrome --single-run",
+    "test:chrome": "karma start --browsers=ChromeWithDevTools --single-run",
     "test": "karma start --single-run"
   },
   "keywords": [],
