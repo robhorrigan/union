@@ -24,7 +24,7 @@
     "start": "pm2 start $npm_package_config_process_config_file",
     "status": "pm2 status",
     "stop": "pm2 stop all",
-    "tdd": "karma start",
+    "test:watch": "karma start",
     "test": "karma start --single-run"
   },
   "keywords": [],

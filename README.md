@@ -111,7 +111,7 @@ npm t # Works too
 > For something more interactive, you can run this command, which will watch your files for changes and automatically run all tests. This the best way to get immediate feedback from your changes.
 
 ```sh
-npm run tdd
+npm run test:watch
 ```
 
 > In order to improve the test output, make sure to `focus` on the tests which you are currently working on. You do this by using [`jasmine`'s focus feature](https://jasmine.github.io/2.1/focused_specs.html).
