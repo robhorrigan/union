@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
 import Layout from 'components/Layout';
+import { Error404 } from 'components/Errors';
 import generateRoutes from 'utils/generateRoutes';
 
 function handleBookmark() {
@@ -22,6 +23,8 @@ export default function App() {
     <Router history={browserHistory} onUpdate={handleBookmark}>
       <Route path="/" component={Layout} >
         {generateRoutes()}
+
+        <Route path="*" component={Error404} />
       </Route>
     </Router>
   )
