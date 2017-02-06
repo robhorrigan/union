@@ -1,4 +1,4 @@
-@value ( black, coral-tint-80 ) from '@union/colors';
+@value ( black, coral-tint-80 ) from '@xo-union/colors';
 @value ( gray-1, gray-2 ) from 'fields/css/shared/colors';
 
 /* Borders */

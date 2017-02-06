@@ -1,4 +1,4 @@
-@value ( gray-55, gray-90, black ) from '@union/colors';
+@value ( gray-55, gray-90, black ) from '@xo-union/colors';
 
 .dropdown-item {
   composes: medium-font-size from 'fields/css/shared/fonts';
@@ -26,7 +26,7 @@
 }
 
 .dropdown-item-check {
-  composes: icon-general-checkmark-selected-state from '@union/icons';
+  composes: icon-general-checkmark-selected-state from '@xo-union/icons';
 
   display: none;
   position: absolute;

@@ -1,5 +1,5 @@
 import React, { PropTypes as T } from 'react';
-import FieldsCss from '@union/fields/css';
+import FieldsCss from '@xo-union/fields/css';
 
 /**
  * Theme provider for the form fields.

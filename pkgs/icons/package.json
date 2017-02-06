@@ -2,7 +2,7 @@
   "name": "@xo-union/icons",
   "version": "1.0.0",
   "description": "Icons for theknot",
-  "main": "css/index.cssm",
+  "main": "index.cssm",
   "license": "UNLICENSED",
   "devDependencies": {},
   "dependencies": {

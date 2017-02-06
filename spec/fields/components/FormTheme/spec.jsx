@@ -1,7 +1,7 @@
 import React from 'react';
-import FormTheme from './';
 import { mount } from 'enzyme';
-import FieldsCss from '@union/fields-css';
+import { FormTheme } from 'fields/components';
+import FieldsCss from '@xo-union/fields/css';
 
 describe('<FormTheme>', () => {
   it('sets the gray theme class by default', () => {

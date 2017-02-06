@@ -1,5 +1,5 @@
 @value ( gray-2 ) from 'fields/css/shared/colors';
-@value ( gray-90, white, gray-95 ) from '@union/colors';
+@value ( gray-90, white, gray-95 ) from '@xo-union/colors';
 
 @mixin theme($base, $accent) {
   .field,

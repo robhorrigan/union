@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Typography for theknot",
   "license": "UNLICENSED",
-  "main": "css/index.cssm",
+  "main": "index.cssm",
   "devDependencies": {},
   "dependencies": {}
 }

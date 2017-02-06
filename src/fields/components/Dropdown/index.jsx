@@ -1,5 +1,5 @@
 import React, { Component,  PropTypes as T } from 'react';
-import FieldsCss from '@union/fields/css';
+import FieldsCss from '@xo-union/fields/css';
 import { labelize, fieldId } from 'fields/utilities';
 
 export default class Dropdown extends Component {

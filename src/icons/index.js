@@ -1,5 +1,5 @@
 /* Hack to compose icon in all icon classes without actually doing it ;) */
-import styles from 'icons/css/icons';
+import styles from 'icons/icons';
 import builder from 'css-module-builder';
 
 const wrapperModule = builder.initialize(styles[0][0], styles.toString());

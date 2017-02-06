@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
-import bsGrid from '@union/bootstrap/lib/grid';
-import bsUtils from '@union/bootstrap/lib/utilities';
+import bsGrid from '@xo-union/bootstrap/grid';
+import bsUtils from '@xo-union/bootstrap/utilities';
 
 /**
  * Use this component to visually separate groups of fields

@@ -1,23 +1,25 @@
 const path = require('path');
 const externalizeRequires = require('./build-utils/externalize-requires');
-const cssRules = require('./build-utils/css-rules');
+const rules = require('./webpack/rules');
+const resolve = require('./webpack/resolve');
 
 module.exports = {
+  resolve,
   context: path.resolve(__dirname, 'src'),
   entry: {
     /* Bootstrap */
-    'bootstrap/css/grid.cssm': './bootstrap/css/grid.scss',
-    'bootstrap/css/nav.cssm': './bootstrap/css/nav.scss',
-    'bootstrap/css/reboot.cssm': './bootstrap/css/reboot.scss',
-    'bootstrap/css/tables.cssm': './bootstrap/css/tables.scss',
-    'bootstrap/css/utilities.cssm': './bootstrap/css/utilities.scss',
+    'bootstrap/grid.cssm': './bootstrap/grid.scss',
+    'bootstrap/nav.cssm': './bootstrap/nav.scss',
+    'bootstrap/reboot.cssm': './bootstrap/reboot.scss',
+    'bootstrap/tables.cssm': './bootstrap/tables.scss',
+    'bootstrap/utilities.cssm': './bootstrap/utilities.scss',
     /* Colors */
-    'colors/css/index.cssm': './colors/css/index.css',
+    'colors/index.cssm': './colors/index.css',
     /* Icons */
-    'icons/css/index.cssm': './icons/css/index.js',
+    'icons/index.cssm': './icons/index.js',
     /* Type */
-    'typography/css/index.cssm': './typography/css/index.scss',
-    'typography/css/globals.cssm': './typography/css/globals.scss',
+    'typography/index.cssm': './typography/index.scss',
+    'typography/globals.cssm': './typography/globals.scss',
     /* Fields */
     'fields/css/index.cssm': './fields/css/index.scss',
     'fields/components/index.js': './fields/components/index.js',
@@ -27,35 +29,12 @@ module.exports = {
     filename: '[name]',
     libraryTarget: 'umd'
   },
-  resolve: {
-    extensions: [
-      '.jsx',
-      '.js',
-      '.css',
-      '.scss'
-    ],
-    modules: [
-      path.resolve(__dirname, 'src'), 'node_modules'
-    ]
-  },
   externals: [
     externalizeRequires([
-      /^@union/,
+      /^@xo-union/,
       'react',
       'css-module-builder'
     ])
   ],
-  module: {
-    rules: [
-      cssRules,
-      {
-        test: /\.jsx?/,
-        use: 'babel-loader'
-      },
-      {
-        test: /\.scss/,
-        use: 'sass-loader'
-      }
-    ]
-  }
+  module: { rules }
 };

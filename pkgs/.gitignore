@@ -1,2 +1,3 @@
-/**/css/**/*.cssm
-/**/components/**/*.js
+# Only track package json files
+**
+!**/package.json

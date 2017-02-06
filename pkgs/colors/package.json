@@ -2,7 +2,7 @@
   "name": "@xo-union/colors",
   "version": "1.0.0",
   "description": "Colors for theknot",
-  "main": "css/index.cssm",
+  "main": "index.cssm",
   "author": "",
   "license": "UNLICENSED",
   "devDependencies": {},

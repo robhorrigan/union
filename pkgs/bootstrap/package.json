@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Bootstrap wrapped as a set of css-modules",
   "license": "UNLICENSED",
-  "main": "css/reboot.cssm",
+  "main": "reboot.cssm",
   "devDependencies": {},
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.4"

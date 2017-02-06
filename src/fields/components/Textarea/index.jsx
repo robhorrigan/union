@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { labelize, fieldId } from 'fields/utilities';
-import FieldsCss from '@union/fields/css';
+import FieldsCss from '@xo-union/fields/css';
 
 export default function Textarea({
   name,

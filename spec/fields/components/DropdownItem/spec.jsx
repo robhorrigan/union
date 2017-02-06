@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import DropdownItem from './';
-import FieldsCss from '@union/fields-css';
+import { DropdownItem } from 'fields/components';
+import FieldsCss from '@xo-union/fields/css';
 
 describe('<DropdownItem>', () => {
   describe('.value', () => {

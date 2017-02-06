@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import FieldsCss from '@union/fields/css';
+import FieldsCss from '@xo-union/fields/css';
 
 export default function TextareaWithoutLabel({ ...props }) {
   return (

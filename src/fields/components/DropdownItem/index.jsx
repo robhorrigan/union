@@ -1,5 +1,5 @@
 import React, { Component, PropTypes } from 'react';
-import FieldsCss from '@union/fields/css';
+import FieldsCss from '@xo-union/fields/css';
 
 export default class DropdownItem extends Component {
   static propTypes = {

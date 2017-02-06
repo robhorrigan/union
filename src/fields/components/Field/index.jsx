@@ -1,6 +1,6 @@
 import React, { PropTypes as T } from 'react';
 import { labelize, fieldId } from 'fields/utilities';
-import FieldsCss from '@union/fields/css';
+import FieldsCss from '@xo-union/fields/css';
 
 const classMap = {
   neutral: FieldsCss.field,
