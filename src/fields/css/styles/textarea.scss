@@ -1,0 +1,39 @@
+@value ( black, gray-55 ) from '@union/colors';
+@value ( spacer-x ) from 'fields/css/shared/spacing';
+@value ( font-size-medium ) from 'fields/css/shared/fonts';
+
+.textarea {
+  composes: radius-reset from 'fields/css/shared/resets';
+  composes: field-base from 'fields/css/styles/field-base.scss';
+
+  outline: 0;
+  color: black;
+  resize: none;
+
+  &::-moz-placeholder,
+  &::-ms-input-placeholder,
+  &::-webkit-input-placeholder {
+    color: gray-55;
+    font-size: font-size-medium;
+    font-weight: 300;
+  }
+}
+
+.textarea-without-label {
+  composes: textarea;
+
+  padding: 14px spacer-x 4px;
+}
+
+.textarea-with-label {
+  composes: textarea;
+
+  padding: 26px spacer-x 1px;
+}
+
+.textarea-label {
+  composes: small-label from 'fields/css/styles/label';
+
+  margin-left: 10px;
+  margin-top: 10px;
+}

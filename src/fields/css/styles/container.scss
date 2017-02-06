@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+}
+
+.field-container {
+  composes: sans-serif text-left from '@union/typography';
+  composes: container;
+
+  * {
+    box-sizing: border-box;
+  }
+}

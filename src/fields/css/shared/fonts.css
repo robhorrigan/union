@@ -1,0 +1,8 @@
+/* Font Sizes */
+@value font-size-xsmall: 10px;
+@value font-size-small: 12px;
+@value font-size-medium: 18px;
+
+.medium-font-size {
+  font-size: font-size-medium;
+}

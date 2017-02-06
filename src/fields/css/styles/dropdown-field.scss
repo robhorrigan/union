@@ -1,0 +1,60 @@
+@value black from '@union/colors';
+@value ( caret-up, caret-down ) from '@union/icons';
+@value ( spacer-x ) from 'fields/css/shared/spacing';
+@value ( black-border ) from 'fields/css/shared/borders';
+
+.dropdown-field {
+  composes: field from 'fields/css/styles/field';
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: default;
+
+  color: transparent;
+  text-shadow: 0 0 0 black;
+
+  &:not(:focus) ~ .dropdown-caret::before {
+    content: caret-down;
+  }
+
+  &:focus ~ .dropdown-caret::before {
+    content: caret-up;
+  }
+}
+
+.dropdown-caret {
+  composes: icon from '@union/icons';
+
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 15px;
+  margin-right: spacer-x;
+}
+
+.dropdown-list {
+  /*ul-reset*/
+  padding: 0;
+  margin: 0;
+  list-style: none;
+
+  display: none;
+
+  position: absolute;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+
+  border-bottom: black-border;
+  border-left: black-border;
+  border-right: black-border;
+}
+
+.dropdown-field:focus ~ * .dropdown-list {
+  display: block;
+}
+

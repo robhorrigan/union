@@ -1,0 +1,9 @@
+@import '~_shared/_bootstrap-overrides';
+@import '~bootstrap/scss/normalize';
+@import '~bootstrap/scss/reboot';
+
+/* Improve font rendering for all elements */
+* {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
