@@ -1,0 +1,12 @@
+{
+  "name": "@xo-union/colors",
+  "version": "1.0.0",
+  "description": "Colors for theknot",
+  "main": "css/index.cssm",
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {},
+  "dependencies": {
+    "css-module-builder": "^1.0.0-beta.4"
+  }
+}
