@@ -12,7 +12,7 @@ module.exports = {
     {
       name: 'Packages',
       script: './node_modules/.bin/webpack',
-      args: ['--watch']
+      args: ['--watch', '--config', 'webpack.packages.js']
     }
   ]
 };
