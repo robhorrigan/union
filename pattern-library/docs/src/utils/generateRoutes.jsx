@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, IndexRedirect } from 'react-router';
-import Article from 'entities/Article';
-import { landingPage } from '$config';
+import Article from '#docs/entities/Article';
+import { landingPage } from '$site-config';
 
 export default function generateRoutes() {
   const pageRoutes = Article.all.map(function (article, i) {

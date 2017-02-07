@@ -1,4 +1,4 @@
-const webpackConfig = require('./webpack.test.config');
+const webpackConfig = require('./webpack.test');
 
 module.exports = function karmaConfig(config) {
   config.set({

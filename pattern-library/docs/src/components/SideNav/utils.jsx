@@ -8,17 +8,13 @@ import type from '@xo-union/typography';
 import customStyles from './styles.css';
 
 function NavLink({ href, children }, { router }) {
-  /* Create a link element to normalize the given href */
-  const link = document.createElement('a');
-  link.href = href;
-
   let className = bsNav.navLink;
 
-  if (link.pathname === router.location.pathname) {
+  if (href === router.location.pathname) {
     className = customStyles.activeNavLink;
   }
 
-  return (<Link className={className} to={"/" + href}>{children}</Link>);
+  return (<Link className={className} to={href}>{children}</Link>);
 }
 
 NavLink.contextTypes = {

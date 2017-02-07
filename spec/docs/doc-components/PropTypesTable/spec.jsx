@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import PropTypesTable from '#/doc-components/PropTypesTable';
+import PropTypesTable from '#docs/doc-components/PropTypesTable';
 
 const map = Array.prototype.map;
 

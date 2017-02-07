@@ -1,10 +1,10 @@
 ---
 $imports:
-  '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '@xo-union/doc-components'
-  PropTypesTableMetadata: '!!react-docgen-loader!#/doc-components/PropTypesTable'
-  SnippetsMetadata:       '!!react-docgen-loader!#/doc-components/Snippet'
-  DemoMetadata:           '!!react-docgen-loader!#/doc-components/Demo'
-  InstallSnippetMetadata: '!!react-docgen-loader!#/doc-components/InstallSnippet'
+  '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
+  PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'
+  SnippetsMetadata:       '!!react-docgen-loader!#docs/doc-components/Snippet'
+  DemoMetadata:           '!!react-docgen-loader!#docs/doc-components/Demo'
+  InstallSnippetMetadata: '!!react-docgen-loader!#docs/doc-components/InstallSnippet'
 ---
 
 <h1>{$props.title}</h1>

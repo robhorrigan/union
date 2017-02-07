@@ -25,7 +25,7 @@ export default class Article {
   }
 
   permalink() {
-    return this.attributes.permalink || this.pathInfo.relativeName;
+    return '/' + (this.attributes.permalink || this.pathInfo.relativeName);
   }
 
   toProps() {

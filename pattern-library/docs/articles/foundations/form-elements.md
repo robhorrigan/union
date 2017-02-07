@@ -3,7 +3,7 @@ $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/fields'
   bsGrid: '@xo-union/bootstrap/grid'
 
-  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '@xo-union/doc-components'
+  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
   packageJson: '@xo-union/fields/package.json'
 
   FieldMeta:                '!!react-docgen-loader!#/fields/components/Field'
@@ -14,7 +14,7 @@ $imports:
   TextareaMeta:             '!!react-docgen-loader!#/fields/components/Textarea'
   TextareaWithoutLabelMeta: '!!react-docgen-loader!#/fields/components/TextareaWithoutLabel'
 
-  FormDemo: 'demos/Form'
+  FormDemo: '#docs/demos/Form'
 ---
 
 <h1>{$props.title}</h1>

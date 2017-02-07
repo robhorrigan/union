@@ -1,38 +1,29 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const resolve = require('./webpack/resolve');
 
-const ARTICLES_DIR_CONFIG_PATH = require.resolve('./articles-directory.config.json');
+const DIRECTORY_LOADER = require.resolve('./packages/tools/directory-loader');
+const MDJSX_LOADER = require.resolve('./packages/tools/mdjsx-loader');
+
+const patternDocsPath = path.resolve.bind(null, __dirname, 'pattern-library', 'docs');
+const ARTICLES_DIR_CONFIG_PATH = patternDocsPath('articles-directory.config.json');
+
 
 module.exports = {
-  context: __dirname,
+  context: patternDocsPath(),
   entry: './src/index.jsx',
   output: {
     filename: './index.js',
-    path: path.join(__dirname, 'build'),
+    path: patternDocsPath('build'),
     publicPath: '/'
   },
   plugins: [
     new HTMLWebpackPlugin({
-      template: path.resolve(__dirname, 'src', 'index.html'),
+      template: patternDocsPath('src', 'index.html'),
       filename: './index.html'
     })
   ],
-  resolve: {
-    extensions: [
-      '.js',
-      '.jsx',
-      '.cssm'
-    ],
-    modules: [
-      path.resolve(__dirname, 'src'), 'node_modules'
-    ],
-    alias: {
-      '@xo-union': path.resolve(__dirname, '..', 'pkgs'),
-      '#': path.resolve(__dirname, '..', 'src'),
-      '$articles': ARTICLES_DIR_CONFIG_PATH,
-      '$config': require.resolve('./site.config.json')
-    }
-  },
+  resolve: resolve.testAndDocs,
   module: {
     rules: [
       {
@@ -42,7 +33,7 @@ module.exports = {
          * directory config file name
          * */
         test: ARTICLES_DIR_CONFIG_PATH,
-        use: 'directory-loader'
+        use: DIRECTORY_LOADER
       },
       {
         test: /\.cssm?$/,
@@ -82,7 +73,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: [ 'babel-loader', 'mdjsx-loader' ]
+        use: [ 'babel-loader', MDJSX_LOADER ]
       }
     ]
   },

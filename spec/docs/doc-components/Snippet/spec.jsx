@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Snippet from '#/doc-components/Snippet';
+import Snippet from '#docs/doc-components/Snippet';
 import Prism from 'prismjs';
 
 describe('<Snippet>', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import InstallSnippet from '#/doc-components/InstallSnippet';
-import Snippet from '#/doc-components/Snippet';
+import InstallSnippet from '#docs/doc-components/InstallSnippet';
+import Snippet from '#docs/doc-components/Snippet';
 
 describe('<InstallSnippet>', () => {
   it('renders install instructions', () => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import SideNavLinks from 'components/SideNav/links';
+import SideNavLinks from '#docs/components/SideNav/links';
 
 /* Style dependencies */
 import bsUtils from '@xo-union/bootstrap/utilities';

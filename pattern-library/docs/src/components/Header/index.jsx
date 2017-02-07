@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from 'images/tk-logo.svg';
+import logo from '#docs/images/tk-logo.svg';
 import styles from './styles.css';
 import bsUtils from '@xo-union/bootstrap/utilities';
 

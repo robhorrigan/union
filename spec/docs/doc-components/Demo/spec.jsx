@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Demo from '#/doc-components/Demo';
-import Snippet from '#/doc-components/Snippet';
+import Demo from '#docs/doc-components/Demo';
+import Snippet from '#docs/doc-components/Snippet';
 
 describe('<Demo>', () => {
   const TestComponent = () => <div />;

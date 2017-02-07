@@ -1,7 +1,7 @@
 import React from 'react';
-import Article from 'entities/Article';
+import Article from '#docs/entities/Article';
 
-import { NavItem } from 'components/SideNav/utils';
+import { NavItem } from '#docs/components/SideNav/utils';
 
 Article.all.forEach((article) => {
   exports[article.moduleName()] = function ({ label = article.title() }) {

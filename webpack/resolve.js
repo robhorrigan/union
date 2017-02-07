@@ -1,8 +1,9 @@
+const extend = require('extend');
 const path = require('path');
 
-const projectSourceRoot = path.resolve(__dirname, '..', 'pattern-library', 'src');
+const patternLibPath = path.resolve.bind(null, __dirname, '..', 'pattern-library');
 
-module.exports = {
+exports.default = {
   extensions: [
     '.jsx',
     '.js',
@@ -12,6 +13,18 @@ module.exports = {
   ],
   alias: {
     /* Facilitate making references to files in the source root */
-    '#': projectSourceRoot
+    '#': patternLibPath('src')
   }
 };
+
+exports.testAndDocs = extend(true, {
+  alias: {
+    /* Allow package references to resolve correctly */
+    '@xo-union': patternLibPath('pkgs'),
+    /* Facilitate making references to docs src */
+    '#docs': patternLibPath('docs', 'src'),
+    /* Facilitate making references to articles and config in docs app */
+    '$articles': patternLibPath('docs', 'articles-directory.config.json'),
+    '$site-config': patternLibPath('docs', 'site.config.json')
+  }
+}, exports.default);

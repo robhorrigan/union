@@ -1,6 +1,6 @@
 import React, { PropTypes, createElement } from 'react';
 import bsTables from '@xo-union/bootstrap/tables';
-import { parseType } from '#/doc-components/utilities';
+import { parseType } from '#docs/doc-components/utilities';
 
 const has = Object.prototype.hasOwnProperty;
 

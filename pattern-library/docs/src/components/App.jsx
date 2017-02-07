@@ -1,8 +1,8 @@
 import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
-import Layout from 'components/Layout';
-import generateRoutes from 'utils/generateRoutes';
+import Layout from '#docs/components/Layout';
+import generateRoutes from '#docs/utils/generateRoutes';
 
 function handleBookmark() {
   const hash = window.location.hash;

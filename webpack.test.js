@@ -4,12 +4,7 @@ const rules = require('./webpack/rules');
 const resolve = require('./webpack/resolve');
 
 module.exports = {
-  resolve: extend(true, {
-    alias: {
-      /* Allow package references to be resolved correctly */
-      '@xo-union': path.resolve(__dirname, 'pattern-library', 'pkgs')
-    }
-  }, resolve),
+  resolve: resolve.testAndDocs,
   module: { rules },
   externals: {
     'cheerio': 'window',

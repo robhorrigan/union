@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import Snippet from '#/doc-components/Snippet';
+import Snippet from '#docs/doc-components/Snippet';
 
 /**
  * Use this component to render install instructions

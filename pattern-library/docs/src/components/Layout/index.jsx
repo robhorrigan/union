@@ -1,6 +1,6 @@
 import React from 'react';
-import Header from 'components/Header';
-import SideNav from 'components/SideNav';
+import Header from '#docs/components/Header';
+import SideNav from '#docs/components/SideNav';
 
 import styles from './styles.css';
 import bsGrid from '@xo-union/bootstrap/grid';
