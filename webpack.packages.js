@@ -26,7 +26,7 @@ module.exports = {
     'fields/components/index.js': './fields/components/index.js',
   },
   output: {
-    path: path.join(__dirname, 'pattern-library', 'pkgs'),
+    path: path.join(__dirname, 'packages', 'pattern-library'),
     filename: '[name]',
     libraryTarget: 'umd'
   },

@@ -2,6 +2,7 @@ const extend = require('extend');
 const path = require('path');
 
 const patternLibPath = path.resolve.bind(null, __dirname, '..', 'pattern-library');
+const packagesPath = path.resolve.bind(null, __dirname, '..', 'packages');
 
 exports.default = {
   extensions: [
@@ -20,7 +21,7 @@ exports.default = {
 exports.testAndDocs = extend(true, {
   alias: {
     /* Allow package references to resolve correctly */
-    '@xo-union': patternLibPath('pkgs'),
+    '@xo-union': packagesPath('pattern-library'),
     /* Facilitate making references to docs src */
     '#docs': patternLibPath('docs', 'src'),
     /* Facilitate making references to articles and config in docs app */
