@@ -1,6 +1,6 @@
 import React, { PropTypes } from 'react';
 import { mount } from 'enzyme';
-import { Dropdown } from 'fields/components';
+import { Dropdown } from '#/fields/components';
 
 describe('<Dropdown>', () => {
   describe('input', () => {

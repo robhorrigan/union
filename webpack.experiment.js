@@ -5,11 +5,14 @@ const resolve = require('./webpack/resolve');
 
 module.exports = {
   resolve,
-  context: path.resolve(__dirname, 'src'),
+  context: path.resolve(__dirname, 'pattern-library', 'src'),
   entry: {
+    /* Documentation only components */
+    'doc-components/index.js': './doc-components/index.js',
     /* Bootstrap */
     'bootstrap/grid.cssm': './bootstrap/grid.scss',
     'bootstrap/nav.cssm': './bootstrap/nav.scss',
+    'bootstrap/navbar.cssm': './bootstrap/navbar.scss',
     'bootstrap/reboot.cssm': './bootstrap/reboot.scss',
     'bootstrap/tables.cssm': './bootstrap/tables.scss',
     'bootstrap/utilities.cssm': './bootstrap/utilities.scss',
@@ -25,7 +28,7 @@ module.exports = {
     'fields/components/index.js': './fields/components/index.js',
   },
   output: {
-    path: path.join(__dirname, 'pkgs'),
+    path: path.join(__dirname, 'pattern-library', 'pkgs'),
     filename: '[name]',
     libraryTarget: 'umd'
   },

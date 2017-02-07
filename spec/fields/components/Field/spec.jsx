@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Field } from 'fields/components';
+import { Field } from '#/fields/components';
 import FieldCss from '@xo-union/fields/css';
 
 describe('<Field>', () => {

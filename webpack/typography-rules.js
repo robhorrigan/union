@@ -1,7 +1,7 @@
 const cssByebye = require('css-byebye');
 
-const pureModulePath = require.resolve('../src/typography/index.scss');
-const globalsPath = require.resolve('../src/typography/globals.scss');
+const pureModulePath = require.resolve('../pattern-library/src/typography/index.scss');
+const globalsPath = require.resolve('../pattern-library/src/typography/globals.scss');
 
 function useEntryBuilder(rulesToRemove) {
   return {

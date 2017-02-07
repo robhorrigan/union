@@ -1,12 +1,13 @@
 const path = require('path');
+const extend = require('extend');
 const rules = require('./webpack/rules');
 const resolve = require('./webpack/resolve');
 
 module.exports = {
-  resolve: Object.assign({
+  resolve: extend(true, {
     alias: {
       /* Allow package references to be resolved correctly */
-      '@xo-union': path.resolve(__dirname, 'pkgs')
+      '@xo-union': path.resolve(__dirname, 'pattern-library', 'pkgs')
     }
   }, resolve),
   module: { rules },

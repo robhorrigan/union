@@ -1,9 +1,0 @@
-{
-  "name": "@xo-union/typography",
-  "version": "1.0.0",
-  "description": "Typography for theknot",
-  "license": "UNLICENSED",
-  "main": "index.cssm",
-  "devDependencies": {},
-  "dependencies": {}
-}

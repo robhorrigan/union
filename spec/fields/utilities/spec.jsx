@@ -1,4 +1,4 @@
-import { labelize, fieldId } from 'fields/utilities';
+import { labelize, fieldId } from '#/fields/utilities';
 
 describe('utils', () => {
   describe('.labelize', () => {

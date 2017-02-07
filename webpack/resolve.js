@@ -1,5 +1,7 @@
 const path = require('path');
 
+const projectSourceRoot = path.resolve(__dirname, '..', 'pattern-library', 'src');
+
 module.exports = {
   extensions: [
     '.jsx',
@@ -8,7 +10,8 @@ module.exports = {
     '.scss',
     '.cssm'
   ],
-  modules: [
-    path.resolve(__dirname, '..', 'src'), 'node_modules'
-  ]
+  alias: {
+    /* Facilitate making references to files in the source root */
+    '#': projectSourceRoot
+  }
 };
