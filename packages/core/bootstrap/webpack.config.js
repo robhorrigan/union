@@ -5,7 +5,7 @@ const A_CSS_LOADER = `a-css?camelize&scopedNameFormat=bs-${major}-[hash:3]__[loc
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    reboot: './reboot.scss',
+    tk_reboot: './tk_reboot.scss',
     grid: './grid.scss',
     navbar: './navbar.scss',
     nav: './nav.scss',

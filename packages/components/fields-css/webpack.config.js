@@ -26,7 +26,6 @@ module.exports = {
     ]
   },
   externals: {
-    "@union/typography": true,
     "@union/icons": true,
     "@union/colors": true,
     "css-module-builder": true

@@ -13,8 +13,8 @@
   "license": "ISC",
   "devDependencies": {},
   "dependencies": {
+    "@union/bootstrap": "^1.0.0",
     "@union/colors": "^1.0.0",
-    "@union/icons": "^1.0.0",
-    "@union/typography": "^1.0.0"
+    "@union/icons": "^1.0.0"
   }
 }
