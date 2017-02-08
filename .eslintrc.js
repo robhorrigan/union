@@ -14,7 +14,8 @@ module.exports = {
     "react",
     "jsx-a11y",
     "import",
-    "jasmine"
+    "jasmine",
+    "json"
   ],
   rules: {
     'comma-dangle': "off",

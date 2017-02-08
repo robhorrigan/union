@@ -2,7 +2,7 @@
   "lerna": "2.0.0-beta.31",
   "packages": [
     "packages/tools/*",
-    "packages/pattern-library/*",
+    "packages/pattern-library/*"
   ],
   "version": "independent"
 }
