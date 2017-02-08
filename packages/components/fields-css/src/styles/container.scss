@@ -3,7 +3,7 @@
 }
 
 .field-container {
-  composes: text-left from '@union/bootstrap/lib/utilities';
+  composes: text-left from '@union/bootstrap/src/utilities';
   composes: container;
 
   * {
