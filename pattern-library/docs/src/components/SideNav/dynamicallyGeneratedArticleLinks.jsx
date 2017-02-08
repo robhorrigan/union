@@ -1,10 +1,18 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import Article from '#docs/entities/Article';
 
 import { NavItem } from '#docs/components/SideNav/utils';
 
+const propTypes = {
+  label: PropTypes.string
+};
+
 Article.all.forEach((article) => {
-  exports[article.moduleName()] = function ({ label = article.title() }) {
-    return <NavItem href={article.permalink()}> {label} </NavItem>
+  function Component({ label = article.title() }) {
+    return <NavItem href={article.permalink()}>{label}</NavItem>;
   }
+
+  Component.propTypes = propTypes;
+
+  exports[article.moduleName()] = Component;
 });

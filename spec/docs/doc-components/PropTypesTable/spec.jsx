@@ -5,7 +5,7 @@ import PropTypesTable from '#docs/doc-components/PropTypesTable';
 const map = Array.prototype.map;
 
 function textContentForEach(nodes) {
-  return map.call(nodes, (n) => n.textContent);
+  return map.call(nodes, n => n.textContent);
 }
 
 describe('<PropTypesTable>', () => {
@@ -29,7 +29,7 @@ describe('<PropTypesTable>', () => {
 
     describe('when attributes are excluded', () => {
       it('removes them from the header', () => {
-        const subject = mount(<PropTypesTable metadata={metadataMock} exclude={["default"]} />);
+        const subject = mount(<PropTypesTable metadata={metadataMock} exclude={['default']} />);
         const columns = textContentForEach(subject.find('th').nodes);
 
         expect(columns).toEqual(['name', 'description', 'type']);
@@ -47,7 +47,7 @@ describe('<PropTypesTable>', () => {
 
     describe('when attributes are excluded', () => {
       it('removes them from the rows', () => {
-        const subject = mount(<PropTypesTable metadata={metadataMock} exclude={["default"]} />);
+        const subject = mount(<PropTypesTable metadata={metadataMock} exclude={['default']} />);
         const columns = textContentForEach(subject.find('td').nodes);
 
         expect(columns).toEqual(['prop1', 'A Special PropType', 'string']);

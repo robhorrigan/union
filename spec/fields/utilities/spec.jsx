@@ -10,7 +10,7 @@ describe('utils', () => {
 
   describe('.fieldId', () => {
     it('creates a unique-ish id', () => {
-      expect(fieldId('test')).toEqual('__ff-test__')
+      expect(fieldId('test')).toEqual('__ff-test__');
     });
   });
 });

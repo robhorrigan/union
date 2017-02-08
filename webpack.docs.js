@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const resolve = require('./webpack/resolve');
+const cssRules = require('./webpack/css-rules').docs;
 
 const DIRECTORY_LOADER = require.resolve('./packages/tools/directory-loader');
 const MDJSX_LOADER = require.resolve('./packages/tools/mdjsx-loader');
@@ -11,7 +12,7 @@ const ARTICLES_DIR_CONFIG_PATH = patternDocsPath('articles-directory.config.json
 
 module.exports = {
   context: patternDocsPath(),
-  entry: './src/index.jsx',
+  entry: ['prismjs', './src/index.jsx'],
   output: {
     filename: './index.js',
     path: patternDocsPath('build'),
@@ -26,6 +27,7 @@ module.exports = {
   resolve: resolve.testAndDocs,
   module: {
     rules: [
+      cssRules,
       {
         /*
          * Directory loader should be closer to the top since it doesn't do any parsing
@@ -36,19 +38,6 @@ module.exports = {
         use: DIRECTORY_LOADER
       },
       {
-        test: /\.cssm?$/,
-        use: 'style-loader'
-      },
-      {
-        test: /\.css$/,
-        use: {
-          loader: 'a-css-loader',
-          options: {
-            camelize: true
-          }
-        }
-      },
-      {
         test: /\.jsx?$/,
         use: 'babel-loader',
         exclude: /node_modules/
@@ -57,7 +46,7 @@ module.exports = {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
-            loader:'file-loader',
+            loader: 'file-loader',
             options: {
               hash: 'sha512',
               digest: 'hex',
@@ -73,7 +62,7 @@ module.exports = {
       },
       {
         test: /\.md$/,
-        use: [ 'babel-loader', MDJSX_LOADER ]
+        use: ['babel-loader', MDJSX_LOADER]
       }
     ]
   },

@@ -17,7 +17,6 @@ export default function Field({
   id = fieldId(name),
   ...props
 }) {
-
   const inputClass = classMap[state];
 
   if (!inputClass) {
@@ -49,5 +48,13 @@ Field.propTypes = {
   /**
    * Validation message used when field is invalid
    */
-  validationMessage: T.string
+  validationMessage: T.string,
+  /**
+   * The input type
+   */
+  type: T.string,
+  /**
+   * Override the id which is derived from the name
+   */
+  id: T.string
 };

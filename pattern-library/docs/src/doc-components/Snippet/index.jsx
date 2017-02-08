@@ -1,7 +1,9 @@
+import 'prismjs/components/prism-jsx';
+import 'prismjs/components/prism-bash';
+
 import React, { Component, PropTypes } from 'react';
 import PrismJs from 'prismjs';
-import '!!imports-loader?prismjs=>Prism!prismjs/components/prism-jsx';
-import '!!imports-loader?prismjs=>Prism!prismjs/components/prism-bash';
+import styles from './styles';
 
 /**
  * Use this component to render code snippets
@@ -33,11 +35,11 @@ export default class Snippet extends Component {
     } = this.props;
 
     return (
-      <pre>
-        <code className={`language-${lang}`} ref={(el) => this.codeTag = el}>
+      <pre className={styles.snippet}>
+        <code className={`language-${lang}`} ref={(element) => { this.codeTag = element; }}>
           {children}
         </code>
       </pre>
-    )
+    );
   }
 }

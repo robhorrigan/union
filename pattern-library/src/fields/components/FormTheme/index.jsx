@@ -5,7 +5,7 @@ import FieldsCss from '@xo-union/fields/css';
  * Theme provider for the form fields.
  */
 export default function FormTheme({ name = 'gray', className, children, ...props }) {
-  let themeClass = FieldsCss[`${name}Theme`];
+  const themeClass = FieldsCss[`${name}Theme`];
 
   return (
     <div className={[themeClass, className].join(' ')} {...props}>
@@ -18,9 +18,17 @@ FormTheme.propTypes = {
   /**
    * Name of theme
    */
-  name: T.oneOf(['white', 'gray']),
+  name: T.oneOf(['white', 'gray']).isRequired,
   /**
    * Form elements
    */
-  children: T.node
+  children: T.node.isRequired,
+  /**
+   * Class to append to class list
+   */
+  className: T.string
+};
+
+FormTheme.defaultProps = {
+  className: ''
 };

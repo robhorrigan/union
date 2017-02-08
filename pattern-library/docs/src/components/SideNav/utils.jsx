@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import { Link } from 'react-router';
 
 /* Style dependencies */
@@ -17,8 +17,13 @@ function NavLink({ href, children }, { router }) {
   return (<Link className={className} to={href}>{children}</Link>);
 }
 
+NavLink.propTypes = {
+  href: PropTypes.string.isRequired,
+  children: PropTypes.node.isRequired
+};
+
 NavLink.contextTypes = {
-  router: React.PropTypes.any
+  router: PropTypes.any
 };
 
 export function LinkGroup({ children, label }) {
@@ -33,6 +38,11 @@ export function LinkGroup({ children, label }) {
   );
 }
 
+LinkGroup.propTypes = {
+  children: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired
+};
+
 export function NavItem({ children, href }) {
   return (
     <li className={bsNav.navItem}>
@@ -40,3 +50,8 @@ export function NavItem({ children, href }) {
     </li>
   );
 }
+
+NavItem.propTypes = {
+  children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired
+};

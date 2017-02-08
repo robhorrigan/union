@@ -21,7 +21,7 @@ describe('<DropdownItem>', () => {
   describe('.isSelected', () => {
     describe('when isSelected prop is true', () => {
       it('returns true', () => {
-        const subject = mount(<DropdownItem label="test" isSelected />)
+        const subject = mount(<DropdownItem label="test" isSelected />);
         expect(subject.instance().isSelected).toBe(true);
       });
     });
@@ -78,7 +78,7 @@ describe('<DropdownItem>', () => {
   });
 
   describe('when item is not selected', () => {
-    it('uses the selected item class', () => {
+    it('does not use the selected item class', () => {
       const subject = mount(<DropdownItem label="test-value" />);
       const li = subject.find('li').node;
 

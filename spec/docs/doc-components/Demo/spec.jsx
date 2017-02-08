@@ -13,7 +13,7 @@ describe('<Demo>', () => {
   });
 
   it('creates a code snippet from the child component', () => {
-    const subject = mount(<Demo><TestComponent className="random-string"/></Demo>);
+    const subject = mount(<Demo><TestComponent className="random-string" /></Demo>);
 
     const snippet = subject.find(Snippet);
     expect(snippet.text()).toBe('<TestComponent className="random-string" />');
@@ -30,7 +30,7 @@ describe('<Demo>', () => {
 
       const subject = mount(
         <Demo cssDependencies={cssDependencies}>
-          <TestComponent className="random-string"/>
+          <TestComponent className="random-string" />
         </Demo>
       );
 
@@ -42,8 +42,8 @@ describe('<Demo>', () => {
   describe('propOverrides', () => {
     it('allows other props to be overriden in snippet', () => {
       const subject = mount(
-        <Demo propOverrides={{callback: 'replaced'}}>
-          <TestComponent callback={function complexFunction() { }}/>
+        <Demo propOverrides={{ callback: 'replaced' }}>
+          <TestComponent callback={function complexFunction() { }} />
         </Demo>
       );
 
@@ -57,12 +57,12 @@ describe('<Demo>', () => {
     it('allows ignoring of props', () => {
       const subject = mount(
         <Demo ignoreProps={['callback']}>
-          <TestComponent callback={function complexFunction() { }}/>
+          <TestComponent callback={function complexFunction() { }} />
         </Demo>
       );
 
       const snippet = subject.find(Snippet);
       expect(snippet.text()).toBe('<TestComponent />');
     });
-  })
+  });
 });

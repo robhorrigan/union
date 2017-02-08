@@ -1,4 +1,4 @@
-const cssRules = require('./css-rules');
+const cssRules = require('./css-rules').default;
 
 module.exports = [
   cssRules,

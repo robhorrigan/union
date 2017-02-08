@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import {
   FormTheme,
   FieldGroup,
@@ -10,7 +10,6 @@ import {
 } from '@xo-union/fields';
 
 import bsGrid from '@xo-union/bootstrap/grid';
-import bsUtils from '@xo-union/bootstrap/utilities';
 import styles from './styles.css';
 
 const themeClassMap = {
@@ -26,8 +25,7 @@ function FormContainer({ children }) {
 
   return (
     <div className={bsGrid.row}>
-      <div className={columnClasses}>
-      </div>
+      <div className={columnClasses} />
       <div className={columnClasses}>
         {children}
       </div>
@@ -35,17 +33,24 @@ function FormContainer({ children }) {
   );
 }
 
+FormContainer.propTypes = {
+  children: PropTypes.node
+};
+
 export default class FormDemo extends Component {
   state = {
     theme: 'gray'
   };
 
-  _updateTheme = (theme) => {
+  updateTheme = (theme) => {
     this.setState({ theme });
   };
 
   render() {
     const { theme } = this.state;
+
+    const textareaText =
+      'Example note: Hi! Thank you so much for inviting us to your wedding. See you soon!';
 
     return (
       <div className={themeClassMap[theme]}>
@@ -53,7 +58,7 @@ export default class FormDemo extends Component {
           <FormContainer>
             <FieldGroup>
               <div className={bsGrid.col12}>
-                <Dropdown name="theme" value={theme} onSelect={this._updateTheme}>
+                <Dropdown name="theme" value={theme} onSelect={this.updateTheme}>
                   <DropdownItem label="gray" />
                   <DropdownItem label="white" />
                 </Dropdown>
@@ -66,7 +71,8 @@ export default class FormDemo extends Component {
                   name="email"
                   state="invalid"
                   validationMessage="Must be a valid email"
-                  defaultValue="email@email.com" />
+                  defaultValue="email@email.com"
+                />
               </div>
             </FieldGroup>
 
@@ -117,7 +123,7 @@ export default class FormDemo extends Component {
 
             <FieldGroup>
               <div className={bsGrid.col12}>
-                <TextareaWithoutLabel name="optional-message" rows="5" placeholder="Example note: Hi! Thank you so much for inviting us to your wedding. See you soon!" />
+                <TextareaWithoutLabel name="optional-message" rows="5" placeholder={textareaText} />
               </div>
             </FieldGroup>
           </FormContainer>

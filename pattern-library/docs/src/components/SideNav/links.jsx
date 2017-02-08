@@ -6,7 +6,7 @@ import {
   DocComponents
 } from '#docs/components/SideNav/dynamicallyGeneratedArticleLinks';
 
-export default function SideNavLinks()  {
+export default function SideNavLinks() {
   return (
     <div>
       <LinkGroup>

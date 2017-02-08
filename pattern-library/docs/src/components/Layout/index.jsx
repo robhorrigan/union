@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
+import bsGrid from '@xo-union/bootstrap/grid';
 import Header from '#docs/components/Header';
 import SideNav from '#docs/components/SideNav';
 
 import styles from './styles.css';
-import bsGrid from '@xo-union/bootstrap/grid';
 
 export default function Layout({ children }) {
   return (
@@ -21,3 +21,7 @@ export default function Layout({ children }) {
     </div>
   );
 }
+
+Layout.propTypes = {
+  children: PropTypes.node
+};

@@ -39,14 +39,15 @@ describe('<Field>', () => {
       expect(subject.type).toBe('email');
     });
 
-    it('configures the placeholder (This is needed to by the :placeholder-shown css pseudo selector)', () => {
+    // This is needed to by the :placeholder-shown css pseudo selector
+    it('configures the placeholder', () => {
       const subject = getInputNode({ name: 'test-1' });
 
       expect(subject.placeholder).toBe(' ');
     });
 
     it('sets the neutral classes by default', () => {
-      const subject = getInputNode({ name: 'test-1'});
+      const subject = getInputNode({ name: 'test-1' });
       const neutralClasses = FieldCss.field.split(' ');
 
       expect(subject.classList).toContain(...neutralClasses);

@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { Textarea } from '#/fields/components';
-import FieldsCss from '@xo-union/fields/css';
 
 describe('<Textarea>', () => {
   describe('input', () => {

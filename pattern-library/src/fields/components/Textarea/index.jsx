@@ -13,7 +13,7 @@ export default function Textarea({
       <textarea className={FieldsCss.textareaWithLabel} id={id} name={name} {...props} />
       <label className={FieldsCss.textareaLabel} htmlFor={id}>{ label }</label>
     </div>
-  )
+  );
 }
 
 Textarea.propTypes = {
@@ -24,5 +24,9 @@ Textarea.propTypes = {
   /**
     * Override the default label (which is derived from the name)
     **/
-  label: PropTypes.string
+  label: PropTypes.string,
+  /**
+    * Override the default id (which is derived from the name)
+    **/
+  id: PropTypes.string
 };

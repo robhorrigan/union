@@ -1,15 +1,17 @@
-import React, { Component, PropTypes } from 'react';
+import React, { PropTypes } from 'react';
 import jsxToString from 'jsx-to-string-2';
 import Snippet from '#docs/doc-components/Snippet';
+
+const keys = Object.keys;
 
 function classNameLookup(dependencies) {
   const lookup = {};
 
-  for (const dependency in dependencies) {
-    for (const className in dependencies[dependency]) {
+  keys(dependencies).forEach((dependency) => {
+    keys(dependencies[dependency]).forEach((className) => {
       lookup[dependencies[dependency][className]] = `${dependency}.${className}`;
-    }
-  }
+    });
+  });
 
   return lookup;
 }
@@ -50,13 +52,13 @@ Demo.propTypes = {
   /**
    * This is used to improve rendering of react components when they depend on css modules. The keys should be the name of the cssModule, the values should be the actual cssModule.
    */
-  cssDependencies: PropTypes.object,
+  cssDependencies: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * This property is also used to improve the rendering of react components. This is especially useful when the component depends on a prop that is complex such as a function or a large object. You can use this prop to suppress the rendering of the actual prop values and instead render a helpful hint of what the prop value should be.
    */
-  propOverrides: PropTypes.object,
+  propOverrides: PropTypes.object, // eslint-disable-line react/forbid-prop-types
   /**
    * These props will be removed from the component in the code snippet.
    */
   ignoreProps: PropTypes.arrayOf(PropTypes.string)
-}
+};

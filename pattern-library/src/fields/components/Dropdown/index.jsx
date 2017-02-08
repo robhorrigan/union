@@ -1,36 +1,44 @@
-import React, { Component,  PropTypes as T } from 'react';
+import React, { Component, PropTypes } from 'react';
 import FieldsCss from '@xo-union/fields/css';
 import { labelize, fieldId } from '#/fields/utilities';
 
 export default class Dropdown extends Component {
   static childContextTypes = {
-    selectedValue: T.any,
-    updateDropdownValue: T.func
+    selectedValue: PropTypes.string,
+    updateDropdownValue: PropTypes.func
   };
 
   static propTypes = {
     /**
      * Name used for input
      */
-    name: T.string.isRequired,
+    name: PropTypes.string.isRequired,
     /**
      * Value to set on input element.
      * This is also provided to child elements as context.selectedValue
      */
-    value: T.string,
+    value: PropTypes.string,
     /**
      * The input's label string, default value is assumed from 'name'.
      */
-    label: T.string,
+    label: PropTypes.string,
+    /**
+     * Override the id which is derived from the name
+     */
+    id: PropTypes.string,
     /**
      * Should more than likely be DropdownItem components
      */
-    children: T.node
+    children: PropTypes.node,
+    /**
+     * Callback for when user selects a value
+     */
+    onSelect: PropTypes.func
   };
 
   state = {
     value: this.props.value || ''
-  }
+  };
 
   getChildContext() {
     return {
@@ -52,9 +60,9 @@ export default class Dropdown extends Component {
       label = labelize(name),
       id = fieldId(name),
       children,
-      // Remove from props
-      value,
-      onSelect,
+      // Disabling eslint rule here, this pattern is really useful to remove keys from objects
+      // eslint-disable-next-line no-unused-vars
+      value, onSelect,
       ...props
     } = this.props;
 

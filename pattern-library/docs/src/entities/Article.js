@@ -1,3 +1,4 @@
+import React from 'react';
 import { files } from '$articles';
 import humanize from 'humanize-string';
 import pascalize from 'pascal-case';
@@ -14,6 +15,12 @@ export default class Article {
     this.pathInfo = pathInfo;
     this.Component = Component;
     this.attributes = attributes;
+
+    /*
+     * Use the relative path to the root of the articles folder as the id
+     * This is mainly for React's key property
+     */
+    this.id = pathInfo.relativeName;
   }
 
   moduleName() {
@@ -24,13 +31,16 @@ export default class Article {
     return this.attributes.title || humanize(this.pathInfo.name);
   }
 
-  permalink() {
-    return '/' + (this.attributes.permalink || this.pathInfo.relativeName);
+
+  component() {
+    const props = {
+      title: this.title()
+    };
+
+    return () => <this.Component {...props} />;
   }
 
-  toProps() {
-    return {
-      title: this.title()
-    }
+  permalink() {
+    return '/' + (this.attributes.permalink || this.pathInfo.relativeName);
   }
 }

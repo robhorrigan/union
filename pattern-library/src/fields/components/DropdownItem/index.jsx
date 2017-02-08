@@ -10,7 +10,11 @@ export default class DropdownItem extends Component {
     /**
      * Value to set on top level Dropdown component. (Defaults to the value of label)
      */
-    value: PropTypes.any
+    value: PropTypes.string,
+    /**
+     * Used to force the selected state
+     */
+    isSelected: PropTypes.bool
   };
 
   static contextTypes = {
@@ -18,16 +22,16 @@ export default class DropdownItem extends Component {
     updateDropdownValue: PropTypes.func
   };
 
-  get value() {
-    return this.props.value || this.props.label;
-  }
-
   get onMouseDownHandler() {
     const {
       updateDropdownValue = () => {}
     } = this.context;
 
     return () => updateDropdownValue(this.value);
+  }
+
+  get value() {
+    return this.props.value || this.props.label;
   }
 
   get isSelected() {

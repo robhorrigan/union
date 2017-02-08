@@ -7,7 +7,7 @@ import generateRoutes from '#docs/utils/generateRoutes';
 function handleBookmark() {
   const hash = window.location.hash;
   if (hash) {
-    setTimeout(function () {
+    setTimeout(() => {
       const bookmark = document.getElementById(hash.replace('#', ''));
 
       if (bookmark) {
@@ -24,5 +24,5 @@ export default function App() {
         {generateRoutes()}
       </Route>
     </Router>
-  )
+  );
 }

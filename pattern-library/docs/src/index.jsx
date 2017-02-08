@@ -5,8 +5,7 @@ import App from '#docs/components/App';
 /* Import bootstrap css globals */
 import '@xo-union/bootstrap';
 /* Load prism css for syntax highlighting */
-import '!style-loader!a-css-loader?mode=global!prism-themes/themes/prism-ghcolors.css';
-import '!style-loader!a-css-loader?mode=global!#docs/global-syntax-highlighting.css';
+import 'prism-themes/themes/prism-ghcolors.css';
 
 
 ReactDOM.render(

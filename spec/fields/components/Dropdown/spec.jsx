@@ -32,7 +32,8 @@ describe('<Dropdown>', () => {
       expect(subject.type).toBe('text');
     });
 
-    it('configures the placeholder (This is needed to by the :placeholder-shown css pseudo selector)', () => {
+    // This is needed to by the :placeholder-shown css pseudo selector
+    it('configures the placeholder', () => {
       const subject = getInputNode({ name: 'test-1' });
 
       expect(subject.placeholder).toBe(' ');
@@ -75,7 +76,7 @@ describe('<Dropdown>', () => {
       expect(subject1.textContent).toEqual('Test');
       expect(subject2.textContent).toEqual('Test Case');
     });
-  })
+  });
 
   describe('context', () => {
     /*
@@ -83,13 +84,15 @@ describe('<Dropdown>', () => {
     * This mock renders the selected value from the context and passes along the callback to update
     * the dropdown
     * */
+    // eslint-disable-next-line react/prop-types
     function DropdownItemMock({ onClick }, { selectedValue, updateDropdownValue }) {
-      return <span onClick={() => { onClick({ updateDropdownValue }) }} >{selectedValue}</span>;
+      /* eslint-disable jsx-a11y/onclick-has-role, jsx-a11y/no-static-element-interactions, jsx-a11y/click-events-have-key-events */
+      return <span onClick={() => { onClick({ updateDropdownValue }); }} >{selectedValue}</span>;
     }
     DropdownItemMock.contextTypes = {
       selectedValue: PropTypes.string,
       updateDropdownValue: PropTypes.func
-    }
+    };
 
     it('provides the selected value via context', () => {
       const subject = mount(
@@ -103,9 +106,10 @@ describe('<Dropdown>', () => {
 
     describe('when updateDropdownValue callback is called', () => {
       it('provides a function to update the dropdown value', () => {
+        const onClick = ({ updateDropdownValue }) => updateDropdownValue('new-value');
         const subject = mount(
           <Dropdown name="test-1" value="given-value">
-            <DropdownItemMock onClick={({ updateDropdownValue }) => updateDropdownValue('new-value') } />
+            <DropdownItemMock onClick={onClick} />
           </Dropdown>
         );
 
@@ -115,10 +119,11 @@ describe('<Dropdown>', () => {
       });
 
       it('calls the onSelect callback', () => {
+        const onClick = ({ updateDropdownValue }) => updateDropdownValue('new-value');
         const onSelectSpy = jasmine.createSpy('onSelect');
         const subject = mount(
           <Dropdown name="test-1" value="given-value" onSelect={onSelectSpy}>
-            <DropdownItemMock onClick={({ updateDropdownValue }) => updateDropdownValue('new-value') } />
+            <DropdownItemMock onClick={onClick} />
           </Dropdown>
         );
 
