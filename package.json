@@ -23,7 +23,6 @@
     "publish-packages": "lerna publish",
     "restart": "pm2 restart all",
     "start": "pm2 start $npm_package_config_process_config_file",
-    "start:experiment": "webpack-dev-server --config ./pattern-library/docs/webpack.config.js",
     "status": "pm2 status",
     "stop": "pm2 stop all",
     "test": "karma start --single-run",
