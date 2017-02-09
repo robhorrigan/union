@@ -6,11 +6,14 @@ describe('mdjsx-loader', () => {
   };
 
   it('creates import expressions for react and react-remarkable', () => {
-    const source = ``;
+    const source = '';
 
     const result = mdjsx.call(loaderMock, source);
+    const remarkablePath = JSON.stringify(require.resolve('react-remarkable'));
+
     expect(result).toContain("import React from 'react';");
-    expect(result).toContain(`import Markdown from ${JSON.stringify(require.resolve('react-remarkable'))};`);
+    expect(result)
+      .toContain(`import Markdown from ${remarkablePath};`);
   });
 
   it('creates import expressions from the front matter', () => {
@@ -42,11 +45,11 @@ a: b
   });
 
   it('passes down the component props ', () => {
-    const source = ``;
+    const source = '';
 
     const result = mdjsx.call(loaderMock, source);
     expect(result).toContain('exports.default = ($props) =>');
-  })
+  });
 
 
   it('normalizes each line', () => {
@@ -80,6 +83,6 @@ Hello world
 {"#### Test"}
 <Component1/>
 {""}
-</Markdown>`)
-  })
+</Markdown>`);
+  });
 });

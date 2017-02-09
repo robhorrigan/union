@@ -1,10 +1,9 @@
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 const asyncTest = require('./support/async-test');
-const { COMPONENT_CHOICE } = require('../utils/questions');
+const Generator = require('../generators/component');
 
 const GENERATOR_PATH = require.resolve('../generators/component');
-const Generator = require(GENERATOR_PATH);
 
 describe('component-generator', () => {
   beforeEach(() => {
@@ -20,7 +19,7 @@ describe('component-generator', () => {
         .withPrompts({
           packageName: 'test',
           wantsToCreateCssModule: false
-        })
+        });
     });
 
     it('creates a webpack file', asyncTest(() => {
@@ -29,7 +28,7 @@ describe('component-generator', () => {
       ]);
     }));
 
-    it('creates an index.js file', asyncTest((...things) => {
+    it('creates an index.js file', asyncTest(() => {
       assert.file([
         'packages/components/test/src/index.js'
       ]);
@@ -76,15 +75,15 @@ describe('component-generator', () => {
           packageName: 'test',
           wantsToCreateCssModule: false,
           wantsToCreateNewPage: true
-        })
+        });
     });
 
-    it('creates a documentation file', asyncTest((...things) => {
+    it('creates a documentation file', asyncTest(() => {
       assert.file([
         'packages/docs/articles/foundations/test.md'
       ]);
 
-      assert.fileContent( 'packages/docs/articles/foundations/test.md',
+      assert.fileContent('packages/docs/articles/foundations/test.md',
         new RegExp([
           '\\$imports:',
           "'Test': '@union/test'",
@@ -114,7 +113,7 @@ describe('component-generator', () => {
         .withPrompts({
           packageName: 'test',
           wantsToCreateCssModule: true
-        })
+        });
     });
 
     it('creates a webpack file', asyncTest(() => {
@@ -130,7 +129,7 @@ describe('component-generator', () => {
       );
     }));
 
-    it('creates an index.js file', asyncTest((...things) => {
+    it('creates an index.js file', asyncTest(() => {
       assert.file([
         'packages/components/test/src/index.js'
       ]);

@@ -1,16 +1,16 @@
 /* Hack to compose icon in all icon classes without actually doing it ;) */
-import styles from './icons';
 import builder from 'css-module-builder';
+import styles from './icons';
 
 const wrapperModule = builder.initialize(styles[0][0], styles.toString());
 
 const locals = styles.locals;
 
 function isIconClass(key) {
-  return key !== 'icon' && key.indexOf('icon') > -1
+  return key !== 'icon' && key.indexOf('icon') > -1;
 }
 
-for (const key in locals) {
+Object.keys(locals).forEach((key) => {
   const values = [
     builder.getLocal(styles, key)
   ];
@@ -25,6 +25,6 @@ for (const key in locals) {
       values
     ]
   ]);
-}
+});
 
 module.exports = wrapperModule;

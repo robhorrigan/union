@@ -25,7 +25,7 @@ exports.testAndDocs = extend(true, {
     /* Facilitate making references to docs src */
     '#docs': patternLibPath('docs', 'src'),
     /* Facilitate making references to articles and config in docs app */
-    '$articles': patternLibPath('docs', 'articles-directory.config.json'),
+    $articles: patternLibPath('docs', 'articles-directory.config.json'),
     '$site-config': patternLibPath('docs', 'site.config.json')
   }
 }, exports.default);

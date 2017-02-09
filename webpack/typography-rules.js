@@ -7,7 +7,7 @@ function useEntryBuilder(rulesToRemove) {
   return {
     loader: 'postcss-loader',
     options: {
-      plugins: () => [ cssByebye({ rulesToRemove }) ]
+      plugins: () => [cssByebye({ rulesToRemove })]
     }
   };
 }
@@ -33,4 +33,4 @@ exports.typographyRules = [
     include: globalsPath,
     use: removeClassesUseEntry
   }
-]
+];

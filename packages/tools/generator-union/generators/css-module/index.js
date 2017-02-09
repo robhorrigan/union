@@ -1,4 +1,3 @@
-const Generator = require('yeoman-generator');
 const BaseGenerator = require('../../utils/base-generator');
 const { AnswersPresenter } = require('./src/answers');
 const {
@@ -36,14 +35,11 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
   }
 
   writing() {
-    const { wantsToCreateNewPage } = this._collectedData();
-
     const fileMapping = [
       this.templatePathMapping('package.json'),
       this.templatePathMapping('src', 'index.css'),
       this.templatePathMapping('webpack.config.js'),
     ];
-
 
     for (const [from, to] of fileMapping) {
       this.fs.copyTpl(from, to, this._collectedData());
@@ -56,10 +52,10 @@ module.exports = class CssModuleGenerator extends BaseGenerator {
     const npmLinkSave = require.resolve('npm-link-save');
     const { wantsToCreateNewPage } = this._collectedData();
 
-    this.installInPackage([ 'css-module-builder' ], { save: true });
+    this.installInPackage(['css-module-builder'], { save: true });
 
     if (wantsToCreateNewPage) {
-      this.spawnCommand(npmLinkSave, [this.packageRootPath()], { cwd: this.packagesPath('docs') })
+      this.spawnCommand(npmLinkSave, [this.packageRootPath()], { cwd: this.packagesPath('docs') });
     }
   }
 

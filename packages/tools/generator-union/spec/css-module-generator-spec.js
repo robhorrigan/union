@@ -1,13 +1,11 @@
 const helpers = require('yeoman-test');
 const assert = require('yeoman-assert');
 const asyncTest = require('./support/async-test');
+const Generator = require('../generators/css-module');
+const { CORE_CHOICE } = require('../utils/questions');
 
 const GENERATOR_PATH = require.resolve('../generators/css-module');
-const Generator = require(GENERATOR_PATH);
-const {
-  CSS_MODULES_CHOICE,
-  CORE_CHOICE
-} = require('../utils/questions');
+
 
 describe('css-module-generator', () => {
   beforeEach(() => {
@@ -23,7 +21,7 @@ describe('css-module-generator', () => {
         .withPrompts({
           packageType: CORE_CHOICE,
           packageName: 'test'
-        })
+        });
     });
 
     it('creates a webpack file', asyncTest(() => {
@@ -46,15 +44,15 @@ describe('css-module-generator', () => {
           packageName: 'test',
           packageType: CORE_CHOICE,
           wantsToCreateNewPage: true
-        })
+        });
     });
 
-    it('creates an index.js file', asyncTest((...things) => {
+    it('creates an index.js file', asyncTest(() => {
       assert.file([
         'packages/docs/articles/foundations/test.md'
       ]);
 
-      assert.fileContent( 'packages/docs/articles/foundations/test.md',
+      assert.fileContent('packages/docs/articles/foundations/test.md',
         new RegExp([
           'imports:',
           "'Test': '@union/test'",

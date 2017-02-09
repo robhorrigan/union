@@ -13,7 +13,7 @@ module.exports = function pathinfo(relativePath, basePath) {
 
   const { name, ext, dir } = absolutePathMeta;
 
-  const relativeDir = path.relative(basePath, dir)
+  const relativeDir = path.relative(basePath, dir);
   const relativeName = path.join(relativeDir, name);
 
   return {

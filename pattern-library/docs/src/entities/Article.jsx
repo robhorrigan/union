@@ -9,7 +9,9 @@ export default class Article {
   * It feels a bit weird to create all instances during load of this module
   * but its a simple way to create these guys :)
   * */
-  static all = files.map(({ pathinfo, module }) => new Article(pathinfo, module.default, module.attributes));
+  static all = files.map(({ pathinfo, module }) =>
+    new Article(pathinfo, module.default, module.attributes)
+  );
 
   constructor(pathInfo, Component, attributes = {}) {
     this.pathInfo = pathInfo;
@@ -41,6 +43,6 @@ export default class Article {
   }
 
   permalink() {
-    return '/' + (this.attributes.permalink || this.pathInfo.relativeName);
+    return `/${(this.attributes.permalink || this.pathInfo.relativeName)}`;
   }
 }

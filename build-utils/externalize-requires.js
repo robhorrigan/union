@@ -7,12 +7,12 @@ module.exports = function externalizeRequires(values) {
 
       // Assume regex if not string
       return value.test(request);
-    })
+    });
 
     if (shouldBeExternal) {
-      return callback(null, request);
+      callback(null, request);
+    } else {
+      callback();
     }
-
-    callback();
   };
-}
+};

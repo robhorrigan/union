@@ -1,5 +1,3 @@
-const path = require('path');
-const Generator = require('yeoman-generator');
 const BaseGenerator = require('../../utils/base-generator');
 const { AnswersPresenter } = require('./src/answers');
 const {
@@ -18,6 +16,7 @@ module.exports = class ComponentGenerator extends BaseGenerator {
     return new AnswersPresenter(this.answers);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   _packageType() {
     return COMPONENT_CHOICE;
   }
@@ -47,11 +46,7 @@ module.exports = class ComponentGenerator extends BaseGenerator {
 
   writing() {
     const collectedData = this._collectedData();
-    const {
-      wantsToCreateCssModule,
-      wantsToCreateNewPage,
-      pagePath
-    } = collectedData;
+    const { wantsToCreateCssModule } = collectedData;
 
     if (wantsToCreateCssModule) {
       this._cssModuleWriting();
@@ -76,7 +71,7 @@ module.exports = class ComponentGenerator extends BaseGenerator {
     const { cssModuleName, wantsToCreateNewPage, wantsToCreateCssModule } = this._collectedData();
 
     /* Setup external dependencies */
-    this.installInPackage([ 'react' ], { 'save': true });
+    this.installInPackage(['react'], { save: true });
 
     if (wantsToCreateNewPage) {
       const dependenciesOfDocs = [
@@ -84,14 +79,14 @@ module.exports = class ComponentGenerator extends BaseGenerator {
       ];
 
       /* Save dependency in docs project */
-      this.spawnCommand(npmLinkSave, dependenciesOfDocs, { cwd: this.packagesPath('docs') })
+      this.spawnCommand(npmLinkSave, dependenciesOfDocs, { cwd: this.packagesPath('docs') });
     }
 
     if (wantsToCreateCssModule) {
       const pathToCssModule = this.packagesPath('components', cssModuleName);
 
       /* Setup css-module dependency */
-      this.spawnCommand(npmLinkSave, [pathToCssModule], { cwd: this.packageRootPath() })
+      this.spawnCommand(npmLinkSave, [pathToCssModule], { cwd: this.packageRootPath() });
     }
   }
 

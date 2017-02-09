@@ -1,47 +1,42 @@
 const path = require('path');
 
 module.exports = {
-  parser: "babel-eslint",
-  env: {
-    "browser": true
+  parserOptions: {
+    ecmaVersion: 6,
+    sourceType: 'module'
   },
   extends: [
-    "airbnb",
-    "plugin:jsx-a11y/recommended",
-    "plugin:jasmine/recommended"
+    'airbnb'
   ],
   plugins: [
-    "react",
-    "jsx-a11y",
-    "import",
-    "jasmine",
-    "json"
+    'json',
+    'import'
   ],
   rules: {
-    'comma-dangle': "off",
+    'comma-dangle': 'off',
      'max-len': ['error', 100, {
        tabWidth: 2,
        ignoreComments: true,
        ignoreTrailingComments: true,
        ignoreUrls: true
      }],
-    /* We use different types of extensions in this project */
-    'import/extensions': "off",
     'import/no-extraneous-dependencies': [
       'error',
-      {devDependencies: ['spec/**/*.js', 'spec/**/*.jsx', 'webpack.*.js', 'gulpfile*']}
-    ],
-    /*
-     * We use es6 default arguments in functional components and this rule
-     * isn't smart enough to catch those use cases
-     */
-    'react/require-default-props': 'off'
+      {
+        devDependencies: [
+          'spec/**/*',
+          'webpack.*.js',
+          '**/gulpfile*',
+          'webpack/**',
+          '**/spec/**'
+        ]
+      }
+    ]
   },
   settings: {
-    'import/resolver': {
-      webpack: {
-        config: path.resolve(__dirname, 'webpack.test.js')
-      }
-    }
+    /* Default to the node resolver. This is overriden in the pattern-library/
+     * to use webpack
+     * */
+    'import/resolver': 'node'
   }
 };
