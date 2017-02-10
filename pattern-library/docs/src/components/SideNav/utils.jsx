@@ -4,7 +4,6 @@ import { Link } from 'react-router';
 /* Style dependencies */
 import bsNav from '@xo-union/bootstrap/nav';
 import bsUtils from '@xo-union/bootstrap/utilities';
-import type from '@xo-union/typography';
 import customStyles from './styles.css';
 
 function NavLink({ href, children }, { router }) {
@@ -29,7 +28,7 @@ NavLink.contextTypes = {
 export function LinkGroup({ children, label }) {
   return (
     <div className={bsUtils.mb3}>
-      {label ? <h6 className={type.h6}>{label}</h6> : ''}
+      {label ? <h6>{label}</h6> : ''}
 
       <ul className={[bsNav.nav, bsUtils.flexMdColumn].join(' ')}>
         {children}
