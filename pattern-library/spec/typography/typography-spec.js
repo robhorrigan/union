@@ -4,6 +4,11 @@ import globals from '@xo-union/typography/globals';
 import fonts from '@xo-union/typography/fonts';
 import modules from '@xo-union/typography';
 
+function getFontFaceRules(cssString) {
+  const ast = css.parse(cssString);
+  return ast.stylesheet.rules.filter(rule => rule.type === 'font-face');
+}
+
 describe('typography', () => {
   describe('globals', () => {
     it('pulls in the fonts', () => {
@@ -22,8 +27,7 @@ describe('typography', () => {
       /* Just a simple spot check that the font-faces are being compiled correctly
        * This makes sure that our webpack build is configured correctly
        **/
-      const fontsCss = css.parse(fonts.toString());
-      const fontFaceDefinitions = fontsCss.stylesheet.rules.filter(rule => rule.type === 'font-face');
+      const fontFaceDefinitions = getFontFaceRules(fonts.toString());
 
       expect(fontFaceDefinitions.length).toBe(3);
     });
