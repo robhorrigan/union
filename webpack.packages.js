@@ -21,6 +21,7 @@ module.exports = {
     /* Type */
     'typography/index.cssm': './typography/index.scss',
     'typography/globals.cssm': './typography/globals.scss',
+    'typography/fonts.cssm': './typography/fonts.scss',
     /* Fields */
     'fields/css/index.cssm': './fields/css/index.scss',
     'fields/components/index.js': './fields/components/index.js',

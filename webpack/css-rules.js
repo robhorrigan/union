@@ -1,21 +1,26 @@
 const rebootCSSPath = require.resolve('../pattern-library/src/bootstrap/reboot.scss');
-const { typographyRules, typographyGlobalsPath } = require('./typography-rules');
+const { typographyRules, typographyGlobalsPath, typographyFontsPath } = require('./typography-rules');
 
 exports.default = {
   test: /\.s?css$/,
   rules: [
     {
-      include: [rebootCSSPath, typographyGlobalsPath],
+      include: [rebootCSSPath, typographyGlobalsPath, typographyFontsPath],
       use: {
         loader: 'a-css-loader',
         options: {
           mode: 'local',
-          camelize: true
+          camelize: true,
+          minimize: {
+            discardUnused: {
+              fontFace: false
+            }
+          }
         }
       }
     },
     {
-      exclude: [rebootCSSPath, typographyGlobalsPath],
+      exclude: [rebootCSSPath, typographyGlobalsPath, typographyFontsPath],
       use: {
         loader: 'a-css-loader',
         options: {
