@@ -9,7 +9,7 @@
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "bootstrap-generators": "npm link ./packages/tools/generator-union",
+    "bootstrap.generators": "npm link ./packages/tools/generator-union",
     "build": "npm run build:packages && npm run build:docs",
     "build.docs": "webpack --config webpack.docs.js",
     "build.packages": "webpack --config webpack.packages.js",
@@ -17,6 +17,7 @@
     "css": "gulp css",
     "gulp": "gulp",
     "logs": "pm2 logs --lines=40",
+    "new.pattern": "yo union:pattern",
     "new.component": "yo union:component",
     "new.css-module": "yo union:css-module",
     "open": "open $npm_package_config_local_docs_app_url",
