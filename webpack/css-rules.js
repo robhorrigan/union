@@ -9,17 +9,13 @@ exports.default = {
   test: /\.s?css$/,
   rules: [
     {
-      include: [rebootCSSPath, typographyGlobalsPath, typographyFontsPath],
+      include: [rebootCSSPath, typographyGlobalsPath],
+      exclude: [typographyFontsPath],
       use: {
         loader: 'a-css-loader',
         options: {
           mode: 'local',
-          camelize: true,
-          minimize: {
-            discardUnused: {
-              fontFace: false
-            }
-          }
+          camelize: true
         }
       }
     },
