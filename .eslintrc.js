@@ -24,6 +24,7 @@ module.exports = {
       'error',
       {
         devDependencies: [
+          'build-utils/**/*',
           'spec/**/*',
           'webpack.*.js',
           '**/gulpfile*',

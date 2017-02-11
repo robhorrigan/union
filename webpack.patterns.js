@@ -1,5 +1,4 @@
 const path = require('path');
-const extend= require('extend');
 const externalizeRequires = require('./build-utils/externalize-requires');
 const { buildEntrypoints } = require('./build-utils/entrypoints');
 const rules = require('./webpack/rules');

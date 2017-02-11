@@ -1,3 +1,4 @@
+const fs = require('fs');
 const path = require('path');
 const glob = require('glob-all');
 
@@ -29,8 +30,10 @@ exports.adaptEntrypoints = function adaptEntrypoints(
     mapExtension = defaultExtensionMapper
   }
 ) {
-  return entrypointFiles.reduce((allEntrypoints, entrypointFile) => {
-    const files = require(entrypointFile);
+  const allEntrypoints = {};
+
+  entrypointFiles.forEach((entrypointFile) => {
+    const files = JSON.parse(fs.readFileSync(entrypointFile));
     const relativePath = path.relative(relativeTo, entrypointFile);
     const relativeDir = path.dirname(relativePath);
 
@@ -45,9 +48,9 @@ exports.adaptEntrypoints = function adaptEntrypoints(
 
       allEntrypoints[destinationPath] = `./${sourcePath}`;
     });
+  });
 
-    return allEntrypoints;
-  }, {});
+  return allEntrypoints;
 };
 
 exports.buildEntrypoints = function buildEntrypoints({ context }) {

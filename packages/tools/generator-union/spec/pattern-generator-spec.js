@@ -23,17 +23,17 @@ describe('pattern generator', () => {
           '"react": "\\^15.4.2"',
           '}'
         ].join('\\s+'))
-      )
+      );
     }));
 
     it('creates a css file', asyncTest(() => {
       assert.fileContent('pattern-library/src/test-pattern/css/index.css',
         new RegExp([
-          "\\.test-pattern {",
-          "color: red;",
-          "}"
+          '\\.test-pattern {',
+          'color: red;',
+          '}'
         ].join('\\s+'))
-      )
+      );
     }));
 
     it('creates a simple react component', asyncTest(() => {
@@ -59,10 +59,10 @@ describe('pattern generator', () => {
           "import TestPattern from '#/test-pattern';",
           "describe\\('<TestPattern>', \\(\\) => {",
           "it\\('says hello', \\(\\) => {",
-          "const subject = mount\\(<TestPattern />\\);",
+          'const subject = mount\\(<TestPattern />\\);',
           "expect\\(subject\\.text\\(\\)\\).toContain\\('Hello there'\\);",
-          "}\\);",
-          "}\\);"
+          '}\\);',
+          '}\\);'
         ].join('\\s+'))
       );
     });

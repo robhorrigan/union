@@ -12,4 +12,4 @@ module.exports = class Answers {
     this.packageName = `@xo-union/${answers.patternName}`;
     this.packageCssPath = `${this.packageName}/css`;
   }
-}
+};
