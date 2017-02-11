@@ -17,8 +17,6 @@
     "gulp": "gulp",
     "lint": "eslint --ext .js,.jsx,.json .",
     "logs": "pm2 logs --lines=40",
-    "new.component": "yo union:component",
-    "new.css-module": "yo union:css-module",
     "new.pattern": "yo union:pattern",
     "open": "open $npm_package_config_local_docs_app_url",
     "publish.packages": "lerna publish",
