@@ -96,7 +96,7 @@ describe('pattern generator', () => {
         new RegExp([
           '\\[',
           '"index.jsx",',
-          '"index.css"',
+          '"css/index.css"',
           '\\]'
         ].join('\\s+'))
       );
