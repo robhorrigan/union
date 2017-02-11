@@ -27,7 +27,7 @@ describe('pattern generator', () => {
     }));
 
     it('creates a css file', asyncTest(() => {
-      assert.fileContent('pattern-library/src/test-pattern/index.css',
+      assert.fileContent('pattern-library/src/test-pattern/css/index.css',
         new RegExp([
           "\\.test-pattern {",
           "color: red;",

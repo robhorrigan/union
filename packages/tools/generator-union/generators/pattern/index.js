@@ -32,7 +32,7 @@ module.exports = class Pattern extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('index.css'),
-      path.join('pattern-library', 'src', this._patternName(), 'index.css'),
+      path.join('pattern-library', 'src', this._patternName(), 'css', 'index.css'),
       answers
     );
 
