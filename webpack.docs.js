@@ -15,13 +15,18 @@ module.exports = {
   entry: ['prismjs', './src/index.jsx'],
   output: {
     filename: './index.js',
-    path: patternDocsPath('build'),
+    path: path.resolve(__dirname, 'docs'),
     publicPath: '/'
   },
   plugins: [
     new HTMLWebpackPlugin({
       template: patternDocsPath('src', 'index.html'),
-      filename: './index.html'
+      filename: 'index.html'
+    }),
+    /* Use the same file for 404s to allow application to handle unknown routes */
+    new HTMLWebpackPlugin({
+      template: patternDocsPath('src', 'index.html'),
+      filename: '404.html'
     })
   ],
   resolve: resolve.testAndDocs,

@@ -18,10 +18,12 @@ function handleBookmark() {
 }
 
 export default function App() {
+  const routes = generateRoutes();
+
   return (
     <Router history={browserHistory} onUpdate={handleBookmark}>
-      <Route path="/" component={Layout} >
-        {generateRoutes()}
+      <Route path={__webpack_public_path__} component={Layout} >
+        {routes}
       </Route>
     </Router>
   );

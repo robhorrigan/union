@@ -3,6 +3,7 @@ _site
 .jekyll-metadata
 node_modules
 public/css
+/docs
 *.sw?
 
 *.log

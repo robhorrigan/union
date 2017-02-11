@@ -3,6 +3,10 @@ import { files } from '$articles';
 import humanize from 'humanize-string';
 import pascalize from 'pascal-case';
 
+function normalizePath(...pathSegments) {
+  return pathSegments.join('/').replace(/\/{2,}/g, '/');
+}
+
 export default class Article {
   /*
   * Create all article instances
@@ -43,6 +47,7 @@ export default class Article {
   }
 
   permalink() {
-    return `/${(this.attributes.permalink || this.pathInfo.relativeName)}`;
+    const path = this.attributes.permalink || this.pathInfo.relativeName;
+    return normalizePath(__webpack_public_path__, path);
   }
 }
