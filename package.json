@@ -10,7 +10,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap.generators": "npm link ./packages/tools/generator-union",
-    "build": "npm run build:packages && npm run build:docs",
+    "build": "npm run build.packages && npm run build.docs",
     "build.docs": "webpack --config webpack.docs.js",
     "build.packages": "webpack --config webpack.packages.js",
     "clean": "echo y | lerna clean && lerna exec -- rm -rf ./lib",
