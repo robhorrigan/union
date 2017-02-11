@@ -1,6 +1,6 @@
 const rebootCSSPath = require.resolve('../pattern-library/src/bootstrap/reboot.scss');
 const {
-  typographyRules,
+  typographyCssRules,
   typographyGlobalsPath,
   typographyFontsPath
 } = require('./typography-rules');
@@ -28,7 +28,7 @@ exports.default = {
         }
       }
     },
-    ...typographyRules
+    ...typographyCssRules
   ]
 };
 

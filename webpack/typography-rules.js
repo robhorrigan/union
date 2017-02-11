@@ -1,3 +1,4 @@
+const path = require('path');
 const cssByebye = require('css-byebye');
 
 const pureModulePath = require.resolve('../pattern-library/src/typography/index.scss');
@@ -37,7 +38,7 @@ const UseEntries = {
 
 exports.typographyFontsPath = fontsPath;
 exports.typographyGlobalsPath = globalsPath;
-exports.typographyRules = [
+exports.typographyCssRules = [
   {
     include: [fontsPath],
     use: UseEntries.keepFontFaces
@@ -51,3 +52,19 @@ exports.typographyRules = [
     use: UseEntries.removeClasses
   }
 ];
+
+exports.typographyFontsRules = {
+    test: /\.woff2?$/,
+    use: [
+      {
+        loader: 'file-loader',
+        options: {
+          hash: 'sha512',
+          digest: 'hex',
+          name: '/[name]-[hash:3].[ext]',
+          publicPath: '//static.xoedge.com/union/fonts',
+          outputPath: path.join('..', '..', 'public', 'fonts')
+        }
+      }
+    ]
+  }
