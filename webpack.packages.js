@@ -1,31 +1,16 @@
 const path = require('path');
+const extend= require('extend');
 const externalizeRequires = require('./build-utils/externalize-requires');
+const { buildEntrypoints } = require('./build-utils/entrypoints');
 const rules = require('./webpack/rules');
 const resolve = require('./webpack/resolve');
 
+const patternSrcPath = path.resolve.bind(null, __dirname, 'pattern-library', 'src');
+
 module.exports = {
   resolve: resolve.default,
-  context: path.resolve(__dirname, 'pattern-library', 'src'),
-  entry: {
-    /* Bootstrap */
-    'bootstrap/grid.cssm': './bootstrap/grid.scss',
-    'bootstrap/nav.cssm': './bootstrap/nav.scss',
-    'bootstrap/navbar.cssm': './bootstrap/navbar.scss',
-    'bootstrap/reboot.cssm': './bootstrap/reboot.scss',
-    'bootstrap/tables.cssm': './bootstrap/tables.scss',
-    'bootstrap/utilities.cssm': './bootstrap/utilities.scss',
-    /* Colors */
-    'colors/index.cssm': './colors/index.css',
-    /* Icons */
-    'icons/index.cssm': './icons/index.js',
-    /* Type */
-    'typography/index.cssm': './typography/index.scss',
-    'typography/globals.cssm': './typography/globals.scss',
-    'typography/fonts.cssm': './typography/fonts.scss',
-    /* Fields */
-    'fields/css/index.cssm': './fields/css/index.scss',
-    'fields/components/index.js': './fields/components/index.js',
-  },
+  context: patternSrcPath(),
+  entry: buildEntrypoints({ context: patternSrcPath() }),
   output: {
     path: path.join(__dirname, 'packages', 'pattern-library'),
     filename: '[name]',
