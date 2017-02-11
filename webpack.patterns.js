@@ -1,7 +1,7 @@
 const path = require('path');
 const externalizeRequires = require('./build-utils/externalize-requires');
 const { buildEntrypoints } = require('./build-utils/entrypoints');
-const rules = require('./webpack/rules');
+const rules = require('./webpack/patterns-rules');
 const resolve = require('./webpack/resolve');
 
 const patternSrcPath = path.resolve.bind(null, __dirname, 'pattern-library', 'src');
