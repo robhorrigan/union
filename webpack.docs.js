@@ -15,7 +15,7 @@ module.exports = {
   entry: ['prismjs', './src/index.jsx'],
   output: {
     filename: './index.js',
-    path: path.resolve(__dirname, 'docs'),
+    path: path.resolve(__dirname, 'public'),
     publicPath: '/'
   },
   plugins: [
@@ -46,6 +46,19 @@ module.exports = {
         test: /\.jsx?$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.woff2?$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              hash: 'sha512',
+              digest: 'hex',
+              name: '[hash].[ext]',
+            }
+          }
+        ]
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
