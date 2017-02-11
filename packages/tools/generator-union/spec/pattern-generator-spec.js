@@ -4,7 +4,7 @@ const asyncTest = require('./support/async-test');
 
 const generatorPath = require.resolve('../generators/pattern');
 
-fdescribe('pattern generator', () => {
+describe('pattern generator', () => {
   describe('pattern folder', () => {
     beforeEach(function () {
       this.promise = helpers.run(generatorPath).withPrompts({
@@ -86,6 +86,17 @@ fdescribe('pattern generator', () => {
           '### Development',
           'To make changes to this pattern, go to: `./pattern-library/src/test-pattern`.',
           'Tests are in `./pattern-library/spec/test-pattern`.'
+        ].join('\\s+'))
+      );
+    });
+
+    it('creates an entrypoints file', () => {
+      assert.fileContent('pattern-library/src/test-pattern/.entrypoints.json',
+        new RegExp([
+          '\\[',
+          '"index.jsx",',
+          '"index.css"',
+          '\\]'
         ].join('\\s+'))
       );
     });

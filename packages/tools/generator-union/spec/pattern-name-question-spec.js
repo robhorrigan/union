@@ -1,6 +1,6 @@
 const { patternName } = require('../generators/pattern/questions');
 
-fdescribe('pattern name question', () => {
+describe('pattern name question', () => {
   describe('.validate', () => {
     it('Does not allow "scoped" names', () => {
       const result = patternName.validate('@test/value');

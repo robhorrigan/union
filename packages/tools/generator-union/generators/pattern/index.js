@@ -19,8 +19,13 @@ module.exports = class Pattern extends Generator {
   writing() {
     const answers = new Answers(this.answers);
 
+    this.fs.copy(
+      this.templatePath('entrypoints.json'),
+      path.join('pattern-library', 'src', this._patternName(), '.entrypoints.json')
+    );
+
     this.fs.copyTpl(
-      this.templatePath('entrypoint.jsx'),
+      this.templatePath('index.jsx'),
       path.join('pattern-library', 'src', this._patternName(), 'index.jsx'),
       answers
     );
