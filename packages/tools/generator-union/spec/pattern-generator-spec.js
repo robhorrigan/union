@@ -17,6 +17,7 @@ describe('pattern generator', () => {
         new RegExp([
           '"name": "@xo-union/test-pattern",',
           '"version": "1.0.0",',
+          '"main": "index.js",',
           '"dependencies": {',
           '"css-module-builder": "\\^1.0.0-beta.5",',
           '"react": "\\^15.4.2"',
