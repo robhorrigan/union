@@ -12,7 +12,7 @@ Short version
 npm install
 npm run bootstrap
 
-# Run tests
+# Run all tests
 npm test
 
 # Start dev server
@@ -71,47 +71,41 @@ npm restart
 
 > This is a temporary step, likely to be removed in the future
 ```bash
-npm run bootstrap-generators
+npm run bootstrap.generators
 ```
 
-These generators will help you create new modules
+##### Pattern
+
+This generator will help you create new patterns
 
 ```bash
-npm run new-component
+npm run new.pattern
 ```
-
-This generators will try to:
-
-- Create a new react component package
-- Create a new css-module package
-- Create a new documentation page
-- Link everything together
-
-
-You can also run
-
-```bash
-npm run new-css-module
-```
-
-This generators will try to:
-
-- Create a new css-module package
-- Create a new documentation page
-- Link everything together
 
 ### Test Driven Development
-> You have two options when running tests. The following command does a single run of all unit tests. NOTE: Make sure packages are bootstrapped before running tests.
 
 ```sh
+# All tests
 npm test
 npm t # Works too
+
+# Patterns tests
+npm run test.patterns
+npm run test.patterns.chrome # Useful when using debuggers
+
+# Build support tests
+npm run test.support
+
+# Tools tests
+npm run test.tools
 ```
+
+##### Patterns TDD
 
 > For something more interactive, you can run this command, which will watch your files for changes and automatically run all tests. This the best way to get immediate feedback from your changes.
 
 ```sh
-npm run test:watch
+npm run test.patterns.watch
 ```
 
 > In order to improve the test output, make sure to `focus` on the tests which you are currently working on. You do this by using [`jasmine`'s focus feature](https://jasmine.github.io/2.1/focused_specs.html).
