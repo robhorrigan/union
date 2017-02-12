@@ -4,6 +4,9 @@ import { Router, Route, browserHistory } from 'react-router';
 import Layout from '#docs/components/Layout';
 import generateRoutes from '#docs/utils/generateRoutes';
 
+// eslint-disable-next-line camelcase
+const rootPath = __webpack_public_path__;
+
 function handleBookmark() {
   const hash = window.location.hash;
   if (hash) {
@@ -22,7 +25,7 @@ export default function App() {
 
   return (
     <Router history={browserHistory} onUpdate={handleBookmark}>
-      <Route path={__webpack_public_path__} component={Layout} >
+      <Route path={rootPath} component={Layout} >
         {routes}
       </Route>
     </Router>

@@ -1,7 +1,8 @@
 const path = require('path');
 const cssByebye = require('css-byebye');
 
-const typographyPath = path.resolve.bind(null, __dirname, '..', 'pattern-library', 'src', 'typography');
+const typographyPath = path.resolve.bind(
+  null, __dirname, '..', 'pattern-library', 'src', 'typography');
 
 const pureModulePath = typographyPath('index.scss');
 const globalsPath = typographyPath('globals.scss');
@@ -86,4 +87,4 @@ exports.typographyFontsRules = {
       }
     }
   ]
-}
+};

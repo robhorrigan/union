@@ -25,19 +25,17 @@ const TypeShape = PropTypes.shape({
   required: PropTypes.bool
 });
 
-const MetadataShape = PropTypes.shape({
-  type: TypeShape,
-  description: PropTypes.string,
-  defaultValue: PropTypes.shape({
-    value: PropTypes.string
-  })
-});
-
 PropTypesTable.propTypes = {
   /**
    * props attribute from react-gen metadata
    */
-  metadata: MetadataShape.isRequired,
+  metadata: PropTypes.shape({
+    type: TypeShape,
+    description: PropTypes.string,
+    defaultValue: PropTypes.shape({
+      value: PropTypes.string
+    })
+  }).isRequired,
   /**
    * List of columns to exclude. Default columns are: "name", "description", "type", "default"
    */
@@ -82,7 +80,16 @@ function PropTypesTableBody({ metadata, columns }) {
 }
 
 PropTypesTableBody.propTypes = {
-  metadata: MetadataShape.isRequired,
+  /**
+   * props attribute from react-gen metadata
+   */
+  metadata: PropTypes.shape({
+    type: TypeShape,
+    description: PropTypes.string,
+    defaultValue: PropTypes.shape({
+      value: PropTypes.string
+    })
+  }).isRequired,
   columns: PropTypes.arrayOf(PropTypes.string)
 };
 

@@ -26,7 +26,7 @@ module.exports = {
   module: { rules },
   plugins: [
     new webpack.DefinePlugin({
-      'ENV': 'process.env.NODE_ENV'
+      ENV: 'process.env.NODE_ENV'
     })
   ]
 };

@@ -48,6 +48,6 @@ export default class Article {
 
   permalink() {
     const path = this.attributes.permalink || this.pathInfo.relativeName;
-    return normalizePath(__webpack_public_path__, path);
+    return normalizePath(__webpack_public_path__, path)
   }
 }

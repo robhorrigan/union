@@ -1,4 +1,3 @@
-const path = require('path');
 const cssRules = require('./css-rules').default;
 const fontRules = require('./typography-rules').typographyFontsRules;
 

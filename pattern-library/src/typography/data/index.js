@@ -1,4 +1,4 @@
-import { tisaLightHash, tisaMediumHash, tisaSansHash }  from './hashes';
+import { tisaLightHash, tisaMediumHash, tisaSansHash } from './hashes';
 
 function exportValues({
   tisaLight,
@@ -22,8 +22,6 @@ function exportValues({
   };
 }
 
-if (ENV === 'production') {
-  exportValues(require('./hosted-urls'));
-} else {
-  exportValues(require('./data-urls'));
-}
+const urls = (ENV === 'production') ? require('./hosted-urls') : require('./data-urls');
+
+exportValues(urls);
