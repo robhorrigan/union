@@ -1,6 +1,6 @@
 import { tisaLightHash, tisaMediumHash, tisaSansHash } from './hashes';
 
-function exportValues({
+function createTypographyData({
   tisaLight,
   tisaLight2,
   tisaMedium,
@@ -8,7 +8,7 @@ function exportValues({
   tisaSansRegular,
   tisaSansRegular2
 }) {
-  module.exports = {
+  return {
     /* Use hashes in font names */
     'serif-family-name': `tisa-${tisaLightHash}-${tisaMediumHash}`,
     'sans-serif-family-name': `tisa-${tisaSansHash}`,
@@ -24,4 +24,4 @@ function exportValues({
 
 const urls = (ENV === 'production') ? require('./hosted-urls') : require('./data-urls');
 
-exportValues(urls);
+module.exports = createTypographyData(urls);
