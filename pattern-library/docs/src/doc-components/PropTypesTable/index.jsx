@@ -1,6 +1,5 @@
-import React, { PropTypes, createElement } from 'react';
+import React, { PropTypes } from 'react';
 import bsTables from '@xo-union/bootstrap/tables';
-import { parseType } from '#docs/doc-components/utilities';
 import { TableBody, TableRow, MetadataShape } from './utils';
 
 /**
