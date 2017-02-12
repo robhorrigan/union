@@ -2990,7 +2990,7 @@
     },
     "exports-loader": {
       "version": "0.6.3",
-      "from": "exports-loader@>=0.6.3 <0.7.0",
+      "from": "https://registry.npmjs.org/exports-loader/-/exports-loader-0.6.3.tgz",
       "resolved": "https://registry.npmjs.org/exports-loader/-/exports-loader-0.6.3.tgz",
       "dev": true,
       "dependencies": {
@@ -9285,6 +9285,20 @@
           "version": "1.3.2",
           "from": "punycode@1.3.2",
           "resolved": "https://registry.npmjs.org/punycode/-/punycode-1.3.2.tgz",
+          "dev": true
+        }
+      }
+    },
+    "url-loader": {
+      "version": "0.5.7",
+      "from": "url-loader@latest",
+      "resolved": "https://registry.npmjs.org/url-loader/-/url-loader-0.5.7.tgz",
+      "dev": true,
+      "dependencies": {
+        "mime": {
+          "version": "1.2.11",
+          "from": "mime@>=1.2.0 <1.3.0",
+          "resolved": "https://registry.npmjs.org/mime/-/mime-1.2.11.tgz",
           "dev": true
         }
       }

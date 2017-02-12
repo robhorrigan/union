@@ -70,7 +70,7 @@
     "eslint-plugin-json": "^1.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.9.0",
-    "exports-loader": "^0.6.3",
+    "exports-loader": "https://registry.npmjs.org/exports-loader/-/exports-loader-0.6.3.tgz",
     "extend": "^3.0.0",
     "file-loader": "^0.10.0",
     "glob-all": "^3.1.0",
@@ -101,6 +101,7 @@
     "react-router": "^3.0.2",
     "sass-loader": "^4.1.1",
     "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.3.0",
     "yo": "^1.8.5"

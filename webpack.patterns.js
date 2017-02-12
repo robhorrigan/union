@@ -1,4 +1,5 @@
 const path = require('path');
+const webpack = require('webpack');
 const externalizeRequires = require('./build-utils/externalize-requires');
 const { buildEntrypoints } = require('./build-utils/entrypoints');
 const rules = require('./webpack/patterns-rules');
@@ -22,5 +23,10 @@ module.exports = {
       'css-module-builder'
     ])
   ],
-  module: { rules }
+  module: { rules },
+  plugins: [
+    new webpack.DefinePlugin({
+      'ENV': 'process.env.NODE_ENV'
+    })
+  ]
 };

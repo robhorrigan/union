@@ -15,7 +15,7 @@ module.exports = {
   entry: ['prismjs', './src/index.jsx'],
   output: {
     filename: './index.js',
-    path: path.resolve(__dirname, 'public'),
+    path: path.resolve(__dirname, 'public', 'docs'),
     publicPath: '/'
   },
   plugins: [

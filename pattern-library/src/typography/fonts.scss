@@ -1,35 +1,37 @@
-@value serif-family tisa;
-@value sans-serif-family tisa sans;
-
-@function fonts-url($url) {
-  $font-url-prefix: "~#assets/fonts";
-
-  @return url('#{$font-url-prefix}/#{$url}');
-}
+@value (
+  serif-family-name,
+  sans-serif-family-name,
+  tisa-light-woff-url,
+  tisa-light-woff2-url,
+  tisa-med-woff-url,
+  tisa-med-woff2-url,
+  tisa-sans-woff-url,
+  tisa-sans-woff2-url
+) from '@xo-union/typography/data';
 
 @font-face {
-  font-family: serif-family;
+  font-family: serif-family-name;
   src:
-    fonts-url('tisa-light.woff2') format('woff2'),
-    fonts-url('tisa-light.woff') format('woff');
+    url(tisa-light-woff2-url) format('woff2'),
+    url(tisa-light-woff-url) format('woff');
   font-weight: 300;
   font-style: normal;
 }
 
 @font-face {
-  font-family: serif-family;
+  font-family: serif-family-name;
   src:
-    fonts-url('tisa-medium.woff2') format('woff2'),
-    fonts-url('tisa-medium.woff') format('woff');
+    url(tisa-med-woff2-url) format('woff2'),
+    url(tisa-med-woff-url) format('woff');
   font-weight: 500;
   font-style: normal;
 }
 
 @font-face {
-  font-family: sans-serif-family;
+  font-family: sans-serif-family-name;
   src:
-    fonts-url('tisa-sans-regular.woff2') format('woff2'),
-    fonts-url('tisa-sans-regular.woff') format('woff');
+    url(tisa-sans-woff2-url) format('woff2'),
+    url(tisa-sans-woff-url) format('woff');
   font-weight: 400;
   font-style: normal;
 }

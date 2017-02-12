@@ -1,5 +1,6 @@
 [
   "index.scss",
   "globals.scss",
-  "fonts.scss"
+  "fonts.scss",
+  "data/index.js"
 ]
