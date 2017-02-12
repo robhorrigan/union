@@ -72,6 +72,7 @@
     "eslint-plugin-react": "^6.9.0",
     "exports-loader": "https://registry.npmjs.org/exports-loader/-/exports-loader-0.6.3.tgz",
     "extend": "^3.0.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "file-loader": "^0.10.0",
     "glob-all": "^3.1.0",
     "html-webpack-plugin": "^2.26.0",

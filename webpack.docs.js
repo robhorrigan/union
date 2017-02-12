@@ -1,5 +1,6 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const resolve = require('./webpack/resolve');
 const cssRules = require('./webpack/css-rules').docs;
 
@@ -9,6 +10,10 @@ const MDJSX_LOADER = require.resolve('./packages/tools/mdjsx-loader');
 const patternDocsPath = path.resolve.bind(null, __dirname, 'pattern-library', 'docs');
 const ARTICLES_DIR_CONFIG_PATH = patternDocsPath('articles-directory.config.json');
 
+const extract = new ExtractTextPlugin({
+  filename: 'styles.css',
+  ignoreOrder: true
+});
 
 module.exports = {
   context: patternDocsPath(),
@@ -27,12 +32,19 @@ module.exports = {
     new HTMLWebpackPlugin({
       template: patternDocsPath('src', 'index.html'),
       filename: '404.html'
-    })
+    }),
+    extract
   ],
   resolve: resolve.testAndDocs,
   module: {
     rules: [
-      cssRules,
+      {
+        test: /\.cssm?$/,
+        issuer: /\.jsx?$/,
+        rules: extract.extract({
+          use: [ cssRules ]
+        })
+      },
       {
         /*
          * Directory loader should be closer to the top since it doesn't do any parsing
