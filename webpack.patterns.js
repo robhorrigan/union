@@ -1,6 +1,5 @@
 const path = require('path');
 const webpack = require('webpack');
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const externalizeRequires = require('./build-utils/externalize-requires');
 const { buildEntrypoints } = require('./build-utils/entrypoints');
 const rules = require('./webpack/patterns-rules');

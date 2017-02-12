@@ -1,4 +1,3 @@
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const rebootCSSPath = require.resolve('../pattern-library/src/bootstrap/reboot.scss');
 const {
   typographyCssRules,
