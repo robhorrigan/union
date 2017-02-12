@@ -1,4 +1,4 @@
-const rules = require('./webpack/pattern-rules');
+const rules = require('./webpack/patterns-rules');
 const resolve = require('./webpack/resolve');
 
 module.exports = {
