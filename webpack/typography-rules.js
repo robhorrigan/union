@@ -69,8 +69,8 @@ exports.typographyFontsRules = {
         loader: 'file-loader',
         options: {
           name: '/[name]-[hash:3].[ext]',
-          publicPath: '//static.xoedge.com/union/fonts',
-          outputPath: path.join('..', '..', 'public', 'fonts')
+          publicPath: '//s3.amazonaws.com/xo-union/fonts',
+          outputPath: path.join('..', '..', 'public', 'assets', 'fonts')
         }
       }
     },

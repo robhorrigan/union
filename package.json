@@ -20,6 +20,7 @@
     "open": "open $npm_package_config_local_docs_app_url",
     "publish.packages": "lerna publish",
     "publish.docs": "sh ./scripts/publish-docs.sh",
+    "publish.assets": "sh ./scripts/publish-assets.sh",
     "restart": "pm2 restart all",
     "start": "pm2 start $npm_package_config_process_config_file",
     "status": "pm2 status",
