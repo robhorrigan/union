@@ -1,8 +1,5 @@
-_site
-.sass-cache
-.jekyll-metadata
 node_modules
-public/css
+/public
 *.sw?
 
 *.log

@@ -1,3 +1,5 @@
+@value ( serif-family-name, sans-serif-family-name ) from '@xo-union/typography/data';
+
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
 
@@ -5,8 +7,8 @@
  * Bootstrap overrides
  */
 
-$font-family-sans-serif: "tisa sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif: "tisa", Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif: sans-serif-family-name, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: serif-family-name, Georgia, "Times New Roman", Times, serif;
 
 /* Base body styles  */
 $font-family-base: $font-family-sans-serif;

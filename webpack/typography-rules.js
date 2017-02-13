@@ -1,8 +1,12 @@
+const path = require('path');
 const cssByebye = require('css-byebye');
 
-const pureModulePath = require.resolve('../pattern-library/src/typography/index.scss');
-const globalsPath = require.resolve('../pattern-library/src/typography/globals.scss');
-const fontsPath = require.resolve('../pattern-library/src/typography/fonts.scss');
+const typographyPath = path.resolve.bind(
+  null, __dirname, '..', 'pattern-library', 'src', 'typography');
+
+const pureModulePath = typographyPath('index.scss');
+const globalsPath = typographyPath('globals.scss');
+const fontsPath = typographyPath('fonts.scss');
 
 function useRuleRemover(rulesToRemove) {
   return {
@@ -37,7 +41,7 @@ const UseEntries = {
 
 exports.typographyFontsPath = fontsPath;
 exports.typographyGlobalsPath = globalsPath;
-exports.typographyRules = [
+exports.typographyCssRules = [
   {
     include: [fontsPath],
     use: UseEntries.keepFontFaces
@@ -51,3 +55,36 @@ exports.typographyRules = [
     use: UseEntries.removeClasses
   }
 ];
+
+exports.typographyFontsRules = {
+  test: /\.woff2?$/,
+  rules: [
+    {
+      issuer: typographyPath('data', 'data-urls.js'),
+      use: 'url-loader'
+    },
+    {
+      issuer: typographyPath('data', 'hosted-urls.js'),
+      use: {
+        loader: 'file-loader',
+        options: {
+          name: '/[name]-[hash:3].[ext]',
+          publicPath: '//s3.amazonaws.com/xo-union/fonts',
+          outputPath: path.join('..', '..', 'public', 'assets', 'fonts')
+        }
+      }
+    },
+    {
+      issuer: typographyPath('data', 'hashes.js'),
+      use: {
+        loader: 'file-loader',
+        options: {
+          emitFile: false,
+          hash: 'sha512',
+          digest: 'hex',
+          name: '[hash:3]'
+        }
+      }
+    }
+  ]
+};

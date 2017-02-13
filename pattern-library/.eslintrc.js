@@ -5,6 +5,10 @@ module.exports = {
   env: {
     browser: true
   },
+  globals: {
+    ENV: true,
+    __webpack_public_path__: true
+  },
   extends: [
     '../.eslintrc.js'
   ],

@@ -14,7 +14,8 @@ exports.default = {
   ],
   alias: {
     /* Facilitate making references to files in the source root */
-    '#': patternLibPath('src')
+    '#': patternLibPath('src'),
+    '#assets': patternLibPath('assets')
   }
 };
 
