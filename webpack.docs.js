@@ -40,7 +40,7 @@ module.exports = {
     rules: [
       {
         test: /\.cssm?$/,
-        issuer: /\.jsx?$/,
+        issuer: /\.(jsx?|md)$/,
         rules: extract.extract({
           use: cssRules
         })
