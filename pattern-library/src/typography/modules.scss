@@ -1,0 +1,13 @@
+// Use @require to bypass sass's @import
+// This is necessary because the 'fonts' module is a "runtime"
+// dependency and should not be compiled into this module
+@require '@xo-union/typography/fonts';
+
+@import '~#/_shared/bootstrap-overrides';
+@import './variables';
+@import './math';
+
+@import '~bootstrap/scss/type';
+@import './modules/font-scales';
+@import './modules/font-weights';
+

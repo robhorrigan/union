@@ -1,0 +1,9 @@
+pattern-library/docs/build/*
+packages/tools/generator-union/generators/**/templates/**/*
+node_modules
+packages/pattern-library/**/*.cssm
+packages/pattern-library/**/*.js
+
+/public/
+
+docs/gulpfile.js

@@ -1,0 +1,25 @@
+@value black from '@xo-union/colors';
+@value ( font-size-xsmall ) from '#/fields/css/shared/fonts';
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  cursor: text;
+
+  /* Firefox doesn't support (:placeholder-shown) at the moment */
+  @-moz-document url-prefix() {
+    color: black;
+    font-size: font-size-xsmall;
+    font-weight: 500;
+    margin-top: 6px;
+  }
+}
+
+.small-label {
+  composes: label;
+
+  font-size: font-size-xsmall;
+  font-weight: 500;
+}

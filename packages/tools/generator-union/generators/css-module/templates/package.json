@@ -1,5 +1,0 @@
-{
-  "name": "@union/<%= packageName %>",
-  "version": "1.0.0",
-  "main": "lib/index.cssm"
-}

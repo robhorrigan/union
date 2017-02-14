@@ -1,35 +1,8 @@
-const glob = require('glob-all');
-const path = require('path');
-// Karma configuration
-// Generated on Mon Jan 30 2017 23:48:56 GMT-0500 (EST)
+const webpackConfig = require('./webpack.test');
 
-module.exports = function(config) {
+module.exports = function karmaConfig(config) {
   config.set({
-    webpack: {
-      resolve: {
-        extensions: [
-          '',
-          '.js',
-          '.jsx',
-          '.cssm'
-        ]
-      },
-      module: {
-        loaders: [
-          {
-            test: /\.jsx?$/,
-            exclude: /node_modules/,
-            loader: 'babel-loader'
-          }
-        ]
-      },
-      externals: {
-        'cheerio': 'window',
-        'react/addons': true,
-        'react/lib/ExecutionEnvironment': true,
-        'react/lib/ReactContext': true
-      }
-    },
+    webpack: webpackConfig,
     browserNoActivityTimeout: 100000000,
     customLaunchers: {
       ChromeWithDevTools: {
@@ -102,5 +75,5 @@ module.exports = function(config) {
     // Concurrency level
     // how many browser should be started simultaneous
     concurrency: Infinity
-  })
-}
+  });
+};

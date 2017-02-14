@@ -1,1 +1,1 @@
-module.exports = __filename
+module.exports = __filename;

@@ -1,16 +1,16 @@
 const except = require('except');
 const frontMatter = require('front-matter');
+
 const OPENED_OR_SELF_CLOSED_COMPONENT = /^\s*<.+(:?\/)?>\s*$/;
 const SINGLE_LINE_COMPONENT = /^\s*<[^>]+>[^<]*<\/[^>]+>\s*$/;
 const CLOSED_COMPONENT = /^\s*<\/[^>]+>\s*$/;
 
-function importsToJs(imports) {
-  let code = '';
-  for (const importExpression in imports) {
-    code += `import ${importExpression} from ${JSON.stringify(imports[importExpression])};\n`;
-  }
+function importsToJs(imports = {}) {
+  return Object.keys(imports).reduce((code, importExpression) => {
+    const path = JSON.stringify(imports[importExpression]);
 
-  return code;
+    return `${code}import ${importExpression} from ${path};\n`;
+  }, '');
 }
 
 module.exports = function mdjsx(source) {
@@ -23,11 +23,17 @@ module.exports = function mdjsx(source) {
   const restOfFrontMatter = except(attributes, '$imports');
 
   const normalizedLines = lines.map((line) => {
-    if (SINGLE_LINE_COMPONENT.test(line) || OPENED_OR_SELF_CLOSED_COMPONENT.test(line) || CLOSED_COMPONENT.test(line)) {
+    const jsxPatterns = [
+      SINGLE_LINE_COMPONENT,
+      OPENED_OR_SELF_CLOSED_COMPONENT,
+      CLOSED_COMPONENT
+    ];
+
+    if (jsxPatterns.some(pattern => pattern.test(line))) {
       return line;
-    } else {
-      return `{${JSON.stringify(line)}}`;
     }
+
+    return `{${JSON.stringify(line)}}`;
   });
 
   const code = `
@@ -44,5 +50,5 @@ ${normalizedLines.join('\n')}
 </Markdown>
 `;
 
-  return code
+  return code;
 };

@@ -5,31 +5,34 @@ const requireFromString = require('require-from-string');
 const articlesLoader = require('../');
 
 const fixturePath = path.resolve.bind(path, __dirname, 'fixtures');
-const fixtureConfigPath = fixturePath('directory-loader.config.js');
+const fixtureConfigPath = fixturePath('directory-loader.config.json');
 const fixtureSource = fs.readFileSync(fixtureConfigPath, { encoding: 'utf8' });
 
 class WebpackLoaderInstaneMock {
   constructor() {
-    this._asyncPromise = new Promise((resolve, reject) => {
-      this._asyncPromiseResolve = resolve;
-      this._asyncPromiseReject = reject;
+    this.asyncPromise = new Promise((resolve, reject) => {
+      this.asyncPromiseResolve = resolve;
+      this.asyncPromiseReject = reject;
     });
   }
 
+  // eslint-disable-next-line class-methods-use-this
   exec(source) {
     // Simulate chaining with json loader
     return JSON.parse(source);
   }
 
+  // eslint-disable-next-line class-methods-use-this
   addContextDependency() { }
 
+  // eslint-disable-next-line class-methods-use-this
   cacheable() { }
 
   async() {
     return (err, data) => {
-      if (err) return this._asyncPromiseReject(err);
-      this._asyncPromiseResolve(data);
-    }
+      if (err) this.asyncPromiseReject(err);
+      else this.asyncPromiseResolve(data);
+    };
   }
 }
 
@@ -62,7 +65,7 @@ describe('directory-loader', () => {
   it('creates a module which includes all modules in the directory', function (done) {
     articlesLoader.call(this.loaderInstance, fixtureSource);
 
-    this.loaderInstance._asyncPromise.then((moduleString) => {
+    this.loaderInstance.asyncPromise.then((moduleString) => {
       const module = requireFromString(moduleString);
 
       expect(module.files.length).toBe(2);
