@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob-all');
 
-function extensionMapper(extension) {
+function assumedExtension(extension) {
   if (/\.jsx?$/.test(extension)) {
     return '.js';
   }
@@ -17,7 +17,7 @@ function extensionMapper(extension) {
 function assumedDestinationFileName(fileName) {
   const extension = path.extname(fileName);
   const basename = path.basename(fileName, extension);
-  const newExtension = extensionMapper(extension);
+  const newExtension = assumedExtension(extension);
 
   return `${basename}${newExtension}`;
 }
