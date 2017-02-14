@@ -19,7 +19,7 @@ function assumedDestinationFileName(fileName) {
   const basename = path.basename(fileName, extension);
   const newExtension = extensionMapper(extension);
 
-  return `${basename}${newExtension}`
+  return `${basename}${newExtension}`;
 }
 
 function normalizeFiles(files) {
