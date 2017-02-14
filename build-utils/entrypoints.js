@@ -2,7 +2,7 @@ const fs = require('fs');
 const path = require('path');
 const glob = require('glob-all');
 
-function defaultExtensionMapper(extension) {
+function extensionMapper(extension) {
   if (/\.jsx?$/.test(extension)) {
     return '.js';
   }
@@ -12,6 +12,27 @@ function defaultExtensionMapper(extension) {
   }
 
   return extension;
+}
+
+function assumedDestinationFileName(fileName) {
+  const extension = path.extname(fileName);
+  const basename = path.basename(fileName, extension);
+  const newExtension = extensionMapper(extension);
+
+  return `${basename}${newExtension}`
+}
+
+function normalizeFiles(files) {
+  return files.map((file) => {
+    if (typeof file === 'string') {
+      return {
+        from: file,
+        to: assumedDestinationFileName(file)
+      };
+    }
+
+    return file;
+  });
 }
 
 exports.getEntrypointsFiles = function getEntrypointsFiles({ where }) {
@@ -25,10 +46,7 @@ exports.getEntrypointsFiles = function getEntrypointsFiles({ where }) {
 
 exports.adaptEntrypoints = function adaptEntrypoints(
   entrypointFiles,
-  {
-    relativeTo,
-    mapExtension = defaultExtensionMapper
-  }
+  { relativeTo }
 ) {
   const allEntrypoints = {};
 
@@ -37,14 +55,11 @@ exports.adaptEntrypoints = function adaptEntrypoints(
     const relativePath = path.relative(relativeTo, entrypointFile);
     const relativeDir = path.dirname(relativePath);
 
-    files.forEach((file) => {
-      const extension = path.extname(file);
-      const basename = path.basename(file, extension);
-      const dirname = path.dirname(file);
-      const newExtension = mapExtension(extension);
+    normalizeFiles(files).forEach(({ from, to }) => {
+      const dirname = path.dirname(from);
 
-      const destinationPath = path.join(relativeDir, dirname, `${basename}${newExtension}`);
-      const sourcePath = path.join(relativeDir, file);
+      const destinationPath = path.join(relativeDir, dirname, to);
+      const sourcePath = path.join(relativeDir, from);
 
       allEntrypoints[destinationPath] = `./${sourcePath}`;
     });

@@ -1,6 +1,9 @@
 [
-  "index.scss",
-  "globals.scss",
   "fonts.scss",
-  "data/index.js"
+  "data/index.js",
+  "globals.scss",
+  {
+    "from": "modules.scss",
+    "to": "index.cssm"
+  }
 ]
