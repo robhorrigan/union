@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '#docs/components/App';
+import Routes from '#docs/components/Routes';
 
 /* Import bootstrap css globals */
 import '@xo-union/bootstrap';
@@ -10,6 +10,6 @@ import 'prism-themes/themes/prism-ghcolors.css';
 
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('app')
+  <Routes />,
+  document.getElementById('root')
 );

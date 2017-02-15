@@ -1,27 +1,15 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { Router, Route, browserHistory } from 'react-router';
 
-import { Error404 } from '#docs/components/Errors';
+import Error404 from '#docs/components/Errors/404';
 import Layout from '#docs/components/Layout';
-import generateRoutes from '#docs/utils/generateRoutes';
+import generateRoutes from './generateRoutes';
+import handleBookmark from './handleBookmark';
 
 // eslint-disable-next-line camelcase
 const rootPath = __webpack_public_path__;
 
-function handleBookmark() {
-  const hash = window.location.hash;
-  if (hash) {
-    setTimeout(() => {
-      const bookmark = document.getElementById(hash.replace('#', ''));
-
-      if (bookmark) {
-        bookmark.scrollIntoView();
-      }
-    }, 0);
-  }
-}
-
-export default function App() {
+export default function Routes() {
   const routes = generateRoutes();
 
   return (

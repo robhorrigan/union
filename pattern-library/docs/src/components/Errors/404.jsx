@@ -2,16 +2,16 @@ import React, { PropTypes } from 'react';
 import { normalizePath } from '#docs/utils/paths';
 
 function eachRoute(routes, callback, nesting = 0, parentRoute) {
-  for (let route of routes) {
+  routes.forEach((route) => {
     callback(route, nesting, parentRoute);
 
     if (route.childRoutes) {
       eachRoute(route.childRoutes, callback, nesting + 1, route);
     }
-  }
+  });
 }
 
-export function Error404(_, { router }) {
+export default function Error404(_, { router }) {
   const routes = [];
 
   eachRoute(router.routes, (route, nesting, parentRoute) => {
@@ -30,13 +30,13 @@ export function Error404(_, { router }) {
 
   return (
     <div>
-      This route doesn't exist.
+      {"This route doesn't exist."}
 
       <ul>
         {routes}
       </ul>
     </div>
-  )
+  );
 }
 
 Error404.contextTypes = {
