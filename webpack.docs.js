@@ -61,19 +61,6 @@ module.exports = {
         exclude: /node_modules/
       },
       {
-        test: /\.woff2?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              hash: 'sha512',
-              digest: 'hex',
-              name: '[hash].[ext]',
-            }
-          }
-        ]
-      },
-      {
         test: /.*\.(gif|png|jpe?g|svg)$/i,
         use: [
           {
