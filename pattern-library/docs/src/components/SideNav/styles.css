@@ -1,0 +1,7 @@
+@value ( knot-blue-shade-50 ) from '@xo-union/colors';
+
+.active-nav-link {
+  composes: nav-link from '@xo-union/bootstrap/nav';
+  font-weight: bold;
+  color: knot-blue-shade-50;
+}

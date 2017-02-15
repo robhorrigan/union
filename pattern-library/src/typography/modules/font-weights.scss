@@ -1,0 +1,21 @@
+/* tisa-* classes should be deprecated. They create unwanted coupling between font and class names*/
+.tisa-light,
+.serif-light
+{
+  font-family: $font-family-serif;
+  font-weight: 300;
+}
+
+.tisa-med,
+.serif-med
+{
+  font-family: $font-family-serif;
+  font-weight: 500;
+}
+
+.tisa-sans,
+.sans-serif
+{
+  font-family: $font-family-sans-serif;
+  font-weight: 400;
+}

@@ -1,0 +1,54 @@
+@value ( gray-2 ) from '#/fields/css/shared/colors';
+@value ( gray-90, white, gray-95 ) from '@xo-union/colors';
+
+@mixin theme($base, $accent) {
+  .field,
+  .dropdown-field,
+  .dropdown-list,
+  .textarea-with-label,
+  .textarea-without-label,
+  .textarea-label
+  {
+    background-color: $base;
+  }
+
+  .dropdown-item-is-selected {
+    background-color: $accent;
+  }
+}
+
+.field {
+  composes: field from '#/fields/css/styles/field';
+}
+
+.dropdown-field {
+  composes: dropdown-field from '#/fields/css/styles/dropdown-field';
+}
+
+.dropdown-list {
+  composes: dropdown-list from '#/fields/css/styles/dropdown-field';
+}
+
+.textarea-with-label {
+  composes: textarea-with-label from '#/fields/css/styles/textarea';
+}
+
+.textarea-without-label {
+  composes: textarea-without-label from '#/fields/css/styles/textarea';
+}
+
+.textarea-label {
+  composes: textarea-label from '#/fields/css/styles/textarea';
+}
+
+.dropdown-item-is-selected {
+  composes: dropdown-item-is-selected from '#/fields/css/styles/dropdown-item';
+}
+
+.gray-theme {
+  @include theme(gray-2, gray-90);
+}
+
+.white-theme {
+  @include theme(white, gray-95);
+}

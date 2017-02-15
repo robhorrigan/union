@@ -1,0 +1,37 @@
+@value (
+  serif-family-name,
+  sans-serif-family-name,
+  tisa-light-woff-url,
+  tisa-light-woff2-url,
+  tisa-med-woff-url,
+  tisa-med-woff2-url,
+  tisa-sans-woff-url,
+  tisa-sans-woff2-url
+) from '@xo-union/typography/data';
+
+@font-face {
+  font-family: serif-family-name;
+  src:
+    url(tisa-light-woff2-url) format('woff2'),
+    url(tisa-light-woff-url) format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: serif-family-name;
+  src:
+    url(tisa-med-woff2-url) format('woff2'),
+    url(tisa-med-woff-url) format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: sans-serif-family-name;
+  src:
+    url(tisa-sans-woff2-url) format('woff2'),
+    url(tisa-sans-woff-url) format('woff');
+  font-weight: 400;
+  font-style: normal;
+}

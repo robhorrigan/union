@@ -1,0 +1,8 @@
+@value purpulish-gray: #F7F7F9;
+
+/* tag and attribute selectors are to increase specificity
+ * as this selector is competing with styles from prism theme
+ * */
+pre[class*="language-"].snippet {
+  background-color: purpulish-gray;
+}

@@ -1,0 +1,12 @@
+.container {
+  position: relative;
+}
+
+.field-container {
+  composes: text-left from '@xo-union/bootstrap/utilities';
+  composes: container;
+
+  * {
+    box-sizing: border-box;
+  }
+}

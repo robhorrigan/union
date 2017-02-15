@@ -1,0 +1,23 @@
+@value ( serif-family-name, sans-serif-family-name ) from '@xo-union/typography/data';
+
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+
+/**
+ * Bootstrap overrides
+ */
+
+$font-family-sans-serif: sans-serif-family-name, -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif: serif-family-name, Georgia, "Times New Roman", Times, serif;
+
+/* Base body styles  */
+$font-family-base: $font-family-sans-serif;
+$font-size-base: 16px;
+
+$line-height-base: 1.55;
+$headings-line-height: 1.25;
+
+/* Do we keep these? */
+$link-hover-color: #0275d8;
+$link-hover-decoration: none;
+

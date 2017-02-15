@@ -1,0 +1,26 @@
+@value ( gray-2-border, gray-1-border, black-border ) from '#/fields/css/shared/borders';
+@value ( gray-1 ) from '#/fields/css/shared/colors';
+
+.field-base {
+  composes: medium-font-size from '#/fields/css/shared/fonts';
+
+  -webkit-appearance: none;
+  border: gray-2-border;
+  // Fix firefox render error
+  box-shadow: none;
+  width: 100%;
+  position: relative;
+  display: block;
+
+  &:hover,
+  &:focus {
+    border: black-border;
+    outline: 0;
+  }
+
+  &:disabled {
+    background: gray-1;
+    border: gray-1-border;
+  }
+}
+

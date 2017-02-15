@@ -1,0 +1,82 @@
+@value (
+  coral-tint-80,
+  coral-tint-30,
+  white,
+  gray-55,
+  black,
+  mint-tint-80
+) from '@xo-union/colors';
+
+@value ( solid-border ) from '#/fields/css/shared/borders';
+@value ( spacer-x ) from '#/fields/css/shared/spacing';
+
+@value (
+  font-size-small,
+  font-size-xsmall
+) from '#/fields/css/shared/fonts';
+
+.field {
+  composes: field-base from '#/fields/css/styles/field-base';
+  padding: 20px spacer-x 4px spacer-x;
+
+  &:not(:placeholder-shown) ~ .field-label,
+  &:focus ~ .field-label {
+    font-size: font-size-xsmall;
+    font-weight: 500;
+
+    margin-top: 6px;
+  }
+
+  &:disabled ~ .field-label {
+    color: gray-3;
+    text-decoration: line-through;
+  }
+
+  &:focus ~ .field-label {
+    color: black;
+  }
+}
+
+.invalid-field {
+  composes: field;
+
+  background-color: coral-tint-80;
+  border: solid-border coral-tint-80;
+  transition: all 0.2s ease-out 1.5s;
+}
+
+.valid-field {
+  composes: field;
+  background-color: mint-tint-80;
+}
+
+.requirements {
+  background-color: coral-tint-30;
+  color: white;
+  font-size: font-size-small;
+  font-weight: 500;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 spacer-x;
+  transition: all 0.2s ease-out 1.5s;
+}
+
+/* Contextual styles */
+.invalid-field ~ .requirements {
+  max-height: 200px;
+  padding: 5px spacer-x 4px;
+}
+
+.field-label {
+  composes: label from '#/fields/css/styles/label';
+
+  /* Should come from a font-size class from typography */
+  font-weight: 300;
+  font-size: 18px;
+
+  margin-left: 10px;
+  margin-top: 14px;
+  color: gray-55;
+  transition: all 0.2s ease-out;
+}
+

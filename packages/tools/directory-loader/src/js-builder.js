@@ -10,11 +10,11 @@ function jsFileObject(pathInfoObject) {
 }
 
 module.exports = function build(pathinfoObjects) {
-  const initialJS = `var meta = { files: [] };\n`;
+  const initialJS = 'var meta = { files: [] };\n';
 
-  const js = pathinfoObjects.reduce((jsCode, pathInfoObject) => {
-    return jsCode + `meta.files.push(${jsFileObject(pathInfoObject)});\n`;
-  }, initialJS);
+  const js = pathinfoObjects.reduce((jsCode, pathInfoObject) =>
+    `${jsCode}meta.files.push(${jsFileObject(pathInfoObject)});\n`
+  , initialJS);
 
-  return js + 'module.exports = meta;';
+  return `${js}module.exports = meta;`;
 };
