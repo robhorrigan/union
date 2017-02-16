@@ -3,10 +3,10 @@ import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import Error404 from '#docs/components/Errors/404';
 import Layout from '#docs/components/Layout';
-import generateRoutes from './generateRoutes';
-import handleBookmark from './handleBookmark';
 import Article from '#docs/entities/Article';
 import siteConfig from '$site-config';
+import generateRoutes from './generateRoutes';
+import handleBookmark from './handleBookmark';
 
 // eslint-disable-next-line camelcase
 const rootPath = __webpack_public_path__;

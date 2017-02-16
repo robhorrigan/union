@@ -1,7 +1,5 @@
 import React from 'react';
-import { Router, browserHistory, Route } from 'react-router';
 import generateRoutes from '#docs/components/Routes/generateRoutes';
-import { mount } from 'enzyme';
 
 describe('<Routes>', () => {
   describe('.generateRoutes', () => {
@@ -12,7 +10,7 @@ describe('<Routes>', () => {
 
       permalink() { return `/${this.id}`; }
       component() {
-        const component = () => <div/>
+        const component = () => <div />;
         // attach id to facilitate testing
         component.id = this.id;
         return component;

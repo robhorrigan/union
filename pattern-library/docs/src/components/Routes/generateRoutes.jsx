@@ -1,6 +1,5 @@
 import React from 'react';
-import { Route, IndexRedirect } from 'react-router';
-import { landingPage } from '$site-config';
+import { Route } from 'react-router';
 
 export default function generateRoutes(articles) {
   return articles.map(article =>
