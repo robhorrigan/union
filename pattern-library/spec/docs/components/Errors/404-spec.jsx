@@ -24,10 +24,14 @@ describe('404', () => {
       router: PropTypes.any
     }
 
+    static propTypes = {
+      children: PropTypes.node
+    }
+
     getChildContext() {
       return {
         router: routerMock
-      }
+      };
     }
 
     render() {
