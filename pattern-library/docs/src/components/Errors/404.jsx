@@ -1,12 +1,12 @@
 import React, { PropTypes } from 'react';
 import { normalizePath } from '#docs/utils/paths';
 
-function eachRoute(routes, callback, nesting = 0, parentRoute) {
+function eachRoute(routes, callback, parentRoute) {
   routes.forEach((route) => {
-    callback(route, nesting, parentRoute);
+    callback(route, parentRoute);
 
     if (route.childRoutes) {
-      eachRoute(route.childRoutes, callback, nesting + 1, route);
+      eachRoute(route.childRoutes, callback, route);
     }
   });
 }
@@ -14,7 +14,7 @@ function eachRoute(routes, callback, nesting = 0, parentRoute) {
 export default function Error404(_, { router }) {
   const routes = [];
 
-  eachRoute(router.routes, (route, nesting, parentRoute) => {
+  eachRoute(router.routes, (route, parentRoute) => {
     let path;
 
     if (parentRoute) {
