@@ -8,7 +8,7 @@
   green-tint-90
 ) from '@xo-union/colors';
 
-@value ( solid-border ) from '#/fields/css/shared/borders';
+@value ( red-border ) from '#/fields/css/shared/borders';
 @value ( spacer-x ) from '#/fields/css/shared/spacing';
 
 @value (
@@ -42,7 +42,9 @@
   composes: field;
 
   background-color: red-tint-90;
-  border-color: solid-border red-tint-90;
+  // Annoying that !important is
+  // necessary for this to work
+  border: red-border !important;
   transition: all 0.2s ease-out 1.5s;
 }
 
