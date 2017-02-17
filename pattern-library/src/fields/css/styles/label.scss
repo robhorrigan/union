@@ -10,5 +10,4 @@
 .small-label {
   composes: label;
   composes: fontDown4 from '@xo-union/typography';
-  font-weight: 500;
 }

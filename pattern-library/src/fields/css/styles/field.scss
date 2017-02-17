@@ -12,6 +12,7 @@
 @value ( spacer-x ) from '#/fields/css/shared/spacing';
 
 @value (
+  font-up-1,
   font-down-4,
   font-down-2
 ) from '@xo-union/typography/sizes';
@@ -23,8 +24,6 @@
   &:not(:placeholder-shown) ~ .field-label,
   &:focus ~ .field-label {
     font-size: font-down-4;
-    font-weight: 500;
-
     margin-top: 6px;
   }
 
@@ -57,7 +56,6 @@
   background-color: red;
   color: white;
   font-size: font-down-2;
-  font-weight: 500;
   max-height: 0;
   overflow: hidden;
   padding: 0 spacer-x;
@@ -73,10 +71,7 @@
 .field-label {
   composes: label from '#/fields/css/styles/label';
 
-  /* Should come from a font-size class from typography */
-  font-weight: 300;
-  font-size: 18px;
-
+  font-size: font-up-1;
   margin-left: 10px;
   margin-top: 14px;
   color: gray-55;
