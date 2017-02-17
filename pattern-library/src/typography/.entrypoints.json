@@ -2,6 +2,7 @@
   "fonts.scss",
   "data/index.js",
   "globals.scss",
+  "sizes.scss",
   {
     "from": "modules.scss",
     "to": "index.cssm"

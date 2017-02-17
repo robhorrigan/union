@@ -1,19 +1,20 @@
 @value (
-  coral-tint-80,
-  coral-tint-30,
+  red,
+  red-tint-90,
   white,
   gray-55,
   black,
-  mint-tint-80
+  green-tint-80,
+  green-tint-90
 ) from '@xo-union/colors';
 
 @value ( solid-border ) from '#/fields/css/shared/borders';
 @value ( spacer-x ) from '#/fields/css/shared/spacing';
 
 @value (
-  font-size-small,
-  font-size-xsmall
-) from '#/fields/css/shared/fonts';
+  font-down-4,
+  font-down-2
+) from '@xo-union/typography/sizes';
 
 .field {
   composes: field-base from '#/fields/css/styles/field-base';
@@ -21,7 +22,7 @@
 
   &:not(:placeholder-shown) ~ .field-label,
   &:focus ~ .field-label {
-    font-size: font-size-xsmall;
+    font-size: font-down-4;
     font-weight: 500;
 
     margin-top: 6px;
@@ -40,20 +41,20 @@
 .invalid-field {
   composes: field;
 
-  background-color: coral-tint-80;
-  border: solid-border coral-tint-80;
+  background-color: red-tint-90;
+  border-color: solid-border red-tint-90;
   transition: all 0.2s ease-out 1.5s;
 }
 
 .valid-field {
   composes: field;
-  background-color: mint-tint-80;
+  background-color: green-tint-90;
 }
 
 .requirements {
-  background-color: coral-tint-30;
+  background-color: red;
   color: white;
-  font-size: font-size-small;
+  font-size: font-down-2;
   font-weight: 500;
   max-height: 0;
   overflow: hidden;

@@ -254,3 +254,12 @@
 @value gray-85: #d9d9d9;
 @value gray-90: #e6e6e6;
 @value gray-95: #f2f2f2;
+
+/* UTILITY PALETTE */
+
+@value coral-tint-8-saturated: #e72914;
+@value red: #c00404;
+@value red-tint-90: #f8e6e6;
+@value green: #1ca420;
+@value green-tint-90: #e8f6e9;
+@value green-tint-80: #d1ecd2;
