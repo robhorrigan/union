@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react';
 import { normalizePath } from '#docs/utils/paths';
+import type from '@xo-union/typography';
 
 function eachRoute(routes, callback, parentRoute) {
   routes.forEach((route) => {
@@ -30,9 +31,9 @@ export default function Error404(_, { router }) {
 
   return (
     <div>
-      {"This route doesn't exist."}
+      Page not found. Here is a list of all valid pages.
 
-      <ul>
+      <ul className={type.listUnstyled}>
         {routes}
       </ul>
     </div>
