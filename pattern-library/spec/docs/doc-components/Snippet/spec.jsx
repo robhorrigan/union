@@ -11,6 +11,13 @@ describe('<Snippet>', () => {
     expect(codeClass).toBe('language-test');
   });
 
+  it('accepts an optional inline attr that removes <pre>', () => {
+    const subject = mount(<Snippet inline />);
+
+    expect(subject.find('code').length).toEqual(1);
+    expect(subject.find('pre').length).toEqual(0);
+  });
+
   describe('on componentDidMount', () => {
     it('processes the code node with PrismJs', () => {
       const highlightSpy = spyOn(Prism, 'highlightElement');

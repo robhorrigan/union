@@ -3,7 +3,8 @@ import { LinkGroup } from '#docs/components/SideNav/utils';
 import {
   GettingStarted,
   FormElements,
-  DocComponents
+  DocComponents,
+  Typography
 } from '#docs/components/SideNav/dynamicallyGeneratedArticleLinks';
 
 export default function SideNavLinks() {
@@ -16,6 +17,7 @@ export default function SideNavLinks() {
 
       <LinkGroup label="Foundations">
         <FormElements />
+        <Typography />
       </LinkGroup>
     </div>
   );

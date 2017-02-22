@@ -5,17 +5,5 @@
 
 .article {
   composes: col from '@xo-union/bootstrap/grid';
+  composes: py-4 from '@xo-union/bootstrap/utilities';
 }
-
-/*
- * This feels a little hacky but is just to add some extra spacing in articles
- * */
-.article h1,
-.article h2,
-.article h3,
-.article h4,
-.article h5,
-.article h6 {
-  margin-top: 35px;
-}
-

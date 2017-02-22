@@ -4,5 +4,13 @@
 @require '@xo-union/typography/fonts';
 
 @import '~#/_shared/bootstrap-overrides';
+@import './variables';
 @import '~bootstrap/scss/type';
 
+html {
+  font-size: $font-size-base;
+}
+
+p {
+  font-size: $font-up-1;
+}

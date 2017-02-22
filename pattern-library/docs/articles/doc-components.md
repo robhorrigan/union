@@ -1,6 +1,7 @@
 ---
 $imports:
   '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
+  utils: '@xo-union/bootstrap/utilities'
   PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'
   SnippetsMetadata:       '!!react-docgen-loader!#docs/doc-components/Snippet'
   DemoMetadata:           '!!react-docgen-loader!#docs/doc-components/Demo'
@@ -11,10 +12,14 @@ $imports:
 
 > These are components used to build this documentation
 
+<div className={utils.mt5}></div>
+
 ## PropTypesTable Component
 
 <span>{PropTypesTableMetadata.description}</span>
 
+
+<div className={utils.mt4}></div>
 
 #### Properties and Demo
 
@@ -24,9 +29,13 @@ $imports:
   <PropTypesTable metadata={PropTypesTableMetadata.props} exclude={["default"]}/>
 </Demo>
 
+<div className={utils.mt5}></div>
+
 ## Snippet Component
 
 <span>{SnippetsMetadata.description}</span>
+
+<div className={utils.mt4}></div>
 
 #### Demo
 
@@ -36,13 +45,19 @@ $imports:
   </Snippet>
 </Demo>
 
+<div className={utils.mt4}></div>
+
 #### Properties
 
 <PropTypesTable metadata={SnippetsMetadata.props} exclude={["default"]} />
 
+<div className={utils.mt5}></div>
+
 ## Demo Component
 
 <span>{DemoMetadata.description}</span>
+
+<div className={utils.mt4}></div>
 
 #### Demo
 
@@ -56,13 +71,19 @@ Hello Demo
   </Demo>
 </Demo>
 
+<div className={utils.mt4}></div>
+
 #### Properties
 
 <PropTypesTable metadata={DemoMetadata.props} exclude={["default"]} />
 
+<div className={utils.mt5}></div>
+
 ## InstallSnippet Component
 
 <span>{InstallSnippetMetadata.description}</span>
+
+<div className={utils.mt4}></div>
 
 #### Demo
 
@@ -71,6 +92,8 @@ This is a demo of the Demo component, we added a pink border to make the represe
 <Demo>
   <InstallSnippet packageJson={{name: "test-package", version: "1.0.0"}} />
 </Demo>
+
+<div className={utils.mt4}></div>
 
 #### Properties
 
