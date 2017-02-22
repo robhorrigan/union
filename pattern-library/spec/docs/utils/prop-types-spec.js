@@ -1,4 +1,4 @@
-import { parseType } from '#docs/doc-components/utilities';
+import { parseType } from '#docs/utils/prop-types';
 
 describe('utils', () => {
   describe('.parseType', () => {

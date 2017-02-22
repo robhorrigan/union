@@ -1,11 +1,8 @@
 import React from 'react';
-import { files } from '$articles';
 import humanize from 'humanize-string';
 import pascalize from 'pascal-case';
-
-function normalizePath(...pathSegments) {
-  return pathSegments.join('/').replace(/\/{2,}/g, '/');
-}
+import { normalizePath } from '#docs/utils/paths';
+import { files } from '$articles';
 
 export default class Article {
   /*
