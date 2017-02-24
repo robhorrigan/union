@@ -3,7 +3,7 @@ import bsUtils from '@xo-union/bootstrap/utilities';
 import logo from '#docs/images/tk-logo.svg';
 import styles from './styles.css';
 
-export default function Header() {
+export default function HeaderNav() {
   return (
     <header className={styles.header}>
       <a className={styles.link} href="/">
