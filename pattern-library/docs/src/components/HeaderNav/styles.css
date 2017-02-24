@@ -1,15 +1,13 @@
-@value ( safe-gray-7, black ) from '@xo-union/colors';
+@value ( black, white ) from '@xo-union/colors';
 
-.header {
-  composes: navbar navbar-toggleable from '@xo-union/bootstrap/navbar';
-  background-color: safe-gray-7;
+@value tmp-header-color: #1388bb;
+
+.header-nav {
+  background-color: tmp-header-color;
 }
 
-.link {
-  composes: navbar-brand from '@xo-union/bootstrap/navbar';
-  color: black;
-}
-
-.link:hover {
-  color: black;
+.nav-link {
+  composes: nav-link from '@xo-union/bootstrap/nav';
+  color: white;
+  padding: 1.3em 1em;
 }
