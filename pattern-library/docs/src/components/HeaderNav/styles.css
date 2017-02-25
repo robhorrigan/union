@@ -9,22 +9,22 @@
   background-color: header-background-color;
 }
 
-.nav-link {
+.nav-item {
   color: white;
   padding: 1.3em 2em;
 }
 
-.nav-link:hover {
+.nav-item:hover {
   background-color: nav-item-hover-color;
   color: white;
 }
 
-.nav-link:focus {
+.nav-item:focus {
   color: white;
 }
 
-.active-link {
-  composes: nav-link;
+.active-item {
+  composes: nav-item;
 
   background-color: nav-item-active-color;
 }

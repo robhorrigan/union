@@ -12,10 +12,10 @@ export class NavItem extends Component {
     const { routing, to } = this.props;
 
     if (routing.currentPath === to) {
-      return styles.activeLink;
+      return styles.activeItem;
     }
 
-    return styles.navLink;
+    return styles.navItem;
   }
 
   render() {
