@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 import logo from '#docs/images/tk-logo.svg';
 import styles from './styles.css';
 import { Nav, NavItem } from './Nav';
+import { Arrow } from './Icons';
 
 export default class HeaderNav extends Component {
   render() {
@@ -10,6 +11,7 @@ export default class HeaderNav extends Component {
       <header className={styles.headerNav}>
         <Nav>
           <NavItem to="/">
+            <Arrow />
             The Knot Pattern Library
           </NavItem>
           <NavItem to="/getting-started">Getting Started</NavItem>

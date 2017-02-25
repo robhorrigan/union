@@ -1,0 +1,11 @@
+.arrow-right {
+  composes: align-middle mr-3 from '@xo-union/bootstrap/utilities';
+
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-top: .4em solid transparent;
+  border-bottom: .4em solid transparent;
+
+  border-left: .5em solid white;
+}
