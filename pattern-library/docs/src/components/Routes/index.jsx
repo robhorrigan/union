@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Router, Route, IndexRoute, browserHistory, withRouter } from 'react-router';
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
 import { computed } from 'mobx';
 import { Provider } from 'mobx-react';
-import { RouterStore, syncHistoryWithStore } from 'mobx-react-router'
+import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 
 import Error404 from '#docs/components/Errors/404';
 import Layout from '#docs/components/Layout';
