@@ -1,6 +1,8 @@
 @value ( black, white ) from '@xo-union/colors';
 
 @value header-background-color: #1388bb;
+@value nav-item-hover-color: #429FC8;
+@value nav-item-active-color: #117AA7;
 
 .header-nav {
   composes: sans-serif from '@xo-union/typography';
@@ -13,7 +15,7 @@
 }
 
 .nav-link:hover {
-  background-color: #429FC8;
+  background-color: nav-item-hover-color;
   color: white;
 }
 
@@ -24,7 +26,6 @@
 .active-link {
   composes: nav-link;
 
-  background-color: #117AA7;
-  color: white;
+  background-color: nav-item-active-color;
 }
 
