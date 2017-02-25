@@ -34,7 +34,6 @@ export default class Article {
     return this.attributes.title || humanize(this.pathInfo.name);
   }
 
-
   component() {
     const props = {
       title: this.title()

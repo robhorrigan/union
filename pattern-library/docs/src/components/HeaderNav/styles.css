@@ -1,13 +1,29 @@
 @value ( black, white ) from '@xo-union/colors';
 
-@value tmp-header-color: #1388bb;
+@value header-background-color: #1388bb;
 
 .header-nav {
-  background-color: tmp-header-color;
+  composes: sans-serif from '@xo-union/typography';
+  background-color: header-background-color;
 }
 
 .nav-link {
-  composes: nav-link from '@xo-union/bootstrap/nav';
   color: white;
-  padding: 1.3em 1em;
+  padding: 1.3em 2em;
+}
+
+.nav-link:hover {
+  background-color: #429FC8;
+  color: white;
+}
+
+.nav-link:focus {
+  color: white;
+}
+
+.active-link {
+  composes: nav-link;
+
+  background-color: #117AA7;
+  color: white;
 }
