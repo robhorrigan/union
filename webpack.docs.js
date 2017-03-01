@@ -1,4 +1,5 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const resolve = require('./webpack/resolve');
@@ -25,6 +26,7 @@ module.exports = {
     pathinfo: true
   },
   plugins: [
+    extract,
     new HTMLWebpackPlugin({
       template: patternDocsPath('src', 'index.html'),
       filename: 'index.html'
@@ -34,7 +36,9 @@ module.exports = {
       template: patternDocsPath('src', 'index.html'),
       filename: '404.html'
     }),
-    extract
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ],
   resolve: resolve.testAndDocs,
   module: {
