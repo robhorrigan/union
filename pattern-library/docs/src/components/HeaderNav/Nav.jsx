@@ -5,19 +5,19 @@ import { inject, observer } from 'mobx-react';
 
 import styles from './styles.css';
 
-@inject('routing')
+@inject('router')
 @observer
 export class NavItem extends Component {
   static propTypes = {
-    routing: PropTypes.shape({ currentPath: PropTypes.string }),
+    router: PropTypes.shape({ currentPath: PropTypes.string }),
     to: PropTypes.string,
     children: PropTypes.node
   };
 
   get cssClass() {
-    const { routing, to } = this.props;
+    const { router, to } = this.props;
 
-    if (routing.currentPath === to) {
+    if (router.currentPath === to) {
       return styles.activeItem;
     }
 
