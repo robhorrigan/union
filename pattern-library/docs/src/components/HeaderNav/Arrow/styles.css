@@ -1,3 +1,5 @@
+@value ( knot-blue-darker-60 ) from '@xo-union/colors';
+
 .arrow-right {
   composes: align-middle mr-3 from '@xo-union/bootstrap/utilities';
 
@@ -7,5 +9,5 @@
   border-top: .4em solid transparent;
   border-bottom: .4em solid transparent;
 
-  border-left: .5em solid white;
+  border-left: .5em solid knot-blue-darker-60;
 }

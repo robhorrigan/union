@@ -1,31 +1,31 @@
-@value ( black, white ) from '@xo-union/colors';
+@value ( black, white, knot-blue-darker-30, knot-blue-darker-60 ) from '@xo-union/colors';
 
-@value header-background-color: #1388bb;
-@value nav-item-hover-color: #429FC8;
-@value nav-item-active-color: #117AA7;
+@value nav-item-hover-color: knot-blue-darker-30;
+@value nav-item-active-color: knot-blue-darker-60;
 
 .header-nav {
   composes: sans-serif from '@xo-union/typography';
-  background-color: header-background-color;
+  background-color: white;
+}
+
+.logo {
+  padding: 1em 2em;
 }
 
 .nav-item {
-  color: white;
+  color: black;
   padding: 1.3em 2em;
 }
 
 .nav-item:hover {
-  background-color: nav-item-hover-color;
-  color: white;
+  color: nav-item-hover-color;
 }
 
 .nav-item:focus {
-  color: white;
+  color: nav-item-active-color;
 }
 
 .active-item {
   composes: nav-item;
-
-  background-color: nav-item-active-color;
+  color: nav-item-active-color;
 }
-

@@ -44,4 +44,3 @@ export function Nav({ children }) {
 Nav.propTypes = {
   children: PropTypes.node
 };
-
