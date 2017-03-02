@@ -1,5 +1,4 @@
-@value ( white ) from '@xo-union/colors';
-@value light-blue: #eef7f8;
+@value ( white, jay-lighter-90 ) from '@xo-union/colors';
 
 .demo-for-gray-theme {
   composes: py3 from '@xo-union/bootstrap/utilities';
@@ -8,5 +7,5 @@
 
 .demo-for-white-theme {
   composes: py3 from '@xo-union/bootstrap/utilities';
-  background-color: light-blue;
+  background-color: jay-lighter-90;
 }

@@ -1,19 +1,21 @@
 @value (
-  coral-tint-80,
-  coral-tint-30,
+  red,
+  red-lighter-90,
   white,
-  gray-55,
+  gray-4,
   black,
-  mint-tint-80
+  green-lighter-80,
+  green-lighter-90
 ) from '@xo-union/colors';
 
-@value ( solid-border ) from '#/fields/css/shared/borders';
+@value ( red-border ) from '#/fields/css/shared/borders';
 @value ( spacer-x ) from '#/fields/css/shared/spacing';
 
 @value (
-  font-size-small,
-  font-size-xsmall
-) from '#/fields/css/shared/fonts';
+  font-up-1,
+  font-down-4,
+  font-down-2
+) from '@xo-union/typography/sizes';
 
 .field {
   composes: field-base from '#/fields/css/styles/field-base';
@@ -21,9 +23,7 @@
 
   &:not(:placeholder-shown) ~ .field-label,
   &:focus ~ .field-label {
-    font-size: font-size-xsmall;
-    font-weight: 500;
-
+    font-size: font-down-4;
     margin-top: 6px;
   }
 
@@ -40,21 +40,22 @@
 .invalid-field {
   composes: field;
 
-  background-color: coral-tint-80;
-  border: solid-border coral-tint-80;
+  background-color: red-lighter-90;
+  // Annoying that !important is
+  // necessary for this to work
+  border: red-border !important;
   transition: all 0.2s ease-out 1.5s;
 }
 
 .valid-field {
   composes: field;
-  background-color: mint-tint-80;
+  background-color: green-lighter-90;
 }
 
 .requirements {
-  background-color: coral-tint-30;
+  background-color: red;
   color: white;
-  font-size: font-size-small;
-  font-weight: 500;
+  font-size: font-down-2;
   max-height: 0;
   overflow: hidden;
   padding: 0 spacer-x;
@@ -70,13 +71,10 @@
 .field-label {
   composes: label from '#/fields/css/styles/label';
 
-  /* Should come from a font-size class from typography */
-  font-weight: 300;
-  font-size: 18px;
-
+  font-size: font-up-1;
   margin-left: 10px;
   margin-top: 14px;
-  color: gray-55;
+  color: gray-4;
   transition: all 0.2s ease-out;
 }
 

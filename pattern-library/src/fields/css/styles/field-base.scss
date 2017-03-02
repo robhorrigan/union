@@ -1,9 +1,9 @@
 @value ( gray-2-border, gray-1-border, black-border ) from '#/fields/css/shared/borders';
 @value ( gray-1 ) from '#/fields/css/shared/colors';
+@value ( font-up-1 ) from '@xo-union/typography/sizes';
 
 .field-base {
-  composes: medium-font-size from '#/fields/css/shared/fonts';
-
+  font-size: font-up-1;
   -webkit-appearance: none;
   border: gray-2-border;
   // Fix firefox render error
