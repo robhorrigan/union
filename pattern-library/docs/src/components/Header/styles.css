@@ -1,8 +1,8 @@
-@value ( gray-85, black ) from '@xo-union/colors';
+@value ( safe-gray-7, black ) from '@xo-union/colors';
 
 .header {
   composes: navbar navbar-toggleable from '@xo-union/bootstrap/navbar';
-  background-color: gray-85;
+  background-color: safe-gray-7;
 }
 
 .link {

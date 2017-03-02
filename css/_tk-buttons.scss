@@ -32,56 +32,56 @@ $baby-min-width: initial;
 
 .btn--primary {
   color: $white;
-  background: $coral-tint-20;
-  border: 1px solid $coral-tint-20;
+  background: $coral-lighter-20;
+  border: 1px solid $coral-lighter-20;
   transition: all .2s ease-out;
 
   &:hover,
   &:focus {
     color: $white;
-    background: $coral-tint-10;
-    border: 1px solid $coral-tint-10;
+    background: $coral-lighter-10;
+    border: 1px solid $coral-lighter-10;
   }
 
   &:active{
     background: $coral;
-    border: 1px solid $coral-tint-10;
+    border: 1px solid $coral-lighter-10;
   }
 }
 
 .btn--secondary {
-  color: $coral-tint-20;
+  color: $coral-lighter-20;
   background: $white;
-  border: 1px solid $coral-tint-40;
+  border: 1px solid $coral-lighter-40;
   transition: all .1s ease-out;
 
   &:hover,
   &:focus {
     color: $coral;
-    border: 1px solid $coral-tint-10;
+    border: 1px solid $coral-lighter-10;
   }
 
   &:active {
-    color: $coral-tint-8-saturated;
-    border: 1px solid $coral-tint-8-saturated;
+    color: $coral-lighter-8-saturated;
+    border: 1px solid $coral-lighter-8-saturated;
   }
 }
 
 .btn--tertiary {
-  color: $coral-tint-20;
+  color: $coral-lighter-20;
   background: $white;
-  border: 1px hidden $coral-tint-40;
+  border: 1px hidden $coral-lighter-40;
   transition: all .1s ease-out;
 
   &:hover,
   &:focus {
     color: $coral;
-    border: 1px hidden $coral-tint-10;
+    border: 1px hidden $coral-lighter-10;
   }
 
   &:active {
-    color: $coral-tint-8-saturated;
-    border: 1px hidden $coral-tint-8-saturated;
+    color: $coral-lighter-8-saturated;
+    border: 1px hidden $coral-lighter-8-saturated;
   }
 }
 

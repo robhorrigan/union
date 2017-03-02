@@ -1,11 +1,11 @@
 @value (
   red,
-  red-tint-90,
+  red-lighter-90,
   white,
-  gray-55,
+  gray-4,
   black,
-  green-tint-80,
-  green-tint-90
+  green-lighter-80,
+  green-lighter-90
 ) from '@xo-union/colors';
 
 @value ( red-border ) from '#/fields/css/shared/borders';
@@ -40,7 +40,7 @@
 .invalid-field {
   composes: field;
 
-  background-color: red-tint-90;
+  background-color: red-lighter-90;
   // Annoying that !important is
   // necessary for this to work
   border: red-border !important;
@@ -49,7 +49,7 @@
 
 .valid-field {
   composes: field;
-  background-color: green-tint-90;
+  background-color: green-lighter-90;
 }
 
 .requirements {
@@ -74,7 +74,7 @@
   font-size: font-up-1;
   margin-left: 10px;
   margin-top: 14px;
-  color: gray-55;
+  color: gray-4;
   transition: all 0.2s ease-out;
 }
 

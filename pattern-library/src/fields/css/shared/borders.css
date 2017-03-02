@@ -1,7 +1,7 @@
 @value (
   black,
-  coral-tint-80,
-  red-tint-90
+  coral-lighter-80,
+  red-lighter-90
 ) from '@xo-union/colors';
 
 @value ( gray-1, gray-2 ) from './colors';
@@ -11,4 +11,4 @@
 @value black-border: solid-border black;
 @value gray-1-border: solid-border gray-1;
 @value gray-2-border: solid-border gray-2;
-@value red-border: solid-border red-tint-90;
+@value red-border: solid-border red-lighter-90;
