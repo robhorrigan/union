@@ -4,6 +4,7 @@
  * Grayscale *
  *************/
 @value white: #ffffff;
+@value gray-10: #fafafa;
 @value background-gray-9: #f4f4f4;
 @value background-gray-8: #e5e5e5;
 @value safe-gray-7: #cccccc;

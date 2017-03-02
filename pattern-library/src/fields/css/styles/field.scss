@@ -2,6 +2,7 @@
   red,
   red-lighter-90,
   white,
+  safe-gray-7,
   gray-4,
   black,
   green-lighter-80,
@@ -28,7 +29,7 @@
   }
 
   &:disabled ~ .field-label {
-    color: gray-3;
+    color: safe-gray-7;
     text-decoration: line-through;
   }
 

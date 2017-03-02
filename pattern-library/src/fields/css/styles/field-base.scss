@@ -1,11 +1,11 @@
-@value ( gray-2-border, gray-1-border, black-border ) from '#/fields/css/shared/borders';
-@value ( gray-1 ) from '#/fields/css/shared/colors';
+@value ( gray-9-border, gray-10-border, black-border ) from '#/fields/css/shared/borders';
+@value ( gray-10 ) from '@xo-union/colors';
 @value ( font-up-1 ) from '@xo-union/typography/sizes';
 
 .field-base {
   font-size: font-up-1;
   -webkit-appearance: none;
-  border: gray-2-border;
+  border: gray-9-border;
   // Fix firefox render error
   box-shadow: none;
   width: 100%;
@@ -19,8 +19,8 @@
   }
 
   &:disabled {
-    background: gray-1;
-    border: gray-1-border;
+    background-color: gray-10;
+    border: gray-10-border;
   }
 }
 
