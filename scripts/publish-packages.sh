@@ -13,4 +13,4 @@ fi
 
 npm install \
 && npm run build.patterns \
-&& lerna publish
+&& node ./scripts/select-packages-to-publish.js
