@@ -1,9 +1,10 @@
 const path = require('path');
 
 module.exports = {
+  parser: 'babel-eslint',
   parserOptions: {
     ecmaVersion: 6,
-    sourceType: 'module'
+    sourceType: 'module',
   },
   extends: [
     'airbnb'
@@ -29,7 +30,8 @@ module.exports = {
           'webpack.*.js',
           '**/gulpfile*',
           'webpack/**',
-          '**/spec/**'
+          '**/spec/**',
+          'scripts/*'
         ]
       }
     ]

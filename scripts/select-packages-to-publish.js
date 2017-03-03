@@ -1,11 +1,11 @@
-#! /usr/bin/env node
+/* eslint-disable no-console */
 
 const { EOL } = require('os');
 const inquirer = require('inquirer');
 const treeify = require('treeify');
 const chalk = require('chalk');
 const { spawn } = require('child_process');
-const path = require('path')
+const path = require('path');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..');
 
@@ -66,6 +66,7 @@ function createDiffTreeObject(changedFiles, {
 
 
     pathSegments.reduce((branch, segment, index) => {
+      /* eslint-disable no-param-reassign */
       if (index === pathSegments.length - 1) {
         // is last
         branch[segment] = status;
@@ -89,7 +90,7 @@ async function logDiffTree() {
 
   return diffSince(tag, { where: PROJECT_ROOT })
   .then(parseDiff)
-  .then((changedFiles) => createDiffTreeObject(changedFiles))
+  .then(createDiffTreeObject)
   .then(renderTree)
   .then((changedPackages) => {
     console.log('These are changed files since the last publish');
@@ -103,8 +104,8 @@ async function packageList() {
   const output = await spawnProc('lerna', ['ls']);
   return output
     .split(EOL)
-    .slice(2)    // ignore lerna's nonsense
-    .map((package) => package.split(/\s+/)[0]); // remove versions
+    .slice(2) // ignore lerna's nonsense
+    .map(packageName => packageName.split(/\s+/)[0]); // remove versions
 }
 
 
@@ -122,9 +123,9 @@ async function askToChosePackages(packages) {
 function publish(packages) {
   const commaSeparatedPackages = packages.join(',');
 
-  return spawnProc('lerna', ['publish', '--ignore', '*', '--force-publish', commaSeparatedPackages], {
-    stdio: 'inherit'
-  });
+  return spawnProc('lerna',
+    ['publish', '--ignore', '*', '--force-publish', commaSeparatedPackages],
+    { stdio: 'inherit' });
 }
 
 async function main() {
@@ -137,4 +138,4 @@ async function main() {
   return publish(toPublish);
 }
 
-main().catch((error) => console.error(error));
+main().catch(error => console.error(error));
