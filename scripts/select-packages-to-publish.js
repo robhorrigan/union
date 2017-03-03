@@ -1,6 +1,5 @@
 /* eslint-disable no-console */
 
-const spawn = require('./helpers/spawn');
 const logDiffTree = require('./helpers/logDiffTree');
 const packageList = require('./helpers/packageList');
 const askToChoosePackages = require('./helpers/askToChoosePackages');

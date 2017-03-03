@@ -3,23 +3,53 @@ const spawn = require('./spawn');
 const chalk = require('chalk');
 const treeify = require('treeify');
 const path = require('path');
+const ColoredString = require('./ColoredString');
 
 const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
 
-module.exports = async function logDiffTree() {
-  const tag = await lastTag();
+function diffStatusColorRules(value) {
+  if (value === 'rename-edit' || value === 'copy-edit') {
+    return 'yellow';
+  }
 
-  return diffSince(tag, { where: PROJECT_ROOT })
-  .then(parseDiff)
-  .then(createDiffTreeObject)
-  .then(renderTree)
-  .then((changedPackages) => {
-    console.log('These are changed files since the last publish');
-    console.log(`Using tag ${chalk.green(tag)}`);
-    console.log(EOL);
-    console.log(changedPackages);
-  });
-};
+  if (value === 'delete' || value === 'unmerged') {
+    return 'red';
+  }
+
+  if (value === 'unknown') {
+    return 'black';
+  }
+
+  return 'green';
+}
+
+function diffStatusMap(status) {
+  if (status.indexOf('R') === 0) {
+    return 'rename-edit';
+  }
+
+  if (status.indexOf('C') === 0) {
+    return 'copy-edit';
+  }
+
+  if (status === 'M') {
+    return 'in-place edit';
+  }
+
+  if (status === 'A') {
+    return 'create';
+  }
+
+  if (status === 'D') {
+    return 'delete';
+  }
+
+  if (status === 'U') {
+    return 'unmerged';
+  }
+
+  return 'unknown';
+}
 
 function createDiffTreeObject(changedFiles, {
   startAtLevel = 0,
@@ -62,36 +92,10 @@ function parseDiff(diffResult) {
         typeOfChange: `${verboseStatus} -- from: ${originalName}`,
         name: newName
       };
-    } else {
-      return { typeOfChange: verboseStatus, name: originalName };
     }
+
+    return { typeOfChange: verboseStatus, name: originalName };
   });
-}
-
-function diffStatusMap(status) {
-  if (status.indexOf('R') === 0) {
-    return 'rename-edit';
-  }
-
-  if (status.indexOf('C') === 0) {
-    return 'copy-edit';
-  }
-
-  if (status === 'M') {
-    return 'in-place edit';
-  }
-
-  if (status === 'A') {
-    return 'create';
-  }
-
-  if (status === 'D') {
-    return 'delete';
-  }
-
-  if (status === 'U') {
-    return 'unmerged';
-  }
 }
 
 function diffSince(tag, { where }) {
@@ -102,25 +106,18 @@ function lastTag() {
   return spawn('git', ['describe', '--abbrev=0', '--tags']);
 }
 
-class ColoredString {
-  constructor(string, colorRules) {
-    this.string = string;
-    this.colorRules = colorRules;
-  }
 
-  toString() {
-    return chalk[this.colorRules(this.string)](this.string);
-  }
-}
+module.exports = async function logDiffTree() {
+  const tag = await lastTag();
 
-function diffStatusColorRules(value) {
-  if (value === 'rename-edit' || value === 'copy-edit') {
-    return 'yellow';
-  }
-
-  if (value === 'delete' || value === 'unmerged') {
-    return 'red';
-  }
-
-  return 'green';
-}
+  return diffSince(tag, { where: PROJECT_ROOT })
+  .then(parseDiff)
+  .then(createDiffTreeObject)
+  .then(renderTree)
+  .then((changedPackages) => {
+    console.log('These are changed files since the last publish');
+    console.log(`Using tag ${chalk.green(tag)}`);
+    console.log(EOL);
+    console.log(changedPackages);
+  });
+};

@@ -6,7 +6,14 @@ module.exports = async function askToChoosePackages(packages) {
       name: 'toPublish',
       message: 'Which packages do you want to publish?',
       type: 'checkbox',
-      choices: packages
+      choices: packages,
+      validate(value) {
+        if (value.length === 0) {
+          return 'You must chose at least one package';
+        }
+
+        return true;
+      }
     }
   ]);
-}
+};

@@ -31,7 +31,7 @@ module.exports = {
           '**/gulpfile*',
           'webpack/**',
           '**/spec/**',
-          'scripts/*'
+          'scripts/**'
         ]
       }
     ]
