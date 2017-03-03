@@ -1,4 +1,9 @@
-@value ( gray-10, background-gray-9, background-gray-8, white ) from '@xo-union/colors';
+@value (
+  gray-10,
+  background-gray-9,
+  background-gray-8,
+  white
+) from '@xo-union/colors';
 
 @mixin theme($base, $accent) {
   .field,

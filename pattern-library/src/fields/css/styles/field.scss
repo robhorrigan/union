@@ -3,10 +3,9 @@
   red-lighter-90,
   white,
   safe-gray-7,
-  gray-4,
+  gray-6,
   black,
-  green-lighter-80,
-  green-lighter-90
+  green-lighter-80
 ) from '@xo-union/colors';
 
 @value ( red-border ) from '#/fields/css/shared/borders';
@@ -20,21 +19,18 @@
 
 .field {
   composes: field-base from '#/fields/css/styles/field-base';
-  padding: 20px spacer-x 4px spacer-x;
+  padding: 15px .5rem spacer-x;
 
   &:not(:placeholder-shown) ~ .field-label,
   &:focus ~ .field-label {
     font-size: font-down-4;
     margin-top: 6px;
+    color: black;
   }
 
   &:disabled ~ .field-label {
     color: safe-gray-7;
     text-decoration: line-through;
-  }
-
-  &:focus ~ .field-label {
-    color: black;
   }
 }
 
@@ -50,7 +46,8 @@
 
 .valid-field {
   composes: field;
-  background-color: green-lighter-90;
+  background-color: green-lighter-80;
+  border-color: green-lighter-80 !important;
 }
 
 .requirements {
@@ -73,9 +70,9 @@
   composes: label from '#/fields/css/styles/label';
 
   font-size: font-up-1;
-  margin-left: 10px;
-  margin-top: 14px;
-  color: gray-4;
+  margin-left: .5rem;
+  margin-top: 13px;
+  color: gray-6;
   transition: all 0.2s ease-out;
 }
 
