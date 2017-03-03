@@ -1,0 +1,110 @@
+(function webpackUniversalModuleDefinition(root, factory) {
+	if(typeof exports === 'object' && typeof module === 'object')
+		module.exports = factory(require("@xo-union/typography/data"), require("css-module-builder"));
+	else if(typeof define === 'function' && define.amd)
+		define(["@xo-union/typography/data", "css-module-builder"], factory);
+	else {
+		var a = typeof exports === 'object' ? factory(require("@xo-union/typography/data"), require("css-module-builder")) : factory(root["@xo-union/typography/data"], root["css-module-builder"]);
+		for(var i in a) (typeof exports === 'object' ? exports : root)[i] = a[i];
+	}
+})(this, function(__WEBPACK_EXTERNAL_MODULE_0__, __WEBPACK_EXTERNAL_MODULE_1__) {
+return /******/ (function(modules) { // webpackBootstrap
+/******/ 	// The module cache
+/******/ 	var installedModules = {};
+
+/******/ 	// The require function
+/******/ 	function __webpack_require__(moduleId) {
+
+/******/ 		// Check if module is in cache
+/******/ 		if(installedModules[moduleId])
+/******/ 			return installedModules[moduleId].exports;
+
+/******/ 		// Create a new module (and put it into the cache)
+/******/ 		var module = installedModules[moduleId] = {
+/******/ 			i: moduleId,
+/******/ 			l: false,
+/******/ 			exports: {}
+/******/ 		};
+
+/******/ 		// Execute the module function
+/******/ 		modules[moduleId].call(module.exports, module, module.exports, __webpack_require__);
+
+/******/ 		// Flag the module as loaded
+/******/ 		module.l = true;
+
+/******/ 		// Return the exports of the module
+/******/ 		return module.exports;
+/******/ 	}
+
+
+/******/ 	// expose the modules object (__webpack_modules__)
+/******/ 	__webpack_require__.m = modules;
+
+/******/ 	// expose the module cache
+/******/ 	__webpack_require__.c = installedModules;
+
+/******/ 	// identity function for calling harmony imports with the correct context
+/******/ 	__webpack_require__.i = function(value) { return value; };
+
+/******/ 	// define getter function for harmony exports
+/******/ 	__webpack_require__.d = function(exports, name, getter) {
+/******/ 		if(!__webpack_require__.o(exports, name)) {
+/******/ 			Object.defineProperty(exports, name, {
+/******/ 				configurable: false,
+/******/ 				enumerable: true,
+/******/ 				get: getter
+/******/ 			});
+/******/ 		}
+/******/ 	};
+
+/******/ 	// getDefaultExport function for compatibility with non-harmony modules
+/******/ 	__webpack_require__.n = function(module) {
+/******/ 		var getter = module && module.__esModule ?
+/******/ 			function getDefault() { return module['default']; } :
+/******/ 			function getModuleExports() { return module; };
+/******/ 		__webpack_require__.d(getter, 'a', getter);
+/******/ 		return getter;
+/******/ 	};
+
+/******/ 	// Object.prototype.hasOwnProperty.call
+/******/ 	__webpack_require__.o = function(object, property) { return Object.prototype.hasOwnProperty.call(object, property); };
+
+/******/ 	// __webpack_public_path__
+/******/ 	__webpack_require__.p = "";
+
+/******/ 	// Load entry module and return exports
+/******/ 	return __webpack_require__(__webpack_require__.s = 54);
+/******/ })
+/************************************************************************/
+/******/ ({
+
+/***/ 0:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_0__;
+
+/***/ }),
+
+/***/ 1:
+/***/ (function(module, exports) {
+
+module.exports = __WEBPACK_EXTERNAL_MODULE_1__;
+
+/***/ }),
+
+/***/ 54:
+/***/ (function(module, exports, __webpack_require__) {
+
+
+var builder = __webpack_require__(1);
+var cssModule = builder.initialize("ca07d619a15746a6229e478e3dadb85d", ".nav--f6d59{display:flex;padding-left:0;margin-bottom:0;list-style:none}.nav-link--30629{display:block;padding:.5em 1em}.nav-link--30629:focus,.nav-link--30629:hover{text-decoration:none}.nav-link--30629.disabled--c1758{color:#636c72;cursor:not-allowed}.nav-tabs--99abe{border-bottom:1px solid #ddd}.nav-tabs--99abe .nav-item--708b6{margin-bottom:-1px}.nav-tabs--99abe .nav-link--30629{border:1px solid transparent;border-top-right-radius:.25rem;border-top-left-radius:.25rem}.nav-tabs--99abe .nav-link--30629:focus,.nav-tabs--99abe .nav-link--30629:hover{border-color:#eceeef #eceeef #ddd}.nav-tabs--99abe .nav-link--30629.disabled--c1758{color:#636c72;background-color:transparent;border-color:transparent}.nav-tabs--99abe .nav-item--708b6.show--5b74f .nav-link--30629,.nav-tabs--99abe .nav-link--30629.active--1cc88{color:#464a4c;background-color:#fff;border-color:#ddd #ddd #fff}.nav-tabs--99abe .dropdown-menu--553ec{margin-top:-1px;border-top-right-radius:0;border-top-left-radius:0}.nav-pills--26691 .nav-link--30629{border-radius:.25rem}.nav-pills--26691 .nav-item--708b6.show--5b74f .nav-link--30629,.nav-pills--26691 .nav-link--30629.active--1cc88{color:#fff;cursor:default;background-color:#0275d8}.nav-fill--5648c .nav-item--708b6{flex:1 1 auto;text-align:center}.nav-justified--5269c .nav-item--708b6{flex:1 1 100%;text-align:center}.tab-content--5ec66>.tab-pane--86d1b{display:none}.tab-content--5ec66>.active--1cc88{display:block}");
+
+cssModule.importEach([__webpack_require__(0)]);
+cssModule.defineLocals([[["serif-family-name","serifFamilyName"], [[__webpack_require__(0), "serif-family-name"]]], [["sans-serif-family-name","sansSerifFamilyName"], [[__webpack_require__(0), "sans-serif-family-name"]]], [["nav"], ["nav--f6d59"]], [["nav-link","navLink"], ["nav-link--30629"]], [["disabled"], ["disabled--c1758"]], [["nav-tabs","navTabs"], ["nav-tabs--99abe"]], [["nav-item","navItem"], ["nav-item--708b6"]], [["active"], ["active--1cc88"]], [["show"], ["show--5b74f"]], [["dropdown-menu","dropdownMenu"], ["dropdown-menu--553ec"]], [["nav-pills","navPills"], ["nav-pills--26691"]], [["nav-fill","navFill"], ["nav-fill--5648c"]], [["nav-justified","navJustified"], ["nav-justified--5269c"]], [["tab-content","tabContent"], ["tab-content--5ec66"]], [["tab-pane","tabPane"], ["tab-pane--86d1b"]]]);
+
+module.exports = exports.default = cssModule;
+
+/***/ })
+
+/******/ });
+});

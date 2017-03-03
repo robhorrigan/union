@@ -9,7 +9,7 @@
   },
   "engineStrict": true,
   "engines": {
-    "node" : ">=7.0.0 <8.0"
+    "node": ">=7.0.0 <8.0"
   },
   "scripts": {
     "bootstrap": "lerna bootstrap",
@@ -47,6 +47,7 @@
     "eslint-plugin-json": "^1.2.0",
     "humanize-string": "latest",
     "jsx-to-string-2": "^1.0.0",
+    "lerna": "^2.0.0-beta.38",
     "pascal-case": "latest",
     "prism-themes": "^1.0.0",
     "prismjs": "^1.6.0",
