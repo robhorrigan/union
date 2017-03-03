@@ -1,5 +1,2 @@
-# Distribution files used to be ignored. However, it is necessary to track package
-# files that change to allow lerna to determine that a package should be published
-#
-# *.js
-# *.cssm
+*.js
+*.cssm
