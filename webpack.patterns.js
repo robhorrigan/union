@@ -1,7 +1,7 @@
 const path = require('path');
 const webpack = require('webpack');
-const externalizeRequires = require('./build-utils/externalize-requires');
-const { buildEntrypoints } = require('./build-utils/entrypoints');
+const externalizeRequires = require('./scripts/helpers/externalizeRequires');
+const { buildEntrypoints } = require('./scripts/helpers/buildEntrypoints');
 const rules = require('./webpack/patterns-rules');
 const resolve = require('./webpack/resolve');
 

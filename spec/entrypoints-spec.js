@@ -2,7 +2,7 @@ const path = require('path');
 const {
   getEntrypointsFiles,
   adaptEntrypoints
-} = require('../build-utils/entrypoints');
+} = require('../scripts/helpers/buildEntrypoints');
 
 const fixturesPath = path.resolve.bind(null, __dirname, 'fixtures');
 
