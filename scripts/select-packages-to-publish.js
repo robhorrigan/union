@@ -6,7 +6,7 @@ const askToChoosePackages = require('./helpers/askToChoosePackages');
 const publish = require('./helpers/publish');
 
 async function main() {
-  const packages = await packageList();
+  const packages = packageList();
 
   await logDiffTree();
 
