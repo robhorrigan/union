@@ -4,15 +4,17 @@ const logDiffTree = require('./helpers/logDiffTree');
 const packageList = require('./helpers/packageList');
 const askToChoosePackages = require('./helpers/askToChoosePackages');
 const publish = require('./helpers/publish');
+const forcePublicAccess = require('./helpers/packages/forcePublicAccess');
 
 async function main() {
-  const packages = packageList();
+  const allPackages = packageList();
 
   await logDiffTree();
 
-  const { toPublish } = await askToChoosePackages(await packages);
+  const packagesToPublish = await askToChoosePackages(await allPackages);
 
-  return publish(toPublish);
+  await publish(packagesToPublish);
+  await forcePublicAccess({ scope: '@xo-union/*' });
 }
 
 main().catch(error => console.error(error));
