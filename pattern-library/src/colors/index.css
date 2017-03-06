@@ -4,6 +4,7 @@
  * Grayscale *
  *************/
 @value white: #ffffff;
+@value gray-10: #fafafa;
 @value background-gray-9: #f4f4f4;
 @value background-gray-8: #e5e5e5;
 @value safe-gray-7: #cccccc;
@@ -267,6 +268,7 @@
 @value coral-lighter-8-saturated: #e72914;
 @value red: #c00404;
 @value red-lighter-90: #f8e6e6;
+@value red-lighter-80: #f2cccc;
 @value green: #1ca420;
 @value green-lighter-90: #e8f6e9;
 @value green-lighter-80: #d1ecd2;
