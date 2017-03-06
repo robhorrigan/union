@@ -1,4 +1,4 @@
-const spawn = require('./spawn');
+const spawn = require('../spawn');
 
 module.exports = function publish(packages) {
   const commaSeparatedPackages = packages.join(',');

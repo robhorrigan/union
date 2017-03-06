@@ -3,7 +3,7 @@
 const logDiffTree = require('./helpers/logDiffTree');
 const packageList = require('./helpers/packageList');
 const askToChoosePackages = require('./helpers/askToChoosePackages');
-const publish = require('./helpers/publish');
+const publish = require('./helpers/packages/publish');
 const forcePublicAccess = require('./helpers/packages/forcePublicAccess');
 
 async function main() {
