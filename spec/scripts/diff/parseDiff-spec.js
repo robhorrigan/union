@@ -1,6 +1,6 @@
 const parseDiff = require('../../../scripts/helpers/diff/parseDiff');
 
-fdescribe('.parseDiff', () => {
+describe('.parseDiff', () => {
   it('parses the diff output', () => {
     const diffResultMock = `M a.js
 A b.js

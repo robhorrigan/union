@@ -3,10 +3,10 @@ const chalk = require('chalk');
 const treeify = require('treeify');
 const path = require('path');
 
-const spawn = require('./spawn');
-const parseDiff = require('./diff/parseDiff');
+const spawn = require('../spawn');
+const parseDiff = require('./parseDiff');
 
-const PROJECT_ROOT = path.resolve(__dirname, '..', '..');
+const PROJECT_ROOT = path.resolve(__dirname, '..', '..', '..');
 
 function createDiffTreeObject(changedFiles, {
   startAtLevel = 0,

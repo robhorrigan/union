@@ -1,5 +1,5 @@
 const { EOL } = require('os');
-const spawn = require('./spawn');
+const spawn = require('../spawn');
 
 module.exports = async function packageList() {
   const output = await spawn('lerna', ['ls']);
