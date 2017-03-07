@@ -1,9 +1,9 @@
 const inquirer = require('inquirer');
 
 module.exports = async function askToChoosePackages(packages) {
-  return inquirer.prompt([
+  const { packagesToPublish } = await inquirer.prompt([
     {
-      name: 'toPublish',
+      name: 'packagesToPublish',
       message: 'Which packages do you want to publish?',
       type: 'checkbox',
       choices: packages,
@@ -16,4 +16,6 @@ module.exports = async function askToChoosePackages(packages) {
       }
     }
   ]);
+
+  return packagesToPublish;
 };
