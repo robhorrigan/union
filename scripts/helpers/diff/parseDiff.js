@@ -37,30 +37,6 @@ function diffStatusMap(status) {
   return UNKNOWN;
 }
 
-module.exports = function parseDiff(diffString) {
-  return diffString.split(EOL).map((statusAndName) => {
-    const [status, originalName, newName] = statusAndName.split(/\s+/);
-    const verboseStatus = diffStatusMap(status);
-
-    if (verboseStatus === RENAMED_MODIFIED || verboseStatus === COPIED_MODIFIED) {
-      return {
-        typeOfChange: `${verboseStatus} -- from: ${originalName}`,
-        name: newName
-      };
-    }
-
-    return { typeOfChange: verboseStatus, name: originalName };
-  });
-}
-
-module.exports.withColors = function (diffString) {
-  return module.exports(diffString).map(({ typeOfChange, name }) => {
-    const color = diffStatusColorRules(typeOfChange);
-
-    return { name, typeOfChange: new ColoredString(typeOfChange, color) };
-  });
-}
-
 function diffStatusColorRules(value) {
   if (value.indexOf(RENAMED_MODIFIED) >= 0 || value.indexOf(COPIED_MODIFIED) >= 0) {
     return 'yellow';
@@ -76,4 +52,28 @@ function diffStatusColorRules(value) {
 
   return 'green';
 }
+
+module.exports = function parseDiff(diffString) {
+  return diffString.split(EOL).map((statusAndName) => {
+    const [status, originalName, newName] = statusAndName.split(/\s+/);
+    const verboseStatus = diffStatusMap(status);
+
+    if (verboseStatus === RENAMED_MODIFIED || verboseStatus === COPIED_MODIFIED) {
+      return {
+        typeOfChange: `${verboseStatus} -- from: ${originalName}`,
+        name: newName
+      };
+    }
+
+    return { typeOfChange: verboseStatus, name: originalName };
+  });
+};
+
+module.exports.withColors = function (diffString) {
+  return module.exports(diffString).map(({ typeOfChange, name }) => {
+    const color = diffStatusColorRules(typeOfChange);
+
+    return { name, typeOfChange: new ColoredString(typeOfChange, color) };
+  });
+};
 

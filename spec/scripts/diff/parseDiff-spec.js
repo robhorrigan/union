@@ -2,14 +2,14 @@ const parseDiff = require('../../../scripts/helpers/diff/parseDiff');
 
 describe('.parseDiff', () => {
   it('parses the diff output', () => {
-    const diffResultMock = `M a.js
+    const diffStringMock = `M a.js
 A b.js
 U c.js
 D d.js
 R012 e.js f.js
-C012 g.js h.js`
+C012 g.js h.js`;
 
-    const result = parseDiff(diffResultMock);
+    const result = parseDiff(diffStringMock);
     expect(result[0].typeOfChange).toBe('modified');
     expect(result[0].name).toBe('a.js');
 
