@@ -15,8 +15,8 @@ function PrimaryNav() {
       <NavItem to="/design-principles">Design Principles</NavItem>
       <NavItem to="/design-foundations">Design Foundations</NavItem>
       <NavItem to="/pattern-library">Pattern Library</NavItem>
-      <NavItem to="/brand-voice-and-copy">Brand Voice & Copy</NavItem>
-      <NavItem to="/email">Email</NavItem>
+      <NavItem disabled>Brand Voice & Copy</NavItem>
+      <NavItem disabled>Email</NavItem>
     </Nav>
   );
 }

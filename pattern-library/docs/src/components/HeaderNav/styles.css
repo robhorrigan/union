@@ -1,7 +1,14 @@
-@value ( black, white, knot-blue-darker-30, knot-blue-darker-60 ) from '@xo-union/colors';
+@value (
+  black,
+  white,
+  knot-blue-darker-30,
+  knot-blue-darker-60,
+  safe-gray-5
+) from '@xo-union/colors';
 
 @value nav-item-hover-color: knot-blue-darker-30;
 @value nav-item-active-color: knot-blue-darker-60;
+@value nav-item-disabled-color: safe-gray-5;
 
 .header-nav {
   composes: sans-serif from '@xo-union/typography';
@@ -12,9 +19,13 @@
   padding: 1em 2em;
 }
 
-.nav-item {
+.nav-item-base {
   color: black;
   padding: 1.3em 2em;
+}
+
+.nav-item {
+  composes: nav-item-base;
 }
 
 .nav-item:hover {
@@ -28,4 +39,9 @@
 .active-item {
   composes: nav-item;
   color: nav-item-active-color;
+}
+
+.disabled-item {
+  composes: nav-item-base;
+  color: nav-item-disabled-color !important;
 }

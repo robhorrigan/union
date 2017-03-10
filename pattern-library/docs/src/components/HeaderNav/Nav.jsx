@@ -11,11 +11,16 @@ export class NavItem extends Component {
   static propTypes = {
     router: PropTypes.shape({ currentPath: PropTypes.string }),
     to: PropTypes.string,
+    disbled: PropTypes.bool,
     children: PropTypes.node
   };
 
   get cssClass() {
-    const { router, to } = this.props;
+    const { router, to, disabled } = this.props;
+
+    if (disabled) {
+      return styles.disabledItem;
+    }
 
     if (router.currentPath === to) {
       return styles.activeItem;
