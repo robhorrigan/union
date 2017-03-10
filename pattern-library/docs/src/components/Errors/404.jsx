@@ -1,16 +1,7 @@
 import React, { PropTypes } from 'react';
 import { normalizePath } from '#docs/utils/paths';
+import { eachRoute } from '#docs/utils/router';
 import type from '@xo-union/typography';
-
-function eachRoute(routes, callback, parentRoute) {
-  routes.forEach((route) => {
-    callback(route, parentRoute);
-
-    if (route.childRoutes) {
-      eachRoute(route.childRoutes, callback, route);
-    }
-  });
-}
 
 export default function Error404(_, { router }) {
   const routes = [];
