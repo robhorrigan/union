@@ -7,9 +7,10 @@ import styles from '#docs/components/HeaderNav/styles';
 const { join } = Array.prototype;
 
 describe('<NavItem>', () => {
+  const defaultRoutingMock = { inPath() { return false; } };
+
   it('creates a link pointing at "to"', () => {
-    const routingMock = { inPath() { return false; } };
-    const subject = mount(<NavItem router={routingMock} to="test-path">Hello</NavItem>
+    const subject = mount(<NavItem router={defaultRoutingMock} to="test-path">Hello</NavItem>
     );
     const link = subject.find(Link);
 
@@ -28,6 +29,20 @@ describe('<NavItem>', () => {
       const link = subject.getDOMNode();
 
       expect(link.classList::join(' ')).toEqual(styles.activeItem);
+    });
+  });
+
+  describe('when disabled', () => {
+    it('applies the disabled item class', () => {
+      const subject = mount(
+        <NavItem router={defaultRoutingMock} to="test-path" disabled>
+          Hello
+        </NavItem>
+      );
+
+      const link = subject.getDOMNode();
+
+      expect(link.classList::join(' ')).toEqual(styles.disabledItem);
     });
   });
 });
