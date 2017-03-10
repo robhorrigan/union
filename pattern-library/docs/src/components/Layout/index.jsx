@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react';
 import bsGrid from '@xo-union/bootstrap/grid';
 import HeaderNav from '#docs/components/HeaderNav';
-import SideNav from '#docs/components/SideNav';
 
 import styles from './styles.css';
 

@@ -11,7 +11,7 @@ export class NavItem extends Component {
   static propTypes = {
     router: PropTypes.shape({ currentPath: PropTypes.string }),
     to: PropTypes.string,
-    disbled: PropTypes.bool,
+    disabled: PropTypes.bool,
     children: PropTypes.node
   };
 
