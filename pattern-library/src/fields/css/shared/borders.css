@@ -1,14 +1,14 @@
 @value (
   black,
+  gray-10,
+  background-gray-9,
   coral-lighter-80,
   red-lighter-90
 ) from '@xo-union/colors';
 
-@value ( gray-1, gray-2 ) from './colors';
-
 /* Borders */
 @value solid-border: 1px solid;
 @value black-border: solid-border black;
-@value gray-1-border: solid-border gray-1;
-@value gray-2-border: solid-border gray-2;
+@value gray-10-border: solid-border gray-10;
+@value gray-9-border: solid-border background-gray-9;
 @value red-border: solid-border red-lighter-90;

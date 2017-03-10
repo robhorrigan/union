@@ -7,7 +7,7 @@ module.exports = {
     {
       name: 'Documentation',
       script: './node_modules/.bin/webpack-dev-server',
-      args: ['--inline', '--hot', '--config', 'webpack.docs.js']
+      args: ['--inline', '--hot', '--config', 'webpack.docs.js', '--compress']
     },
     {
       name: 'Packages',

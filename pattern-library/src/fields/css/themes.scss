@@ -1,5 +1,9 @@
-@value ( gray-2 ) from '#/fields/css/shared/colors';
-@value ( background-gray-9, background-gray-8, white ) from '@xo-union/colors';
+@value (
+  gray-10,
+  background-gray-9,
+  background-gray-8,
+  white
+) from '@xo-union/colors';
 
 @mixin theme($base, $accent) {
   .field,
@@ -10,6 +14,10 @@
   .textarea-label
   {
     background-color: $base;
+
+    &:disabled {
+      background-color: gray-10;
+    }
   }
 
   .dropdown-item-is-selected {
@@ -46,7 +54,7 @@
 }
 
 .gray-theme {
-  @include theme(gray-2, background-gray-8);
+  @include theme(background-gray-9, background-gray-8);
 }
 
 .white-theme {

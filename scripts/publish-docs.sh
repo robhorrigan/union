@@ -1,4 +1,4 @@
-s3_uri=s3://xo-union-docs
+s3_uri=s3://docs.union.theknot.com
 
 npm install \
 && NODE_ENV=production npm run build \

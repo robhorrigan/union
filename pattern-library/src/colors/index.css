@@ -4,6 +4,7 @@
  * Grayscale *
  *************/
 @value white: #ffffff;
+@value gray-10: #fafafa;
 @value background-gray-9: #f4f4f4;
 @value background-gray-8: #e5e5e5;
 @value safe-gray-7: #cccccc;
@@ -28,11 +29,11 @@
 @value knot-blue-lighter-20: #8ed4f4;
 @value knot-blue-lighter-10: #80cff3;
 @value knot-blue: #72caf2;
-@value knot-blue-darker-10: #69b8dc;
-@value knot-blue-darker-20: #61a7c7;
+@value knot-blue-darker-10: #54beee;
+@value knot-blue-darker-20: #4ab4e5;
 @value knot-blue-darker-30: #3ea9da;
-@value knot-blue-darker-40: #50859d;
-@value knot-blue-darker-50: #487488;
+@value knot-blue-darker-40: #2b9fd4;
+@value knot-blue-darker-50: #1e94c7;
 @value knot-blue-darker-60: #1388bb;
 
 /***********
@@ -52,29 +53,6 @@
 @value coral-darker-20: #da402f;
 @value coral-darker-30: #cf3525;
 @value coral-darker-40: #c42c1c;
-
-/***********
- * Alt Blue, Might be changed? *
- ***********/
-@value alt-blue-lighter-90: #ecf6fa;
-@value alt-blue-lighter-80: #daecf4;
-@value alt-blue-lighter-70: #c8e3ef;
-@value alt-blue-lighter-60: #b5daea;
-@value alt-blue-lighter-50: #a3d1e5;
-@value alt-blue-lighter-40: #90c8e0;
-@value alt-blue-lighter-30: #7ebfdb;
-@value alt-blue-lighter-20: #6bb6d6;
-@value alt-blue-lighter-10: #59add1;
-@value alt-blue: #47a4cc;
-@value alt-blue-darker-10: #4296ba;
-@value alt-blue-darker-20: #3e89a9;
-@value alt-blue-darker-30: #3a7b97;
-@value alt-blue-darker-40: #366e86;
-@value alt-blue-darker-50: #336175;
-@value alt-blue-darker-60: #2f5464;
-@value alt-blue-darker-70: #2b4652;
-@value alt-blue-darker-80: #273941;
-@value alt-blue-darker-90: #222c30;
 
 /* SECONDARY PALETTE */
 
@@ -234,7 +212,7 @@
 @value lilac-lighter-30: #b4abcc;
 @value lilac-lighter-20: #a99fc4;
 @value lilac-lighter-10: #9e94bd;
-@value lilac: #9488B6;
+@value lilac: #9488b6;
 @value lilac-darker-10: #877da6;
 @value lilac-darker-20: #7c7297;
 @value lilac-darker-30: #706788;
@@ -267,6 +245,7 @@
 @value coral-lighter-8-saturated: #e72914;
 @value red: #c00404;
 @value red-lighter-90: #f8e6e6;
+@value red-lighter-80: #f2cccc;
 @value green: #1ca420;
 @value green-lighter-90: #e8f6e9;
 @value green-lighter-80: #d1ecd2;

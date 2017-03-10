@@ -69,7 +69,7 @@ exports.typographyFontsRules = {
         loader: 'file-loader',
         options: {
           name: '/[name]-[hash:3].[ext]',
-          publicPath: '//s3.amazonaws.com/xo-union/fonts',
+          publicPath: '//assets.union.theknot.com/fonts',
           outputPath: path.join('..', '..', 'public', 'assets', 'fonts')
         }
       }

@@ -1,18 +1,20 @@
 /* eslint-disable no-console */
 
-const logDiffTree = require('./helpers/logDiffTree');
-const packageList = require('./helpers/packageList');
+const logDiffTree = require('./helpers/diff/logDiffTree');
+const packageList = require('./helpers/packages/list');
 const askToChoosePackages = require('./helpers/askToChoosePackages');
-const publish = require('./helpers/publish');
+const publish = require('./helpers/packages/publish');
+const forcePublicAccess = require('./helpers/packages/forcePublicAccess');
 
 async function main() {
-  const packages = await packageList();
+  const allPackages = packageList();
 
   await logDiffTree();
 
-  const { toPublish } = await askToChoosePackages(await packages);
+  const packagesToPublish = await askToChoosePackages(await allPackages);
 
-  return publish(toPublish);
+  await publish(packagesToPublish);
+  await forcePublicAccess({ scope: '@xo-union/*' });
 }
 
 main().catch(error => console.error(error));
