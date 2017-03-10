@@ -22,7 +22,7 @@ export class NavItem extends Component {
       return styles.disabledItem;
     }
 
-    if (router.currentPath === to) {
+    if (router.inPath(to)) {
       return styles.activeItem;
     }
 

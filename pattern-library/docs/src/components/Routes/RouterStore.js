@@ -18,12 +18,12 @@ function eachRoute(routes, callback, parentRoute) {
  */
 export default class Store extends RouterStore {
   @computed get currentPath() {
-    return this.location.pathname;
+    return normalizePath(this.location.pathname);
   }
 
   @computed get paths() {
     const paths = [];
-    debugger;
+
     eachRoute(this.routes, (route, parentRoute) => {
       let path;
 
@@ -37,6 +37,10 @@ export default class Store extends RouterStore {
     });
 
     return paths;
+  }
+
+  inPath(path) {
+    return normalizePath(this.currentPath).indexOf(normalizePath(path)) >= 0;
   }
 }
 

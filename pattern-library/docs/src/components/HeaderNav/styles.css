@@ -44,4 +44,5 @@
 .disabled-item {
   composes: nav-item-base;
   color: nav-item-disabled-color !important;
+  cursor: default;
 }

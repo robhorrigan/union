@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { Component } from 'react';
+import { observer, inject } from 'mobx-react';
 import bsNavbar from '@xo-union/bootstrap/navbar';
 
 import styles from './styles.css';
@@ -14,7 +15,7 @@ function PrimaryNav() {
       </a>
       <NavItem to="/design-principles">Design Principles</NavItem>
       <NavItem to="/design-foundations">Design Foundations</NavItem>
-      <NavItem to="/pattern-library">Pattern Library</NavItem>
+      <NavItem to="/pattern-library/getting-started">Pattern Library</NavItem>
       <NavItem disabled>Brand Voice & Copy</NavItem>
       <NavItem disabled>Email</NavItem>
     </Nav>
@@ -28,17 +29,29 @@ function PatternLibraryNav() {
         <Arrow />
         The Knot Pattern Library
       </NavItem>
-      <NavItem to="/getting-started">Getting Started</NavItem>
-      <NavItem to="/core-components">Core Components</NavItem>
-      <NavItem to="/content-patterns">Content Patterns</NavItem>
+      <NavItem to="/pattern-library/getting-started">Getting Started</NavItem>
+      <NavItem to="/pattern-library/core-components">Core Components</NavItem>
+      <NavItem to="/pattern-library/content-patterns">Content Patterns</NavItem>
     </Nav>
   );
 }
 
-export default function HeaderNav() {
-  return (
-    <header className={styles.headerNav}>
-      <PrimaryNav />
-    </header>
-  );
+@inject('router')
+@observer
+export default class HeaderNav extends Component {
+  navComponent() {
+    if (this.props.router.inPath('/pattern-library')) return PatternLibraryNav;
+
+    return PrimaryNav;
+  }
+
+  render() {
+    const NavComponent = this.navComponent();
+
+    return (
+      <header className={styles.headerNav}>
+        <NavComponent />
+      </header>
+    );
+  }
 }
