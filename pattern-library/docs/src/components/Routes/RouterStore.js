@@ -11,7 +11,7 @@ export default class Store extends RouterStore {
   }
 
   inPath(path) {
-    return normalizePath(this.currentPath).indexOf(normalizePath(path)) >= 0;
+    return this.currentPath.indexOf(normalizePath(path)) >= 0;
   }
 }
 
