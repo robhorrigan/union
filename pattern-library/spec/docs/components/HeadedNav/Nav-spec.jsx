@@ -8,11 +8,8 @@ const { join } = Array.prototype;
 
 describe('<NavItem>', () => {
   it('creates a link pointing at "to"', () => {
-    const routingMock = { currentPath: '' };
-    const subject = mount(
-      <NavItem routing={routingMock} to="test-path">
-        Hello
-      </NavItem>
+    const routingMock = { inPath() { return false; } };
+    const subject = mount(<NavItem router={routingMock} to="test-path">Hello</NavItem>
     );
     const link = subject.find(Link);
 
@@ -21,9 +18,9 @@ describe('<NavItem>', () => {
 
   describe('when current path matches "to"', () => {
     it('adds the active link class', () => {
-      const routingMock = { currentPath: 'test-path' };
+      const routingMock = { inPath() { return true; } };
       const subject = mount(
-        <NavItem routing={routingMock} to="test-path">
+        <NavItem router={routingMock} to="test-path">
           Hello
         </NavItem>
       );
