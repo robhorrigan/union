@@ -12,7 +12,11 @@ function PrimaryNav() {
       <a className={styles.logo} href="/">
         <img alt="the knot logo" src={logo} />
       </a>
+      <NavItem to="/design-principles">Design Principles</NavItem>
+      <NavItem to="/design-foundations">Design Foundations</NavItem>
       <NavItem to="/pattern-library">Pattern Library</NavItem>
+      <NavItem to="/brand-voice-and-copy">Brand Voice & Copy</NavItem>
+      <NavItem to="/email">Email</NavItem>
     </Nav>
   );
 }
