@@ -3,15 +3,21 @@
   white,
   knot-blue-darker-30,
   knot-blue-darker-60,
-  safe-gray-5
+  safe-gray-5,
+  background-gray-8
 ) from '@xo-union/colors';
 
+@value nav-border-color: background-gray-8;
 @value nav-item-hover-color: knot-blue-darker-30;
 @value nav-item-active-color: knot-blue-darker-60;
 @value nav-item-disabled-color: safe-gray-5;
+@value nav-border: 1px solid nav-border-color;
 
-.header-nav {
+.nav {
+  composes: nav from '@xo-union/bootstrap/nav';
   composes: sans-serif from '@xo-union/typography';
+
+  border-bottom: nav-border;
   background-color: white;
 }
 
@@ -19,17 +25,20 @@
   padding: 1em 2em;
 }
 
-.nav-item-base {
-  color: black;
+.nav-item-container {
   padding: 1.3em 2em;
 }
 
 .nav-item {
-  composes: nav-item-base;
+  color: black;
 }
 
 .nav-item:hover {
   color: nav-item-hover-color;
+}
+
+.nav-item-container:hover .sub-nav {
+  display: block;
 }
 
 .nav-item:focus {
@@ -42,7 +51,16 @@
 }
 
 .disabled-item {
-  composes: nav-item-base;
   color: nav-item-disabled-color !important;
   cursor: default;
+}
+
+.sub-nav {
+  display: none;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 4.1em; /* Magic number :( */
+  width: 100%;
+  border-top: nav-border;
 }

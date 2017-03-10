@@ -5,6 +5,18 @@ import { inject, observer } from 'mobx-react';
 
 import styles from './styles.css';
 
+function extractSubNavs(children) {
+  const childArray = React.Children.toArray(children);
+
+  return childArray.reduce(([ navs, others ], child) => {
+    if (child.type === SubNav) {
+      return [ [...navs, child], others ];
+    }
+
+    return [ navs, [...others, child] ];
+  }, [ [], [] ]);
+}
+
 @inject('router')
 @observer
 export class NavItem extends Component {
@@ -31,17 +43,33 @@ export class NavItem extends Component {
 
   render() {
     const { to, children } = this.props;
+    const [ subNavs, others ] = extractSubNavs(children);
 
     return (
-      <Link to={to} className={this.cssClass}>{children}</Link>
+      <li className={styles.navItemContainer}>
+        <Link to={to} className={this.cssClass}>{others}</Link>
+        {subNavs}
+      </li>
     );
   }
 }
 
+export function SubNav({ children }) {
+  return (
+    <div className={styles.subNav}>
+      <Nav>
+        {children}
+      </Nav>
+    </div>
+  );
+}
+
 export function Nav({ children }) {
   return (
-    <nav className={bsNav.nav}>
-      {children}
+    <nav>
+      <ul className={styles.nav}>
+        {children}
+      </ul>
     </nav>
   );
 }
