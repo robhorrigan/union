@@ -1,0 +1,7 @@
+/* Define ids in css module to ensure they are globally unique */
+#primary-nav,
+#primary-nav-pattern-library,
+#secondary-nav-content-pattern,
+#secondary-nav-core-components {
+
+}

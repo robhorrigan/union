@@ -1,0 +1,7 @@
+.toggleable[data-toggle="off"] {
+  display: none;
+}
+
+.toggleable[data-toggle="on"] {
+  display: initial;
+}

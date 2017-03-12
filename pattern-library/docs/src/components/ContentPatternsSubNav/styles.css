@@ -1,0 +1,3 @@
+.row {
+  composes: justify-content-between d-flex from '@xo-union/bootstrap/utilities';
+}

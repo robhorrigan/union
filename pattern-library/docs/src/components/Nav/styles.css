@@ -15,7 +15,6 @@
 
 .nav {
   composes: nav from '@xo-union/bootstrap/nav';
-  composes: sans-serif from '@xo-union/typography';
 
   border-bottom: nav-border;
   background-color: white;
@@ -33,10 +32,6 @@
   color: nav-item-hover-color;
 }
 
-.nav-item-container:hover .sub-nav {
-  display: block;
-}
-
 .nav-item:focus {
   color: nav-item-active-color;
 }
@@ -49,14 +44,4 @@
 .disabled-item {
   color: nav-item-disabled-color !important;
   cursor: default;
-}
-
-.sub-nav {
-  display: none;
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  top: 4.1em; /* Magic number :( */
-  width: 100%;
-  border-top: nav-border;
 }
