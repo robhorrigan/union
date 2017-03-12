@@ -5,6 +5,7 @@ import { Nav } from '#docs/components/Nav';
 import toggleable from '#docs/components/mixins/toggleable';
 import bsGrid from '@xo-union/bootstrap/grid';
 import styles from './styles';
+import splitArray from 'split-array';
 
 const seed = [
   "Actionable hover",
@@ -66,14 +67,7 @@ const seed = [
 
 const NUMBER_OF_BUCKETS = 7;
 const bucketSize = Math.ceil(seed.length / NUMBER_OF_BUCKETS);
-const buckets = seed.sort().reduce((buckets, item, i) => {
-  if (i % bucketSize === 0) buckets.push([]);
-
-  const currentBucket = buckets[buckets.length - 1];
-  currentBucket.push(item);
-
-  return buckets;
-}, [ ]);
+const buckets = splitArray(seed.sort(), NUMBER_OF_BUCKETS);
 
 function itemToElement(item) {
   const href = item.replace(/\s+/g, '');

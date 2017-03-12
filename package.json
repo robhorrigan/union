@@ -55,7 +55,8 @@
     "react": "^15.4.2",
     "react-docgen": "^2.9.1",
     "react-dom": "^15.4.2",
-    "react-router": "^3.0.2"
+    "react-router": "^3.0.2",
+    "split-array": "^1.0.1"
   },
   "devDependencies": {
     "a-css-loader": "^1.0.0-beta.10",

@@ -8641,6 +8641,11 @@
         }
       }
     },
+    "split-array": {
+      "version": "1.0.1",
+      "from": "split-array@latest",
+      "resolved": "https://registry.npmjs.org/split-array/-/split-array-1.0.1.tgz"
+    },
     "sprintf-js": {
       "version": "1.0.3",
       "from": "sprintf-js@>=1.0.2 <1.1.0",
