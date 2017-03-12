@@ -8,9 +8,10 @@ function applyToggleToNode(attributes) {
     const node = ReactDOM.findDOMNode(ref);
 
     if (node) {
+      node.classList.add(styles.toggleable);
+
       for (const key in attributes) {
         node.setAttribute(key, attributes[key]);
-        node.classList.add(styles.toggleable);
       }
     }
   }
