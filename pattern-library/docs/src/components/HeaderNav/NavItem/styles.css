@@ -6,32 +6,32 @@
   safe-gray-5
 ) from '@xo-union/colors';
 
-@value nav-item-hover-color: knot-blue-darker-30;
-@value nav-item-active-color: knot-blue-darker-60;
-@value nav-item-disabled-color: safe-gray-5;
+@value item-hover-color: knot-blue-darker-30;
+@value item-active-color: knot-blue-darker-60;
+@value item-disabled-color: safe-gray-5;
 
-.nav-item-container {
+.container {
   padding: 1.3em 2em;
 }
 
-.nav-item {
+.item {
   color: black;
 }
 
-.nav-item:hover {
-  color: nav-item-hover-color;
+.item:hover {
+  color: item-hover-color;
 }
 
-.nav-item:focus {
-  color: nav-item-active-color;
+.item:focus {
+  color: item-active-color;
 }
 
 .active-item {
-  composes: nav-item;
-  color: nav-item-active-color;
+  composes: item;
+  color: item-active-color;
 }
 
 .disabled-item {
-  color: nav-item-disabled-color !important;
+  color: item-disabled-color !important;
   cursor: default;
 }

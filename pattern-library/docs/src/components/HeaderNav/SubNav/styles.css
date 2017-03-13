@@ -4,6 +4,7 @@
 
 .sub-nav {
   composes: nav from '../Nav/styles.css';
+  composes: sub-menu from '../Menu/styles.css';
 
   z-index: 1;
   position: absolute;

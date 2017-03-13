@@ -10,9 +10,3 @@ export class SubNavContainer extends Component {
   }
 }
 
-@CSS(subnavCss)
-export class SubNav extends Component {
-  render() {
-    return <SubMenu styleName="sub-nav" {...this.props} />
-  }
-}

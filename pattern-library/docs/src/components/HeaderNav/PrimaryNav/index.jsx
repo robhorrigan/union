@@ -19,7 +19,7 @@ function LogoItem() {
 export default class PrimaryNav extends Component {
   render () {
     return (
-      <Nav>
+      <Nav role="menu">
         <LogoItem />
         <NavItem to="/design-principles">
           Design Principles

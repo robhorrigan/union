@@ -2,15 +2,25 @@ import React, { Component } from 'react';
 import { Link } from 'react-router';
 import CSS from 'react-css-modules';
 import bsNav from '@xo-union/bootstrap/nav';
+import bsUtils from '@xo-union/bootstrap/utilities';
 import menuCss from './styles.css';
 
 @CSS(bsNav)
-export class Menu extends Component {
+export class List extends Component {
   render() {
-    const { children, role = "menu", ...props } = this.props;
-
+    const additionalProps = {};
+    const {
+      children,
+      role = "menu",
+      align = "horizontal"
+    } = this.props;
+    
+    if (align === 'vertical') {
+      additionalProps.className = bsUtils.flexColumn;
+    }
+    
     return (
-      <ul styleName="nav" role={role}>
+      <ul styleName="nav" role={role} {...additionalProps}>
         {children}
       </ul>
     );
@@ -18,7 +28,7 @@ export class Menu extends Component {
 }
 
 @CSS(null, { errorWhenNotFound: false })
-export class MenuItem extends Component {
+export class Item extends Component {
   render() {
     const {
       role,
@@ -35,4 +45,3 @@ export class MenuItem extends Component {
     );
   }
 }
-

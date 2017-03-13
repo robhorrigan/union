@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import CSS from 'react-css-modules';
 import { Link } from 'react-router';
 import { inject, observer } from 'mobx-react';
 
@@ -8,6 +9,7 @@ import { MenuItem } from '../Menu';
 
 @inject('router')
 @observer
+@CSS(styles)
 export class NavItem extends Component {
   static WithSubNav = @inject('toggler') class extends Component {
     render() {
@@ -32,18 +34,26 @@ export class NavItem extends Component {
     children: PropTypes.node
   };
 
-  get cssClass() {
+  get linkStyle() {
     const { router, to, disabled } = this.props;
 
     if (disabled) {
-      return styles.disabledItem;
+      return 'disabled-item';
     }
 
     if (router.inPath(to)) {
-      return styles.activeItem;
+      return 'active-item';
     }
 
-    return styles.navItem;
+    return 'item';
+  }
+  
+  get modifiedStyles() {
+    const { styles } = this.props;
+    const { container } = styles;
+    const link = styles[this.linkStyle];
+    
+    return { container, link };
   }
 
   render() {
@@ -51,13 +61,15 @@ export class NavItem extends Component {
       to,
       router,
       disabled,
+      styles,
       ...props
     } = this.props;
 
+    console.log(this.modifiedStyles);
     return (
       <MenuItem
         role="menuitem"
-        styles={{container: styles.navItemContainer, link: this.cssClass }}
+        styles={this.modifiedStyles}
         to={to}
         {...props} />
     );

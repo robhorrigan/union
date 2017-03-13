@@ -9,7 +9,7 @@ import ids from '../ids';
 export default class PatternLibraryNav extends Component {
   render() {
     return (
-      <Nav>
+      <Nav role="menubar">
         <NavItem to="/"> <Arrow /> The Knot Pattern Library </NavItem>
         <NavItem to="/pattern-library/getting-started">Getting Started</NavItem>
         <NavItem.WithSubNav to="/pattern-library/core-components" toggles={ids.secondaryNavCoreComponents}>
