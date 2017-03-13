@@ -1,48 +1,64 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { NavItem } from '#docs/components/HeaderNav/Nav';
+import { NavItem } from '#docs/components/HeaderNav/NavItem';
 import { Link } from 'react-router';
-import styles from '#docs/components/HeaderNav/styles';
 
-const { join } = Array.prototype;
+const stylesMock = {
+  container: 'container',
+  item: 'item',
+  'active-item': 'active-item',
+  'disabled-item': 'disabled-item'
+};
 
 describe('<NavItem>', () => {
   const defaultRoutingMock = { inPath() { return false; } };
 
   it('creates a link pointing at "to"', () => {
-    const subject = mount(<NavItem router={defaultRoutingMock} to="test-path">Hello</NavItem>
-    );
+    const subject = mount(
+      <NavItem router={defaultRoutingMock} to="test-path">Hello</NavItem>);
     const link = subject.find(Link);
 
     expect(link.props().to).toBe('test-path');
+  });
+  
+  it('assigns the container class', () => {
+    const subject = mount(
+      <NavItem styles={stylesMock} router={defaultRoutingMock} to="test-path">
+        Hello
+      </NavItem>
+    );
+
+    const link = subject.getDOMNode();
+
+    expect(link.classList).toContain('container');
   });
 
   describe('when current path matches "to"', () => {
     it('adds the active link class', () => {
       const routingMock = { inPath() { return true; } };
       const subject = mount(
-        <NavItem router={routingMock} to="test-path">
+        <NavItem router={routingMock} styles={stylesMock} to="test-path">
           Hello
         </NavItem>
       );
 
-      const link = subject.getDOMNode();
+      const link = subject.find('a').getDOMNode();
 
-      expect(link.classList::join(' ')).toEqual(styles.activeItem);
+      expect(link.classList).toContain('active-item');
     });
   });
 
   describe('when disabled', () => {
     it('applies the disabled item class', () => {
       const subject = mount(
-        <NavItem router={defaultRoutingMock} to="test-path" disabled>
+        <NavItem styles={stylesMock} router={defaultRoutingMock} to="test-path" disabled>
           Hello
         </NavItem>
       );
 
-      const link = subject.getDOMNode();
+      const link = subject.find('a').getDOMNode();
 
-      expect(link.classList::join(' ')).toEqual(styles.disabledItem);
+      expect(link.classList).toContain('disabled-item');
     });
   });
 });

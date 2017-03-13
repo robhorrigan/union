@@ -43,6 +43,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "babel-polyfill": "^6.23.0",
     "css-module-builder": "^1.0.0-beta.5",
     "humanize-string": "latest",
     "jsx-to-string-2": "^1.0.0",
