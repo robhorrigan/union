@@ -5,7 +5,7 @@ import { inject, observer } from 'mobx-react';
 
 import styles from './styles.css';
 
-import { MenuItem } from '../Menu';
+import { Item } from '../List';
 
 @inject('router')
 @observer
@@ -47,12 +47,12 @@ export class NavItem extends Component {
 
     return 'item';
   }
-  
+
   get modifiedStyles() {
     const { styles } = this.props;
     const { container } = styles;
     const link = styles[this.linkStyle];
-    
+
     return { container, link };
   }
 
@@ -65,9 +65,8 @@ export class NavItem extends Component {
       ...props
     } = this.props;
 
-    console.log(this.modifiedStyles);
     return (
-      <MenuItem
+      <Item
         role="menuitem"
         styles={this.modifiedStyles}
         to={to}

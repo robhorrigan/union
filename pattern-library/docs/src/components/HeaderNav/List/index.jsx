@@ -14,11 +14,11 @@ export class List extends Component {
       role = "menu",
       align = "horizontal"
     } = this.props;
-    
+
     if (align === 'vertical') {
       additionalProps.className = bsUtils.flexColumn;
     }
-    
+
     return (
       <ul styleName="nav" role={role} {...additionalProps}>
         {children}

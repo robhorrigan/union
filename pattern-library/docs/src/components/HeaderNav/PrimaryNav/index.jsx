@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
 import { NavItem } from '../NavItem'
-import { MenuItem } from '../Menu';
+import { Item } from '../List';
 import { Nav } from '../Nav';
 import logo from './theknotlogo.svg';
-import styles from './logo.css';
+import logoCss from './logo.css';
 import { observer, inject } from 'mobx-react';
 import toggleable from '#docs/mixins/toggleable';
 
 function LogoItem() {
   return (
-    <MenuItem to="/" styles={{ container: styles.logoContainer }} >
+    <Item to="/" styles={logoCss} >
       <img alt="the knot logo" src={logo} />
-    </MenuItem>
+    </Item>
   )
 }
 
@@ -32,5 +32,3 @@ export default class PrimaryNav extends Component {
     );
   }
 }
-
-
