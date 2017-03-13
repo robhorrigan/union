@@ -51,6 +51,11 @@ module.exports = {
         })
       },
       {
+        test: /\.css$/,
+        issuer: /\.css$/,
+        rules: [ cssRules ]
+      },
+      {
         /*
          * Directory loader should be closer to the top since it doesn't do any parsing
          * The parsing is left to any loader towards the bottom which matches the

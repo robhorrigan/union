@@ -2,11 +2,11 @@ import React, { Component, PropTypes } from 'react';
 import { autorun } from 'mobx';
 import { observer, inject, Provider } from 'mobx-react';
 
-import ContentPatternsSubNav from '#docs/components/ContentPatternsSubNav';
-import CoreComponentsSubNav from '#docs/components/CoreComponentsSubNav';
-import { SubNavContainer } from '#docs/components/SubNav';
-import PrimaryNav from './navs/PrimaryNav';
-import PatternLibraryNav from './navs/PatternLibraryNav';
+import ContentPatternsSubNav from './ContentPatternsSubNav';
+import CoreComponentsSubNav from './CoreComponentsSubNav';
+import { SubNavContainer } from './SubNav';
+import PrimaryNav from './PrimaryNav';
+import PatternLibraryNav from './PatternLibraryNav';
 import Toggler from './NavStore';
 import ids from './ids';
 
@@ -23,7 +23,6 @@ export default class HeaderNav extends Component {
     super(props);
 
     autorun(() => {
-      console.log('CALLED')
       this.toggler.clear();
 
       if (this.props.router.inPath('/pattern-library')) {

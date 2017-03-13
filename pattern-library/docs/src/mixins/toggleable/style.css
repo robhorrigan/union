@@ -3,5 +3,5 @@
 }
 
 .toggleable[data-toggle="on"] {
-  display: initial;
+  display: inherit;
 }

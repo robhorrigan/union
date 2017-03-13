@@ -6781,6 +6781,11 @@
       "resolved": "https://registry.npmjs.org/object-keys/-/object-keys-1.0.11.tgz",
       "dev": true
     },
+    "object-unfreeze": {
+      "version": "1.1.0",
+      "from": "object-unfreeze@>=1.1.0 <2.0.0",
+      "resolved": "https://registry.npmjs.org/object-unfreeze/-/object-unfreeze-1.1.0.tgz"
+    },
     "object-values": {
       "version": "1.0.0",
       "from": "object-values@>=1.0.0 <2.0.0",
@@ -7763,6 +7768,18 @@
           "from": "object-assign@>=4.1.0 <5.0.0",
           "resolved": "https://registry.npmjs.org/object-assign/-/object-assign-4.1.1.tgz",
           "dev": true
+        }
+      }
+    },
+    "react-css-modules": {
+      "version": "4.1.0",
+      "from": "react-css-modules@latest",
+      "resolved": "https://registry.npmjs.org/react-css-modules/-/react-css-modules-4.1.0.tgz",
+      "dependencies": {
+        "lodash": {
+          "version": "4.17.4",
+          "from": "lodash@>=4.16.6 <5.0.0",
+          "resolved": "https://registry.npmjs.org/lodash/-/lodash-4.17.4.tgz"
         }
       }
     },

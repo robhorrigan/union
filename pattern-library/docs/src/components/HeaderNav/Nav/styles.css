@@ -1,0 +1,7 @@
+@value ( white, background-gray-8 ) from '@xo-union/colors';
+@value nav-border: 1px solid background-gray-8;
+
+.nav {
+  border-bottom: nav-border;
+  background-color: white;
+}

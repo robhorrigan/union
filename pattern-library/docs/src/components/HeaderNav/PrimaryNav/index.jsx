@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
-import { Nav, NavItem, Item } from '#docs/components/Nav';
+import { NavItem } from '../NavItem'
+import { MenuItem } from '../Menu';
+import { Nav } from '../Nav';
 import logo from './theknotlogo.svg';
 import styles from './logo.css';
 import { observer, inject } from 'mobx-react';
-import toggleable from '#docs/components/mixins/toggleable';
+import toggleable from '#docs/mixins/toggleable';
 
 function LogoItem() {
   return (
-    <Item to="/" containerClass={styles.logo} >
+    <MenuItem to="/" styles={{ container: styles.logoContainer }} >
       <img alt="the knot logo" src={logo} />
-    </Item>
+    </MenuItem>
   )
 }
 

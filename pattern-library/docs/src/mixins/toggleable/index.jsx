@@ -32,7 +32,7 @@ export default function toggleable(Component) {
         attributes['aria-hidden'] = 'true';
       }
 
-      return (<Component ref={applyToggleToNode(attributes)} {...rest}/>);
+      return <Component ref={applyToggleToNode(attributes)} {...rest} />;
     }
   }
 }

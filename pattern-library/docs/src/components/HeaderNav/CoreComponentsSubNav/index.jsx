@@ -1,8 +1,8 @@
 import React, { Component, PropTypes } from 'react';
-import { NavItem, Nav } from '#docs/components/Nav';
-import { SubNav } from '#docs/components/SubNav';
+import { NavItem } from '../NavItem';
+import { SubNav } from '../SubNav';
 import { observer, inject } from 'mobx-react';
-import toggleable from '#docs/components/mixins/toggleable';
+import toggleable from '#docs/mixins/toggleable';
 
 @toggleable
 export default class CoreComponentsSubNav extends Component {

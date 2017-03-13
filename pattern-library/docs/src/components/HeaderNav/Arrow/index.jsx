@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { Component } from 'react';
+import CSS from 'react-css-modules';
 import styles from './styles.css';
 
-export default function Arrow() {
-  return (<span className={styles.arrowRight} />);
+@CSS(styles)
+export default class Arrow extends Component {
+  render() {
+    return <span styleName="arrow-right" />;
+  }
 }

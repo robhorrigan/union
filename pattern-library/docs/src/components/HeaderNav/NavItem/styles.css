@@ -3,22 +3,12 @@
   white,
   knot-blue-darker-30,
   knot-blue-darker-60,
-  safe-gray-5,
-  background-gray-8
+  safe-gray-5
 ) from '@xo-union/colors';
 
-@value nav-border-color: background-gray-8;
 @value nav-item-hover-color: knot-blue-darker-30;
 @value nav-item-active-color: knot-blue-darker-60;
 @value nav-item-disabled-color: safe-gray-5;
-@value nav-border: 1px solid nav-border-color;
-
-.nav {
-  composes: nav from '@xo-union/bootstrap/nav';
-
-  border-bottom: nav-border;
-  background-color: white;
-}
 
 .nav-item-container {
   padding: 1.3em 2em;
