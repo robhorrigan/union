@@ -1,10 +1,11 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import CSS from 'react-css-modules';
-import { NavItem } from '../NavItem';
-import { Nav } from '../Nav';
-import { observer, inject } from 'mobx-react';
-import subNavCss from '../SubNav/styles.css';
+
 import toggleable from '#docs/mixins/toggleable';
+
+import NavItem from '../NavItem';
+import { Nav } from '../Nav';
+import subNavCss from '../SubNav/styles.css';
 
 @toggleable
 @CSS(subNavCss)

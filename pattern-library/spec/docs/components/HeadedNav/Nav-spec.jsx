@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { NavItem } from '#docs/components/HeaderNav/NavItem';
+import NavItem from '#docs/components/HeaderNav/NavItem';
 import { Link } from 'react-router';
 
 const stylesMock = {
@@ -20,7 +20,7 @@ describe('<NavItem>', () => {
 
     expect(link.props().to).toBe('test-path');
   });
-  
+
   it('assigns the container class', () => {
     const subject = mount(
       <NavItem styles={stylesMock} router={defaultRoutingMock} to="test-path">

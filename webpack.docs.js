@@ -47,7 +47,7 @@ module.exports = {
         test: /\.cssm?$/,
         issuer: /\.(jsx?|md)$/,
         rules: extract.extract({
-          use: [ ]
+          use: []
         })
       },
       cssRules,

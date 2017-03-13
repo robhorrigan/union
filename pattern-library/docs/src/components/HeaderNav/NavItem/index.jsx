@@ -1,37 +1,49 @@
 import React, { Component, PropTypes } from 'react';
 import CSS from 'react-css-modules';
-import { Link } from 'react-router';
 import { inject, observer } from 'mobx-react';
-
-import styles from './styles.css';
-
+import Toggler from '#docs/mixins/toggleable/toggler';
+import navItemCss from './styles.css';
 import { Item } from '../List';
+
+@inject('toggler')
+class NavItemWithSubNav extends Component {
+  static propTypes = {
+    toggles: PropTypes.string.required,
+    toggler: PropTypes.instanceOf(Toggler)
+  };
+
+  render() {
+    const { toggles, toggler, ...props } = this.props;
+    return (
+      <NavItem
+        aria-haspopup
+        aria-owns={toggles}
+        onMouseEnter={() => toggler.show(toggles)}
+        onMouseLeave={() => toggler.hide(toggles)}
+        {...props}
+      />
+    );
+  }
+}
+
 
 @inject('router')
 @observer
-@CSS(styles)
-export class NavItem extends Component {
-  static WithSubNav = @inject('toggler') class extends Component {
-    render() {
-      const { toggles, to, toggler, ...props } = this.props;
-
-      return (
-        <NavItem
-          to={to}
-          aria-owns={toggles}
-          aria-haspopup
-          onMouseEnter={() => toggler.show(toggles)}
-          onMouseLeave={() => toggler.hide(toggles)}
-          {...props} />
-      );
-    }
-  }
+@CSS(navItemCss)
+export default class NavItem extends Component {
+  static WithSubNav = NavItemWithSubNav;
 
   static propTypes = {
     router: PropTypes.shape({ currentPath: PropTypes.string }),
     to: PropTypes.string,
     disabled: PropTypes.bool,
-    children: PropTypes.node
+    children: PropTypes.node,
+    styles: PropTypes.shape({
+      'disabled-item': PropTypes.string,
+      'active-item': PropTypes.string,
+      item: PropTypes.string,
+      container: PropTypes.string
+    })
   };
 
   get linkStyle() {
@@ -49,9 +61,8 @@ export class NavItem extends Component {
   }
 
   get modifiedStyles() {
-    const { styles } = this.props;
-    const { container } = styles;
-    const link = styles[this.linkStyle];
+    const { container } = this.props.styles;
+    const link = this.props.styles[this.linkStyle];
 
     return { container, link };
   }
@@ -59,9 +70,9 @@ export class NavItem extends Component {
   render() {
     const {
       to,
-      router,
-      disabled,
-      styles,
+      router, // eslint-disable-line no-unused-vars
+      disabled, // eslint-disable-line no-unused-vars
+      styles, // eslint-disable-line no-unused-vars
       ...props
     } = this.props;
 
@@ -70,7 +81,8 @@ export class NavItem extends Component {
         role="menuitem"
         styles={this.modifiedStyles}
         to={to}
-        {...props} />
+        {...props}
+      />
     );
   }
 }
