@@ -1,10 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import CSS from 'react-css-modules';
-import bsNav from '@xo-union/bootstrap/nav';
-import bsUtils from '@xo-union/bootstrap/utilities';
+import styles from './styles.css';
 
-@CSS(bsNav)
+@CSS(styles)
 export class List extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -18,15 +17,15 @@ export class List extends Component {
   };
 
   render() {
-    const additionalProps = {};
-    const { children, role, align } = this.props;
+    const { children, role, align, styles } = this.props;
+    const additionalProps = { styleName: 'list' };
 
     if (align === 'vertical') {
-      additionalProps.className = bsUtils.flexColumn;
+      additionalProps.styleName = 'vertical-list'
     }
 
     return (
-      <ul styleName="nav" role={role} {...additionalProps}>
+      <ul role={role} {...additionalProps}>
         {children}
       </ul>
     );
