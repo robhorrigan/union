@@ -1,7 +1,7 @@
 import splitArray from 'split-array';
 
-export function toGroups(array, numberOfBuckets) {
-  const bucketSize = Math.ceil(array.length / numberOfBuckets);
+export function toGroups(numberOfBuckets) {
+  const bucketSize = Math.ceil(this.length / numberOfBuckets);
 
-  return splitArray(array, bucketSize);
+  return splitArray(this, bucketSize);
 }

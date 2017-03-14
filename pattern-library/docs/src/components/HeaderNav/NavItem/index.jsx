@@ -6,7 +6,7 @@ import navItemCss from './styles.css';
 import { Item } from '../List';
 
 @inject('toggler')
-class NavItemWithSubNav extends Component {
+export class NavItemWithSubNav extends Component {
   static propTypes = {
     toggles: PropTypes.string.isRequired,
     toggler: PropTypes.instanceOf(Toggler)
@@ -31,8 +31,6 @@ class NavItemWithSubNav extends Component {
 @observer
 @CSS(navItemCss)
 export default class NavItem extends Component {
-  static WithSubNav = NavItemWithSubNav;
-
   static propTypes = {
     router: PropTypes.shape({ currentPath: PropTypes.string }),
     to: PropTypes.string,

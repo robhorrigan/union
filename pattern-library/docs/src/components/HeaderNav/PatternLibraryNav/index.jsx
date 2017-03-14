@@ -2,7 +2,7 @@ import React from 'react';
 import toggleable from '#docs/mixins/toggleable';
 import Arrow from '../Arrow';
 import Nav from '../Nav';
-import NavItem from '../NavItem';
+import NavItem, { NavItemWithSubNav } from '../NavItem';
 import ids from '../ids';
 
 export default toggleable(() =>
@@ -14,18 +14,18 @@ export default toggleable(() =>
     <NavItem to="/pattern-library/getting-started">
       Getting Started
     </NavItem>
-    <NavItem.WithSubNav
+    <NavItemWithSubNav
       to="/pattern-library/core-components"
       toggles={ids.secondaryNavCoreComponents}
     >
       Core Components
-    </NavItem.WithSubNav>
+    </NavItemWithSubNav>
 
-    <NavItem.WithSubNav
+    <NavItemWithSubNav
       to="/pattern-library/content-patterns"
       toggles={ids.secondaryNavContentPattern}
     >
       Content Patterns
-    </NavItem.WithSubNav>
+    </NavItemWithSubNav>
   </Nav>
 );

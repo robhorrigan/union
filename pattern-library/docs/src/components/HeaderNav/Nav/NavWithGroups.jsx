@@ -19,8 +19,7 @@ function menuList(group) {
 }
 
 function groupList({ items, numberOfGroups }) {
-  /* These are regular math operations on arrays */
-  const groups = toGroups(items.sort(), numberOfGroups);
+  const groups = items.sort()::toGroups(numberOfGroups);
 
   return groups.map(group =>
     <List role="group" align="vertical" key={group}>
