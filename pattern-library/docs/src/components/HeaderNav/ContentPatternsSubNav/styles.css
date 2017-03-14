@@ -1,4 +1,0 @@
-.sub-nav {
-  composes: font-down-1 from '@xo-union/typography';
-  composes: sub-nav from '../SubNav/styles.css';
-}

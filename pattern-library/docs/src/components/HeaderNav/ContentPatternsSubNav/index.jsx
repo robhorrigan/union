@@ -4,13 +4,13 @@ import CSS from 'react-css-modules';
 import toggleable from '#docs/mixins/toggleable';
 
 import NavWithGroups from '../Nav/NavWithGroups';
-import contentPatternsSubNavCss from './styles.css';
+import subNavCss from '../SubNav/styles.css';
 import seed from './seed.json';
 
 const NUMBER_OF_GROUPS = 7;
 
 @toggleable
-@CSS(contentPatternsSubNavCss)
+@CSS(subNavCss)
 export default class ContentPatternsSubNav extends Component {
   render() {
     return (

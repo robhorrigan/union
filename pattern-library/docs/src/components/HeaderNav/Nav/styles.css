@@ -8,4 +8,5 @@
 
 .groups-container {
   composes: d-flex justify-content-between from '@xo-union/bootstrap/utilities';
+  composes: font-down-1 from '@xo-union/typography';
 }
