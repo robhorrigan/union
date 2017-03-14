@@ -4,7 +4,7 @@ import CSS from 'react-css-modules';
 import toggleable from '#docs/mixins/toggleable';
 
 import NavItem from '../NavItem';
-import { Nav } from '../Nav';
+import Nav from '../Nav';
 import subNavCss from '../SubNav/styles.css';
 
 @toggleable

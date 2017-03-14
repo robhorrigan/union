@@ -1,7 +1,7 @@
 import React from 'react';
 import toggleable from '#docs/mixins/toggleable';
 import Arrow from '../Arrow';
-import { Nav } from '../Nav';
+import Nav from '../Nav';
 import NavItem from '../NavItem';
 import ids from '../ids';
 

@@ -1,10 +1,4 @@
-@value ( item, active-item, disabled-item ) from '../NavItem/styles.css';
-
 .sub-nav {
   composes: font-down-1 from '@xo-union/typography';
   composes: sub-nav from '../SubNav/styles.css';
-}
-
-.container {
-  padding: 0.5em 2em;
 }

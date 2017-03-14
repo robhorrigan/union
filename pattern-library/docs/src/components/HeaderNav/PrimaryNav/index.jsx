@@ -2,7 +2,7 @@ import React from 'react';
 import toggleable from '#docs/mixins/toggleable';
 import NavItem from '../NavItem';
 import { Item } from '../List';
-import { Nav } from '../Nav';
+import Nav from '../Nav';
 import logo from './theknotlogo.svg';
 import logoCss from './logo.css';
 
@@ -13,7 +13,6 @@ function LogoItem() {
     </Item>
   );
 }
-
 
 export default toggleable(() =>
   <Nav role="menu">

@@ -8,7 +8,7 @@ import { Item } from '../List';
 @inject('toggler')
 class NavItemWithSubNav extends Component {
   static propTypes = {
-    toggles: PropTypes.string.required,
+    toggles: PropTypes.string.isRequired,
     toggler: PropTypes.instanceOf(Toggler)
   };
 
