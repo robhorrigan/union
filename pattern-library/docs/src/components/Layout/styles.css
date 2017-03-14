@@ -1,8 +1,3 @@
-.sidenav {
-  composes: col-md-2 from '@xo-union/bootstrap/grid';
-  composes: py-3 from '@xo-union/bootstrap/utilities';
-}
-
 .article {
   composes: col from '@xo-union/bootstrap/grid';
   composes: py-4 from '@xo-union/bootstrap/utilities';

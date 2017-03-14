@@ -47,9 +47,10 @@ module.exports = {
         test: /\.cssm?$/,
         issuer: /\.(jsx?|md)$/,
         rules: extract.extract({
-          use: cssRules
+          use: []
         })
       },
+      cssRules,
       {
         /*
          * Directory loader should be closer to the top since it doesn't do any parsing
