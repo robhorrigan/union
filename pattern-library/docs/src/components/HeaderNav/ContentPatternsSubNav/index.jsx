@@ -1,4 +1,4 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
 import CSS from 'react-css-modules';
 
 import toggleable from '#docs/mixins/toggleable';

@@ -1,9 +1,9 @@
 import React, { Component, PropTypes } from 'react';
 import { Link } from 'react-router';
 import CSS from 'react-css-modules';
-import styles from './styles.css';
+import listCss from './styles.css';
 
-@CSS(styles)
+@CSS(listCss)
 export class List extends Component {
   static propTypes = {
     children: PropTypes.node,
@@ -17,11 +17,11 @@ export class List extends Component {
   };
 
   render() {
-    const { children, role, align, styles } = this.props;
+    const { children, role, align } = this.props;
     const additionalProps = { styleName: 'list' };
 
     if (align === 'vertical') {
-      additionalProps.styleName = 'vertical-list'
+      additionalProps.styleName = 'vertical-list';
     }
 
     return (
