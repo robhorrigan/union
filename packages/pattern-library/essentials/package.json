@@ -1,0 +1,13 @@
+{
+  "name": "@xo-union/essentials",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@xo-union/bootstrap": "0.1.0",
+    "@xo-union/typography": "0.1.0"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
