@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@xo-union/bootstrap": "0.1.0",
-    "@xo-union/typography": "0.1.0"
+    "@xo-union/bootstrap": "^0.1.0",
+    "@xo-union/typography": "^0.1.0"
   },
   "keywords": [],
   "author": "",
