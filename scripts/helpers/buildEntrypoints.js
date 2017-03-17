@@ -37,7 +37,7 @@ function normalizeFiles(files) {
 
 exports.getEntrypointsFiles = function getEntrypointsFiles({ where }) {
   return glob.sync([
-    '**/.entrypoints.json'
+    '**/entrypoints.json'
   ], {
     cwd: where,
     absolute: true
