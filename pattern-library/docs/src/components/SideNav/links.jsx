@@ -3,19 +3,21 @@ import { LinkGroup } from '#docs/components/SideNav/utils';
 import {
   GettingStarted,
   FormElements,
-  DocComponents
+  DocComponents,
+  Buttons
 } from '#docs/components/SideNav/dynamicallyGeneratedArticleLinks';
 
 export default function SideNavLinks() {
   return (
     <div>
-      <LinkGroup>
+      <LinkGroup label="Getting Started">
         <GettingStarted />
         <DocComponents />
       </LinkGroup>
 
       <LinkGroup label="Foundations">
         <FormElements />
+        <Buttons />
       </LinkGroup>
     </div>
   );

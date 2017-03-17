@@ -1,0 +1,200 @@
+/*
+ * This is a css module
+ *
+ * Write any valid css here plus some additional features provided by css-modules
+ *
+ * References:
+ *   postcss-modules-values: https://github.com/css-modules/postcss-modules-values
+ *   css-modules#dependencies: https://github.com/css-modules/css-modules#dependencies
+ *   a-css-loader: https://github.com/GeorgeTaveras1231/a-css-loader
+ * */
+
+/* You can define cariables which  can be used anywhere in this file
+ * but can also be imported into other css-modules and javascript modules
+ *
+ *    @value my-variable: 'Hello World';
+ *
+ * Class definitions are hashed in order to avoid poluting the global namespace.
+ * To use this class, the actual value must be imported into your code by requiring this
+ * module.
+ *
+ * For example:
+ *
+ *    const myCssModule = require('./path/to/module');
+ *
+ *    console.log(myCssModule.testClass); // Logs hashed class name
+ * */
+
+@import '~#/_shared/bootstrap-overrides';
+
+@value (
+  white,
+  coral,
+  coral-tint-10,
+  coral-tint-20,
+  coral-tint-40,
+  coral-tint-8-saturated
+) from '@xo-union/colors';
+
+$papa-min-width: 220px;
+$mama-min-width: 120px;
+$baby-min-width: initial;
+
+.btn {
+  display: block;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.btn--papa {
+  composes: font-up-1 from '@xo-union/typography';
+  line-height: 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+.btn--mama {
+  line-height: 2.5rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.btn--baby {
+  composes: font-up-2 from '@xo-union/typography';
+  line-height: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.btn--primary {
+  composes: btn;
+  color: white;
+  background: coral-tint-20;
+  border: 1px solid coral-tint-20;
+  transition: all .2s ease-out;
+
+  &:hover,
+  &:focus {
+    color: white;
+    background: coral-tint-10;
+    border: 1px solid coral-tint-10;
+  }
+
+  &:active{
+    background: coral;
+    border: 1px solid coral-tint-10;
+  }
+}
+
+.btn--secondary {
+  composes: btn;
+  color: coral-tint-20;
+  background: white;
+  border: 1px solid coral-tint-40;
+  transition: all .1s ease-out;
+
+  &:hover,
+  &:focus {
+    color: coral;
+    border: 1px solid coral-tint-10;
+  }
+
+  &:active {
+    color: coral-tint-8-saturated;
+    border: 1px solid coral-tint-8-saturated;
+  }
+}
+
+.btn--tertiary {
+  composes: btn;
+  color: coral-tint-20;
+  background: white;
+  border: 1px hidden coral-tint-40;
+  transition: all .1s ease-out;
+
+  &:hover,
+  &:focus {
+    color: coral;
+    border: 1px hidden coral-tint-10;
+  }
+
+  &:active {
+    color: coral-tint-8-saturated;
+    border: 1px hidden coral-tint-8-saturated;
+  }
+}
+
+@include media-breakpoint-up(xl) {
+  .btn--papa-xl-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--mama-xl-fitted {
+    min-width: $mama-min-width;
+    display: inline-block;
+  }
+  .btn--baby-xl-fitted {
+    min-width: $baby-min-width;
+    display: inline-block;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .btn--papa-lg-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--mama-lg-fitted {
+    min-width: $mama-min-width;
+    display: inline-block;
+  }
+  .btn--baby-lg-fitted {
+    min-width: $baby-min-width;
+    display: inline-block;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .btn--papa-md-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--mama-md-fitted {
+    min-width: $mama-min-width;
+    display: inline-block;
+  }
+  .btn--baby-md-fitted {
+    min-width: $baby-min-width;
+    display: inline-block;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .btn--papa-sm-fitted {
+    min-width: $papa-min-width;
+    display: inline-block;
+  }
+  .btn--mama-sm-fitted {
+    min-width: $mama-min-width;
+    display: inline-block;
+  }
+  .btn--baby-sm-fitted {
+    min-width: $baby-min-width;
+    display: inline-block;
+  }
+}
+
+@include media-breakpoint-up(xs) {
+  .btn--papa-xs-fitted {
+    min-width: $papa-min-width !important;
+    display: inline-block;
+  }
+  .btn--mama-xs-fitted {
+    min-width: $mama-min-width !important;
+    display: inline-block;
+  }
+  .btn--baby-xs-fitted {
+    min-width: $baby-min-width !important;
+    display: inline-block;
+  }
+}

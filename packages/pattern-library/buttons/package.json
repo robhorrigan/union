@@ -1,0 +1,11 @@
+{
+  "name": "@xo-union/buttons",
+  "version": "1.0.0",
+  "main": "components/index.js",
+  "dependencies": {
+    "css-module-builder": "^1.0.0-beta.5",
+    "react": "^15.4.2",
+    "@xo-union/bootstrap": "^1.0.0",
+    "@xo-union/colors": "^1.0.0"
+  }
+}
