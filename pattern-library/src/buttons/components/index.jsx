@@ -5,15 +5,17 @@ export default function Buttons({
   text,
   fitted,
   size = 'papa',
-  color = 'primary'
+  color = 'primary',
+  className = '',
+  ...props
 }) {
-  let classList = `${styles.btn} ${styles[size]} ${styles[color]}`;
+  let classList = `${styles.btn} ${styles[size]} ${styles[color]} ${className}`;
 
   if (fitted) {
     classList += ` ${styles[`${size}-${fitted}-fitted`]}`;
   }
 
-  return <button className={classList}>{text}</button>;
+  return <button className={classList} {...props}>{text}</button>;
 }
 
 Buttons.propTypes = {

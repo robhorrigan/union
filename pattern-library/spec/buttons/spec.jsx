@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import Buttons from '#/buttons';
+import Buttons from '#/buttons/components';
 
 describe('<Buttons>', () => {
   it('says hello', () => {
