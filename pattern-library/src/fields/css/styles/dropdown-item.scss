@@ -1,12 +1,12 @@
-@value ( gray-55, gray-90, black ) from '@xo-union/colors';
+@value ( gray-4, background-gray-8, black ) from '@xo-union/colors';
+@value ( font-up-1 ) from '@xo-union/typography/sizes';
 
 .dropdown-item {
-  composes: medium-font-size from '#/fields/css/shared/fonts';
-
+  font-size: font-up-1;
   padding: 10px;
   cursor: pointer;
   position: relative;
-  color: gray-55;
+  color: gray-4;
 
   &:hover {
     color: black;
@@ -16,9 +16,8 @@
 .dropdown-item-is-selected {
   composes: dropdown-item;
 
-  background-color: gray-90;
+  background-color: background-gray-8;
   color: black;
-  font-weight: 500;
 
   .dropdown-item-check {
     display: inline-block;

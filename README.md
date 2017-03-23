@@ -8,9 +8,15 @@ StyleGuide for theknot.com
 Short version
 </summary>
 
+
+Install packages for project union and run the tests.
 ```sh
+# Test your node version
+node -v | grep -e '^v7' && echo "You are good to go"
+
 npm install
 npm run bootstrap
+npm run build.patterns
 
 # Run all tests
 npm test
@@ -25,6 +31,25 @@ npm run open
 npm restart
 ```
 </details>
+
+### Install Node
+Install node version manager [nvm](https://github.com/creationix/nvm#install-script)
+```sh
+# With brew (recommended in osx)
+brew install nvm
+
+# With curl
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
+```
+If you run into any issues with installing NVM on your platform follow the [instructions](https://github.com/creationix/nvm#install-script) on the NVM install page.
+
+Install node version >= 7.0.0 < 8.0.0.
+
+```sh
+nvm install 7.5
+node -v
+# v7.5.0
+```
 
 ### Install dependencies
 > The first step is to install all dependencies.
@@ -85,6 +110,9 @@ npm run new.pattern
 ### Test Driven Development
 
 ```sh
+# There is a dependency on building the patterns before executing the tests
+# otherwise the packages being tested are not yet available
+npm run build.patterns
 # All tests
 npm test
 npm t # Works too

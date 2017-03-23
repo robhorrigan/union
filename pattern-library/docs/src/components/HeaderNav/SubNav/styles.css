@@ -1,0 +1,14 @@
+.sub-nav-container {
+  position: relative;
+}
+
+.sub-nav {
+  composes: nav from '../Nav/styles.css';
+  composes: sub-menu from '../Menu/styles.css';
+
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+}

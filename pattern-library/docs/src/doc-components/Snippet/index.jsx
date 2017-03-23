@@ -2,6 +2,7 @@ import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-bash';
 
 import React, { Component, PropTypes } from 'react';
+import utils from '@xo-union/bootstrap/utilities';
 import PrismJs from 'prismjs';
 import styles from './styles';
 
@@ -14,6 +15,10 @@ export default class Snippet extends Component {
      * Language for syntax highlighting
      */
     lang: PropTypes.string,
+    /**
+     * Inline or not
+     */
+    inline: PropTypes.bool,
     /**
      * Code string
      */
@@ -28,17 +33,29 @@ export default class Snippet extends Component {
     PrismJs.highlightElement(this.codeTag);
   }
 
-  render() {
+  renderCode() {
     const {
       lang,
       children
     } = this.props;
+    return (
+      <code className={`language-${lang}`} ref={(element) => { this.codeTag = element; }}>
+        {children}
+      </code>
+    );
+  }
 
+  render() {
+    if (this.props.inline) {
+      return (
+        <span className={utils.mx1}>
+          {this.renderCode()}
+        </span>
+      );
+    }
     return (
       <pre className={styles.snippet}>
-        <code className={`language-${lang}`} ref={(element) => { this.codeTag = element; }}>
-          {children}
-        </code>
+        {this.renderCode()}
       </pre>
     );
   }

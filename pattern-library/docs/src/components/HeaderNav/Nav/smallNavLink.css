@@ -1,0 +1,5 @@
+@value ( item, active-item, disabled-item ) from '../NavItem/styles.css';
+
+.container {
+  padding: 0.5em 2em;
+}

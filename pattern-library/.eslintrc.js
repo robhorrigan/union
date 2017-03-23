@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  parser: 'babel-eslint',
   env: {
     browser: true
   },
@@ -23,7 +22,11 @@ module.exports = {
      */
     'react/require-default-props': 'off',
     /* We use different types of extensions in this project */
-    'import/extensions': 'off'
+    'import/extensions': 'off',
+    /* This is like saying "one variable per file" */
+    'react/no-multi-comp': 'off',
+    /* This forces us to write components that are less readable, especially when using decorators */
+    'react/prefer-stateless-function': 'off'
   },
   settings: {
     'import/resolver': {

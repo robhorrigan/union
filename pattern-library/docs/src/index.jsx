@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from '#docs/components/App';
+import Routes from '#docs/components/Routes';
 
-/* Import bootstrap css globals */
-import '@xo-union/bootstrap';
-import '@xo-union/typography/globals';
+/* Global union styles */
+import '@xo-union/essentials';
+
 /* Load prism css for syntax highlighting */
 import 'prism-themes/themes/prism-ghcolors.css';
 
 
 ReactDOM.render(
-  <App />,
-  document.getElementById('app')
+  <Routes />,
+  document.getElementById('root')
 );

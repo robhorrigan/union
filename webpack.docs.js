@@ -1,4 +1,5 @@
 const path = require('path');
+const { DefinePlugin } = require('webpack');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const resolve = require('./webpack/resolve');
@@ -25,6 +26,7 @@ module.exports = {
     pathinfo: true
   },
   plugins: [
+    extract,
     new HTMLWebpackPlugin({
       template: patternDocsPath('src', 'index.html'),
       filename: 'index.html'
@@ -34,7 +36,9 @@ module.exports = {
       template: patternDocsPath('src', 'index.html'),
       filename: '404.html'
     }),
-    extract
+    new DefinePlugin({
+      'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    })
   ],
   resolve: resolve.testAndDocs,
   module: {
@@ -43,9 +47,10 @@ module.exports = {
         test: /\.cssm?$/,
         issuer: /\.(jsx?|md)$/,
         rules: extract.extract({
-          use: cssRules
+          use: []
         })
       },
+      cssRules,
       {
         /*
          * Directory loader should be closer to the top since it doesn't do any parsing
@@ -59,19 +64,6 @@ module.exports = {
         test: /\.jsx?$/,
         use: 'babel-loader',
         exclude: /node_modules/
-      },
-      {
-        test: /\.woff2?$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              hash: 'sha512',
-              digest: 'hex',
-              name: '[hash].[ext]',
-            }
-          }
-        ]
       },
       {
         test: /.*\.(gif|png|jpe?g|svg)$/i,

@@ -3,7 +3,14 @@ const resolve = require('./webpack/resolve');
 
 module.exports = {
   resolve: resolve.testAndDocs,
-  module: { rules },
+  module: {
+    rules: rules.concat([
+      {
+        test: /\.json$/,
+        use: 'json-loader'
+      }
+    ])
+  },
   externals: {
     cheerio: 'window',
     'react/addons': true,

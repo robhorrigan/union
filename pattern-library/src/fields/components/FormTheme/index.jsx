@@ -18,7 +18,7 @@ FormTheme.propTypes = {
   /**
    * Name of theme
    */
-  name: T.oneOf(['white', 'gray']).isRequired,
+  name: T.oneOf(['white', 'gray']),
   /**
    * Form elements
    */

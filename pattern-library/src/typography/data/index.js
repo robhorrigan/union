@@ -11,7 +11,7 @@ function createTypographyData({
   return {
     /* Use hashes in font names */
     'serif-family-name': `tisa-${tisaLightHash}-${tisaMediumHash}`,
-    'sans-serif-family-name': `tisa-${tisaSansHash}`,
+    'sans-serif-family-name': `tisa-sans-${tisaSansHash}`,
     /* Tisa urls */
     'tisa-light-woff2-url': tisaLight2,
     'tisa-light-woff-url': tisaLight,

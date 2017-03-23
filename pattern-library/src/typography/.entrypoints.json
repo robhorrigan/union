@@ -1,9 +1,0 @@
-[
-  "fonts.scss",
-  "data/index.js",
-  "globals.scss",
-  {
-    "from": "modules.scss",
-    "to": "index.cssm"
-  }
-]

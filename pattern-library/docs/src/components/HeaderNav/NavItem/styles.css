@@ -1,0 +1,37 @@
+@value (
+  black,
+  white,
+  knot-blue-darker-30,
+  knot-blue-darker-60,
+  safe-gray-5
+) from '@xo-union/colors';
+
+@value item-hover-color: knot-blue-darker-30;
+@value item-active-color: knot-blue-darker-60;
+@value item-disabled-color: safe-gray-5;
+
+.container {
+  padding: 1.3em 2em;
+}
+
+.item {
+  color: black;
+}
+
+.item:hover {
+  color: item-hover-color;
+}
+
+.item:focus {
+  color: item-active-color;
+}
+
+.active-item {
+  composes: item;
+  color: item-active-color;
+}
+
+.disabled-item {
+  color: item-disabled-color !important;
+  cursor: default;
+}
