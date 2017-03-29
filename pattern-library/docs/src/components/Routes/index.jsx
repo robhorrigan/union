@@ -21,7 +21,6 @@ export default class Routes extends Component {
 
   render() {
     const routes = generateRoutes(Article.all);
-    console.log(rootPath, siteConfig);
 
     return (
       <Provider router={this.router}>

@@ -33,7 +33,7 @@ module.exports = function mdjsx(source) {
       return line;
     }
 
-    return `{${JSON.stringify(line)}}`;
+    return `{${JSON.stringify(line + '\n')}}`;
   });
 
   const code = `
