@@ -70,19 +70,19 @@ Hello world
     const result = mdjsx.call(loaderMock, source);
     expect(result).toContain(`
 <Markdown>
-{""}
-{"# Test"}
-{"Hello world"}
-{""}
+{"\\n"}
+{"# Test\\n"}
+{"Hello world\\n"}
+{"\\n"}
   <Component1 prop="a/b">
-{"    Hello world"}
+{"    Hello world\\n"}
   </Component1>
-{""}
+{"\\n"}
 <Component1>Hello world</Component1>
-{""}
-{"#### Test"}
+{"\\n"}
+{"#### Test\\n"}
 <Component1/>
-{""}
+{"\\n"}
 </Markdown>`);
   });
 });

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Router, Route, IndexRoute, browserHistory } from 'react-router';
+import { Router, Route, IndexRedirect, browserHistory } from 'react-router';
 
 import { Provider } from 'mobx-react';
 import { syncHistoryWithStore } from 'mobx-react-router';
@@ -26,9 +26,9 @@ export default class Routes extends Component {
       <Provider router={this.router}>
         <Router history={this.history} onUpdate={handleBookmark}>
           <Route path={rootPath} component={Layout} >
-            <IndexRoute to={siteConfig.landingPage} />
             {routes}
             <Route path="*" component={Error404} />
+            <IndexRedirect to={siteConfig.landingPage} />
           </Route>
         </Router>
       </Provider>
