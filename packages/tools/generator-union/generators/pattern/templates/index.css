@@ -9,12 +9,12 @@
  *   a-css-loader: https://github.com/GeorgeTaveras1231/a-css-loader
  * */
 
-/* You can define cariables which  can be used anywhere in this file
+/* You can define variables which can be used anywhere in this file
  * but can also be imported into other css-modules and javascript modules
  *
  *    @value my-variable: 'Hello World';
  *
- * Class definitions are hashed in order to avoid poluting the global namespace.
+ * Class definitions are hashed in order to avoid polluting the global namespace.
  * To use this class, the actual value must be imported into your code by requiring this
  * module.
  *
