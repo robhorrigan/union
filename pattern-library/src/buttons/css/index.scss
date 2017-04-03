@@ -14,19 +14,21 @@
 @value baby-min-width: initial;
 
 .btn {
-  display: block;
+  display: inline-block;
   text-align: center;
   border-radius: 2px;
 }
 
 .papa {
   composes: font-up-1 from '@xo-union/typography';
+  min-width: papa-min-width;
   line-height: 3rem;
   padding-left: 3rem;
   padding-right: 3rem;
 }
 
 .mama {
+  min-width: mama-min-width;
   line-height: 2.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -34,6 +36,7 @@
 
 .baby {
   composes: font-up-2 from '@xo-union/typography';
+  min-width: baby-min-width;
   line-height: 1.5rem;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -94,77 +97,37 @@
   }
 }
 
-@include media-breakpoint-up(xl) {
-  .papa-xl-fitted {
-    min-width: papa-min-width;
-    display: inline-block;
-  }
-  .mama-xl-fitted {
-    min-width: mama-min-width;
-    display: inline-block;
-  }
-  .baby-xl-fitted {
-    min-width: baby-min-width;
-    display: inline-block;
+@mixin block() {
+  display: block;
+  width: 100%;
+}
+
+.block {
+  @include block;
+}
+
+@include media-breakpoint-down(lg) {
+  .block-lg {
+    @include block;
   }
 }
 
-@include media-breakpoint-up(lg) {
-  .papa-lg-fitted {
-    min-width: papa-min-width;
-    display: inline-block;
-  }
-  .mama-lg-fitted {
-    min-width: mama-min-width;
-    display: inline-block;
-  }
-  .baby-lg-fitted {
-    min-width: baby-min-width;
-    display: inline-block;
+@include media-breakpoint-down(md) {
+  .block-md {
+    @include block;
   }
 }
 
-@include media-breakpoint-up(md) {
-  .papa-md-fitted {
-    min-width: papa-min-width;
-    display: inline-block;
-  }
-  .mama-md-fitted {
-    min-width: mama-min-width;
-    display: inline-block;
-  }
-  .baby-md-fitted {
-    min-width: baby-min-width;
-    display: inline-block;
+@include media-breakpoint-down(sm) {
+  .block-sm {
+    @include block;
   }
 }
 
-@include media-breakpoint-up(sm) {
-  .papa-sm-fitted {
-    min-width: papa-min-width;
-    display: inline-block;
-  }
-  .mama-sm-fitted {
-    min-width: mama-min-width;
-    display: inline-block;
-  }
-  .baby-sm-fitted {
-    min-width: baby-min-width;
-    display: inline-block;
+@include media-breakpoint-down(xs) {
+  .block-xs {
+    @include block;
   }
 }
 
-@include media-breakpoint-up(xs) {
-  .papa-xs-fitted {
-    min-width: papa-min-width !important;
-    display: inline-block;
-  }
-  .mama-xs-fitted {
-    min-width: mama-min-width !important;
-    display: inline-block;
-  }
-  .baby-xs-fitted {
-    min-width: baby-min-width !important;
-    display: inline-block;
-  }
-}
+

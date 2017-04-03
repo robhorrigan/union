@@ -1,32 +1,39 @@
 import React, { PropTypes } from 'react';
 import styles from '@xo-union/buttons/css'
 
-export default function Buttons({
-  text,
-  fitted,
-  size = 'papa',
-  color = 'primary',
-  className = '',
-  ...props
-}) {
+
+function processProps({ block, className, size = 'papa', color = 'primary', ...props }) {
   let classList = `${styles.btn} ${styles[size]} ${styles[color]} ${className}`;
 
-  if (fitted) {
-    classList += ` ${styles[`${size}-${fitted}-fitted`]}`;
+  if (typeof block === 'string') {
+    classList += ` ${styles[`block-${block}`]}`;
+  } else if (block) {
+    classList += ` ${styles.block}`;
   }
 
-  return <button className={classList} {...props}>{text}</button>;
+  return {
+    className: classList,
+    ...props
+  }
 }
 
-Buttons.propTypes = {
+export function Link(props) {
+  return <a {...processProps(props)} />;
+}
+
+export function Button(props) {
+  return <button {...processProps(props)} />;
+}
+
+Button.propTypes = {
   /**
    * Button text
    **/
   text: PropTypes.string.isRequired,
   /**
-   * Breakpoint where button becomes fitted
+   * Breakpoint where button changes to block
    **/
-  fitted: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+  block: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
   /**
    * Color class
    **/

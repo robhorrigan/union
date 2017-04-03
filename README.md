@@ -59,6 +59,7 @@ npm install
 ```
 
 ### Bootstrap packages
+***You do not need to run this if you just ran `npm install`***
 > xogroup/union is a monorepo. This means that it is a repo which hosts many smaller, independently consumable packages. This step is to create a development environment where all packages which depend on each other are linked, allowing changes in one package to be reflected across the whole ecosystem.
 
 ```sh

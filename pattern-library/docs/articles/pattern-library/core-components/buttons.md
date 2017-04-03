@@ -1,8 +1,9 @@
 ---
 $imports:
-  Button: '@xo-union/buttons'
+  '{ Button, Link }': '@xo-union/buttons'
   packageJson: '@xo-union/buttons/package.json'
-  '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
+  'ButtonDemo': '#docs/demos/Button'
+  '{ Snippet, InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
   ButtonMetadata: '!!react-docgen-loader!#/buttons/components'
 ---
 
@@ -12,117 +13,78 @@ $imports:
 
 <InstallSnippet packageJson={packageJson} />
 
-### Properties
+### Import
 
-<PropTypesTable metadata={ButtonMetadata.props} />
+<Snippet lang="javascript">
+import { Link, Button } from '@xo-union/buttons';
+</Snippet>
+
+### Properties
 
 ### Usage
 
-#### Primary Buttons
-<Demo>
-  <Button size="papa" color="primary" text="Primary Papa" />
-</Demo>
+#### Buttons
 
-<Demo>
-  <Button size="mama" color="primary" text="Primary Mama" />
-</Demo>
+###### Primary Buttons
 
-<Demo>
-  <Button size="baby" color="primary" text="Primary Baby" />
-</Demo>
+<ButtonDemo size="papa" color="primary">
+  Primary Papa
+</ButtonDemo>
 
-#### Secondary Buttons
-<Demo>
-  <Button size="papa" color="secondary" text="Secondary Papa" />
-</Demo>
+<ButtonDemo size="mama" color="primary">
+  Primary Mama
+</ButtonDemo>
 
-<Demo>
-  <Button size="mama" color="secondary" text="Secondary Mama" />
-</Demo>
+<ButtonDemo size="baby" color="primary">
+  Primary Baby
+</ButtonDemo>
 
-<Demo>
-  <Button size="baby" color="secondary" text="Secondary Baby" />
-</Demo>
+###### Secondary Buttons
+
+<ButtonDemo size="papa" color="secondary">
+  Secondary Papa
+</ButtonDemo>
+
+<ButtonDemo size="mama" color="secondary">
+  Secondary Mama
+</ButtonDemo>
+
+<ButtonDemo size="baby" color="secondary">
+  Secondary Baby
+</ButtonDemo>
+
+###### Tertiary Buttons
+<ButtonDemo size="papa" color="tertiary">
+  Tertiary Papa
+</ButtonDemo>
+
+<ButtonDemo size="mama" color="tertiary">
+  Tertiary Mama
+</ButtonDemo>
+
+<ButtonDemo size="baby" color="tertiary">
+  Tertiary Baby
+</ButtonDemo>
 
 
-#### Tertiary Buttons
-<Demo>
-  <Button size="papa" color="tertiary" text="Tertiary Papa" />
-</Demo>
+###### Block buttons
 
-<Demo>
-  <Button size="mama" color="tertiary" text="Tertiary Mama" />
-</Demo>
+<ButtonDemo size="papa" color="primary" block="xs">
+  screen <= xs
+</ButtonDemo>
 
-<Demo>
-  <Button size="baby" color="tertiary" text="Tertiary Baby" />
-</Demo>
+<ButtonDemo size="papa" color="primary" block="sm">
+  screen <= sm
+</ButtonDemo>
 
-#### Fitted buttons
+<ButtonDemo size="papa" color="primary" block="md">
+  screen <= md
+</ButtonDemo>
 
-##### Papa
+<ButtonDemo size="papa" color="primary" block="lg">
+  screen <= lg
+</ButtonDemo>
 
-<Demo>
-  <Button size="papa" color="primary" text="Primary Papa" fitted="xs" />
-</Demo>
-
-<Demo>
-  <Button size="papa" color="primary" text="Primary Papa" fitted="sm" />
-</Demo>
-
-<Demo>
-  <Button size="papa" color="primary" text="Primary Papa" fitted="md" />
-</Demo>
-
-<Demo>
-  <Button size="papa" color="primary" text="Primary Papa" fitted="lg" />
-</Demo>
-
-<Demo>
-  <Button size="papa" color="primary" text="Primary Papa" fitted="xl" />
-</Demo>
-
-#### Mama
-
-<Demo>
-  <Button size="mama" color="primary" text="Primary Mama" fitted="xs" />
-</Demo>
-
-<Demo>
-  <Button size="mama" color="primary" text="Primary Mama" fitted="sm" />
-</Demo>
-
-<Demo>
-  <Button size="mama" color="primary" text="Primary Mama" fitted="md" />
-</Demo>
-
-<Demo>
-  <Button size="mama" color="primary" text="Primary Mama" fitted="lg" />
-</Demo>
-
-<Demo>
-  <Button size="mama" color="primary" text="Primary Mama" fitted="xl" />
-</Demo>
-
-#### Baby
-
-<Demo>
-  <Button size="baby" color="primary" text="Primary Baby" fitted="xs" />
-</Demo>
-
-<Demo>
-  <Button size="baby" color="primary" text="Primary Baby" fitted="sm" />
-</Demo>
-
-<Demo>
-  <Button size="baby" color="primary" text="Primary Baby" fitted="md" />
-</Demo>
-
-<Demo>
-  <Button size="baby" color="primary" text="Primary Baby" fitted="lg" />
-</Demo>
-
-<Demo>
-  <Button size="baby" color="primary" text="Primary Baby" fitted="xl" />
-</Demo>
-
+<ButtonDemo size="papa" color="primary" block>
+  Always block
+</ButtonDemo>
