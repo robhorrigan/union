@@ -60,7 +60,7 @@ module.exports = class Pattern extends Generator {
     this.log("What's next?\n");
     this.log(
       '- Rebuild the patterns -- This will make the new pattern available in the docs and tests');
-    this.log('\n      npm build.patterns\n');
+    this.log('\n      npm run build.patterns\n');
     this.log('- Run the tests');
     this.log('\n      npm run test.patterns\n');
     this.log('- See the new pattern');
