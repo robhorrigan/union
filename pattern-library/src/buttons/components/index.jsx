@@ -33,7 +33,7 @@ Button.propTypes = {
   /**
    * Breakpoint where button changes to block
    **/
-  block: PropTypes.oneOf(['xs', 'sm', 'md', 'lg']),
+  block: PropTypes.oneOf(['xs', 'sm', 'md', 'lg', true]),
   /**
    * Color class
    **/
