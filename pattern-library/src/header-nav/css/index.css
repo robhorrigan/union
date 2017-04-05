@@ -14,9 +14,22 @@
   padding: 1.43rem .85rem;
 }
 
+.top-level-item-link {
+  transition: opacity .25s ease-in-out 0s;
+  color: inherit;
+}
+
+.top-level-item-link:hover {
+  color: inherit;
+  opacity: .6;
+}
+
+.logo-container {
+  padding: .5rem .85rem;
+}
+
 .logo {
   composes: icon-general-tk-logo from '@xo-union/icons';
-  color: knot-blue;
-  padding: .2rem .85rem;
-  font-size: 3rem;
+  color: knot-blue !important;
+  font-size: 2.5rem;
 }
