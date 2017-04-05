@@ -8,7 +8,7 @@ import logoCss from './logo.css';
 function LogoItem() {
   return (
     <Item to="/" styles={logoCss} >
-      <span styleName="logo" styleName="icon" />
+      <span styleName="icon" />
     </Item>
   );
 }
