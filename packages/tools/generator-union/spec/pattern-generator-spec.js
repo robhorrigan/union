@@ -16,7 +16,7 @@ describe('pattern generator', () => {
       assert.fileContent('packages/pattern-library/test-pattern/package.json',
         new RegExp([
           '"name": "@xo-union/test-pattern",',
-          '"version": "1.0.0",',
+          '"version": "0.1.0",',
           '"main": "index.js",',
           '"dependencies": {',
           '"css-module-builder": "\\^1.0.0-beta.5",',
