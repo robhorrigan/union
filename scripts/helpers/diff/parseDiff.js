@@ -69,11 +69,10 @@ module.exports = function parseDiff(diffString) {
   });
 };
 
-module.exports.withColors = function (diffString) {
+module.exports.withColors = function withColors(diffString) {
   return module.exports(diffString).map(({ typeOfChange, name }) => {
     const color = diffStatusColorRules(typeOfChange);
 
     return { name, typeOfChange: new ColoredString(typeOfChange, color) };
   });
 };
-
