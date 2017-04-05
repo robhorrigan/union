@@ -4,7 +4,7 @@ $imports:
   packageJson: '@xo-union/buttons/package.json'
   'ButtonDemo': '#docs/demos/Button'
   '{ Snippet, InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
-  ButtonMetadata: '!!react-docgen-loader!#/buttons/components'
+  ButtonMetadata: '!!react-docgen-loader!#/buttons/components/Button'
 ---
 
 <h1>{$props.title}</h1>
@@ -20,6 +20,8 @@ import { Link, Button } from '@xo-union/buttons';
 </Snippet>
 
 ### Properties
+
+<PropTypesTable metadata={ButtonMetadata.props} />
 
 ### Usage
 
