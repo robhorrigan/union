@@ -14,9 +14,7 @@ Install packages for project union and run the tests.
 # Test your node version
 node -v | grep -e '^v7' && echo "You are good to go"
 
-npm install
-npm run bootstrap
-npm run build.patterns
+npm run setup
 
 # Run all tests
 npm test
@@ -51,7 +49,15 @@ node -v
 # v7.5.0
 ```
 
+### Setup environment
+> Install dependencies, build necessary packages, and link internal packages. You should need to run this once before begining development
+
+```sh
+npm run setup
+```
+
 ### Install dependencies
+***You do not need to run this if you just ran `npm run setup`***
 > The first step is to install all dependencies.
 
 ```sh
@@ -59,7 +65,7 @@ npm install
 ```
 
 ### Bootstrap packages
-***You do not need to run this if you just ran `npm install`***
+***You do not need to run this if you just ran `npm run setup`***
 > xogroup/union is a monorepo. This means that it is a repo which hosts many smaller, independently consumable packages. This step is to create a development environment where all packages which depend on each other are linked, allowing changes in one package to be reflected across the whole ecosystem.
 
 ```sh

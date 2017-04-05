@@ -12,7 +12,7 @@
     "node": ">=7.0.0 <8.0"
   },
   "scripts": {
-    "postinstall": "npm run bootstrap",
+    "setup": "npm install && npm run bootstrap && npm run build.patterns",
     "bootstrap": "lerna bootstrap",
     "bootstrap.generators": "npm link ./packages/tools/generator-union",
     "build": "npm run build.patterns && npm run build.docs",
