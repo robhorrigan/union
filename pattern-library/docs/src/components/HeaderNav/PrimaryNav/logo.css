@@ -1,7 +1,11 @@
+@value ( knot-blue ) from '@xo-union/colors';
+
 .container {
   padding: 0.68em 2em;
 }
 
-.logo {
+.icon {
+  composes: icon-general-tk-logo from '@xo-union/icons';
+  color: knot-blue;
   font-size: 35px;
 }

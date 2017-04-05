@@ -1,6 +1,5 @@
 import React from 'react';
 import toggleable from '#docs/mixins/toggleable';
-import { iconGeneralTkLogo } from '@xo-union/icons';
 import NavItem from '../NavItem';
 import { Item } from '../List';
 import Nav from '../Nav';
@@ -9,7 +8,7 @@ import logoCss from './logo.css';
 function LogoItem() {
   return (
     <Item to="/" styles={logoCss} >
-      <span styleName="logo" className={iconGeneralTkLogo} />
+      <span styleName="logo" styleName="icon" />
     </Item>
   );
 }
