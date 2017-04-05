@@ -4,5 +4,5 @@
 import 'prismjs';
 import 'babel-polyfill';
 
-const testsContext = require.context('./pattern-library/spec', true, /spec.jsx?$/);
+const testsContext = require.context('./pattern-library/', true, /spec.jsx?$/);
 testsContext.keys().forEach(testsContext);
