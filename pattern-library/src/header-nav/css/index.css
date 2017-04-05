@@ -1,0 +1,22 @@
+@value ( safe-gray-5, knot-blue ) from '@xo-union/colors';
+
+.nav {
+  composes: nav from '@xo-union/bootstrap/nav';
+  composes: justify-content-center from '@xo-union/bootstrap/utilities';
+  composes: sans-serif-med font-down-2 from '@xo-union/typography';
+
+  border: 1px dashed red;
+  color: safe-gray-5;
+}
+
+.top-level-item {
+  composes: text-uppercase from '@xo-union/bootstrap/utilities';
+  padding: 1.43rem .85rem;
+}
+
+.logo {
+  composes: icon-general-tk-logo from '@xo-union/icons';
+  color: knot-blue;
+  padding: .2rem .85rem;
+  font-size: 3rem;
+}
