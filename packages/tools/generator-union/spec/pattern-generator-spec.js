@@ -92,7 +92,7 @@ describe('pattern generator', () => {
     });
 
     it('creates an entrypoints file', () => {
-      assert.fileContent('pattern-library/src/test-pattern/.entrypoints.json',
+      assert.fileContent('pattern-library/src/test-pattern/entrypoints.json',
         new RegExp([
           '\\[',
           '"index.jsx",',

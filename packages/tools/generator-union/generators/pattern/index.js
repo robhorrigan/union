@@ -21,7 +21,7 @@ module.exports = class Pattern extends Generator {
 
     this.fs.copy(
       this.templatePath('entrypoints.json'),
-      path.join('pattern-library', 'src', this._patternName(), '.entrypoints.json')
+      path.join('pattern-library', 'src', this._patternName(), 'entrypoints.json')
     );
 
     this.fs.copyTpl(
