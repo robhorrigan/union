@@ -7,3 +7,12 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+// Normalize patches -- Remove when https://github.com/twbs/bootstrap/pull/21741 is released
+
+input,
+textarea,
+button,
+select {
+  font-family: inherit;
+}
