@@ -55,9 +55,11 @@ module.exports = async function logDiffTree() {
   .then(createDiffTreeObject)
   .then(renderTree)
   .then((changedPackages) => {
+    /* eslint-disable */
     console.log('These are changed files since the last publish');
     console.log(`Using tag ${chalk.green(tag)}`);
     console.log(EOL);
     console.log(changedPackages);
+    /* eslint-enable */
   });
 };

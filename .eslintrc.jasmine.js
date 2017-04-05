@@ -15,6 +15,8 @@ module.exports = {
      * See this:
      * https://gist.github.com/traviskaufman/11131303
      **/
-    'func-names': 'off'
+    'func-names': 'off',
+    'jasmine/no-spec-dupes': [1, 'branch'],
+    'jasmine/no-suite-dupes': [1, 'branch']
   }
 };
