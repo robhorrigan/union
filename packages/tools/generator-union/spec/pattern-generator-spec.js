@@ -40,7 +40,7 @@ describe('pattern generator', () => {
       assert.fileContent('pattern-library/src/test-pattern/index.jsx',
         new RegExp([
           "import React, { PropTypes } from 'react';",
-          "import styles from '@xo-union/test-pattern/css'",
+          "import styles from '@xo-union/test-pattern/css';",
           'export default function TestPattern\\({ greeting = "Hello world" }\\) {',
           'return <div className={styles.testPattern}>{greeting}</div>;',
           '}',
