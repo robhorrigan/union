@@ -22,3 +22,22 @@ $headings-line-height: 1.25;
 $link-hover-color: #0275d8;
 $link-hover-decoration: none;
 
+/* Grid breakpoints  */
+$grid-breakpoints: (
+  xs: 0,
+  sm: 520px,
+  md: 824px,
+  lg: 1004px,
+  xl: 1320px
+);
+@include _assert-ascending($grid-breakpoints, "$grid-breakpoints");
+@include _assert-starts-at-zero($grid-breakpoints);
+
+/* Grid containers  */
+$container-max-widths: (
+  sm: 500px,
+  md: 800px,
+  lg: 980px,
+  xl: 1296px
+);
+@include _assert-ascending($container-max-widths, "$container-max-widths");
