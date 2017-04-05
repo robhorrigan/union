@@ -1,7 +1,5 @@
-import React from 'react';
-import { mount } from 'enzyme';
-import { processProps } from './utilities';
-import styles from '@xo-union/buttons/css'
+import { processProps } from '#/buttons/utilities';
+import styles from '@xo-union/buttons/css';
 
 describe('<Button>', () => {
   describe('#processProps', () => {
@@ -18,7 +16,7 @@ describe('<Button>', () => {
 
     describe('size', () => {
       it('creates the right class list', () => {
-        const result = processProps({size: 'mama'});
+        const result = processProps({ size: 'mama' });
 
         expect(result.className).not.toContain('undefined');
         expect(result.className).toContain(styles.mama);

@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import bsGrid from '@xo-union/bootstrap/grid';
-import bsUtils from '@xo-union/bootstrap/utilities';
 import { Link, Button } from '@xo-union/buttons';
 import { Demo } from '#docs/doc-components';
 

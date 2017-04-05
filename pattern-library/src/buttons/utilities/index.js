@@ -1,6 +1,13 @@
-import styles from '@xo-union/buttons/css'
+import styles from '@xo-union/buttons/css';
 
-export function processProps({ block, className = '', size = 'papa', color = 'primary', ...props }) {
+// eslint-disable-next-line import/prefer-default-export
+export function processProps({
+  block,
+  className = '',
+  size = 'papa',
+  color = 'primary',
+  ...props
+}) {
   let classList = `${styles.btn} ${styles[size]} ${styles[color]} ${className}`;
 
   if (typeof styles[`block-${block}`] === 'string') {
@@ -12,6 +19,6 @@ export function processProps({ block, className = '', size = 'papa', color = 'pr
   return {
     className: classList,
     ...props
-  }
+  };
 }
 
