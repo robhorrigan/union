@@ -38,6 +38,7 @@ export default function HeaderNav() {
       <a href={url} className={styles['top-level-item-link']}>
         {text}
       </a>
+      <span className={styles['menu-pointer']} />
       <Menu>
         <MenuItem href="/">
           Test A
@@ -67,11 +68,11 @@ export default function HeaderNav() {
 
 export function Menu({ children }) {
   return (
-    <div className={styles['dropdown-container']}>
+    <nav className={styles['dropdown-container']}>
       <ul className={styles.menu}>
         {children}
       </ul>
-    </div>
+    </nav>
   );
 }
 

@@ -1,37 +1,46 @@
 @value (
   safe-gray-5,
   knot-blue,
-  white
+  white,
+  background-gray-8,
+  knot-blue-lighter-70
 ) from '@xo-union/colors';
 
-/* Color utils */
-@value yuk--some-random-light-gray: rgba(195,195,195,.5);
-@value yuk--some-random-light-blue: rgba(108,198,240,.3);
-
+/* colors */
 .white-bg {
   background-color: white;
 }
 
-/* Borders */
-@value menu-border: 1px solid yuk--some-random-light-gray;
+.knot-blue-fg {
+  color: knot-blue;
+}
 
-/* Dropdown */
-.has-dropdown:hover .dropdown {
+/* Borders */
+@value menu-border: 1px solid background-gray-8;
+
+/* Utilities */
+.toggled {
+  display: none;
+}
+
+.toggled:hover {
   display: block;
 }
 
+.toggles-on-hover:hover .toggled {
+  display: initial;
+}
+
+/* Dropdown */
 .dropdown {
-  display: none;
   position: absolute;
   top: 0;
 }
 
-.dropdown:hover {
-  display: block;
-}
-
 .dropdown-container {
+  composes: align-self-center from '@xo-union/bootstrap/utilities';
   position: relative;
+  width: 100%;
 }
 
 /* Nav */
@@ -54,8 +63,8 @@
 }
 
 .top-level-item {
-  composes: text-uppercase from '@xo-union/bootstrap/utilities';
-  composes: has-dropdown;
+  composes: d-flex text-uppercase flex-column from '@xo-union/bootstrap/utilities';
+  composes: toggles-on-hover;
 }
 
 .top-level-item-link {
@@ -81,19 +90,27 @@
 
 /* Effects */
 .light-shadow {
-  box-shadow: 0 .125rem .188rem 0 yuk--some-random-light-gray;
+  box-shadow: 0 .125rem .188rem 0 background-gray-8;
 }
 
-
 /* Menu */
-.menu {
-  /* These compositions will be inherited from the nav */
-  composes: sans-serif-med font-down-2 from '@xo-union/typography';
-  composes: has-nav-links;
+.menu-pointer {
+  composes: align-self-center from '@xo-union/bootstrap/utilities';
+  composes: toggled;
+  composes: knot-blue-fg;
+  font-size: .75rem;
+  line-height: 0;
+}
 
+.menu-pointer::after {
+  content: '▲';
+}
+
+.menu {
   composes: nav from '@xo-union/bootstrap/nav';
   composes: flex-column from '@xo-union/bootstrap/utilities';
   composes: light-shadow;
+  composes: toggled;
   composes: dropdown;
   composes: white-bg;
 
@@ -107,7 +124,7 @@
    * It will look less centered dependending on the size of the text of
    * the top-leve-nav item
    * */
-  left: -65px;;
+  left: -65px;
 }
 
 .menu-item {
@@ -120,5 +137,6 @@
 }
 
 .menu-item-link:hover {
-  background-color: yuk--some-random-light-blue;
+  background-color: knot-blue-lighter-70;
 }
+
