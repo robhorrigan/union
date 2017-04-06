@@ -1,54 +1,29 @@
 import React, { PropTypes } from 'react';
 import styles from '@xo-union/header-nav/css';
+import topLevelItems from './nav-items.json';
 
-const topLevelItems = [
-  {
-    text: 'Local Vendor',
-    url: ''
-  },
-  {
-    text: 'Wedding Website',
-    url: ''
-  },
-  {
-    text: 'Registry',
-    url: ''
-  },
-  {
-    text: 'Rings + Dresses',
-    url: ''
-  },
-  {
-    text: 'Photos',
-    url: ''
-  },
-  {
-    text: 'Ideas & Advice',
-    url: ''
-  },
-  {
-    text: 'Shop',
-    url: ''
-  }
-];
+console.log(topLevelItems);
 
 export default function HeaderNav() {
-  const listItems = topLevelItems.map(({ text, url }) =>
-    <li key={text} className={styles['top-level-item']}>
-      <a href={url} className={styles['top-level-item-link']}>
-        {text}
-      </a>
-      <span className={styles['menu-pointer']} />
-      <Menu>
-        <MenuItem href="/">
-          Test A
-        </MenuItem>
+  const listItems = topLevelItems.map(({ name, url, menuItems }) => {
+    const menuItemComponents = menuItems.map(({ name, url }) =>
+      <MenuItem href={url} key={name}>
+        {name}
+      </MenuItem>
+    );
 
-        <MenuItem href="/">
-          Test B
-        </MenuItem>
-      </Menu>
-    </li>
+    return (
+      <li key={name} className={styles['top-level-item']}>
+        <a href={url} className={styles['top-level-item-link']}>
+          {name}
+        </a>
+        <span className={styles['menu-pointer']} />
+        <Menu>
+          {menuItemComponents}
+        </Menu>
+      </li>
+    );
+  }
   );
 
   listItems.unshift(
@@ -66,7 +41,7 @@ export default function HeaderNav() {
   );
 }
 
-export function Menu({ children }) {
+function Menu({ children }) {
   return (
     <nav className={styles['dropdown-container']}>
       <ul className={styles.menu}>
@@ -76,7 +51,7 @@ export function Menu({ children }) {
   );
 }
 
-export function MenuItem({ href, children }) {
+function MenuItem({ href, children }) {
   return (
     <li className={styles['menu-item']}>
       <a href={href} className={styles['menu-item-link']}>
