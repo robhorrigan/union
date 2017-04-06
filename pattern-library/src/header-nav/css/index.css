@@ -1,26 +1,71 @@
-@value ( safe-gray-5, knot-blue ) from '@xo-union/colors';
+@value (
+  safe-gray-5,
+  knot-blue,
+  white
+) from '@xo-union/colors';
+
+/* Color utils */
+@value yuk--some-random-light-gray: rgba(195,195,195,.5);
+@value yuk--some-random-light-blue: rgba(108,198,240,.3);
+
+.white-bg {
+  background-color: white;
+}
+
+/* Borders */
+@value menu-border: 1px solid yuk--some-random-light-gray;
+
+/* Dropdown */
+.has-dropdown:hover .dropdown {
+  display: block;
+}
+
+.dropdown {
+  display: none;
+  position: absolute;
+  top: 0;
+}
+
+.dropdown:hover {
+  display: block;
+}
+
+.dropdown-container {
+  position: relative;
+}
+
+/* Nav */
+.has-nav-links a {
+  color: safe-gray-5;
+}
+
+.has-nav-links a:hover {
+  color: safe-gray-5;
+}
 
 .nav {
   composes: nav from '@xo-union/bootstrap/nav';
   composes: justify-content-center from '@xo-union/bootstrap/utilities';
   composes: sans-serif-med font-down-2 from '@xo-union/typography';
 
-  border: 1px dashed red;
-  color: safe-gray-5;
+  composes: has-nav-links;
+
+  border-bottom: menu-border;
 }
 
 .top-level-item {
   composes: text-uppercase from '@xo-union/bootstrap/utilities';
-  padding: 1.43rem .85rem;
+  composes: has-dropdown;
 }
 
 .top-level-item-link {
+  display: block;
+  padding: 1.43rem .85rem;
   transition: opacity .25s ease-in-out 0s;
   color: inherit;
 }
 
 .top-level-item-link:hover {
-  color: inherit;
   opacity: .6;
 }
 
@@ -32,4 +77,48 @@
   composes: icon-general-tk-logo from '@xo-union/icons';
   color: knot-blue !important;
   font-size: 2.5rem;
+}
+
+/* Effects */
+.light-shadow {
+  box-shadow: 0 .125rem .188rem 0 yuk--some-random-light-gray;
+}
+
+
+/* Menu */
+.menu {
+  /* These compositions will be inherited from the nav */
+  composes: sans-serif-med font-down-2 from '@xo-union/typography';
+  composes: has-nav-links;
+
+  composes: nav from '@xo-union/bootstrap/nav';
+  composes: flex-column from '@xo-union/bootstrap/utilities';
+  composes: light-shadow;
+  composes: dropdown;
+  composes: white-bg;
+
+  border-bottom: menu-border;
+  border-left: menu-border;
+  border-right: menu-border;
+  width: 270px;
+  /*
+   * Achieve centering of dropdown menu.
+   * This won't work perfectly for all elements because -65 is an estimate.
+   * It will look less centered dependending on the size of the text of
+   * the top-leve-nav item
+   * */
+  left: -65px;;
+}
+
+.menu-item {
+  border-top: menu-border;
+}
+
+.menu-item-link {
+  display: block;
+  padding: .69rem 1rem;
+}
+
+.menu-item-link:hover {
+  background-color: yuk--some-random-light-blue;
 }

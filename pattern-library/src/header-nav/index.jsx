@@ -32,12 +32,21 @@ const topLevelItems = [
   }
 ];
 
-export default function HeaderNav({ }) {
+export default function HeaderNav() {
   const listItems = topLevelItems.map(({ text, url }) =>
     <li key={text} className={styles['top-level-item']}>
       <a href={url} className={styles['top-level-item-link']}>
         {text}
       </a>
+      <Menu>
+        <MenuItem href="/">
+          Test A
+        </MenuItem>
+
+        <MenuItem href="/">
+          Test B
+        </MenuItem>
+      </Menu>
     </li>
   );
 
@@ -56,6 +65,22 @@ export default function HeaderNav({ }) {
   );
 }
 
-HeaderNav.propTypes = {
-  test: PropTypes.string
-};
+export function Menu({ children }) {
+  return (
+    <div className={styles['dropdown-container']}>
+      <ul className={styles.menu}>
+        {children}
+      </ul>
+    </div>
+  );
+}
+
+export function MenuItem({ href, children }) {
+  return (
+    <li className={styles['menu-item']}>
+      <a href={href} className={styles['menu-item-link']}>
+        {children}
+      </a>
+    </li>
+  );
+}

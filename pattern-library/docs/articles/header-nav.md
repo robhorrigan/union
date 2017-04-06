@@ -18,7 +18,7 @@ $imports:
   <HeaderNav />
 </Demo>
 
-<PropTypesTable metadata={HeaderNavMetadata.props} />
+<PropTypesTable metadata={{/* HeaderNavMetadata.props */}} />
 
 ### Development
 
