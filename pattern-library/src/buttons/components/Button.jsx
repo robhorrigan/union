@@ -21,6 +21,10 @@ Button.propTypes = {
   /**
    * Size class
    **/
-  size: PropTypes.oneOf(['baby', 'mama', 'papa'])
+  size: PropTypes.oneOf(['baby', 'mama', 'papa']),
+  /**
+   * Add additional CTA specific styles -- Only applies to Button components
+   */
+  isCTA: PropTypes.bool
 };
 

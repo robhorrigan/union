@@ -35,7 +35,7 @@
 }
 
 .baby {
-  composes: font-up-2 from '@xo-union/typography';
+  composes: font-down-2 from '@xo-union/typography';
   min-width: baby-min-width;
   line-height: 1.5rem;
   padding-left: 1rem;

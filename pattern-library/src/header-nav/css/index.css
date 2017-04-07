@@ -63,13 +63,19 @@
 }
 
 .top-level-item {
-  composes: d-flex text-uppercase flex-column from '@xo-union/bootstrap/utilities';
+  composes: d-flex flex-column justify-content-center from '@xo-union/bootstrap/utilities';
   composes: toggles-on-hover;
 }
 
+.top-level-item-pushed-to-right {
+  composes: top-level-item;
+  margin-left: 6.25rem;
+}
+
 .top-level-item-link {
-  display: block;
+  composes: text-uppercase from '@xo-union/bootstrap/utilities';
   padding: 1.43rem .85rem;
+  display: block;
   transition: opacity .25s ease-in-out 0s;
   color: inherit;
 }
@@ -98,7 +104,8 @@
   composes: align-self-center from '@xo-union/bootstrap/utilities';
   composes: toggled;
   composes: knot-blue-fg;
-  font-size: .75rem;
+
+  font-size: 1rem;
   line-height: 0;
 }
 
@@ -138,5 +145,10 @@
 
 .menu-item-link:hover {
   background-color: knot-blue-lighter-70;
+}
+
+.menu-item-link img {
+  max-height: 15px;
+  margin-right: 10px;
 }
 

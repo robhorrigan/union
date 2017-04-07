@@ -6,8 +6,10 @@ export function processProps({
   className = '',
   size = 'papa',
   color = 'primary',
+  isCTA = false,
   ...props
 }) {
+  let role;
   let classList = `${styles.btn} ${styles[size]} ${styles[color]} ${className}`;
 
   if (typeof styles[`block-${block}`] === 'string') {
@@ -16,8 +18,13 @@ export function processProps({
     classList += ` ${styles.block}`;
   }
 
+  if (isCTA) {
+    role = 'button';
+  }
+
   return {
     className: classList,
+    role,
     ...props
   };
 }
