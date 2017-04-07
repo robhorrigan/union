@@ -5,6 +5,7 @@ import toggleable from '#docs/mixins/toggleable';
 
 import NavWithGroups from '../Nav/NavWithGroups';
 import subNavCss from '../SubNav/styles.css';
+import Article from '#docs/entities/Article';
 import seed from './seed.json';
 
 const NUMBER_OF_GROUPS = 7;
@@ -17,7 +18,7 @@ export default class ContentPatternsSubNav extends Component {
       <NavWithGroups
         styleName="sub-nav"
         role="menu"
-        items={seed}
+        items={Article.contentPatterns()}
         numberOfGroups={NUMBER_OF_GROUPS}
       />
     );

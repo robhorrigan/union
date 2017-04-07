@@ -62,17 +62,17 @@
   border-bottom: menu-border;
 }
 
-.top-level-item {
+.nav-item {
   composes: d-flex flex-column justify-content-center from '@xo-union/bootstrap/utilities';
   composes: toggles-on-hover;
 }
 
-.top-level-item-pushed-to-right {
-  composes: top-level-item;
+.nav-item-pushed-to-right {
+  composes: nav-item;
   margin-left: 6.25rem;
 }
 
-.top-level-item-link {
+.nav-link {
   composes: text-uppercase from '@xo-union/bootstrap/utilities';
   padding: 1.43rem .85rem;
   display: block;
@@ -80,7 +80,7 @@
   color: inherit;
 }
 
-.top-level-item-link:hover {
+.nav-link:hover {
   opacity: .6;
 }
 

@@ -23,7 +23,7 @@ export function MenuLink({ href, children }) {
 export function NavLinkWithMenu({ label, url, children, ...props }) {
   return (
     <NavItem {...props}>
-      <a href={url} className={styles['top-level-item-link']}>
+      <a href={url} className={styles['nav-link']}>
         {label}
       </a>
       <span className={styles['menu-pointer']} />
@@ -35,10 +35,10 @@ export function NavLinkWithMenu({ label, url, children, ...props }) {
 }
 
 export function NavItem({ pushedToRight, children }) {
-  let topLevelClass = 'top-level-item';
+  let topLevelClass = 'nav-item';
 
   if (pushedToRight) {
-    topLevelClass = 'top-level-item-pushed-to-right';
+    topLevelClass = 'nav-item-pushed-to-right';
   }
 
   return (
