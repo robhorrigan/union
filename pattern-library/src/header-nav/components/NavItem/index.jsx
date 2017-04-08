@@ -11,13 +11,21 @@ function Menu({ children }) {
   );
 }
 
+export function MenuItem({ className = styles['menu-item'], children, ...props }) {
+  return (
+    <li className={className} {...props}>
+      {children}
+    </li>
+  );
+}
+
 export function MenuLink({ href, children }) {
   return (
-    <li className={styles['menu-item']}>
+    <MenuItem>
       <a href={href} className={styles['menu-item-link']}>
         {children}
       </a>
-    </li>
+    </MenuItem>
   );
 }
 export function NavLinkWithMenu({ label, url, children, ...props }) {

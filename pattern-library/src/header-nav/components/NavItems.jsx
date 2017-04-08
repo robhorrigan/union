@@ -1,4 +1,6 @@
 import React from 'react';
+import styles from '@xo-union/header-nav/css';
+import { Button } from '@xo-union/buttons';
 import { path, params } from '../utilities/path-builders';
 import { MenuLink, NavLinkWithMenu } from './NavItem';
 
@@ -94,8 +96,8 @@ export function Content() {
 }
 
 /* Additional path builders used on the Shop NavItem */
-function trackingParams({ inMenu = true } = {}) {
-  const utmCampaign = inMenu ? 'topnavsubcat' : 'topnav';
+function trackingParams({ isSubCategory = true } = {}) {
+  const utmCampaign = isSubCategory ? 'topnavsubcat' : 'topnav';
 
   return this::params({
     utm_source: 'theknot.com',
@@ -113,7 +115,7 @@ export function Shop() {
   const weddingShopHost = 'https://weddingshop.theknot.com';
 
   return (
-    <NavLinkWithMenu label="Shop" url={shopHost::trackingParams({ inMenu: false })}>
+    <NavLinkWithMenu label="Shop" url={shopHost::trackingParams({ isSubCategory: false })}>
       <MenuLink href={weddingShopHost::path('beauty')}> Beauty & Hair </MenuLink>
       <MenuLink href={weddingShopHost::path('gifts')::trackingParams()} >
         Bridal Party Gifts
@@ -152,9 +154,24 @@ export function Shop() {
   );
 }
 
-export function Tools() {
+function AccountMenuItem() {
+  return (
+    <li className={styles['account-menu-item']}>
+      <Button className={styles['account-menu-item-primary-button']} size="baby" isCTA block>
+        SIGN UP
+      </Button>
+      Already a member?
+      <Button size="baby" color="tertiary" isCTA>
+        LOG IN
+      </Button>
+    </li>
+  );
+}
+
+export function Tools({ loggedIn }) {
   return (
     <NavLinkWithMenu label="Tools" url="/dashboard" pushedToRight>
+      { loggedIn ? null : <AccountMenuItem /> }
       <MenuLink href="/gs/wedding-websites"> Wedding Website </MenuLink>
       <MenuLink href="/registry"> Registry </MenuLink>
       <MenuLink href="/gs/guest-list-manager"> Guest List Manager </MenuLink>
@@ -166,6 +183,7 @@ export function Tools() {
       <MenuLink href="/inbox"> Conversations </MenuLink>
       <MenuLink href="/boards"> Favorites </MenuLink>
       <MenuLink href="http://feedback.beta.theknot.com/knowledgebase"> Help + Feedback </MenuLink>
+      { loggedIn ? <MenuLink href="#">Log Out</MenuLink> : null }
     </NavLinkWithMenu>
   );
 }

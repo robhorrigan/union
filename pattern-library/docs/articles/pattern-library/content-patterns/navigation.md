@@ -11,6 +11,14 @@ $imports:
 
 <InstallSnippet packageJson={packageJson} />
 
+#### Logged out
+
 <Demo>
-  <HeaderNav />
+  <HeaderNav loggedIn={false} />
+</Demo>
+
+#### Logged in
+
+<Demo>
+  <HeaderNav loggedIn />
 </Demo>

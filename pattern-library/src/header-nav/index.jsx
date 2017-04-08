@@ -8,13 +8,27 @@ import { NavItem } from './components/NavItem';
 
 function Logo() {
   return (
-    <li key="logo" className={styles['logo-container']}>
+    <li className={styles['logo-container']}>
       <a className={styles.logo} href="/" />
     </li>
   );
 }
 
-export default function HeaderNav() {
+export default function HeaderNav({ loggedIn = false }) {
+  const loggedOutNavItems = [
+    <NavItem>
+      <Button size="baby" isCTA>
+        SIGN UP
+      </Button>
+    </NavItem>
+    ,
+    <NavItem>
+      <Button color="tertiary" size="baby" isCTA>
+        LOG IN
+      </Button>
+    </NavItem>
+  ];
+
   return (
     <nav>
       <ul className={styles.nav}>
@@ -26,19 +40,8 @@ export default function HeaderNav() {
         <NavItems.RealWeddings />
         <NavItems.Content />
         <NavItems.Shop />
-        <NavItems.Tools />
-
-        <NavItem>
-          <Button size="baby" isCTA>
-            SIGN UP
-          </Button>
-        </NavItem>
-
-        <NavItem>
-          <Button color="tertiary" size="baby" isCTA>
-            LOG IN
-          </Button>
-        </NavItem>
+        <NavItems.Tools loggedIn={loggedIn} />
+        { loggedIn ? null : loggedOutNavItems }
       </ul>
     </nav>
   );
