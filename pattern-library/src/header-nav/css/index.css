@@ -9,15 +9,15 @@
 @value menu-border: 1px solid background-gray-8;
 
 /* Utilities */
-.toggled {
+.toggleable {
   display: none;
 }
 
-.toggled:hover {
+.toggleable:hover {
   display: block;
 }
 
-.toggles-on-hover:hover .toggled {
+.toggles-on-hover:hover .toggleable {
   display: initial;
 }
 
@@ -92,7 +92,7 @@
 .menu-pointer {
   composes: align-self-center from '@xo-union/bootstrap/utilities';
   composes: knot-blue-fg from '@xo-union/colors/css';
-  composes: toggled;
+  composes: toggleable;
 
   font-size: 1rem;
   line-height: 0;
@@ -107,7 +107,7 @@
   composes: flex-column from '@xo-union/bootstrap/utilities';
   composes: white-bg from '@xo-union/colors/css';
   composes: light-shadow;
-  composes: toggled;
+  composes: toggleable;
   composes: dropdown;
 
   border-bottom: menu-border;
