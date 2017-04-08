@@ -1,3 +1,7 @@
 [
-  "index.css"
+  {
+    "from": "classes.scss",
+    "to": "css/index.cssm"
+  },
+  "variables.scss"
 ]

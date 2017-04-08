@@ -1,0 +1,9 @@
+@mixin color($name, $value) {
+  .#{$name}-bg {
+    background-color: $value;
+  }
+
+  .#{$name}-fg {
+    color: $value;
+  }
+}

@@ -1,0 +1,243 @@
+@include color(white, #ffffff);
+@include color(gray-10, #fafafa);
+@include color(background-gray-9, #f4f4f4);
+@include color(background-gray-8, #e5e5e5);
+@include color(safe-gray-7, #cccccc);
+@include color(gray-6, #b0b0b0);
+@include color(safe-gray-5, #999999);
+@include color(gray-4, #787878);
+@include color(alt-text-gray-3, #585858);
+@include color(alt-text-gray-2, #4a4a4a);
+@include color(alt-text-gray-1, #363636);
+@include color(black, #1f1f1f);
+
+/*************
+ * Knot Blue *
+ *************/
+@include color(knot-blue-lighter-90, #f1f9fd);
+@include color(knot-blue-lighter-80, #e2f4fc);
+@include color(knot-blue-lighter-70, #d4effb);
+@include color(knot-blue-lighter-60, #c6e9f9);
+@include color(knot-blue-lighter-50, #b8e4f8);
+@include color(knot-blue-lighter-40, #aadff7);
+@include color(knot-blue-lighter-30, #9cdaf5);
+@include color(knot-blue-lighter-20, #8ed4f4);
+@include color(knot-blue-lighter-10, #80cff3);
+@include color(knot-blue, #72caf2);
+@include color(knot-blue-darker-10, #54beee);
+@include color(knot-blue-darker-20, #4ab4e5);
+@include color(knot-blue-darker-30, #3ea9da);
+@include color(knot-blue-darker-40, #2b9fd4);
+@include color(knot-blue-darker-50, #1e94c7);
+@include color(knot-blue-darker-60, #1388bb);
+
+/***********
+ * Coral *
+ ***********/
+@include color(coral-lighter-90, #fceeec);
+@include color(coral-lighter-80, #faddd9);
+@include color(coral-lighter-70, #f7ccc7);
+@include color(coral-lighter-60, #f5bbb4);
+@include color(coral-lighter-50, #f2aaa2);
+@include color(coral-lighter-40, #f0998f);
+@include color(coral-lighter-30, #ed887d);
+@include color(coral-lighter-20, #eb776a);
+@include color(coral-lighter-10, #e86657);
+@include color(coral, #e65545);
+@include color(coral-darker-10, #e04a3a);
+@include color(coral-darker-20, #da402f);
+@include color(coral-darker-30, #cf3525);
+@include color(coral-darker-40, #c42c1c);
+
+/* SECONDARY PALETTE */
+
+/*************
+ * Jay *
+ *************/
+@include color(jay-lighter-90, #ecf5f7);
+@include color(jay-lighter-80, #daeaef);
+@include color(jay-lighter-70, #c8e0e8);
+@include color(jay-lighter-60, #b5d6e0);
+@include color(jay-lighter-50, #a3ccd8);
+@include color(jay-lighter-40, #90c1d0);
+@include color(jay-lighter-30, #7eb7c9);
+@include color(jay-lighter-20, #6badc1);
+@include color(jay-lighter-10, #59a3b9);
+@include color(jay, #4799b2);
+@include color(jay-darker-10, #3793af);
+@include color(jay-darker-20, #2c8caa);
+@include color(jay-darker-30, #1885a7);
+@include color(jay-darker-40, #097fa3);
+
+/*************
+ * Peacock *
+ *************/
+@include color(peacock-lighter-90, #edf7f8);
+@include color(peacock-lighter-80, #dbf0f1);
+@include color(peacock-lighter-70, #cae9ea);
+@include color(peacock-lighter-60, #b8e2e3);
+@include color(peacock-lighter-50, #a6dbdc);
+@include color(peacock-lighter-40, #94d3d5);
+@include color(peacock-lighter-30, #83ccce);
+@include color(peacock-lighter-20, #71c5c7);
+@include color(peacock-lighter-10, #60bec1);
+@include color(peacock, #4eb7ba);
+@include color(peacock-darker-10, #36aeb2);
+@include color(peacock-darker-20, #0ea4a8);
+@include color(peacock-darker-30, #019ca0);
+@include color(peacock-darker-40, #069396);
+
+/*************
+ * Jade *
+ *************/
+@include color(jade-lighter-90, #ecf7f4);
+@include color(jade-lighter-80, #daefe9);
+@include color(jade-lighter-70, #c8e8de);
+@include color(jade-lighter-60, #b5e0d3);
+@include color(jade-lighter-50, #a3d8c8);
+@include color(jade-lighter-40, #90d0bd);
+@include color(jade-lighter-30, #7ec9b2);
+@include color(jade-lighter-20, #6bc1a7);
+@include color(jade-lighter-10, #59b99d);
+@include color(jade, #47b292);
+@include color(jade-darker-10, #3cad8b);
+@include color(jade-darker-20, #23a981);
+@include color(jade-darker-30, #1da57c);
+@include color(jade-darker-40, #089e71);
+
+/*************
+ * Berry *
+ *************/
+@include color(berry-lighter-90, #f9eff2);
+@include color(berry-lighter-80, #f3e0e6);
+@include color(berry-lighter-70, #edd1da);
+@include color(berry-lighter-60, #e7c1cd);
+@include color(berry-lighter-50, #e1b2c1);
+@include color(berry-lighter-40, #dba2b4);
+@include color(berry-lighter-30, #d593a8);
+@include color(berry-lighter-20, #cf839b);
+@include color(berry-lighter-10, #c9748f);
+@include color(berry, #c36583);
+@include color(berry-darker-10, #be5777);
+@include color(berry-darker-20, #bc4f71);
+@include color(berry-darker-30, #b64568);
+@include color(berry-darker-40, #b03a5f);
+
+/* TERTIARY PALETTE */
+
+/*************
+ * Mint *
+ *************/
+@include color(mint-lighter-90, #f4faf7);
+@include color(mint-lighter-80, #e8f6f0);
+@include color(mint-lighter-70, #c8e3ef);
+@include color(mint-lighter-60, #d2eee1);
+@include color(mint-lighter-50, #c7eada);
+@include color(mint-lighter-40, #bbe5d3);
+@include color(mint-lighter-30, #b0e1cc);
+@include color(mint-lighter-20, #a5ddc4);
+@include color(mint-lighter-10, #9ad9bd);
+@include color(mint, #8fd5b6);
+@include color(mint-darker-10, #83c2a6);
+@include color(mint-darker-20, #78b097);
+@include color(mint-darker-30, #6c9d88);
+@include color(mint-darker-40, #618b79);
+
+/*************
+ * Lemon *
+ *************/
+@include color(lemon-lighter-90, #fefce9);
+@include color(lemon-lighter-80, #fefad2);
+@include color(lemon-lighter-70, #fdf7bc);
+@include color(lemon-lighter-60, #fdf5a6);
+@include color(lemon-lighter-50, #fcf390);
+@include color(lemon-lighter-40, #fcf079);
+@include color(lemon-lighter-30, #fbee64);
+@include color(lemon-lighter-20, #fbeb4d);
+@include color(lemon-lighter-10, #fae937);
+@include color(lemon, #fae721);
+@include color(lemon-darker-10, #ebd814);
+@include color(lemon-darker-20, #e4d003);
+
+/*************
+ * Salmon *
+ *************/
+@include color(salmon-lighter-90, #fdf2f3);
+@include color(salmon-lighter-80, #fce5e7);
+@include color(salmon-lighter-70, #fbd9db);
+@include color(salmon-lighter-60, #f9cccf);
+@include color(salmon-lighter-50, #f8c0c3);
+@include color(salmon-lighter-40, #f7b3b7);
+@include color(salmon-lighter-30, #f5a7ab);
+@include color(salmon-lighter-20, #f49a9f);
+@include color(salmon-lighter-10, #f38d93);
+@include color(salmon, #f28187);
+@include color(salmon-darker-10, #f0757c);
+@include color(salmon-darker-20, #ea6b72);
+@include color(salmon-darker-30, #eb626a);
+@include color(salmon-darker-40, #e65962);
+
+/*************
+ * Flamingo *
+ *************/
+@include color(flamingo-lighter-90, #fdf2f6);
+@include color(flamingo-lighter-80, #fce5ed);
+@include color(flamingo-lighter-70, #fbd9e4);
+@include color(flamingo-lighter-60, #f9ccdb);
+@include color(flamingo-lighter-50, #f8bfd2);
+@include color(flamingo-lighter-40, #f7b2c9);
+@include color(flamingo-lighter-30, #f5a6c0);
+@include color(flamingo-lighter-20, #f499b7);
+@include color(flamingo-lighter-10, #f38caf);
+@include color(flamingo, #f280a6);
+@include color(flamingo-darker-10, #f0759e);
+@include color(flamingo-darker-20, #e66691);
+@include color(flamingo-darker-30, #e25585);
+@include color(flamingo-darker-40, #d64676);
+
+/*************
+ * Lilac *
+ *************/
+@include color(lilac-lighter-90, #f4f3f7);
+@include color(lilac-lighter-80, #e9e7f0);
+@include color(lilac-lighter-70, #dfdbe9);
+@include color(lilac-lighter-60, #d4cfe1);
+@include color(lilac-lighter-50, #c9c3da);
+@include color(lilac-lighter-40, #beb7d3);
+@include color(lilac-lighter-30, #b4abcc);
+@include color(lilac-lighter-20, #a99fc4);
+@include color(lilac-lighter-10, #9e94bd);
+@include color(lilac, #9488b6);
+@include color(lilac-darker-10, #877da6);
+@include color(lilac-darker-20, #7c7297);
+@include color(lilac-darker-30, #706788);
+@include color(lilac-darker-40, #645d79);
+
+/*************
+ * Gilt *
+ *************/
+@include color(gilt-lighter-90, #faf5ec);
+@include color(gilt-lighter-80, #f5ecd9);
+@include color(gilt-lighter-70, #f0e2c6);
+@include color(gilt-lighter-60, #ebd9b3);
+@include color(gilt-lighter-50, #e7cfa0);
+@include color(gilt-lighter-40, #e2c68d);
+@include color(gilt-lighter-30, #ddbc7b);
+@include color(gilt-lighter-20, #d8b367);
+@include color(gilt-lighter-10, #d3a955);
+@include color(gilt, #cfa042);
+@include color(gilt-darker-10, #c09235);
+@include color(gilt-darker-20, #b3872d);
+@include color(gilt-darker-30, #a57a21);
+@include color(gilt-darker-40, #9a6e13);
+
+
+/* UTILITY PALETTE */
+
+@include color(coral-lighter-8-saturated, #e72914);
+@include color(red, #c00404);
+@include color(red-lighter-90, #f8e6e6);
+@include color(red-lighter-80, #f2cccc);
+@include color(green, #1ca420);
+@include color(green-lighter-90, #e8f6e9);
+@include color(green-lighter-80, #d1ecd2);
