@@ -4,7 +4,7 @@ import HeaderNav from '#/header-nav';
 import { NavLinkWithMenu, MenuLink } from '#/header-nav/components/NavItem';
 import * as NavItems from '#/header-nav/components/NavItems';
 
-fdescribe('<HeaderNav>', () => {
+describe('<HeaderNav>', () => {
   describe('logged in', () => {
     it('does not render the account ctas', () => {
       const subject = mount(<HeaderNav loggedIn />);

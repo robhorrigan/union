@@ -9,7 +9,7 @@ import NavItem from '../NavItem';
 function menuList(group) {
   return group.map((item) => {
     return (
-      <NavItem key={item} styles={navLinkCss} to={item.permalink()}>
+      <NavItem key={item.title()} styles={navLinkCss} to={item.permalink()}>
         {item.title()}
       </NavItem>
     );
@@ -30,7 +30,7 @@ function groupList({ items, numberOfGroups }) {
   const groups = items.sort(articleCompareFunction)::toGroups(numberOfGroups);
 
   return groups.map(group =>
-    <List role="group" align="vertical" key={group}>
+    <List role="group" align="vertical" key={group[0].title()}>
       {menuList(group)}
     </List>
   );
