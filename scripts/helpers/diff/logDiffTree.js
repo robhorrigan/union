@@ -12,7 +12,7 @@ function createDiffTreeObject(changedFiles, {
   startAtLevel = 0,
   ignore = /^$/
 } = {}) {
-  return changedFiles.reduce((treeObj, { typeOfChange, name }) => {
+  return changedFiles.reduce((treeObj, { typeOfChange, name = '' }) => {
     if (ignore.test(name)) {
       return treeObj;
     }
