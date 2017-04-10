@@ -1,1 +1,1 @@
-gpg --decrypt ./scripts/secrets/credentials.asc | npm login
+gpg --decrypt ./scripts/secrets/hidden/credentials.asc | npm login
