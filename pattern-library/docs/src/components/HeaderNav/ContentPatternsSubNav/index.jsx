@@ -1,23 +1,36 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import CSS from 'react-css-modules';
 
+import Article from '#docs/entities/Article';
 import toggleable from '#docs/mixins/toggleable';
 
 import NavWithGroups from '../Nav/NavWithGroups';
 import subNavCss from '../SubNav/styles.css';
-import seed from './seed.json';
 
 const NUMBER_OF_GROUPS = 7;
 
 @toggleable
 @CSS(subNavCss)
 export default class ContentPatternsSubNav extends Component {
+  static defaultProps = {
+    contentPatternArticles: Article.contentPatterns()
+  };
+
+  static propTypes = {
+    contentPatternArticles: PropTypes.shape({
+      title: PropTypes.func,
+      permalink: PropTypes.func
+    })
+  }
+
   render() {
+    const { contentPatternArticles } = this.props;
+
     return (
       <NavWithGroups
         styleName="sub-nav"
         role="menu"
-        items={seed}
+        items={contentPatternArticles}
         numberOfGroups={NUMBER_OF_GROUPS}
       />
     );

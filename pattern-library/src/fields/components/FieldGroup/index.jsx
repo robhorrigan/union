@@ -1,13 +1,13 @@
 import React, { PropTypes } from 'react';
 import bsGrid from '@xo-union/bootstrap/grid';
-import bsUtils from '@xo-union/bootstrap/utilities';
+import spacing from '@xo-union/utilities/spacing';
 
 /**
  * Use this component to visually separate groups of fields
  */
 export default function FieldGroup({ children, ...props }) {
   return (
-    <div className={bsUtils.mb3} {...props}>
+    <div className={spacing.mb3} {...props}>
       <div className={bsGrid.row}>
         {children}
       </div>

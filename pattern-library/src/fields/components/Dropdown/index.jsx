@@ -67,7 +67,7 @@ export default class Dropdown extends Component {
     } = this.props;
 
     return (
-      <div className={FieldsCss.fieldContainer}>
+      <div className={FieldsCss.container}>
         <input
           className={FieldsCss.dropdownField}
           id={id}

@@ -2,6 +2,12 @@ import React from 'react';
 import { Provider } from 'mobx-react';
 import { mount } from 'enzyme';
 import ContentPatternsSubNav from '#docs/components/HeaderNav/ContentPatternsSubNav';
+import seed from './content-patterns-seed.json';
+
+const articlesMock = seed.map(name => ({
+  title() { return name; },
+  permalink() { return '/'; }
+}));
 
 describe('<ContentPatternsSubNav', () => {
   const defaultRouterMock = { inPath() { return false; } };
@@ -10,7 +16,7 @@ describe('<ContentPatternsSubNav', () => {
     const togglerMock = new Set();
     const subject = mount(
       <Provider router={defaultRouterMock}>
-        <ContentPatternsSubNav toggler={togglerMock} />
+        <ContentPatternsSubNav toggler={togglerMock} contentPatternArticles={articlesMock} />
       </Provider>
     );
 
@@ -22,7 +28,7 @@ describe('<ContentPatternsSubNav', () => {
     const togglerMock = new Set();
     const subject = mount(
       <Provider router={defaultRouterMock}>
-        <ContentPatternsSubNav toggler={togglerMock} />
+        <ContentPatternsSubNav toggler={togglerMock} contentPatternArticles={articlesMock} />
       </Provider>
     );
 

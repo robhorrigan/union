@@ -2,7 +2,6 @@ import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-bash';
 
 import React, { Component, PropTypes } from 'react';
-import utils from '@xo-union/bootstrap/utilities';
 import PrismJs from 'prismjs';
 import styles from './styles';
 
@@ -48,11 +47,12 @@ export default class Snippet extends Component {
   render() {
     if (this.props.inline) {
       return (
-        <span className={utils.mx1}>
+        <span >
           {this.renderCode()}
         </span>
       );
     }
+
     return (
       <pre className={styles.snippet}>
         {this.renderCode()}

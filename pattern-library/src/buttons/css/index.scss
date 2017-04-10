@@ -13,7 +13,13 @@
 @value mama-min-width: 120px;
 @value baby-min-width: initial;
 
+.btn-transitions {
+  transition: all .1s ease-out;
+  transition-property: background-color, color, border-color;
+}
+
 .btn {
+  composes: btn-transitions;
   display: inline-block;
   text-align: center;
   border-radius: 2px;
@@ -35,7 +41,7 @@
 }
 
 .baby {
-  composes: font-up-2 from '@xo-union/typography';
+  composes: font-down-2 from '@xo-union/typography';
   min-width: baby-min-width;
   line-height: 1.5rem;
   padding-left: 1rem;
@@ -46,7 +52,6 @@
   color: white;
   background: coral-lighter-20;
   border: 1px solid coral-lighter-20;
-  transition: all .2s ease-out;
 
   &:hover,
   &:focus {
@@ -65,7 +70,6 @@
   color: coral-lighter-20;
   background: white;
   border: 1px solid coral-lighter-40;
-  transition: all .1s ease-out;
 
   &:hover,
   &:focus {
@@ -83,7 +87,6 @@
   color: coral-lighter-20;
   background: white;
   border: 1px hidden coral-lighter-40;
-  transition: all .1s ease-out;
 
   &:hover,
   &:focus {

@@ -1,12 +1,7 @@
 import React from 'react';
 import { List } from '#docs/components/HeaderNav/List';
 import { mount } from 'enzyme';
-
-const { join } = Array.prototype;
-
-function classString() {
-  return this.getDOMNode().classList::join('');
-}
+import { classString } from '../../../support/enzyme-component';
 
 describe('<List>', () => {
   const stylesMock = {

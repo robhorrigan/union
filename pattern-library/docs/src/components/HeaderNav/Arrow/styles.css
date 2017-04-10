@@ -1,7 +1,8 @@
 @value ( knot-blue-darker-60 ) from '@xo-union/colors';
 
 .arrow-right {
-  composes: align-middle mr-3 from '@xo-union/bootstrap/utilities';
+  composes: align-middle from '@xo-union/utilities/vertical-align';
+  composes: mr-3 from '@xo-union/utilities/spacing';
 
   display: inline-block;
   width: 0;

@@ -1,0 +1,12 @@
+.toggleable {
+  display: none;
+}
+
+.toggleable:hover {
+  display: block;
+}
+
+.toggles-on-hover:hover .toggleable {
+  display: initial;
+}
+

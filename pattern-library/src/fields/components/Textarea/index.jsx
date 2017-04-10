@@ -9,7 +9,7 @@ export default function Textarea({
   ...props
 }) {
   return (
-    <div className={FieldsCss.fieldContainer}>
+    <div className={FieldsCss.container}>
       <textarea className={FieldsCss.textareaWithLabel} id={id} name={name} {...props} />
       <label className={FieldsCss.textareaLabel} htmlFor={id}>{ label }</label>
     </div>

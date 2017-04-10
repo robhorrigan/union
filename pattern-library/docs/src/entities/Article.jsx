@@ -14,6 +14,10 @@ export default class Article {
     new Article(pathinfo, module.default, module.attributes)
   );
 
+  static contentPatterns() {
+    return this.all.filter(article => article.isContentPattern());
+  }
+
   constructor(pathInfo, Component, attributes = {}) {
     this.pathInfo = pathInfo;
     this.Component = Component;
@@ -45,5 +49,10 @@ export default class Article {
   permalink() {
     const path = this.attributes.permalink || this.pathInfo.relativeName;
     return normalizePath(__webpack_public_path__, path);
+  }
+
+  isContentPattern() {
+    return this.attributes.isContentPattern ||
+      this.pathInfo.relativeName.indexOf('/content-patterns/') >= 0;
   }
 }
