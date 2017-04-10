@@ -75,3 +75,22 @@ module.exports = {
   ]
 };
 </Snippet>
+
+
+### Essentials
+
+To establish the base union styles in your page, you must import the `@xo-union/essentials` package.
+
+#### Installation
+
+<Snippet lang="bash">
+npm install --save @xo-union/essentials
+</Snippet>
+
+#### Import
+
+The essentials package does not export any object. It simply loads the global css modules.
+
+<Snippet lang="javascript">
+import '@xo-union/essentials';
+</Snippet>
