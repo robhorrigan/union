@@ -3,6 +3,7 @@
   "data/index.js",
   "globals.scss",
   "sizes.scss",
+  "utilities.scss",
   {
     "from": "modules.scss",
     "to": "index.cssm"

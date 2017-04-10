@@ -12,9 +12,5 @@ module.exports = [
   {
     test: /\.scss/,
     use: 'sass-loader'
-  },
-  {
-    test: /\.json/,
-    use: 'json-loader'
   }
 ];

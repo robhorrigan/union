@@ -8,19 +8,6 @@
 /* Borders */
 @value menu-border: 1px solid background-gray-8;
 
-/* Utilities */
-.toggleable {
-  display: none;
-}
-
-.toggleable:hover {
-  display: block;
-}
-
-.toggles-on-hover:hover .toggleable {
-  display: initial;
-}
-
 /* Dropdown */
 .dropdown {
   position: absolute;
@@ -28,9 +15,7 @@
 }
 
 .dropdown-container {
-  composes: align-self-center from '@xo-union/bootstrap/utilities';
   position: relative;
-  width: 100%;
 }
 
 /* Nav */
@@ -43,7 +28,7 @@
 
 .nav {
   composes: nav from '@xo-union/bootstrap/nav';
-  composes: justify-content-center from '@xo-union/bootstrap/utilities';
+  composes: justify-content-center from '@xo-union/utilities/flexbox';
   composes: sans-serif-med font-down-2 from '@xo-union/typography';
 
   composes: nav-text-color;
@@ -52,8 +37,9 @@
 }
 
 .nav-item {
-  composes: d-flex flex-column justify-content-center from '@xo-union/bootstrap/utilities';
-  composes: toggles-on-hover;
+  composes: flex-column justify-content-center from '@xo-union/utilities/flexbox';
+  composes: d-flex from '@xo-union/utilities/display';
+  composes: toggles-on-hover from '@xo-union/utilities/toggleable';
 }
 
 .nav-item-pushed-to-right {
@@ -62,12 +48,13 @@
 }
 
 .nav-link {
-  composes: text-uppercase from '@xo-union/bootstrap/utilities';
+  composes: text-uppercase from '@xo-union/typography/utilities';
+
   padding: 1.43rem .85rem;
   display: block;
   transition: opacity .25s ease-in-out 0s;
   color: inherit;
-}
+ }
 
 .nav-link:hover {
   opacity: .6;
@@ -79,20 +66,17 @@
 
 .logo {
   composes: icon-general-tk-logo from '@xo-union/icons';
+  composes: font-up-8 from '@xo-union/typography';
   color: knot-blue !important;
-  font-size: 2.5rem;
 }
 
 /* Effects */
-.light-shadow {
-  box-shadow: 0 .125rem .188rem 0 background-gray-8;
-}
 
 /* Menu */
 .menu-pointer {
-  composes: align-self-center from '@xo-union/bootstrap/utilities';
-  composes: knot-blue-fg from '@xo-union/colors/css';
-  composes: toggleable;
+  composes: knot-blue-fg from '@xo-union/colors/utilities';
+  composes: align-self-center from '@xo-union/utilities/flexbox';
+  composes: toggleable from '@xo-union/utilities/toggleable';
 
   font-size: 1rem;
   line-height: 0;
@@ -104,10 +88,10 @@
 
 .menu {
   composes: nav from '@xo-union/bootstrap/nav';
-  composes: flex-column from '@xo-union/bootstrap/utilities';
-  composes: white-bg from '@xo-union/colors/css';
-  composes: light-shadow;
-  composes: toggleable;
+  composes: white-bg from '@xo-union/colors/utilities';
+  composes: flex-column from '@xo-union/utilities/flexbox';
+  composes: light-shadow from '@xo-union/utilities/effects';
+  composes: toggleable from '@xo-union/utilities/toggleable';
   composes: dropdown;
 
   border-bottom: menu-border;
@@ -146,7 +130,7 @@
 }
 
 .account-menu-item {
-  composes: text-center from '@xo-union/bootstrap/utilities';
+  composes: text-center from '@xo-union/typography/utilities';
   composes: menu-item;
   composes: menu-item-space;
 }

@@ -1,15 +1,18 @@
-const rules = require('./webpack/patterns-rules');
+const patternsRuleList = require('./webpack/patterns-rule-list');
+const articlesRuleList = require('./webpack/articles-rule-list');
 const resolve = require('./webpack/resolve');
 
 module.exports = {
   resolve: resolve.testAndDocs,
   module: {
-    rules: rules.concat([
+    rules: [
+      ...patternsRuleList,
+      ...articlesRuleList,
       {
         test: /\.json$/,
         use: 'json-loader'
       }
-    ])
+    ]
   },
   externals: {
     cheerio: 'window',

@@ -4,5 +4,5 @@
 
 .vertical-list {
   composes: nav from '@xo-union/bootstrap/nav';
-  composes: flex-column from '@xo-union/bootstrap/utilities';
+  composes: flex-column from '@xo-union/utilities/flexbox';
 }

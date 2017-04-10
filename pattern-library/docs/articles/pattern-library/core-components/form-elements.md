@@ -2,7 +2,7 @@
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/fields'
   bsGrid: '@xo-union/bootstrap/grid'
-  utils: '@xo-union/bootstrap/utilities'
+  spacing: '@xo-union/utilities/spacing'
 
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
   packageJson: '@xo-union/fields/package.json'
@@ -22,13 +22,13 @@ $imports:
 
 <FormDemo />
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 #### Install
 
 <InstallSnippet packageJson={packageJson} />
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 #### Import
 
@@ -36,7 +36,7 @@ $imports:
 import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fields';
 </Snippet>
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 ### FormTheme component
 
@@ -62,13 +62,13 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   </div>
 </Demo>
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Properties
 
 <PropTypesTable metadata={FormThemeMeta.props} />
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 ### Field Component
 
@@ -78,13 +78,13 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   </FormTheme>
 </Demo>
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Properties
 
 <PropTypesTable metadata={FieldMeta.props} />
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Invalid State
 
@@ -92,7 +92,7 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   <Field name="email" state="invalid" validationMessage="Something went wrong" />
 </Demo>
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Successful State
 
@@ -100,7 +100,7 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   <Field name="address" state="valid" defaultValue="232 Boerum St." />
 </Demo>
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Disabled State
 
@@ -108,7 +108,7 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   <Field name="email" disabled />
 </Demo>
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 ### Dropdown Component
 
@@ -123,21 +123,21 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   </FormTheme>
 </Demo>
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 ##### Properties
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Dropdown
 <PropTypesTable metadata={DropdownMeta.props} exclude={["default"]}/>
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### DropdownItem
 <PropTypesTable metadata={DropdownItemMeta.props} exclude={["default"]}/>
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 ### FieldGroup Component
 
@@ -163,13 +163,13 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   </FormTheme>
 </Demo>
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Properties
 
 <PropTypesTable metadata={FieldGroupMeta.props} exclude={["default"]} />
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 ### Textarea Component(s)
 
@@ -187,11 +187,11 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fi
   </FormTheme>
 </Demo>
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ##### Properties
 
-<div className={utils.mt4}></div>
+<div className={spacing.mt4}></div>
 
 ###### Textarea
 <PropTypesTable metadata={TextareaMeta.props} />

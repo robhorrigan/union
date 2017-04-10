@@ -1,12 +1,12 @@
 ---
 $imports:
   bsGrid: '@xo-union/bootstrap/grid'
-  utils: '@xo-union/bootstrap/utilities'
+  spacing: '@xo-union/utilities/spacing'
   type: '@xo-union/typography'
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
 ---
 
-<h1 className={utils.mb4}>{$props.title}</h1>
+<h1 className={spacing.mb4}>{$props.title}</h1>
 
 <h1>h1. heading</h1>
 <h2>h2. heading</h2>
@@ -15,7 +15,7 @@ $imports:
 <h5>h5. heading</h5>
 <h6>h6. heading</h6>
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 ## Font Utility Classes
 
@@ -38,7 +38,7 @@ $imports:
   </li>
 </ul>
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 <p>
   Our root font size is
@@ -106,7 +106,7 @@ Root size / 16px / 1rem
 <div className={type.fontDown5}>Pack my box with five dozen liquor jugs</div>
 <p><Snippet inline>fontDown5</Snippet></p>
 
-<div className={utils.mt5}></div>
+<div className={spacing.mt5}></div>
 
 <p>
   Base line height is 1.55, however the header line height (1.25) can be applied with

@@ -24,7 +24,7 @@ export default function Field({
   }
 
   return (
-    <div className={FieldsCss.fieldContainer}>
+    <div className={FieldsCss.container}>
       <input type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
       <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
       <div className={FieldsCss.requirements}>{validationMessage}</div>

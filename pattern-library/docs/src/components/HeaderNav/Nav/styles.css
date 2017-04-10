@@ -7,6 +7,7 @@
 }
 
 .groups-container {
-  composes: d-flex justify-content-between from '@xo-union/bootstrap/utilities';
+  composes: d-flex from '@xo-union/utilities/display';
+  composes: justify-content-between from '@xo-union/utilities/flexbox';
   composes: font-down-1 from '@xo-union/typography';
 }
