@@ -1,4 +1,5 @@
 const path = require('path');
+
 const patternDocsPath = path.resolve.bind(null, __dirname, '..', 'pattern-library', 'docs');
 const DIRECTORY_LOADER = require.resolve('../packages/tools/directory-loader');
 const MDJSX_LOADER = require.resolve('../packages/tools/mdjsx-loader');

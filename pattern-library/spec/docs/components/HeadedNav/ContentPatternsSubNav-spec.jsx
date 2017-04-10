@@ -4,12 +4,10 @@ import { mount } from 'enzyme';
 import ContentPatternsSubNav from '#docs/components/HeaderNav/ContentPatternsSubNav';
 import seed from './content-patterns-seed.json';
 
-const articlesMock = seed.map((name) => {
-  return {
-    title() { return name },
-    permalink() { return '/'; }
-  }
-})
+const articlesMock = seed.map(name => ({
+  title() { return name; },
+  permalink() { return '/'; }
+}));
 
 describe('<ContentPatternsSubNav', () => {
   const defaultRouterMock = { inPath() { return false; } };

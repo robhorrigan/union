@@ -2,11 +2,12 @@ import React, { PropTypes } from 'react';
 import styles from '@xo-union/header-nav/css';
 import { Button } from '@xo-union/buttons';
 
-import * as NavItems from './components/NavItems'
+import * as NavItems from './components/NavItems';
 import { NavItem } from './components/NavItem';
 
 
 function Logo() {
+  /* eslint-disable jsx-a11y/anchor-has-content */
   return (
     <li className={styles['logo-container']}>
       <a className={styles.logo} href="/" />
@@ -20,8 +21,7 @@ export default function HeaderNav({ loggedIn = false }) {
       <Button size="baby" isCTA>
         SIGN UP
       </Button>
-    </NavItem>
-    ,
+    </NavItem>,
     <NavItem>
       <Button color="tertiary" size="baby" isCTA>
         LOG IN
@@ -47,3 +47,7 @@ export default function HeaderNav({ loggedIn = false }) {
   );
 }
 
+HeaderNav.propTypes = {
+  /* Whether or not to render the logged in version */
+  loggedIn: PropTypes.bool
+};

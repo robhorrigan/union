@@ -15,7 +15,7 @@ export default class Article {
   );
 
   static contentPatterns() {
-    return this.all.filter((article) => article.isContentPattern());
+    return this.all.filter(article => article.isContentPattern());
   }
 
   constructor(pathInfo, Component, attributes = {}) {
@@ -52,6 +52,7 @@ export default class Article {
   }
 
   isContentPattern() {
-    return this.attributes.isContentPattern || this.pathInfo.relativeName.indexOf('/content-patterns/') >= 0;
+    return this.attributes.isContentPattern ||
+      this.pathInfo.relativeName.indexOf('/content-patterns/') >= 0;
   }
 }

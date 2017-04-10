@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from '@xo-union/header-nav/css';
 import { Button } from '@xo-union/buttons';
 import { path, params } from '../utilities/path-builders';
@@ -6,7 +6,7 @@ import { MenuLink, NavLinkWithMenu } from './NavItem';
 
 export function LocalVendors() {
   return (
-    <NavLinkWithMenu label="Local Vendors" url="/marketplace">
+    <NavLinkWithMenu label="Local Vendors" href="/marketplace">
       <MenuLink href="/marketplace/wedding-reception-venues"> Reception Venues </MenuLink>
       <MenuLink href="/marketplace/wedding-photographers"> Wedding Photographers </MenuLink>
       <MenuLink href="/marketplace/bridal-salons"> Bridal Salons </MenuLink>
@@ -23,7 +23,7 @@ export function LocalVendors() {
 }
 export function WeddingWebsites() {
   return (
-    <NavLinkWithMenu label="Wedding Websites" url="/gs/wedding-websites">
+    <NavLinkWithMenu label="Wedding Websites" href="/gs/wedding-websites">
       <MenuLink href="/gs/wedding-websites"> Create A New Website </MenuLink>
       <MenuLink href="/gs/dashboard"> Manage My Website </MenuLink>
       <MenuLink href="/registry/couplesearch"> {"Find A Couple's Wedding Website"} </MenuLink>
@@ -32,7 +32,7 @@ export function WeddingWebsites() {
 }
 export function Registry() {
   return (
-    <NavLinkWithMenu label="Registry" url="/registry">
+    <NavLinkWithMenu label="Registry" href="/registry">
       <MenuLink href="/registry"> Manage Your Registries </MenuLink>
       <MenuLink href="/registry/couplesearch"> Find a Registry </MenuLink>
       <MenuLink href="/interactive-registry-guide"> Ultimate Registry Guide </MenuLink>
@@ -43,7 +43,7 @@ export function Registry() {
 
 export function Fashion() {
   return (
-    <NavLinkWithMenu label="Rings + Dresses" url="/fashion/wedding-dresses">
+    <NavLinkWithMenu label="Rings + Dresses" href="/fashion/wedding-dresses">
       <MenuLink href="/fashion/engagement-rings"> Engagement Rings </MenuLink>
       <MenuLink href="/fashion/wedding-dresses"> Wedding Dresses </MenuLink>
       <MenuLink href="/fashion/bridesmain-dresses"> Bridesmaid Dresses </MenuLink>
@@ -60,7 +60,7 @@ export function Fashion() {
 }
 export function RealWeddings() {
   return (
-    <NavLinkWithMenu label="Photos" url="/real-weddings/photos">
+    <NavLinkWithMenu label="Photos" href="/real-weddings/photos">
       <MenuLink href="/real-weddings/photos"> Wedding Ideas </MenuLink>
       <MenuLink href="/real-weddings/wedding-cakes-photos"> Wedding Cakes </MenuLink>
       <MenuLink href="/real-weddings/wedding-centerpieces-photos"> Centerpieces </MenuLink>
@@ -73,9 +73,9 @@ export function RealWeddings() {
 
 export function Content() {
   return (
-    <NavLinkWithMenu label="Ideas & Advice" url="/content">
+    <NavLinkWithMenu label="Ideas & Advice" href="/content">
       <MenuLink href="/partnerships/macys-elements-of-style">
-        <img src="http://media-api.theknot.com/images/217f19ac-c625-40fd-b1de-4034756f435c~rs_w.50?quality=100" />
+        <img alt="" src="http://media-api.theknot.com/images/217f19ac-c625-40fd-b1de-4034756f435c~rs_w.50?quality=100" />
         Elements of Style
       </MenuLink>
       <MenuLink href="/content/getting-engaged-advice"> Getting Engaged </MenuLink>
@@ -115,12 +115,14 @@ export function Shop() {
   const weddingShopHost = 'https://weddingshop.theknot.com';
 
   return (
-    <NavLinkWithMenu label="Shop" url={shopHost::trackingParams({ isSubCategory: false })}>
+    <NavLinkWithMenu label="Shop" href={shopHost::trackingParams({ isSubCategory: false })}>
       <MenuLink href={weddingShopHost::path('beauty')}> Beauty & Hair </MenuLink>
       <MenuLink href={weddingShopHost::path('gifts')::trackingParams()} >
         Bridal Party Gifts
       </MenuLink>
-      <MenuLink href={weddingShopHost::path('favors', 'wedding-favors-by-feature')::trackingParams()} >
+      <MenuLink
+        href={weddingShopHost::path('favors', 'wedding-favors-by-feature')::trackingParams()}
+      >
         Favors
       </MenuLink>
       <MenuLink href={shopHost::stationaryPath(200)} >
@@ -129,7 +131,9 @@ export function Shop() {
       <MenuLink href={shopHost::path('dresses')} >
         Little White Dress
       </MenuLink>
-      <MenuLink href={weddingShopHost::path('reception', 'personalized-paper-napkins')::trackingParams()} >
+      <MenuLink
+        href={weddingShopHost::path('reception', 'personalized-paper-napkins')::trackingParams()}
+      >
         Personalized Napkins
       </MenuLink>
       <MenuLink href={shopHost::path('post-wedding-essentials')} >
@@ -141,7 +145,9 @@ export function Shop() {
       <MenuLink href={shopHost::path('accessories')} >
         Wedding Day Accessories
       </MenuLink>
-      <MenuLink href={weddingShopHost::path('decor', 'wedding-table-decorations')::trackingParams()} >
+      <MenuLink
+        href={weddingShopHost::path('decor', 'wedding-table-decorations')::trackingParams()}
+      >
         Wedding Decor
       </MenuLink>
       <MenuLink href={shopHost::stationaryPath(202)} >
@@ -170,7 +176,7 @@ function AccountMenuItem() {
 
 export function Tools({ loggedIn }) {
   return (
-    <NavLinkWithMenu label="Tools" url="/dashboard" pushedToRight>
+    <NavLinkWithMenu label="Tools" href="/dashboard" pushedToRight>
       { loggedIn ? null : <AccountMenuItem /> }
       <MenuLink href="/gs/wedding-websites"> Wedding Website </MenuLink>
       <MenuLink href="/registry"> Registry </MenuLink>
@@ -187,3 +193,7 @@ export function Tools({ loggedIn }) {
     </NavLinkWithMenu>
   );
 }
+
+Tools.propTypes = {
+  loggedIn: PropTypes.bool
+};

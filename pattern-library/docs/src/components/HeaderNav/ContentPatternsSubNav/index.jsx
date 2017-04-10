@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, PropTypes } from 'react';
 import CSS from 'react-css-modules';
 
 import Article from '#docs/entities/Article';
@@ -15,6 +15,13 @@ export default class ContentPatternsSubNav extends Component {
   static defaultProps = {
     contentPatternArticles: Article.contentPatterns()
   };
+
+  static propTypes = {
+    contentPatternArticles: PropTypes.shape({
+      title: PropTypes.func,
+      permalink: PropTypes.func
+    })
+  }
 
   render() {
     const { contentPatternArticles } = this.props;

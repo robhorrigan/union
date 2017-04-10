@@ -45,7 +45,7 @@ describe('<HeaderNav>', () => {
         const subject = mount(<NavItems.Shop />);
         const menuLinks = subject.find(MenuLink);
 
-        expect(subject.find(NavLinkWithMenu).props().url).toBe('https://shop.theknot.com?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnav');
+        expect(subject.find(NavLinkWithMenu).props().href).toBe('https://shop.theknot.com?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnav');
         expect(menuLinks.at(0).props().href).toBe('https://weddingshop.theknot.com/beauty');
         expect(menuLinks.at(1).props().href).toBe('https://weddingshop.theknot.com/gifts?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
         expect(menuLinks.at(2).props().href).toBe('https://weddingshop.theknot.com/favors/wedding-favors-by-feature?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
@@ -59,7 +59,7 @@ describe('<HeaderNav>', () => {
         expect(menuLinks.at(10).props().href).toBe('https://shop.theknot.com/stationery?category_id=202');
         expect(menuLinks.at(11).props().href).toBe('https://shop.theknot.com');
       });
-    })
+    });
   });
 
   describe('<NavItem>', () => {

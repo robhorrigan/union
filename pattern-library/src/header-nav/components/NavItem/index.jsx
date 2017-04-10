@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { PropTypes } from 'react';
 import styles from '@xo-union/header-nav/css';
 
 function Menu({ children }) {
@@ -11,27 +11,29 @@ function Menu({ children }) {
   );
 }
 
-export function MenuItem({ className = styles['menu-item'], children, ...props }) {
+Menu.propTypes = {
+  children: PropTypes.node
+};
+
+export function MenuLink({ href, children }) {
   return (
-    <li className={className} {...props}>
-      {children}
+    <li className={styles['menu-item']}>
+      <a href={href} className={styles['menu-item-link']}>
+        {children}
+      </a>
     </li>
   );
 }
 
-export function MenuLink({ href, children }) {
-  return (
-    <MenuItem>
-      <a href={href} className={styles['menu-item-link']}>
-        {children}
-      </a>
-    </MenuItem>
-  );
-}
-export function NavLinkWithMenu({ label, url, children, ...props }) {
+MenuLink.propTypes = {
+  children: PropTypes.node,
+  href: PropTypes.string
+};
+
+export function NavLinkWithMenu({ label, href, children, ...props }) {
   return (
     <NavItem {...props}>
-      <a href={url} className={styles['nav-link']}>
+      <a href={href} className={styles['nav-link']}>
         {label}
       </a>
       <span className={styles['menu-pointer']} />
@@ -41,6 +43,12 @@ export function NavLinkWithMenu({ label, url, children, ...props }) {
     </NavItem>
   );
 }
+
+NavLinkWithMenu.propTypes = {
+  label: PropTypes.string,
+  href: PropTypes.string,
+  children: PropTypes.node
+};
 
 export function NavItem({ pushedToRight = false, children }) {
   let topLevelClass = 'nav-item';
@@ -56,4 +64,7 @@ export function NavItem({ pushedToRight = false, children }) {
   );
 }
 
-
+NavItem.propTypes = {
+  pushedToRight: PropTypes.bool,
+  children: PropTypes.node
+};

@@ -7,21 +7,21 @@ import navLinkCss from './smallNavLink.css';
 import NavItem from '../NavItem';
 
 function menuList(group) {
-  return group.map((item) => {
-    return (
-      <NavItem key={item.title()} styles={navLinkCss} to={item.permalink()}>
-        {item.title()}
-      </NavItem>
-    );
-  });
+  return group.map(item =>
+    <NavItem key={item.title()} styles={navLinkCss} to={item.permalink()}>
+      {item.title()}
+    </NavItem>
+  );
 }
 
 function articleCompareFunction(a, b) {
-  if (a.title() < b.title())
+  if (a.title() < b.title()) {
     return -1;
+  }
 
-  if (a.title() > b.title())
+  if (a.title() > b.title()) {
     return 1;
+  }
 
   return 0;
 }
