@@ -1,11 +1,11 @@
 {
   "name": "@xo-union/essentials",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@xo-union/bootstrap": "^0.1.0",
-    "@xo-union/typography": "^0.1.0"
+    "@xo-union/bootstrap": "^0.2.0",
+    "@xo-union/typography": "^0.1.2"
   },
   "keywords": [],
   "author": "",
