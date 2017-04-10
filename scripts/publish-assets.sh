@@ -1,4 +1,4 @@
-eval $(gpg --decrypt ./scripts/secrets/hidden/deploy-env.sh)
+eval $(gpg --decrypt ./scripts/secrets/hidden/publish-env.sh)
 
 npm install \
 && npm run build.patterns \
