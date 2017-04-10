@@ -42,7 +42,7 @@ export function NavLinkWithMenu({ label, url, children, ...props }) {
   );
 }
 
-export function NavItem({ pushedToRight, children }) {
+export function NavItem({ pushedToRight = false, children }) {
   let topLevelClass = 'nav-item';
 
   if (pushedToRight) {

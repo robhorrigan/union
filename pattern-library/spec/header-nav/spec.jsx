@@ -1,8 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import HeaderNav from '#/header-nav';
-import { NavLinkWithMenu, MenuLink } from '#/header-nav/components/NavItem';
+import styles from '#/header-nav/css';
+import { NavLinkWithMenu, MenuLink, NavItem } from '#/header-nav/components/NavItem';
 import * as NavItems from '#/header-nav/components/NavItems';
+import { classString } from '../support/enzyme-component';
 
 describe('<HeaderNav>', () => {
   describe('logged in', () => {
@@ -38,7 +40,7 @@ describe('<HeaderNav>', () => {
   });
 
   describe('NavItems', () => {
-    describe('Shop', () => {
+    describe('<Shop>', () => {
       it('renders the correct urls', () => {
         const subject = mount(<NavItems.Shop />);
         const menuLinks = subject.find(MenuLink);
@@ -58,5 +60,19 @@ describe('<HeaderNav>', () => {
         expect(menuLinks.at(11).props().href).toBe('https://shop.theknot.com');
       });
     })
+  });
+
+  describe('<NavItem>', () => {
+    it('assigns the nav-item class', () => {
+      const subject = mount(<NavItem />);
+      expect(subject::classString()).toContain(styles['nav-item']);
+    });
+
+    describe('when pushedToRight is specified', () => {
+      it('assigns the nav-item-pushed-to-right class', () => {
+        const subject = mount(<NavItem pushedToRight />);
+        expect(subject::classString()).toContain(styles['nav-item-pushed-to-right']);
+      });
+    });
   });
 });
