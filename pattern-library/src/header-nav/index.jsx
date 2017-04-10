@@ -48,6 +48,8 @@ export default function HeaderNav({ loggedIn = false }) {
 }
 
 HeaderNav.propTypes = {
-  /* Whether or not to render the logged in version */
+  /**
+   * Whether or not to render the logged in version
+   **/
   loggedIn: PropTypes.bool
 };
