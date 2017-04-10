@@ -146,4 +146,7 @@ npm run test.patterns.watch
 > In order to improve the test output, make sure to `focus` on the tests which you are currently working on. You do this by using [`jasmine`'s focus feature](https://jasmine.github.io/2.1/focused_specs.html).
 
 # Publishing
-To publish the assets use the script in `scripts/publis-assets.sh CLOUDFRONT_DISTRIBUTION_ID`
+
+To publish the assets use the script in `npm run publish.assets`
+To publish the documentation use the script in `npm run publish.docs`
+To publish the packages use the script in `npm run publish.packages`
