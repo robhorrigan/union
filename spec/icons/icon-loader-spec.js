@@ -1,7 +1,7 @@
 const loader = require('../../pattern-library/src/icons/loaders/icon-loader');
 
 describe('icon-loader', () => {
-    const svgMock = `
+  const svgMock = `
 <svg version="1.1" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <symbol id="aaa" viewBox="0 0 32 32">
@@ -18,7 +18,7 @@ describe('icon-loader', () => {
       cacheable() {},
       async() {
         return (err, value) => {
-          this._callbackResult = value;
+          this.callbackResult = value;
         };
       }
     };
@@ -27,7 +27,7 @@ describe('icon-loader', () => {
   it('adds a unique identifier to the icon symbols', () => {
     loader.call(loaderInstanceMock, svgMock);
 
-    const result = loaderInstanceMock._callbackResult;
+    const result = loaderInstanceMock.callbackResult;
     expect(result).toContain('<symbol id=\\"aaa-a78\\"');
     expect(result).toContain('<symbol id=\\"bbb-a78\\"');
   });
@@ -39,7 +39,7 @@ describe('icon-loader', () => {
 
     loader.call(loaderInstanceMock, svgMock);
 
-    const result = loaderInstanceMock._callbackResult;
+    const result = loaderInstanceMock.callbackResult;
     expect(result).toEqual('"a78"');
   });
 
@@ -51,7 +51,7 @@ describe('icon-loader', () => {
 
     loader.call(loaderInstanceMock, svgMock);
 
-    const result = loaderInstanceMock._callbackResult;
+    const result = loaderInstanceMock.callbackResult;
     expect(result).toEqual('module.exports = "a78"');
   });
 });

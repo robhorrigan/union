@@ -35,7 +35,7 @@ if (ENV === 'production') {
   /**
    * Get the hosted url for the union-icons file
    *
-   * @example 'https://assets.unino.theknot.com/icons/union-icons-[hash].svg
+   * @example 'https://assets.union.theknot.com/icons/union-icons-[hash].svg
    */
   // eslint-disable-next-line max-len, global-require
   url = require('!!file-loader?name=/[name]-[hash:3].[ext]&publicPath=//assets.union.theknot.com/icons&outputPath=../../../public/assets/icons!../loaders/icon-loader.js!#assets/icons/union-icons.svg');
