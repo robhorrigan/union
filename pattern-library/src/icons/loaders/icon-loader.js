@@ -3,28 +3,43 @@ const loaderUtils = require('loader-utils');
 
 const xmlBuilder = new xml.Builder();
 
-module.exports = function (source) {
+function createHash(source) {
+  const loaderStub = { resourcePath: '' };
+  return loaderUtils.interpolateName(loaderStub, '[hash:3]', { content: source });
+}
+
+function newModuleCode(exportedValue, options) {
+  const resultPrefix = options.exportsResult === true ? 'module.exports = ' : '';
+  return `${resultPrefix}${JSON.stringify(exportedValue)}`;
+}
+
+function eachSymbolAttribute({ svg }, callback) {
+  svg.defs[0].symbol.forEach(callback);
+}
+
+module.exports = function iconLoader(source) {
   this.cacheable();
-  const stamp = loaderUtils.interpolateName(this, '[hash:3]', { content: source });
+  const callback = this.async();
+  const stamp = createHash(source);
 
   const options = loaderUtils.getOptions(this) || {};
 
-  const resultPrefix = options.exportsResult === true ? 'module.exports = ' : '';
-
   if (options.onlyStamp) {
-    return `${resultPrefix}${JSON.stringify(stamp)}`;
+    callback(null, newModuleCode(stamp, options));
+    return;
   }
 
-  const callback = this.async();
   xml.parseString(source, (err, result) => {
     if (err) {
       callback(err);
     }
 
-    result.svg.defs[0].symbol.forEach((symbol) => {
-      symbol.$.id += `-${stamp}`;
+    eachSymbolAttribute(result, ({ $ }) => {
+      // eslint-disable-next-line no-param-reassign
+      $.id += `-${stamp}`;
     });
 
-    callback(null, `${resultPrefix}${JSON.stringify(xmlBuilder.buildObject(result))}`);
+    const transformedXML = xmlBuilder.buildObject(result);
+    callback(null, newModuleCode(transformedXML, options));
   });
-}
+};

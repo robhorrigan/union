@@ -1,6 +1,7 @@
 import React from 'react';
 import { Demo } from '#docs/doc-components';
 import Icon from '@xo-union/icons';
+// eslint-disable-next-line import/no-webpack-loader-syntax
 import icons from '!!xml-loader!#assets/icons/union-icons.svg';
 
 export default function IconsDemo() {
