@@ -10222,6 +10222,12 @@
       "resolved": "https://registry.npmjs.org/xml-char-classes/-/xml-char-classes-1.0.0.tgz",
       "dev": true
     },
+    "xml-loader": {
+      "version": "1.2.1",
+      "from": "xml-loader@latest",
+      "resolved": "https://registry.npmjs.org/xml-loader/-/xml-loader-1.2.1.tgz",
+      "dev": true
+    },
     "xml2js": {
       "version": "0.4.17",
       "from": "xml2js@latest",
