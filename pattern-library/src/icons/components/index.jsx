@@ -1,6 +1,7 @@
 /* eslint-disable import/no-webpack-loader-syntax */
 /**
- * This package uses a hosted svg file in production but an embedded svg file for development.
+ * This package uses a hosted svg file (as in http://url-to-cdn-hosted-file) in production but an
+ * embedded svg file for development (as in an <svg> tag on the DOM) to avoid depending on a network.
  * The svg is pre-processed to add a unique "stamp" to the ids of the icons. As noted below, this is
  * necessary to allow incompatible versions of the icons library to co-exist within the same application.
  */
@@ -33,12 +34,16 @@ Icon.propTypes = {
 if (ENV === 'production') {
   /**
    * Get the hosted url for the union-icons file
+   *
+   * @example 'https://assets.unino.theknot.com/icons/union-icons-[hash].svg
    */
   // eslint-disable-next-line max-len, global-require
   url = require('!!file-loader?name=/[name]-[hash:3].[ext]&publicPath=//assets.union.theknot.com/icons&outputPath=../../../public/assets/icons!../loaders/icon-loader.js!#assets/icons/union-icons.svg');
 } else {
   /**
    * Get a string of the pre-processed svg file
+   *
+   * @example <svg></svg>
    */
   // eslint-disable-next-line global-require
   const svg = require('!!../loaders/icon-loader.js?exportsResult!#assets/icons/union-icons.svg');
