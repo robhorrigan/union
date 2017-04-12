@@ -1,0 +1,4 @@
+[secrets]
+	dir = scripts/secrets
+[encrypt]
+	format = ascii
