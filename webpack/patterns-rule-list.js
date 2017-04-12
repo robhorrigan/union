@@ -5,12 +5,12 @@ module.exports = [
   cssRules,
   fontRules,
   {
-    test: /\.jsx?/,
+    test: /\.jsx?$/,
     use: 'babel-loader',
     exclude: /node_modules/
   },
   {
-    test: /\.scss/,
+    test: /\.scss$/,
     use: 'sass-loader'
   }
 ];

@@ -31,7 +31,8 @@ module.exports = {
           '**/gulpfile*',
           'webpack/**',
           '**/spec/**',
-          'scripts/**'
+          'scripts/**',
+          'pattern-library/src/icons/loaders/**'
         ]
       }
     ]
