@@ -1,5 +1,5 @@
 @value black from '@xo-union/colors';
-@value ( caret-up, caret-down ) from '@xo-union/icons';
+@value ( caret-up, caret-down ) from '@xo-union/icons/legacy';
 @value ( spacer-x ) from '#/fields/css/shared/spacing';
 @value ( black-border ) from '#/fields/css/shared/borders';
 
@@ -27,7 +27,7 @@
 }
 
 .dropdown-caret {
-  composes: icon from '@xo-union/icons';
+  composes: icon from '@xo-union/icons/legacy';
 
   position: absolute;
   right: 0;

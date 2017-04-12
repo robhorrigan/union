@@ -6,10 +6,6 @@
 }
 
 .icon {
-  /* Better Font Rendering =========== */
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-
   font-family: 'tk-icons';
   font-style: normal;
   font-variant: normal;
@@ -18,6 +14,7 @@
   speak: none;
   text-transform: none;
 }
+
 
 .icon-general-bow::before {
   content: '\e900';
