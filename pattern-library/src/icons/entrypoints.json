@@ -4,5 +4,7 @@
     "to": "legacy.cssm"
   },
   "components/index.jsx",
-  "css/index.css"
+  "css/index.css",
+  "data/index.js",
+  "setup.js"
 ]

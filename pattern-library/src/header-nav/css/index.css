@@ -65,7 +65,7 @@
 }
 
 .logo {
-  composes: icon-general-tk-logo from '@xo-union/icons';
+  composes: icon-general-tk-logo from '@xo-union/icons/legacy';
   composes: font-up-8 from '@xo-union/typography';
   color: knot-blue !important;
 }

@@ -30,3 +30,10 @@ exports.testAndDocs = extend(true, {
     '$site-config': patternLibPath('docs', 'site.config.json')
   }
 }, exports.default);
+
+exports.loaders = {
+  modules: [
+    patternLibPath('src', 'loaders'),
+    'node_modules'
+  ]
+};

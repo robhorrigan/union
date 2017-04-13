@@ -9,6 +9,7 @@ const patternSrcPath = path.resolve.bind(null, __dirname, 'pattern-library', 'sr
 
 module.exports = {
   resolve: resolve.default,
+  resolveLoader: resolve.loaders,
   context: patternSrcPath(),
   entry: buildEntrypoints({ context: patternSrcPath() }),
   output: {
