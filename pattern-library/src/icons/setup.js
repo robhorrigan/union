@@ -104,13 +104,6 @@ export class Installer {
       self.appendToDOM();
     });
 
-    if (ENV !== 'production') {
-      request.addEventListener('error', function () {
-        console.warn('Unable to fetch icons. Falling back to embedded icons.');
-        self.appendToDOM(rawSvg);
-      });
-    }
-
     this.fetchIsInProgress = true;
     request.open('GET', this.iconsUrl);
     request.send();
@@ -118,6 +111,12 @@ export class Installer {
 
   install() {
     if (this.isSetup()) {
+      return;
+    }
+
+    if (ENV !== 'production') {
+      console.warn(`Using embedded icons. Make sure this is not happening in production. Follow the next link to learn how to optimize your production build. http://docs.union.theknot.com/pattern-library/core-components/iconography`);
+      this.appendToDOM(rawSvg);
       return;
     }
 
