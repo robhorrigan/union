@@ -9,96 +9,131 @@ import { url, stamp } from '@xo-union/icons/data';
 
 const MANIFEST_ID = `xo-union-icons-manifest-${stamp}`;
 const CACHE_KEY = '@xo-union/icons/svg-caches';
-let inProgress = false;
-
-function getCached() {
-  return JSON.parse(localStorage.getItem(CACHE_KEY)) || {};
-}
-
-function setCache(value) {
-  return localStorage.setItem(CACHE_KEY, JSON.stringify(value));
-}
-function updateCache(svg) {
-  const cacheObject = getCached();
-  cacheObject[stamp] = { lastUsed: new Date(), svgString: svg };
-
-  return setCache(cacheObject);
-}
-
-function attach(svg) {
-  const tmp = document.createElement('div');
-  tmp.innerHTML = svg;
-
-  const svgElement = tmp.querySelector('svg');
-
-  svgElement.id = MANIFEST_ID;
-  svgElement.dataset.stamp = stamp;
-
-  document.body.appendChild(svgElement);
-}
-
-function createRequest() {
-  const request = new XMLHttpRequest();
-
-  request.addEventListener('load', function () {
-    const svg = this.responseText;
-
-    updateCache(svg);
-    attach(svg);
-  });
-
-  if (ENV !== 'production') {
-    request.addEventListener('error', () => {
-      console.warn('Unable to fetch icons. Falling back to embedded icons.');
-      attach(rawSvg);
-    });
-  }
-
-  request.open('GET', url);
-
-  return request;
-}
-
-function isSetup() {
-  return !!document.getElementById(MANIFEST_ID);
-}
 
 const A_DAY = 86400000;
-const TWO_WEEKS = A_DAY * 14;
-function removeOldCaches() {
-  const cache = getCached();
+const ONE_MONTH = A_DAY * 30;
 
-  Object.keys(cache).forEach((key) => {
-    const cachedObject = cache[key];
-    const lastUsedDate = new Date(cachedObject.lastUsed);
+export class Installer {
+  constructor({
+    storage = localStorage,
+    cacheKey = CACHE_KEY,
+    versionStamp = stamp,
+    iconsUrl = url,
+    DateConstructor = Date,
+    expirationPeriod = ONE_MONTH
+  } = {}) {
+    this.storage = storage;
+    this.cacheKey = cacheKey;
+    this.versionStamp = versionStamp;
+    this.manifestID = `xo-union-icons-manifest-${versionStamp}`;
+    this.iconsUrl = iconsUrl;
+    this.Date = DateConstructor;
+    this.fetchIsInProgress = false;
+    this.expirationPeriod = expirationPeriod;
+  }
 
-    if (new Date() - lastUsedDate >= TWO_WEEKS) {
-      delete cache[key];
+  getSvgString() {
+    const cacheObject = this.getCache()[this.versionStamp];
+    if (!cacheObject) {
+      return '';
     }
-  });
 
-  setCache(cache);
+    return cacheObject.svgString;
+  }
+
+  getCache() {
+    return JSON.parse(this.storage.getItem(this.cacheKey)) || {};
+  }
+
+  setCache(value) {
+    return this.storage.setItem(this.cacheKey, JSON.stringify(value));
+  }
+
+  updateVersion(svg = this.getSvgString()) {
+    const cacheObject = this.getCache();
+    cacheObject[this.versionStamp] = { lastUsed: new this.Date(), svgString: svg };
+
+    return this.setCache(cacheObject);
+  }
+
+  appendToDOM(svg = this.getSvgString()) {
+    const tmp = document.createElement('div');
+    tmp.innerHTML = svg;
+
+    const svgElement = tmp.querySelector('svg');
+
+    svgElement.id = this.manifestID;
+    svgElement.dataset.stamp = this.versionStamp;
+
+    document.body.appendChild(svgElement);
+  }
+
+  isSetup() {
+    return !!document.getElementById(this.manifestID);
+  }
+
+  removeOldVersions() {
+    const cache = this.getCache();
+
+    Object.keys(cache).forEach((key) => {
+      const cachedObject = cache[key];
+      const lastUsedDate = new this.Date(cachedObject.lastUsed);
+      const today = new this.Date();
+      const timeSinceLastUsed = today - lastUsedDate;
+
+      if (timeSinceLastUsed >= this.expirationPeriod) {
+        delete cache[key];
+      }
+    });
+
+    this.setCache(cache);
+  }
+
+  fetchSvg() {
+    if (this.fetchIsInProgress) {
+      return;
+    }
+
+    const request = new XMLHttpRequest();
+
+    const self = this;
+    request.addEventListener('load', function () {
+      const svg = this.responseText;
+
+      self.updateVersion(svg);
+      self.appendToDOM();
+    });
+
+    if (ENV !== 'production') {
+      request.addEventListener('error', function () {
+        console.warn('Unable to fetch icons. Falling back to embedded icons.');
+        self.appendToDOM(rawSvg);
+      });
+    }
+
+    this.fetchIsInProgress = true;
+    request.open('GET', this.iconsUrl);
+    request.send();
+  }
+
+  install() {
+    if (this.isSetup()) {
+      return;
+    }
+
+    this.removeOldVersions();
+
+    if (this.getSvgString()) {
+      this.updateVersion();
+      this.appendToDOM();
+      return;
+    }
+
+    this.fetchSvg();
+  }
 }
 
+const defaultInstaller = new Installer();
 export function init() {
-  if (inProgress || isSetup()) {
-    return;
-  }
-
-  inProgress = true;
-
-  const cached = getCached();
-  const request = createRequest();
-
-  if (cached && cached[stamp]) {
-    const { svgString } = cached[stamp];
-
-    updateCache(svgString)
-    attach(svgString);
-    return;
-  }
-
-  request.send();
-
-  removeOldCaches();
+  defaultInstaller.install();
 }

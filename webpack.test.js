@@ -1,9 +1,11 @@
+const { DefinePlugin } = require('webpack');
 const patternsRuleList = require('./webpack/patterns-rule-list');
 const articlesRuleList = require('./webpack/articles-rule-list');
 const resolve = require('./webpack/resolve');
 
 module.exports = {
   resolve: resolve.testAndDocs,
+  resolveLoader: resolve.loaders,
   module: {
     rules: [
       ...patternsRuleList,
@@ -19,5 +21,8 @@ module.exports = {
     'react/addons': true,
     'react/lib/ExecutionEnvironment': true,
     'react/lib/ReactContext': true
-  }
+  },
+  plugins: [
+    new DefinePlugin({ ENV: '"test"' })
+  ]
 };
