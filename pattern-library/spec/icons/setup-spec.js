@@ -16,7 +16,7 @@ describe('Installer', () => {
       storage.setItem('test', '{"isATest": "true"}');
       const subject = new Installer({ storage, cacheKey: 'test' });
       const result = subject.getCache();
-      expect(result.isATest).toBe("true");
+      expect(result.isATest).toBe('true');
     });
 
     it('returns an empty object of there is nothing there', () => {
@@ -31,8 +31,8 @@ describe('Installer', () => {
     it('sets the cache object', () => {
       const storage = new StorageMock();
       const subject = new Installer({ storage, cacheKey: 'test' });
-      subject.setCache({ isATest: "true" });
-      expect(JSON.parse(storage.getItem('test')).isATest).toBe("true");
+      subject.setCache({ isATest: 'true' });
+      expect(JSON.parse(storage.getItem('test')).isATest).toBe('true');
     });
   });
 
@@ -40,7 +40,13 @@ describe('Installer', () => {
   describe('#updateVersion', () => {
     it('updates the last used date', () => {
       const storage = new StorageMock();
-      const subject = new Installer({ storage, cacheKey: 'test', versionStamp: 'version1', DateConstructor() { return { date: true } } });
+      const subject = new Installer({
+        storage,
+        cacheKey: 'test',
+        versionStamp: 'version1',
+        DateConstructor() { return { date: true }; }
+      });
+
       subject.updateVersion('<somsvg>');
       expect(subject.getCache().version1.lastUsed).toEqual({ date: true });
     });
@@ -98,20 +104,20 @@ describe('Installer', () => {
         DateConstructor: DateMock
       });
 
-      currentDate = new Date('3/16/2017')
+      currentDate = new Date('3/16/2017');
 
       subject.updateVersion('<svg></svg>');
 
-      currentDate = new Date('4/14/2017')
+      currentDate = new Date('4/14/2017');
 
       subject.removeOldVersions();
       expect(subject.getSvgString()).toBe('<svg></svg>');
 
-      currentDate = new Date('3/15/2017')
+      currentDate = new Date('3/15/2017');
 
       subject.updateVersion('<svg></svg>');
 
-      currentDate = new Date('4/14/2017')
+      currentDate = new Date('4/14/2017');
 
       subject.removeOldVersions();
 

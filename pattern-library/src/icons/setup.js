@@ -4,10 +4,10 @@
  *
  * @example <svg></svg>
  */
+// eslint-disable-next-line max-len, import/no-webpack-loader-syntax
 import rawSvg from '!!if-production-loader?not!icon-loader?exportsResult!#assets/icons/union-icons.svg';
 import { url, stamp } from '@xo-union/icons/data';
 
-const MANIFEST_ID = `xo-union-icons-manifest-${stamp}`;
 const CACHE_KEY = '@xo-union/icons/svg-caches';
 
 const A_DAY = 86400000;
@@ -97,7 +97,7 @@ export class Installer {
     const request = new XMLHttpRequest();
 
     const self = this;
-    request.addEventListener('load', function () {
+    request.addEventListener('load', function loadHandler() {
       const svg = this.responseText;
 
       self.updateVersion(svg);
@@ -115,7 +115,10 @@ export class Installer {
     }
 
     if (ENV !== 'production') {
-      console.warn(`Using embedded icons. Make sure this is not happening in production. Follow the next link to learn how to optimize your production build. http://docs.union.theknot.com/pattern-library/core-components/iconography`);
+      // eslint-disable-next-line no-console
+      console.warn(`Using embedded icons. Make sure this is not happening in production.
+Follow the next link to learn how to optimize your production build.
+  http://docs.union.theknot.com/pattern-library/core-components/iconography`);
       this.appendToDOM(rawSvg);
       return;
     }

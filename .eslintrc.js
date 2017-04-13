@@ -32,7 +32,7 @@ module.exports = {
           'webpack/**',
           '**/spec/**',
           'scripts/**',
-          'pattern-library/src/icons/loaders/**'
+          'pattern-library/src/loaders/**'
         ]
       }
     ]
