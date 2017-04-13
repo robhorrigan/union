@@ -8,6 +8,9 @@ import '@xo-union/essentials';
 /* Load prism css for syntax highlighting */
 import 'prism-themes/themes/prism-ghcolors.css';
 
+import { init } from '@xo-union/icons/setup';
+
+init();
 
 ReactDOM.render(
   <Routes />,

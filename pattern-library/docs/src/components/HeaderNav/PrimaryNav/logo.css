@@ -5,7 +5,7 @@
 }
 
 .icon {
-  composes: icon-general-tk-logo from '@xo-union/icons';
+  composes: icon-general-tk-logo from '@xo-union/icons/legacy';
   color: knot-blue;
   font-size: 35px;
 }

@@ -1,4 +1,4 @@
-const loader = require('../../pattern-library/src/icons/loaders/icon-loader');
+const loader = require('../../pattern-library/src/loaders/icon-loader');
 
 describe('icon-loader', () => {
   const svgMock = `
