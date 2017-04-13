@@ -28,8 +28,8 @@ describe('icon-loader', () => {
     loader.call(loaderInstanceMock, svgMock);
 
     const result = loaderInstanceMock.callbackResult;
-    expect(result).toContain('<symbol id=\\"aaa-a78\\"');
-    expect(result).toContain('<symbol id=\\"bbb-a78\\"');
+    expect(result).toContain('<symbol id="aaa-a78"');
+    expect(result).toContain('<symbol id="bbb-a78"');
   });
 
   it('allows getting just the stamp', () => {
@@ -40,7 +40,7 @@ describe('icon-loader', () => {
     loader.call(loaderInstanceMock, svgMock);
 
     const result = loaderInstanceMock.callbackResult;
-    expect(result).toEqual('"a78"');
+    expect(result).toEqual('a78');
   });
 
   it('allows exporting the generated values', () => {
@@ -52,6 +52,6 @@ describe('icon-loader', () => {
     loader.call(loaderInstanceMock, svgMock);
 
     const result = loaderInstanceMock.callbackResult;
-    expect(result).toEqual('module.exports = "a78"');
+    expect(result).toEqual('module.exports = "a78";');
   });
 });
