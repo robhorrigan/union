@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/icons",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "main": "components/index.js",
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5"
