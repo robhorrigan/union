@@ -8,9 +8,12 @@ function createHash(source) {
   return loaderUtils.interpolateName(loaderStub, '[hash:3]', { content: source });
 }
 
-function newModuleCode(exportedValue, options) {
-  const resultPrefix = options.exportsResult === true ? 'module.exports = ' : '';
-  return `${resultPrefix}${JSON.stringify(exportedValue)}`;
+function newModuleCode(exportedValue, { exportsResult }) {
+  if (exportsResult) {
+    return `module.exports = ${JSON.stringify(exportedValue)};`;
+  }
+
+  return exportedValue;
 }
 
 function eachSymbolAttribute({ svg }, callback) {
