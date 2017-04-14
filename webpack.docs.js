@@ -9,7 +9,7 @@ const articlesRuleList = require('./webpack/articles-rule-list');
 const patternDocsPath = path.resolve.bind(null, __dirname, 'pattern-library', 'docs');
 
 const extract = new ExtractTextPlugin({
-  filename: 'styles.css',
+  filename: 'styles-[hash:6].css',
   ignoreOrder: true
 });
 
@@ -17,7 +17,7 @@ module.exports = {
   context: patternDocsPath(),
   entry: ['prismjs', './src/index.jsx'],
   output: {
-    filename: './index.js',
+    filename: './index-[hash:6].js',
     path: path.resolve(__dirname, 'public', 'docs'),
     publicPath: '/',
     pathinfo: true
