@@ -2,8 +2,9 @@ import React from 'react';
 import { mount } from 'enzyme';
 import HeaderNav from '#/header-nav';
 import styles from '#/header-nav/css';
-import { NavLinkWithMenu, MenuLink, NavItem } from '#/header-nav/components/NavItem';
-import * as NavItems from '#/header-nav/components/NavItems';
+import { MainMenuItem } from '#/header-nav/components/desktop/MainMenuItem';
+import { SubMenuLink } from '#/header-nav/components/SubMenu';
+import * as MenuFactories from '#/header-nav/components/MenuFactories';
 import { classString } from '../support/enzyme-component';
 
 describe('<HeaderNav>', () => {
@@ -14,7 +15,7 @@ describe('<HeaderNav>', () => {
       expect(subject.text()).not.toContain('LOG IN');
     });
 
-    it('renders to Log Out button', () => {
+    it('renders the Log Out button', () => {
       const subject = mount(<HeaderNav loggedIn />);
       expect(subject.text()).toContain('Log Out');
     });
@@ -35,17 +36,19 @@ describe('<HeaderNav>', () => {
 
   it('passes the loggedIn value to the tools nav item', () => {
     const subject = mount(<HeaderNav loggedIn={false} />);
-    const toolsNavItem = subject.find(NavItems.Tools);
+    const toolsNavItem = subject.find(MenuFactories.Tools);
     expect(toolsNavItem.props().loggedIn).toBe(false);
   });
 
-  describe('NavItems', () => {
+  describe('MenuFactories', () => {
     describe('<Shop>', () => {
       it('renders the correct urls', () => {
-        const subject = mount(<NavItems.Shop />);
-        const menuLinks = subject.find(MenuLink);
+        // eslint-disable-next-line react/prop-types
+        const TestTemplate = ({ children }) => <ul>{children}</ul>;
+        const subject = mount(<MenuFactories.Shop Template={TestTemplate} />);
+        const menuLinks = subject.find(SubMenuLink);
 
-        expect(subject.find(NavLinkWithMenu).props().href).toBe('https://shop.theknot.com?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnav');
+        expect(subject.find(TestTemplate).props().href).toBe('https://shop.theknot.com?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnav');
         expect(menuLinks.at(0).props().href).toBe('https://weddingshop.theknot.com/beauty');
         expect(menuLinks.at(1).props().href).toBe('https://weddingshop.theknot.com/gifts?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
         expect(menuLinks.at(2).props().href).toBe('https://weddingshop.theknot.com/favors/wedding-favors-by-feature?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
@@ -62,16 +65,16 @@ describe('<HeaderNav>', () => {
     });
   });
 
-  describe('<NavItem>', () => {
+  describe('<MainMenuItem>', () => {
     it('assigns the nav-item class', () => {
-      const subject = mount(<NavItem />);
-      expect(subject::classString()).toContain(styles['nav-item']);
+      const subject = mount(<MainMenuItem />);
+      expect(subject::classString()).toContain(styles['main-menu-item']);
     });
 
-    describe('when pushedToRight is specified', () => {
-      it('assigns the nav-item-pushed-to-right class', () => {
-        const subject = mount(<NavItem pushedToRight />);
-        expect(subject::classString()).toContain(styles['nav-item-pushed-to-right']);
+    describe('when rightOffset is specified', () => {
+      it('assigns the right-offset class', () => {
+        const subject = mount(<MainMenuItem rightOffset />);
+        expect(subject::classString()).toContain(styles['main-menu-item-right-offset']);
       });
     });
   });

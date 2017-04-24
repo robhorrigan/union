@@ -1,0 +1,12 @@
+.menu-pointer {
+  composes: knot-blue-fg from '@xo-union/colors/utilities';
+  composes: align-self-center from '@xo-union/utilities/flexbox';
+  composes: popup from './dropdown';
+
+  line-height: 0;
+
+  &::after {
+    content: '▲';
+  }
+}
+

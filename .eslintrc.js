@@ -32,7 +32,8 @@ module.exports = {
           'webpack/**',
           '**/spec/**',
           'scripts/**',
-          'pattern-library/src/loaders/**'
+          'pattern-library/src/loaders/**',
+          'test-index.js'
         ]
       }
     ]

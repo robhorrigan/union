@@ -1,0 +1,14 @@
+@import '~#/_shared/_bootstrap-overrides';
+
+@mixin in-desktop() {
+  @include media-breakpoint-up(md) {
+    @content;
+  }
+}
+
+@mixin in-mobile() {
+  @include media-breakpoint-down(sm) {
+    @content;
+  }
+}
+

@@ -21,7 +21,9 @@ module.exports = {
     externalizeRequires([
       /^@xo-union/,
       'react',
-      'css-module-builder'
+      'prop-types',
+      'css-module-builder',
+      'core-decorators'
     ])
   ],
   module: { rules },

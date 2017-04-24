@@ -4,5 +4,6 @@
     "packages/tools/*",
     "packages/pattern-library/*"
   ],
-  "version": "independent"
+  "version": "independent",
+  "npmClient": "yarn"
 }

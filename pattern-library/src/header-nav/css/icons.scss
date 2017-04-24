@@ -1,0 +1,40 @@
+@import 'device';
+
+@value (
+  white,
+  knot-blue
+) from '@xo-union/colors';
+
+@value ( font-up-8, font-up-6 ) from '@xo-union/typography/sizes';
+
+@include in-desktop() {
+  .logo {
+    color: knot-blue !important;
+    font-size: font-up-8;
+  }
+}
+
+@include in-mobile() {
+  .logo {
+    color: white !important;
+    font-size: font-up-6;
+  }
+}
+
+.icon-container {
+  composes: d-flex from '@xo-union/utilities/display';
+  composes: align-items-center from '@xo-union/utilities/flexbox';
+
+  padding: .5rem .85rem;
+}
+
+.icon-button {
+  composes: d-flex from '@xo-union/utilities/display';
+  composes: button-reset from './resets';
+}
+
+.menu-icon {
+  composes: font-up-3 from '@xo-union/typography';
+  composes: white-fg from '@xo-union/colors/utilities';
+}
+

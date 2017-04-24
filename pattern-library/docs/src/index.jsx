@@ -1,18 +1,21 @@
+import '#docs/_debug-utilities';
+
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Routes from '#docs/components/Routes';
 
 /* Global union styles */
 import '@xo-union/essentials';
+import { init as initializeIcons } from '@xo-union/icons/setup';
 
 /* Load prism css for syntax highlighting */
-import 'prism-themes/themes/prism-ghcolors.css';
+import 'prism-themes/themes/prism-ghcolors';
 
-import { init } from '@xo-union/icons/setup';
+import Routes from '#docs/components/Routes';
 
-init();
+initializeIcons();
 
 ReactDOM.render(
   <Routes />,
   document.getElementById('root')
 );
+

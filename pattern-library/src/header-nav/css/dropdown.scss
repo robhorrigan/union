@@ -1,0 +1,21 @@
+.popup-hide {
+  .popup {
+    display: none;
+  }
+}
+
+.popup-show-on-hover:hover {
+  .popup {
+    display: initial;
+  }
+}
+
+.dropdown {
+  position: absolute;
+  top: 0;
+}
+
+.dropdown-container {
+  position: relative;
+}
+

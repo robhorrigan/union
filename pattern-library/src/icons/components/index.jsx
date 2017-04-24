@@ -17,8 +17,9 @@ import { stamp } from '@xo-union/icons/data';
 init();
 
 export default function Icon({ name, className = '', ...props }) {
+  const iconSpecificClass = styles[`icon-${name}`] || '';
   return (
-    <svg className={`${styles.icon} ${className}`} {...props}>
+    <svg className={`${styles.icon} ${className} ${iconSpecificClass}`} {...props}>
       <use xlinkHref={`#icon-${name}-${stamp}`} />
     </svg>
   );

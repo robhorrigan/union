@@ -1,5 +1,5 @@
 # Union
-StyleGuide for theknot.com
+The Knot's Design System and Pattern Library
 
 # Development
 

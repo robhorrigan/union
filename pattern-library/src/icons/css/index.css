@@ -1,7 +1,48 @@
 .icon {
   display: inline-block;
   height: 1em;
+  width: 1em;
   stroke-width: 0;
   stroke: currentColor;
   fill: currentColor;
+}
+
+.icon-general-tk-logo {
+  width: 3.083984375em;
+}
+
+.icon-general-caret-right {
+  width: 0.408203125em;
+}
+
+.icon-general-caret-left {
+  width: 0.408203125em;
+}
+
+.icon-general-xo-logo {
+  width: 4.669921875em;
+}
+
+.icon-general-tn-logo {
+  width: 4.603515625em;
+}
+
+.icon-general-tb-logo {
+  width: 1.810546875em;
+}
+
+.icon-general-k-logo {
+  width: 0.5625em;
+}
+
+.icon-conversations-inactive {
+  width: 1.0595703125em;
+}
+
+.icon-notification-bubble {
+  width: 1.0185546875em;
+}
+
+.icon-conversation {
+  width: 1.0185546875em;
 }
