@@ -5,7 +5,7 @@ if [[ -z $ASSETS_BUCKET_URI ]]; then
   exit 1
 fi
 
-npm install \
-&& npm run build.patterns \
+yarn install \
+&& yarn run build.patterns \
 && aws s3 cp ./public/assets $ASSETS_BUCKET_URI --recursive --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers
 

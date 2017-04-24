@@ -10,6 +10,6 @@ if [[ ! $current_user = 'xo-union' ]]; then
   exit 1
 fi
 
-npm install \
-&& npm run build.patterns \
+yarn install \
+&& yarn run build.patterns \
 && node ./scripts/select-packages-to-publish.js
