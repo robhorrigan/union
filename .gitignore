@@ -3,3 +3,4 @@ node_modules
 *.sw?
 
 *.log
+packages/**/yarn.lock
