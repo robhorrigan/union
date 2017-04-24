@@ -3,10 +3,6 @@
   "version": "0.0.1",
   "description": "",
   "main": "webpack.config.js",
-  "config": {
-    "process-config-file": "devprocesses.config.js",
-    "local-docs-app-url": "http://localhost:8080"
-  },
   "engineStrict": true,
   "engines": {
     "node": ">=7.0.0 <8.0"
@@ -24,13 +20,13 @@
     "login": "sh ./scripts/login.sh",
     "logs": "pm2 logs --lines=40",
     "new.pattern": "yo union:pattern",
-    "open": "open $npm_package_config_local_docs_app_url",
+    "open": "open http://localhost:8080",
     "publish.assets": "sh ./scripts/publish-assets.sh",
     "publish.docs": "sh ./scripts/publish-docs.sh",
     "publish.packages": "sh ./scripts/publish-packages.sh",
     "restart": "pm2 restart all",
     "setup": "yarn install && npm run bootstrap && npm run build.patterns",
-    "start": "pm2 start $npm_package_config_process_config_file",
+    "start": "pm2 start devprocesses.config.js",
     "status": "pm2 status",
     "stop": "pm2 stop all",
     "test": "yarn run test.patterns && yarn run test.tools && yarn run test.support && yarn run lint",
