@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import CSS from 'react-css-modules';
-import { inject, observer } from 'mobx-react';
+import { inject } from 'mobx-react';
 import Toggler from '#docs/mixins/toggleable/toggler';
 import navItemCss from './styles.css';
 import { Item } from '../List';
@@ -28,7 +28,6 @@ export class NavItemWithSubNav extends Component {
 
 
 @inject('router')
-@observer
 @CSS(navItemCss)
 export default class NavItem extends Component {
   static propTypes = {
