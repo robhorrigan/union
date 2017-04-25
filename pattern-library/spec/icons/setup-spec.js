@@ -154,6 +154,7 @@ describe('Installer', () => {
 
       eventListenerSpy.and.callFake((eventName, callback) => {
         callback.call({
+          status: 200,
           responseText: '<svg id="new"></svg>'
         });
       });

@@ -98,10 +98,14 @@ export class Installer {
 
     const self = this;
     request.addEventListener('load', function loadHandler() {
-      const svg = this.responseText;
+      if (this.status === 200) {
+        const svg = this.responseText;
 
-      self.updateVersion(svg);
-      self.appendToDOM();
+        self.updateVersion(svg);
+        self.appendToDOM();
+      } else {
+        console.warn('Unable to load icons:', self.iconsUrl);
+      }
     });
 
     this.fetchIsInProgress = true;
