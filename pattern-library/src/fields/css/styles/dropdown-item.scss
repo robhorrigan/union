@@ -25,7 +25,7 @@
 }
 
 .dropdown-item-check {
-  composes: icon-general-checkmark-selected-state from '@xo-union/icons/legacy';
+  composes: icon-checkmark-selected-state from '@xo-union/icons/legacy';
 
   display: none;
   position: absolute;

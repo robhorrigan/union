@@ -7,7 +7,7 @@ export default function Logo() {
   return (
     <li className={styles['icon-container']}>
       <a href="/">
-        <Icon name="general-tk-logo" className={styles.logo} />
+        <Icon name="tk-logo" className={styles.logo} />
       </a>
     </li>
   );

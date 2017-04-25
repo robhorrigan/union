@@ -9,7 +9,7 @@ describe('<MobileMenuButton>', () => {
         const subject = mount(<PrimaryMenuButton isOpen />);
         const icon = subject.find('Icon');
 
-        expect(icon.props().name).toBe('general-close');
+        expect(icon.props().name).toBe('close');
       });
     });
 
@@ -18,7 +18,7 @@ describe('<MobileMenuButton>', () => {
         const subject = mount(<PrimaryMenuButton isOpen={false} />);
         const icon = subject.find('Icon');
 
-        expect(icon.props().name).toBe('general-hamburger');
+        expect(icon.props().name).toBe('hamburger');
       });
     });
   });
@@ -29,7 +29,7 @@ describe('<MobileMenuButton>', () => {
         const subject = mount(<ToolsMenuButton isOpen />);
         const icon = subject.find('Icon');
 
-        expect(icon.props().name).toBe('general-close');
+        expect(icon.props().name).toBe('close');
       });
     });
 

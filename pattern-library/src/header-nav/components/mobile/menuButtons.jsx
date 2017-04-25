@@ -7,7 +7,7 @@ function MobileMenuButton({ onClick, isOpen, closedIconName }) {
   let iconName = closedIconName;
 
   if (isOpen) {
-    iconName = 'general-close';
+    iconName = 'close';
   }
 
   return (
@@ -36,6 +36,6 @@ export function ToolsMenuButton(props) {
 }
 
 export function PrimaryMenuButton(props) {
-  return <MobileMenuButton closedIconName="general-hamburger" {...props} />;
+  return <MobileMenuButton closedIconName="hamburger" {...props} />;
 }
 
