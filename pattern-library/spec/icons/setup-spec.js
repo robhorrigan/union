@@ -127,16 +127,16 @@ describe('Installer', () => {
 
       subject.updateVersion('<svg></svg>');
 
-      currentDate = new Date('4/14/2017');
+      currentDate = new Date('3/22/2017');
 
       subject.removeOldVersions();
       expect(subject.getSvgString()).toBe('<svg></svg>');
 
-      currentDate = new Date('3/15/2017');
+      currentDate = new Date('3/16/2017');
 
       subject.updateVersion('<svg></svg>');
 
-      currentDate = new Date('4/14/2017');
+      currentDate = new Date('3/23/2017');
 
       subject.removeOldVersions();
 
