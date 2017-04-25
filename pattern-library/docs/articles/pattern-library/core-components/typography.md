@@ -19,21 +19,25 @@ $imports:
 
 ## Font Utility Classes
 
-
 <ul>
   <li>
     <Demo cssDependencies={{ type }}>
-      <div className={`${type.tisaMed} ${type.fontUp4}`}>Tisa Medium (font-weight: 500)</div>
+      <div className={type.serifMed}>Tisa Medium (font-weight: 500)</div>
     </Demo>
   </li>
   <li>
     <Demo cssDependencies={{ type }}>
-      <div className={`${type.tisaLight} ${type.fontUp4}`}>Tisa Light (font-weight: 300)</div>
+      <div className={type.serifLight}>Tisa Light (font-weight: 300)</div>
     </Demo>
   </li>
   <li>
     <Demo cssDependencies={{ type }}>
-      <div className={`${type.tisaSans} ${type.fontUp4}`}>Tisa Sans (font-weight: 400, default face)</div>
+      <div className={type.sansSerif}>Tisa Sans (font-weight: 400, default face)</div>
+    </Demo>
+  </li>
+  <li>
+    <Demo cssDependencies={{ type }}>
+      <div className={type.sansSerifMed}>Tisa Sans Medium (font-weight: 500, default face)</div>
     </Demo>
   </li>
 </ul>
@@ -114,5 +118,5 @@ Root size / 16px / 1rem
 </p>
 
 <Demo cssDependencies={{ type }}>
-  <div className={[type.lhHeader, type.fontUp4].join(' ')}>1234567890</div>
+  <div className={type.lhHeader}>1234567890</div>
 </Demo>
