@@ -10,6 +10,13 @@ class StorageMock {
 }
 
 describe('Installer', () => {
+  afterEach(() => {
+    const element = document.querySelector('[id^="xo-union-icons-manifest"]');
+    if (element) {
+      document.body.removeChild(element);
+    }
+  });
+
   describe('#getCache', () => {
     it('gets the cache object', () => {
       const storage = new StorageMock();
@@ -43,7 +50,7 @@ describe('Installer', () => {
       const subject = new Installer({
         storage,
         cacheKey: 'test',
-        versionStamp: 'version1',
+        versionHash: 'version1',
         DateConstructor() { return { date: true }; }
       });
 
@@ -53,7 +60,7 @@ describe('Installer', () => {
 
     it('updates the svgString', () => {
       const storage = new StorageMock();
-      const subject = new Installer({ storage, cacheKey: 'test', versionStamp: 'version1' });
+      const subject = new Installer({ storage, cacheKey: 'test', versionHash: 'version1' });
       subject.updateVersion('<somsvg>');
       expect(subject.getCache().version1.svgString).toEqual('<somsvg>');
     });
@@ -62,17 +69,29 @@ describe('Installer', () => {
   describe('#appendToDOM', () => {
     it('adds the svg string to the dom', () => {
       const storage = new StorageMock();
-      const subject = new Installer({ storage, cacheKey: 'test', versionStamp: 'version1' });
+      const subject = new Installer({ storage, cacheKey: 'test', versionHash: 'version1' });
       subject.updateVersion('<svg></svg>');
       subject.appendToDOM();
       expect(document.getElementById('xo-union-icons-manifest-version1')).not.toBe(null);
+    });
+
+    it('adds a unique id to everything that has an id', () => {
+      const storage = new StorageMock();
+      const subject = new Installer({ storage, cacheKey: 'test', versionHash: 'version2' });
+      subject.updateVersion('<svg><a id="a"></a><a id="b"></a></svg>');
+      subject.appendToDOM();
+
+      const svgElement = document.getElementById('xo-union-icons-manifest-version2');
+      const anchors = svgElement.getElementsByTagName('a');
+      expect(anchors[0].id).toBe('a-version2');
+      expect(anchors[1].id).toBe('b-version2');
     });
   });
 
   describe('#isSetup', () => {
     it('returns true if svg is on DOM', () => {
       const storage = new StorageMock();
-      const subject = new Installer({ storage, cacheKey: 'test', versionStamp: 'version2' });
+      const subject = new Installer({ storage, cacheKey: 'test', versionHash: 'version3' });
       subject.updateVersion('<svg></svg>');
       expect(subject.isSetup()).toBe(false);
       subject.appendToDOM();
@@ -131,7 +150,7 @@ describe('Installer', () => {
       const sendSpy = spyOn(XMLHttpRequest.prototype, 'send');
       const subject = new Installer({
         cacheKey: 'test',
-        versionStamp: 'version2',
+        versionStamp: 'version4',
         iconsUrl: 'url'
       });
 
@@ -148,7 +167,7 @@ describe('Installer', () => {
       const subject = new Installer({
         storage,
         cacheKey: 'test',
-        versionStamp: 'version2',
+        versionStamp: 'version5',
         iconsUrl: 'url'
       });
 

@@ -5,27 +5,28 @@
  * @example <svg></svg>
  */
 // eslint-disable-next-line max-len, import/no-webpack-loader-syntax
-import rawSvg from '!!if-production-loader?not!icon-loader?exportsResult!#assets/icons/union-icons.svg';
-import { url, stamp } from '@xo-union/icons/data';
+import rawSvg from '#assets/icons/union-icons.svg?raw&dev';
+import { url, hash } from '@xo-union/icons/data';
 
 const CACHE_KEY = '@xo-union/icons/svg-caches';
 
 const A_DAY = 86400000;
 const ONE_MONTH = A_DAY * 30;
+const { forEach } = Array.prototype;
 
 export class Installer {
   constructor({
     storage = localStorage,
     cacheKey = CACHE_KEY,
-    versionStamp = stamp,
+    versionHash = hash,
     iconsUrl = url,
     DateConstructor = Date,
     expirationPeriod = ONE_MONTH
   } = {}) {
     this.storage = storage;
     this.cacheKey = cacheKey;
-    this.versionStamp = versionStamp;
-    this.manifestID = `xo-union-icons-manifest-${versionStamp}`;
+    this.versionHash = versionHash;
+    this.manifestID = `xo-union-icons-manifest-${versionHash}`;
     this.iconsUrl = iconsUrl;
     this.Date = DateConstructor;
     this.fetchIsInProgress = false;
@@ -33,7 +34,7 @@ export class Installer {
   }
 
   getSvgString() {
-    const cacheObject = this.getCache()[this.versionStamp];
+    const cacheObject = this.getCache()[this.versionHash];
     if (!cacheObject) {
       return '';
     }
@@ -51,7 +52,7 @@ export class Installer {
 
   updateVersion(svg = this.getSvgString()) {
     const cacheObject = this.getCache();
-    cacheObject[this.versionStamp] = { lastUsed: new this.Date(), svgString: svg };
+    cacheObject[this.versionHash] = { lastUsed: new this.Date(), svgString: svg };
 
     return this.setCache(cacheObject);
   }
@@ -63,6 +64,10 @@ export class Installer {
     const svgElement = tmp.querySelector('svg');
 
     svgElement.id = this.manifestID;
+    /* Make all ids unique */
+    svgElement.querySelectorAll('[id]')::forEach((element) => {
+      element.setAttribute('id', `${element.id}-${this.versionHash}`);
+    });
 
     document.body.appendChild(svgElement);
   }
