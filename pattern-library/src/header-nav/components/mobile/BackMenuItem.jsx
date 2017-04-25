@@ -7,7 +7,7 @@ import { SubMenuLink } from '../SubMenu';
 export default function BackMenuItem({ label, onClick }) {
   return (
     <SubMenuLink className={styles['sub-menu-back-button-item']} role="button" onClick={onClick}>
-      <Icon name="general-caret-left" className={styles['sub-menu-back-button-caret']} />
+      <Icon name="caret-left" className={styles['sub-menu-back-button-caret']} />
       {label}
     </SubMenuLink>
   );
