@@ -1,10 +1,11 @@
 import '#docs/_debug-utilities';
+/* Global union styles */
+import '@xo-union/essentials';
+import 'babel-polyfill';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-/* Global union styles */
-import '@xo-union/essentials';
 import { init as initializeIcons } from '@xo-union/icons/setup';
 
 /* Load prism css for syntax highlighting */

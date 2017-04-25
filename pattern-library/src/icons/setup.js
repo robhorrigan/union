@@ -63,7 +63,6 @@ export class Installer {
     const svgElement = tmp.querySelector('svg');
 
     svgElement.id = this.manifestID;
-    svgElement.dataset.stamp = this.versionStamp;
 
     document.body.appendChild(svgElement);
   }
