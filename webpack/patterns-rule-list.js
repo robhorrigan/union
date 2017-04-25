@@ -58,6 +58,7 @@ module.exports = [
       options: {
         plugins: [
           { removeUselessDefs: false },
+          { removeIds: true },
           { cleanupIDs: false }
         ]
       }

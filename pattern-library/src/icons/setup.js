@@ -11,7 +11,7 @@ import { url, hash } from '@xo-union/icons/data';
 const CACHE_KEY = '@xo-union/icons/svg-caches';
 
 const A_DAY = 86400000;
-const ONE_MONTH = A_DAY * 30;
+const A_WEEK = A_DAY * 7;
 const { forEach } = Array.prototype;
 
 export class Installer {
@@ -21,7 +21,7 @@ export class Installer {
     versionHash = hash,
     iconsUrl = url,
     DateConstructor = Date,
-    expirationPeriod = ONE_MONTH
+    expirationPeriod = A_WEEK
   } = {}) {
     this.storage = storage;
     this.cacheKey = cacheKey;
