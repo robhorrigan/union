@@ -2,9 +2,9 @@ const path = require('path');
 const {
   getEntrypointsFiles,
   adaptEntrypoints
-} = require('../scripts/helpers/buildEntrypoints');
+} = require('../../../scripts/helpers/buildEntrypoints');
 
-const fixturesPath = path.resolve.bind(null, __dirname, 'fixtures');
+const fixturesPath = path.resolve.bind(null, __dirname, '..', 'fixtures');
 
 describe('entrypoints', () => {
   describe('.getEntrypointsFiles', () => {

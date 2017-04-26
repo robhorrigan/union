@@ -27,7 +27,7 @@ describe('pattern generator', () => {
     }));
 
     it('creates a css file', asyncTest(() => {
-      assert.fileContent('pattern-library/src/test-pattern/css/index.css',
+      assert.fileContent('src/pattern-library/test-pattern/css/index.css',
         new RegExp([
           '\\.test-pattern {',
           'color: red;',
@@ -37,7 +37,7 @@ describe('pattern generator', () => {
     }));
 
     it('creates a simple react component', asyncTest(() => {
-      assert.fileContent('pattern-library/src/test-pattern/index.jsx',
+      assert.fileContent('src/pattern-library/test-pattern/index.jsx',
         new RegExp([
           "import React, { PropTypes } from 'react';",
           "import styles from '@xo-union/test-pattern/css';",
@@ -52,7 +52,7 @@ describe('pattern generator', () => {
     }));
 
     it('creates a test', () => {
-      assert.fileContent('pattern-library/spec/test-pattern/spec.jsx',
+      assert.fileContent('spec/browser/pattern-library/test-pattern/spec.jsx',
         new RegExp([
           "import React from 'react';",
           "import { mount } from 'enzyme';",
@@ -68,7 +68,7 @@ describe('pattern generator', () => {
     });
 
     it('creates a doc file', () => {
-      assert.fileContent('pattern-library/docs/articles/test-pattern.md',
+      assert.fileContent('src/pattern-library-docs/articles/test-pattern.md',
         new RegExp([
           '\\$imports:',
           "'TestPattern': '@xo-union/test-pattern'",
@@ -92,7 +92,7 @@ describe('pattern generator', () => {
     });
 
     it('creates an entrypoints file', () => {
-      assert.fileContent('pattern-library/src/test-pattern/entrypoints.json',
+      assert.fileContent('src/pattern-library/test-pattern/entrypoints.json',
         new RegExp([
           '\\[',
           '"index.jsx",',

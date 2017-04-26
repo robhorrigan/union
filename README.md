@@ -131,23 +131,23 @@ yarn run build.patterns
 # All tests
 yarn test
 
-# Patterns tests
-yarn run test.patterns
-yarn run test.patterns.chrome # Useful when using debuggers
+# Browser tests
+yarn run test.browser
+yarn run test.browser.chrome # Useful when using debuggers
 
-# Build support tests
-yarn run test.support
+# Node tests
+yarn run test.node
 
 # Tools tests
 yarn run test.tools
 ```
 
-##### Patterns TDD
+##### Browser TDD
 
 > For something more interactive, you can run this command, which will watch your files for changes and automatically run all tests. This the best way to get immediate feedback from your changes.
 
 ```sh
-yarn run test.patterns.watch
+yarn run test.browser.watch
 ```
 
 > In order to improve the test output, make sure to `focus` on the tests which you are currently working on. You do this by using [`jasmine`'s focus feature](https://jasmine.github.io/2.1/focused_specs.html).

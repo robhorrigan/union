@@ -5,7 +5,7 @@ const { buildEntrypoints } = require('./scripts/helpers/buildEntrypoints');
 const rules = require('./webpack/patterns-rule-list');
 const resolve = require('./webpack/resolve');
 
-const patternSrcPath = path.resolve.bind(null, __dirname, 'pattern-library', 'src');
+const patternSrcPath = path.resolve.bind(null, __dirname, 'src', 'pattern-library');
 
 module.exports = {
   resolve: resolve.default,

@@ -25,14 +25,13 @@ module.exports = {
       'error',
       {
         devDependencies: [
-          'build-utils/**/*',
           'spec/**/*',
           'webpack.*.js',
           '**/gulpfile*',
           'webpack/**',
           '**/spec/**',
           'scripts/**',
-          'pattern-library/src/loaders/**',
+          'src/custom-loaders/**',
           'test-index.js'
         ]
       }

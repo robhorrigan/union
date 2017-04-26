@@ -1,4 +1,4 @@
-const parseDiff = require('../../../scripts/helpers/diff/parseDiff');
+const parseDiff = require('../../../../scripts/helpers/diff/parseDiff');
 
 describe('.parseDiff', () => {
   it('parses the diff output', () => {

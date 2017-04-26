@@ -1,7 +1,8 @@
 const extend = require('extend');
 const path = require('path');
 
-const patternLibPath = path.resolve.bind(null, __dirname, '..', 'pattern-library');
+const srcPath = path.resolve.bind(null, __dirname, '..', 'src');
+const staticPath = path.resolve.bind(null, __dirname, '..', 'static');
 const packagesPath = path.resolve.bind(null, __dirname, '..', 'packages');
 
 exports.default = {
@@ -14,8 +15,8 @@ exports.default = {
   ],
   alias: {
     /* Facilitate making references to files in the source root */
-    '#': patternLibPath('src'),
-    '#assets': patternLibPath('assets')
+    '#': srcPath('pattern-library'),
+    '#assets': staticPath('assets')
   }
 };
 
@@ -24,16 +25,16 @@ exports.testAndDocs = extend(true, {
     /* Allow package references to resolve correctly */
     '@xo-union': packagesPath('pattern-library'),
     /* Facilitate making references to docs src */
-    '#docs': patternLibPath('docs', 'src'),
+    '#docs': srcPath('pattern-library-docs', 'src'),
     /* Facilitate making references to articles and config in docs app */
-    $articles: patternLibPath('docs', 'articles-directory.config.json'),
-    '$site-config': patternLibPath('docs', 'site.config.json')
+    $articles: srcPath('pattern-library-docs', 'articles-directory.config.json'),
+    '$site-config': srcPath('pattern-library-docs', 'site.config.json')
   }
 }, exports.default);
 
 exports.loaders = {
   modules: [
-    patternLibPath('src', 'loaders'),
+    'custom-loaders',
     'node_modules'
   ]
 };

@@ -2,7 +2,7 @@ const path = require('path');
 const cssByebye = require('css-byebye');
 
 const typographyPath = path.resolve.bind(
-  null, __dirname, '..', 'pattern-library', 'src', 'typography');
+  null, __dirname, '..', 'src', 'pattern-library', 'typography');
 
 const pureModulePath = typographyPath('modules.scss');
 const globalsPath = typographyPath('globals.scss');

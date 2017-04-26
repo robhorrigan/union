@@ -1,6 +1,7 @@
 module.exports = {
   extends: [
-    '../.eslintrc.js',
+    '../../.eslintrc.js',
+    '../../.eslintrc.client.js',
     '../../.eslintrc.jasmine.js'
   ],
 };

@@ -1,4 +1,4 @@
-import { Installer } from '#/icons/setup';
+import { Installer } from '@xo-union/icons/setup';
 
 class StorageMock {
   constructor() {

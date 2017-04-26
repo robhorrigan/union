@@ -1,4 +1,4 @@
-const rebootCSSPath = require.resolve('../pattern-library/src/bootstrap/reboot.scss');
+const rebootCSSPath = require.resolve('../src/pattern-library/bootstrap/reboot.scss');
 const {
   typographyCssRules,
   typographyGlobalsPath,

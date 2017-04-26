@@ -6,8 +6,7 @@ const resolve = require('./webpack/resolve');
 const cssRules = require('./webpack/css-rules').docs;
 const articlesRuleList = require('./webpack/articles-rule-list');
 
-const patternDocsPath = path.resolve.bind(null, __dirname, 'pattern-library', 'docs');
-
+const patternDocsPath = path.resolve.bind(null, __dirname, 'src', 'pattern-library-docs');
 const extract = new ExtractTextPlugin({
   filename: 'styles-[hash:6].css',
   ignoreOrder: true

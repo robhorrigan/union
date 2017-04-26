@@ -8,9 +8,6 @@ module.exports = {
     ENV: true,
     __webpack_public_path__: true
   },
-  extends: [
-    '../.eslintrc.js'
-  ],
   plugins: [
     'react',
     'jsx-a11y'
@@ -31,7 +28,7 @@ module.exports = {
   settings: {
     'import/resolver': {
       webpack: {
-        config: path.resolve(__dirname, '..', 'webpack.test.js')
+        config: path.resolve(__dirname, 'webpack.test.js')
       }
     }
   }
