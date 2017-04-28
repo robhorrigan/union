@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/header-nav",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "main": "index.js",
   "dependencies": {
     "core-decorators": "^0.17.0",
@@ -12,6 +12,7 @@
     "@xo-union/bootstrap": "^0.2.1",
     "@xo-union/icons": "^0.3.2",
     "@xo-union/buttons": "^0.1.4",
-    "@xo-union/utilities": "^0.1.2"
+    "@xo-union/utilities": "^0.1.2",
+    "@xo-union/analytics": "^0.1.0"
   }
 }
