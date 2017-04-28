@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@xo-union/header-nav/css';
-import { Button } from '@xo-union/buttons';
+import { SignUpButton, LogInButton } from '../accountButtons';
 
 import * as MenuFactories from '../MenuFactories';
 import { MainMenuItemWithSubMenu, MainMenuItem } from './MainMenuItem';
@@ -16,14 +16,10 @@ function topLevelItems() {
 export default function HeaderNav({ loggedIn = false }) {
   const loggedOutNavItems = [
     <MainMenuItem>
-      <Button size="baby" isCTA>
-        SIGN UP
-      </Button>
+      <SignUpButton />
     </MainMenuItem>,
     <MainMenuItem>
-      <Button color="tertiary" size="baby" isCTA>
-        LOG IN
-      </Button>
+      <LogInButton />
     </MainMenuItem>
   ];
 

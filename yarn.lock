@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@segment/is-meta@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/@segment/is-meta/-/is-meta-1.0.0.tgz#d911b3f2327b39f8abb16a282954fa26edd3b27c"
+
 a-css-loader@^1.0.0-beta.11:
   version "1.0.0-beta.11"
   resolved "https://registry.npmjs.org/a-css-loader/-/a-css-loader-1.0.0-beta.11.tgz#4602a1094c28b85522f3ee3530989fcc467cc036"
@@ -4893,6 +4897,10 @@ macaddress@^0.2.8:
 map-obj@^1.0.0, map-obj@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/map-obj/-/map-obj-1.0.1.tgz#d933ceb9205d82bdcf4886f6742bdc2b4dea146d"
+
+matches-selector@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.npmjs.org/matches-selector/-/matches-selector-1.0.0.tgz#434833447026a25ea4999edab18e4b8892b25721"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.16"

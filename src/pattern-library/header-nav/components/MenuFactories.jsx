@@ -1,13 +1,36 @@
 import React, { PropTypes } from 'react';
 import styles from '@xo-union/header-nav/css';
-import { Button } from '@xo-union/buttons';
+import { SignUpButton, LogInButton } from './accountButtons';
 import { path, params } from '../utilities/path-builders';
 import { SubMenuLink } from './SubMenu';
 import { only, values } from '../utilities/object';
 
-export function LocalVendors({ Template, ...props }) {
+function Factory({ Template, children, label, ...props }) {
+  const newChildren = React.Children.map(children, (element) => {
+    if (!element) { return element; }
+
+    return React.cloneElement(element, {
+      'data-selection-group-label': label,
+      ...element.props
+    });
+  });
+
   return (
-    <Template label="Local Vendors" href="/marketplace" {...props}>
+    <Template label={label} {...props}>
+      {newChildren}
+    </Template>
+  );
+}
+
+Factory.propTypes = {
+  Template: PropTypes.func,
+  children: PropTypes.node,
+  label: PropTypes.string
+};
+
+export function LocalVendors(props) {
+  return (
+    <Factory label="Local Vendors" href="/marketplace" {...props}>
       <SubMenuLink href="/marketplace/wedding-reception-venues"> Reception Venues </SubMenuLink>
       <SubMenuLink href="/marketplace/wedding-photographers"> Wedding Photographers </SubMenuLink>
       <SubMenuLink href="/marketplace/bridal-salons"> Bridal Salons </SubMenuLink>
@@ -19,46 +42,34 @@ export function LocalVendors({ Template, ...props }) {
       <SubMenuLink href="/marketplace/wedding-videographers"> Videographers </SubMenuLink>
       <SubMenuLink href="/marketplace/live-wedding-bands"> Wedding Bands </SubMenuLink>
       <SubMenuLink href="/marketplace"> See All </SubMenuLink>
-    </Template>
+    </Factory>
   );
 }
 
-LocalVendors.propTypes = {
-  Template: PropTypes.func.isRequired
-};
-
-export function WeddingWebsites({ Template, ...props }) {
+export function WeddingWebsites(props) {
   return (
-    <Template label="Wedding Websites" href="/gs/wedding-websites" {...props}>
+    <Factory label="Wedding Websites" href="/gs/wedding-websites" {...props}>
       <SubMenuLink href="/gs/wedding-websites"> Create A New Website </SubMenuLink>
       <SubMenuLink href="/gs/dashboard"> Manage My Website </SubMenuLink>
       <SubMenuLink href="/registry/couplesearch"> {"Find A Couple's Wedding Website"} </SubMenuLink>
-    </Template>
+    </Factory>
   );
 }
 
-WeddingWebsites.propTypes = {
-  Template: PropTypes.func.isRequired
-};
-
-export function Registry({ Template, ...props }) {
+export function Registry(props) {
   return (
-    <Template label="Registry" href="/registry" {...props}>
+    <Factory label="Registry" href="/registry" {...props}>
       <SubMenuLink href="/registry"> Manage Your Registries </SubMenuLink>
       <SubMenuLink href="/registry/couplesearch"> Find a Registry </SubMenuLink>
       <SubMenuLink href="/interactive-registry-guide"> Ultimate Registry Guide </SubMenuLink>
       <SubMenuLink href="/registry/charity"> The Knot Charity Program </SubMenuLink>
-    </Template>
+    </Factory>
   );
 }
 
-Registry.propTypes = {
-  Template: PropTypes.func.isRequired
-};
-
-export function Fashion({ Template, ...props }) {
+export function Fashion(props) {
   return (
-    <Template label="Rings + Dresses" href="/fashion/wedding-dresses" {...props}>
+    <Factory label="Rings + Dresses" href="/fashion/wedding-dresses" {...props}>
       <SubMenuLink href="/fashion/engagement-rings"> Engagement Rings </SubMenuLink>
       <SubMenuLink href="/fashion/wedding-dresses"> Wedding Dresses </SubMenuLink>
       <SubMenuLink href="/fashion/bridesmain-dresses"> Bridesmaid Dresses </SubMenuLink>
@@ -70,34 +81,26 @@ export function Fashion({ Template, ...props }) {
       <SubMenuLink href="/fashion/wedding-accessories"> Wedding Accessories </SubMenuLink>
       <SubMenuLink href="/fashion/wedding-jewelry"> Wedding Jewelry </SubMenuLink>
       <SubMenuLink href="/fashion/tuxedos"> Menswear + Tuxes </SubMenuLink>
-    </Template>
+    </Factory>
   );
 }
 
-Fashion.propTypes = {
-  Template: PropTypes.func.isRequired
-};
-
-export function RealWeddings({ Template, ...props }) {
+export function RealWeddings(props) {
   return (
-    <Template label="Photos" href="/real-weddings/photos" {...props}>
+    <Factory label="Photos" href="/real-weddings/photos" {...props}>
       <SubMenuLink href="/real-weddings/photos"> Wedding Ideas </SubMenuLink>
       <SubMenuLink href="/real-weddings/wedding-cakes-photos"> Wedding Cakes </SubMenuLink>
       <SubMenuLink href="/real-weddings/wedding-centerpieces-photos"> Centerpieces </SubMenuLink>
       <SubMenuLink href="/real-weddings/wedding-hairstyles-photos"> Hairstyles </SubMenuLink>
       <SubMenuLink href="/real-weddings/wedding-bouquts-photos"> Bouquets </SubMenuLink>
       <SubMenuLink href="/real-weddings/photos"> See All </SubMenuLink>
-    </Template>
+    </Factory>
   );
 }
 
-RealWeddings.propTypes = {
-  Template: PropTypes.func.isRequired
-};
-
-export function Content({ Template, ...props }) {
+export function Content(props) {
   return (
-    <Template label="Ideas & Advice" href="/content" {...props}>
+    <Factory label="Ideas & Advice" href="/content" {...props}>
       <SubMenuLink href="/partnerships/macys-elements-of-style">
         <img alt="" src="http://media-api.theknot.com/images/217f19ac-c625-40fd-b1de-4034756f435c~rs_w.50?quality=100" />
         Elements of Style
@@ -115,13 +118,9 @@ export function Content({ Template, ...props }) {
       <SubMenuLink href="/content/destination-wedding-advice"> Destination Weddings </SubMenuLink>
       <SubMenuLink href="/content/honeymoon-advice"> Honeymoons </SubMenuLink>
       <SubMenuLink href="/content/all"> See All </SubMenuLink>
-    </Template>
+    </Factory>
   );
 }
-
-Content.propTypes = {
-  Template: PropTypes.func.isRequired
-};
 
 /* Additional path builders used on the Shop NavItem */
 function trackingParams({ isSubCategory = true } = {}) {
@@ -138,12 +137,12 @@ function stationaryPath(categoryId) {
   return this::path('stationery')::params({ category_id: categoryId });
 }
 
-export function Shop({ Template, ...props }) {
+export function Shop(props) {
   const shopHost = 'https://shop.theknot.com';
   const weddingShopHost = 'https://weddingshop.theknot.com';
 
   return (
-    <Template label="Shop" href={shopHost::trackingParams({ isSubCategory: false })} {...props}>
+    <Factory label="Shop" href={shopHost::trackingParams({ isSubCategory: false })} {...props}>
       <SubMenuLink href={weddingShopHost::path('beauty')}> Beauty & Hair </SubMenuLink>
       <SubMenuLink href={weddingShopHost::path('gifts')::trackingParams()} >
         Bridal Party Gifts
@@ -184,7 +183,7 @@ export function Shop({ Template, ...props }) {
       <SubMenuLink href={shopHost} >
         See All
       </SubMenuLink>
-    </Template>
+    </Factory>
   );
 }
 
@@ -195,20 +194,16 @@ Shop.propTypes = {
 function AccountMenuItem() {
   return (
     <li className={styles['sub-menu-account-item']}>
-      <Button className={styles['sub-menu-account-item-primary-button']} size="baby" isCTA block>
-        SIGN UP
-      </Button>
+      <SignUpButton className={styles['sub-menu-account-item-primary-button']} block />
       Already a member?
-      <Button size="baby" color="tertiary" isCTA>
-        LOG IN
-      </Button>
+      <LogInButton />
     </li>
   );
 }
 
-export function Tools({ Template, loggedIn, ...props }) {
+export function Tools({ loggedIn, ...props }) {
   return (
-    <Template label="Tools" href="/dashboard" {...props}>
+    <Factory label="Tools" href="/dashboard" {...props}>
       {loggedIn ? null : <AccountMenuItem />}
       <SubMenuLink href="/gs/wedding-websites"> Wedding Website </SubMenuLink>
       <SubMenuLink href="/registry"> Registry </SubMenuLink>
@@ -221,13 +216,12 @@ export function Tools({ Template, loggedIn, ...props }) {
       <SubMenuLink href="/inbox"> Conversations </SubMenuLink>
       <SubMenuLink href="/boards"> Favorites </SubMenuLink>
       <SubMenuLink href="http://feedback.beta.theknot.com/knowledgebase"> Help + Feedback </SubMenuLink>
-      {loggedIn ? <SubMenuLink role="button">Log Out</SubMenuLink> : null}
-    </Template>
+      {loggedIn ? <SubMenuLink role="button" clickRole="log-out">Log Out</SubMenuLink> : null}
+    </Factory>
   );
 }
 
 Tools.propTypes = {
-  Template: PropTypes.func.isRequired,
   loggedIn: PropTypes.bool.isRequired
 };
 

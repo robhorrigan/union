@@ -1,14 +1,10 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import HeaderNav from '#/header-nav';
-import styles from '#/header-nav/css';
-import { MainMenuItem } from '#/header-nav/components/desktop/MainMenuItem';
-import { SubMenuLink } from '#/header-nav/components/SubMenu';
-import * as MenuFactories from '#/header-nav/components/MenuFactories';
-import { classString } from '../support/enzyme-component';
+import { Tools } from '#/header-nav/components/MenuFactories';
 
 describe('<HeaderNav>', () => {
-  describe('logged in', () => {
+  describe('props.loggedIn', () => {
     it('does not render the account ctas', () => {
       const subject = mount(<HeaderNav loggedIn />);
       expect(subject.text()).not.toContain('SIGN UP');
@@ -32,50 +28,55 @@ describe('<HeaderNav>', () => {
       const subject = mount(<HeaderNav loggedIn={false} />);
       expect(subject.text()).not.toContain('Log Out');
     });
-  });
 
-  it('passes the loggedIn value to the tools nav item', () => {
-    const subject = mount(<HeaderNav loggedIn={false} />);
-    const toolsNavItem = subject.find(MenuFactories.Tools);
-    expect(toolsNavItem.props().loggedIn).toBe(false);
-  });
-
-  describe('MenuFactories', () => {
-    describe('<Shop>', () => {
-      it('renders the correct urls', () => {
-        // eslint-disable-next-line react/prop-types
-        const TestTemplate = ({ children }) => <ul>{children}</ul>;
-        const subject = mount(<MenuFactories.Shop Template={TestTemplate} />);
-        const menuLinks = subject.find(SubMenuLink);
-
-        expect(subject.find(TestTemplate).props().href).toBe('https://shop.theknot.com?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnav');
-        expect(menuLinks.at(0).props().href).toBe('https://weddingshop.theknot.com/beauty');
-        expect(menuLinks.at(1).props().href).toBe('https://weddingshop.theknot.com/gifts?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
-        expect(menuLinks.at(2).props().href).toBe('https://weddingshop.theknot.com/favors/wedding-favors-by-feature?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
-        expect(menuLinks.at(3).props().href).toBe('https://shop.theknot.com/stationery?category_id=200');
-        expect(menuLinks.at(4).props().href).toBe('https://shop.theknot.com/dresses');
-        expect(menuLinks.at(5).props().href).toBe('https://weddingshop.theknot.com/reception/personalized-paper-napkins?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
-        expect(menuLinks.at(6).props().href).toBe('https://shop.theknot.com/post-wedding-essentials');
-        expect(menuLinks.at(7).props().href).toBe('https://shop.theknot.com/stationery?category_id=201');
-        expect(menuLinks.at(8).props().href).toBe('https://shop.theknot.com/accessories');
-        expect(menuLinks.at(9).props().href).toBe('https://weddingshop.theknot.com/decor/wedding-table-decorations?utm_source=theknot.com&utm_medium=referral&utm_campaign=topnavsubcat');
-        expect(menuLinks.at(10).props().href).toBe('https://shop.theknot.com/stationery?category_id=202');
-        expect(menuLinks.at(11).props().href).toBe('https://shop.theknot.com');
-      });
+    it('passes the loggedIn value to the tools nav item', () => {
+      const subject = mount(<HeaderNav loggedIn={false} />);
+      const toolsNavItem = subject.find(Tools);
+      expect(toolsNavItem.props().loggedIn).toBe(false);
     });
   });
 
-  describe('<MainMenuItem>', () => {
-    it('assigns the nav-item class', () => {
-      const subject = mount(<MainMenuItem />);
-      expect(subject::classString()).toContain(styles['main-menu-item']);
-    });
+  describe('props.onNavigate', () => {
+    it('is triggered when a navigation item is clicked', () => {
+      const onNavigateSpy = jasmine.createSpy('onNavigate');
+      const subject = mount(<HeaderNav onNavigate={onNavigateSpy} />);
+      const navigationItem = subject.find('[data-click-role="navigate"]');
+      navigationItem.at(0).simulate('click');
 
-    describe('when rightOffset is specified', () => {
-      it('assigns the right-offset class', () => {
-        const subject = mount(<MainMenuItem rightOffset />);
-        expect(subject::classString()).toContain(styles['main-menu-item-right-offset']);
-      });
+      expect(onNavigateSpy).toHaveBeenCalled();
+    });
+  });
+
+  describe('props.onLogOut', () => {
+    it('is triggered when the log out item is clicked', () => {
+      const onLogOutSpy = jasmine.createSpy('onLogOut');
+      const subject = mount(<HeaderNav loggedIn onLogOut={onLogOutSpy} />);
+      const logOutItem = subject.find('[data-click-role="log-out"]');
+      logOutItem.simulate('click');
+
+      expect(onLogOutSpy).toHaveBeenCalled();
+    });
+  });
+
+  describe('props.onLogIn', () => {
+    it('is triggered when the log in item is clicked', () => {
+      const onLogInSpy = jasmine.createSpy('onLogIn');
+      const subject = mount(<HeaderNav onLogIn={onLogInSpy} />);
+      const logInItem = subject.find('[data-click-role="log-in"]');
+      logInItem.at(0).simulate('click');
+
+      expect(onLogInSpy).toHaveBeenCalled();
+    });
+  });
+
+  describe('props.onSignUp', () => {
+    it('is triggered when the sign up item is clicked', () => {
+      const onSignUpSpy = jasmine.createSpy('onSignUp');
+      const subject = mount(<HeaderNav onSignUp={onSignUpSpy} />);
+      const signUpItem = subject.find('[data-click-role="sign-up"]');
+      signUpItem.at(0).simulate('click');
+
+      expect(onSignUpSpy).toHaveBeenCalled();
     });
   });
 });

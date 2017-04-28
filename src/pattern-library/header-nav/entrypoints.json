@@ -1,4 +1,5 @@
 [
   "index.jsx",
-  "css/index.scss"
+  "css/index.scss",
+  "analytics.jsx"
 ]

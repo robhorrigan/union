@@ -1,9 +1,12 @@
 ---
 $imports:
+  'HeaderNavAnalytics': '@xo-union/header-nav/analytics'
   'HeaderNav': '@xo-union/header-nav'
   packageJson: '@xo-union/header-nav/package.json'
   '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
   HeaderNavMetadata: '!!react-docgen-loader!#/header-nav'
+  HeaderNavAnalyticsMetadata: '!!react-docgen-loader!#/header-nav/analytics'
+  '{ Snippet }': '#docs/doc-components'
 ---
 
 <h1>{$props.title}</h1>
@@ -12,14 +15,20 @@ $imports:
 
 <InstallSnippet packageJson={packageJson} />
 
-### Properties
+### Import
 
-<PropTypesTable metadata={HeaderNavMetadata.props} />
+<Snippet lang="javascript">
+import HeaderNav from '@xo-union/header-nav';
+import HeaderNavAnalytics from '@xo-union/header-nav/analytics';
+</Snippet>
+
+
+### States
 
 #### Logged out
 
 <Demo>
-  <HeaderNav loggedIn={false} />
+  <HeaderNav />
 </Demo>
 
 #### Logged in
@@ -27,3 +36,21 @@ $imports:
 <Demo>
   <HeaderNav loggedIn />
 </Demo>
+
+### Properties
+
+<PropTypesTable metadata={HeaderNavMetadata.props} />
+
+### With Analytics
+
+### Properties
+
+This demo suppresses redirects and logs all track data to the javascript console. In a normal scenario, track calls are made using segment's `analytics.track`.
+
+<Demo ignoreProps={['analytics', 'followStrategy']}>
+  <HeaderNavAnalytics product="fashion" analytics={{ track(...params) { console.log('TRACK:', ...params)} }} followStrategy={false}>
+    <HeaderNav />
+  </HeaderNavAnalytics>
+</Demo>
+
+<PropTypesTable metadata={HeaderNavAnalyticsMetadata.props} />

@@ -17,16 +17,21 @@ SubMenu.propTypes = {
   className: PropTypes.string
 };
 
-export function SubMenuLink({ className = styles['sub-menu-item'], ...props }) {
+export function SubMenuLink({
+  className = styles['sub-menu-item'],
+  clickRole = 'navigate',
+  ...props
+}) {
   /* eslint-disable jsx-a11y/anchor-has-content */
   return (
     <li className={className}>
-      <a className={styles['sub-menu-item-link']} {...props} />
+      <a className={styles['sub-menu-item-link']} data-click-role={clickRole} {...props} />
     </li>
   );
 }
 
 SubMenuLink.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  clickRole: PropTypes.string
 };
 

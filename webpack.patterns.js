@@ -23,7 +23,9 @@ module.exports = {
       'react',
       'prop-types',
       'css-module-builder',
-      'core-decorators'
+      'core-decorators',
+      'matches-selector',
+      '@segment/is-meta'
     ])
   ],
   module: { rules },

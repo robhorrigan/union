@@ -10,7 +10,7 @@ export default function PropTypesTable({ metadata, exclude = [] }) {
   const columnsNames = ['name', 'description', 'type', 'default'].filter(shouldStay);
 
   return (
-    <table className={[bsTables.table, bsTables.tableInverse, bsTables.tableBordered].join(' ')}>
+    <table className={[bsTables.table, bsTables.tableBordered].join(' ')}>
       <thead>
         <TableRow columns={columnsNames} header />
       </thead>

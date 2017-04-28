@@ -108,6 +108,7 @@ export class Installer {
         self.updateVersion(svg);
         self.appendToDOM();
       } else {
+        // eslint-disable-next-line no-console
         console.warn('Unable to load icons:', self.iconsUrl);
       }
     });
