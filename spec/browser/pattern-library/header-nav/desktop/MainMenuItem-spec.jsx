@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { MainMenuItem } from '#/header-nav/components/desktop/MainMenuItem';
 import styles from '#/header-nav/css';
-import { classString } from '../../support/enzyme-component';
+import { classString } from '#spec/support/enzyme-component';
 
 describe('<MainMenuItem>', () => {
   it('assigns the nav-item class', () => {

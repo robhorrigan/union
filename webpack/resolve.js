@@ -4,6 +4,7 @@ const path = require('path');
 const srcPath = path.resolve.bind(null, __dirname, '..', 'src');
 const staticPath = path.resolve.bind(null, __dirname, '..', 'static');
 const packagesPath = path.resolve.bind(null, __dirname, '..', 'packages');
+const specPath = path.resolve.bind(null, __dirname, '..', 'spec');
 
 exports.default = {
   extensions: [
@@ -28,6 +29,7 @@ exports.testAndDocs = extend(true, {
     '#docs': srcPath('pattern-library-docs', 'src'),
     /* Facilitate making references to articles and config in docs app */
     $articles: srcPath('pattern-library-docs', 'articles-directory.config.json'),
+    '#spec': specPath('browser'),
     '$site-config': srcPath('pattern-library-docs', 'site.config.json')
   }
 }, exports.default);

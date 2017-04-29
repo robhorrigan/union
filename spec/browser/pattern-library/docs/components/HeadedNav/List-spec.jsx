@@ -1,7 +1,7 @@
 import React from 'react';
 import { List } from '#docs/components/HeaderNav/List';
 import { mount } from 'enzyme';
-import { classString } from '../../../support/enzyme-component';
+import { classString } from '#spec/support/enzyme-component';
 
 describe('<List>', () => {
   const stylesMock = {
