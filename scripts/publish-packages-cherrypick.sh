@@ -14,4 +14,4 @@ yarn install \
 && yarn run bootstrap \
 && yarn run clean.build \
 && yarn run build.patterns \
-&& lerna publish
+&& node ./scripts/select-packages-to-publish.js
