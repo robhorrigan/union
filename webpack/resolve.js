@@ -1,7 +1,7 @@
 const extend = require('extend');
 const path = require('path');
 
-const srcPath = path.resolve.bind(null, __dirname, '..', 'src');
+const docsPath = path.resolve.bind(null, __dirname, '..', 'docs');
 const staticPath = path.resolve.bind(null, __dirname, '..', 'static');
 const packagesPath = path.resolve.bind(null, __dirname, '..', 'packages');
 const specPath = path.resolve.bind(null, __dirname, '..', 'spec');
@@ -15,9 +15,8 @@ exports.default = {
     '.cssm'
   ],
   alias: {
-    /* Facilitate making references to files in the source root */
-    '#': srcPath('pattern-library'),
-    '#assets': staticPath('assets')
+    '#assets': staticPath('assets'),
+    __shared__: packagesPath('pattern-library', '__shared__')
   }
 };
 
@@ -26,11 +25,11 @@ exports.testAndDocs = extend(true, {
     /* Allow package references to resolve correctly */
     '@xo-union': packagesPath('pattern-library'),
     /* Facilitate making references to docs src */
-    '#docs': srcPath('pattern-library-docs', 'src'),
+    '#docs': docsPath('src'),
     /* Facilitate making references to articles and config in docs app */
-    $articles: srcPath('pattern-library-docs', 'articles-directory.config.json'),
+    $articles: docsPath('articles-directory.config.json'),
     '#spec': specPath('browser'),
-    '$site-config': srcPath('pattern-library-docs', 'site.config.json')
+    '$site-config': docsPath('site.config.json')
   }
 }, exports.default);
 

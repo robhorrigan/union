@@ -1,7 +1,7 @@
 import css from 'css';
 
-import globals from '@xo-union/typography/globals';
-import fonts from '@xo-union/typography/fonts';
+import globals from '@xo-union/typography/lib/globals';
+import fonts from '@xo-union/typography/lib/fonts';
 import modules from '@xo-union/typography';
 
 function getFontFaceRules(cssString) {

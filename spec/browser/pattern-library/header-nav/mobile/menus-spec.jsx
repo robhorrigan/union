@@ -1,5 +1,5 @@
 import React from 'react';
-import { PrimaryMenu } from '#/header-nav/components/mobile/menus';
+import { PrimaryMenu } from '@xo-union/header-nav/src/components/mobile/menus';
 import { mount } from 'enzyme';
 
 describe('<PrimaryMenu>', () => {

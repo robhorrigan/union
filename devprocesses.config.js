@@ -13,6 +13,11 @@ module.exports = {
       name: 'Packages',
       script: './node_modules/.bin/webpack',
       args: ['--watch', '--config', 'webpack.patterns.js']
+    },
+    {
+      name: 'XOJS',
+      script: './node_modules/.bin/babel',
+      args: ['packages/xojs/src', '--watch', '--out-dir', 'packages/xojs/lib']
     }
   ]
 };

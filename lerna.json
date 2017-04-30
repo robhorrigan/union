@@ -2,7 +2,8 @@
   "lerna": "2.0.0-beta.38",
   "packages": [
     "packages/tools/*",
-    "packages/pattern-library/*"
+    "packages/pattern-library/*",
+    "packages/xojs"
   ],
   "version": "independent",
   "npmClient": "yarn"

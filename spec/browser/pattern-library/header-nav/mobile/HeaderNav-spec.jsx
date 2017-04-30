@@ -1,7 +1,10 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import HeaderNav from '#/header-nav/components/mobile/HeaderNav';
-import { PrimaryMenuButton, ToolsMenuButton } from '#/header-nav/components/mobile/menuButtons';
+import HeaderNav from '@xo-union/header-nav/src/components/mobile/HeaderNav';
+import {
+  PrimaryMenuButton,
+  ToolsMenuButton
+} from '@xo-union/header-nav/src/components/mobile/menuButtons';
 
 describe('mobile/<HeaderNav>', () => {
   describe('when <PrimaryMenuButton /> is clicked', () => {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import * as MenuFactories from '#/header-nav/components/MenuFactories';
-import { SubMenuLink } from '#/header-nav/components/SubMenu';
+import * as MenuFactories from '@xo-union/header-nav/src/components/MenuFactories';
+import { SubMenuLink } from '@xo-union/header-nav/src/components/SubMenu';
 
 describe('MenuFactories', () => {
   describe('<Shop>', () => {

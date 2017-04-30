@@ -1,0 +1,4 @@
+.article {
+  composes: col from '@xo-union/bootstrap/lib/grid';
+  composes: py-4 from '@xo-union/utilities/lib/spacing';
+}

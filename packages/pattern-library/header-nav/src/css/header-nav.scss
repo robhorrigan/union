@@ -1,0 +1,49 @@
+@import 'device';
+
+@value ( safe-gray-5 ) from '@xo-union/colors';
+
+@value menu-border from './menu-border';
+
+.nav-text-color,
+.nav-text-color a,
+.nav-text-color a:hover
+{
+  color: safe-gray-5;
+}
+
+/* Nav */
+@include in-mobile() {
+  .desktop-header-nav {
+    display: none;
+  }
+}
+
+@include in-desktop() {
+  .mobile-header-nav {
+    display: none;
+  }
+}
+
+.desktop-header-nav {
+  composes: sans-serif-med font-down-2 from '@xo-union/typography';
+  composes: popup-hide from './dropdown';
+  composes: nav-text-color;
+
+  border-bottom: menu-border;
+}
+
+.desktop-nav-item-list {
+  composes: nav from '@xo-union/bootstrap/lib/nav';
+  composes: justify-content-center from '@xo-union/utilities/lib/flexbox';
+}
+
+.mobile-header-nav {
+  composes: knot-blue-bg from '@xo-union/colors/lib/utilities';
+  composes: nav-text-color;
+}
+
+.mobile-nav-item-list {
+  composes: nav from '@xo-union/bootstrap/lib/nav';
+  composes: justify-content-between from '@xo-union/utilities/lib/flexbox';
+}
+

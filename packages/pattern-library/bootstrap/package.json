@@ -1,7 +1,7 @@
 {
   "name": "@xo-union/bootstrap",
   "version": "0.2.1",
-  "main": "reboot.cssm",
+  "main": null,
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5",
     "@xo-union/typography": "^0.1.3"

@@ -1,0 +1,14 @@
+@import '~__shared__/bootstrap-sass';
+
+@mixin in-desktop() {
+  @include media-breakpoint-up(md) {
+    @content;
+  }
+}
+
+@mixin in-mobile() {
+  @include media-breakpoint-down(sm) {
+    @content;
+  }
+}
+

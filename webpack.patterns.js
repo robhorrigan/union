@@ -5,15 +5,19 @@ const { buildEntrypoints } = require('./scripts/helpers/buildEntrypoints');
 const rules = require('./webpack/patterns-rule-list');
 const resolve = require('./webpack/resolve');
 
-const patternSrcPath = path.resolve.bind(null, __dirname, 'src', 'pattern-library');
+const patternPackagesPath = path.resolve.bind(null, __dirname, 'packages', 'pattern-library');
 
 module.exports = {
   resolve: resolve.default,
   resolveLoader: resolve.loaders,
-  context: patternSrcPath(),
-  entry: buildEntrypoints({ context: patternSrcPath() }),
+  context: patternPackagesPath(),
+  entry: buildEntrypoints({
+    context: patternPackagesPath(),
+    srcDirectory: 'src',
+    distDirectory: 'lib'
+  }),
   output: {
-    path: path.join(__dirname, 'packages', 'pattern-library'),
+    path: patternPackagesPath(),
     filename: '[name]',
     libraryTarget: 'umd'
   },
@@ -25,7 +29,8 @@ module.exports = {
       'css-module-builder',
       'core-decorators',
       'matches-selector',
-      '@segment/is-meta'
+      '@segment/is-meta',
+      /^xojs/
     ])
   ],
   module: { rules },

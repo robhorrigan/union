@@ -1,0 +1,78 @@
+@value (
+  red,
+  red-lighter-90,
+  white,
+  safe-gray-7,
+  gray-6,
+  black,
+  green-lighter-80
+) from '@xo-union/colors';
+
+@value ( red-border ) from '../shared/borders';
+@value ( spacer-x ) from '../shared/spacing';
+
+@value (
+  font-up-1,
+  font-down-4,
+  font-down-2
+) from '@xo-union/typography/lib/sizes';
+
+.field {
+  composes: field-base from '../styles/field-base';
+  padding: 15px .5rem spacer-x;
+
+  &:not(:placeholder-shown) ~ .field-label,
+  &:focus ~ .field-label {
+    font-size: font-down-4;
+    margin-top: 6px;
+    color: black;
+  }
+
+  &:disabled ~ .field-label {
+    color: safe-gray-7;
+    text-decoration: line-through;
+  }
+}
+
+.invalid-field {
+  composes: field;
+
+  background-color: red-lighter-90;
+  // Annoying that !important is
+  // necessary for this to work
+  border: red-border !important;
+  transition: all 0.2s ease-out 1.5s;
+}
+
+.valid-field {
+  composes: field;
+  background-color: green-lighter-80;
+  border-color: green-lighter-80 !important;
+}
+
+.requirements {
+  background-color: red;
+  color: white;
+  font-size: font-down-2;
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 spacer-x;
+  transition: all 0.2s ease-out 1.5s;
+}
+
+/* Contextual styles */
+.invalid-field ~ .requirements {
+  max-height: 200px;
+  padding: 5px spacer-x 4px;
+}
+
+.field-label {
+  composes: label from '../styles/label';
+
+  font-size: font-up-1;
+  margin-left: .5rem;
+  margin-top: 13px;
+  color: gray-6;
+  transition: all 0.2s ease-out;
+}
+

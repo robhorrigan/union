@@ -22,5 +22,5 @@ $imports:
 
 ### Development
 
-To make changes to this pattern, go to: `<%= patternActualSrcPath %>`.
-Tests are in `<%= patternSpecPath %>`.
+To make changes to this pattern, go to: `<%= relativePatternSrcPath %>`.
+Tests are in `<%= relativePatternSpecPath %>`.

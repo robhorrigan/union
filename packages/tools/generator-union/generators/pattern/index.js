@@ -3,9 +3,7 @@ const Generator = require('yeoman-generator');
 const questions = require('./questions');
 const Answers = require('./answers');
 
-const patternLibSrcPath = path.join.bind(null, 'src', 'pattern-library');
 const patternLibDocsPath = path.join.bind(null, 'src', 'pattern-library-docs');
-const patternLibSpecPath = path.join.bind(null, 'spec', 'browser', 'pattern-library');
 
 module.exports = class Pattern extends Generator {
   _patternName() {
@@ -16,39 +14,39 @@ module.exports = class Pattern extends Generator {
     return this.prompt([
       questions.patternName
     ]).then((answers) => {
-      this.answers = answers;
+      this.answers = new Answers(answers);
     });
   }
 
   writing() {
-    const answers = new Answers(this.answers);
+    const { answers } = this;
 
     this.fs.copy(
       this.templatePath('entrypoints.json'),
-      patternLibSrcPath(this._patternName(), 'entrypoints.json')
+      answers.patternPackagePath('entrypoints.json')
     );
 
     this.fs.copyTpl(
       this.templatePath('index.jsx'),
-      patternLibSrcPath(this._patternName(), 'index.jsx'),
+      answers.patternPackagePath('src', 'index.jsx'),
       answers
     );
 
     this.fs.copyTpl(
       this.templatePath('index.css'),
-      patternLibSrcPath(this._patternName(), 'css', 'index.css'),
+      answers.patternPackagePath('src', 'css', 'index.css'),
       answers
     );
 
     this.fs.copyTpl(
       this.templatePath('spec.jsx'),
-      patternLibSpecPath(this._patternName(), 'spec.jsx'),
+      answers.patternSpecPath(),
       answers
     );
 
     this.fs.copyTpl(
       this.templatePath('package.json'),
-      path.join('packages', 'pattern-library', this._patternName(), 'package.json'),
+      answers.patternPackagePath('package.json'),
       answers
     );
 

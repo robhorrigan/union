@@ -1,0 +1,11 @@
+@value ( white, jay-lighter-90 ) from '@xo-union/colors';
+
+.demo-for-gray-theme {
+  composes: py3 from '@xo-union/utilities/lib/spacing';
+  composes: white-bg from '@xo-union/colors/lib/utilities';
+}
+
+.demo-for-white-theme {
+  composes: py3 from '@xo-union/utilities/lib/spacing';
+  composes: jay-lighter-90-bg from '@xo-union/colors/lib/utilities';
+}

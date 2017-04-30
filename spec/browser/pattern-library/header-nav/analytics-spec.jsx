@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import DesktopHeaderNav from '#/header-nav/components/desktop/HeaderNav';
-import HeaderNavAnalytics from '#/header-nav/analytics';
+import DesktopHeaderNav from '@xo-union/header-nav/src/components/desktop/HeaderNav';
+import HeaderNavAnalytics from '@xo-union/header-nav/src/analytics';
 
 const PRIMARY_MENU_ITEMS = [
   'Local Vendors',

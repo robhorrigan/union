@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import TrackableLinks from '@xo-union/analytics/trackable-links';
+import TrackableLinks from '@xo-union/analytics/src/trackable-links';
 
 describe('<TrackableLink>', () => {
   describe('onClick of an anchor', () => {

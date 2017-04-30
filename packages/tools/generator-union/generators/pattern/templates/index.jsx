@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '<%= packageCssPath %>';
 
 export default function <%= moduleName %>({ greeting = "Hello world" }) {
@@ -6,5 +7,5 @@ export default function <%= moduleName %>({ greeting = "Hello world" }) {
 }
 
 <%= moduleName %>.propTypes = {
-  greeting: PropTypes.string.isRequired
+  greeting: PropTypes.string
 };

@@ -1,0 +1,88 @@
+@value ( knot-blue-lighter-70 ) from '@xo-union/colors';
+
+@value menu-border from './menu-border';
+
+.main-menu-item {
+  composes: flex-column justify-content-center from '@xo-union/utilities/lib/flexbox';
+  composes: d-flex from '@xo-union/utilities/lib/display';
+  composes: popup-show-on-hover from './dropdown';
+}
+
+.main-menu-item-right-offset {
+  composes: main-menu-item;
+
+  margin-left: 6.25rem;
+}
+
+.main-menu-item-link {
+  composes: text-uppercase from '@xo-union/typography/lib/utilities';
+
+  padding: 1.43rem .85rem;
+  display: block;
+  transition: opacity .25s ease-in-out 0s;
+  color: inherit;
+
+  &:hover {
+    opacity: .6;
+  }
+}
+
+.sub-menu-item {
+  composes: upcase-if-primary-menu-item from './menus';
+  border-top: menu-border;
+}
+
+.sub-menu-item-spacing {
+  padding: .7rem 1rem;
+}
+
+.sub-menu-item-link {
+  composes: d-block from '@xo-union/utilities/lib/display';
+  composes: sub-menu-item-spacing;
+
+  &:hover {
+    background-color: knot-blue-lighter-70;
+  }
+
+  img {
+    max-height: 15px;
+    margin-right: 10px;
+  }
+}
+
+.sub-menu-back-button-item {
+  composes: text-center text-uppercase from '@xo-union/typography/lib/utilities';
+  composes: sub-menu-item;
+}
+
+.sub-menu-back-button-caret {
+  composes: knot-blue-fg from '@xo-union/colors/lib/utilities';
+  composes: font-up-3 from '@xo-union/typography';
+
+  position: absolute;
+  left: 0;
+  margin-left: 10px;
+}
+
+.sub-menu-copy-right-item {
+  composes: gray-6-fg from '@xo-union/colors/lib/utilities';
+  composes: sub-menu-item;
+  padding: .37rem .6rem;
+  font-size: .6rem;
+}
+
+.sub-menu-divider-item {
+  composes: background-gray-9-bg from '@xo-union/colors/lib/utilities';
+  composes: sub-menu-item;
+  height: .6em;
+}
+
+.sub-menu-account-item {
+  composes: text-center from '@xo-union/typography/lib/utilities';
+  composes: sub-menu-item;
+  composes: sub-menu-item-spacing;
+}
+
+.sub-menu-account-item-primary-button {
+  margin-bottom: .7rem;
+}

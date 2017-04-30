@@ -1,5 +1,8 @@
 import React from 'react';
-import { PrimaryMenuButton, ToolsMenuButton } from '#/header-nav/components/mobile/menuButtons';
+import {
+  PrimaryMenuButton,
+  ToolsMenuButton
+} from '@xo-union/header-nav/src/components/mobile/menuButtons';
 import { mount } from 'enzyme';
 
 describe('<MobileMenuButton>', () => {

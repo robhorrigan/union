@@ -31,7 +31,7 @@ module.exports = {
           'webpack/**',
           '**/spec/**',
           'scripts/**',
-          'src/custom-loaders/**',
+          'custom-loaders/**',
           'test-index.js'
         ]
       }

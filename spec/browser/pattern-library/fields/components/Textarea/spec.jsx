@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { Textarea } from '#/fields/components';
+import { Textarea } from '@xo-union/fields/src/components';
 
 describe('<Textarea>', () => {
   describe('input', () => {

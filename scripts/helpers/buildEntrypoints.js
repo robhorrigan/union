@@ -35,18 +35,24 @@ function normalizeFiles(files) {
   });
 }
 
-exports.getEntrypointsFiles = function getEntrypointsFiles({ where }) {
+exports.getEntrypointsFiles = function getEntrypointsFiles({
+  where,
+  entrypointsManifestName = 'entrypoints.json'
+}) {
   return glob.sync([
-    '**/entrypoints.json'
+    `**/${entrypointsManifestName}`
   ], {
     cwd: where,
-    absolute: true
+    absolute: true,
+    ignore: [
+      '**/node_modules/**'
+    ]
   });
 };
 
 exports.adaptEntrypoints = function adaptEntrypoints(
   entrypointFiles,
-  { relativeTo }
+  { relativeTo, srcDirectory = '', distDirectory = '' }
 ) {
   const allEntrypoints = {};
 
@@ -56,10 +62,10 @@ exports.adaptEntrypoints = function adaptEntrypoints(
     const relativeDir = path.dirname(relativePath);
 
     normalizeFiles(files).forEach(({ from, to }) => {
-      const dirname = path.dirname(from);
+      const perFileDirName = path.dirname(from);
 
-      const destinationPath = path.join(relativeDir, dirname, to);
-      const sourcePath = path.join(relativeDir, from);
+      const destinationPath = path.join(relativeDir, distDirectory, perFileDirName, to);
+      const sourcePath = path.join(relativeDir, srcDirectory, from);
 
       allEntrypoints[destinationPath] = `./${sourcePath}`;
     });
@@ -68,7 +74,13 @@ exports.adaptEntrypoints = function adaptEntrypoints(
   return allEntrypoints;
 };
 
-exports.buildEntrypoints = function buildEntrypoints({ context }) {
-  const entrypointFiles = exports.getEntrypointsFiles({ where: context });
-  return exports.adaptEntrypoints(entrypointFiles, { relativeTo: context });
+exports.buildEntrypoints = function buildEntrypoints({
+  context,
+  entrypointsManifestName,
+  distDirectory,
+  srcDirectory
+}) {
+  const entrypointFiles = exports.getEntrypointsFiles({ where: context, entrypointsManifestName });
+  return exports.adaptEntrypoints(entrypointFiles,
+    { relativeTo: context, distDirectory, srcDirectory });
 };

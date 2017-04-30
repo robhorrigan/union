@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import HeaderNav from '#/header-nav';
-import { Tools } from '#/header-nav/components/MenuFactories';
+import HeaderNav from '@xo-union/header-nav/src/index';
+import { Tools } from '@xo-union/header-nav/src/components/MenuFactories';
 
 describe('<HeaderNav>', () => {
   describe('props.loggedIn', () => {

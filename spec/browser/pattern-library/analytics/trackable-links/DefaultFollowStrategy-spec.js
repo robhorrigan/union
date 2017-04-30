@@ -1,4 +1,4 @@
-import { DefaultFollowStrategy } from '@xo-union/analytics/trackable-links';
+import { DefaultFollowStrategy } from '@xo-union/analytics/src/trackable-links';
 
 describe('DefaultFollowStrategy', () => {
   it('redirects to the href', (done) => {

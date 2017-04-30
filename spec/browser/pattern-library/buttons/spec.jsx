@@ -1,5 +1,5 @@
-import { processProps } from '#/buttons/utilities';
-import styles from '@xo-union/buttons/css';
+import { processProps } from '@xo-union/buttons/src/utilities';
+import styles from '@xo-union/buttons/src/css';
 
 describe('<Button>', () => {
   describe('#processProps', () => {
