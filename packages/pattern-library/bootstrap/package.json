@@ -1,9 +1,9 @@
 {
   "name": "@xo-union/bootstrap",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": null,
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5",
-    "@xo-union/typography": "^0.1.3"
+    "@xo-union/typography": "^0.1.4"
   }
 }
