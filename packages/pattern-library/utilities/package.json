@@ -5,5 +5,8 @@
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5",
     "@xo-union/colors": "^0.1.0"
-  }
+  },
+  "files": [
+    "lib/*"
+  ]
 }
