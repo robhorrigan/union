@@ -1,12 +1,12 @@
 {
   "name": "@xo-union/buttons",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": "lib/components/index.js",
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5",
     "react": "^15.4.2",
-    "@xo-union/colors": "^0.3.1",
-    "@xo-union/typography": "^0.1.4"
+    "@xo-union/colors": "^0.3.2",
+    "@xo-union/typography": "^0.1.5"
   },
   "files": [
     "lib/*"

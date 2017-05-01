@@ -1,14 +1,14 @@
 {
   "name": "@xo-union/fields",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "main": "lib/components/index.js",
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5",
     "react": "^15.4.2",
-    "@xo-union/bootstrap": "^0.2.2",
-    "@xo-union/colors": "^0.3.1",
-    "@xo-union/icons": "^0.3.3",
-    "@xo-union/utilities": "^0.1.3"
+    "@xo-union/bootstrap": "^0.2.3",
+    "@xo-union/colors": "^0.3.2",
+    "@xo-union/icons": "^0.3.4",
+    "@xo-union/utilities": "^0.1.4"
   },
   "files": [
     "lib/*"
