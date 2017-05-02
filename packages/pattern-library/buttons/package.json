@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/buttons",
-  "version": "0.1.6",
+  "version": "0.1.7",
   "main": "lib/components/index.js",
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5",
