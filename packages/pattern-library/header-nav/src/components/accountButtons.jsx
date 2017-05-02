@@ -11,8 +11,6 @@ export function SignUpButton(props) {
 
 export function LogInButton(props) {
   return (
-    <Button size="baby" color="tertiary" data-click-role="log-in" isCTA {...props}>
-      LOG IN
-    </Button>
+    <Button size="baby" color="tertiary" data-click-role="log-in" isCTA {...props} />
   );
 }

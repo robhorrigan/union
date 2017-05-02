@@ -27,4 +27,3 @@ Button.propTypes = {
    */
   isCTA: PropTypes.bool
 };
-

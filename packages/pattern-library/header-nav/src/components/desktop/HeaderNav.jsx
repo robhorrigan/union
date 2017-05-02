@@ -19,7 +19,7 @@ export default function HeaderNav({ loggedIn = false }) {
       <SignUpButton />
     </MainMenuItem>,
     <MainMenuItem>
-      <LogInButton />
+      <LogInButton>LOG IN</LogInButton>
     </MainMenuItem>
   ];
 
