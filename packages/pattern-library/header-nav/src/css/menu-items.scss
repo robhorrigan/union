@@ -26,10 +26,13 @@
     opacity: .6;
   }
 }
+.sub-menu-item-border {
+  border-top: menu-border;
+}
 
 .sub-menu-item {
   composes: upcase-if-primary-menu-item from './menus';
-  border-top: menu-border;
+  composes: sub-menu-item-border;
 }
 
 .sub-menu-item-spacing {
@@ -66,7 +69,7 @@
 
 .sub-menu-copy-right-item {
   composes: gray-6-fg from '@xo-union/colors/lib/utilities';
-  composes: sub-menu-item;
+  composes: sub-menu-item-border;
   padding: .37rem .6rem;
   font-size: .6rem;
 }
