@@ -8,7 +8,8 @@
     "@xo-union/bootstrap": "^0.2.3",
     "@xo-union/colors": "^0.3.2",
     "@xo-union/icons": "^0.3.4",
-    "@xo-union/utilities": "^0.1.4"
+    "@xo-union/utilities": "^0.1.4",
+    "@xo-union/typography": "^0.1.5"
   },
   "files": [
     "lib/*"

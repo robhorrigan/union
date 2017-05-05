@@ -9,5 +9,8 @@
   "license": "ISC",
   "files": [
     "lib/*"
-  ]
+  ],
+  "dependencies": {
+    "lodash.flatten": "^4.4.0"
+  }
 }

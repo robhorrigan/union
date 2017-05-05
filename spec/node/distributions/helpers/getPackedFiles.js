@@ -1,12 +1,12 @@
+import path from 'path';
 import { spawn } from 'child_process';
 import { createReadStream } from 'fs';
 import { createGunzip } from 'zlib';
 import tar from 'tar-stream';
-import { packagesPath } from './pathHelpers';
 
 export default function getPackedFiles(pathToPackage) {
   return new Promise((resolve, reject) => {
-    const createPack = spawn('npm', ['pack'], { cwd: packagesPath(pathToPackage) });
+    const createPack = spawn('npm', ['pack'], { cwd: pathToPackage });
     const tarExtract = tar.extract();
     const packedFiles = [];
 
@@ -15,7 +15,7 @@ export default function getPackedFiles(pathToPackage) {
     });
 
     createPack.stdout.on('data', (output) => {
-      const pathToTar = packagesPath(pathToPackage, output.toString().trim());
+      const pathToTar = path.join(pathToPackage, output.toString().trim());
 
       createReadStream(pathToTar)
         .pipe(createGunzip())
@@ -24,7 +24,7 @@ export default function getPackedFiles(pathToPackage) {
       tarExtract.on('finish', () => {
         const rm = spawn('rm', [pathToTar]);
 
-        rm.on('close', () => resolve({ packedFiles }));
+        rm.on('close', () => resolve(packedFiles));
       });
     });
 

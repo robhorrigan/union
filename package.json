@@ -8,17 +8,19 @@
     "node": ">=7.0.0 <8.0"
   },
   "scripts": {
-    "bootstrap": "lerna bootstrap",
+    "bootstrap": "lerna bootstrap && npm link ./packages/xojs",
     "bootstrap.generators": "npm link ./packages/tools/generator-union",
     "build": "npm run build.patterns && npm run build.docs && npm run build.xojs",
     "build.docs": "webpack --config webpack.docs.js",
     "build.patterns": "webpack --config webpack.patterns.js",
-    "build.xojs": "babel packages/xojs/src --out-dir packages/xojs/lib",
+    "build.xojs": "babel packages/xojs/src --out-dir packages/xojs/lib --ignore *spec.js",
     "clean": "npm run clean.dependencies && npm run clean.build",
     "clean.all": "rm -rf node_modules && npm run clean",
-    "clean.build": "git clean -df packages/",
+    "clean.build": "git clean -dfx packages/pattern-library packages/xojs",
     "clean.dependencies": "echo y | lerna clean",
-    "lint": "eslint --ext .js,.jsx,.json .",
+    "lint": "yarn run lint.code && yarn run lint.spec",
+    "lint.code": "eslint --ext .js,.jsx,.json --ignore-pattern *spec.js .",
+    "lint.spec": "eslint --ext .js,.jsx --config .eslintrc.jasmine.js ./**/*spec.js ./**/*spec.jsx",
     "login": "sh ./scripts/login.sh",
     "logs": "pm2 logs --lines=40",
     "new.pattern": "yo union:pattern",
@@ -61,7 +63,8 @@
     "react-css-modules": "^4.2.1",
     "react-dom": "^15.5.4",
     "react-router": "^3.0.5",
-    "split-array": "^1.0.1"
+    "split-array": "^1.0.1",
+    "xojs": "^0.0.4"
   },
   "devDependencies": {
     "a-css-loader": "^1.0.0-beta.11",
