@@ -4,8 +4,8 @@ $imports:
   'HeaderNav': '@xo-union/header-nav'
   packageJson: '@xo-union/header-nav/package.json'
   '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
-  HeaderNavMetadata: '!!react-docgen-loader!@xo-union/header-nav/src/index'
-  HeaderNavAnalyticsMetadata: '!!react-docgen-loader!@xo-union/header-nav/src/analytics'
+  HeaderNavMetadata: '!!react-docgen-loader!@xo-union/header-nav/src/components/HeaderNav'
+  HeaderNavAnalyticsMetadata: '!!react-docgen-loader!@xo-union/header-nav/src/components/HeaderNavAnalytics'
   '{ Snippet }': '#docs/doc-components'
 ---
 

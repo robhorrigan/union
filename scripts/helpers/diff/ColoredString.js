@@ -1,6 +1,6 @@
-const chalk = require('chalk');
+import chalk from 'chalk';
 
-module.exports = class ColoredString {
+export default class ColoredString {
   constructor(string, color) {
     this.string = string;
     this.color = color;
@@ -9,5 +9,5 @@ module.exports = class ColoredString {
   toString() {
     return chalk[this.color](this.string);
   }
-};
+}
 

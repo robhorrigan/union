@@ -1,6 +1,6 @@
-const spawn = require('../spawn');
+import spawn from '../spawn';
 
-module.exports = function forcePublicAccess({ scope }) {
+export default function forcePublicAccess({ scope }) {
   return spawn('lerna', [
     'exec',
     '--scope',
@@ -10,4 +10,4 @@ module.exports = function forcePublicAccess({ scope }) {
     'access',
     'public'
   ]);
-};
+}

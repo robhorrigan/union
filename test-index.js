@@ -4,8 +4,6 @@
 import 'prismjs';
 import 'babel-polyfill';
 
-const testsContext = require.context('./spec/browser', true, /spec.jsx?$/);
-const xojsContext = require.context('./packages/xojs/src', true, /spec.jsx?$/);
+const browserContext = require.context('./', true, /browser-spec.jsx?$/);
 
-testsContext.keys().forEach(testsContext);
-xojsContext.keys().forEach(xojsContext);
+browserContext.keys().forEach(browserContext);

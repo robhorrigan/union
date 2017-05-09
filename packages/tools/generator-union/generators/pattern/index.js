@@ -3,7 +3,7 @@ const Generator = require('yeoman-generator');
 const questions = require('./questions');
 const Answers = require('./answers');
 
-const patternLibDocsPath = path.join.bind(null, 'src', 'pattern-library-docs');
+const patternLibDocsPath = path.join.bind(null, 'docs');
 
 module.exports = class Pattern extends Generator {
   _patternName() {
@@ -40,7 +40,7 @@ module.exports = class Pattern extends Generator {
 
     this.fs.copyTpl(
       this.templatePath('spec.jsx'),
-      answers.patternSpecPath(),
+      answers.patternPackagePath('src', 'browser-spec.jsx'),
       answers
     );
 

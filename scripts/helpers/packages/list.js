@@ -1,7 +1,7 @@
-const { EOL } = require('os');
-const spawn = require('../spawn');
+import { EOL } from 'os';
+import spawn from '../spawn';
 
-module.exports = async function packageList() {
+export default async function packageList() {
   const output = await spawn('lerna', ['ls']);
   return output
     .split(EOL)

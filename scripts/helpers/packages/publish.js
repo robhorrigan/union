@@ -1,6 +1,6 @@
-const spawn = require('../spawn');
+import spawn from '../spawn';
 
-module.exports = function publish(packages) {
+export default function publish(packages) {
   const commaSeparatedPackages = packages.join(',');
 
   return spawn('lerna', [
@@ -10,4 +10,4 @@ module.exports = function publish(packages) {
     '--force-publish',
     commaSeparatedPackages
   ], { stdio: 'inherit' });
-};
+}

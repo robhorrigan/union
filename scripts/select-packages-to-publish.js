@@ -1,10 +1,9 @@
 /* eslint-disable no-console */
-
-const logDiffTree = require('./helpers/diff/logDiffTree');
-const packageList = require('./helpers/packages/list');
-const askToChoosePackages = require('./helpers/askToChoosePackages');
-const publish = require('./helpers/packages/publish');
-const forcePublicAccess = require('./helpers/packages/forcePublicAccess');
+import logDiffTree from './helpers/diff/logDiffTree';
+import packageList from './helpers/packages/list';
+import askToChoosePackages from './helpers/askToChoosePackages';
+import publish from './helpers/packages/publish';
+import forcePublicAccess from './helpers/packages/forcePublicAccess';
 
 async function main() {
   const allPackages = packageList();

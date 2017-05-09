@@ -1,5 +1,6 @@
 module.exports = {
   extends: [
+    './.eslintrc.js',
     'plugin:jasmine/recommended'
   ],
   env: {
@@ -17,6 +18,12 @@ module.exports = {
      **/
     'func-names': 'off',
     'jasmine/no-spec-dupes': [1, 'branch'],
-    'jasmine/no-suite-dupes': [1, 'branch']
+    'jasmine/no-suite-dupes': [1, 'branch'],
+    /*
+     * This rule is not yet compatible with monorepos
+     * See: https://github.com/benmosher/eslint-plugin-import/pull/685
+     * See: https://github.com/benmosher/eslint-plugin-import/issues/458
+     */
+    'import/no-extraneous-dependencies': 'off'
   }
 };

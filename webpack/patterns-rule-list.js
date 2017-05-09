@@ -1,13 +1,10 @@
-const cssRules = require('./css-rules').default;
-const fontRules = require('./typography-rules').typographyFontsRules;
+import cssRules from './css-rules';
+import { typographyFontsRules } from './typography-rules';
+import queryParamPattern from './helpers/queryParamPattern';
 
-function queryParamPattern(text) {
-  return new RegExp(`[?&]${text}(?:&|$)`);
-}
-
-module.exports = [
+export default [
   cssRules,
-  fontRules,
+  typographyFontsRules,
   {
     test: /\.jsx?$/,
     use: 'babel-loader',

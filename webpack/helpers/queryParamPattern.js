@@ -1,4 +1,4 @@
-module.exports = function queryParamPattern(text) {
+export default function queryParamPattern(text) {
   return new RegExp(`[?&]${text}(?:&|$)`);
-};
+}
 

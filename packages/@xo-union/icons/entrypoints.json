@@ -1,0 +1,10 @@
+[
+  {
+    "from": "legacy.js",
+    "to": "legacy.cssm"
+  },
+  "components/index.jsx",
+  "css/index.css",
+  "data/index.js",
+  "setup/index.js"
+]

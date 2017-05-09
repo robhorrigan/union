@@ -1,6 +1,6 @@
-const { spawn } = require('child_process');
+import { spawn } from 'child_process';
 
-module.exports = function spawnProc(...args) {
+export default function spawnProc(...args) {
   const proc = spawn(...args);
 
   return new Promise((resolve, reject) => {
@@ -27,4 +27,4 @@ module.exports = function spawnProc(...args) {
       }
     });
   });
-};
+}

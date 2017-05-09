@@ -14,4 +14,4 @@ yarn install \
 && yarn run bootstrap \
 && yarn run clean.build \
 && yarn run build.patterns \
-&& node ./scripts/select-packages-to-publish.js
+&& yarn run node -- ./scripts/select-packages-to-publish.js

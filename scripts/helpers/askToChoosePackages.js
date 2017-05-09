@@ -1,6 +1,6 @@
-const inquirer = require('inquirer');
+import inquirer from 'inquirer';
 
-module.exports = async function askToChoosePackages(packages) {
+export default async function askToChoosePackages(packages) {
   const { packagesToPublish } = await inquirer.prompt([
     {
       name: 'packagesToPublish',

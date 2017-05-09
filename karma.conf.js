@@ -1,6 +1,6 @@
-const webpackConfig = require('./webpack.test');
+import webpackConfig from './webpack.test.babel';
 
-module.exports = function karmaConfig(config) {
+export default function karmaConfig(config) {
   config.set({
     webpack: webpackConfig,
     browserNoActivityTimeout: 100000000,
@@ -12,7 +12,7 @@ module.exports = function karmaConfig(config) {
     },
 
     // base path that will be used to resolve all patterns (eg. files, exclude)
-    basePath: '',
+    basePath: '.',
 
 
     // frameworks to use
@@ -76,4 +76,4 @@ module.exports = function karmaConfig(config) {
     // how many browser should be started simultaneous
     concurrency: Infinity
   });
-};
+}

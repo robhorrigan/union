@@ -1,12 +1,10 @@
-const path = require('path');
-const cssByebye = require('css-byebye');
+import path from 'path';
+import cssByebye from 'css-byebye';
 
 const typographyPath = path.resolve.bind(
-  null, __dirname, '..', 'packages', 'pattern-library', 'typography', 'src');
+  null, __dirname, '..', 'packages', '@xo-union', 'typography', 'src');
 
 const pureModulePath = typographyPath('modules.scss');
-const globalsPath = typographyPath('globals.scss');
-const fontsPath = typographyPath('fonts.scss');
 
 function useRuleRemover(rulesToRemove) {
   return {
@@ -39,11 +37,12 @@ const UseEntries = {
   }
 };
 
-exports.typographyFontsPath = fontsPath;
-exports.typographyGlobalsPath = globalsPath;
-exports.typographyCssRules = [
+export const typographyGlobalsPath = typographyPath('globals.scss');
+export const typographyFontsPath = typographyPath('fonts.scss');
+
+export const typographyCssRules = [
   {
-    include: [fontsPath],
+    include: [typographyFontsPath],
     use: UseEntries.keepFontFaces
   },
   {
@@ -51,12 +50,12 @@ exports.typographyCssRules = [
     use: UseEntries.removeGlobals
   },
   {
-    include: globalsPath,
+    include: typographyGlobalsPath,
     use: UseEntries.removeClasses
   }
 ];
 
-exports.typographyFontsRules = {
+export const typographyFontsRules = {
   test: /\.woff2?$/,
   rules: [
     {

@@ -1,10 +1,10 @@
-const { EOL } = require('os');
-const chalk = require('chalk');
-const treeify = require('treeify');
-const path = require('path');
+import { EOL } from 'os';
+import chalk from 'chalk';
+import treeify from 'treeify';
+import path from 'path';
 
-const spawn = require('../spawn');
-const parseDiff = require('./parseDiff');
+import spawn from '../spawn';
+import { withColors as parseDiffWithColors } from './parseDiff';
 
 const PROJECT_ROOT = path.resolve(__dirname, '..', '..', '..');
 
@@ -47,11 +47,11 @@ function lastTag() {
   return spawn('git', ['describe', '--abbrev=0', '--tags']);
 }
 
-module.exports = async function logDiffTree() {
+export default async function logDiffTree() {
   const tag = await lastTag();
 
   return diffSince(tag, { where: PROJECT_ROOT })
-  .then(parseDiff.withColors)
+  .then(parseDiffWithColors)
   .then(createDiffTreeObject)
   .then(renderTree)
   .then((changedPackages) => {

@@ -46,15 +46,17 @@ class Package {
   }
 
   async getRequiredPackages() {
-    return (await this.readExpectedFiles()).map(fileContent =>
+    const result = (await this.readExpectedFiles()).map(fileContent =>
       getRequiredPackages(fileContent.toString())
     )::flatten();
+
+    return result;
   }
 }
 
 class PatternLibraryPackage extends Package {
   constructor(patternName) {
-    super(`pattern-library/${patternName}`);
+    super(`@xo-union/${patternName}`);
   }
 
   getExpectedFiles() {
@@ -77,7 +79,7 @@ class BabelDirectoryPackage extends Package {
     return new Promise((resolve, reject) => {
       glob([
         packagesPath(this.path, 'src', '**', '*.js'),
-        `!${packagesPath(this.path, 'src', '**', 'spec.js')}`
+        `!${packagesPath(this.path, 'src', '**', '*spec.js')}`
       ], (err, srcJsFiles) => {
         if (err) {
           reject(err);
@@ -97,7 +99,7 @@ class BabelDirectoryPackage extends Package {
 function allPatternLibraryObjects() {
   return new Promise((resolve, reject) => {
     glob([
-      packagesPath('pattern-library', '*', 'package.json')
+      packagesPath('@xo-union', '*', 'package.json')
     ], (err, packageJsonPaths) => {
       if (err) {
         reject(err);

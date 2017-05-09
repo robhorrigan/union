@@ -1,9 +1,9 @@
-const queryParamPattern = require('./helpers/queryParamPattern');
+import queryParamPattern from './helpers/queryParamPattern';
 
 const DIRECTORY_LOADER = require.resolve('../packages/tools/directory-loader');
 const MDJSX_LOADER = require.resolve('../packages/tools/mdjsx-loader');
 
-module.exports = [
+export default [
   {
     resourceQuery: {
       test: queryParamPattern('readDirectory')

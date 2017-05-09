@@ -1,11 +1,12 @@
-const rebootCSSPath = require.resolve('../packages/pattern-library/bootstrap/src/reboot.scss');
-const {
+import {
   typographyCssRules,
   typographyGlobalsPath,
   typographyFontsPath
-} = require('./typography-rules');
+} from './typography-rules';
 
-exports.default = {
+const rebootCSSPath = require.resolve('../packages/@xo-union/bootstrap/src/reboot.scss');
+
+export default {
   test: /\.s?css$/,
   rules: [
     {
@@ -38,7 +39,7 @@ const prismTheme = require.resolve('prism-themes/themes/prism-ghcolors.css');
 * Apply a-css-loader only to .css files.
 * Use 'local' (not pure) mode for prism theme.
 */
-exports.docs = {
+export const docs = {
   test: /\.css$/,
   rules: [
     {
