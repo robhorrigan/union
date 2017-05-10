@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/footer-nav",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "main": "lib/index.js",
   "dependencies": {
     "@xo-union/bootstrap": "^0.2.4",
