@@ -1,23 +1,35 @@
 @value ( safe-gray-5 ) from '@xo-union/colors';
 @value non-standard-footer-gray from './colors';
 
-.business-footer {
+.footer {
   composes: font-down-1 from '@xo-union/typography';
-  composes: align-bottom from '@xo-union/utilities/lib/vertical-align';
   composes: safe-gray-5-fg from '@xo-union/colors/lib/utilities';
-
-  background-color: non-standard-footer-gray;
-  padding: 20px 0 10px 0;
 
   a {
     color: inherit;
   }
 }
 
+.section {
+  padding: .6rem .6rem;
+}
+
+.business-section {
+  composes: section;
+  composes: align-bottom from '@xo-union/utilities/lib/vertical-align';
+
+  background-color: non-standard-footer-gray;
+}
+
+.application-section {
+  composes: section;
+  composes: background-gray-8-bg from '@xo-union/colors/lib/utilities';
+  composes: flex-wrap from '@xo-union/utilities/lib/flexbox';
+}
+
 .nav-link-list {
   composes: nav from '@xo-union/bootstrap/lib/nav';
   composes: justify-content-center from '@xo-union/utilities/lib/flexbox';
-  height: 32px;
 }
 
 .link-url {

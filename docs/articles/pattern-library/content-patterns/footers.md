@@ -18,11 +18,6 @@ $imports:
 import FooterNav from '@xo-union/footer-nav';
 </Snippet>
 
-
-### States
-
 <Demo>
   <FooterNav />
 </Demo>
-
-### Properties

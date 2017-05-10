@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@xo-union/footer-nav/lib/css';
 
-export default function NavItemList({ children }) {
+export default function NavItemList({ children, className = '' }) {
   return (
-    <ul className={styles['nav-link-list']}>
+    <ul className={`${className} ${styles['nav-link-list']}`}>
       {children}
     </ul>
   );
 }
 
 NavItemList.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
+  className: PropTypes.string
 };

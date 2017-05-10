@@ -16,7 +16,7 @@ const XOGROUP_INC_QUERY = {
 
 export default function BusinessSection() {
   return (
-    <div className={styles['business-footer']}>
+    <div className={styles['business-section']}>
       <NavItemList>
         <LogoLinkItem
           name="xo-logo"
