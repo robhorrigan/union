@@ -1,0 +1,76 @@
+@value ( safe-gray-5 ) from '@xo-union/colors';
+@value non-standard-footer-gray from './colors';
+
+.business-footer {
+  composes: font-down-1 from '@xo-union/typography';
+  composes: align-bottom from '@xo-union/utilities/lib/vertical-align';
+  composes: safe-gray-5-fg from '@xo-union/colors/lib/utilities';
+
+  background-color: non-standard-footer-gray;
+  padding: 20px 0 10px 0;
+
+  a {
+    color: inherit;
+  }
+}
+
+.nav-link-list {
+  composes: nav from '@xo-union/bootstrap/lib/nav';
+  composes: justify-content-center from '@xo-union/utilities/lib/flexbox';
+  height: 32px;
+}
+
+.link-url {
+  &:hover, &:focus {
+    color: safe-gray-5;
+    opacity: .6;
+    outline: none;
+  }
+}
+
+.nav-item-text {
+  composes: sans-serif font-down-1 from '@xo-union/typography';
+  composes: d-inline-block from '@xo-union/utilities/lib/display';
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.nav-item {
+  padding: 0 .75rem;
+}
+
+.xo-logo, .tb-logo {
+  composes: font-up-4 from '@xo-union/typography';
+}
+
+.footer-nav {
+  font-size: 14px;
+}
+
+.divider {
+  composes: nav-item;
+  font-size: 1.3rem;
+}
+
+.heart-icon {
+  composes: coral-fg from '@xo-union/colors/lib/utilities';
+  composes: font-down-2 from '@xo-union/typography';
+
+  margin-left: 10px;
+}
+
+.nav-sentence-container {
+  composes: nav-item-text;
+  line-height: 1.9em;
+  margin-top: 0px;
+
+  & > :not(.keep-vertical-position) {
+    vertical-align: top;
+    margin-top: 3px;
+    display: inline-block;
+  }
+
+  & > :not(:first-child) {
+    margin-left: 6px;
+  }
+}

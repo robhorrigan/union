@@ -5,3 +5,7 @@ export function classString() {
   return this.getDOMNode().classList::join(' ');
 }
 
+export function getNodeAt(index) {
+  return this.at(index).getDOMNode();
+}
+

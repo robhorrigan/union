@@ -1,7 +1,7 @@
-export default function withParams(paramsObject) {
-  const serializedParams = Object.keys(paramsObject).map(key =>
-    `${key}=${paramsObject[key]}`
-  );
+/* eslint-disable import/no-extraneous-dependencies */
 
-  return `${this}?${serializedParams.join('&')}`;
+import toQueryString from 'xojs/lib/object/toQueryString';
+
+export default function withParams(paramsObject) {
+  return `${this}?${paramsObject::toQueryString()}`;
 }
