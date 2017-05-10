@@ -6,19 +6,18 @@ module.exports = {
   apps: [
     {
       name: 'Documentation',
-      script: './node_modules/.bin/webpack-dev-server',
-      args: ['--inline', '--hot', '--config', 'webpack.docs.babel.js', '--compress']
+      script: 'npm',
+      args: ['run', 'start.docserver']
     },
     {
       name: 'Packages',
-      script: './node_modules/.bin/webpack',
-      args: ['--watch', '--config', 'webpack.patterns.babel.js']
+      script: 'npm',
+      args: ['run', 'build.patterns', '--', '--watch']
     },
     {
       name: 'XOJS',
-      script: './node_modules/.bin/babel',
-      args: [
-        'packages/xojs/src', '--watch', '--out-dir', 'packages/xojs/lib', '--ignore', '*spec.js']
+      script: 'npm',
+      args: ['run', 'build.xojs', '--', '--watch']
     }
   ]
 };

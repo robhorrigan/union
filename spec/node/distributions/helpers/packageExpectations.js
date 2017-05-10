@@ -1,5 +1,7 @@
 import glob from 'glob-all';
 import flatten from 'xojs/lib/array/flatten';
+import exclude from 'xojs/lib/array/exclude';
+import contains from 'xojs/lib/string/callbacks/contains';
 import { readFile } from 'fs';
 import { packagesPath } from './path';
 import getAssumedDistFiles from './getAssumedDistFiles';
@@ -78,17 +80,16 @@ class BabelDirectoryPackage extends Package {
   getExpectedFiles() {
     return new Promise((resolve, reject) => {
       glob([
-        packagesPath(this.path, 'src', '**', '*.js'),
-        `!${packagesPath(this.path, 'src', '**', '*spec.js')}`
+        packagesPath(this.path, 'src', '**', '*.js')
       ], (err, srcJsFiles) => {
         if (err) {
           reject(err);
           return;
         }
 
-        const assumedDistFiles = srcJsFiles.map(srcFile =>
-          srcFile.replace(this.thisPackagePath('src'), 'lib')
-        );
+        const assumedDistFiles = srcJsFiles
+          ::exclude(contains('spec.js', 'benchmark.js'))
+          .map(srcFile => srcFile.replace(this.thisPackagePath('src'), 'lib'));
 
         resolve(assumedDistFiles);
       });

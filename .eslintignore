@@ -3,5 +3,3 @@ packages/tools/generator-union/generators/**/templates/**/*
 node_modules
 packages/**/lib/
 /public/
-
-docs/gulpfile.js

@@ -1,3 +1,4 @@
+// eslint-disable-next-line import/prefer-default-export
 export function parseType({ name, raw, value } = {}) {
   if (name === 'shape') {
     const nestedProps = Object.keys(value).map(prop =>

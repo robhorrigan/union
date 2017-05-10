@@ -12,5 +12,8 @@
   ],
   "dependencies": {
     "lodash.flatten": "^4.4.0"
+  },
+  "devDependencies": {
+    "flatten": "^1.0.2"
   }
 }

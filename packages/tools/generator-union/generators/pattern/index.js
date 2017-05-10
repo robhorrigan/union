@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 const path = require('path');
 const Generator = require('yeoman-generator');
 const questions = require('./questions');

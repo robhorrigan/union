@@ -51,7 +51,8 @@ module.exports = {
           'spec/**',
           'scripts/**',
           'custom-loaders/**',
-          'test-index.js'
+          'test-index.js',
+          '**/benchmark.js'
         ]
       }
     ]
