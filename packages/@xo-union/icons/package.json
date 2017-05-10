@@ -1,11 +1,11 @@
 {
   "name": "@xo-union/icons",
-  "version": "0.3.5",
+  "version": "0.3.6",
   "main": "lib/components/index.js",
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.5",
     "react": "^15.5.4",
-    "xojs": "^0.1.0"
+    "xojs": "^0.2.0"
   },
   "files": [
     "lib/*"
