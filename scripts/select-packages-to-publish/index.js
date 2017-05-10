@@ -1,9 +1,9 @@
 /* eslint-disable no-console */
-import logDiffTree from './helpers/diff/logDiffTree';
-import packageList from './helpers/packages/list';
-import askToChoosePackages from './helpers/askToChoosePackages';
-import publish from './helpers/packages/publish';
-import forcePublicAccess from './helpers/packages/forcePublicAccess';
+import logDiffTree from './diff/logDiffTree';
+import packageList from './packages/list';
+import askToChoosePackages from './askToChoosePackages';
+import publish from './packages/publish';
+import forcePublicAccess from './packages/forcePublicAccess';
 
 async function main() {
   const allPackages = packageList();
