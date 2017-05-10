@@ -7,6 +7,10 @@
 // eslint-disable-next-line max-len, import/no-webpack-loader-syntax
 import rawSvg from '#assets/icons/union-icons.svg?raw&dev';
 import { url, hash } from '@xo-union/icons/lib/data';
+import StubStorage from 'xojs/lib/storage/StubStorage';
+import isBrowserContext from 'xojs/lib/executionContext/isBrowser';
+
+const DEFAULT_STORAGE = isBrowserContext() ? localStorage : new StubStorage();
 
 const CACHE_KEY = '@xo-union/icons/svg-caches';
 
@@ -16,7 +20,7 @@ const { forEach } = Array.prototype;
 
 export class Installer {
   constructor({
-    storage = localStorage,
+    storage = DEFAULT_STORAGE,
     cacheKey = CACHE_KEY,
     versionHash = hash,
     iconsUrl = url,
@@ -119,7 +123,7 @@ export class Installer {
   }
 
   install() {
-    if (this.isSetup()) {
+    if (!isBrowserContext() || this.isSetup()) {
       return;
     }
 
