@@ -1,7 +1,7 @@
 ---
 $imports:
-  spacing: '@xo-union/utilities/lib/spacing'
-  type: '@xo-union/typography'
+  spacing: '@xo-union/tk-css-utilities/lib/spacing'
+  type: '@xo-union/tk-css-typography'
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
 ---
 

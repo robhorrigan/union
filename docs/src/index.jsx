@@ -1,6 +1,6 @@
 import '#docs/_debug-utilities';
 /* Global union styles */
-import '@xo-union/essentials';
+import '@xo-union/tk-css-essentials';
 import 'babel-polyfill';
 /* Load prism css for syntax highlighting */
 import 'prism-themes/themes/prism-ghcolors';
@@ -8,7 +8,7 @@ import 'prism-themes/themes/prism-ghcolors';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import { init as initializeIcons } from '@xo-union/icons/lib/setup';
+import { init as initializeIcons } from '@xo-union/tk-component-icons/lib/setup';
 
 import Routes from '#docs/components/Routes';
 

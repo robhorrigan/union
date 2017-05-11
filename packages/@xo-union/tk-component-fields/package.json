@@ -1,0 +1,17 @@
+{
+  "name": "@xo-union/tk-component-fields",
+  "version": "0.1.12",
+  "main": "lib/index.js",
+  "dependencies": {
+    "css-module-builder": "^1.0.0-beta.5",
+    "react": "^15.4.2",
+    "@xo-union/tk-css-bootstrap": "^0.2.4",
+    "@xo-union/tk-css-colors": "^0.3.3",
+    "@xo-union/tk-component-icons": "^0.3.6",
+    "@xo-union/tk-css-utilities": "^0.1.5",
+    "@xo-union/tk-css-typography": "^0.1.6"
+  },
+  "files": [
+    "lib/*"
+  ]
+}

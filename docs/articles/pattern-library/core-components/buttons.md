@@ -1,10 +1,10 @@
 ---
 $imports:
-  '{ Button, Link }': '@xo-union/buttons'
-  packageJson: '@xo-union/buttons/package.json'
+  '{ Button, Link }': '@xo-union/tk-component-buttons'
+  packageJson: '@xo-union/tk-component-buttons/package.json'
   'ButtonDemo': '#docs/demos/Button'
   '{ Snippet, InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
-  ButtonMetadata: '!!react-docgen-loader!@xo-union/buttons/src/components/Button'
+  ButtonMetadata: '!!react-docgen-loader!@xo-union/tk-component-buttons/src/components/Button'
 ---
 
 <h1>{$props.title}</h1>
@@ -16,7 +16,7 @@ $imports:
 ### Import
 
 <Snippet lang="javascript">
-import { Link, Button } from '@xo-union/buttons';
+import { Link, Button } from '@xo-union/tk-component-buttons';
 </Snippet>
 
 ### Properties

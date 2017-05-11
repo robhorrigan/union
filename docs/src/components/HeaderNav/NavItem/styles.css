@@ -4,7 +4,7 @@
   knot-blue-darker-30,
   knot-blue-darker-60,
   safe-gray-5
-) from '@xo-union/colors';
+) from '@xo-union/tk-css-colors';
 
 @value item-hover-color: knot-blue-darker-30;
 @value item-active-color: knot-blue-darker-60;

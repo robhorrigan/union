@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import bsTables from '@xo-union/bootstrap/lib/tables';
+import bsTables from '@xo-union/tk-css-bootstrap/lib/tables';
 import { TableBody, TableRow, MetadataShape } from './utils';
 
 /**

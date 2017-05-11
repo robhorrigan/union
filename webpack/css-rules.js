@@ -4,7 +4,7 @@ import {
   typographyFontsPath
 } from './typography-rules';
 
-const rebootCSSPath = require.resolve('../packages/@xo-union/bootstrap/src/reboot.scss');
+const rebootCSSPath = require.resolve('../packages/@xo-union/tk-css-bootstrap/src/reboot.scss');
 
 export default {
   test: /\.s?css$/,

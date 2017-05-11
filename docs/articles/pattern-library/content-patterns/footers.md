@@ -1,7 +1,7 @@
 ---
 $imports:
-  'FooterNav': '@xo-union/footer-nav'
-  packageJson: '@xo-union/footer-nav/package.json'
+  'FooterNav': '@xo-union/tk-component-footer-nav'
+  packageJson: '@xo-union/tk-component-footer-nav/package.json'
   '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
   '{ Snippet }': '#docs/doc-components'
 ---
@@ -15,7 +15,7 @@ $imports:
 ### Import
 
 <Snippet lang="javascript">
-import FooterNav from '@xo-union/footer-nav';
+import FooterNav from '@xo-union/tk-component-footer-nav';
 </Snippet>
 
 <Demo>

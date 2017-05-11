@@ -1,11 +1,11 @@
 ---
 $imports:
-  'HeaderNavAnalytics': '@xo-union/header-nav/lib/analytics'
-  'HeaderNav': '@xo-union/header-nav'
-  packageJson: '@xo-union/header-nav/package.json'
+  'HeaderNavAnalytics': '@xo-union/tk-component-header-nav/lib/analytics'
+  'HeaderNav': '@xo-union/tk-component-header-nav'
+  packageJson: '@xo-union/tk-component-header-nav/package.json'
   '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
-  HeaderNavMetadata: '!!react-docgen-loader!@xo-union/header-nav/src/components/HeaderNav'
-  HeaderNavAnalyticsMetadata: '!!react-docgen-loader!@xo-union/header-nav/src/components/HeaderNavAnalytics'
+  HeaderNavMetadata: '!!react-docgen-loader!@xo-union/tk-component-header-nav/src/components/HeaderNav'
+  HeaderNavAnalyticsMetadata: '!!react-docgen-loader!@xo-union/tk-component-header-nav/src/components/HeaderNavAnalytics'
   '{ Snippet }': '#docs/doc-components'
 ---
 
@@ -18,8 +18,8 @@ $imports:
 ### Import
 
 <Snippet lang="javascript">
-import HeaderNav from '@xo-union/header-nav';
-import HeaderNavAnalytics from '@xo-union/header-nav/analytics';
+import HeaderNav from '@xo-union/tk-component-header-nav';
+import HeaderNavAnalytics from '@xo-union/tk-component-header-nav/analytics';
 </Snippet>
 
 

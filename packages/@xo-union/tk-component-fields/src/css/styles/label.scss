@@ -1,0 +1,13 @@
+@value black from '@xo-union/tk-css-colors';
+
+.label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: text;
+}
+
+.small-label {
+  composes: label;
+  composes: fontDown4 from '@xo-union/tk-css-typography';
+}

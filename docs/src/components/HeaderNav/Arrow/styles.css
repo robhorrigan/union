@@ -1,8 +1,8 @@
-@value ( knot-blue-darker-60 ) from '@xo-union/colors';
+@value ( knot-blue-darker-60 ) from '@xo-union/tk-css-colors';
 
 .arrow-right {
-  composes: align-middle from '@xo-union/utilities/lib/vertical-align';
-  composes: mr-3 from '@xo-union/utilities/lib/spacing';
+  composes: align-middle from '@xo-union/tk-css-utilities/lib/vertical-align';
+  composes: mr-3 from '@xo-union/tk-css-utilities/lib/spacing';
 
   display: inline-block;
   width: 0;

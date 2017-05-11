@@ -1,19 +1,19 @@
 ---
 $imports:
-  '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/fields'
-  bsGrid: '@xo-union/bootstrap/lib/grid'
-  spacing: '@xo-union/utilities/lib/spacing'
+  '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
+  bsGrid: '@xo-union/tk-css-bootstrap/lib/grid'
+  spacing: '@xo-union/tk-css-utilities/lib/spacing'
 
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
-  packageJson: '@xo-union/fields/package.json'
+  packageJson: '@xo-union/tk-component-fields/package.json'
 
-  FieldMeta:                '!!react-docgen-loader!@xo-union/fields/src/components/Field'
-  DropdownMeta:             '!!react-docgen-loader!@xo-union/fields/src/components/Dropdown'
-  DropdownItemMeta:         '!!react-docgen-loader!@xo-union/fields/src/components/DropdownItem'
-  FieldGroupMeta:           '!!react-docgen-loader!@xo-union/fields/src/components/FieldGroup'
-  FormThemeMeta:            '!!react-docgen-loader!@xo-union/fields/src/components/FormTheme'
-  TextareaMeta:             '!!react-docgen-loader!@xo-union/fields/src/components/Textarea'
-  TextareaWithoutLabelMeta: '!!react-docgen-loader!@xo-union/fields/src/components/TextareaWithoutLabel'
+  FieldMeta:                '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/Field'
+  DropdownMeta:             '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/Dropdown'
+  DropdownItemMeta:         '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/DropdownItem'
+  FieldGroupMeta:           '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/FieldGroup'
+  FormThemeMeta:            '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/FormTheme'
+  TextareaMeta:             '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/Textarea'
+  TextareaWithoutLabelMeta: '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/TextareaWithoutLabel'
 
   FormDemo: '#docs/demos/Form'
 ---
@@ -33,7 +33,7 @@ $imports:
 #### Import
 
 <Snippet lang="javascript">
-import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/fields';
+import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk-component-fields';
 </Snippet>
 
 <div className={spacing.mt5}></div>

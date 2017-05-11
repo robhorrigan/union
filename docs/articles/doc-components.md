@@ -1,7 +1,7 @@
 ---
 $imports:
   '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
-  spacing: '@xo-union/utilities/lib/spacing'
+  spacing: '@xo-union/tk-css-utilities/lib/spacing'
   PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'
   SnippetsMetadata:       '!!react-docgen-loader!#docs/doc-components/Snippet'
   DemoMetadata:           '!!react-docgen-loader!#docs/doc-components/Demo'

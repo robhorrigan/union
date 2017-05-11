@@ -2,7 +2,7 @@ import path from 'path';
 import cssByebye from 'css-byebye';
 
 const typographyPath = path.resolve.bind(
-  null, __dirname, '..', 'packages', '@xo-union', 'typography', 'src');
+  null, __dirname, '..', 'packages', '@xo-union', 'tk-css-typography', 'src');
 
 const pureModulePath = typographyPath('modules.scss');
 

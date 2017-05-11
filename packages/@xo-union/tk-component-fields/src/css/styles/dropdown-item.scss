@@ -1,0 +1,36 @@
+@value ( gray-4, background-gray-8, black ) from '@xo-union/tk-css-colors';
+@value ( font-up-1 ) from '@xo-union/tk-css-typography/lib/sizes';
+
+.dropdown-item {
+  font-size: font-up-1;
+  padding: 10px;
+  cursor: pointer;
+  position: relative;
+  color: gray-4;
+
+  &:hover {
+    color: black;
+  }
+}
+
+.dropdown-item-is-selected {
+  composes: dropdown-item;
+
+  background-color: background-gray-8;
+  color: black;
+
+  .dropdown-item-check {
+    display: inline-block;
+  }
+}
+
+.dropdown-item-check {
+  composes: icon-checkmark-selected-state from '@xo-union/tk-component-icons/lib/legacy';
+
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin: 15px;
+  font-size: 10px;
+}

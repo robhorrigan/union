@@ -1,8 +1,8 @@
 .list {
-  composes: nav from '@xo-union/bootstrap/lib/nav';
+  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
 }
 
 .vertical-list {
-  composes: nav from '@xo-union/bootstrap/lib/nav';
-  composes: flex-column from '@xo-union/utilities/lib/flexbox';
+  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
+  composes: flex-column from '@xo-union/tk-css-utilities/lib/flexbox';
 }

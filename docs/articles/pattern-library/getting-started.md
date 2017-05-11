@@ -86,12 +86,12 @@ module.exports = {
 
 ### Essentials
 
-To establish the base union styles in your page, you must import the `@xo-union/essentials` package.
+To establish the base union styles in your page, you must import the `@xo-union/tk-css-essentials` package.
 
 #### Installation
 
 <Snippet lang="bash">
-npm install --save @xo-union/essentials
+npm install --save @xo-union/tk-css-essentials
 </Snippet>
 
 #### Import
@@ -99,5 +99,5 @@ npm install --save @xo-union/essentials
 The essentials package does not export any object. It simply loads the global css modules.
 
 <Snippet lang="javascript">
-import '@xo-union/essentials';
+import '@xo-union/tk-css-essentials';
 </Snippet>

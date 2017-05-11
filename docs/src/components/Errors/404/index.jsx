@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react';
 import { normalizePath } from '#docs/utils/paths';
 import { eachRoute } from '#docs/utils/router';
-import type from '@xo-union/typography';
+import type from '@xo-union/tk-css-typography';
 
 export default function Error404(_, { router }) {
   const routes = [];

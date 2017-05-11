@@ -1,0 +1,16 @@
+{
+  "name": "@xo-union/tk-css-essentials",
+  "version": "0.1.6",
+  "description": "",
+  "main": "lib/index.js",
+  "dependencies": {
+    "@xo-union/tk-css-bootstrap": "^0.2.4",
+    "@xo-union/tk-css-typography": "^0.1.6"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "files": [
+    "lib/*"
+  ]
+}

@@ -7,9 +7,9 @@ import {
   DropdownItem,
   Textarea,
   TextareaWithoutLabel
-} from '@xo-union/fields';
+} from '@xo-union/tk-component-fields';
 
-import bsGrid from '@xo-union/bootstrap/lib/grid';
+import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
 import styles from './styles.css';
 
 const themeClassMap = {

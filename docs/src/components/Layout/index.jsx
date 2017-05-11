@@ -1,5 +1,5 @@
 import React, { PropTypes } from 'react';
-import bsGrid from '@xo-union/bootstrap/lib/grid';
+import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
 import HeaderNav from '#docs/components/HeaderNav';
 
 import styles from './styles.css';

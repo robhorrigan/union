@@ -1,7 +1,7 @@
 ---
 $imports:
   'IconsDemo': '#docs/demos/Icons'
-  'packageJson': '@xo-union/icons/package.json'
+  'packageJson': '@xo-union/tk-component-icons/package.json'
   '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
   PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'
   SnippetsMetadata:       '!!react-docgen-loader!#docs/doc-components/Snippet'
@@ -21,7 +21,7 @@ of the icons assets and installs it in the browser. It uses `localStorage` to st
 version is cached for 30 days.
 
 <Snippet lang="javascript">
-import { init } from '@xo-union/icons/setup';
+import { init } from '@xo-union/tk-component-icons/setup';
 
 init();
 </Snippet>
@@ -29,7 +29,7 @@ init();
 ## Import
 
 <Snippet lang="javascript">
-import Icon from '@xo-union/icons';
+import Icon from '@xo-union/tk-component-icons';
 </Snippet>
 
 ## Demos
