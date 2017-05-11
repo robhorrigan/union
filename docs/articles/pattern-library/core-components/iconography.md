@@ -21,7 +21,7 @@ of the icons assets and installs it in the browser. It uses `localStorage` to st
 version is cached for 30 days.
 
 <Snippet lang="javascript">
-import { init } from '@xo-union/tk-component-icons/setup';
+import { init } from '@xo-union/tk-component-icons/lib/setup';
 
 init();
 </Snippet>
