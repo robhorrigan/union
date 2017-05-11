@@ -20,17 +20,17 @@ Call init some where early in the process of your front end application. Init fe
 of the icons assets and installs it in the browser. It uses `localStorage` to store the assets. Each asset
 version is cached for 30 days.
 
-<Snippet lang="javascript">
+```javascript
 import { init } from '@xo-union/tk-component-icons/lib/setup';
 
 init();
-</Snippet>
+```
 
 ## Import
 
-<Snippet lang="javascript">
+```javascript
 import Icon from '@xo-union/tk-component-icons';
-</Snippet>
+```
 
 ## Demos
 
@@ -45,7 +45,7 @@ In production, you want to take advantage of the union CDN to download and cache
 To enable the production build, add the following to your webpack build.
 
 
-<Snippet lang="javascript">
+```javascript
 const { DefinePlugin } = require('webpack');
 module.exports = {
   /* ... ommitted */
@@ -57,5 +57,5 @@ module.exports = {
     })
   ]
 }
-</Snippet>
+```
 

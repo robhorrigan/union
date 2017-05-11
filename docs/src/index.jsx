@@ -1,4 +1,4 @@
-import '#docs/_debug-utilities';
+import '#docs/__debug_utilities__';
 /* Global union styles */
 import '@xo-union/tk-css-essentials';
 import 'babel-polyfill';

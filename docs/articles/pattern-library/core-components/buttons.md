@@ -15,9 +15,9 @@ $imports:
 
 ### Import
 
-<Snippet lang="javascript">
+```javascript
 import { Link, Button } from '@xo-union/tk-component-buttons';
-</Snippet>
+```
 
 ### Properties
 

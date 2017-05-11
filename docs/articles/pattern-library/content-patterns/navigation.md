@@ -17,10 +17,10 @@ $imports:
 
 ### Import
 
-<Snippet lang="javascript">
+```javascript
 import HeaderNav from '@xo-union/tk-component-header-nav';
 import HeaderNavAnalytics from '@xo-union/tk-component-header-nav/analytics';
-</Snippet>
+```
 
 
 ### States

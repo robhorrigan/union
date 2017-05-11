@@ -1,9 +1,7 @@
-const except = require('except');
-const frontMatter = require('front-matter');
-
-const OPENED_OR_SELF_CLOSED_COMPONENT = /^\s*<.+(:?\/)?>\s*$/;
-const SINGLE_LINE_COMPONENT = /^\s*<[^>]+>[^<]*<\/[^>]+>\s*$/;
-const CLOSED_COMPONENT = /^\s*<\/[^>]+>\s*$/;
+import loaderUtils from 'loader-utils';
+import frontMatter from 'front-matter';
+import createTokens from './src/createTokens';
+import parseTokens from './src/parseTokens';
 
 function importsToJs(imports = {}) {
   return Object.keys(imports).reduce((code, importExpression) => {
@@ -15,41 +13,28 @@ function importsToJs(imports = {}) {
 
 module.exports = function mdjsx(source) {
   this.cacheable();
-  const reactRemarkablePath = require.resolve('react-remarkable');
+  const marksyCompilerPath = (loaderUtils.getOptions(this) || {}).compilerPath;
   const { attributes, body } = frontMatter(source);
   const lines = body.split('\n');
 
-  const { $imports } = attributes;
-  const restOfFrontMatter = except(attributes, '$imports');
+  const { $imports, ...restOfFrontMatter } = attributes;
 
-  const normalizedLines = lines.map((line) => {
-    const jsxPatterns = [
-      SINGLE_LINE_COMPONENT,
-      OPENED_OR_SELF_CLOSED_COMPONENT,
-      CLOSED_COMPONENT
-    ];
-
-    if (jsxPatterns.some(pattern => pattern.test(line))) {
-      return line;
-    }
-
-    const normalizedStringLine = JSON.stringify(`${line}\n`);
-
-    return `{${normalizedStringLine}}`;
-  });
+  const tokenizedLines = createTokens(lines);
+  const normalizedLines = parseTokens(tokenizedLines);
 
   const code = `
 import React from 'react';
-import Markdown from ${JSON.stringify(reactRemarkablePath)};
+import compile from ${JSON.stringify(marksyCompilerPath)};
 ${importsToJs($imports)}
 
 const $attributes = ${JSON.stringify(restOfFrontMatter)};
 
 exports.attributes = $attributes;
-exports.default = ($props) =>
-<Markdown>
+exports.default = ($props) => (
+<div>
 ${normalizedLines.join('\n')}
-</Markdown>
+</div>
+)
 `;
 
   return code;

@@ -11,17 +11,17 @@ Union is an ecosystem of packages that define [The Knot](http://www.theknot.com)
 
 ### Dependencies
 
-<Snippet lang="bash">
+```bash
 npm install --save-dev webpack                     # required
 npm install --save-dev extract-text-webpack-plugin # required
 npm install --save-dev a-css-loader                # optional|recommended
-</Snippet>
+```
 
 ### Setup
 
 An example `webpack.config.js`
 
-<Snippet lang="javascript">
+```javascript
 /* webpack.config.js */
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
@@ -81,7 +81,7 @@ module.exports = {
     }
   ]
 };
-</Snippet>
+```
 
 
 ### Essentials
@@ -90,14 +90,16 @@ To establish the base union styles in your page, you must import the `@xo-union/
 
 #### Installation
 
-<Snippet lang="bash">
+```bash
 npm install --save @xo-union/tk-css-essentials
-</Snippet>
+```
 
 #### Import
 
 The essentials package does not export any object. It simply loads the global css modules.
 
-<Snippet lang="javascript">
+```javascript
 import '@xo-union/tk-css-essentials';
-</Snippet>
+```
+
+

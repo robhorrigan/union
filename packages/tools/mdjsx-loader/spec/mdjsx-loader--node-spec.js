@@ -1,19 +1,19 @@
-const mdjsx = require('../');
+import mdjsx from '../';
 
 describe('mdjsx-loader', () => {
   const loaderMock = {
-    cacheable() {}
+    cacheable() {},
+    query: '?compilerPath=test'
   };
 
   it('creates import expressions for react and react-remarkable', () => {
     const source = '';
 
     const result = mdjsx.call(loaderMock, source);
-    const remarkablePath = JSON.stringify(require.resolve('react-remarkable'));
 
     expect(result).toContain("import React from 'react';");
     expect(result)
-      .toContain(`import Markdown from ${remarkablePath};`);
+      .toContain('import compile from "test";');
   });
 
   it('creates import expressions from the front matter', () => {
@@ -69,20 +69,16 @@ Hello world
 
     const result = mdjsx.call(loaderMock, source);
     expect(result).toContain(`
-<Markdown>
-{"\\n"}
-{"# Test\\n"}
-{"Hello world\\n"}
-{"\\n"}
+<div>
+{compile("\\n# Test\\nHello world\\n\\n").tree}
   <Component1 prop="a/b">
-{"    Hello world\\n"}
+{compile("    Hello world\\n").tree}
   </Component1>
-{"\\n"}
+{compile("\\n").tree}
 <Component1>Hello world</Component1>
-{"\\n"}
-{"#### Test\\n"}
+{compile("\\n#### Test\\n").tree}
 <Component1/>
-{"\\n"}
-</Markdown>`);
+{compile("\\n").tree}
+</div>`);
   });
 });

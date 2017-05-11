@@ -32,9 +32,9 @@ $imports:
 
 #### Import
 
-<Snippet lang="javascript">
+```javascript
 import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk-component-fields';
-</Snippet>
+```
 
 <div className={spacing.mt5}></div>
 

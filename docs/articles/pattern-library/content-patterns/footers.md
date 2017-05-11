@@ -14,9 +14,9 @@ $imports:
 
 ### Import
 
-<Snippet lang="javascript">
+```javascript
 import FooterNav from '@xo-union/tk-component-footer-nav';
-</Snippet>
+```
 
 <Demo>
   <FooterNav />

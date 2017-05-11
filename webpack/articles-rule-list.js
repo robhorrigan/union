@@ -12,6 +12,14 @@ export default [
   },
   {
     test: /\.md$/,
-    use: ['babel-loader', MDJSX_LOADER]
+    use: [
+      'babel-loader',
+      {
+        loader: MDJSX_LOADER,
+        options: {
+          compilerPath: require.resolve('../docs/src/__compiler__.jsx')
+        }
+      }
+    ]
   }
 ];
