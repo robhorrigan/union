@@ -1,6 +1,6 @@
 import path from 'path';
 import webpack from 'webpack';
-import externalizeRequires from './webpack/helpers/externalizeRequires';
+import externalizeAllPackages from './webpack/helpers/externalizeAllPackages';
 import { buildEntrypoints } from './webpack/helpers/buildEntrypoints';
 import rules from './webpack/patterns-rule-list';
 import { resolveDefaults, resolveLoaders } from './webpack/resolve';
@@ -22,16 +22,7 @@ export default {
     libraryTarget: 'umd'
   },
   externals: [
-    externalizeRequires([
-      /^@xo-union/,
-      'react',
-      'prop-types',
-      'css-module-builder',
-      'core-decorators',
-      'matches-selector',
-      '@segment/is-meta',
-      /^xojs/
-    ])
+    externalizeAllPackages()
   ],
   module: { rules },
   plugins: [
