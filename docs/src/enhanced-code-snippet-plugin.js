@@ -1,6 +1,6 @@
 const linkMd = /\[([^\]]+)]\(([^)]+)\)/;
 
-Prism.languages.insertBefore('javascript', 'comment', {
+Prism.languages.insertBefore('javascript', 'string', {
   'md-link': linkMd
 });
 

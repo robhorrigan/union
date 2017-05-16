@@ -9,6 +9,8 @@ export default function handleBookmark() {
         bookmark.scrollIntoView();
       }
     }, 0);
+  } else {
+    window.scrollTo(0, 0);
   }
 }
 
