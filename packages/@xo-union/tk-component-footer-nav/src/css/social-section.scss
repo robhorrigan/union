@@ -1,0 +1,47 @@
+@value ( white, knot-blue, safe-gray-7 ) from '@xo-union/tk-css-colors';
+
+.round-icon-container {
+  composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
+  border-radius: 50%;
+  height: 2em;
+  width: 2em;
+}
+
+.social-icon-container {
+  composes: round-icon-container;
+  composes: white-bg knot-blue-fg from '@xo-union/tk-css-colors/lib/utilities';
+
+  transition: color,background-color .2s ease-in-out 0s;
+
+  &:hover, &:focus {
+    outline: none;
+    background-color: knot-blue;
+    color: white;
+  }
+}
+
+.centered-icon {
+  composes: m-auto from '@xo-union/tk-css-utilities/lib/spacing';
+}
+
+.social-nav-item {
+  padding: 0 .3rem;
+}
+
+.follow-us-nav-item {
+  padding-top: 1.3rem;
+  padding-right: 1.3rem;
+}
+
+.follow-us {
+  composes: font-up-7 sans-serif from '@xo-union/tk-css-typography';
+  line-height: 1em;
+}
+
+.social-section {
+  composes: section from './section';
+  composes: background-gray-8-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: font-up-7 from '@xo-union/tk-css-typography';
+  border-bottom: 1px solid safe-gray-7;
+}
+

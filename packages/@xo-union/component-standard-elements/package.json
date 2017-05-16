@@ -1,0 +1,20 @@
+{
+  "name": "@xo-union/component-standard-elements",
+  "version": "0.0.1",
+  "description": "",
+  "main": null,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "prop-types": "^15.5.10",
+    "react": "^15.5.4"
+  },
+  "files": [
+    "lib/*"
+  ]
+}

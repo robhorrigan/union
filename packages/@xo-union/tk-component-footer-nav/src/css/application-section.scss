@@ -1,0 +1,6 @@
+.application-section {
+  composes: section section-links from './section';
+  composes: background-gray-8-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: flex-wrap from '@xo-union/tk-css-utilities/lib/flexbox';
+}
+

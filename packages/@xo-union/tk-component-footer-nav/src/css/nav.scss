@@ -1,0 +1,34 @@
+@value ( safe-gray-5 ) from '@xo-union/tk-css-colors';
+
+.nav-item-text {
+  composes: sans-serif font-down-1 from '@xo-union/tk-css-typography';
+  composes: d-inline-block from '@xo-union/tk-css-utilities/lib/display';
+}
+
+.nav-item-horizontal-spacing {
+  padding-left: .75em;
+  padding-right: .75em;
+}
+
+.nav-item-vertical-spacing {
+  padding-top: .5em;
+}
+
+.nav-item {
+  composes: nav-item-horizontal-spacing;
+  composes: nav-item-vertical-spacing;
+}
+
+.nav-item-list {
+  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
+  composes: justify-content-center from '@xo-union/tk-css-utilities/lib/flexbox';
+}
+
+.nav-link {
+  &:hover, &:focus {
+    color: safe-gray-5;
+    opacity: .6;
+    outline: none;
+  }
+}
+

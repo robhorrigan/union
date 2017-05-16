@@ -1,10 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Icon from '@xo-union/tk-component-icons';
 import styles from '@xo-union/tk-component-footer-nav/lib/css';
+import {
+  NewWindowAnchor,
+  AssumedTargetAnchor
+} from '@xo-union/component-standard-elements/lib/anchor';
+import BrandLogoLink from './BrandLogoLink';
+import {
+  XOGROUP_INC_HOST,
+  XOGROUP_INC_QUERY
+} from './constants';
 
-export const NavItem = ({ children, className = '' }) => (
-  <li className={`${className} ${styles['nav-item']}`}>
+
+export const NavItem = ({ children }) => (
+  <li className={styles['nav-item']}>
     <h3 className={styles['nav-item-text']}>
       {children}
     </h3>
@@ -12,51 +21,42 @@ export const NavItem = ({ children, className = '' }) => (
 );
 
 NavItem.propTypes = {
-  children: PropTypes.node.isRequired,
-  className: PropTypes.string
+  children: PropTypes.node.isRequired
 };
 
-export const LogoLinkItem = ({ className = '', name, href }) => (
-  <li className={`${className} ${styles['nav-item']}`}>
-    <a href={href} className={styles['link-url']}>
-      <Icon name={name} className={styles[name]} />
-    </a>
-  </li>
-);
-
-LogoLinkItem.propTypes = {
-  name: PropTypes.string.isRequired,
-  href: PropTypes.string.isRequired,
-  className: PropTypes.string
-};
-
-export const NavLinkItem = ({ href, className, children }) => (
-  <NavItem className={className}>
-    <a href={href} className={styles['link-url']} target="_blank" rel="noopener noreferrer">
+export const NavLinkItem = ({ href, children }) => (
+  <NavItem>
+    <AssumedTargetAnchor href={href} className={styles['nav-link']}>
       {children}
-    </a>
+    </AssumedTargetAnchor>
   </NavItem>
 );
 
 NavLinkItem.propTypes = {
   children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired,
-  className: PropTypes.string
+  href: PropTypes.string.isRequired
 };
 
 export const SisterSitesNavItem = () => (
-  <li className={styles['nav-item']}>
-    <h3 className={styles['nav-sentence-container']}>
+  <li className={styles['sister-sites-nav-item']}>
+    <h3 className={styles['nav-item-text']}>
       <span>
         Check out our sister sites
       </span>
-      <a href="//www.thebump.com" className={styles['keep-vertical-position']} >
-        <Icon name="tb-logo" className={styles['tb-logo']} />
-      </a>
-      <span>
-        and
-      </span>
-      <a href="//www.gigmasters.com" className={styles['link-url']}>GigMasters</a>
+      <BrandLogoLink name="tb-logo" href="//www.thebump.com" />
+      and <NewWindowAnchor href="//www.gigmasters.com" className={styles['nav-link']}>
+        GigMasters
+      </NewWindowAnchor>
     </h3>
+  </li>
+);
+
+
+export const XOGroupLinkNavItem = () => (
+  <li className={styles['nav-item']}>
+    <BrandLogoLink
+      name="xo-logo"
+      href={`${XOGROUP_INC_HOST}/xo-group-company.aspx?${XOGROUP_INC_QUERY}`}
+    />
   </li>
 );

@@ -25,7 +25,7 @@
 }
 
 .desktop-header-nav {
-  composes: sans-serif-med font-down-2 from '@xo-union/tk-css-typography';
+  composes: sans-serif font-down-2 from '@xo-union/tk-css-typography';
   composes: popup-hide from './dropdown';
   composes: nav-text-color;
 

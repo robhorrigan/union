@@ -1,27 +1,20 @@
 import React from 'react';
-import toQueryString from 'xojs/lib/object/toQueryString';
 import Icon from '@xo-union/tk-component-icons';
 import styles from '@xo-union/tk-component-footer-nav/lib/css';
 
 import NavItemList from '../NavItemList';
-import { SisterSitesNavItem, NavItem, LogoLinkItem, NavLinkItem } from '../NavItems';
-
-const XOGROUP_INC_HOST = '//www.xogroupinc.com';
-const XOGROUP_INC_INVESTORS_HOST = '//ir.xogroupinc.com';
-const XOGROUP_INC_QUERY = {
-  __hstc: '131446032.cf51d70e35247434d01673c8dab3aa11.1472494787190.1493912032584.1493924757678.74',
-  __hssc: '131446032.1.1493924757678',
-  __hsfp: '711516163'
-}::toQueryString();
+import { XOGroupLinkNavItem, SisterSitesNavItem, NavItem, NavLinkItem } from '../NavItems';
+import {
+  XOGROUP_INC_INVESTORS_HOST,
+  XOGROUP_INC_HOST,
+  XOGROUP_INC_QUERY
+} from '../constants';
 
 export default function BusinessSection() {
   return (
     <div className={styles['business-section']}>
       <NavItemList>
-        <LogoLinkItem
-          name="xo-logo"
-          href={`${XOGROUP_INC_HOST}/xo-group-company.aspx?${XOGROUP_INC_QUERY}`}
-        />
+        <XOGroupLinkNavItem />
         <NavLinkItem href="/more/about-us">About Us</NavLinkItem>
         <NavLinkItem href={`${XOGROUP_INC_HOST}/xo-group-careers.aspx?${XOGROUP_INC_QUERY}`}>
           Careers
@@ -50,7 +43,7 @@ export default function BusinessSection() {
          </NavLinkItem>
         <NavItem>
           made with
-          <Icon name="heart" className={styles['heart-icon']} />
+          <Icon name="heart-filled" className={styles['heart-icon']} />
         </NavItem>
       </NavItemList>
     </div>

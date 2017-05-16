@@ -3,11 +3,12 @@
   "version": "0.1.4",
   "main": null,
   "dependencies": {
-    "react": "^15.4.2",
-    "core-decorators": "^0.17.0",
     "@segment/is-meta": "^1.0.0",
+    "babel-runtime": "^6.23.0",
+    "core-decorators": "^0.17.0",
     "matches-selector": "^1.0.0",
-    "prop-types": "^15.5.8"
+    "prop-types": "^15.5.8",
+    "react": "^15.4.2"
   },
   "files": [
     "lib/*"

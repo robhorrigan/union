@@ -1,0 +1,34 @@
+@value non-standard-footer-gray from './colors';
+
+.business-section {
+  composes: section section-links from './section';
+  composes: align-bottom from '@xo-union/tk-css-utilities/lib/vertical-align';
+
+  background-color: non-standard-footer-gray;
+}
+
+.xo-logo, .tb-logo {
+  composes: font-up-4 from '@xo-union/tk-css-typography';
+}
+
+.tb-logo {
+  composes: d-inline-block from '@xo-union/tk-css-utilities/lib/display';
+  composes: align-bottom from '@xo-union/tk-css-utilities/lib/vertical-align';
+
+  margin: 0 .25em;
+}
+
+.heart-icon {
+  composes: coral-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: font-down-2 from '@xo-union/tk-css-typography';
+
+  margin-left: 10px;
+}
+
+.divider {
+  font-size: 1.3em;
+}
+
+.sister-sites-nav-item {
+  composes: nav-item-horizontal-spacing from './nav';
+}
