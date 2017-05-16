@@ -19,7 +19,7 @@ $imports:
 
 ```javascript
 import HeaderNav from '@xo-union/tk-component-header-nav';
-import HeaderNavAnalytics from '@xo-union/tk-component-header-nav/analytics';
+import HeaderNavAnalytics from '@xo-union/tk-component-header-nav/lib/analytics';
 ```
 
 

@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import glob from 'glob-all';
 import stylishFormatter from 'eslint/lib/formatters/stylish';
 import promisify from 'node-promisify';

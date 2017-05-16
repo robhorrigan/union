@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import glob from 'glob-all';
 import Jasmine from 'jasmine';
 import { SpecReporter } from 'jasmine-spec-reporter';
