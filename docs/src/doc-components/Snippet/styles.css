@@ -6,3 +6,7 @@
 pre[class*="language-"].snippet {
   background-color: purpulish-gray;
 }
+
+.snippet a {
+  border-bottom: 1px dotted blue;
+}

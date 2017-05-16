@@ -28,10 +28,6 @@ export default class Snippet extends Component {
     PrismJs.highlightElement(this.codeTag);
   }
 
-  componentDidUpdate() {
-    PrismJs.highlightElement(this.codeTag);
-  }
-
   renderCode() {
     const {
       lang,

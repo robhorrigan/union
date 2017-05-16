@@ -1,3 +1,6 @@
+import '#docs/prism-patches';
+import 'prismjs';
+import '#docs/enhanced-code-snippet-plugin';
 import '#docs/__debug_utilities__';
 /* Global union styles */
 import '@xo-union/tk-css-essentials';
@@ -18,4 +21,3 @@ ReactDOM.render(
   <Routes />,
   document.getElementById('root')
 );
-

@@ -33,7 +33,7 @@ module.exports = {
     **/
     new ExtractTextPlugin('my-stylesheet.css')
   ],
-  resolve: {
+  [resolve](/pattern-library/core-components/colors): {
     extensions: [
       '', /* This is necessary in webpack v1 */
       '.js',
@@ -101,5 +101,3 @@ The essentials package does not export any object. It simply loads the global cs
 ```javascript
 import '@xo-union/tk-css-essentials';
 ```
-
-

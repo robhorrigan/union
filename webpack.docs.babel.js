@@ -14,7 +14,7 @@ const extract = new ExtractTextPlugin({
 
 export default {
   context: patternDocsPath(),
-  entry: ['prismjs', './src/index.jsx'],
+  entry: ['./src/index.jsx'],
   output: {
     filename: './index-[hash:6].js',
     path: resolve(__dirname, 'public', 'docs'),
