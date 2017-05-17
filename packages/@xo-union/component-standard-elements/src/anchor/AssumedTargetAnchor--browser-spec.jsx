@@ -4,9 +4,29 @@ import { AssumedTargetAnchor } from './';
 
 describe('<AssumedTargetAnchor>', () => {
   describe('when relative path is given', () => {
+    let subject;
+    let domNode;
+
+    beforeEach(() => {
+      subject = mount(<AssumedTargetAnchor href="/a" />);
+      domNode = subject.getDOMNode();
+    });
+
     it('assumes nothing', () => {
-      const subject = mount(<AssumedTargetAnchor href="/a" />);
-      expect(subject.getDOMNode().target).toBe('');
+      expect(domNode.target).toBe('');
+    });
+
+    it('renders an anchor tag by default', () => {
+      expect(domNode.tagName).toBe('A');
+    });
+
+    describe('when FallbackComponent is provided', () => {
+      it('renders the FallbackComponent', () => {
+        const FallbackComponent = () => <div />;
+        subject = mount(<AssumedTargetAnchor href="/a" FallbackComponent={FallbackComponent} />);
+
+        expect(subject.find(FallbackComponent).length).toBe(1);
+      });
     });
   });
 
