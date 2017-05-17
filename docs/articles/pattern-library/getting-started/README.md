@@ -1,4 +1,5 @@
 ---
+permalink: pattern-library/getting-started
 $imports:
   '{ Snippet }': '#docs/doc-components'
 ---
@@ -7,9 +8,13 @@ $imports:
 
 Union is an ecosystem of packages that define [The Knot](http://www.theknot.com)'s pattern library. Each package consists of either [React]() components, [CSS Modules]() or both.
 
-## Build
+## Configuring build
+
+> To see how to set up your **runtime dependencies**, click [here](/pattern-library/getting-started/runtime-dependencies).
 
 ### Dependencies
+
+First you will need to install the following dependencies.
 
 ```bash
 npm install --save-dev webpack                     # required
@@ -82,24 +87,3 @@ module.exports = {
   ]
 };
 ```
-
-
-### Essentials
-
-To establish the base union styles in your page, you must import the `@xo-union/tk-css-essentials` package.
-
-#### Installation
-
-```bash
-npm install --save @xo-union/tk-css-essentials
-```
-
-#### Import
-
-The essentials package does not export any object. It simply loads the global css modules.
-
-```javascript
-import '@xo-union/tk-css-essentials';
-```
-
-
