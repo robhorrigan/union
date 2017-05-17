@@ -51,7 +51,6 @@ export const SisterSitesNavItem = () => (
   </li>
 );
 
-
 export const XOGroupLinkNavItem = () => (
   <li className={styles['nav-item']}>
     <BrandLogoLink

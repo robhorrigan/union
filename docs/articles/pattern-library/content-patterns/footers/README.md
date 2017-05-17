@@ -1,9 +1,10 @@
 ---
+permalink: 'pattern-library/content-patterns/footers'
+title: Footers
 $imports:
-  'FooterNav': '@xo-union/tk-component-footer-nav'
+  'FooterNavDemo': './footerDemo'
   packageJson: '@xo-union/tk-component-footer-nav/package.json'
-  '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
-  '{ Snippet }': '#docs/doc-components'
+  '{ InstallSnippet }': '#docs/doc-components'
 ---
 
 <h1>{$props.title}</h1>
@@ -18,6 +19,4 @@ $imports:
 import FooterNav from '@xo-union/tk-component-footer-nav';
 ```
 
-<Demo>
-  <FooterNav />
-</Demo>
+<FooterNavDemo />

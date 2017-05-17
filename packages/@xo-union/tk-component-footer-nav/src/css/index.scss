@@ -19,5 +19,12 @@
   keep-vertical-position
 ) from './business-section';
 
+@value (
+  seo-row,
+  seo-col,
+  seo-section,
+  seo-section-container
+) from './seo-section';
+
 @value ( nav-item-list, nav-item, nav-item-text, nav-link ) from './nav';
 @value ( footer ) from './footer';
