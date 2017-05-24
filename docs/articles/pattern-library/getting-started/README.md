@@ -45,45 +45,46 @@ module.exports = {
       '.cssm'
     ]
   },
-  rules: [
-    /**
-     * @required
-     **/
-    {
-      /* @property issuer Must be specified when using the ExtractTextPlugin  */
-      issuer: /\.jsx?$/,
-      test: /\.cssm?$/,
+  module: {
+    rules: [
       /**
-       * Tell ExtractTextPlugin to extract css contents from Union css modules
-       */
-      use: ExtractTextPlugin.extract({
-        /* ExtractTextPlugin always needs a `use` option :/ */
-        use: []
-      })
-    },
-    /**
-     * @optional
-     *
-     * Configure this if you prefer to write JSX when using React.
-     */
-    {
-      test: /\.jsx?$/,
-      /* Configure babel in .babelrc file  */
-      use: 'babel-loader'
-    },
-    /**
-     * @optional
-     *
-     * Use this rule if you want to create css-modules.
-     */
-    {
-      test: /\.css$/,
-      use: 'a-css-loader'
-      options: {
-        /* This defines camelized identifiers when css modules are imported */
-        camelize: true
+      * @required
+      **/
+      {
+        /* @property issuer Must be specified when using the ExtractTextPlugin  */
+        issuer: /\.jsx?$/,
+        test: /\.cssm?$/,
+        /**
+        * Tell ExtractTextPlugin to extract css contents from Union css modules
+        */
+        use: ExtractTextPlugin.extract({
+          /* ExtractTextPlugin always needs a `use` option :/ */
+          use: []
+        })
+      },
+      /**
+      * @optional
+      *
+      * Configure this if you prefer to write JSX when using React.
+      */
+      {
+        test: /\.jsx?$/,
+        /* Configure babel in .babelrc file  */
+        use: 'babel-loader'
+      },
+      /**
+      * @optional
+      *
+      * Use this rule if you want to create css-modules.
+      */
+      {
+        test: /\.css$/,
+        use: {
+          loader: 'a-css-loader',
+          options: { camelize: true }
+        }
       }
-    }
-  ]
+    ]
+  }
 };
 ```
