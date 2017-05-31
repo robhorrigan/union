@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import TrackableLinks from '@xo-union/component-analytics/lib/trackable-links';
 
 function selectionValue() {
-  const selection = this.textContent.trim();
+  const selection = this.dataset.selectionLabel || this.textContent.trim();
   const namespace = this.dataset.selectionGroupLabel;
 
   if (namespace) {
@@ -16,7 +16,7 @@ function selectionValue() {
 export default function HeaderNavAnalytics({ product, ...props }) {
   return (
     <TrackableLinks
-      linkSelector='[data-click-role="navigate"]'
+      linkSelector='[data-click-role="navigate"],[data-click-role="toggle-sub-menu"]'
       eventName="Menu Interaction"
       eventData={element => ({
         product,

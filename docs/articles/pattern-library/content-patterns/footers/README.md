@@ -1,5 +1,4 @@
 ---
-permalink: 'pattern-library/content-patterns/footers'
 title: Footers
 $imports:
   'FooterNavDemo': './footerDemo'

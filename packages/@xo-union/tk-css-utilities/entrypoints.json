@@ -3,5 +3,6 @@
   "display.scss",
   "flexbox.scss",
   "spacing.scss",
-  "vertical-align.scss"
+  "vertical-align.scss",
+  "hotspot.scss"
 ]

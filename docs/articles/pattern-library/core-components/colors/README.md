@@ -1,5 +1,4 @@
 ---
-permalink: /pattern-library/core-components/colors
 title: Colors
 $imports:
   uniqueColorNames: './helpers/uniqueColors'

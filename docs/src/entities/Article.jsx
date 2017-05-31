@@ -47,7 +47,8 @@ export default class Article {
   }
 
   permalink() {
-    const path = this.attributes.permalink || this.pathInfo.relativeName;
+    const relativeName = this.pathInfo.relativeName.replace(/\/README$/, '');
+    const path = this.attributes.permalink || relativeName;
     return normalizePath(__webpack_public_path__, path);
   }
 

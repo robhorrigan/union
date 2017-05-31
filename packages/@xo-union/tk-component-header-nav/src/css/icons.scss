@@ -30,6 +30,7 @@
 
 .icon-button {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
+  composes: hotspot from '@xo-union/tk-css-utilities/lib/hotspot';
   composes: button-reset from './resets';
 }
 

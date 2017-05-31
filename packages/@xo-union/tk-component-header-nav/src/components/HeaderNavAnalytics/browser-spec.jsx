@@ -1,6 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import DesktopHeaderNav from '../desktop/HeaderNav';
+import MobileHeaderNav from '../mobile/HeaderNav';
 import HeaderNavAnalytics from './';
 
 const PRIMARY_MENU_ITEMS = [
@@ -150,6 +151,40 @@ describe('<HeaderNavAnalytics>', () => {
             product: 'fashion',
             platform: 'web'
           });
+        });
+      });
+    });
+
+    describe('buttons that toggle sub-menu', () => {
+      let subject;
+      let buttons;
+
+      beforeEach(() => {
+        subject = mount(
+          <HeaderNavAnalytics product="fashion" analytics={analyticsMock} followStrategy={false}>
+            <MobileHeaderNav />
+          </HeaderNavAnalytics>
+        );
+        buttons = subject.find('[data-click-role="toggle-sub-menu"]');
+      });
+
+      it('triggers the correct analytics call', () => {
+        buttons.at(0).simulate('click');
+
+        expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
+          selection: 'Open Tools Menu',
+          product: 'fashion',
+          platform: 'web'
+        });
+
+        analyticsMock.track.calls.reset();
+
+        buttons.at(0).simulate('click');
+
+        expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
+          selection: 'Closed Tools Menu',
+          product: 'fashion',
+          platform: 'web'
         });
       });
     });
