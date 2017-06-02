@@ -35,37 +35,37 @@ import { Link, Button } from '@xo-union/tk-component-buttons';
 ###### Primary Buttons
 
 
-<ButtonDemo size="papa" color="primary">Primary Papa</ButtonDemo>
+<ButtonsDemo size="papa" color="primary">Primary Papa</ButtonsDemo>
 
-<ButtonDemo size="mama" color="primary">Primary Mama</ButtonDemo>
+<ButtonsDemo size="mama" color="primary">Primary Mama</ButtonsDemo>
 
-<ButtonDemo size="baby" color="primary">Primary Baby</ButtonDemo>
+<ButtonsDemo size="baby" color="primary">Primary Baby</ButtonsDemo>
 
 ###### Secondary Buttons
 
-<ButtonDemo size="papa" color="secondary">Secondary Papa</ButtonDemo>
+<ButtonsDemo size="papa" color="secondary">Secondary Papa</ButtonsDemo>
 
-<ButtonDemo size="mama" color="secondary">Secondary Mama</ButtonDemo>
+<ButtonsDemo size="mama" color="secondary">Secondary Mama</ButtonsDemo>
 
-<ButtonDemo size="baby" color="secondary">Secondary Baby</ButtonDemo>
+<ButtonsDemo size="baby" color="secondary">Secondary Baby</ButtonsDemo>
 
 ###### Tertiary Buttons
 
-<ButtonDemo size="papa" color="tertiary">Tertiary Papa</ButtonDemo>
+<ButtonsDemo size="papa" color="tertiary">Tertiary Papa</ButtonsDemo>
 
-<ButtonDemo size="mama" color="tertiary">Tertiary Mama</ButtonDemo>
+<ButtonsDemo size="mama" color="tertiary">Tertiary Mama</ButtonsDemo>
 
-<ButtonDemo size="baby" color="tertiary">Tertiary Baby</ButtonDemo>
+<ButtonsDemo size="baby" color="tertiary">Tertiary Baby</ButtonsDemo>
 
 
 ###### Block buttons
 
-<ButtonDemo size="papa" color="primary" block="xs">screen lt or eq to xs</ButtonDemo>
+<ButtonsDemo size="papa" color="primary" block="xs">screen lt or eq to xs</ButtonsDemo>
 
-<ButtonDemo size="papa" color="primary" block="sm">screen lt or eq to sm</ButtonDemo>
+<ButtonsDemo size="papa" color="primary" block="sm">screen lt or eq to sm</ButtonsDemo>
 
-<ButtonDemo size="papa" color="primary" block="md">screen lt or eq to md</ButtonDemo>
+<ButtonsDemo size="papa" color="primary" block="md">screen lt or eq to md</ButtonsDemo>
 
-<ButtonDemo size="papa" color="primary" block="lg">screen lt or eq to lg</ButtonDemo>
+<ButtonsDemo size="papa" color="primary" block="lg">screen lt or eq to lg</ButtonsDemo>
 
-<ButtonDemo size="papa" color="primary" block>Always block</ButtonDemo>
+<ButtonsDemo size="papa" color="primary" block>Always block</ButtonsDemo>

@@ -8,7 +8,7 @@ describe('<Routes>', () => {
         this.id = id;
       }
 
-      permalink() { return `/${this.id}`; }
+      fullPath() { return `/${this.id}`; }
       component() {
         const component = () => <div />;
         // attach id to facilitate testing

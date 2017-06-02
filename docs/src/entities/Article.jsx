@@ -46,10 +46,13 @@ export default class Article {
     return () => <this.Component {...props} />;
   }
 
-  permalink() {
+  fullPath() {
+    return normalizePath(__webpack_public_path__, this.path());
+  }
+
+  path() {
     const relativeName = this.pathInfo.relativeName.replace(/\/README$/, '');
-    const path = this.attributes.permalink || relativeName;
-    return normalizePath(__webpack_public_path__, path);
+    return normalizePath(this.attributes.permalink || relativeName);
   }
 
   isContentPattern() {

@@ -6,10 +6,10 @@ import seed from './spec/content-patterns-seed.json';
 
 const articlesMock = seed.map(name => ({
   title() { return name; },
-  permalink() { return '/'; }
+  fullPath() { return '/'; }
 }));
 
-describe('<ContentPatternsSubNav', () => {
+describe('<ContentPatternsSubNav>', () => {
   const defaultRouterMock = { inPath() { return false; } };
 
   it('creates 7 columns', () => {

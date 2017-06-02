@@ -6630,6 +6630,13 @@ react-router@^3.0.5:
     prop-types "^15.5.6"
     warning "^3.0.0"
 
+react-test-renderer@^15.5.4:
+  version "15.5.4"
+  resolved "https://registry.yarnpkg.com/react-test-renderer/-/react-test-renderer-15.5.4.tgz#d4ebb23f613d685ea8f5390109c2d20fbf7c83bc"
+  dependencies:
+    fbjs "^0.8.9"
+    object-assign "^4.1.0"
+
 react@^0.14.0:
   version "0.14.9"
   resolved "https://registry.npmjs.org/react/-/react-0.14.9.tgz#9110a6497c49d44ba1c0edd317aec29c2e0d91d1"

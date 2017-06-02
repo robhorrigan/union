@@ -139,6 +139,7 @@
     "react-docgen": "^2.14.1",
     "react-docgen-loader": "^2.9.1",
     "react-markdown-loader": "^1.1.6",
+    "react-test-renderer": "^15.5.4",
     "sass-loader": "^4.1.1",
     "semver": "https://registry.npmjs.org/semver/-/semver-5.3.0.tgz",
     "string-loader": "^0.0.1",

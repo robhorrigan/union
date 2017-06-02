@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CSS from 'react-css-modules';
 import { toGroups } from '#docs/utils/array';
 import { List } from '../List';
@@ -8,7 +9,7 @@ import NavItem from '../NavItem';
 
 function menuList(group) {
   return group.map(item =>
-    <NavItem key={item.title()} styles={navLinkCss} to={item.permalink()}>
+    <NavItem key={item.title()} styles={navLinkCss} to={item.fullPath()}>
       {item.title()}
     </NavItem>
   );
@@ -40,7 +41,9 @@ function groupList({ items, numberOfGroups }) {
 export default class NavWithGroups extends Component {
   static propTypes = {
     role: PropTypes.string,
-    items: PropTypes.arrayOf(PropTypes.string),
+    items: PropTypes.arrayOf(
+      PropTypes.shape({ fullPath: PropTypes.func, title: PropTypes.func })
+    ),
     numberOfGroups: PropTypes.number
   };
 

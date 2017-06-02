@@ -5,7 +5,7 @@ export default function generateRoutes(articles) {
   return articles.map(article =>
     <Route
       key={article.id}
-      path={article.permalink()}
+      path={article.fullPath()}
       component={article.component()}
     />
   );
