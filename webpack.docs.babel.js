@@ -40,7 +40,7 @@ export default {
   module: {
     rules: [
       {
-        test: /\.cssm?$/,
+        test: /\.s?cssm?$/,
         issuer: /\.(jsx?|md)$/,
         rules: extract.extract({
           use: []
@@ -70,6 +70,10 @@ export default {
       {
         test: /\.json$/,
         use: 'json-loader'
+      },
+      {
+        test: /\.scss$/,
+        use: 'sass-loader'
       }
     ]
   },

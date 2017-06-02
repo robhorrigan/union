@@ -40,7 +40,7 @@ const prismTheme = require.resolve('prism-themes/themes/prism-ghcolors.css');
 * Use 'local' (not pure) mode for prism theme.
 */
 export const docs = {
-  test: /\.css$/,
+  test: /\.s?css$/,
   rules: [
     {
       exclude: prismTheme,

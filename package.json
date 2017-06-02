@@ -20,7 +20,7 @@
     "build.patterns": "webpack --config webpack.patterns.babel.js",
     "build.xojs": "babel packages/xojs/src --out-dir packages/xojs/lib --ignore *spec.js,*benchmark.js",
     "clean": "yarn run clean.dependencies && yarn run clean.build",
-    "clean.all": "rm -rf node_modules && yarn run clean",
+    "clean.all": "yarn run clean && rm -rf node_modules",
     "clean.build": "git clean -dfx packages/@xo-union packages/xojs",
     "clean.public": "git clean -dfx public/",
     "clean.dependencies": "echo y | lerna clean",

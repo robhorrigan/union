@@ -4,10 +4,13 @@ title: Buttons
 $imports:
   '{ Button, Link }': '@xo-union/tk-component-buttons'
   packageJson: '@xo-union/tk-component-buttons/package.json'
-  'ButtonsDemo': './demos/ButtonsDemo'
+  MainDemo: './demos/MainDemo'
+  ButtonsDemo: './demos/ButtonsDemo'
   '{ Snippet, InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
   ButtonMetadata: '!!react-docgen-loader!@xo-union/tk-component-buttons/src/components/Button'
 ---
+
+<MainDemo />
 
 <h1>{$props.title}</h1>
 
@@ -31,64 +34,38 @@ import { Link, Button } from '@xo-union/tk-component-buttons';
 
 ###### Primary Buttons
 
-<ButtonsDemo size="papa" color="primary">
-  Primary Papa
-</ButtonsDemo>
 
-<ButtonsDemo size="mama" color="primary">
-  Primary Mama
-</ButtonsDemo>
+<ButtonDemo size="papa" color="primary">Primary Papa</ButtonDemo>
 
-<ButtonsDemo size="baby" color="primary">
-  Primary Baby
-</ButtonsDemo>
+<ButtonDemo size="mama" color="primary">Primary Mama</ButtonDemo>
+
+<ButtonDemo size="baby" color="primary">Primary Baby</ButtonDemo>
 
 ###### Secondary Buttons
 
-<ButtonsDemo size="papa" color="secondary">
-  Secondary Papa
-</ButtonsDemo>
+<ButtonDemo size="papa" color="secondary">Secondary Papa</ButtonDemo>
 
-<ButtonsDemo size="mama" color="secondary">
-  Secondary Mama
-</ButtonsDemo>
+<ButtonDemo size="mama" color="secondary">Secondary Mama</ButtonDemo>
 
-<ButtonsDemo size="baby" color="secondary">
-  Secondary Baby
-</ButtonsDemo>
+<ButtonDemo size="baby" color="secondary">Secondary Baby</ButtonDemo>
 
 ###### Tertiary Buttons
-<ButtonsDemo size="papa" color="tertiary">
-  Tertiary Papa
-</ButtonsDemo>
 
-<ButtonsDemo size="mama" color="tertiary">
-  Tertiary Mama
-</ButtonsDemo>
+<ButtonDemo size="papa" color="tertiary">Tertiary Papa</ButtonDemo>
 
-<ButtonsDemo size="baby" color="tertiary">
-  Tertiary Baby
-</ButtonsDemo>
+<ButtonDemo size="mama" color="tertiary">Tertiary Mama</ButtonDemo>
+
+<ButtonDemo size="baby" color="tertiary">Tertiary Baby</ButtonDemo>
 
 
 ###### Block buttons
 
-<ButtonsDemo size="papa" color="primary" block="xs">
-  screen <= xs
-</ButtonsDemo>
+<ButtonDemo size="papa" color="primary" block="xs">screen lt or eq to xs</ButtonDemo>
 
-<ButtonsDemo size="papa" color="primary" block="sm">
-  screen <= sm
-</ButtonsDemo>
+<ButtonDemo size="papa" color="primary" block="sm">screen lt or eq to sm</ButtonDemo>
 
-<ButtonsDemo size="papa" color="primary" block="md">
-  screen <= md
-</ButtonsDemo>
+<ButtonDemo size="papa" color="primary" block="md">screen lt or eq to md</ButtonDemo>
 
-<ButtonsDemo size="papa" color="primary" block="lg">
-  screen <= lg
-</ButtonsDemo>
+<ButtonDemo size="papa" color="primary" block="lg">screen lt or eq to lg</ButtonDemo>
 
-<ButtonsDemo size="papa" color="primary" block>
-  Always block
-</ButtonsDemo>
+<ButtonDemo size="papa" color="primary" block>Always block</ButtonDemo>
