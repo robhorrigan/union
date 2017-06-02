@@ -3,7 +3,7 @@ import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
 import { Link, Button } from '@xo-union/tk-component-buttons';
 import { Demo } from '#docs/doc-components';
 
-export default function ButtonDemo(props) {
+export default function ButtonsDemo(props) {
   return (
     <div className={bsGrid.row}>
       <div className={bsGrid.col6}>

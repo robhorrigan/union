@@ -1,7 +1,7 @@
 ---
 title: Footers
 $imports:
-  'FooterNavDemo': './footerDemo'
+  'FooterNavDemo': './demos/FooterNavDemo'
   packageJson: '@xo-union/tk-component-footer-nav/package.json'
   '{ InstallSnippet }': '#docs/doc-components'
 ---

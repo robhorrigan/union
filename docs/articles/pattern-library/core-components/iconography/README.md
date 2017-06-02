@@ -1,6 +1,8 @@
 ---
+permalink: pattern-library/core-components/iconography
+title: Iconography
 $imports:
-  'IconsDemo': '#docs/demos/Icons'
+  'IconsDemo': './demos/IconsDemo'
   'packageJson': '@xo-union/tk-component-icons/package.json'
   '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
   PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'

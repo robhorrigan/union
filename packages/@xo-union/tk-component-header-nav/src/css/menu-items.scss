@@ -26,6 +26,7 @@
     opacity: .6;
   }
 }
+
 .sub-menu-item-border {
   border-top: menu-border;
 }
@@ -45,11 +46,6 @@
 
   &:hover {
     background-color: knot-blue-lighter-70;
-  }
-
-  img {
-    max-height: 15px;
-    margin-right: 10px;
   }
 }
 

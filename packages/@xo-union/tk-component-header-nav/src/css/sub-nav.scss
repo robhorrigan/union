@@ -1,0 +1,24 @@
+@value ( safe-gray-5, knot-blue ) from '@xo-union/tk-css-colors';
+
+.sub-nav-container {
+  composes: base-desktop-nav from './base-desktop-nav';
+}
+
+.sub-nav-item-list {
+  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
+  composes: justify-content-center from '@xo-union/tk-css-utilities/lib/flexbox';
+}
+
+.sub-nav-item-link {
+  composes: not-nav-text-color-hover from './nav-text-color';
+
+  display: block;
+
+  &:hover {
+    color: knot-blue;
+  }
+}
+
+.sub-nav-item {
+  padding: .8rem 2.4rem;
+}

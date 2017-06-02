@@ -2,7 +2,7 @@ import React from 'react';
 import FooterNav, { SEOLinkItem } from '@xo-union/tk-component-footer-nav';
 import { Demo } from '#docs/doc-components';
 
-export default function FooterDemo() {
+export default function FooterNavDemo() {
   return (
     <Demo>
       <FooterNav>

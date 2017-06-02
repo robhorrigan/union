@@ -1,0 +1,8 @@
+@value ( safe-gray-5 ) from '@xo-union/tk-css-colors';
+
+.nav-text-color,
+.nav-text-color a,
+.nav-text-color a:not(.not-nav-text-color-hover):hover
+{
+  color: safe-gray-5;
+}

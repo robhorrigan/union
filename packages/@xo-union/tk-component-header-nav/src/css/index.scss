@@ -29,3 +29,9 @@
   sub-menu-account-item-primary-button
 ) from './menu-items';
 
+@value (
+  sub-nav-container,
+  sub-nav-item-list,
+  sub-nav-item,
+  sub-nav-item-link
+) from './sub-nav';

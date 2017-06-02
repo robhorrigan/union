@@ -12,7 +12,6 @@ function topLevelItems() {
     <FactoryComponent Template={MainMenuItemWithSubMenu} />
   );
 }
-
 export default function HeaderNav({ loggedIn = false }) {
   const loggedOutNavItems = [
     <MainMenuItem>
@@ -29,7 +28,7 @@ export default function HeaderNav({ loggedIn = false }) {
         <Logo />
         {topLevelItems()}
         <MenuFactories.Tools Template={MainMenuItemWithSubMenu} loggedIn={loggedIn} rightOffset />
-        { loggedIn ? null : loggedOutNavItems }
+        {loggedIn ? null : loggedOutNavItems}
       </ul>
     </nav>
   );

@@ -1,0 +1,11 @@
+@value menu-border from './menu-border';
+
+.base-desktop-nav {
+  composes: sans-serif font-down-2 from '@xo-union/tk-css-typography';
+  composes: nav-text-color from './nav-text-color';
+  composes: hide-in-mobile from './hide-utilities';
+  composes: has-menu-image from './menu-image';
+
+  white-space: nowrap;
+  border-bottom: menu-border;
+}

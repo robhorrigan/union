@@ -1,7 +1,10 @@
 ---
+permalink: 'pattern-library/content-patterns/navigation'
+title: Navigation
 $imports:
   'HeaderNavAnalytics': '@xo-union/tk-component-header-nav/lib/analytics'
   'HeaderNav': '@xo-union/tk-component-header-nav'
+  'HeaderNavWithSubNavDemo': './demos/HeaderNavWithSubNavDemo'
   packageJson: '@xo-union/tk-component-header-nav/package.json'
   '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
   HeaderNavMetadata: '!!react-docgen-loader!@xo-union/tk-component-header-nav/src/components/HeaderNav'
@@ -22,6 +25,9 @@ import HeaderNav from '@xo-union/tk-component-header-nav';
 import HeaderNavAnalytics from '@xo-union/tk-component-header-nav/lib/analytics';
 ```
 
+### Properties
+
+<PropTypesTable metadata={HeaderNavMetadata.props} />
 
 ### States
 
@@ -37,13 +43,26 @@ import HeaderNavAnalytics from '@xo-union/tk-component-header-nav/lib/analytics'
   <HeaderNav loggedIn />
 </Demo>
 
-### Properties
+### Sub Nav
 
-<PropTypesTable metadata={HeaderNavMetadata.props} />
+#### Import
+
+```javascript
+import HeaderNav, { SubNav, SubNavLinkItem } from '@xo-union/tk-component-header-nav';
+```
+
+<HeaderNavWithSubNavDemo />
 
 ### With Analytics
 
-### Properties
+#### Import
+
+```javascript
+import HeaderNav from '@xo-union/tk-component-header-nav';
+import HeaderNavAnalytics from '@xo-union/tk-component-header-nav/lib/analytics';
+```
+
+#### Properties
 
 This demo suppresses redirects and logs all track data to the javascript console. In a normal scenario, track calls are made using segment's `analytics.track`.
 

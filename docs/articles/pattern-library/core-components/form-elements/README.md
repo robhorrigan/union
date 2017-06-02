@@ -1,4 +1,6 @@
 ---
+permalink: pattern-library/core-components/form-elements
+title: Form Elements
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
   bsGrid: '@xo-union/tk-css-bootstrap/lib/grid'
@@ -15,7 +17,7 @@ $imports:
   TextareaMeta:             '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/Textarea'
   TextareaWithoutLabelMeta: '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/TextareaWithoutLabel'
 
-  FormDemo: '#docs/demos/Form'
+  FormDemo: './demos/FormDemo'
 ---
 
 <h1>{$props.title}</h1>

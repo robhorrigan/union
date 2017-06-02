@@ -1,0 +1,14 @@
+@import 'device-mixins';
+
+@include in-mobile {
+  .hide-in-mobile {
+    display: none;
+  }
+}
+
+
+@include in-desktop {
+  .hide-in-desktop {
+    display: none;
+  }
+}

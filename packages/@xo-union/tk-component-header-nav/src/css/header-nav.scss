@@ -1,35 +1,6 @@
-@import 'device';
-
-@value ( safe-gray-5 ) from '@xo-union/tk-css-colors';
-
-@value menu-border from './menu-border';
-
-.nav-text-color,
-.nav-text-color a,
-.nav-text-color a:hover
-{
-  color: safe-gray-5;
-}
-
-/* Nav */
-@include in-mobile() {
-  .desktop-header-nav {
-    display: none;
-  }
-}
-
-@include in-desktop() {
-  .mobile-header-nav {
-    display: none;
-  }
-}
-
 .desktop-header-nav {
-  composes: sans-serif font-down-2 from '@xo-union/tk-css-typography';
+  composes: base-desktop-nav from './base-desktop-nav';
   composes: popup-hide from './dropdown';
-  composes: nav-text-color;
-
-  border-bottom: menu-border;
 }
 
 .desktop-nav-item-list {
@@ -39,7 +10,9 @@
 
 .mobile-header-nav {
   composes: knot-blue-bg from '@xo-union/tk-css-colors/lib/utilities';
-  composes: nav-text-color;
+  composes: nav-text-color from './nav-text-color';
+  composes: hide-in-desktop from './hide-utilities';
+  composes: has-menu-image from './menu-image';
 }
 
 .mobile-nav-item-list {
