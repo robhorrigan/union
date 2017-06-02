@@ -12,7 +12,12 @@ function MobileMenuButton({ onClick, isOpen, closedIconName, ...props }) {
 
   return (
     <li className={styles['icon-container']}>
-      <button onClick={onClick} className={styles['icon-button']} {...props} >
+      <button
+        onClick={onClick}
+        className={styles['icon-button']}
+        data-click-role="toggle-sub-menu"
+        {...props}
+      >
         <Icon name={iconName} className={styles['menu-icon']} />
       </button>
     </li>
@@ -32,12 +37,11 @@ MobileMenuButton.defaultProps = {
 
 
 export function ToolsMenuButton(props) {
-  const selectionState = props.isOpen ? 'Closed' : 'Open';
+  const selectionState = props.isOpen ? 'Closed' : 'Opened';
 
   return (
     <MobileMenuButton
       closedIconName="nav-signup-mobile"
-      data-click-role="toggle-sub-menu"
       data-selection-label={`${selectionState} Tools Menu`}
       {...props}
     />
@@ -49,6 +53,17 @@ ToolsMenuButton.propTypes = {
 };
 
 export function PrimaryMenuButton(props) {
-  return <MobileMenuButton closedIconName="hamburger" {...props} />;
+  const selectionState = props.isOpen ? 'Closed' : 'Opened';
+
+  return (
+    <MobileMenuButton
+      closedIconName="hamburger"
+      data-selection-label={`${selectionState} Primary Menu`}
+      {...props}
+    />
+  );
 }
 
+PrimaryMenuButton.propTypes = {
+  isOpen: PropTypes.bool.isRequired
+};

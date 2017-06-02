@@ -155,9 +155,8 @@ describe('<HeaderNavAnalytics>', () => {
       });
     });
 
-    describe('buttons that toggle sub-menu', () => {
+    describe('buttons that toggle sub-menus', () => {
       let subject;
-      let buttons;
 
       beforeEach(() => {
         subject = mount(
@@ -165,24 +164,47 @@ describe('<HeaderNavAnalytics>', () => {
             <MobileHeaderNav />
           </HeaderNavAnalytics>
         );
-        buttons = subject.find('[data-click-role="toggle-sub-menu"]');
       });
 
-      it('triggers the correct analytics call', () => {
-        buttons.at(0).simulate('click');
+      it('triggers the correct analytics call for the tools sub menu', () => {
+        const toolsButton = subject.find('ToolsMenuButton button');
+
+        toolsButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Open Tools Menu',
+          selection: 'Opened Tools Menu',
           product: 'fashion',
           platform: 'web'
         });
 
         analyticsMock.track.calls.reset();
 
-        buttons.at(0).simulate('click');
+        toolsButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
           selection: 'Closed Tools Menu',
+          product: 'fashion',
+          platform: 'web'
+        });
+      });
+
+      it('triggers the correct analytics call for the hamburger sub menu', () => {
+        const primaryButton = subject.find('PrimaryMenuButton button');
+
+        primaryButton.simulate('click');
+
+        expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
+          selection: 'Opened Primary Menu',
+          product: 'fashion',
+          platform: 'web'
+        });
+
+        analyticsMock.track.calls.reset();
+
+        primaryButton.simulate('click');
+
+        expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
+          selection: 'Closed Primary Menu',
           product: 'fashion',
           platform: 'web'
         });
