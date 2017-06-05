@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from '@xo-union/tk-component-header-nav/lib/css';
 import keep from 'xojs/lib/object/keep';
 import values from 'xojs/lib/object/values';

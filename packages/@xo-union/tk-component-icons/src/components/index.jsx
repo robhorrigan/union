@@ -5,7 +5,8 @@
  * The svg is pre-processed to add a unique "hash" to the ids of the icons. As noted below, this is
  * necessary to allow incompatible versions of the icons library to co-exist within the same application.
  */
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { init } from '@xo-union/tk-component-icons/lib/setup';
 import styles from '@xo-union/tk-component-icons/lib/css';
 import { hash } from '@xo-union/tk-component-icons/lib/data';

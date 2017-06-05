@@ -1,4 +1,5 @@
-import React, { PropTypes, createElement } from 'react';
+import React, { createElement } from 'react';
+import PropTypes from 'prop-types';
 import { parseType } from '#docs/utils/prop-types';
 
 const TypeShape = PropTypes.shape({

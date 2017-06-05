@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import { processProps } from '../utilities';
 
 export default function Button(props) {
@@ -6,10 +7,6 @@ export default function Button(props) {
 }
 
 Button.propTypes = {
-  /**
-   * Button text
-   **/
-  text: PropTypes.string.isRequired,
   /**
    * Breakpoint where button changes to block
    **/
@@ -25,5 +22,9 @@ Button.propTypes = {
   /**
    * Add additional CTA specific styles -- Only applies to Button components
    */
-  isCTA: PropTypes.bool
+  isCTA: PropTypes.bool,
+  /**
+   * The button's content
+   */
+  children: PropTypes.node
 };

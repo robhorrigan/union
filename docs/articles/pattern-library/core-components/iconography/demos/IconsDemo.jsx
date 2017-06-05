@@ -6,7 +6,7 @@ import icons from '!!xml-loader!#assets/icons/union-icons.svg';
 
 export default function IconsDemo() {
   const demos = icons.svg.defs[0].symbol.map(({ $: { id } }) =>
-    <Demo>
+    <Demo key={id}>
       <Icon name={id.replace(/^icon-/, '')} />
     </Demo>
   );

@@ -1,7 +1,8 @@
 import 'prismjs/components/prism-jsx';
 import 'prismjs/components/prism-bash';
 
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import PrismJs from 'prismjs';
 import styles from './styles';
 

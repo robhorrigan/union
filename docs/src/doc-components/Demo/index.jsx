@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import jsxToString from 'jsx-to-string-2';
 import Snippet from '#docs/doc-components/Snippet';
 

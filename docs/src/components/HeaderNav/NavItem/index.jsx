@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CSS from 'react-css-modules';
 import { inject } from 'mobx-react';
 import Toggler from '#docs/mixins/toggleable/toggler';

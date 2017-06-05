@@ -41,12 +41,12 @@ curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | b
 ```
 If you run into any issues with installing NVM on your platform follow the [instructions](https://github.com/creationix/nvm#install-script) on the NVM install page.
 
-Install node version >= 7.0.0 < 8.0.0.
+Install node version >= 8.0.0
 
 ```sh
 nvm install
 node -v
-# v7.9.0
+# v8.0.0
 ```
 
 ### Install yarn

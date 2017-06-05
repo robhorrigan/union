@@ -9,15 +9,15 @@ import Logo from '../Logo';
 
 function topLevelItems() {
   return MenuFactories.topLevelFactories().map(FactoryComponent =>
-    <FactoryComponent Template={MainMenuItemWithSubMenu} />
+    <FactoryComponent Template={MainMenuItemWithSubMenu} key={FactoryComponent} />
   );
 }
 export default function HeaderNav({ loggedIn = false }) {
   const loggedOutNavItems = [
-    <MainMenuItem>
+    <MainMenuItem key="1">
       <SignUpButton />
     </MainMenuItem>,
-    <MainMenuItem>
+    <MainMenuItem key="2">
       <LogInButton>LOG IN</LogInButton>
     </MainMenuItem>
   ];

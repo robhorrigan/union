@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
 

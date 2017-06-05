@@ -1,4 +1,5 @@
-import React, { PropTypes as T } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
 
@@ -36,25 +37,25 @@ Field.propTypes = {
   /**
    * Name used for input element
    */
-  name: T.string.isRequired,
+  name: PropTypes.string.isRequired,
   /**
    * The input's label string
    */
-  label: T.string,
+  label: PropTypes.string,
   /**
    * Render state
    */
-  state: T.oneOf(['neutral', 'valid', 'invalid']),
+  state: PropTypes.oneOf(['neutral', 'valid', 'invalid']),
   /**
    * Validation message used when field is invalid
    */
-  validationMessage: T.string,
+  validationMessage: PropTypes.string,
   /**
    * The input type
    */
-  type: T.string,
+  type: PropTypes.string,
   /**
    * Override the id which is derived from the name
    */
-  id: T.string
+  id: PropTypes.string
 };

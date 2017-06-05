@@ -1,4 +1,5 @@
-import React, { PropTypes as T } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 
 /**
@@ -18,15 +19,15 @@ FormTheme.propTypes = {
   /**
    * Name of theme
    */
-  name: T.oneOf(['white', 'gray']),
+  name: PropTypes.oneOf(['white', 'gray']),
   /**
    * Form elements
    */
-  children: T.node.isRequired,
+  children: PropTypes.node.isRequired,
   /**
    * Class to append to class list
    */
-  className: T.string
+  className: PropTypes.string
 };
 
 FormTheme.defaultProps = {

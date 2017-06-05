@@ -1,4 +1,5 @@
-import React, { Component, PropTypes } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import CSS from 'react-css-modules';
 
 import Article from '#docs/entities/Article';
@@ -17,10 +18,10 @@ export default class ContentPatternsSubNav extends Component {
   };
 
   static propTypes = {
-    contentPatternArticles: PropTypes.shape({
+    contentPatternArticles: PropTypes.arrayOf(PropTypes.shape({
       title: PropTypes.func,
       permalink: PropTypes.func
-    })
+    }))
   }
 
   render() {
