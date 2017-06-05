@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/tk-component-icons",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "main": "lib/components/index.js",
   "dependencies": {
     "babel-runtime": "^6.23.0",

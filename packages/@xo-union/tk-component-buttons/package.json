@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/tk-component-buttons",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "main": "lib/components/index.js",
   "dependencies": {
     "@xo-union/tk-css-colors": "^0.3.4",

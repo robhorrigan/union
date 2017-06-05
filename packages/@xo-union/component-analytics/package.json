@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/component-analytics",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "main": null,
   "dependencies": {
     "@segment/is-meta": "^1.0.0",
