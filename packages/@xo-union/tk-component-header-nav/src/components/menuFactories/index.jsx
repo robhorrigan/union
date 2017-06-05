@@ -195,12 +195,18 @@ Shop.propTypes = {
   Template: PropTypes.func.isRequired
 };
 
-function AccountMenuItem() {
+function AccountMenuItem(props) {
+  const reducedProps = props::keep('data-selection-group-label');
+
   return (
     <li className={styles['sub-menu-account-item']}>
-      <SignUpButton className={styles['sub-menu-account-item-primary-button']} block />
+      <SignUpButton
+        className={styles['sub-menu-account-item-primary-button']}
+        {...reducedProps}
+        block
+      />
       Already a member?
-      <LogInButton>Log in here</LogInButton>
+      <LogInButton {...reducedProps}>Log in here</LogInButton>
     </li>
   );
 }

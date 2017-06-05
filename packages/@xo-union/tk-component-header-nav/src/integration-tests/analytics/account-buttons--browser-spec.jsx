@@ -44,6 +44,28 @@ describe('<HeaderNavAnalytics>', () => {
           platform: 'web'
         });
       });
+
+      it('triggers the correct analytics call for the tools sign-up button', () => {
+        const logInButton = subject.find('SubMenu SignUpButton button');
+        logInButton.simulate('click');
+
+        expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
+          selection: 'Tools > Sign up',
+          product: 'fashion',
+          platform: 'web'
+        });
+      });
+
+      it('triggers the correct analytics call for the tools log-in button', () => {
+        const logInButton = subject.find('SubMenu LogInButton button');
+        logInButton.simulate('click');
+
+        expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
+          selection: 'Tools > Log in here',
+          product: 'fashion',
+          platform: 'web'
+        });
+      });
     });
   });
 });
