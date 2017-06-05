@@ -83,5 +83,6 @@
 }
 
 .sub-menu-account-item-primary-button {
+  composes: button from './buttons';
   margin-bottom: .7rem;
 }

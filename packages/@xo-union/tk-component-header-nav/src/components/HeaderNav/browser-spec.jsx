@@ -20,8 +20,8 @@ describe('<HeaderNav>', () => {
   describe('logged out', () => {
     it('does not render the account ctas', () => {
       const subject = mount(<HeaderNav loggedIn={false} />);
-      expect(subject.text()).toContain('SIGN UP');
-      expect(subject.text()).toContain('LOG IN');
+      expect(subject.text()).toContain('Sign up');
+      expect(subject.text()).toContain('Log in');
     });
 
     it('does not render to Log Out button', () => {

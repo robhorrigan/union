@@ -200,7 +200,7 @@ function AccountMenuItem() {
     <li className={styles['sub-menu-account-item']}>
       <SignUpButton className={styles['sub-menu-account-item-primary-button']} block />
       Already a member?
-      <LogInButton>LOG IN HERE</LogInButton>
+      <LogInButton>Log in here</LogInButton>
     </li>
   );
 }

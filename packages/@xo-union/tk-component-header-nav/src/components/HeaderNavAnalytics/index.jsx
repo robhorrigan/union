@@ -16,7 +16,7 @@ function selectionValue() {
 export default function HeaderNavAnalytics({ product, ...props }) {
   return (
     <TrackableLinks
-      linkSelector='[data-click-role="navigate"],[data-click-role="toggle-sub-menu"]'
+      linkSelector="[data-click-role]"
       eventName="Menu Interaction"
       eventData={element => ({
         product,
