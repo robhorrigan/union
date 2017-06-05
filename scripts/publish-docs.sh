@@ -7,6 +7,7 @@ fi
 
 yarn install \
 && yarn run clean.public \
+&& yarn bootstrap \
 && NODE_ENV=production yarn build \
 && aws s3 cp ./public/docs $DOCS_BUCKET_URI --recursive --grants read=uri=http://acs.amazonaws.com/groups/global/AllUsers \
 && aws cloudfront create-invalidation --distribution-id $DOCS_DISTRIBUTION_ID --paths '/*'
