@@ -35,7 +35,12 @@ export default class Article {
   }
 
   title() {
-    return this.attributes.title || humanize(this.pathInfo.name);
+    if (this.attributes.title) {
+      return this.attributes.title;
+    }
+
+    const [, assumedName] = this.pathInfo.relativeName.match(/([^/]+)(?:\/README)?$/);
+    return humanize(assumedName);
   }
 
   component() {

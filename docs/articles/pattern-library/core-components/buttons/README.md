@@ -1,6 +1,4 @@
 ---
-permalink: pattern-library/core-components/buttons
-title: Buttons
 $imports:
   '{ Button, Link }': '@xo-union/tk-component-buttons'
   packageJson: '@xo-union/tk-component-buttons/package.json'
@@ -12,7 +10,7 @@ $imports:
 
 <MainDemo />
 
-<h1>{$props.title}</h1>
+# Buttons
 
 ### Install
 
@@ -30,9 +28,7 @@ import { Link, Button } from '@xo-union/tk-component-buttons';
 
 ### Usage
 
-#### Buttons
-
-###### Primary Buttons
+#### Primary Buttons
 
 
 <ButtonsDemo size="papa" color="primary">Primary Papa</ButtonsDemo>
@@ -41,7 +37,7 @@ import { Link, Button } from '@xo-union/tk-component-buttons';
 
 <ButtonsDemo size="baby" color="primary">Primary Baby</ButtonsDemo>
 
-###### Secondary Buttons
+#### Secondary Buttons
 
 <ButtonsDemo size="papa" color="secondary">Secondary Papa</ButtonsDemo>
 
@@ -49,7 +45,7 @@ import { Link, Button } from '@xo-union/tk-component-buttons';
 
 <ButtonsDemo size="baby" color="secondary">Secondary Baby</ButtonsDemo>
 
-###### Tertiary Buttons
+#### Tertiary Buttons
 
 <ButtonsDemo size="papa" color="tertiary">Tertiary Papa</ButtonsDemo>
 
@@ -58,7 +54,7 @@ import { Link, Button } from '@xo-union/tk-component-buttons';
 <ButtonsDemo size="baby" color="tertiary">Tertiary Baby</ButtonsDemo>
 
 
-###### Block buttons
+#### Block buttons
 
 <ButtonsDemo size="papa" color="primary" block="xs">screen lt or eq to xs</ButtonsDemo>
 

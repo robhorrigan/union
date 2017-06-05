@@ -1,5 +1,4 @@
 ---
-title: Colors
 $imports:
   uniqueColorNames: './helpers/uniqueColors'
   Palette: './Palette'
@@ -12,7 +11,7 @@ $imports:
   ReferencingValuesDemo: './examples/referencing-values-component'
 ---
 
-<h1>{$props.title}</h1>
+# Colors
 
 <p>Union's color palette includes {uniqueColorNames().length} unique colors</p>
 
@@ -23,21 +22,21 @@ To install
 
 ## Examples
 
-##### Class composition
+#### Class composition
 
 This way of consuming the css classes is good when creating component classes
 
 <Snippet lang="css">{classCompositionExampleString}</Snippet>
 <ClassCompositionDemo />
 
-##### Referencing values
+#### Referencing values
 
 This way of consuming the colors is necessary when using the colors in non-composable rules. Such as pseudo, attribute, or tag selectors.
 
 <Snippet lang="css">{referencingValuesExampleString}</Snippet>
 <ReferencingValuesDemo />
 
-##### Applying class to component
+#### Applying class to component
 <Snippet lang="javascript">{classCompositionComponentExampleString}</Snippet>
 
 ### Palette

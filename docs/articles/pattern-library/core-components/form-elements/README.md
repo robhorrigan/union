@@ -1,6 +1,4 @@
 ---
-permalink: pattern-library/core-components/form-elements
-title: Form Elements
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
   bsGrid: '@xo-union/tk-css-bootstrap/lib/grid'
@@ -20,25 +18,19 @@ $imports:
   FormDemo: './demos/FormDemo'
 ---
 
-<h1>{$props.title}</h1>
+# Form Elements
 
 <FormDemo />
-
-<div className={spacing.mt4}></div>
 
 #### Install
 
 <InstallSnippet packageJson={packageJson} />
-
-<div className={spacing.mt4}></div>
 
 #### Import
 
 ```javascript
 import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk-component-fields';
 ```
-
-<div className={spacing.mt5}></div>
 
 ### FormTheme component
 
@@ -64,13 +56,9 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
   </div>
 </Demo>
 
-<div className={spacing.mt4}></div>
-
-##### Properties
+#### Properties
 
 <PropTypesTable metadata={FormThemeMeta.props} />
-
-<div className={spacing.mt5}></div>
 
 ### Field Component
 
@@ -80,37 +68,27 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
   </FormTheme>
 </Demo>
 
-<div className={spacing.mt4}></div>
-
-##### Properties
+#### Properties
 
 <PropTypesTable metadata={FieldMeta.props} />
 
-<div className={spacing.mt4}></div>
-
-##### Invalid State
+#### Invalid State
 
 <Demo>
   <Field name="email" state="invalid" validationMessage="Something went wrong" />
 </Demo>
 
-<div className={spacing.mt4}></div>
-
-##### Successful State
+#### Successful State
 
 <Demo>
   <Field name="address" state="valid" defaultValue="232 Boerum St." />
 </Demo>
 
-<div className={spacing.mt4}></div>
-
-##### Disabled State
+#### Disabled State
 
 <Demo>
   <Field name="email" disabled />
 </Demo>
-
-<div className={spacing.mt5}></div>
 
 ### Dropdown Component
 
@@ -125,21 +103,15 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
   </FormTheme>
 </Demo>
 
-<div className={spacing.mt5}></div>
+#### Properties
 
-##### Properties
+#### Dropdown
 
-<div className={spacing.mt4}></div>
-
-##### Dropdown
 <PropTypesTable metadata={DropdownMeta.props} exclude={["default"]}/>
 
-<div className={spacing.mt4}></div>
+#### DropdownItem
 
-##### DropdownItem
 <PropTypesTable metadata={DropdownItemMeta.props} exclude={["default"]}/>
-
-<div className={spacing.mt5}></div>
 
 ### FieldGroup Component
 
@@ -165,13 +137,9 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
   </FormTheme>
 </Demo>
 
-<div className={spacing.mt4}></div>
-
-##### Properties
+#### Properties
 
 <PropTypesTable metadata={FieldGroupMeta.props} exclude={["default"]} />
-
-<div className={spacing.mt5}></div>
 
 ### Textarea Component(s)
 
@@ -189,11 +157,8 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
   </FormTheme>
 </Demo>
 
-<div className={spacing.mt4}></div>
+#### Properties
 
-##### Properties
+##### Textarea
 
-<div className={spacing.mt4}></div>
-
-###### Textarea
 <PropTypesTable metadata={TextareaMeta.props} />

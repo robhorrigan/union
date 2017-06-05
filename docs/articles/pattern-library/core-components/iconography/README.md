@@ -1,6 +1,4 @@
 ---
-permalink: pattern-library/core-components/iconography
-title: Iconography
 $imports:
   'IconsDemo': './demos/IconsDemo'
   'packageJson': '@xo-union/tk-component-icons/package.json'
@@ -10,7 +8,7 @@ $imports:
   DemoMetadata:           '!!react-docgen-loader!#docs/doc-components/Demo'
 ---
 
-<h1>{$props.title}</h1>
+# Iconography
 
 ## Install
 

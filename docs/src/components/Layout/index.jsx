@@ -11,10 +11,8 @@ export default function Layout({ children }) {
       <HeaderNav />
 
       <div className={bsGrid.containerFluid}>
-        <div className={bsGrid.row}>
-          <div className={styles.article}>
-            {children}
-          </div>
+        <div className={styles.article}>
+          {children}
         </div>
       </div>
     </div>

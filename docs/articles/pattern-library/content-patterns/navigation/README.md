@@ -1,6 +1,4 @@
 ---
-permalink: 'pattern-library/content-patterns/navigation'
-title: Navigation
 $imports:
   'HeaderNavAnalytics': '@xo-union/tk-component-header-nav/lib/analytics'
   'HeaderNav': '@xo-union/tk-component-header-nav'
@@ -12,7 +10,7 @@ $imports:
   '{ Snippet }': '#docs/doc-components'
 ---
 
-<h1>{$props.title}</h1>
+# Navigation
 
 ### Header Nav
 

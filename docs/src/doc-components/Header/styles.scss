@@ -1,0 +1,7 @@
+.article-header {
+  composes: mt-5 from '@xo-union/tk-css-utilities/lib/spacing';
+
+  a {
+    color: inherit;
+  }
+}

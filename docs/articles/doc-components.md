@@ -1,25 +1,20 @@
 ---
 $imports:
   '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
-  spacing: '@xo-union/tk-css-utilities/lib/spacing'
   PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'
   SnippetsMetadata:       '!!react-docgen-loader!#docs/doc-components/Snippet'
   DemoMetadata:           '!!react-docgen-loader!#docs/doc-components/Demo'
   InstallSnippetMetadata: '!!react-docgen-loader!#docs/doc-components/InstallSnippet'
 ---
 
-<h1>{$props.title}</h1>
+# Doc components
 
 > These are components used to build this documentation
-
-<div className={spacing.mt5}></div>
 
 ## PropTypesTable Component
 
 <span>{PropTypesTableMetadata.description}</span>
 
-
-<div className={spacing.mt4}></div>
 
 #### Properties and Demo
 
@@ -29,13 +24,9 @@ $imports:
   <PropTypesTable metadata={PropTypesTableMetadata.props} exclude={["default"]}/>
 </Demo>
 
-<div className={spacing.mt5}></div>
-
 ## Snippet Component
 
 <span>{SnippetsMetadata.description}</span>
-
-<div className={spacing.mt4}></div>
 
 #### Demo
 
@@ -45,19 +36,13 @@ $imports:
   </Snippet>
 </Demo>
 
-<div className={spacing.mt4}></div>
-
 #### Properties
 
 <PropTypesTable metadata={SnippetsMetadata.props} exclude={["default"]} />
 
-<div className={spacing.mt5}></div>
-
 ## Demo Component
 
 <span>{DemoMetadata.description}</span>
-
-<div className={spacing.mt4}></div>
 
 #### Demo
 
@@ -71,27 +56,19 @@ Hello Demo
   </Demo>
 </Demo>
 
-<div className={spacing.mt4}></div>
-
 #### Properties
 
 <PropTypesTable metadata={DemoMetadata.props} exclude={["default"]} />
 
-<div className={spacing.mt5}></div>
-
 ## InstallSnippet Component
 
 <span>{InstallSnippetMetadata.description}</span>
-
-<div className={spacing.mt4}></div>
 
 #### Demo
 
 <Demo>
   <InstallSnippet packageJson={{name: "test-package", version: "1.0.0"}} />
 </Demo>
-
-<div className={spacing.mt4}></div>
 
 #### Properties
 
