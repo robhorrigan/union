@@ -155,5 +155,7 @@ yarn run test.browser.watch
 # Publishing
 
 To publish the assets use the script in `yarn run publish.assets`
+
 To publish the documentation use the script in `yarn run publish.docs`
+
 To publish the packages use the script in `yarn run publish.packages`
