@@ -3,9 +3,12 @@ The Knot's Design System and Pattern Library
 
 # Development
 
+*Read [here](https://github.com/xogroup/union/blob/master/internal-docs/README.md) to learn more about the internals of the project.*
+
+
 <details>
 <summary>
-Short version
+Short setup
 </summary>
 
 
