@@ -1,7 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import DesktopHeaderNav from '../../components/desktop/HeaderNav';
-import HeaderNavAnalytics from '../../analytics';
+import HeaderNav from '../../';
 
 const PRIMARY_MENU_ITEMS = [
   'Local Vendors',
@@ -94,7 +93,7 @@ const SUB_MENU_SELECTION_VALUE = [
   'Tools > Help + Feedback'
 ];
 
-describe('<HeaderNavAnalytics>', () => {
+describe('<HeaderNav>', () => {
   let analyticsMock;
 
   beforeEach(() => {
@@ -108,9 +107,7 @@ describe('<HeaderNavAnalytics>', () => {
 
       beforeEach(() => {
         subject = mount(
-          <HeaderNavAnalytics product="fashion" analytics={analyticsMock} followStrategy={false}>
-            <DesktopHeaderNav />
-          </HeaderNavAnalytics>
+          <HeaderNav analyticsProps={{product: 'fashion', analytics: analyticsMock, followStrategy: false}} />
         );
         mainMenuLinks = subject.find('MainMenuItem > [data-click-role="navigate"]');
       });
@@ -134,9 +131,7 @@ describe('<HeaderNavAnalytics>', () => {
 
       beforeEach(() => {
         subject = mount(
-          <HeaderNavAnalytics product="fashion" analytics={analyticsMock} followStrategy={false}>
-            <DesktopHeaderNav />
-          </HeaderNavAnalytics>
+          <HeaderNav analyticsProps={{product: 'fashion', analytics: analyticsMock, followStrategy: false}} />
         );
         mainMenuLinks = subject.find('MainMenuItem > SubMenu [data-click-role="navigate"]');
       });

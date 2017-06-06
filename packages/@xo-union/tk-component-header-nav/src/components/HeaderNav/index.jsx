@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { autobind } from 'core-decorators';
 import MobileHeaderNav from '../mobile/HeaderNav';
 import DesktopHeaderNav from '../desktop/HeaderNav';
-import TrackableLinks from '@xo-union/tk-component-analytics/lib/tk-trackable-links';
+import TrackableLinks from '@xo-union/tk-component-analytics/lib/trackable-links';
 
 const NOOP = () => { };
 

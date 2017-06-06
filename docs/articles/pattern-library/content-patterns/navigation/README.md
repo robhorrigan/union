@@ -5,7 +5,6 @@ $imports:
   packageJson: '@xo-union/tk-component-header-nav/package.json'
   '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
   HeaderNavMetadata: '!!react-docgen-loader!@xo-union/tk-component-header-nav/src/components/HeaderNav'
-  HeaderNavAnalyticsMetadata: '!!react-docgen-loader!@xo-union/tk-component-header-nav/src/components/HeaderNavAnalytics'
   '{ Snippet }': '#docs/doc-components'
   HeaderNavDemo: './demos/HeaderNavDemo'
 ---

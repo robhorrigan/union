@@ -13,7 +13,7 @@ describe('utils', () => {
           }
         });
 
-        expect(result).toBe('shape(attribute : TestType)');
+        expect(result).toBe('{ attribute : TestType }');
       });
     });
 

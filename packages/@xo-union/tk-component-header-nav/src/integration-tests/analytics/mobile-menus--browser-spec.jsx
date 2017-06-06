@@ -1,9 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import MobileHeaderNav from '../../components/mobile/HeaderNav';
-import HeaderNavAnalytics from '../../analytics';
+import HeaderNav from '../../';
 
-describe('<HeaderNavAnalytics>', () => {
+describe('<HeaderNav>', () => {
   let analyticsMock;
 
   beforeEach(() => {
@@ -16,9 +15,7 @@ describe('<HeaderNavAnalytics>', () => {
 
       beforeEach(() => {
         subject = mount(
-          <HeaderNavAnalytics product="fashion" analytics={analyticsMock} followStrategy={false}>
-            <MobileHeaderNav />
-          </HeaderNavAnalytics>
+          <HeaderNav analyticsProps={{product: 'fashion', analytics: analyticsMock, followStrategy: false}} />
         );
       });
 
