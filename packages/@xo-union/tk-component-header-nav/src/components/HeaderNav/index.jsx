@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { autobind } from 'core-decorators';
 import MobileHeaderNav from '../mobile/HeaderNav';
 import DesktopHeaderNav from '../desktop/HeaderNav';
+import TrackableLinks from '@xo-union/tk-component-analytics/lib/tk-trackable-links';
 
-const NOOP = () => {};
+const NOOP = () => { };
 
-export default class HeaderNav extends Component {
+class OnlyHeaderNav extends Component {
   static defaultProps = {
     onNavigate: NOOP,
     onSignUp: NOOP,
@@ -22,10 +23,11 @@ export default class HeaderNav extends Component {
       onLogIn,
       onLogOut,
       loggedIn,
-      ...props
+      product,
+      ...newProps
     } = this.props;
 
-    return props;
+    return newProps;
   }
 
   @autobind
@@ -51,7 +53,6 @@ export default class HeaderNav extends Component {
   }
 
   render() {
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
     const { loggedIn } = this.props;
 
     return (
@@ -59,6 +60,19 @@ export default class HeaderNav extends Component {
         <DesktopHeaderNav loggedIn={loggedIn} />
         <MobileHeaderNav loggedIn={loggedIn} />
       </div>
+    );
+  }
+}
+
+export default class HeaderNav extends Component {
+  render() {
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
+    const { analyticsProps = {}, ...headerNavProps } = this.props;
+
+    return (
+      <TrackableLinks eventName="Menu Interaction" {...analyticsProps}>
+        <OnlyHeaderNav {...headerNavProps} />
+      </TrackableLinks>
     );
   }
 }
@@ -84,5 +98,11 @@ HeaderNav.propTypes = {
   /**
    * Callback for clicking log out menu item
    */
-  onLogOut: PropTypes.func
+  onLogOut: PropTypes.func,
+  /**
+   * Props for analytics component. See @xo-union/tk-component-analytics/lib/trackable-links
+   */
+  analyticsProps: PropTypes.shape({
+    product: PropTypes.string.isRequired
+  }).isRequired
 };

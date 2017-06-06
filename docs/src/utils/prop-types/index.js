@@ -5,7 +5,7 @@ export function parseType({ name, raw, value } = {}) {
       `${prop} : ${parseType(value[prop])}`
     );
 
-    return `${name}(${nestedProps.join(', ')})`;
+    return `{ ${nestedProps.join(', ')} }`;
   } else if (name === 'custom') {
     return raw;
   } else if (name === 'arrayOf') {

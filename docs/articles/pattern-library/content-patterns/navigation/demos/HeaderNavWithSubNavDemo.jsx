@@ -1,14 +1,15 @@
 import React from 'react';
-import HeaderNav, { SubNav, SubNavLinkItem } from '@xo-union/tk-component-header-nav';
+import { SubNav, SubNavLinkItem } from '@xo-union/tk-component-header-nav';
+import HeaderNav from './InactiveHeaderNav'
 import { Demo } from '#docs/doc-components';
 
 export default function HeaderNavWithSubNavDemo() {
   return (
     <Demo>
       <div>
-        <HeaderNav />
+        <HeaderNav analyticsProps={{ product: 'fashion' }} />
         <SubNav>
-          <SubNavLinkItem href="/gs/wedding-websites">
+          <SubNavLinkItem href="/partnerships/macys-elements-of-style">
             <img alt="" src="http://media-api.theknot.com/images/217f19ac-c625-40fd-b1de-4034756f435c~rs_w.50?quality=100" />
             Elements of Style
           </SubNavLinkItem>

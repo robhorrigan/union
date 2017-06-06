@@ -28,7 +28,14 @@ function evalDynamicProperty(propertyValue, ...params) {
   return typeof propertyValue === 'function' ? propertyValue(...params) : propertyValue;
 }
 
-export default class TrackableLinks extends React.Component {
+class AnalyticsStub {
+  track() {
+    console.error(`window.analytics is not defined.
+This is a requirement to properly report clicks.`);
+  }
+}
+
+export default class GenericTrackableLinks extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     linkSelector: PropTypes.string.isRequired,
@@ -49,14 +56,17 @@ export default class TrackableLinks extends React.Component {
 
   static defaultProps = {
     followStrategy: new DefaultFollowStrategy(),
-    analytics: window.analytics,
     linkSelector: 'a'
   }
 
   @autobind
   handleClick(clickEvent) {
     const element = clickEvent.target;
-    const { followStrategy, analytics, linkSelector } = this.props;
+    const {
+      followStrategy,
+      analytics = window.analytics || new AnalyticsStub(),
+      linkSelector
+    } = this.props;
 
     if (matches(element, linkSelector)) {
       const eventName = evalDynamicProperty(this.props.eventName, element);

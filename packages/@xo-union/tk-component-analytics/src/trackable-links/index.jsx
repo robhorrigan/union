@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TrackableLinks from '@xo-union/component-analytics/lib/trackable-links';
+import GenericTrackableLinks from '@xo-union/tk-component-analytics/lib/generic-trackable-links';
 
 function selectionValue() {
   const selection = this.dataset.selectionLabel || this.textContent.trim();
@@ -13,11 +13,10 @@ function selectionValue() {
   return selection;
 }
 
-export default function HeaderNavAnalytics({ product, ...props }) {
+export default function TrackableLinks({ product, ...props }) {
   return (
-    <TrackableLinks
+    <GenericTrackableLinks
       linkSelector="[data-click-role]"
-      eventName="Menu Interaction"
       eventData={element => ({
         product,
         platform: 'web',
@@ -28,7 +27,7 @@ export default function HeaderNavAnalytics({ product, ...props }) {
   );
 }
 
-HeaderNavAnalytics.propTypes = {
+TrackableLinks.propTypes = {
   /**
    * The name of your product
    */
