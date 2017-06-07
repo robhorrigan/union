@@ -4,9 +4,11 @@ import HeaderNav from '../../';
 
 describe('<HeaderNav>', () => {
   let analyticsMock;
+  let analyticsProps;
 
   beforeEach(() => {
     analyticsMock = { track: jasmine.createSpy('track') };
+    analyticsProps = { product: 'fashion', analytics: analyticsMock, followStrategy: false };
   });
 
   describe('desktop', () => {
@@ -15,7 +17,7 @@ describe('<HeaderNav>', () => {
 
       beforeEach(() => {
         subject = mount(
-          <HeaderNav analyticsProps={{product: 'fashion', analytics: analyticsMock, followStrategy: false}} />
+          <HeaderNav analyticsProps={analyticsProps} />
         );
       });
 

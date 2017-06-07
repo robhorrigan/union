@@ -25,7 +25,11 @@ export function SubMenuLink({
   /* eslint-disable jsx-a11y/anchor-has-content */
   return (
     <li className={className}>
-      <a className={styles['sub-menu-item-link']} data-click-role={clickRole} {...props} />
+      <a
+        className={styles['sub-menu-item-link']}
+        data-trackable data-click-role={clickRole}
+        {...props}
+      />
     </li>
   );
 }

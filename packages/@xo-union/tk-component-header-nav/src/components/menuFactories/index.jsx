@@ -13,7 +13,7 @@ function Factory({ Template, children, label, ...props }) {
     if (!element) { return element; }
 
     return React.cloneElement(element, {
-      'data-selection-group-label': label,
+      'data-trackable-group': label,
       ...element.props
     });
   });
@@ -196,7 +196,7 @@ Shop.propTypes = {
 };
 
 function AccountMenuItem(props) {
-  const reducedProps = props::keep('data-selection-group-label');
+  const reducedProps = props::keep('data-trackable-group');
 
   return (
     <li className={styles['sub-menu-account-item']}>

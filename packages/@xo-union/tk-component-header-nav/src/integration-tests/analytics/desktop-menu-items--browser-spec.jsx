@@ -95,9 +95,11 @@ const SUB_MENU_SELECTION_VALUE = [
 
 describe('<HeaderNav>', () => {
   let analyticsMock;
+  let analyticsProps;
 
   beforeEach(() => {
     analyticsMock = { track: jasmine.createSpy('track') };
+    analyticsProps = { product: 'fashion', analytics: analyticsMock, followStrategy: false };
   });
 
   describe('desktop', () => {
@@ -107,7 +109,7 @@ describe('<HeaderNav>', () => {
 
       beforeEach(() => {
         subject = mount(
-          <HeaderNav analyticsProps={{product: 'fashion', analytics: analyticsMock, followStrategy: false}} />
+          <HeaderNav analyticsProps={analyticsProps} />
         );
         mainMenuLinks = subject.find('MainMenuItem > [data-click-role="navigate"]');
       });
@@ -131,7 +133,7 @@ describe('<HeaderNav>', () => {
 
       beforeEach(() => {
         subject = mount(
-          <HeaderNav analyticsProps={{product: 'fashion', analytics: analyticsMock, followStrategy: false}} />
+          <HeaderNav analyticsProps={analyticsProps} />
         );
         mainMenuLinks = subject.find('MainMenuItem > SubMenu [data-click-role="navigate"]');
       });

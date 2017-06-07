@@ -1,7 +1,7 @@
 import React from 'react';
 import { SubNav, SubNavLinkItem } from '@xo-union/tk-component-header-nav';
-import HeaderNav from './InactiveHeaderNav'
 import { Demo } from '#docs/doc-components';
+import HeaderNav from './InactiveHeaderNav';
 
 export default function HeaderNavWithSubNavDemo() {
   return (

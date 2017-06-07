@@ -4,9 +4,9 @@ import HeaderNav from './';
 import { Tools } from '../menuFactories';
 
 const analyticsProps = {
-  analytics: { track: () => {} },
+  analytics: { track: () => { } },
   followStrategy: false
-}
+};
 
 describe('<HeaderNav>', () => {
   describe('props.loggedIn', () => {
@@ -44,7 +44,9 @@ describe('<HeaderNav>', () => {
   describe('props.onNavigate', () => {
     it('is triggered when a navigation item is clicked', () => {
       const onNavigateSpy = jasmine.createSpy('onNavigate');
-      const subject = mount(<HeaderNav onNavigate={onNavigateSpy} analyticsProps={analyticsProps} />);
+      const subject = mount(
+        <HeaderNav onNavigate={onNavigateSpy} analyticsProps={analyticsProps} />
+      );
       const navigationItem = subject.find('[data-click-role="navigate"]');
       navigationItem.at(0).simulate('click');
 
@@ -55,7 +57,9 @@ describe('<HeaderNav>', () => {
   describe('props.onLogOut', () => {
     it('is triggered when the log out item is clicked', () => {
       const onLogOutSpy = jasmine.createSpy('onLogOut');
-      const subject = mount(<HeaderNav loggedIn onLogOut={onLogOutSpy} analyticsProps={analyticsProps} />);
+      const subject = mount(
+        <HeaderNav loggedIn onLogOut={onLogOutSpy} analyticsProps={analyticsProps} />
+      );
       const logOutItem = subject.find('[data-click-role="log-out"]');
       logOutItem.simulate('click');
 

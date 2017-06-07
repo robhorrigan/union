@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { autobind } from 'core-decorators';
+import TrackableLinks from '@xo-union/tk-component-analytics/lib/trackable-links';
 import MobileHeaderNav from '../mobile/HeaderNav';
 import DesktopHeaderNav from '../desktop/HeaderNav';
-import TrackableLinks from '@xo-union/tk-component-analytics/lib/trackable-links';
 
 const NOOP = () => { };
 
-class OnlyHeaderNav extends Component {
+class HeaderNav extends Component {
+  /* eslint-disable react/prop-types */
   static defaultProps = {
     onNavigate: NOOP,
     onSignUp: NOOP,
@@ -53,6 +54,7 @@ class OnlyHeaderNav extends Component {
   }
 
   render() {
+    /* eslint-disable jsx-a11y/no-static-element-interactions */
     const { loggedIn } = this.props;
 
     return (
@@ -64,21 +66,15 @@ class OnlyHeaderNav extends Component {
   }
 }
 
-export default class HeaderNav extends Component {
-  render() {
-    /* eslint-disable jsx-a11y/no-static-element-interactions */
-    const { analyticsProps = {}, ...headerNavProps } = this.props;
-
-    return (
-      <TrackableLinks eventName="Menu Interaction" {...analyticsProps}>
-        <OnlyHeaderNav {...headerNavProps} />
-      </TrackableLinks>
-    );
-  }
+export default function HeaderNavWithAnalytics({ analyticsProps = {}, ...headerNavProps }) {
+  return (
+    <TrackableLinks eventName="Menu Interaction" {...analyticsProps}>
+      <HeaderNav {...headerNavProps} />
+    </TrackableLinks>
+  );
 }
 
-
-HeaderNav.propTypes = {
+HeaderNavWithAnalytics.propTypes = {
   /**
    * Whether or not to render the logged in version
    **/

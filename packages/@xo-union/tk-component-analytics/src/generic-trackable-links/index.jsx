@@ -4,6 +4,14 @@ import matches from 'matches-selector';
 import willOpenNewTab from '@segment/is-meta';
 import { autobind } from 'core-decorators';
 
+  /* eslint-disable no-console*/
+const analyticsStub = {
+  track() {
+    console.error(`window.analytics is not defined.
+This is a requirement to properly report clicks.`);
+  }
+};
+
 export class DefaultFollowStrategy {
   constructor({ timeout = 300, location = window.location } = {}) {
     this.timeout = timeout;
@@ -26,13 +34,6 @@ function linkWillChangePage(element) {
 
 function evalDynamicProperty(propertyValue, ...params) {
   return typeof propertyValue === 'function' ? propertyValue(...params) : propertyValue;
-}
-
-class AnalyticsStub {
-  track() {
-    console.error(`window.analytics is not defined.
-This is a requirement to properly report clicks.`);
-  }
 }
 
 export default class GenericTrackableLinks extends React.Component {
@@ -64,7 +65,7 @@ export default class GenericTrackableLinks extends React.Component {
     const element = clickEvent.target;
     const {
       followStrategy,
-      analytics = window.analytics || new AnalyticsStub(),
+      analytics = window.analytics || analyticsStub,
       linkSelector
     } = this.props;
 
