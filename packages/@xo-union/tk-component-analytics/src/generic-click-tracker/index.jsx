@@ -36,7 +36,7 @@ function evalDynamicProperty(propertyValue, ...params) {
   return typeof propertyValue === 'function' ? propertyValue(...params) : propertyValue;
 }
 
-export default class GenericTrackableLinks extends React.Component {
+export default class GenericClickTracker extends React.Component {
   static propTypes = {
     children: PropTypes.node.isRequired,
     linkSelector: PropTypes.string.isRequired,
@@ -88,13 +88,10 @@ export default class GenericTrackableLinks extends React.Component {
 
   render() {
     /* eslint-disable jsx-a11y/no-static-element-interactions */
-    const {
-      children,
-      linkSelector
-    } = this.props;
+    const { children } = this.props;
 
     return (
-      <div data-trackable-links={linkSelector} onClick={this.handleClick}>
+      <div onClick={this.handleClick}>
         {children}
       </div>
     );

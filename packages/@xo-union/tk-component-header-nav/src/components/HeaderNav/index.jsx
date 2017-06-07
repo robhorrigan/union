@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { autobind } from 'core-decorators';
-import TrackableLinks from '@xo-union/tk-component-analytics/lib/trackable-links';
+import ClickTracker from '@xo-union/tk-component-analytics/lib/click-tracker';
 import MobileHeaderNav from '../mobile/HeaderNav';
 import DesktopHeaderNav from '../desktop/HeaderNav';
 
@@ -68,9 +68,9 @@ class HeaderNav extends Component {
 
 export default function HeaderNavWithAnalytics({ analyticsProps = {}, ...headerNavProps }) {
   return (
-    <TrackableLinks eventName="Menu Interaction" {...analyticsProps}>
+    <ClickTracker eventName="Menu Interaction" {...analyticsProps}>
       <HeaderNav {...headerNavProps} />
-    </TrackableLinks>
+    </ClickTracker>
   );
 }
 
@@ -96,7 +96,7 @@ HeaderNavWithAnalytics.propTypes = {
    */
   onLogOut: PropTypes.func,
   /**
-   * Props for analytics component. See @xo-union/tk-component-analytics/lib/trackable-links
+   * Props for analytics component. See @xo-union/tk-component-analytics/lib/click-tracker
    */
   analyticsProps: PropTypes.shape({
     product: PropTypes.string.isRequired

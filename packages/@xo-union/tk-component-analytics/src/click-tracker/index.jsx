@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import GenericTrackableLinks from '@xo-union/tk-component-analytics/lib/generic-trackable-links';
+import GenericClickTracker from '@xo-union/tk-component-analytics/lib/generic-click-tracker';
 
 function selectionValue() {
   const selection = this.dataset.trackableSelection || this.textContent.trim();
@@ -13,9 +13,9 @@ function selectionValue() {
   return selection;
 }
 
-export default function TrackableLinks({ product, ...props }) {
+export default function ClickTracker({ product, ...props }) {
   return (
-    <GenericTrackableLinks
+    <GenericClickTracker
       linkSelector="[data-trackable],[data-trackable-selection]"
       eventData={element => ({
         product,
@@ -27,7 +27,7 @@ export default function TrackableLinks({ product, ...props }) {
   );
 }
 
-TrackableLinks.propTypes = {
+ClickTracker.propTypes = {
   /**
    * The name of your product
    */
