@@ -26,5 +26,13 @@
   seo-section-container
 ) from './seo-section';
 
-@value ( nav-item-list, nav-item, nav-item-text, nav-link ) from './nav';
+@value ( 
+  nav-item-list,
+  nav-item,
+  nav-item-text,
+  nav-link,
+  nav-link-with-icon
+) from './nav';
+
 @value ( footer ) from './footer';
+

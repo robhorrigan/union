@@ -7,11 +7,13 @@ $imports:
 
 # Footers
 
-### Footer Nav
+## Footer Nav
+
+### Install
 
 <InstallSnippet packageJson={packageJson} />
 
-### Import
+### Demo
 
 ```javascript
 import FooterNav from '@xo-union/tk-component-footer-nav';

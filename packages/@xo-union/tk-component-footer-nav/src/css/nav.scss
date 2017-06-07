@@ -31,3 +31,9 @@
     outline: none;
   }
 }
+
+.nav-link-with-icon {
+  display: inline-block;
+  composes: hotspot from '@xo-union/tk-css-utilities/lib/hotspot';
+  composes: nav-link;   
+}

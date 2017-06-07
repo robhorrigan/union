@@ -24,9 +24,9 @@ NavItem.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export const NavLinkItem = ({ href, children }) => (
+export const NavLinkItem = ({ href, children, ...props }) => (
   <NavItem>
-    <AssumedTargetAnchor href={href} className={styles['nav-link']}>
+    <AssumedTargetAnchor href={href} className={styles['nav-link']} {...props}>
       {children}
     </AssumedTargetAnchor>
   </NavItem>
@@ -43,7 +43,7 @@ export const SisterSitesNavItem = () => (
       <span>
         Check out our sister sites
       </span>
-      <BrandLogoLink name="tb-logo" href="//www.thebump.com" />
+      <BrandLogoLink name="tb-logo" href="//www.thebump.com" data-trackable-selection="thebump" />
       and <NewWindowAnchor href="//www.gigmasters.com" className={styles['nav-link']}>
         GigMasters
       </NewWindowAnchor>
@@ -56,6 +56,7 @@ export const XOGroupLinkNavItem = () => (
     <BrandLogoLink
       name="xo-logo"
       href={`${XOGROUP_INC_HOST}/xo-group-company.aspx?${XOGROUP_INC_QUERY}`}
+      data-trackable-selection="xo group"
     />
   </li>
 );
