@@ -16,7 +16,7 @@ function selectionValue() {
 export default function ClickTracker({ product, ...props }) {
   return (
     <GenericClickTracker
-      linkSelector="[data-trackable],[data-trackable-selection]"
+      trackableSelector="[data-trackable],[data-trackable-selection]"
       eventData={element => ({
         product,
         platform: 'web',

@@ -38,15 +38,36 @@ function evalDynamicProperty(propertyValue, ...params) {
 
 export default class GenericClickTracker extends React.Component {
   static propTypes = {
+    /**
+     * The trackable components
+     */
     children: PropTypes.node.isRequired,
-    linkSelector: PropTypes.string.isRequired,
+    /**
+     * Selector of elements that are trackable
+     */
+    trackableSelector: PropTypes.string,
+    /**
+     * Event name to report in analytics track call
+     */
     eventName: PropTypes.oneOfType([
       PropTypes.func, PropTypes.string
     ]).isRequired,
+    /**
+     * Object with event data to report in analytics track call
+     */
     eventData: PropTypes.oneOfType([
-      PropTypes.func, PropTypes.string
+      PropTypes.func, PropTypes.shape()
     ]).isRequired,
+    /**
+     * analytics library dependency injection
+     */
     analytics: PropTypes.shape({ track: PropTypes.func }),
+     /**
+     * This is a function implementing the strategy to follow a link after it has been clicked.
+     * `false` disables opening of the link.
+     * This only applies to trackable links that will leave the page. If a link has a `target="_blank"` property
+     * or the user is attempting to open a new tab, the follow strategy will have no effect.
+     */
     followStrategy: PropTypes.oneOfType([
       PropTypes.oneOf([false]),
       PropTypes.shape({
@@ -57,7 +78,8 @@ export default class GenericClickTracker extends React.Component {
 
   static defaultProps = {
     followStrategy: new DefaultFollowStrategy(),
-    linkSelector: 'a'
+    analytics: window.analytics,
+    trackableSelector: 'a'
   }
 
   @autobind
@@ -66,10 +88,10 @@ export default class GenericClickTracker extends React.Component {
     const {
       followStrategy,
       analytics = window.analytics || analyticsStub,
-      linkSelector
+      trackableSelector
     } = this.props;
 
-    if (matches(element, linkSelector)) {
+    if (matches(element, trackableSelector)) {
       const eventName = evalDynamicProperty(this.props.eventName, element);
       const eventData = evalDynamicProperty(this.props.eventData, element);
 
