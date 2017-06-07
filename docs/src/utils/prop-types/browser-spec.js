@@ -55,6 +55,20 @@ describe('utils', () => {
         expect(result).toBe('Type1 | Type2');
       });
     });
+
+    describe('type name is "union"', () => {
+      it('returns a readable type format', () => {
+        const result = parseType({
+          name: 'union',
+          value: [
+            { value: 'Type1' },
+            { value: 'Type2' }
+          ]
+        });
+
+        expect(result).toBe('Type1 | Type2');
+      });
+    });
   });
 
   describe('otherwise', () => {
