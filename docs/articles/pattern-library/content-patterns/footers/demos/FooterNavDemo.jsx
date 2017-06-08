@@ -3,13 +3,16 @@ import FooterNav, { SEOLinkItem } from '@xo-union/tk-component-footer-nav';
 import { Demo } from '#docs/doc-components';
 
 export default function FooterNavDemo() {
+  /* eslint-disable no-console */
   return (
     <Demo propOverrides={{ analyticsProps: ({ product }) => (JSON.stringify({ product })) }}>
-      <FooterNav analyticsProps={{
-        product: "fashion",
-        analytics: { track: ::console.log },
-        followStrategy: false
-      }}>
+      <FooterNav
+        analyticsProps={{
+          product: 'fashion',
+          analytics: { track: ::console.log },
+          followStrategy: false
+        }}
+      >
         <SEOLinkItem href="//www.theknot.com/content/bride-time-saving-beauty-hacks">
           Wedding Planning
         </SEOLinkItem>

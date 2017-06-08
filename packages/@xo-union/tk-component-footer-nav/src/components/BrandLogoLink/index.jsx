@@ -4,7 +4,7 @@ import Icon from '@xo-union/tk-component-icons';
 import styles from '@xo-union/tk-component-footer-nav/lib/css';
 import { NewWindowAnchor } from '@xo-union/component-standard-elements/lib/anchor';
 
-export default function BrandLogoLink({ 
+export default function BrandLogoLink({
   href,
   name,
   ...props

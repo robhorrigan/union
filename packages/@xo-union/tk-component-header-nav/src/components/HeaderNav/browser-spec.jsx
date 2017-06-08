@@ -5,7 +5,8 @@ import { Tools } from '../menuFactories';
 
 const analyticsProps = {
   analytics: { track: () => { } },
-  followStrategy: false
+  followStrategy: false,
+  product: 'fashion'
 };
 
 describe('<HeaderNav>', () => {

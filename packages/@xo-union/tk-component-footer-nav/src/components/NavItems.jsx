@@ -44,7 +44,12 @@ export const SisterSitesNavItem = () => (
         Check out our sister sites
       </span>
       <BrandLogoLink name="tb-logo" href="//www.thebump.com" data-trackable-selection="thebump" />
-      and <NewWindowAnchor href="//www.gigmasters.com" className={styles['nav-link']}>
+      and
+      <NewWindowAnchor
+        href="//www.gigmasters.com"
+        className={styles['nav-link']}
+        data-trackable-selection="gig masters"
+      >
         GigMasters
       </NewWindowAnchor>
     </h3>
