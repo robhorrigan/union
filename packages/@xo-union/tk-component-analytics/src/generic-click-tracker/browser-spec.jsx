@@ -13,7 +13,11 @@ describe('<GenericClickTracker>', () => {
 
     it('adds tracking behavior to the child elements', () => {
       const subject = mount(
-        <GenericClickTracker analytics={analyticsMock} eventName="event name" eventData={mockEventData}>
+        <GenericClickTracker
+          analytics={analyticsMock}
+          eventName="event name"
+          eventData={mockEventData}
+        >
           <a>Content</a>
         </GenericClickTracker>
       );
