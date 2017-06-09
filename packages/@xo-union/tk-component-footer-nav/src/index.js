@@ -1,2 +1,2 @@
 export { default } from './components/FooterNav';
-export { SEOLinkItem } from './components/SEOSection';
+export { CustomLinkItem, CustomSection } from './components/CustomSection';

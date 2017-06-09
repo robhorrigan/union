@@ -20,11 +20,11 @@
 ) from './business-section';
 
 @value (
-  seo-row,
-  seo-col,
-  seo-section,
-  seo-section-container
-) from './seo-section';
+  custom-row,
+  custom-col,
+  custom-section,
+  custom-section-container
+) from './custom-section';
 
 @value ( 
   nav-item-list,

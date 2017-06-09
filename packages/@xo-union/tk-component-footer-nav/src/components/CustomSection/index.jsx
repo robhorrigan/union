@@ -2,9 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@xo-union/tk-component-footer-nav/lib/css';
 
-export function SEOLinkItem({ href, children }) {
+export function CustomLinkItem({ href, children }) {
   return (
-    <li className={styles['seo-col']}>
+    <li className={styles['custom-col']}>
       <a href={href} className={styles['nav-link']}>
         {children}
       </a>
@@ -12,16 +12,16 @@ export function SEOLinkItem({ href, children }) {
   );
 }
 
-SEOLinkItem.propTypes = {
+CustomLinkItem.propTypes = {
   href: PropTypes.string,
   children: PropTypes.node
 };
 
-export default function SEOSection({ children }) {
+export function CustomSection({ children }) {
   return (
-    <div className={styles['seo-section-container']}>
-      <div className={styles['seo-section']}>
-        <ul className={styles['seo-row']}>
+    <div className={styles['custom-section-container']}>
+      <div className={styles['custom-section']}>
+        <ul className={styles['custom-row']}>
           {children}
         </ul>
       </div>
@@ -29,7 +29,7 @@ export default function SEOSection({ children }) {
   );
 }
 
-SEOSection.propTypes = {
+CustomSection.propTypes = {
   children: PropTypes.node
 };
 
