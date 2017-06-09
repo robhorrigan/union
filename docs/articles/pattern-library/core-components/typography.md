@@ -3,18 +3,27 @@ $imports:
   spacing: '@xo-union/tk-css-utilities/lib/spacing'
   type: '@xo-union/tk-css-typography'
   '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
+  packageJson: '@xo-union/tk-css-typography/package.json'  
 ---
 
-<h1 className={spacing.mb4}>{$props.title}</h1>
+# Typography
 
-<h1>h1. heading</h1>
-<h2>h2. heading</h2>
-<h3>h3. heading</h3>
-<h4>h4. heading</h4>
-<h5>h5. heading</h5>
-<h6>h6. heading</h6>
+This is a CSS Module. Check the [getting started with CSS Modules](/pattern-library/getting-started/css-modules) section to learn more.
 
-<div className={spacing.mt5}></div>
+<InstallSnippet packageJson={packageJson} />
+
+## Headings
+
+<Demo>
+  <div>
+    <h1>h1. heading</h1>
+    <h2>h2. heading</h2>
+    <h3>h3. heading</h3>
+    <h4>h4. heading</h4>
+    <h5>h5. heading</h5>
+    <h6>h6. heading</h6>
+  </div>
+</Demo>
 
 ## Font Utility Classes
 
@@ -32,11 +41,6 @@ $imports:
   <li>
     <Demo cssDependencies={{ type }}>
       <div className={type.sansSerif}>Tisa Sans (font-weight: 400, default face)</div>
-    </Demo>
-  </li>
-  <li>
-    <Demo cssDependencies={{ type }}>
-      <div className={type.sansSerifMed}>Tisa Sans Medium (font-weight: 500, default face)</div>
     </Demo>
   </li>
 </ul>

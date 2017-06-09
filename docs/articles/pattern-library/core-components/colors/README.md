@@ -13,6 +13,8 @@ $imports:
 
 # Colors
 
+This is a CSS Module. Check the [getting started with CSS Modules](/pattern-library/getting-started/css-modules) section to learn more.
+
 <p>Union's color palette includes {uniqueColorNames().length} unique colors</p>
 
 ## Setup
