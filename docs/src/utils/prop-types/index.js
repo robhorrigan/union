@@ -5,15 +5,15 @@ export function parseType({ name, raw, value } = {}) {
       `${prop} : ${parseType(value[prop])}`
     );
 
-    return `${name}(${nestedProps.join(', ')})`;
+    return `{ ${nestedProps.join(', ')} }`;
   } else if (name === 'custom') {
     return raw;
   } else if (name === 'arrayOf') {
     return `${name}(${parseType(value)})`;
-  } else if (name === 'enum') {
-    return value.map(v => v.value).join(' | ');
+  } else if (name === 'enum' || name === 'union') {
+    return value.map(v => parseType(v)).join(' | ');
   }
 
-  return name;
+  return name || value;
 }
 

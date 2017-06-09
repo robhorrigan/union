@@ -7,8 +7,9 @@ export function SignUpButton(props) {
     <Button
       size="baby"
       className={styles.button}
-      isCTA
       data-click-role="sign-up"
+      data-trackable
+      isCTA
       {...props}
     >
       Sign up
@@ -23,6 +24,7 @@ export function LogInButton(props) {
       color="tertiary"
       className={styles.button}
       data-click-role="log-in"
+      data-trackable
       isCTA
       {...props}
     />

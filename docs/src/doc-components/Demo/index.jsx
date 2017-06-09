@@ -37,10 +37,10 @@ export default function Demo({
 
   return (
     <div {...props}>
-      {children}
       <Snippet lang="jsx">
         {jsxToString(children, { keyValueOverride, ignoreProps })}
       </Snippet>
+      {children}
     </div>
   );
 }

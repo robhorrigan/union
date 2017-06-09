@@ -1,13 +1,14 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import DesktopHeaderNav from '../../components/desktop/HeaderNav';
-import HeaderNavAnalytics from '../../analytics';
+import HeaderNav from '../../';
 
-describe('<HeaderNavAnalytics>', () => {
+describe('<HeaderNav>', () => {
   let analyticsMock;
+  let analyticsProps;
 
   beforeEach(() => {
     analyticsMock = { track: jasmine.createSpy('track') };
+    analyticsProps = { product: 'fashion', analytics: analyticsMock, followStrategy: false };
   });
 
   describe('desktop', () => {
@@ -16,9 +17,7 @@ describe('<HeaderNavAnalytics>', () => {
 
       beforeEach(() => {
         subject = mount(
-          <HeaderNavAnalytics product="fashion" analytics={analyticsMock} followStrategy={false}>
-            <DesktopHeaderNav />
-          </HeaderNavAnalytics>
+          <HeaderNav analyticsProps={analyticsProps} />
         );
       });
 

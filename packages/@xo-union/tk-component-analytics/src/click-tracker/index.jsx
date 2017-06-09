@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import TrackableLinks from '@xo-union/component-analytics/lib/trackable-links';
+import GenericClickTracker from '@xo-union/tk-component-analytics/lib/generic-click-tracker';
 
 function selectionValue() {
-  const selection = this.dataset.selectionLabel || this.textContent.trim();
-  const namespace = this.dataset.selectionGroupLabel;
+  const selection = this.dataset.trackableSelection || this.textContent.trim();
+  const namespace = this.dataset.trackableGroup;
 
   if (namespace) {
     return `${namespace} > ${selection}`;
@@ -13,11 +13,10 @@ function selectionValue() {
   return selection;
 }
 
-export default function HeaderNavAnalytics({ product, ...props }) {
+export default function ClickTracker({ product, ...props }) {
   return (
-    <TrackableLinks
-      linkSelector="[data-click-role]"
-      eventName="Menu Interaction"
+    <GenericClickTracker
+      trackableSelector="[data-trackable],[data-trackable-selection]"
       eventData={element => ({
         product,
         platform: 'web',
@@ -28,7 +27,7 @@ export default function HeaderNavAnalytics({ product, ...props }) {
   );
 }
 
-HeaderNavAnalytics.propTypes = {
+ClickTracker.propTypes = {
   /**
    * The name of your product
    */

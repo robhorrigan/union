@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { autobind } from 'core-decorators';
+import ClickTracker from '@xo-union/tk-component-analytics/lib/click-tracker';
 import MobileHeaderNav from '../mobile/HeaderNav';
 import DesktopHeaderNav from '../desktop/HeaderNav';
 
-const NOOP = () => {};
+const NOOP = () => { };
 
-export default class HeaderNav extends Component {
+class HeaderNav extends Component {
+  /* eslint-disable react/prop-types */
   static defaultProps = {
     onNavigate: NOOP,
     onSignUp: NOOP,
@@ -22,10 +24,11 @@ export default class HeaderNav extends Component {
       onLogIn,
       onLogOut,
       loggedIn,
-      ...props
+      product,
+      ...newProps
     } = this.props;
 
-    return props;
+    return newProps;
   }
 
   @autobind
@@ -63,8 +66,15 @@ export default class HeaderNav extends Component {
   }
 }
 
+export default function HeaderNavWithAnalytics({ analyticsProps = {}, ...headerNavProps }) {
+  return (
+    <ClickTracker eventName="Menu Interaction" {...analyticsProps}>
+      <HeaderNav {...headerNavProps} />
+    </ClickTracker>
+  );
+}
 
-HeaderNav.propTypes = {
+HeaderNavWithAnalytics.propTypes = {
   /**
    * Whether or not to render the logged in version
    **/
@@ -84,5 +94,11 @@ HeaderNav.propTypes = {
   /**
    * Callback for clicking log out menu item
    */
-  onLogOut: PropTypes.func
+  onLogOut: PropTypes.func,
+  /**
+   * Props for analytics component. See @xo-union/tk-component-analytics/lib/click-tracker
+   */
+  analyticsProps: PropTypes.shape({
+    product: PropTypes.string.isRequired
+  }).isRequired
 };

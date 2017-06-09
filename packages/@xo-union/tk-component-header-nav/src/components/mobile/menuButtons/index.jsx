@@ -15,7 +15,6 @@ function MobileMenuButton({ onClick, isOpen, closedIconName, ...props }) {
       <button
         onClick={onClick}
         className={styles['icon-button']}
-        data-click-role="toggle-sub-menu"
         {...props}
       >
         <Icon name={iconName} className={styles['menu-icon']} />
@@ -42,7 +41,7 @@ export function ToolsMenuButton(props) {
   return (
     <MobileMenuButton
       closedIconName="nav-signup-mobile"
-      data-selection-label={`${selectionState} Tools Menu`}
+      data-trackable-selection={`${selectionState} Tools Menu`}
       {...props}
     />
   );
@@ -58,7 +57,7 @@ export function PrimaryMenuButton(props) {
   return (
     <MobileMenuButton
       closedIconName="hamburger"
-      data-selection-label={`${selectionState} Primary Menu`}
+      data-trackable-selection={`${selectionState} Primary Menu`}
       {...props}
     />
   );

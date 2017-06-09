@@ -4,6 +4,14 @@ import matches from 'matches-selector';
 import willOpenNewTab from '@segment/is-meta';
 import { autobind } from 'core-decorators';
 
+  /* eslint-disable no-console*/
+const analyticsStub = {
+  track() {
+    console.error(`window.analytics is not defined.
+This is a requirement to properly report clicks.`);
+  }
+};
+
 export class DefaultFollowStrategy {
   constructor({ timeout = 300, location = window.location } = {}) {
     this.timeout = timeout;
@@ -28,17 +36,38 @@ function evalDynamicProperty(propertyValue, ...params) {
   return typeof propertyValue === 'function' ? propertyValue(...params) : propertyValue;
 }
 
-export default class TrackableLinks extends React.Component {
+export default class GenericClickTracker extends React.Component {
   static propTypes = {
+    /**
+     * The trackable components
+     */
     children: PropTypes.node.isRequired,
-    linkSelector: PropTypes.string.isRequired,
+    /**
+     * Selector of elements that are trackable
+     */
+    trackableSelector: PropTypes.string,
+    /**
+     * Event name to report in analytics track call
+     */
     eventName: PropTypes.oneOfType([
       PropTypes.func, PropTypes.string
     ]).isRequired,
+    /**
+     * Object with event data to report in analytics track call
+     */
     eventData: PropTypes.oneOfType([
-      PropTypes.func, PropTypes.string
+      PropTypes.func, PropTypes.shape()
     ]).isRequired,
+    /**
+     * analytics library dependency injection
+     */
     analytics: PropTypes.shape({ track: PropTypes.func }),
+     /**
+     * This is a function implementing the strategy to follow a link after it has been clicked.
+     * `false` disables opening of the link.
+     * This only applies to trackable links that will leave the page. If a link has a `target="_blank"` property
+     * or the user is attempting to open a new tab, the follow strategy will have no effect.
+     */
     followStrategy: PropTypes.oneOfType([
       PropTypes.oneOf([false]),
       PropTypes.shape({
@@ -50,15 +79,19 @@ export default class TrackableLinks extends React.Component {
   static defaultProps = {
     followStrategy: new DefaultFollowStrategy(),
     analytics: window.analytics,
-    linkSelector: 'a'
+    trackableSelector: 'a'
   }
 
   @autobind
   handleClick(clickEvent) {
     const element = clickEvent.target;
-    const { followStrategy, analytics, linkSelector } = this.props;
+    const {
+      followStrategy,
+      analytics = window.analytics || analyticsStub,
+      trackableSelector
+    } = this.props;
 
-    if (matches(element, linkSelector)) {
+    if (matches(element, trackableSelector)) {
       const eventName = evalDynamicProperty(this.props.eventName, element);
       const eventData = evalDynamicProperty(this.props.eventData, element);
 
@@ -77,13 +110,10 @@ export default class TrackableLinks extends React.Component {
 
   render() {
     /* eslint-disable jsx-a11y/no-static-element-interactions */
-    const {
-      children,
-      linkSelector
-    } = this.props;
+    const { children } = this.props;
 
     return (
-      <div data-trackable-links={linkSelector} onClick={this.handleClick}>
+      <div onClick={this.handleClick}>
         {children}
       </div>
     );

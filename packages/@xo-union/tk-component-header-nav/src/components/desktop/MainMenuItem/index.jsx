@@ -20,7 +20,11 @@ MainMenuItem.propTypes = {
 export function MainMenuItemWithSubMenu({ label, href, children, ...props }) {
   return (
     <MainMenuItem {...props}>
-      <a href={href} className={styles['main-menu-item-link']} data-click-role="navigate">
+      <a
+        href={href}
+        className={styles['main-menu-item-link']}
+        data-click-role="navigate" data-trackable
+      >
         {label}
       </a>
       <span className={styles['menu-pointer']} />

@@ -1,19 +1,20 @@
-.seo-row {
+.custom-row {
   composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
   composes: row from '@xo-union/tk-css-bootstrap/lib/grid';
 }
 
-.seo-col {
+.custom-col {
   composes: col-md-4 col-6 from '@xo-union/tk-css-bootstrap/lib/grid';
   composes: section section-links from './section';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
   padding: 3px 10px;
 }
 
-.seo-section {
+.custom-section {
   composes: col-md-8 offset-md-2 from '@xo-union/tk-css-bootstrap/lib/grid';
 }
 
-.seo-section-container {
+.custom-section-container {
   composes: background-gray-8-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: footer from './footer';
 }

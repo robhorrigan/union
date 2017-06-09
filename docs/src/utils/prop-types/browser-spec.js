@@ -13,7 +13,7 @@ describe('utils', () => {
           }
         });
 
-        expect(result).toBe('shape(attribute : TestType)');
+        expect(result).toBe('{ attribute : TestType }');
       });
     });
 
@@ -46,6 +46,20 @@ describe('utils', () => {
       it('returns a readable type format', () => {
         const result = parseType({
           name: 'enum',
+          value: [
+            { value: 'Type1' },
+            { value: 'Type2' }
+          ]
+        });
+
+        expect(result).toBe('Type1 | Type2');
+      });
+    });
+
+    describe('type name is "union"', () => {
+      it('returns a readable type format', () => {
+        const result = parseType({
+          name: 'union',
           value: [
             { value: 'Type1' },
             { value: 'Type2' }

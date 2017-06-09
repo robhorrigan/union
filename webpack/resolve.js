@@ -20,7 +20,11 @@ const defaultAliases = {
 
 export const resolveDefaults = {
   extensions,
-  alias: defaultAliases
+  alias: defaultAliases,
+  modules: [
+    '__shared__',
+    'node_modules'
+  ]
 };
 
 export const resolveTestAndDocs = {
@@ -34,7 +38,11 @@ export const resolveTestAndDocs = {
     /* Facilitate making references to articles and config in docs app */
     $articles: docsPath('articles-directory.config.json'),
     '$site-config': docsPath('site.config.json')
-  }
+  },
+  modules: [
+    '__shared__',
+    'node_modules'
+  ]
 };
 
 export const resolveLoaders = {

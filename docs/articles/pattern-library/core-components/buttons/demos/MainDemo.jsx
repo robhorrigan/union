@@ -1,10 +1,10 @@
 import React from 'react';
 import { Button } from '@xo-union/tk-component-buttons';
-import styles from './style';
+import styles from 'shared-list-demo.scss';
 
 export default function MainDemo() {
   return (
-    <ul className={styles.demo}>
+    <ul className={styles['list-demo']}>
       <li>
         <Button size="papa" color="primary">Button</Button>
       </li>

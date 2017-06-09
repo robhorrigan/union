@@ -6,7 +6,7 @@ $imports:
 
 # Getting Started
 
-Union is an ecosystem of packages that define [The Knot](http://www.theknot.com)'s pattern library. Each package consists of either [React]() components, [CSS Modules]() or both.
+Union is an ecosystem of packages that define [The Knot](http://www.theknot.com)'s pattern library. Each package consists of either [React]() components, [CSS Modules](/pattern-library/getting-started/css-modules) or both.
 
 ## Configuring build
 

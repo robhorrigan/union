@@ -31,3 +31,9 @@
     outline: none;
   }
 }
+
+.nav-link-with-icon {
+  display: inline-block;
+  composes: disable-children-pointer-events from '@xo-union/tk-css-utilities/lib/pointer-events';
+  composes: nav-link;   
+}

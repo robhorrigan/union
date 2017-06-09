@@ -3,34 +3,40 @@ import { mount } from 'enzyme';
 import HeaderNav from './';
 import { Tools } from '../menuFactories';
 
+const analyticsProps = {
+  analytics: { track: () => { } },
+  followStrategy: false,
+  product: 'fashion'
+};
+
 describe('<HeaderNav>', () => {
   describe('props.loggedIn', () => {
     it('does not render the account ctas', () => {
-      const subject = mount(<HeaderNav loggedIn />);
+      const subject = mount(<HeaderNav loggedIn analyticsProps={analyticsProps} />);
       expect(subject.text()).not.toContain('SIGN UP');
       expect(subject.text()).not.toContain('LOG IN');
     });
 
     it('renders the Log Out button', () => {
-      const subject = mount(<HeaderNav loggedIn />);
+      const subject = mount(<HeaderNav loggedIn analyticsProps={analyticsProps} />);
       expect(subject.text()).toContain('Log Out');
     });
   });
 
   describe('logged out', () => {
     it('does not render the account ctas', () => {
-      const subject = mount(<HeaderNav loggedIn={false} />);
+      const subject = mount(<HeaderNav loggedIn={false} analyticsProps={analyticsProps} />);
       expect(subject.text()).toContain('Sign up');
       expect(subject.text()).toContain('Log in');
     });
 
     it('does not render to Log Out button', () => {
-      const subject = mount(<HeaderNav loggedIn={false} />);
+      const subject = mount(<HeaderNav loggedIn={false} analyticsProps={analyticsProps} />);
       expect(subject.text()).not.toContain('Log Out');
     });
 
     it('passes the loggedIn value to the tools nav item', () => {
-      const subject = mount(<HeaderNav loggedIn={false} />);
+      const subject = mount(<HeaderNav loggedIn={false} analyticsProps={analyticsProps} />);
       const toolsNavItem = subject.find(Tools);
       expect(toolsNavItem.props().loggedIn).toBe(false);
     });
@@ -39,7 +45,9 @@ describe('<HeaderNav>', () => {
   describe('props.onNavigate', () => {
     it('is triggered when a navigation item is clicked', () => {
       const onNavigateSpy = jasmine.createSpy('onNavigate');
-      const subject = mount(<HeaderNav onNavigate={onNavigateSpy} />);
+      const subject = mount(
+        <HeaderNav onNavigate={onNavigateSpy} analyticsProps={analyticsProps} />
+      );
       const navigationItem = subject.find('[data-click-role="navigate"]');
       navigationItem.at(0).simulate('click');
 
@@ -50,7 +58,9 @@ describe('<HeaderNav>', () => {
   describe('props.onLogOut', () => {
     it('is triggered when the log out item is clicked', () => {
       const onLogOutSpy = jasmine.createSpy('onLogOut');
-      const subject = mount(<HeaderNav loggedIn onLogOut={onLogOutSpy} />);
+      const subject = mount(
+        <HeaderNav loggedIn onLogOut={onLogOutSpy} analyticsProps={analyticsProps} />
+      );
       const logOutItem = subject.find('[data-click-role="log-out"]');
       logOutItem.simulate('click');
 
@@ -61,7 +71,7 @@ describe('<HeaderNav>', () => {
   describe('props.onLogIn', () => {
     it('is triggered when the log in item is clicked', () => {
       const onLogInSpy = jasmine.createSpy('onLogIn');
-      const subject = mount(<HeaderNav onLogIn={onLogInSpy} />);
+      const subject = mount(<HeaderNav onLogIn={onLogInSpy} analyticsProps={analyticsProps} />);
       const logInItem = subject.find('[data-click-role="log-in"]');
       logInItem.at(0).simulate('click');
 
@@ -72,7 +82,7 @@ describe('<HeaderNav>', () => {
   describe('props.onSignUp', () => {
     it('is triggered when the sign up item is clicked', () => {
       const onSignUpSpy = jasmine.createSpy('onSignUp');
-      const subject = mount(<HeaderNav onSignUp={onSignUpSpy} />);
+      const subject = mount(<HeaderNav onSignUp={onSignUpSpy} analyticsProps={analyticsProps} />);
       const signUpItem = subject.find('[data-click-role="sign-up"]');
       signUpItem.at(0).simulate('click');
 
