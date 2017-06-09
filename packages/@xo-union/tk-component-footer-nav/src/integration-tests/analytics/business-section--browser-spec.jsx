@@ -3,13 +3,13 @@ import { mount } from 'enzyme';
 import FooterNav from '../../';
 
 const assertions = [
-  ['xo group', 'xo group'],
+  ['', 'xo group'],
   ['About Us', 'about-us'],
   ['Careers', 'careers'],
   ['Investors', 'investors'],
   ['Media', 'media'],
   ['Advertise with Us', 'advertisers'],
-  ['thebump', 'thebump'],
+  ['', 'thebump'],
   ['GigMasters', 'gig masters'],
   ['Privacy Policy', 'privacy policy'],
   ['Terms of Use', 'terms of use'],
@@ -20,7 +20,7 @@ const assertions = [
 describe('business-section analytics', () => {
   describe('on click', () => {
     assertions.forEach(([text, selection], index) => {
-      it(`makes expected analytics track call for: ${JSON.stringify(text)}`, () => {
+      it(`makes expected analytics track call for: ${JSON.stringify(text || selection)}`, () => {
         const analyticsMock = jasmine.createSpy('track');
         const analyticsProps = {
           analytics: { track: analyticsMock },
@@ -30,10 +30,9 @@ describe('business-section analytics', () => {
         const subject = mount(<FooterNav analyticsProps={analyticsProps} />);
         const trackableLinks = subject.find('BusinessSection a');
         const current = trackableLinks.at(index);
-        const currentText = current.text() || selection;
         current.simulate('click');
 
-        expect(currentText).toBe(text);
+        expect(current.text()).toBe(text);
         expect(analyticsMock).toHaveBeenCalledWith('Footer Interaction', {
           product: 'fashion',
           platform: 'web',

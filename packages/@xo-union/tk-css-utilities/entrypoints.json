@@ -4,5 +4,5 @@
   "flexbox.scss",
   "spacing.scss",
   "vertical-align.scss",
-  "hotspot.scss"
+  "pointer-events.scss"
 ]

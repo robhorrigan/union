@@ -1,8 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import ClickTracker from './';
+import GenericClickTracker from './';
 
-describe('<TrackableLink>', () => {
+describe('<GenericClickTracker>', () => {
   describe('onClick of an anchor', () => {
     let analyticsMock;
     const mockEventData = { a: 1 };
@@ -13,9 +13,9 @@ describe('<TrackableLink>', () => {
 
     it('adds tracking behavior to the child elements', () => {
       const subject = mount(
-        <ClickTracker analytics={analyticsMock} eventName="event name" eventData={mockEventData}>
+        <GenericClickTracker analytics={analyticsMock} eventName="event name" eventData={mockEventData}>
           <a>Content</a>
-        </ClickTracker>
+        </GenericClickTracker>
       );
 
       const anchor = subject.find('a');
@@ -26,13 +26,13 @@ describe('<TrackableLink>', () => {
 
     it('allows generation of dynamic tracking data', () => {
       const subject = mount(
-        <ClickTracker
+        <GenericClickTracker
           analytics={analyticsMock}
           eventName={anchor => anchor.dataset.eventName}
           eventData={anchor => ({ selection: anchor.textContent })}
         >
           <a data-event-name="Test Event">Content</a>
-        </ClickTracker>
+        </GenericClickTracker>
       );
 
       const anchor = subject.find('a');
@@ -52,7 +52,7 @@ describe('<TrackableLink>', () => {
         const eventMock = { preventDefault: jasmine.createSpy('preventDefault') };
 
         const subject = mount(
-          <ClickTracker
+          <GenericClickTracker
             analytics={analyticsMock}
             followStrategy={followStrategyMock}
             eventName="event name"
@@ -60,7 +60,7 @@ describe('<TrackableLink>', () => {
           >
             <a href="http://google.com">Content 1</a>
             <a>Content 2</a>
-          </ClickTracker>
+          </GenericClickTracker>
         );
 
         const anchor = subject.find('a');
@@ -74,7 +74,7 @@ describe('<TrackableLink>', () => {
 
       it('calls the followStrategy', () => {
         const subject = mount(
-          <ClickTracker
+          <GenericClickTracker
             analytics={analyticsMock}
             followStrategy={followStrategyMock}
             eventName="event name"
@@ -82,7 +82,7 @@ describe('<TrackableLink>', () => {
           >
             <a href="http://google.com">Content 1</a>
             <a>Content 2</a>
-          </ClickTracker>
+          </GenericClickTracker>
         );
 
         const anchor = subject.find('a');

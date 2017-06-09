@@ -34,6 +34,6 @@
 
 .nav-link-with-icon {
   display: inline-block;
-  composes: hotspot from '@xo-union/tk-css-utilities/lib/hotspot';
+  composes: disable-children-pointer-events from '@xo-union/tk-css-utilities/lib/pointer-events';
   composes: nav-link;   
 }
