@@ -3,7 +3,7 @@
 // dependency and should not be compiled into this module
 @require '@xo-union/tk-css-typography/lib/fonts';
 
-@import '~__shared__/bootstrap-sass';
+@import '~@shared/bootstrap-sass-mixins-and-variables';
 @import './variables';
 @import '~bootstrap/scss/type';
 

@@ -7,7 +7,7 @@ $imports:
   ClickTracker: '@xo-union/tk-component-analytics/lib/click-tracker'
   GenericClickTracker: '@xo-union/tk-component-analytics/lib/generic-click-tracker'
   '{ Button }': '@xo-union/tk-component-buttons'
-  styles: 'shared-list-demo'
+  styles: '@shared/list-demo'
   ClickTrackerMetadata: '!!react-docgen-loader!@xo-union/tk-component-analytics/src/click-tracker'
   GenericClickTrackerMetadata: '!!react-docgen-loader!@xo-union/tk-component-analytics/src/generic-click-tracker'
 ---

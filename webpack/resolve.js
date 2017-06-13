@@ -14,17 +14,18 @@ const extensions = [
 ];
 
 const defaultAliases = {
-  '#assets': staticPath('assets'),
-  __shared__: packagesPath('@xo-union', '__shared__')
+  '#assets': staticPath('assets')
 };
+
+const moduleFolders = [
+  '__private_modules__',
+  'node_modules'
+];
 
 export const resolveDefaults = {
   extensions,
   alias: defaultAliases,
-  modules: [
-    '__shared__',
-    'node_modules'
-  ]
+  modules: moduleFolders
 };
 
 export const resolveTestAndDocs = {
@@ -39,10 +40,7 @@ export const resolveTestAndDocs = {
     $articles: docsPath('articles-directory.config.json'),
     '$site-config': docsPath('site.config.json')
   },
-  modules: [
-    '__shared__',
-    'node_modules'
-  ]
+  modules: moduleFolders
 };
 
 export const resolveLoaders = {

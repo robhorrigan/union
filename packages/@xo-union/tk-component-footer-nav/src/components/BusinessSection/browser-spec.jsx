@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { getNodeAt } from '__shared__/test/enzyme-component';
+import { getNodeAt } from '@shared/spec-support/enzyme-component';
 import BusinessSection from './';
 
 describe('<BusinessSection>', () => {

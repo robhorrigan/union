@@ -41,21 +41,8 @@ module.exports = {
        ignoreTrailingComments: true,
        ignoreUrls: true
      }],
-    'import/no-extraneous-dependencies': [
-      'error',
-      {
-        devDependencies: [
-          'webpack.*.js',
-          '**/gulpfile*',
-          'webpack/**',
-          'spec/**',
-          'scripts/**',
-          'custom-loaders/**',
-          'test-index.js',
-          '**/benchmark.js'
-        ]
-      }
-    ]
+    /* We have tests that cover this in a more thorough fashion */
+    'import/no-extraneous-dependencies': [ 'off' ]
   },
   settings: {
     'import/resolver': {

@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import styles from '@xo-union/tk-component-header-nav/src/css';
-import { classString } from '__shared__/test/enzyme-component';
+import { classString } from '@shared/spec-support/enzyme-component';
 import { MainMenuItem } from './';
 
 describe('<MainMenuItem>', () => {

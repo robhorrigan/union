@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import { classString } from '__shared__/test/enzyme-component';
+import { classString } from '@shared/spec-support/enzyme-component';
 import { List } from './';
 
 describe('<List>', () => {
