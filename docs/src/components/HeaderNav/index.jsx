@@ -4,13 +4,16 @@ import { autorun } from 'mobx';
 import { inject, Provider } from 'mobx-react';
 
 import Toggler from '#docs/mixins/toggleable/toggler';
+import Article from '#docs/entities/Article';
 
-import ContentPatternsSubNav from './ContentPatternsSubNav';
 import CoreComponentsSubNav from './CoreComponentsSubNav';
+import SubNavWithGroups from './SubNavWithGroups';
 import SubNavContainer from './SubNav/Container';
 import PrimaryNav from './PrimaryNav';
 import PatternLibraryNav from './PatternLibraryNav';
 import ids from './ids';
+
+const MAX_NUMBER_OF_SUBNAV_COLUMNS = 7;
 
 @inject('router')
 export default class HeaderNav extends Component {
@@ -44,8 +47,18 @@ export default class HeaderNav extends Component {
           <PatternLibraryNav toggledAs={ids.primaryNavPatternLibrary} />
 
           <SubNavContainer>
-            <ContentPatternsSubNav toggledAs={ids.secondaryNavContentPattern} />
             <CoreComponentsSubNav toggledAs={ids.secondaryNavCoreComponents} />
+
+            <SubNavWithGroups
+              toggledAs={ids.secondaryNavContentPattern}
+              items={Article.contentPatterns()}
+              numberOfGroups={MAX_NUMBER_OF_SUBNAV_COLUMNS}
+            />
+            <SubNavWithGroups
+              toggledAs={ids.secondaryNavUtilities}
+              items={Article.utilities()}
+              numberOfGroups={MAX_NUMBER_OF_SUBNAV_COLUMNS}
+            />
           </SubNavContainer>
         </header>
       </Provider>

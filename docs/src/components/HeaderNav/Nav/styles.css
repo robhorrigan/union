@@ -8,6 +8,6 @@
 
 .groups-container {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
-  composes: justify-content-between from '@xo-union/tk-css-utilities/lib/flexbox';
+  composes: justify-content-center from '@xo-union/tk-css-utilities/lib/flexbox';
   composes: font-down-1 from '@xo-union/tk-css-typography';
 }

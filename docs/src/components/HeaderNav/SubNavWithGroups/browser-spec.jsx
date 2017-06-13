@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'mobx-react';
 import { mount } from 'enzyme';
-import ContentPatternsSubNav from './';
+import SubNavWithGroups from './';
 import seed from './spec/content-patterns-seed.json';
 
 const articlesMock = seed.map(name => ({
@@ -9,14 +9,14 @@ const articlesMock = seed.map(name => ({
   fullPath() { return '/'; }
 }));
 
-describe('<ContentPatternsSubNav>', () => {
+describe('<SubNavWithGroups>', () => {
   const defaultRouterMock = { inPath() { return false; } };
 
   it('creates 7 columns', () => {
     const togglerMock = new Set();
     const subject = mount(
       <Provider router={defaultRouterMock}>
-        <ContentPatternsSubNav toggler={togglerMock} contentPatternArticles={articlesMock} />
+        <SubNavWithGroups toggler={togglerMock} items={articlesMock} numberOfGroups={7} />
       </Provider>
     );
 
@@ -28,7 +28,7 @@ describe('<ContentPatternsSubNav>', () => {
     const togglerMock = new Set();
     const subject = mount(
       <Provider router={defaultRouterMock}>
-        <ContentPatternsSubNav toggler={togglerMock} contentPatternArticles={articlesMock} />
+        <SubNavWithGroups toggler={togglerMock} items={articlesMock} numberOfGroups={7} />
       </Provider>
     );
 

@@ -27,5 +27,11 @@ export default toggleable(() =>
     >
       Content Patterns
     </NavItemWithSubNav>
+    <NavItemWithSubNav
+      to="/pattern-library/utilities"
+      toggles={ids.secondaryNavUtilities}
+    >
+      Utilities
+    </NavItemWithSubNav>
   </Nav>
 );

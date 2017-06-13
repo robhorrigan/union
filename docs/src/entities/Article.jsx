@@ -18,6 +18,10 @@ export default class Article {
     return this.all.filter(article => article.isContentPattern());
   }
 
+  static utilities() {
+    return this.all.filter(article => article.isUtility());
+  }
+
   constructor(pathInfo, Component, attributes = {}) {
     this.pathInfo = pathInfo;
     this.Component = Component;
@@ -63,5 +67,9 @@ export default class Article {
   isContentPattern() {
     return this.attributes.isContentPattern ||
       this.pathInfo.relativeName.indexOf('/content-patterns/') >= 0;
+  }
+
+  isUtility() {
+    return this.pathInfo.relativeName.indexOf('/utilities/') >= 0;
   }
 }
