@@ -1,9 +1,9 @@
 {
   "name": "@xo-union/tk-component-fields",
-  "version": "0.1.15",
+  "version": "0.1.16",
   "main": "lib/index.js",
   "dependencies": {
-    "@xo-union/tk-component-icons": "^0.3.8",
+    "@xo-union/tk-component-icons": "^0.4.0",
     "@xo-union/tk-css-bootstrap": "^0.2.6",
     "@xo-union/tk-css-colors": "^0.3.4",
     "@xo-union/tk-css-typography": "^0.1.8",
