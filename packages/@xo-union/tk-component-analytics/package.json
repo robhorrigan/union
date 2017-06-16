@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/tk-component-analytics",
-  "version": "0.1.6",
+  "version": "0.2.0",
   "main": null,
   "dependencies": {
     "@segment/is-meta": "^1.0.0",
