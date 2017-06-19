@@ -8,11 +8,11 @@ import navLinkCss from './smallNavLink.css';
 import NavItem from '../NavItem';
 
 function menuList(group) {
-  return group.map(item =>
+  return group.map(item => (
     <NavItem key={item.title()} styles={navLinkCss} to={item.fullPath()}>
       {item.title()}
     </NavItem>
-  );
+  ));
 }
 
 function articleCompareFunction(a, b) {
@@ -30,11 +30,11 @@ function articleCompareFunction(a, b) {
 function groupList({ items, numberOfGroups }) {
   const groups = items.sort(articleCompareFunction)::toGroups(numberOfGroups);
 
-  return groups.map(group =>
+  return groups.map(group => (
     <List role="group" align="vertical" key={group[0].title()}>
       {menuList(group)}
     </List>
-  );
+  ));
 }
 
 @CSS(navCss)

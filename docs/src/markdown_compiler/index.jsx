@@ -3,8 +3,8 @@ import React from 'react';
 import marksy from 'marksy';
 import { Link } from 'react-router';
 import { AssumedTargetAnchor } from '@xo-union/component-standard-elements/lib/anchor';
-import Snippet from './doc-components/Snippet';
-import Header from './doc-components/Header';
+import Snippet from '#docs/doc-components/Snippet';
+import Header from '#docs/doc-components/Header';
 
 const RouterLinkWrapper = ({ href, children }) => <Link to={href}>{children}</Link>;
 

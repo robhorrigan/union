@@ -5,7 +5,7 @@ import Nav from '../Nav';
 import NavItem, { NavItemWithSubNav } from '../NavItem';
 import ids from '../ids';
 
-export default toggleable(() =>
+export default toggleable(() => (
   <Nav role="menubar">
     <NavItem to="/">
       <Arrow />
@@ -34,4 +34,4 @@ export default toggleable(() =>
       Utilities
     </NavItemWithSubNav>
   </Nav>
-);
+));

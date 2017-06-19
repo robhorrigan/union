@@ -5,11 +5,11 @@ import Icon from '@xo-union/tk-component-icons';
 import icons from '!!xml-loader!#assets/icons/union-icons.svg';
 
 export default function IconsDemo() {
-  const demos = icons.svg.defs[0].symbol.map(({ $: { id } }) =>
+  const demos = icons.svg.defs[0].symbol.map(({ $: { id } }) => (
     <Demo key={id}>
       <Icon name={id.replace(/^icon-/, '')} />
     </Demo>
-  );
+  ));
 
   return (
     <div>

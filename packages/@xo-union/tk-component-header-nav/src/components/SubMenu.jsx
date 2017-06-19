@@ -27,7 +27,8 @@ export function SubMenuLink({
     <li className={className}>
       <a
         className={styles['sub-menu-item-link']}
-        data-trackable data-click-role={clickRole}
+        data-click-role={clickRole}
+        data-trackable
         {...props}
       />
     </li>

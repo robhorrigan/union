@@ -62,7 +62,7 @@ describe('<DropdownItem>', () => {
 
       expect(updateDropdownSpy).not.toHaveBeenCalled();
 
-      subject.simulate('mousedown');
+      subject.find('[role="option"]').simulate('mousedown');
 
       expect(updateDropdownSpy).toHaveBeenCalledWith('test-value');
     });
@@ -71,18 +71,18 @@ describe('<DropdownItem>', () => {
   describe('when item is selected', () => {
     it('uses the selected item class', () => {
       const subject = mount(<DropdownItem label="test-value" isSelected />);
-      const li = subject.find('li').node;
+      const option = subject.find('li [role="option"]').node;
 
-      expect(li.classList).toContain(...FieldsCss.dropdownItemIsSelected.split(' '));
+      expect(option.classList).toContain(...FieldsCss.dropdownItemIsSelected.split(' '));
     });
   });
 
   describe('when item is not selected', () => {
     it('does not use the selected item class', () => {
       const subject = mount(<DropdownItem label="test-value" />);
-      const li = subject.find('li').node;
+      const option = subject.find('li [role="option"]').node;
 
-      expect(li.classList).toContain(...FieldsCss.dropdownItem.split(' '));
+      expect(option.classList).toContain(...FieldsCss.dropdownItem.split(' '));
     });
   });
 });

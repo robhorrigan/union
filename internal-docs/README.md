@@ -13,3 +13,4 @@ How to
 
 TOC
 - [Write a benchmark](./how-to/benchmarks.md)
+- [Upgrade](./how-to/upgrade.md)

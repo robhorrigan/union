@@ -4,7 +4,7 @@
   "main": null,
   "dependencies": {
     "@xo-union/tk-css-typography": "^0.1.8",
-    "css-module-builder": "^1.0.0-beta.5"
+    "css-module-builder": "^1.0.0-beta.7"
   },
   "files": [
     "lib/*"
