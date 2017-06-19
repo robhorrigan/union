@@ -16,8 +16,8 @@ import getGlobal from 'xojs/lib/runtime/getGlobal';
 
 const global = getGlobal();
 
-const ElementConstructor = global.Element || function () {};
-const proto = ElementConstructor.prototype || {};
+const ElementConstructor = global.Element || function ElementStub() {};
+const proto = ElementConstructor.prototype;
 const vendor = proto.matches
   || proto.matchesSelector
   || proto.webkitMatchesSelector
