@@ -1,6 +1,6 @@
 {
   "name": "@xo-union/tk-component-analytics",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": null,
   "dependencies": {
     "@segment/is-meta": "^1.0.0",
@@ -9,7 +9,7 @@
     "matches-selector": "^1.0.0",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "xojs": "^0.4.0"
+    "xojs": "^0.4.1"
   },
   "files": [
     "lib/*"

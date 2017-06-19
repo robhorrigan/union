@@ -1,11 +1,11 @@
 {
   "name": "@xo-union/tk-css-essentials",
-  "version": "0.1.9",
+  "version": "0.1.10",
   "description": "",
   "main": "lib/index.js",
   "dependencies": {
-    "@xo-union/tk-css-bootstrap": "^0.2.7",
-    "@xo-union/tk-css-typography": "^0.1.9"
+    "@xo-union/tk-css-bootstrap": "^0.2.8",
+    "@xo-union/tk-css-typography": "^0.1.10"
   },
   "keywords": [],
   "author": "",

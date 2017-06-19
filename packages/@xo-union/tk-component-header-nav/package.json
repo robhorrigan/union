@@ -1,21 +1,21 @@
 {
   "name": "@xo-union/tk-component-header-nav",
-  "version": "0.5.2",
+  "version": "0.5.3",
   "main": "lib/index.js",
   "dependencies": {
-    "@xo-union/tk-component-analytics": "^0.2.1",
-    "@xo-union/tk-component-buttons": "^0.1.12",
-    "@xo-union/tk-component-icons": "^0.4.1",
-    "@xo-union/tk-css-bootstrap": "^0.2.7",
+    "@xo-union/tk-component-analytics": "^0.2.2",
+    "@xo-union/tk-component-buttons": "^0.1.13",
+    "@xo-union/tk-component-icons": "^0.4.2",
+    "@xo-union/tk-css-bootstrap": "^0.2.8",
     "@xo-union/tk-css-colors": "^0.3.5",
-    "@xo-union/tk-css-typography": "^0.1.9",
-    "@xo-union/tk-css-utilities": "^0.3.1",
+    "@xo-union/tk-css-typography": "^0.1.10",
+    "@xo-union/tk-css-utilities": "^0.3.2",
     "babel-runtime": "^6.23.0",
     "core-decorators": "^0.19.0",
     "css-module-builder": "^1.0.0-beta.7",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "xojs": "^0.4.0"
+    "xojs": "^0.4.1"
   },
   "files": [
     "lib/*"
