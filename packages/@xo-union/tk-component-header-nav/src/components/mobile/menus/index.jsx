@@ -43,13 +43,13 @@ OpenPrimaryMenuTemplate.propTypes = {
 };
 
 function ClosedPrimaryMenu({ onOpen, ...props }) {
-  const topLevelItems = MenuFactories.topLevelFactories().map(FactoryComponent =>
+  const topLevelItems = MenuFactories.topLevelFactories().map(FactoryComponent => (
     <FactoryComponent
       key={FactoryComponent}
       onClick={() => onOpen(FactoryComponent)}
       Template={PrimaryMenuItemTemplate}
     />
-  );
+  ));
 
   return (
     <SubMenu className={styles['primary-mobile-menu']} {...props}>

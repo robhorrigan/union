@@ -52,9 +52,17 @@ export default class DropdownItem extends Component {
     }
 
     return (
-      <li className={className} onMouseDown={this.onMouseDownHandler}>
-        {label}
-        <span className={FieldsCss.dropdownItemCheck} />
+      <li>
+        <div
+          tabIndex="0"
+          role="option"
+          aria-selected={this.isSelected}
+          onMouseDown={this.onMouseDownHandler}
+          className={className}
+        >
+          {label}
+          <span className={FieldsCss.dropdownItemCheck} />
+        </div>
       </li>
     );
   }

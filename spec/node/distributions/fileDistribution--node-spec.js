@@ -5,9 +5,11 @@ import getPackedFiles from './helpers/getPackedFiles';
 describe('distributed packages', () => {
   let packages;
 
-  beforeAll(async (done) => {
-    packages = await getPackages();
-    done();
+  beforeAll((done) => {
+    getPackages().then((result) => {
+      packages = result;
+      done();
+    });
   });
 
   it('pack the expected files', (done) => {

@@ -13,7 +13,7 @@ function LogoItem() {
   );
 }
 
-export default toggleable(() =>
+export default toggleable(() => (
   <Nav role="menu">
     <LogoItem />
     <NavItem to="/design-principles">
@@ -24,4 +24,4 @@ export default toggleable(() =>
     <NavItem disabled>Brand Voice & Copy</NavItem>
     <NavItem disabled>Email</NavItem>
   </Nav>
-);
+));
