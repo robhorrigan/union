@@ -1,19 +1,22 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import matches from 'matches-selector';
+import matches from 'xojs/lib/element/matches';
+import getGlobal from 'xojs/lib/runtime/getGlobal';
 import willOpenNewTab from '@segment/is-meta';
 import { autobind } from 'core-decorators';
+
+const global = getGlobal();
 
   /* eslint-disable no-console*/
 const analyticsStub = {
   track() {
-    console.error(`window.analytics is not defined.
+    console.error(`global analytics is not defined.
 This is a requirement to properly report clicks.`);
   }
 };
 
 export class DefaultFollowStrategy {
-  constructor({ timeout = 300, location = window.location } = {}) {
+  constructor({ timeout = 300, location = global.location } = {}) {
     this.timeout = timeout;
     this.location = location;
   }
@@ -78,7 +81,7 @@ export default class GenericClickTracker extends React.Component {
 
   static defaultProps = {
     followStrategy: new DefaultFollowStrategy(),
-    analytics: window.analytics,
+    analytics: global.analytics,
     trackableSelector: 'a'
   }
 
@@ -87,11 +90,11 @@ export default class GenericClickTracker extends React.Component {
     const element = clickEvent.target;
     const {
       followStrategy,
-      analytics = window.analytics || analyticsStub,
+      analytics = global.analytics || analyticsStub,
       trackableSelector
     } = this.props;
 
-    if (matches(element, trackableSelector)) {
+    if (element::matches(trackableSelector)) {
       const eventName = evalDynamicProperty(this.props.eventName, element);
       const eventData = evalDynamicProperty(this.props.eventData, element);
 

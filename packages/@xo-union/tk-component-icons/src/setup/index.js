@@ -1,6 +1,6 @@
 /**
  * Get a string of the pre-processed svg file. This variable will be empty on builds
- * which define 'process.env.NODE_ENV = "production"` after the code is monified
+ * which define 'process.env.NODE_ENV = "production"` after the code is minified
  *
  * @example <svg></svg>
  */
@@ -8,14 +8,18 @@
 import rawSvg from '#assets/icons/union-icons.svg?raw&dev';
 import { url, hash } from '@xo-union/tk-component-icons/lib/data';
 import StubStorage from 'xojs/lib/storage/StubStorage';
-import isBrowserContext from 'xojs/lib/executionContext/isBrowser';
+import hasDocumentBody from 'xojs/lib/runtime/hasDocumentBody';
+import getGlobal from 'xojs/lib/runtime/getGlobal';
 
-const DEFAULT_STORAGE = isBrowserContext() ? localStorage : new StubStorage();
+const global = getGlobal();
+
+const DEFAULT_STORAGE = global.localStorage || new StubStorage();
 
 const CACHE_KEY = '@xo-union/tk-component-icons/svg-caches';
 
 const A_DAY = 86400000;
 const A_WEEK = A_DAY * 7;
+
 const { forEach } = Array.prototype;
 
 export class Installer {
@@ -123,7 +127,7 @@ export class Installer {
   }
 
   install() {
-    if (!isBrowserContext() || this.isSetup()) {
+    if (!hasDocumentBody() || this.isSetup()) {
       return;
     }
 
