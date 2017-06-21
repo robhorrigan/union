@@ -1,4 +1,4 @@
-import { parseType } from '#docs/utils/prop-types';
+import { parseType } from './';
 
 describe('utils', () => {
   describe('.parseType', () => {

@@ -3,9 +3,9 @@ $imports:
   'HeaderNav': '@xo-union/tk-component-header-nav'
   'HeaderNavWithSubNavDemo': './demos/HeaderNavWithSubNavDemo'
   packageJson: '@xo-union/tk-component-header-nav/package.json'
-  '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
+  InstallSnippet: '@components/InstallSnippet'
+  PropTypesTable: '@components/PropTypesTable'
   HeaderNavMetadata: '!!react-docgen-loader!@xo-union/tk-component-header-nav/src/components/HeaderNav'
-  '{ Snippet }': '#docs/doc-components'
   HeaderNavDemo: './demos/HeaderNavDemo'
 ---
 

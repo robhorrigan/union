@@ -1,6 +1,6 @@
 import React, { createElement } from 'react';
 import PropTypes from 'prop-types';
-import { parseType } from '#docs/utils/prop-types';
+import { parseType } from './prop-types-util';
 
 const TypeShape = PropTypes.shape({
   name: PropTypes.string,

@@ -1,9 +1,3 @@
----
-permalink: pattern-library/getting-started
-$imports:
-  '{ Snippet }': '#docs/doc-components'
----
-
 # Getting Started
 
 Union is an ecosystem of packages that define [The Knot](http://www.theknot.com)'s pattern library. Each package consists of either [React]() components, [CSS Modules](/pattern-library/getting-started/css-modules) or both.

@@ -4,7 +4,8 @@ $imports:
   packageJson: '@xo-union/tk-component-buttons/package.json'
   MainDemo: './demos/MainDemo'
   ButtonsDemo: './demos/ButtonsDemo'
-  '{ Snippet, InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
+  InstallSnippet: '@components/InstallSnippet'
+  PropTypesTable: '@components/PropTypesTable'
   ButtonMetadata: '!!react-docgen-loader!@xo-union/tk-component-buttons/src/components/Button'
 ---
 

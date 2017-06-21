@@ -4,8 +4,7 @@ Conventions
 TOC
 - [pods](./conventions/pods.md)
 - [specs](./conventions/specs.md)
-- [\_\_private\_modules\_\_](./conventions/private-modules.md)
-- [@shared imports](./conventions/shared-modules.md)
+- ["\_" directory](./conventions/private-modules.md)
 
 
 How to

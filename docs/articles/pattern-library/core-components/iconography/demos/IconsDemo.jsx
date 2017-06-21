@@ -1,5 +1,5 @@
 import React from 'react';
-import { Demo } from '#docs/doc-components';
+import Demo from '@components/Demo';
 import Icon from '@xo-union/tk-component-icons';
 // eslint-disable-next-line import/no-webpack-loader-syntax
 import icons from '!!xml-loader!#assets/icons/union-icons.svg';

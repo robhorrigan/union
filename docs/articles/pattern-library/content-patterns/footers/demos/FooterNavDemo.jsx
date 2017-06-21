@@ -1,6 +1,6 @@
 import React from 'react';
 import FooterNav, { CustomLinkItem, CustomSection } from '@xo-union/tk-component-footer-nav';
-import { Demo } from '#docs/doc-components';
+import Demo from '@components/Demo';
 
 export default function FooterNavDemo() {
   /* eslint-disable no-console */

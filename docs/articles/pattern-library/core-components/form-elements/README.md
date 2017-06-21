@@ -4,7 +4,10 @@ $imports:
   bsGrid: '@xo-union/tk-css-bootstrap/lib/grid'
   spacing: '@xo-union/tk-css-utilities/lib/spacing'
 
-  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
+  Demo: '@components/Demo'
+  PropTypesTable: '@components/PropTypesTable'
+  InstallSnippet: '@components/InstallSnippet'
+
   packageJson: '@xo-union/tk-component-fields/package.json'
 
   FieldMeta:                '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/Field'

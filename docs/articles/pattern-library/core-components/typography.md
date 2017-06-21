@@ -2,8 +2,9 @@
 $imports:
   spacing: '@xo-union/tk-css-utilities/lib/spacing'
   type: '@xo-union/tk-css-typography'
-  '{ Demo, Snippet, PropTypesTable, InstallSnippet }': '#docs/doc-components'
-  packageJson: '@xo-union/tk-css-typography/package.json'  
+  Demo: '@components/Demo'
+  InstallSnippet: '@components/InstallSnippet'
+  packageJson: '@xo-union/tk-css-typography/package.json'
 ---
 
 # Typography

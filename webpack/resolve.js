@@ -18,7 +18,7 @@ const defaultAliases = {
 };
 
 const moduleFolders = [
-  '__private_modules__',
+  '_',
   'node_modules'
 ];
 

@@ -2,11 +2,13 @@
 $imports:
   '<%= moduleName %>': '<%= packageName %>'
   packageJson: '<%= packageName %>/package.json'
-  '{ InstallSnippet, Demo, PropTypesTable }': '#docs/doc-components'
+  InstallSnippet: '@components/InstallSnippet'
+  Demo: '@components/Demo'
+  PropTypesTable: '@components/PropTypesTable'
   '<%= moduleName %>Metadata': '!!react-docgen-loader!<%= patternSrcPath %>'
 ---
 
-<h1>{$props.title}</h1>
+# Pattern name
 
 ### Install
 

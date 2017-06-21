@@ -1,4 +1,4 @@
-@import '~@shared/bootstrap-sass-mixins-and-variables';
+@import '~@sass/bootstrap-mixins-and-variables';
 
 @mixin in-desktop() {
   @include media-breakpoint-up(md) {

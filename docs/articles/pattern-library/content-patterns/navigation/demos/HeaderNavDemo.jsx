@@ -1,5 +1,5 @@
 import React from 'react';
-import Demo from '#docs/doc-components/Demo';
+import Demo from '@components/Demo';
 import HeaderNav from './InactiveHeaderNav';
 
 export default function HeaderNavDemo(props) {

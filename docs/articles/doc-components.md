@@ -1,10 +1,14 @@
 ---
 $imports:
-  '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
-  PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'
-  SnippetsMetadata:       '!!react-docgen-loader!#docs/doc-components/Snippet'
-  DemoMetadata:           '!!react-docgen-loader!#docs/doc-components/Demo'
-  InstallSnippetMetadata: '!!react-docgen-loader!#docs/doc-components/InstallSnippet'
+  Snippet: '@components/Snippet'
+  Demo: '@components/Demo'
+  PropTypesTable: '@components/PropTypesTable'
+  InstallSnippet: '@components/InstallSnippet'
+
+  PropTypesTableMetadata: '!!react-docgen-loader!@components/PropTypesTable'
+  SnippetsMetadata:       '!!react-docgen-loader!@components/Snippet'
+  DemoMetadata:           '!!react-docgen-loader!@components/Demo'
+  InstallSnippetMetadata: '!!react-docgen-loader!@components/InstallSnippet'
 ---
 
 # Doc components

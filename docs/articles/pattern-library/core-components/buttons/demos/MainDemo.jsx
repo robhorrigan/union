@@ -1,6 +1,6 @@
 import React from 'react';
 import { Button } from '@xo-union/tk-component-buttons';
-import styles from '@shared/list-demo.scss';
+import styles from '@styles/list-demo.scss';
 
 export default function MainDemo() {
   return (

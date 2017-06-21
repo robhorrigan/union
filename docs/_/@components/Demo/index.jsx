@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import jsxToString from 'jsx-to-string-2';
-import Snippet from '#docs/doc-components/Snippet';
+import Snippet from '@components/Snippet';
 
 const keys = Object.keys;
 

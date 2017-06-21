@@ -1,13 +1,13 @@
 ---
 $imports:
-  InstallSnippet: '#docs/doc-components/InstallSnippet'
-  Demo: '#docs/doc-components/Demo'
-  PropTypesTable: '#docs/doc-components/PropTypesTable'
+  InstallSnippet: '@components/InstallSnippet'
+  Demo: '@components/Demo'
+  PropTypesTable: '@components/PropTypesTable'
   packageJson: '@xo-union/tk-component-analytics/package.json'
   ClickTracker: '@xo-union/tk-component-analytics/lib/click-tracker'
   GenericClickTracker: '@xo-union/tk-component-analytics/lib/generic-click-tracker'
   '{ Button }': '@xo-union/tk-component-buttons'
-  styles: '@shared/list-demo'
+  styles: '@styles/list-demo'
   ClickTrackerMetadata: '!!react-docgen-loader!@xo-union/tk-component-analytics/src/click-tracker'
   GenericClickTrackerMetadata: '!!react-docgen-loader!@xo-union/tk-component-analytics/src/generic-click-tracker'
 ---

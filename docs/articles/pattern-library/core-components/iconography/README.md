@@ -2,10 +2,7 @@
 $imports:
   'IconsDemo': './demos/IconsDemo'
   'packageJson': '@xo-union/tk-component-icons/package.json'
-  '{ Snippet, Demo, PropTypesTable, InstallSnippet }': '#docs/doc-components'
-  PropTypesTableMetadata: '!!react-docgen-loader!#docs/doc-components/PropTypesTable'
-  SnippetsMetadata:       '!!react-docgen-loader!#docs/doc-components/Snippet'
-  DemoMetadata:           '!!react-docgen-loader!#docs/doc-components/Demo'
+  'InstallSnippet': '@components/InstallSnippet'
 ---
 
 # Iconography
