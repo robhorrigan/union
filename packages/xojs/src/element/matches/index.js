@@ -12,11 +12,9 @@
  *  here.
  */
 
-import getGlobal from 'xojs/lib/runtime/getGlobal';
+import { g } from 'xojs/lib/runtime/getGlobal';
 
-const global = getGlobal();
-
-const ElementConstructor = global.Element || function ElementStub() {};
+const ElementConstructor = g.Element || function ElementStub() {};
 const proto = ElementConstructor.prototype;
 const vendor = proto.matches
   || proto.matchesSelector

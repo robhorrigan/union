@@ -1,11 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import matches from 'xojs/lib/element/matches';
-import getGlobal from 'xojs/lib/runtime/getGlobal';
+import { g } from 'xojs/lib/runtime/getGlobal';
 import willOpenNewTab from '@segment/is-meta';
 import { autobind } from 'core-decorators';
-
-const global = getGlobal();
 
   /* eslint-disable no-console*/
 const analyticsStub = {
@@ -16,7 +14,7 @@ This is a requirement to properly report clicks.`);
 };
 
 export class DefaultFollowStrategy {
-  constructor({ timeout = 300, location = global.location } = {}) {
+  constructor({ timeout = 300, location = g.location } = {}) {
     this.timeout = timeout;
     this.location = location;
   }
@@ -81,7 +79,7 @@ export default class GenericClickTracker extends React.Component {
 
   static defaultProps = {
     followStrategy: new DefaultFollowStrategy(),
-    analytics: global.analytics,
+    analytics: g.analytics,
     trackableSelector: 'a'
   }
 
@@ -90,7 +88,7 @@ export default class GenericClickTracker extends React.Component {
     const element = clickEvent.target;
     const {
       followStrategy,
-      analytics = global.analytics || analyticsStub,
+      analytics = g.analytics || analyticsStub,
       trackableSelector
     } = this.props;
 

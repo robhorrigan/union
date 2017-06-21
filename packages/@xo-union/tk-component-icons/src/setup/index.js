@@ -9,11 +9,9 @@ import rawSvg from '#assets/icons/union-icons.svg?raw&dev';
 import { url, hash } from '@xo-union/tk-component-icons/lib/data';
 import StubStorage from 'xojs/lib/storage/StubStorage';
 import hasDocumentBody from 'xojs/lib/runtime/hasDocumentBody';
-import getGlobal from 'xojs/lib/runtime/getGlobal';
+import { g } from 'xojs/lib/runtime/getGlobal';
 
-const global = getGlobal();
-
-const DEFAULT_STORAGE = global.localStorage || new StubStorage();
+const DEFAULT_STORAGE = g.localStorage || new StubStorage();
 
 const CACHE_KEY = '@xo-union/tk-component-icons/svg-caches';
 

@@ -36,7 +36,9 @@ describe('distributed packages', () => {
   it('define the correct dependencies in package.json', (done) => {
     const promises = packages.map(async (packageObj) => {
       const { name, dependencies } = await packageObj.packageJson();
-      (await packageObj.getRequiredPackages()).forEach((requiredPackageName) => {
+      const requiredDependencies = await packageObj.getRequiredPackages();
+
+      requiredDependencies.forEach((requiredPackageName) => {
         if (requiredPackageName === name) {
           // Skip test if depends on itself
           return;
@@ -46,6 +48,14 @@ describe('distributed packages', () => {
         expect(specifiedAsDependency).toBe(true,
           `Expected ${requiredPackageName} to be a dependency of ${name}`
         );
+      });
+
+      Object.keys(dependencies).forEach((dependency) => {
+        const isRequired = requiredDependencies.indexOf(dependency) >= 0;
+
+        expect(isRequired).toBe(true,
+          `Expected ${dependency} to be required by ${name}.
+            Instead, these were required: ${JSON.stringify(requiredDependencies)}`);
       });
     });
 
