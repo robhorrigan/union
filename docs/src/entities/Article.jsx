@@ -5,15 +5,6 @@ import { normalizePath } from '#docs/utils/paths';
 import { files } from '$articles?readDirectory';
 
 export default class Article {
-  /*
-  * Create all article instances
-  * It feels a bit weird to create all instances during load of this module
-  * but its a simple way to create these guys :)
-  * */
-  static all = files.map(({ pathinfo, module }) =>
-    new Article(pathinfo, module.default, module.attributes)
-  );
-
   static contentPatterns() {
     return this.all.filter(article => article.isContentPattern());
   }
@@ -73,3 +64,14 @@ export default class Article {
     return this.pathInfo.relativeName.indexOf('/utilities/') >= 0;
   }
 }
+
+
+  /*
+  * Create all article instances
+  * It feels a bit weird to create all instances during load of this module
+  * but its a simple way to create these guys :)
+  * */
+  Article.all = files.map(({ pathinfo, module }) =>
+    new Article(pathinfo, module.default, module.attributes)
+  );
+

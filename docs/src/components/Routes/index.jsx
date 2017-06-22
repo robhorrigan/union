@@ -11,19 +11,25 @@ import siteConfig from '$site-config';
 import generateRoutes from './generateRoutes';
 import handleBookmark from './handleBookmark';
 import RouterStore from './RouterStore';
+import GithubStore from './GithubStore';
 
 // eslint-disable-next-line camelcase
 const rootPath = __webpack_public_path__;
 
 export default class Routes extends Component {
   router = new RouterStore()
+  github = new GithubStore()
   history = syncHistoryWithStore(browserHistory, this.router)
+
+  componentDidMount() {
+    this.github.hydrate();
+  }
 
   render() {
     const routes = generateRoutes(Article.all);
 
     return (
-      <Provider router={this.router}>
+      <Provider router={this.router} github={this.github}>
         <Router history={this.history} onUpdate={handleBookmark}>
           <Route path={rootPath} component={Layout} >
             {routes}
