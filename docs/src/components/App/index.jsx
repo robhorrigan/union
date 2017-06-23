@@ -11,7 +11,7 @@ import siteConfig from '$site-config';
 import generateRoutes from './generateRoutes';
 import handleBookmark from './handleBookmark';
 import RouterStore from './RouterStore';
-import GithubStore from './GithubStore';
+import GithubStore from '@stores/GithubStore';
 
 // eslint-disable-next-line camelcase
 const rootPath = __webpack_public_path__;

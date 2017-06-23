@@ -1,7 +1,8 @@
-import '#docs/__debug_utilities__';
+import './__debug_utilities__';
 /* Global union styles */
 import '@xo-union/tk-css-essentials';
 import 'babel-polyfill';
+import 'whatwg-fetch';
 /* Load prism css for syntax highlighting */
 import 'prism-themes/themes/prism-ghcolors';
 
