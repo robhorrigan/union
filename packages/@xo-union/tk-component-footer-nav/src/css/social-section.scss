@@ -10,6 +10,7 @@
 .social-icon-container {
   composes: round-icon-container;
   composes: white-bg knot-blue-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: disable-children-pointer-events from '@xo-union/tk-css-utilities/lib/pointer-events';
 
   transition: color,background-color .2s ease-in-out 0s;
 

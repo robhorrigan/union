@@ -11,8 +11,8 @@ export default function SocialIconItem({
 }) {
   return (
     <li className={styles['social-nav-item']}>
-      <NewWindowAnchor href={href} className={styles['social-icon-container']}>
-        <Icon name={`social-${name}`} className={styles['centered-icon']} {...props} />
+      <NewWindowAnchor href={href} className={styles['social-icon-container']} {...props}>
+        <Icon name={`social-${name}`} className={styles['centered-icon']} />
       </NewWindowAnchor>
     </li>
   );
