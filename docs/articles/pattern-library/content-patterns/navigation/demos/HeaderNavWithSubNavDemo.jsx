@@ -1,14 +1,14 @@
 import React from 'react';
-import { SubNav, SubNavLinkItem } from '@xo-union/tk-component-header-nav';
-import Demo from '@components/Demo';
-import HeaderNav from './InactiveHeaderNav';
+import HeaderNav, { SubNav, SubNavLinkItem } from '@xo-union/tk-component-header-nav';
+import DemoWithAnalytics from '@components/DemoWithAnalytics';
+import analyticsProps from '@stubs/analyticsProps';
 
 export default function HeaderNavWithSubNavDemo() {
   return (
-    <Demo>
+    <DemoWithAnalytics>
       <div>
-        <HeaderNav analyticsProps={{ product: 'fashion' }} />
-        <SubNav>
+        <HeaderNav analyticsProps={analyticsProps} />
+        <SubNav analyticsProps={analyticsProps} >
           <SubNavLinkItem href="/partnerships/macys-elements-of-style">
             <img alt="" src="http://media-api.theknot.com/images/217f19ac-c625-40fd-b1de-4034756f435c~rs_w.50?quality=100" />
             Elements of Style
@@ -28,11 +28,14 @@ export default function HeaderNavWithSubNavDemo() {
           <SubNavLinkItem href="/wedding-vendors">
             Vendor List
           </SubNavLinkItem>
-          <SubNavLinkItem href="/boards">
+          <SubNavLinkItem
+            href="/boards"
+            data-trackable-selection="(Optional) To override selection value in analytics call"
+          >
             Favorites
           </SubNavLinkItem>
         </SubNav>
       </div>
-    </Demo>
+    </DemoWithAnalytics>
   );
 }

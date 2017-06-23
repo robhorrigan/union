@@ -1,11 +1,12 @@
 import React from 'react';
-import Demo from '@components/Demo';
-import HeaderNav from './InactiveHeaderNav';
+import DemoWithAnalytics from '@components/DemoWithAnalytics';
+import HeaderNav from '@xo-union/tk-component-header-nav';
+import analyticsProps from '@stubs/analyticsProps';
 
 export default function HeaderNavDemo(props) {
   return (
-    <Demo>
-      <HeaderNav analyticsProps={{ product: 'fashion' }} {...props} />
-    </Demo>
+    <DemoWithAnalytics>
+      <HeaderNav analyticsProps={analyticsProps} {...props} />
+    </DemoWithAnalytics>
   );
 }

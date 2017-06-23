@@ -1,11 +1,12 @@
 import React from 'react';
 import FooterNav, { CustomLinkItem, CustomSection } from '@xo-union/tk-component-footer-nav';
-import Demo from '@components/Demo';
+import DemoWithAnalytics from '@components/DemoWithAnalytics';
+import analyticsProps from '@stubs/analyticsProps';
 
 export default function FooterNavDemo() {
   /* eslint-disable no-console */
   return (
-    <Demo propOverrides={{ analyticsProps: ({ product }) => (JSON.stringify({ product })) }}>
+    <DemoWithAnalytics>
       <div>
         <CustomSection>
           <CustomLinkItem href="//www.theknot.com/content/bride-time-saving-beauty-hacks">
@@ -24,14 +25,8 @@ export default function FooterNavDemo() {
             Bridesmaids + Mother of the Bride
         </CustomLinkItem>
         </CustomSection>
-        <FooterNav
-          analyticsProps={{
-            product: 'fashion',
-            analytics: { track: ::console.log },
-            followStrategy: false
-          }}
-        />
+        <FooterNav analyticsProps={analyticsProps} />
       </div>
-    </Demo>
+    </DemoWithAnalytics>
   );
 }

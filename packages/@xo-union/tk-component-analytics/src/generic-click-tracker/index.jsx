@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import matches from 'xojs/lib/element/matches';
+import callOrSelf from 'xojs/lib/function/callOrSelf';
 import { g } from 'xojs/lib/runtime/getGlobal';
 import willOpenNewTab from '@segment/is-meta';
 import { autobind } from 'core-decorators';
@@ -31,10 +32,6 @@ function linkWillChangePage(element) {
   const href = element.getAttribute('href');
 
   return href && target !== '_blank';
-}
-
-function evalDynamicProperty(propertyValue, ...params) {
-  return typeof propertyValue === 'function' ? propertyValue(...params) : propertyValue;
 }
 
 export default class GenericClickTracker extends React.Component {
@@ -93,8 +90,8 @@ export default class GenericClickTracker extends React.Component {
     } = this.props;
 
     if (element::matches(trackableSelector)) {
-      const eventName = evalDynamicProperty(this.props.eventName, element);
-      const eventData = evalDynamicProperty(this.props.eventData, element);
+      const eventName = this.props.eventName::callOrSelf(element);
+      const eventData = this.props.eventData::callOrSelf(element);
 
       analytics.track(eventName, eventData);
 
