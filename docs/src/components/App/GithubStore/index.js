@@ -50,6 +50,10 @@ export default class GithubStore {
   }
 
   hasReleasesFor(packageName) {
-    return this.loaded && !!this.packageReleases[packageName];
+    return this.loaded && !!this.releasesFor(packageName);
+  }
+
+  releasesFor(packageName) {
+    return this.packageReleases[packageName];
   }
 }

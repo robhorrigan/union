@@ -16,7 +16,7 @@ import GithubStore from './GithubStore';
 // eslint-disable-next-line camelcase
 const rootPath = __webpack_public_path__;
 
-export default class Routes extends Component {
+export default class App extends Component {
   router = new RouterStore()
   github = new GithubStore()
   history = syncHistoryWithStore(browserHistory, this.router)
