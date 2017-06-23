@@ -1,16 +1,14 @@
 import { g } from 'xojs/lib/runtime/getGlobal';
-import { runInAction, action, observable, extendObservable, autorun } from 'mobx';
+import { runInAction, action, observable, extendObservable } from 'mobx';
 
 const RELEASES_URL = 'https://api.github.com/repos/xogroup/union/releases';
 
 export default class GithubStore {
+  @observable packageReleases = {}
+  @observable loaded = false
+
   constructor({ fetch = ::g.fetch } = {}) {
     this.fetch = fetch;
-    extendObservable(this, {
-      packageReleases: {},
-      systemReleases: [],
-      loaded: false
-    });
   }
 
   @action addPackageRelease(packageName, data) {
@@ -30,11 +28,6 @@ export default class GithubStore {
     return this.fetchReleases().then((releases) => {
       runInAction(() => {
         releases.forEach(({ name, body, tag_name }) => {
-          if (name === '*') {
-            this.systemReleases.push({ name, body, tagName: tag_name });
-            return;
-          }
-
           const matchData = tag_name.match(/^((?:@xo-union)?[^@]+)@(.+)$/);
 
           if (matchData) {
@@ -44,6 +37,7 @@ export default class GithubStore {
             });
           }
         });
+
         this.loaded = true;
       })
     });
