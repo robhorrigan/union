@@ -3,6 +3,10 @@ import { observable, action, computed } from 'mobx';
 export default class ChangeLogStore {
   @observable currentRelease = null;
 
+  @computed get currentVersion() {
+    return this.currentRelease.version;
+  }
+
   @computed get isOpen() {
     return this.currentRelease !== null;
   }
