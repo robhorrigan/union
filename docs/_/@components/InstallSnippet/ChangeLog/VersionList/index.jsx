@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { observer } from 'mobx-react';
+import { observer, PropTypes as MobxTypes  } from 'mobx-react';
 import style from './style';
 import ToggleButton from './ToggleButton';
 
@@ -28,10 +28,7 @@ VersionList.propTypes = {
     toggle: PropTypes.func,
     isCurrent: PropTypes.func
   }),
-  releases: PropTypes.arrayOf(PropTypes.shape({
-    tagName: PropTypes.string,
-    version: PropTypes.string
-  }))
+  releases: MobxTypes.observableArray
 };
 
 export default observer(VersionList);

@@ -4,7 +4,7 @@ export default class ChangeLogStore {
   @observable currentRelease = null;
 
   @computed get currentVersion() {
-    return this.currentRelease.version;
+    return this.isOpen ? this.currentRelease.version : '';
   }
 
   @computed get isOpen() {
@@ -12,7 +12,7 @@ export default class ChangeLogStore {
   }
 
   @computed get markdown() {
-    return this.currentRelease.body;
+    return this.isOpen ? this.currentRelease.body : '';
   }
 
   @action toggle(release) {
