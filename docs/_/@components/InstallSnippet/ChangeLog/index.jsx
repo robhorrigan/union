@@ -1,16 +1,23 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+import { inject, observer } from 'mobx-react';
+
 import VersionList from './VersionList';
 import ChangeLogContent from './ChangeLogContent';
 import ChangeLogStore from './ChangeLogStore';
-import compile from '#docs/markdown_compiler';
-
-import { Button } from '@xo-union/tk-component-buttons';
-import { inject, observer } from 'mobx-react';
 import style from './style';
 
 @inject('github')
 @observer
 export default class ChangeLog extends Component {
+  static propTypes = {
+    packageName: PropTypes.string,
+    github: PropTypes.shape({
+      hasReleasesFor: PropTypes.func,
+      releasesFor: PropTypes.func
+    })
+  }
+
   store = new ChangeLogStore();
 
   render() {

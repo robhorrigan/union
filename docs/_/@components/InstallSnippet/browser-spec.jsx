@@ -2,8 +2,8 @@ import React from 'react';
 import { mount } from 'enzyme';
 import { Provider } from 'mobx-react';
 import Snippet from '@components/Snippet';
-import InstallSnippet from './';
 import GithubStore from '@stores/GithubStore';
+import InstallSnippet from './';
 
 describe('<InstallSnippet>', () => {
   it('renders install instructions', () => {
@@ -28,5 +28,5 @@ describe('<InstallSnippet>', () => {
     );
 
     expect(subject.find('ChangeLog').length).toBe(1);
-  })
+  });
 });

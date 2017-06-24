@@ -12,9 +12,9 @@ describe('Article', () => {
         const Component = article.component();
         mount(
           <Provider github={githubStore}>
-          <Component />
+            <Component />
           </Provider>
-      );
+        );
       });
     });
   });

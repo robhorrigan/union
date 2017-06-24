@@ -13,7 +13,7 @@ export default class GithubStore {
 
   @action addPackageRelease(packageName, data) {
     if (!this.packageReleases[packageName]) {
-      extendObservable(this.packageReleases, { [packageName]: [ data ] });
+      extendObservable(this.packageReleases, { [packageName]: [data] });
     } else {
       const { length } = this.packageReleases[packageName];
       this.packageReleases[packageName][length] = data;
@@ -21,7 +21,7 @@ export default class GithubStore {
   }
 
   fetchReleases() {
-    return this.fetch(RELEASES_URL).then((res) => res.json())
+    return this.fetch(RELEASES_URL).then(res => res.json());
   }
 
   @action hydrate() {
@@ -31,7 +31,7 @@ export default class GithubStore {
           const matchData = tag_name.match(/^((?:@xo-union)?[^@]+)@(.+)$/);
 
           if (matchData) {
-            const [ , packageName, version ] = matchData;
+            const [, packageName, version] = matchData;
             this.addPackageRelease(packageName, {
               name, body, tagName: tag_name, version
             });
@@ -39,7 +39,7 @@ export default class GithubStore {
         });
 
         this.loaded = true;
-      })
+      });
     });
   }
 

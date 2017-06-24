@@ -8,10 +8,11 @@ import Error404 from '#docs/components/Errors/404';
 import Layout from '#docs/components/Layout';
 import Article from '#docs/entities/Article';
 import siteConfig from '$site-config';
+import GithubStore from '@stores/GithubStore';
+
 import generateRoutes from './generateRoutes';
 import handleBookmark from './handleBookmark';
 import RouterStore from './RouterStore';
-import GithubStore from '@stores/GithubStore';
 
 // eslint-disable-next-line camelcase
 const rootPath = __webpack_public_path__;

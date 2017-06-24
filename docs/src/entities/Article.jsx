@@ -66,12 +66,12 @@ export default class Article {
 }
 
 
-  /*
-  * Create all article instances
-  * It feels a bit weird to create all instances during load of this module
-  * but its a simple way to create these guys :)
-  * */
-  Article.all = files.map(({ pathinfo, module }) =>
-    new Article(pathinfo, module.default, module.attributes)
-  );
+/*
+* Create all article instances
+* It feels a bit weird to create all instances during load of this module
+* but its a simple way to create these guys :)
+* */
+Article.all = files.map(({ pathinfo, module }) =>
+  new Article(pathinfo, module.default, module.attributes)
+);
 

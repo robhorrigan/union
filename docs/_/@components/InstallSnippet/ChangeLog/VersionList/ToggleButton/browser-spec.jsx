@@ -1,6 +1,6 @@
 import React from 'react';
-import ToggleButton from './';
 import { mount } from 'enzyme';
+import ToggleButton from './';
 
 describe('<ToggleButton>', () => {
   describe('when isOn is true', () => {

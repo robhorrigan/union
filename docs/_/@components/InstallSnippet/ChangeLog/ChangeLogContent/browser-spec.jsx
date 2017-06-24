@@ -9,7 +9,7 @@ describe('<ChangeLogContent>', () => {
       const changeLog = new ChangeLogStore();
       changeLog.currentRelease = null;
 
-      const subject = shallow(<ChangeLogContent changeLog={changeLog} />)
+      const subject = shallow(<ChangeLogContent changeLog={changeLog} />);
 
       expect(subject.type()).toBe(null);
     });
@@ -23,7 +23,7 @@ describe('<ChangeLogContent>', () => {
         version: '1'
       });
 
-      const subject = mount(<ChangeLogContent changeLog={changeLog} />)
+      const subject = mount(<ChangeLogContent changeLog={changeLog} />);
 
       const firstHeader = subject.find('h1').at(0);
       const mdHeader = subject.find('h3').at(0);

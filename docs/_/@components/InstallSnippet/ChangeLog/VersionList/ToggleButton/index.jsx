@@ -1,15 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { Button } from '@xo-union/tk-component-buttons';
 
 export default class ToggleButton extends Component {
+  static propTypes = {
+    isOn: PropTypes.bool
+  };
+
   btnColor() {
-    return do {
-      if (this.props.isOn) {
-        'primary'
-      } else {
-        'tertiary';
-      }
+    if (this.props.isOn) {
+      return 'primary';
     }
+
+    return 'tertiary';
   }
 
   render() {

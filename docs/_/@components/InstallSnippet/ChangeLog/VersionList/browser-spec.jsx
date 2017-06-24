@@ -1,6 +1,6 @@
 import React from 'react';
-import VersionList from './';
 import { mount } from 'enzyme';
+import VersionList from './';
 import ChangeLogStore from '../ChangeLogStore';
 
 describe('<VersionList>', () => {
@@ -16,7 +16,7 @@ describe('<VersionList>', () => {
           }
         ];
 
-        const subject = mount(<VersionList changeLog={changeLog} releases={releasesMock} />)
+        const subject = mount(<VersionList changeLog={changeLog} releases={releasesMock} />);
 
         const toggleButton = subject.find('ToggleButton');
 

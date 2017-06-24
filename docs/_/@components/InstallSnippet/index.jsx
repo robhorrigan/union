@@ -15,7 +15,7 @@ export default class InstallSnippet extends Component {
         <Snippet lang="bash">
           npm install --save {packageJson.name}@{packageJson.version}
         </Snippet>
-        <ChangeLog packageName={packageJson.name}/>
+        <ChangeLog packageName={packageJson.name} />
       </div>
     );
   }
