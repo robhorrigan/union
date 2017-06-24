@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { observer, PropTypes as MobxTypes  } from 'mobx-react';
+import { observer, PropTypes as MobxTypes } from 'mobx-react';
 import style from './style';
 import ToggleButton from './ToggleButton';
 
