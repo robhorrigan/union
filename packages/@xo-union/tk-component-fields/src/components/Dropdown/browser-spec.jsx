@@ -75,6 +75,7 @@ describe('<Dropdown>', () => {
       const subject2 = getLabel({ name: 'test-case', id: 'custom-id-2' });
 
       expect(subject1.textContent).toEqual('Test');
+
       expect(subject2.textContent).toEqual('Test Case');
     });
   });

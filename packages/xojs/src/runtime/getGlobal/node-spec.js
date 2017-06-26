@@ -8,6 +8,7 @@ describe('xojs.runtime.getGlobal', () => {
   describe('if window is defined', () => {
     it('returns window', () => {
       global.window = {};
+
       expect(getGlobal()).toBe(global.window);
       delete global.window;
     });
@@ -16,6 +17,7 @@ describe('xojs.runtime.getGlobal', () => {
   describe('if self is defined', () => {
     it('returns self', () => {
       global.self = {};
+
       expect(getGlobal()).toBe(global.self);
       delete global.self;
     });

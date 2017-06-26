@@ -69,11 +69,15 @@ describe('directory-loader', () => {
       const module = requireFromString(moduleString);
 
       expect(module.files.length).toBe(2);
+
       expect(module.files[1].module).toBe(fixturePath('dir', 'test.js'));
+
       expect(module.files[0].module).toBe(fixturePath('dir', 'nested', 'test-2.js'));
 
       expect(module.files[1].pathinfo.ext).toBe('.js');
+
       expect(module.files[1].pathinfo.name).toBe('test');
+
       expect(module.files[1].pathinfo.relativeName).toBe('test');
 
       expect(module.files[0].pathinfo.relativeName).toBe('nested/test-2');

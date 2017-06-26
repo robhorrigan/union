@@ -11,7 +11,9 @@ describe('<SubNav>', () => {
         </SubNavLinkItem>
       </SubNav>
     );
+
     expect(subject.find(SubNavLinkItem).length).toBe(1);
+
     expect(subject.find('a[href="/gs/wedding-websites"]').length).toBe(1);
   });
 });

@@ -52,7 +52,9 @@ describe('404', () => {
     const link3 = subject.find('a[href="/test-2"]');
 
     expect(link1.text()).toBe('/');
+
     expect(link2.text()).toBe('/test-1');
+
     expect(link3.text()).toBe('/test-2');
   });
 });

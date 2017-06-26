@@ -27,14 +27,19 @@ const someCode = true
     const anchors = subject.find('AssumedTargetAnchor');
 
     expect(headers.at(0).props().size).toBe(1);
+
     expect(headers.at(1).props().size).toBe(2);
+
     expect(headers.at(2).props().size).toBe(3);
+
     expect(headers.at(3).props().size).toBe(4);
 
     expect(snippets.at(0).props().lang).toBe('javascript');
+
     expect(snippets.at(1).props().inline).toBe(true);
 
     expect(anchors.at(0).props().href).toBe('http://google.com');
+
     expect(anchors.at(0).props().children).toEqual(['a Link']);
   });
 });

@@ -26,7 +26,9 @@ describe('social-section analytics', () => {
         const currentIconName = trackableLinks.find('Icon').at(index).props().name;
 
         current.simulate('click');
+
         expect(currentIconName).toBe(iconName);
+
         expect(analyticsMock).toHaveBeenCalledWith('Footer Interaction', {
           product: 'fashion',
           platform: 'web',

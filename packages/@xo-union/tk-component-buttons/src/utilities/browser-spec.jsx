@@ -8,8 +8,11 @@ describe('<Button>', () => {
         const result = processProps({});
 
         expect(result.className).not.toContain('undefined');
+
         expect(result.className).toContain(styles.btn);
+
         expect(result.className).toContain(styles.papa);
+
         expect(result.className).toContain(styles.primary);
       });
     });
@@ -19,6 +22,7 @@ describe('<Button>', () => {
         const result = processProps({ size: 'mama' });
 
         expect(result.className).not.toContain('undefined');
+
         expect(result.className).toContain(styles.mama);
       });
     });
@@ -28,6 +32,7 @@ describe('<Button>', () => {
         const result = processProps({ color: 'primary' });
 
         expect(result.className).not.toContain('undefined');
+
         expect(result.className).toContain(styles.primary);
       });
     });
@@ -38,6 +43,7 @@ describe('<Button>', () => {
           const result = processProps({ block: true });
 
           expect(result.className).not.toContain('undefined');
+
           expect(result.className).toContain(styles.block);
         });
       });
@@ -47,6 +53,7 @@ describe('<Button>', () => {
           const result = processProps({ block: 'xs' });
 
           expect(result.className).not.toContain('undefined');
+
           expect(result.className).toContain(styles['block-xs']);
         });
       });

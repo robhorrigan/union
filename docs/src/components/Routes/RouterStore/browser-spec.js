@@ -11,7 +11,9 @@ describe('RouterStore', () => {
       const { inPath } = new RouterStore();
 
       expect(storeMock::inPath('a')).toBe(true);
+
       expect(storeMock::inPath('/a/b')).toBe(true);
+
       expect(storeMock::inPath('/a/b/c')).toBe(false);
     });
   });

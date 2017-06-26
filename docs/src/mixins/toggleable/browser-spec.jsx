@@ -31,11 +31,13 @@ describe('@toggleable', () => {
     );
 
     expect(subject::getAttribute('data-toggle')).toBe('off');
+
     expect(subject::getAttribute('aria-hidden')).toBe('true');
 
     toggler.show('test-component-name');
 
     expect(subject::getAttribute('data-toggle')).toBe('on');
+
     expect(subject::getAttribute('aria-hidden')).toBe('false');
   });
 });

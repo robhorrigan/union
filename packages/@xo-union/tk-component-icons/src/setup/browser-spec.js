@@ -23,6 +23,7 @@ describe('Installer', () => {
       storage.setItem('test', '{"isATest": "true"}');
       const subject = new Installer({ storage, cacheKey: 'test' });
       const result = subject.getCache();
+
       expect(result.isATest).toBe('true');
     });
 
@@ -30,6 +31,7 @@ describe('Installer', () => {
       const storage = new StorageMock();
       const subject = new Installer({ storage, cacheKey: 'test' });
       const result = subject.getCache();
+
       expect(result).toEqual({});
     });
   });
@@ -39,6 +41,7 @@ describe('Installer', () => {
       const storage = new StorageMock();
       const subject = new Installer({ storage, cacheKey: 'test' });
       subject.setCache({ isATest: 'true' });
+
       expect(JSON.parse(storage.getItem('test')).isATest).toBe('true');
     });
   });
@@ -55,6 +58,7 @@ describe('Installer', () => {
       });
 
       subject.updateVersion('<somsvg>');
+
       expect(subject.getCache().version1.lastUsed).toEqual({ date: true });
     });
 
@@ -62,6 +66,7 @@ describe('Installer', () => {
       const storage = new StorageMock();
       const subject = new Installer({ storage, cacheKey: 'test', versionHash: 'version1' });
       subject.updateVersion('<somsvg>');
+
       expect(subject.getCache().version1.svgString).toEqual('<somsvg>');
     });
   });
@@ -72,6 +77,7 @@ describe('Installer', () => {
       const subject = new Installer({ storage, cacheKey: 'test', versionHash: 'version1' });
       subject.updateVersion('<svg></svg>');
       subject.appendToDOM();
+
       expect(document.getElementById('xo-union-icons-manifest-version1')).not.toBe(null);
     });
 
@@ -83,7 +89,9 @@ describe('Installer', () => {
 
       const svgElement = document.getElementById('xo-union-icons-manifest-version2');
       const anchors = svgElement.getElementsByTagName('a');
+
       expect(anchors[0].id).toBe('a-version2');
+
       expect(anchors[1].id).toBe('b-version2');
     });
   });
@@ -93,8 +101,10 @@ describe('Installer', () => {
       const storage = new StorageMock();
       const subject = new Installer({ storage, cacheKey: 'test', versionHash: 'version3' });
       subject.updateVersion('<svg></svg>');
+
       expect(subject.isSetup()).toBe(false);
       subject.appendToDOM();
+
       expect(subject.isSetup()).toBe(true);
     });
   });
@@ -130,6 +140,7 @@ describe('Installer', () => {
       currentDate = new Date('3/22/2017');
 
       subject.removeOldVersions();
+
       expect(subject.getSvgString()).toBe('<svg></svg>');
 
       currentDate = new Date('3/16/2017');
@@ -155,7 +166,9 @@ describe('Installer', () => {
       });
 
       subject.fetchSvg();
+
       expect(openSpy).toHaveBeenCalledWith('GET', 'url');
+
       expect(sendSpy).toHaveBeenCalled();
     });
 
@@ -181,6 +194,7 @@ describe('Installer', () => {
       subject.fetchSvg();
 
       expect(subject.isSetup()).toBe(true);
+
       expect(subject.getSvgString()).toBe('<svg id="new"></svg>');
     });
   });

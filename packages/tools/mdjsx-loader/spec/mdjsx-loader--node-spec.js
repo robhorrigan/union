@@ -12,6 +12,7 @@ describe('mdjsx-loader', () => {
     const result = mdjsx.call(loaderMock, source);
 
     expect(result).toContain("import React from 'react';");
+
     expect(result)
       .toContain('import compile from "test";');
   });
@@ -27,8 +28,11 @@ $imports:
 `;
 
     const result = mdjsx.call(loaderMock, source);
+
     expect(result).toContain('import * as A from "module";');
+
     expect(result).toContain('import { B, C, D } from "module2";');
+
     expect(result).toContain('import E from "module3";');
   });
 
@@ -40,7 +44,9 @@ a: b
 `;
 
     const result = mdjsx.call(loaderMock, source);
+
     expect(result).toContain('exports.attributes = $attributes;');
+
     expect(result).toContain('const $attributes = {"a":"b"};');
   });
 
@@ -48,6 +54,7 @@ a: b
     const source = '';
 
     const result = mdjsx.call(loaderMock, source);
+
     expect(result).toContain('exports.default = ($props) =>');
   });
 
@@ -68,6 +75,7 @@ Hello world
 `;
 
     const result = mdjsx.call(loaderMock, source);
+
     expect(result).toContain(`
 <div>
 {compile("\\n# Test\\nHello world\\n\\n").tree}

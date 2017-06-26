@@ -33,6 +33,7 @@ describe('<AssumedTargetAnchor>', () => {
   describe('when full url with http protocol is given', () => {
     it('assumes a blank target', () => {
       const subject = mount(<AssumedTargetAnchor href="http://www.test.com/a/b" />);
+
       expect(subject.getDOMNode().target).toBe('_blank');
     });
   });
@@ -40,6 +41,7 @@ describe('<AssumedTargetAnchor>', () => {
   describe('when full url with https protocol is given', () => {
     it('assumes a blank target', () => {
       const subject = mount(<AssumedTargetAnchor href="https://www.test.com/a/b" />);
+
       expect(subject.getDOMNode().target).toBe('_blank');
     });
   });
@@ -47,6 +49,7 @@ describe('<AssumedTargetAnchor>', () => {
   describe('when full url without protocol is given', () => {
     it('assumes a blank target', () => {
       const subject = mount(<AssumedTargetAnchor href="//www.test.com/a/b" />);
+
       expect(subject.getDOMNode().target).toBe('_blank');
     });
   });

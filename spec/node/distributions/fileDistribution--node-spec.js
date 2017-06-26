@@ -45,6 +45,7 @@ describe('distributed packages', () => {
         }
 
         const specifiedAsDependency = !!dependencies[requiredPackageName];
+
         expect(specifiedAsDependency).toBe(true,
           `Expected ${requiredPackageName} to be a dependency of ${name}`
         );

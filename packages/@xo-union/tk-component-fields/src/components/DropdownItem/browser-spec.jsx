@@ -22,6 +22,7 @@ describe('<DropdownItem>', () => {
     describe('when isSelected prop is true', () => {
       it('returns true', () => {
         const subject = mount(<DropdownItem label="test" isSelected />);
+
         expect(subject.instance().isSelected).toBe(true);
       });
     });

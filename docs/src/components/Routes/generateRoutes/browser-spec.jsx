@@ -27,7 +27,9 @@ describe('<Routes>', () => {
       const routes = generateRoutes(articleMocks);
 
       expect(routes[0].key).toBe('1');
+
       expect(routes[1].key).toBe('2');
+
       expect(routes[2].key).toBe('3');
     });
 
@@ -35,7 +37,9 @@ describe('<Routes>', () => {
       const routes = generateRoutes(articleMocks);
 
       expect(routes[0].props.path).toBe('/1');
+
       expect(routes[1].props.path).toBe('/2');
+
       expect(routes[2].props.path).toBe('/3');
     });
 
@@ -43,7 +47,9 @@ describe('<Routes>', () => {
       const routes = generateRoutes(articleMocks);
 
       expect(routes[0].props.component.id).toBe(1);
+
       expect(routes[1].props.component.id).toBe(2);
+
       expect(routes[2].props.component.id).toBe(3);
     });
   });

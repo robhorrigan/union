@@ -5,6 +5,7 @@ describe('DefaultFollowStrategy', () => {
     const locationMock = { href: null };
     const subject = new DefaultFollowStrategy({ timeout: 300, location: locationMock });
     subject.call({ href: 'new-location' });
+
     expect(locationMock.href).toBe(null);
 
     setTimeout(() => {

@@ -8,6 +8,7 @@ describe('<Snippet>', () => {
     const subject = mount(<Snippet lang="test" />);
 
     const codeClass = subject.find('code').node.classList[0];
+
     expect(codeClass).toBe('language-test');
   });
 
@@ -15,6 +16,7 @@ describe('<Snippet>', () => {
     const subject = mount(<Snippet inline />);
 
     expect(subject.find('code').length).toEqual(1);
+
     expect(subject.find('pre').length).toEqual(0);
   });
 

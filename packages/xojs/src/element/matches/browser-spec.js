@@ -9,7 +9,9 @@ describe('xojs.element.matches', () => {
     document.body.appendChild(el);
 
     expect(el::matches('div')).toBe(true);
+
     expect(el::matches('.a')).toBe(true);
+
     expect(el::matches('body .a')).toBe(true);
 
     document.body.removeChild(el);

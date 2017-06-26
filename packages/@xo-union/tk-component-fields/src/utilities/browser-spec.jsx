@@ -4,6 +4,7 @@ describe('utils', () => {
   describe('.labelize', () => {
     it('capitalizes all words in a string', () => {
       expect(labelize('test')).toBe('Test');
+
       expect(labelize('test-name')).toBe('Test Name');
     });
   });

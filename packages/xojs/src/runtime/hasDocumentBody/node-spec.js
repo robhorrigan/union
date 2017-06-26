@@ -8,6 +8,7 @@ describe('xojs.runtime.hasDocumentBody', () => {
   describe('if document is defined', () => {
     it('returns false', () => {
       global.document = {};
+
       expect(hasDocumentBody()).toBe(false);
       delete global.document;
     });
@@ -15,6 +16,7 @@ describe('xojs.runtime.hasDocumentBody', () => {
     describe('if body is defined', () => {
       it('returns true', () => {
         global.document = { body: {} };
+
         expect(hasDocumentBody()).toBe(true);
         delete global.document;
       });

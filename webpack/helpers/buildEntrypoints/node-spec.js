@@ -10,6 +10,7 @@ describe('entrypoints', () => {
       const result = getEntrypointsFiles({ where });
 
       expect(result).toContain(fixturesPath('entrypoints', 'a', 'entrypoints.json'));
+
       expect(result).toContain(fixturesPath('entrypoints', 'b', 'entrypoints.json'));
     });
   });
@@ -21,8 +22,11 @@ describe('entrypoints', () => {
       ], { relativeTo: fixturesPath() });
 
       expect(result['entrypoints/a/1.js']).toEqual('./entrypoints/a/1.js');
+
       expect(result['entrypoints/a/2.cssm']).toEqual('./entrypoints/a/2.scss');
+
       expect(result['entrypoints/a/3.js']).toEqual('./entrypoints/a/3.jsx');
+
       expect(result['entrypoints/a/4.cssm']).toEqual('./entrypoints/a/4.css');
     });
   });

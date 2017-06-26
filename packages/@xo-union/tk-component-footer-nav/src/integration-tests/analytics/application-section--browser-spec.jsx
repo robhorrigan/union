@@ -34,6 +34,7 @@ describe('application analytics', () => {
         current.simulate('click');
 
         expect(current.text()).toBe(text);
+
         expect(analyticsMock).toHaveBeenCalledWith('Footer Interaction', {
           product: 'fashion',
           platform: 'web',

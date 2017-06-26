@@ -96,6 +96,7 @@ describe('<GenericClickTracker>', () => {
         anchor.at(1).simulate('click');
 
         expect(followStrategyMock.call.calls.count()).toBe(1);
+
         expect(followStrategyMock.call).toHaveBeenCalledWith({ href: 'http://google.com' });
       });
     });

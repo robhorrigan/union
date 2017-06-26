@@ -16,7 +16,9 @@ describe('<Demo>', () => {
     const subject = mount(<Demo><TestComponent className="random-string" /></Demo>);
 
     const snippet = subject.find(Snippet);
+
     expect(snippet.text()).toBe('<TestComponent className="random-string" />');
+
     expect(snippet.props().lang).toBe('jsx');
   });
 
@@ -35,6 +37,7 @@ describe('<Demo>', () => {
       );
 
       const snippet = subject.find(Snippet);
+
       expect(snippet.text()).toBe('<TestComponent className={moduleName.identifier} />');
     });
   });
@@ -48,6 +51,7 @@ describe('<Demo>', () => {
       );
 
       const snippet = subject.find(Snippet);
+
       expect(snippet.text()).toBe('<TestComponent callback={replaced} />');
     });
   });
@@ -62,6 +66,7 @@ describe('<Demo>', () => {
       );
 
       const snippet = subject.find(Snippet);
+
       expect(snippet.text()).toBe('<TestComponent />');
     });
   });

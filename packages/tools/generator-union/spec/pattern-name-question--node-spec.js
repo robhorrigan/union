@@ -13,6 +13,7 @@ describe('pattern name question', () => {
       const result2 = patternName.validate('my-pattern');
 
       expect(result1).toContain('Name must be lower cased with dash delimiters');
+
       expect(result2).toBe(true);
     });
   });

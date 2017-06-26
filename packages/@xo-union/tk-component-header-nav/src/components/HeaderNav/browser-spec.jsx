@@ -13,12 +13,15 @@ describe('<HeaderNav>', () => {
   describe('props.loggedIn', () => {
     it('does not render the account ctas', () => {
       const subject = mount(<HeaderNav loggedIn analyticsProps={analyticsProps} />);
+
       expect(subject.text()).not.toContain('SIGN UP');
+
       expect(subject.text()).not.toContain('LOG IN');
     });
 
     it('renders the Log Out button', () => {
       const subject = mount(<HeaderNav loggedIn analyticsProps={analyticsProps} />);
+
       expect(subject.text()).toContain('Log Out');
     });
   });
@@ -26,18 +29,22 @@ describe('<HeaderNav>', () => {
   describe('logged out', () => {
     it('does not render the account ctas', () => {
       const subject = mount(<HeaderNav loggedIn={false} analyticsProps={analyticsProps} />);
+
       expect(subject.text()).toContain('Sign up');
+
       expect(subject.text()).toContain('Log in');
     });
 
     it('does not render to Log Out button', () => {
       const subject = mount(<HeaderNav loggedIn={false} analyticsProps={analyticsProps} />);
+
       expect(subject.text()).not.toContain('Log Out');
     });
 
     it('passes the loggedIn value to the tools nav item', () => {
       const subject = mount(<HeaderNav loggedIn={false} analyticsProps={analyticsProps} />);
       const toolsNavItem = subject.find(Tools);
+
       expect(toolsNavItem.props().loggedIn).toBe(false);
     });
   });

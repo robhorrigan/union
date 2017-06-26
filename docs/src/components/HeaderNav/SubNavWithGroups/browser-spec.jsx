@@ -21,6 +21,7 @@ describe('<SubNavWithGroups>', () => {
     );
 
     const groups = subject.find('[role="group"]');
+
     expect(groups.length).toBe(7);
   });
 
@@ -38,6 +39,7 @@ describe('<SubNavWithGroups>', () => {
     );
 
     const expectedLayout = [8, 8, 8, 8, 8, 8, 6];
+
     expect(numberOfMenuItemsPerGroup).toEqual(expectedLayout);
   });
 });
