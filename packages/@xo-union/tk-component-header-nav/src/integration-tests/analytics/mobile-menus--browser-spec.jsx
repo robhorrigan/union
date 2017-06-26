@@ -27,7 +27,7 @@ describe('<HeaderNav>', () => {
         toolsButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Opened Tools Menu',
+          selection: 'opened tools menu',
           product: 'fashion',
           platform: 'web'
         });
@@ -37,7 +37,7 @@ describe('<HeaderNav>', () => {
         toolsButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Closed Tools Menu',
+          selection: 'closed tools menu',
           product: 'fashion',
           platform: 'web'
         });
@@ -49,7 +49,7 @@ describe('<HeaderNav>', () => {
         primaryButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Opened Primary Menu',
+          selection: 'opened primary menu',
           product: 'fashion',
           platform: 'web'
         });
@@ -59,7 +59,7 @@ describe('<HeaderNav>', () => {
         primaryButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Closed Primary Menu',
+          selection: 'closed primary menu',
           product: 'fashion',
           platform: 'web'
         });

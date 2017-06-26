@@ -23,19 +23,16 @@ export default function BusinessSection() {
         </NavLinkItem>
         <NavLinkItem
           href={`${XOGROUP_INC_HOST}/xo-group-careers.aspx?${XOGROUP_INC_QUERY}`}
-          data-trackable-selection="careers"
         >
           Careers
         </NavLinkItem>
         <NavLinkItem
           href={`${XOGROUP_INC_INVESTORS_HOST}/?${XOGROUP_INC_QUERY}`}
-          data-trackable-selection="investors"
         >
           Investors
         </NavLinkItem>
         <NavLinkItem
           href={`${XOGROUP_INC_HOST}/press-releases-home.aspx?${XOGROUP_INC_QUERY}`}
-          data-trackable-selection="media"
         >
           Media
         </NavLinkItem>
@@ -49,13 +46,11 @@ export default function BusinessSection() {
         <NavItem>©1997-2017 XO Group Inc.</NavItem>
         <NavLinkItem
           href="/privacy-policy"
-          data-trackable-selection="privacy policy"
         >
           Privacy Policy
         </NavLinkItem>
         <NavLinkItem
           href="/terms-and-conditions"
-          data-trackable-selection="terms of use"
         >
           Terms of Use
         </NavLinkItem>
@@ -65,7 +60,7 @@ export default function BusinessSection() {
         >
           Send Feedback
         </NavLinkItem>
-        <NavLinkItem href="//feedback.beta.theknot.com/knowledgebase" data-trackable>
+        <NavLinkItem href="//feedback.beta.theknot.com/knowledgebase">
           Customer Service + FAQ
          </NavLinkItem>
         <NavItem>

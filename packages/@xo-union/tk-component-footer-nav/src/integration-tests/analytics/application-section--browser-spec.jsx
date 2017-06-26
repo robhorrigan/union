@@ -3,21 +3,22 @@ import { mount } from 'enzyme';
 import FooterNav from '../../';
 
 const assertions = [
-  ['', 'xo group'],
-  ['About Us', 'about-us'],
-  ['Careers', 'careers'],
-  ['Investors', 'investors'],
-  ['Media', 'media'],
-  ['Advertise with Us', 'advertisers'],
-  ['', 'thebump'],
-  ['GigMasters', 'gig masters'],
-  ['Privacy Policy', 'privacy policy'],
-  ['Terms of Use', 'terms of use'],
-  ['Send Feedback', 'send feedback - desktop'],
-  ['Customer Service + FAQ', 'customer service + faq']
+  ['Wedding Ideas + Etiquette', 'wedding etiquette'],
+  ['Wedding Websites', 'wedding websites'],
+  ['Registry', 'registry'],
+  ['Marketplace', 'marketplace'],
+  ['Community', 'community'],
+  ['Real Wedding Photos', 'real wedding photos'],
+  ['Wedding Dresses + Jewelry', 'wedding dresses'],
+  ['Wedding Invitations', 'wedding invitations'],
+  ['Wedding Cakes', 'wedding cakes'],
+  ['Groom + Groomsmen', 'groom + groomsmen'],
+  ['Wedding on a Budget', 'wedding on a budget'],
+  ['Rehearsal Dinner', 'rehearsal dinner'],
+  ['The Knot News', 'the knot news']
 ];
 
-describe('business-section analytics', () => {
+describe('application analytics', () => {
   describe('on click', () => {
     assertions.forEach(([text, selection], index) => {
       it(`makes expected analytics track call for: ${JSON.stringify(text || selection)}`, () => {
@@ -28,7 +29,7 @@ describe('business-section analytics', () => {
           followStrategy: false
         };
         const subject = mount(<FooterNav analyticsProps={analyticsProps} />);
-        const trackableLinks = subject.find('BusinessSection a');
+        const trackableLinks = subject.find('ApplicationSection a');
         const current = trackableLinks.at(index);
         current.simulate('click');
 

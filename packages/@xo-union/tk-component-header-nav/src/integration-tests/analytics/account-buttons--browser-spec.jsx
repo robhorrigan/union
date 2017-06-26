@@ -27,7 +27,7 @@ describe('<HeaderNav>', () => {
         signUpButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Sign up',
+          selection: 'sign up',
           product: 'fashion',
           platform: 'web'
         });
@@ -38,7 +38,7 @@ describe('<HeaderNav>', () => {
         logInButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Log in',
+          selection: 'log in',
           product: 'fashion',
           platform: 'web'
         });
@@ -49,7 +49,7 @@ describe('<HeaderNav>', () => {
         logInButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Tools > Sign up',
+          selection: 'tools > sign up',
           product: 'fashion',
           platform: 'web'
         });
@@ -60,7 +60,7 @@ describe('<HeaderNav>', () => {
         logInButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-          selection: 'Tools > Log in here',
+          selection: 'tools > log in here',
           product: 'fashion',
           platform: 'web'
         });

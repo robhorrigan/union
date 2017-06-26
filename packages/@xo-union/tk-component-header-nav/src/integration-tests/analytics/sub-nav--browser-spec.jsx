@@ -30,7 +30,7 @@ describe('SubNav analytics', () => {
       subNavLinks.at(0).simulate('click');
 
       expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-        selection: 'Sub Nav Link Item',
+        selection: 'sub nav link item',
         product: 'fashion',
         platform: 'web',
         userDecisionArea: 'sub nav',
@@ -42,7 +42,7 @@ describe('SubNav analytics', () => {
       subNavLinks.at(1).simulate('click');
 
       expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
-        selection: 'New selection',
+        selection: 'new selection',
         product: 'fashion',
         platform: 'web',
         userDecisionArea: 'sub nav',

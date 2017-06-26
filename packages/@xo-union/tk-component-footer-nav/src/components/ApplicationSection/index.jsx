@@ -6,7 +6,7 @@ import { NavLinkItem } from '../NavItems';
 export default function ApplicationSection() {
   return (
     <NavItemList className={styles['application-section']}>
-      <NavLinkItem href="/content">
+      <NavLinkItem href="/content" data-trackable-selection="wedding etiquette">
         Wedding Ideas + Etiquette
       </NavLinkItem>
       <NavLinkItem href="/gs/wedding-websites">
@@ -24,7 +24,7 @@ export default function ApplicationSection() {
       <NavLinkItem href="/real-weddings/photos">
         Real Wedding Photos
       </NavLinkItem>
-      <NavLinkItem href="/fashion/wedding-dresses">
+      <NavLinkItem href="/fashion/wedding-dresses" data-trackable-selection="wedding dresses">
         Wedding Dresses + Jewelry
       </NavLinkItem>
       <NavLinkItem href="/wedding-invitations">

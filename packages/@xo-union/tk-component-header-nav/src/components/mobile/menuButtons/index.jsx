@@ -36,12 +36,12 @@ MobileMenuButton.defaultProps = {
 
 
 export function ToolsMenuButton(props) {
-  const selectionState = props.isOpen ? 'Closed' : 'Opened';
+  const selectionState = props.isOpen ? 'closed' : 'opened';
 
   return (
     <MobileMenuButton
       closedIconName="nav-signup-mobile"
-      data-trackable-selection={`${selectionState} Tools Menu`}
+      data-trackable-selection={`${selectionState} tools menu`}
       {...props}
     />
   );
@@ -52,12 +52,12 @@ ToolsMenuButton.propTypes = {
 };
 
 export function PrimaryMenuButton(props) {
-  const selectionState = props.isOpen ? 'Closed' : 'Opened';
+  const selectionState = props.isOpen ? 'closed' : 'opened';
 
   return (
     <MobileMenuButton
       closedIconName="hamburger"
-      data-trackable-selection={`${selectionState} Primary Menu`}
+      data-trackable-selection={`${selectionState} primary menu`}
       {...props}
     />
   );

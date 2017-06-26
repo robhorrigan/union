@@ -24,17 +24,26 @@ NavItem.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export const NavLinkItem = ({ href, children, ...props }) => (
-  <NavItem>
-    <AssumedTargetAnchor href={href} className={styles['nav-link']} {...props}>
-      {children}
-    </AssumedTargetAnchor>
-  </NavItem>
-);
+export const NavLinkItem = ({ href, children, ...props }) => {
+  let finalProps = props;
+
+  if (!props['data-trackable-selection']) {
+    finalProps = { 'data-trackable': true, ...props };
+  }
+
+  return (
+    <NavItem>
+      <AssumedTargetAnchor href={href} className={styles['nav-link']} {...finalProps}>
+        {children}
+      </AssumedTargetAnchor>
+    </NavItem>
+  );
+};
 
 NavLinkItem.propTypes = {
   children: PropTypes.node.isRequired,
-  href: PropTypes.string.isRequired
+  href: PropTypes.string.isRequired,
+  'data-trackable-selection': PropTypes.string
 };
 
 export const SisterSitesNavItem = () => (

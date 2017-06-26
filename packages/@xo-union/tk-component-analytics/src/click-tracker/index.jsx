@@ -4,14 +4,14 @@ import GenericClickTracker from '@xo-union/tk-component-analytics/lib/generic-cl
 import callOrSelf from 'xojs/lib/function/callOrSelf';
 
 function selectionValue() {
-  const selection = this.dataset.trackableSelection || this.textContent.trim();
+  let selection = this.dataset.trackableSelection || this.textContent.trim();
   const namespace = this.dataset.trackableGroup;
 
   if (namespace) {
-    return `${namespace} > ${selection}`;
+    selection = `${namespace} > ${selection}`;
   }
 
-  return selection;
+  return selection.toLowerCase();
 }
 
 export default function ClickTracker({ product, eventData = {}, ...props }) {
