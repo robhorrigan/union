@@ -68,7 +68,7 @@ export const typographyFontsRules = {
         loader: 'file-loader',
         options: {
           name: '/[name]-[hash:3].[ext]',
-          publicPath: '//assets.union.theknot.com/fonts',
+          publicPath: '//union.theknot.com/fonts',
           outputPath: path.join('..', '..', 'public', 'assets', 'fonts')
         }
       }

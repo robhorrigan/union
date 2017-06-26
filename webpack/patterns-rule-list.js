@@ -42,7 +42,7 @@ export default [
         loader: 'file-loader',
         options: {
           name: '/[name]-[hash:3].[ext]',
-          publicPath: '//assets.union.theknot.com/icons',
+          publicPath: '//union.theknot.com/icons',
           outputPath: '../../public/assets/icons'
         }
       }
