@@ -8,7 +8,6 @@
     "transform-class-properties",
     "transform-object-rest-spread",
     "transform-function-bind",
-    "transform-runtime",
-    "transform-do-expressions"
+    "transform-runtime"
   ]
 }
