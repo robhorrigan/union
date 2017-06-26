@@ -10,7 +10,7 @@ function ChangeLogContent({ changeLog }) {
   }
 
   return (
-    <div className={style['release-notes']}>
+    <div className={style['change-log-content']}>
       <h1>{changeLog.currentVersion}</h1>
       {compile(changeLog.markdown).tree}
     </div>

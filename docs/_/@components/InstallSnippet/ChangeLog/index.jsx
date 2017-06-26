@@ -28,7 +28,7 @@ export default class ChangeLog extends Component {
     }
 
     return (
-      <div className={style['releases-section']}>
+      <div className={style['change-log']}>
         <VersionList releases={github.releasesFor(packageName)} changeLog={this.store} />
         <ChangeLogContent changeLog={this.store} />
       </div>

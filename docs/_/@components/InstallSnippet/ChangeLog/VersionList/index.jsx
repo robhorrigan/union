@@ -6,10 +6,10 @@ import ToggleButton from './ToggleButton';
 
 function VersionList({ changeLog, releases }) {
   return (
-    <ul className={style['releases-list']}>
+    <ul className={style['version-list']}>
       {
         releases.map(({ tagName, ...release }) => (
-          <li key={tagName} className={style['release-item']}>
+          <li key={tagName} className={style['version-item']}>
             <ToggleButton
               onClick={() => changeLog.toggle(release)}
               isOn={changeLog.isCurrent(release)}
