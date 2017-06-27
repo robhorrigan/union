@@ -2,35 +2,44 @@ import chalk from 'chalk';
 import inquirer from 'inquirer';
 import getCurrentStats from './getCurrentStats';
 import { getCurrentBudget, setBudget } from './manageBudget';
-import createQuestions from './questionsFactory';
+import createQuestions, { wasSkipped } from './questionsFactory';
+
+function handleAnswers({ answers, budget }) {
+  const newBudget = {};
+
+  for (const key in answers) {
+    const value = answers[key];
+
+    if (wasSkipped(value)) {
+      if (budget[value.name]) {
+        newBudget[value.name] = budget[value.name];
+      }
+    } else {
+      newBudget[value.name] = {
+        size: value.size
+      };
+    }
+  }
+
+  setBudget(newBudget);
+}
 
 async function updateBudget() {
-  const currentStats = getCurrentStats();
-  const currentBudget = await getCurrentBudget();
+  const [currentStats, currentBudget] = await Promise.all([
+    getCurrentStats(), getCurrentBudget()
+  ]);
+
   const questions = [];
 
-  for (const stat of (await currentStats)) {
+  for (const stat of currentStats) {
     questions.push(...createQuestions({ stat, budget: currentBudget }));
   }
 
-  inquirer.prompt(questions).then((answers) => {
-    const newBudget = {};
+  const answers = await inquirer.prompt(questions)
 
-    for (const key in answers) {
-      const value = answers[key];
-
-      if (value.size === 'SKIP') {
-        if (currentBudget[value.name]) {
-          newBudget[value.name] = currentBudget[value.name];
-        }
-      } else {
-        newBudget[value.name] = {
-          size: value.size
-        };
-      }
-    }
-
-    setBudget(newBudget);
+  handleAnswers({
+    answers,
+    budget: currentBudget
   });
 }
 

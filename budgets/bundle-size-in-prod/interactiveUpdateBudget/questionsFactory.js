@@ -7,6 +7,10 @@ function plusPercent(percent) {
   return this + Math.round(this * percent);
 }
 
+export function wasSkipped({ size }) {
+  return size === 'SKIP';
+}
+
 export default function createQuestions({ stat, budget }) {
   const { name, size } = stat;
 
