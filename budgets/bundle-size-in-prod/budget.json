@@ -1,6 +1,131 @@
 {
   "tk-css-typography/lib/globals.cssm": {
-    "size": 213551
+    "size": 215551
+  },
+  "icons/union-icons.svg": {
+    "size": 36941
+  },
+  "fonts/tisa-light.woff2": {
+    "size": 20446
+  },
+  "fonts/tisa-medium.woff": {
+    "size": 28077
+  },
+  "fonts/tisa-medium.woff2": {
+    "size": 22004
+  },
+  "fonts/tisa-sans-regular.woff": {
+    "size": 25725
+  },
+  "fonts/tisa-sans-regular.woff2": {
+    "size": 19874
+  },
+  "tk-component-header-nav/lib/index.js": {
+    "size": 438813
+  },
+  "tk-component-footer-nav/lib/index.js": {
+    "size": 486354
+  },
+  "tk-component-analytics/lib/click-tracker/index.js": {
+    "size": 73784
+  },
+  "tk-component-fields/lib/index.js": {
+    "size": 454712
+  },
+  "tk-component-analytics/lib/generic-click-tracker/index.js": {
+    "size": 69969
+  },
+  "tk-component-icons/lib/components/index.js": {
+    "size": 54109
+  },
+  "tk-component-buttons/lib/components/index.js": {
+    "size": 261240
+  },
+  "tk-component-header-nav/lib/css/index.cssm": {
+    "size": 333529
+  },
+  "tk-component-footer-nav/lib/css/index.cssm": {
+    "size": 402555
+  },
+  "tk-component-fields/lib/css/index.cssm": {
+    "size": 343534
+  },
+  "tk-component-icons/lib/setup/index.js": {
+    "size": 23499
+  },
+  "tk-css-essentials/lib/index.js": {
+    "size": 222095
+  },
+  "tk-component-buttons/lib/css/index.cssm": {
+    "size": 234598
+  },
+  "tk-css-typography/lib/index.cssm": {
+    "size": 219730
+  },
+  "fonts/tisa-light.woff": {
+    "size": 26183
+  },
+  "tk-css-typography/lib/fonts.cssm": {
+    "size": 214036
+  },
+  "tk-css-utilities/lib/vertical-align.cssm": {
+    "size": 213564
+  },
+  "tk-css-utilities/lib/spacing.cssm": {
+    "size": 255461
+  },
+  "tk-css-utilities/lib/flexbox.cssm": {
+    "size": 235690
+  },
+  "tk-css-utilities/lib/display.cssm": {
+    "size": 217191
+  },
+  "tk-css-typography/lib/utilities.cssm": {
+    "size": 217265
+  },
+  "tk-css-bootstrap/lib/tables.cssm": {
+    "size": 216292
+  },
+  "tk-css-bootstrap/lib/navbar.cssm": {
+    "size": 222030
+  },
+  "tk-css-bootstrap/lib/nav.cssm": {
+    "size": 214939
+  },
+  "tk-css-bootstrap/lib/grid.cssm": {
+    "size": 244021
+  },
+  "tk-css-bootstrap/lib/reboot.cssm": {
+    "size": 217575
+  },
+  "component-standard-elements/lib/anchor/index.js": {
+    "size": 31005
+  },
+  "tk-component-icons/lib/legacy.cssm": {
+    "size": 104286
+  },
+  "tk-css-typography/lib/data/index.js": {
+    "size": 3213
+  },
+  "tk-component-icons/lib/data/index.js": {
+    "size": 1257
+  },
+  "tk-component-icons/lib/css/index.cssm": {
+    "size": 4731
+  },
+  "tk-css-utilities/lib/effects.cssm": {
+    "size": 13294
+  },
+  "tk-css-utilities/lib/pointer-events.cssm": {
+    "size": 2737
+  },
+  "tk-css-typography/lib/sizes.cssm": {
+    "size": 3297
+  },
+  "tk-css-colors/lib/variables.cssm": {
+    "size": 12271
+  },
+  "tk-css-colors/lib/utilities.cssm": {
+    "size": 49529
   }
 }
-
