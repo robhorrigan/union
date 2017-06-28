@@ -1,5 +1,5 @@
-import getCurrentStats from './interactiveUpdateBudget/getCurrentStats';
-import { getCurrentBudget, setBudget } from './interactiveUpdateBudget/manageBudget';
+import getCurrentStats from './support/getCurrentStats';
+import { getCurrentBudget, setBudget } from './support/manageBudget';
 import formattedPercentDiff from './interactiveUpdateBudget/formattedPercentDiff';
 
 function test(actual, expected) {

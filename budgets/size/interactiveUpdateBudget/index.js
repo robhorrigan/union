@@ -1,7 +1,7 @@
 import chalk from 'chalk';
 import inquirer from 'inquirer';
-import getCurrentStats from './getCurrentStats';
-import { getCurrentBudget, setBudget } from './manageBudget';
+import getCurrentStats from '../support/getCurrentStats';
+import { getCurrentBudget, setBudget } from '../support/manageBudget';
 import createQuestions, { wasSkipped } from './questionsFactory';
 
 function handleAnswers({ answers, budget }) {

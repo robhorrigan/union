@@ -1,5 +1,5 @@
 import chalk from 'chalk';
-import formattedPercentDiff from './formattedPercentDiff';
+import formattedPercentDiff from '../support/formattedPercentDiff';
 
 const NONE = chalk.red('none');
 
