@@ -14,10 +14,9 @@ export default function BusinessSection() {
   return (
     <div className={styles['business-section']}>
       <NavItemList>
-        <XOGroupLinkNavItem data-trackable-selection="xo group" />
+        <XOGroupLinkNavItem />
         <NavLinkItem
           href="/more/about-us"
-          data-trackable-selection="about-us"
         >
           About Us
         </NavLinkItem>
@@ -36,7 +35,10 @@ export default function BusinessSection() {
         >
           Media
         </NavLinkItem>
-        <NavLinkItem href="//partnerssignup.theknot.com" data-trackable-selection="advertisers">
+        <NavLinkItem
+          href="//partnerssignup.theknot.com"
+          trackableProps={{ selection: 'advertisers' }}
+        >
           Advertise with Us
         </NavLinkItem>
         <li className={styles.divider}>|</li>
@@ -56,7 +58,7 @@ export default function BusinessSection() {
         </NavLinkItem>
         <NavLinkItem
           href="//help.theknot.com/forums/263843-theknot-com-ideas-feedback"
-          data-trackable-selection="send feedback - desktop"
+          trackableProps={{ selection: 'send feedback - desktop' }}
         >
           Send Feedback
         </NavLinkItem>

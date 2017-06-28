@@ -1,5 +1,3 @@
 export { default } from './components/HeaderNav';
-export {
-  SubNavLinkItem,
-  default as SubNav
-} from './components/SubNav';
+export { default as SubNav } from './components/SubNav';
+export { default as SubNavLinkItem } from './components/SubNav/SubNavLinkItem';

@@ -2,6 +2,7 @@
 $imports:
   InstallSnippet: '@components/InstallSnippet'
   Demo: '@components/Demo'
+  Snippet: '@components/Snippet'
   PropTypesTable: '@components/PropTypesTable'
   packageJson: '@xo-union/tk-component-analytics/package.json'
   ClickTracker: '@xo-union/tk-component-analytics/lib/click-tracker'
@@ -10,6 +11,8 @@ $imports:
   styles: '@styles/list-demo'
   ClickTrackerMetadata: '!!react-docgen-loader!@xo-union/tk-component-analytics/src/click-tracker'
   GenericClickTrackerMetadata: '!!react-docgen-loader!@xo-union/tk-component-analytics/src/generic-click-tracker'
+  ClickTrackerExample: './examples/click-tracker-example'
+  clickTrackerSnippetString: '!!raw-loader!./examples/click-tracker-example'
 ---
 
 # Click tracker
@@ -36,6 +39,7 @@ The `ClickTracker` component assumes a couple of things about its child componen
 - It uses the value of the `data-trackable-selection` attribute.
 - It uses the element's text if the `data-trackable-selection` property is not present.
 - If the `data-trackable-group` attribute is present, it formats the `selection` as `"group > selection"`.
+- It lower cases the string
 
 #### Properties
 
@@ -45,28 +49,8 @@ The `ClickTracker` component assumes a couple of things about its child componen
 
 *Note: To see the track calls, inspect the javascript console.*
 
-```javascript
-import ClickTracker from '@xo-union/tk-component-analytics/lib/click-tracker';
-```
-
-<Demo ignoreProps={['className', 'analytics']}>
-  <ClickTracker analytics={{ track: ::console.log }} product="fashion" eventName="Demo Event">
-    <ul className={styles['list-demo']}>
-      <li>
-        <Button data-trackable>I am trackable, and my `selection` value is assumed from my text</Button>
-      </li>
-      <li>
-        <Button data-trackable-selection="Override selection">I am trackable, and my `selection` value is overriden</Button>
-      </li>
-      <li>
-        <Button data-trackable-group="Group" data-trackable-selection="Override selection">I am trackable, and I belong to a group</Button>
-      </li>
-      <li>
-        <Button>I am not trackable</Button>
-      </li>
-    </ul>
-  </ClickTracker>
-</Demo>
+<Snippet lang="jsx">{clickTrackerSnippetString}</Snippet>
+<ClickTrackerExample />
 
 ### GenericClickTracker
 

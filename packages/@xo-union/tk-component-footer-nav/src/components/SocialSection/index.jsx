@@ -11,11 +11,11 @@ export default function SocialSection() {
           Follow Us
         </h2>
       </li>
-      <SocialIconItem name="facebook" data-trackable-selection="facebook" />
-      <SocialIconItem name="twitter" data-trackable-selection="twitter" />
-      <SocialIconItem name="pinterest" data-trackable-selection="pinterest" />
-      <SocialIconItem name="instagram" data-trackable-selection="instagram" />
-      <SocialIconItem name="googleplus" href="https://plus.google.com/+TheKnot" data-trackable-selection="google plus" />
+      <SocialIconItem name="facebook" trackableProps={{ selection: 'facebook' }} />
+      <SocialIconItem name="twitter" trackableProps={{ selection: 'twitter' }} />
+      <SocialIconItem name="pinterest" trackableProps={{ selection: 'pinterest' }} />
+      <SocialIconItem name="instagram" trackableProps={{ selection: 'instagram' }} />
+      <SocialIconItem name="googleplus" href="https://plus.google.com/+TheKnot" trackableProps={{ selection: 'google plus' }} />
     </NavItemList>
   );
 }

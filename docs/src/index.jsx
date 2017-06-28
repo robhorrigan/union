@@ -1,4 +1,7 @@
-import '#docs/__debug_utilities__';
+/* eslint-disable import/first */
+import './__debug_utilities__';
+import './__snippet_hacks__';
+
 /* Global union styles */
 import '@xo-union/tk-css-essentials';
 import 'babel-polyfill';
@@ -8,19 +11,10 @@ import 'prism-themes/themes/prism-ghcolors';
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import HeaderNav from '@xo-union/tk-component-header-nav';
-
 import { init as initializeIcons } from '@xo-union/tk-component-icons/lib/setup';
-
-import Routes from '#docs/components/Routes';
+import Routes from './components/Routes';
 
 initializeIcons();
-
-/**
- * Documentation hacks
- * Change display name to improve snippet rendering
- */
-HeaderNav.displayName = 'HeaderNav';
 
 ReactDOM.render(
   <Routes />,

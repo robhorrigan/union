@@ -1,6 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@xo-union/tk-component-header-nav/lib/css';
+import {
+  createTrackableProps,
+  TRACKABLE_PROPS
+} from '@xo-union/tk-component-analytics/lib/trackable';
 import keep from 'xojs/lib/object/keep';
 import values from 'xojs/lib/object/values';
 import withPath from 'xojs/lib/url/withPath';
@@ -13,7 +17,7 @@ function Factory({ Template, children, label, ...props }) {
     if (!element) { return element; }
 
     return React.cloneElement(element, {
-      'data-trackable-group': label,
+      ...createTrackableProps({ group: label }),
       ...element.props
     });
   });
@@ -196,7 +200,7 @@ Shop.propTypes = {
 };
 
 function AccountMenuItem(props) {
-  const reducedProps = props::keep('data-trackable-group');
+  const reducedProps = props::keep(...TRACKABLE_PROPS);
 
   return (
     <li className={styles['sub-menu-account-item']}>
