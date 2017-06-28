@@ -20,6 +20,7 @@
     "build.patterns": "webpack --config webpack.patterns.babel.js",
     "build.xojs": "babel packages/xojs/src --out-dir packages/xojs/lib --ignore *spec.js,*benchmark.js",
     "budget.size.update": "node -r babel-register ./budgets/size/interactiveUpdateBudget/index.js",
+    "budget.size.generateCsv": "node -r babel-register ./budgets/size/generateCsv.js",
     "budget.size.check": "node -r babel-register ./budgets/size/check.js",
     "clean": "yarn run clean.dependencies && yarn run clean.build",
     "clean.all": "yarn run clean && rm -rf node_modules",
