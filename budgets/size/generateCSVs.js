@@ -1,18 +1,14 @@
 import toCsv from 'json2csv';
-import getCurrentStats from './support/getCurrentStats';
-import { getCurrentBudget } from './support/manageBudget';
 import { writeFile } from 'fs';
 import { promisify } from 'util';
 import { resolve } from 'path';
+import getCurrentStats from './support/getCurrentStats';
+import { getCurrentBudget } from './support/manageBudget';
 
 const write = promisify(writeFile);
 
 function toData(stats, budget) {
-  return stats.map(({ name, size }) => {
-    return {
-      name, current: size, budget: budget[name].size
-    };
-  });
+  return stats.map(({ name, size }) => ({ name, current: size, budget: budget[name].size }));
 }
 
 async function generateCSVs() {
@@ -20,7 +16,7 @@ async function generateCSVs() {
   const fields = ['name', 'budget', 'current'];
   const csv = toCsv({ fields, data: toData(stats, budget) });
 
-  return await write(resolve('out', 'size-budgets.csv'), csv);
+  return write(resolve('out', 'size-budgets.csv'), csv);
 }
 
 generateCSVs();

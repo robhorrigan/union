@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import externalizeAllPackages from '../..//webpack/helpers/externalizeAllPackages';
 import { buildEntrypoints } from '../../webpack/helpers/buildEntrypoints';
 import rules from '../../webpack/patterns-rule-list';
 import { resolveDefaults, resolveLoaders } from '../../webpack/resolve';

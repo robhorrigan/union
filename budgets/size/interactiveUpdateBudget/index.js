@@ -1,5 +1,6 @@
-import chalk from 'chalk';
+/* eslint-disable no-console */
 import inquirer from 'inquirer';
+import values from 'xojs/lib/object/values';
 import getCurrentStats from '../support/getCurrentStats';
 import { getCurrentBudget, setBudget } from '../support/manageBudget';
 import createQuestions, { wasSkipped } from './questionsFactory';
@@ -7,19 +8,15 @@ import createQuestions, { wasSkipped } from './questionsFactory';
 function handleAnswers({ answers, budget }) {
   const newBudget = {};
 
-  for (const key in answers) {
-    const value = answers[key];
-
-    if (wasSkipped(value)) {
-      if (budget[value.name]) {
-        newBudget[value.name] = budget[value.name];
+  answers::values().forEach(({ name, size }) => {
+    if (wasSkipped({ size })) {
+      if (budget[name]) {
+        newBudget[name] = budget[name];
       }
     } else {
-      newBudget[value.name] = {
-        size: value.size
-      };
+      newBudget[name] = { size };
     }
-  }
+  });
 
   setBudget(newBudget);
 }
@@ -31,11 +28,11 @@ async function updateBudget() {
 
   const questions = [];
 
-  for (const stat of currentStats) {
+  currentStats.forEach((stat) => {
     questions.push(...createQuestions({ stat, budget: currentBudget }));
-  }
+  });
 
-  const answers = await inquirer.prompt(questions)
+  const answers = await inquirer.prompt(questions);
 
   handleAnswers({
     answers,

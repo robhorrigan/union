@@ -1,5 +1,6 @@
+/* eslint-disable no-console */
 import getCurrentStats from './support/getCurrentStats';
-import { getCurrentBudget, setBudget } from './support/manageBudget';
+import { getCurrentBudget } from './support/manageBudget';
 import formattedPercentDiff from './support/formattedPercentDiff';
 
 function test(actual, expected) {
@@ -19,7 +20,7 @@ async function checkBudget() {
     failures: []
   };
 
-  for (const stat of currentStats) {
+  currentStats.forEach((stat) => {
     const budget = currentBudget[stat.name];
 
     const { pass, diff } = test(stat, budget);
@@ -33,7 +34,7 @@ async function checkBudget() {
     }
 
     console.log(stat.name, diff);
-  }
+  });
 
   return result;
 }
@@ -44,9 +45,9 @@ checkBudget()
   if (!passed) {
     console.error('\nSome budgets were exceeded\n\n');
 
-    for (const { name, diff } of failures) {
+    failures.forEach(({ name, diff }) => {
       console.error(name, diff);
-    }
+    });
 
     process.exit(1);
   }
