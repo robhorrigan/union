@@ -17,7 +17,7 @@ describe('SubNav analytics', () => {
           <SubNavLinkItem href="//www.theknot.com">
             Sub Nav Link Item
           </SubNavLinkItem>
-          <SubNavLinkItem href="//www.theknot.com" data-trackable-selection="New selection">
+          <SubNavLinkItem href="//www.theknot.com" trackableProps={{ selection: 'New selection' }}>
             Sub Nav Link Item
           </SubNavLinkItem>
         </SubNav>
@@ -26,7 +26,7 @@ describe('SubNav analytics', () => {
       subNavLinks = subject.find('SubNavLinkItem a');
     });
 
-    it('makes correct analytics call when no data-trackable-selection is passed', () => {
+    it('makes correct analytics call when no selection is passed', () => {
       subNavLinks.at(0).simulate('click');
 
       expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {
@@ -38,7 +38,7 @@ describe('SubNav analytics', () => {
       });
     });
 
-    it('makes correct analytics call when data-trackable-selection is passed', () => {
+    it('makes correct analytics call when selection is passed', () => {
       subNavLinks.at(1).simulate('click');
 
       expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {

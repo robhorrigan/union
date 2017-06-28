@@ -1,6 +1,8 @@
 import React from 'react';
 import { mount } from 'enzyme';
-import SubNav, { SubNavLinkItem } from './';
+import SubNav from './';
+import SubNavLinkItem from './SubNavLinkItem';
+
 
 describe('<SubNav>', () => {
   it('renders the <SubNavLinkItem> children', () => {

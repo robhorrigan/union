@@ -30,7 +30,9 @@ export default function HeaderNavWithSubNavDemo() {
           </SubNavLinkItem>
           <SubNavLinkItem
             href="/boards"
-            data-trackable-selection="(Optional) To override selection value in analytics call"
+            trackableProps={{
+              selection: '(Optional) To override selection value in analytics call'
+            }}
           >
             Favorites
           </SubNavLinkItem>

@@ -2,6 +2,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@xo-union/tk-component-footer-nav/lib/css';
 import {
+  createTrackableProps,
+  PropTypes as TrackablePropTypes
+} from '@xo-union/tk-component-analytics/lib/trackable';
+import {
   NewWindowAnchor,
   AssumedTargetAnchor
 } from '@xo-union/component-standard-elements/lib/anchor';
@@ -24,26 +28,22 @@ NavItem.propTypes = {
   children: PropTypes.node.isRequired
 };
 
-export const NavLinkItem = ({ href, children, ...props }) => {
-  let finalProps = props;
-
-  if (!props['data-trackable-selection']) {
-    finalProps = { 'data-trackable': true, ...props };
-  }
-
-  return (
-    <NavItem>
-      <AssumedTargetAnchor href={href} className={styles['nav-link']} {...finalProps}>
-        {children}
-      </AssumedTargetAnchor>
-    </NavItem>
-  );
-};
+export const NavLinkItem = ({ href, children, trackableProps }) => (
+  <NavItem>
+    <AssumedTargetAnchor
+      href={href}
+      className={styles['nav-link']}
+      {...createTrackableProps(trackableProps)}
+    >
+      {children}
+    </AssumedTargetAnchor>
+  </NavItem>
+);
 
 NavLinkItem.propTypes = {
   children: PropTypes.node.isRequired,
   href: PropTypes.string.isRequired,
-  'data-trackable-selection': PropTypes.string
+  trackableProps: TrackablePropTypes.trackableProps
 };
 
 export const SisterSitesNavItem = () => (
@@ -52,12 +52,16 @@ export const SisterSitesNavItem = () => (
       <span>
         Check out our sister sites
       </span>
-      <BrandLogoLink name="tb-logo" href="//www.thebump.com" data-trackable-selection="thebump" />
+      <BrandLogoLink
+        name="tb-logo"
+        href="//www.thebump.com"
+        trackableProps={{ selection: 'thebump' }}
+      />
       and
       <NewWindowAnchor
         href="//www.gigmasters.com"
         className={styles['nav-link']}
-        data-trackable-selection="gig masters"
+        {...createTrackableProps({ selection: 'gig masters' })}
       >
         GigMasters
       </NewWindowAnchor>
@@ -70,7 +74,7 @@ export const XOGroupLinkNavItem = () => (
     <BrandLogoLink
       name="xo-logo"
       href={`${XOGROUP_INC_HOST}/xo-group-company.aspx?${XOGROUP_INC_QUERY}`}
-      data-trackable-selection="xo group"
+      trackableProps={{ selection: 'xo group' }}
     />
   </li>
 );

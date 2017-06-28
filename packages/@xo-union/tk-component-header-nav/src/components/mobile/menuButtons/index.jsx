@@ -2,8 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@xo-union/tk-component-header-nav/lib/css';
 import Icon from '@xo-union/tk-component-icons';
+import { createTrackableProps } from '@xo-union/tk-component-analytics/lib/trackable';
 
-function MobileMenuButton({ onClick, isOpen, closedIconName, ...props }) {
+/* eslint-disable prefer-arrow-callback */
+function MobileMenuButton({
+  onClick,
+  isOpen,
+  closedIconName,
+  ...props
+}) {
   let iconName = closedIconName;
 
   if (isOpen) {
@@ -41,7 +48,7 @@ export function ToolsMenuButton(props) {
   return (
     <MobileMenuButton
       closedIconName="nav-signup-mobile"
-      data-trackable-selection={`${selectionState} tools menu`}
+      {...createTrackableProps({ selection: `${selectionState} tools menu` })}
       {...props}
     />
   );
@@ -57,7 +64,7 @@ export function PrimaryMenuButton(props) {
   return (
     <MobileMenuButton
       closedIconName="hamburger"
-      data-trackable-selection={`${selectionState} primary menu`}
+      {...createTrackableProps({ selection: `${selectionState} primary menu` })}
       {...props}
     />
   );

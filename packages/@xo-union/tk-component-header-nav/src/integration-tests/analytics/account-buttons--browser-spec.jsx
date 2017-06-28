@@ -22,7 +22,7 @@ describe('<HeaderNav>', () => {
       });
 
       it('triggers the correct analytics call for main menu sign-up button', () => {
-        const signUpButton = subject.find('MainMenuItem > SignUpButton button');
+        const signUpButton = subject.find('MainMenuItem SignUpButton button').at(1);
 
         signUpButton.simulate('click');
 
@@ -34,7 +34,7 @@ describe('<HeaderNav>', () => {
       });
 
       it('triggers the correct analytics call for main menu log-in button', () => {
-        const logInButton = subject.find('MainMenuItem > LogInButton button');
+        const logInButton = subject.find('MainMenuItem LogInButton button').at(1);
         logInButton.simulate('click');
 
         expect(analyticsMock.track).toHaveBeenCalledWith('Menu Interaction', {

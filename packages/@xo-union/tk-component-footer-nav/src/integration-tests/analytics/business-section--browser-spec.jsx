@@ -4,7 +4,7 @@ import FooterNav from '../../';
 
 const assertions = [
   ['', 'xo group'],
-  ['About Us', 'about-us'],
+  ['About Us', 'about us'],
   ['Careers', 'careers'],
   ['Investors', 'investors'],
   ['Media', 'media'],

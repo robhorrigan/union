@@ -1,4 +1,5 @@
 [
   "generic-click-tracker/index.jsx",
-  "click-tracker/index.jsx"
+  "click-tracker/index.jsx",
+  "trackable/index.jsx"
 ]
