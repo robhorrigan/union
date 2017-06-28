@@ -41,6 +41,7 @@
     "publish.docs": "sh ./scripts/publish-docs.sh",
     "publish.packages": "sh ./scripts/publish-packages.sh",
     "publish.packages.cherrypick": "sh ./scripts/publish-packages-cherrypick.sh",
+    "postinstall": "yarn bootstrap",
     "restart": "pm2 restart all",
     "setup": "yarn install && yarn run bootstrap && yarn run build.patterns",
     "start": "pm2 start devprocesses.config.js",
