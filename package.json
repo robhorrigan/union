@@ -121,6 +121,7 @@
     "jasmine": "^2.6.0",
     "jasmine-core": "^2.6.4",
     "jasmine-spec-reporter": "^4.1.1",
+    "json2csv": "^3.7.3",
     "jsx-to-string-2": "^1.0.0",
     "karma": "^1.7.0",
     "karma-benchmark": "^0.7.1",

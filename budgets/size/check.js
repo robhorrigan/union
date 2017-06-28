@@ -1,6 +1,6 @@
 import getCurrentStats from './support/getCurrentStats';
 import { getCurrentBudget, setBudget } from './support/manageBudget';
-import formattedPercentDiff from './interactiveUpdateBudget/formattedPercentDiff';
+import formattedPercentDiff from './support/formattedPercentDiff';
 
 function test(actual, expected) {
   return {
