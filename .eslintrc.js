@@ -42,7 +42,8 @@ module.exports = {
        ignoreUrls: true
      }],
     /* We have tests that cover this in a more thorough fashion */
-    'import/no-extraneous-dependencies': [ 'off' ]
+    'import/no-extraneous-dependencies': ['off'],
+    'react/sort-comp': ['off']
   },
   settings: {
     'import/resolver': {

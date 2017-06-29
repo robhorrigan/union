@@ -1,4 +1,4 @@
-@value purpulish-gray: #F7F7F9;
+@value ( purpulish-gray ) from '@styles/colors';
 
 /* tag and attribute selectors are to increase specificity
  * as this selector is competing with styles from prism theme

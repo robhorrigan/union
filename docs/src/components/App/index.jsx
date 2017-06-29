@@ -8,6 +8,8 @@ import Error404 from '#docs/components/Errors/404';
 import Layout from '#docs/components/Layout';
 import Article from '#docs/entities/Article';
 import siteConfig from '$site-config';
+import GithubStore from '@stores/GithubStore';
+
 import generateRoutes from './generateRoutes';
 import handleBookmark from './handleBookmark';
 import RouterStore from './RouterStore';
@@ -15,15 +17,20 @@ import RouterStore from './RouterStore';
 // eslint-disable-next-line camelcase
 const rootPath = __webpack_public_path__;
 
-export default class Routes extends Component {
+export default class App extends Component {
   router = new RouterStore()
+  github = new GithubStore()
   history = syncHistoryWithStore(browserHistory, this.router)
+
+  componentDidMount() {
+    this.github.hydrate();
+  }
 
   render() {
     const routes = generateRoutes(Article.all);
 
     return (
-      <Provider router={this.router}>
+      <Provider router={this.router} github={this.github}>
         <Router history={this.history} onUpdate={handleBookmark}>
           <Route path={rootPath} component={Layout} >
             {routes}

@@ -3,6 +3,7 @@
  **/
 import 'prismjs';
 import 'babel-polyfill';
+import 'whatwg-fetch';
 
 const packageContext = require.context('./packages', true, /browser-spec.jsx?$/);
 const docsContext = require.context('./docs', true, /browser-spec.jsx?$/);

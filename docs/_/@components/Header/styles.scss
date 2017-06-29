@@ -1,5 +1,7 @@
 .article-header {
-  composes: mt-5 from '@xo-union/tk-css-utilities/lib/spacing';
+  &:not(h1) {
+    margin-top: 3rem;
+  }
 
   a {
     color: inherit;
