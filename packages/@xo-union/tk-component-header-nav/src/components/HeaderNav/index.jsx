@@ -4,8 +4,18 @@ import { autobind } from 'core-decorators';
 import ClickTracker from '@xo-union/tk-component-analytics/lib/click-tracker';
 import MobileHeaderNav from '../mobile/HeaderNav';
 import DesktopHeaderNav from '../desktop/HeaderNav';
+import XoModal from '../../__bundled_dependencies__/modal';
+import Modal from '../Modal';
 
 const NOOP = () => { };
+
+// const modal = new Modal({
+//   analyticsData: {
+//     reason: ''
+//   }
+// });
+
+// modal.render('signUpModal');
 
 class HeaderNav extends Component {
   /* eslint-disable react/prop-types */
@@ -30,6 +40,7 @@ class HeaderNav extends Component {
 
     return newProps;
   }
+
 
   @autobind
   handleClick(event) {
@@ -59,6 +70,7 @@ class HeaderNav extends Component {
 
     return (
       <div onClick={this.handleClick} {...this.getRestOfProps()}>
+        <Modal />
         <DesktopHeaderNav loggedIn={loggedIn} />
         <MobileHeaderNav loggedIn={loggedIn} />
       </div>
