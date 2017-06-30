@@ -1,0 +1,14 @@
+{
+  "name": "@xo-union/tk-component-membership-modal",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "dependencies": {
+    "babel-runtime": "^6.23.0",
+    "css-module-builder": "^1.0.0-beta.7",
+    "prop-types": "^15.5.10",
+    "react": "^15.6.1"
+  },
+  "files": [
+    "lib/*"
+  ]
+}
