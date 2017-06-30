@@ -1,8 +1,6 @@
 ---
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
-  bsGrid: '@xo-union/tk-css-bootstrap/lib/grid'
-  spacing: '@xo-union/tk-css-spacing'
 
   Demo: '@components/Demo'
   PropTypesTable: '@components/PropTypesTable'
@@ -39,21 +37,17 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
 
 <p>{FormThemeMeta.description}</p>
 
-<Demo cssDependencies={{ bsGrid }}>
+<Demo>
   <div>
     <FormTheme>
       <FieldGroup>
-        <div className={bsGrid.col12}>
-          <Field name="email" />
-        </div>
+        <Field name="email" />
       </FieldGroup>
     </FormTheme>
 
     <FormTheme name="white">
       <FieldGroup>
-        <div className={bsGrid.col12}>
-          <Field name="email" />
-        </div>
+        <Field name="email" />
       </FieldGroup>
     </FormTheme>
   </div>
@@ -120,22 +114,16 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
 
 <p>{FieldGroupMeta.description}</p>
 
-<Demo cssDependencies={{ bsGrid }}>
+<Demo>
   <FormTheme>
     <FieldGroup>
-      <div className={bsGrid.col6}>
-        <Field name="email" />
-      </div>
+      <Field name="email" columns={{ xs: 6 }} />
 
-      <div className={bsGrid.col6}>
-        <Field name="domain" />
-      </div>
+      <Field name="domain" columns={{ xs: 6 }} />
     </FieldGroup>
 
     <FieldGroup>
-      <div className={bsGrid.col12}>
-        <Field name="password" />
-      </div>
+      <Field name="password" />
     </FieldGroup>
   </FormTheme>
 </Demo>
@@ -148,13 +136,13 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
 
 <p>{TextareaMeta.description}</p>
 
-<Demo cssDependencies={{ bsGrid }}>
+<Demo>
   <FormTheme>
     <Textarea name="optional-message" />
   </FormTheme>
 </Demo>
 
-<Demo cssDependencies={{ bsGrid }}>
+<Demo>
   <FormTheme>
     <TextareaWithoutLabel name="optional-message" placeholder="Optional message" />
   </FormTheme>

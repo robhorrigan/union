@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
+import { Column } from '@xo-union/tk-component-grid';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -16,6 +17,7 @@ export default function Field({
   state = 'neutral',
   type = 'text',
   id = fieldId(name),
+  columns = { xs: 12 },
   ...props
 }) {
   const inputClass = classMap[state];
@@ -25,11 +27,13 @@ export default function Field({
   }
 
   return (
-    <div className={FieldsCss.container}>
-      <input type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
-      <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
-      <div className={FieldsCss.requirements}>{validationMessage}</div>
-    </div>
+    <Column {...columns}>
+      <div className={FieldsCss.container}>
+        <input type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
+        <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
+        <div className={FieldsCss.requirements}>{validationMessage}</div>
+      </div>
+    </Column>
   );
 }
 
