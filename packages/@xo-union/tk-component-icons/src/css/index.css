@@ -11,3 +11,10 @@
   icon-notification-bubble,
   icon-conversation
 ) from './icons';
+
+.icon-with-button {
+  composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
+  composes: disable-children-pointer-events from '@xo-union/tk-css-utilities/lib/pointer-events';
+  composes: button from '@xo-union/tk-css-utilities/lib/resets';
+}
+

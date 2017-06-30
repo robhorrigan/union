@@ -8,7 +8,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { init } from '@xo-union/tk-component-icons/lib/setup';
-import styles from '@xo-union/tk-component-icons/lib/css';
+import style from '@xo-union/tk-component-icons/lib/css';
 import { hash } from '@xo-union/tk-component-icons/lib/data';
 
 /**
@@ -18,9 +18,9 @@ import { hash } from '@xo-union/tk-component-icons/lib/data';
 init();
 
 export default function Icon({ name, className = '', ...props }) {
-  const iconSpecificClass = styles[`icon-${name}`] || '';
+  const iconSpecificClass = style[`icon-${name}`] || '';
   return (
-    <svg className={`${styles.icon} ${className} ${iconSpecificClass}`} {...props}>
+    <svg className={`${style.icon} ${className} ${iconSpecificClass}`} {...props}>
       <use xlinkHref={`#icon-${name}-${hash}`} />
     </svg>
   );
@@ -30,3 +30,17 @@ Icon.propTypes = {
   name: PropTypes.string.isRequired,
   className: PropTypes.string
 };
+
+export function IconButton({ name, isCTA, className = '', ...props }) {
+  const additionalProps = {};
+
+  return (
+    <button
+      className={`${style['icon-with-button']} ${className}`}
+      role="button"
+      {...props}
+    >
+      <Icon name={name} />
+    </button>
+  )
+}

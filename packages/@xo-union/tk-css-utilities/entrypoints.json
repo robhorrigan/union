@@ -3,5 +3,6 @@
   "display.scss",
   "flexbox.scss",
   "vertical-align.scss",
-  "pointer-events.scss"
+  "pointer-events.scss",
+  "resets.scss"
 ]

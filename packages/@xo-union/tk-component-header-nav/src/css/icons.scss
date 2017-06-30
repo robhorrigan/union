@@ -28,13 +28,6 @@
 }
 
 .icon-button {
-  composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
-  composes: disable-children-pointer-events from '@xo-union/tk-css-utilities/lib/pointer-events';
-  composes: button-reset from './resets';
-}
-
-.menu-icon {
   composes: font-up-3 from '@xo-union/tk-css-typography';
   composes: fg-white from '@xo-union/tk-css-colors';
 }
-

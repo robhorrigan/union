@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '@xo-union/tk-component-header-nav/lib/css';
-import Icon from '@xo-union/tk-component-icons';
+import { IconButton } from '@xo-union/tk-component-icons';
 import { createTrackableProps } from '@xo-union/tk-component-analytics/lib/trackable';
 
 /* eslint-disable prefer-arrow-callback */
@@ -19,13 +19,7 @@ function MobileMenuButton({
 
   return (
     <li className={styles['icon-container']}>
-      <button
-        onClick={onClick}
-        className={styles['icon-button']}
-        {...props}
-      >
-        <Icon name={iconName} className={styles['menu-icon']} />
-      </button>
+      <IconButton name={iconName} onClick={onClick} className={styles['icon-button']} />
     </li>
   );
 }
