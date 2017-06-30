@@ -241,3 +241,9 @@
 @include color(green, #1ca420);
 @include color(green-lighter-90, #e8f6e9);
 @include color(green-lighter-80, #d1ecd2);
+
+
+/**
+ * Experimental -- non-standard
+ **/
+@include color(x-overlay, rgba(#999999, 0.2));
