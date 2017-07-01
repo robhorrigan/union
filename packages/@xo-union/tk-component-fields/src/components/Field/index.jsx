@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
 import { Column } from '@xo-union/tk-component-grid';
+import { autobind } from 'core-decorators';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -10,9 +11,78 @@ const classMap = {
   valid: FieldsCss.validField
 };
 
-export default function Field({
+export default class FieldContainer extends Component {
+  static contextTypes = {
+    fieldRegistry: PropTypes.shape()
+  }
+
+  state = {
+    validityState: 'neutral',
+    value: ''
+  }
+
+  componentDidMount() {
+    const { name } = this.props;
+    const { fieldRegistry } = this.context;
+
+    fieldRegistry.add(name, {
+      validate: this.validate,
+      getValue: this.getValue
+    });
+  }
+
+  componentDidUnMount() {
+    const { fieldRegistry } = this.context;
+
+    fieldRegistry.delete(name);
+  }
+
+  @autobind
+  cacheRef(input) {
+    this.input = input;
+  }
+
+  @autobind
+  getValue() {
+    return this.state.value;
+  }
+
+  @autobind
+  validate() {
+    if (!this.input) {
+      return;
+    }
+
+    if (this.input.checkValidity()) {
+      this.setState({ validityState: 'neutral' });
+    } else {
+      this.setState({ validityState: 'invalid' });
+    }
+  }
+
+  @autobind
+  handleChange({ currentTarget }) {
+    this.setState({ value: currentTarget.value });
+  }
+
+  render() {
+    return (
+      <Field
+        state={this.state.validityState}
+        onBlur={this.validate}
+        inputRef={this.cacheRef}
+        value={this.state.value}
+        onChange={this.handleChange}
+        {...this.props}
+      />
+    );
+  }
+}
+
+function Field({
   name,
   validationMessage,
+  inputRef,
   label = labelize(name),
   state = 'neutral',
   type = 'text',
@@ -29,7 +99,7 @@ export default function Field({
   return (
     <Column {...columns}>
       <div className={FieldsCss.container}>
-        <input type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
+        <input ref={inputRef} type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
         <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
         <div className={FieldsCss.requirements}>{validationMessage}</div>
       </div>

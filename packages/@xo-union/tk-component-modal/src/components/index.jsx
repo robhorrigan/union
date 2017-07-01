@@ -26,7 +26,7 @@ export default class Modal extends Component {
       <div className={style.overlay} onClick={this.close}>
         <div className={style.container}>
           <div className={style['button-container']}>
-            <IconButton name="close" className={style['close-button']} onClick={this.close}/>
+            <IconButton name="close" className={style['close-button']} onClick={this.close} />
           </div>
           {children}
         </div>
