@@ -22,19 +22,24 @@ export default class FieldContainer extends Component {
   }
 
   componentDidMount() {
-    const { name } = this.props;
     const { fieldRegistry } = this.context;
 
-    fieldRegistry.add(name, {
-      validate: this.validate,
-      getValue: this.getValue
-    });
+    if (fieldRegistry) {
+      const { name } = this.props;
+
+      fieldRegistry.add(name, {
+        validate: this.validate,
+        getValue: this.getValue
+      });
+    }
   }
 
   componentDidUnMount() {
     const { fieldRegistry } = this.context;
 
-    fieldRegistry.delete(name);
+    if (fieldRegistry) {
+      fieldRegistry.delete(name);
+    }
   }
 
   @autobind
