@@ -3,10 +3,9 @@ import style from '@xo-union/tk-component-membership-modal/lib/css';
 import { FormTheme, Field, FieldGroup } from '@xo-union/tk-component-fields';
 import { Button } from '@xo-union/tk-component-buttons';
 import { TheKnotLogo } from '@xo-union/tk-component-icons';
-import noop from 'xojs/lib/callbacks/noop';
 
 export default function LogInView({
-  onClickSignUp = noop
+  onClickSignUp
 }) {
   return (
     <div className={style['modal']}>
@@ -20,7 +19,7 @@ export default function LogInView({
           </FieldGroup>
 
           <FieldGroup>
-            <Field name="password" />
+            <Field name="password" type="password" />
           </FieldGroup>
 
 

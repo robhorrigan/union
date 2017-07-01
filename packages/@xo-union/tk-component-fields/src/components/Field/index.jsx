@@ -70,6 +70,10 @@ export default class FieldContainer extends Component {
     this.setState({ value: currentTarget.value });
   }
 
+  getValidationMessage() {
+    return this.props.validationMessage || (this.input && this.input.validationMessage);
+  }
+
   render() {
     return (
       <Field
@@ -78,6 +82,7 @@ export default class FieldContainer extends Component {
         inputRef={this.cacheRef}
         value={this.state.value}
         onChange={this.handleChange}
+        validationMessage={this.getValidationMessage()}
         {...this.props}
       />
     );
