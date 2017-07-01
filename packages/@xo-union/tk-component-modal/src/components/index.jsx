@@ -4,7 +4,6 @@ import style from '@xo-union/tk-component-modal/lib/css';
 import { autobind } from 'core-decorators';
 
 export default class Modal extends Component {
-
   state = {
     isOpen: true
   }

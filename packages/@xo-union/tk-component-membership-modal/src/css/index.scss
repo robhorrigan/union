@@ -17,3 +17,25 @@
   composes: mt-2 from '@xo-union/tk-css-utilities/lib/spacing';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
 }
+
+.terms-and-conditions {
+  composes: mt-2 from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: font-down-2 from '@xo-union/tk-css-typography';
+  composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
+}
+
+.sign-up-modal {
+  composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
+  composes: flex-column from '@xo-union/tk-css-utilities/lib/flexbox';
+  height: 100%;
+
+  a, a:hover {
+    color: black;
+    text-decoration: underline !important;
+  }
+}
+
+.footer {
+  composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
+  composes: mt-auto mb-5 mb-md-0 from '@xo-union/tk-css-utilities/lib/spacing';
+}
