@@ -8,6 +8,11 @@
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
 }
 
+.log-in-header {
+  composes: header;
+  composes: mb-3 from '@xo-union/tk-css-utilities/lib/spacing';
+}
+
 .sub-header {
   composes:
     serif-light
@@ -18,13 +23,19 @@
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
 }
 
-.terms-and-conditions {
+.form-sub-text {
   composes: mt-2 from '@xo-union/tk-css-utilities/lib/spacing';
   composes: font-down-2 from '@xo-union/tk-css-typography';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
+
+  small {
+    font-size: inherit;
+  }
 }
 
-.sign-up-modal {
+@value ( black ) from '@xo-union/tk-css-colors';
+
+.modal {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
   composes: flex-column from '@xo-union/tk-css-utilities/lib/flexbox';
   height: 100%;
