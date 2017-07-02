@@ -28,7 +28,6 @@ export default class MembershipModal extends Component {
     })
   }
 
-
   render() {
     return (
       <Modal>

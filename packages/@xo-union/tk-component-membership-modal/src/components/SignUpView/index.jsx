@@ -8,11 +8,18 @@ import {
 import { Button } from '@xo-union/tk-component-buttons';
 import { NewWindowAnchor } from '@xo-union/component-standard-elements/lib/anchor';
 import { autobind } from 'core-decorators';
+import { connect } from '@xo-union/tk-lib-core-state';
 
 
+@connect('membership')
 export default class SignUpView extends Component {
+  @autobind
+  handleSubmit(data, evt) {
+    evt.preventDefault();
+  }
+
   render() {
-    const { onClickLogIn, onSubmit } = this.props;
+    const { onClickLogIn, onSubmit, membership } = this.props;
 
     return (
       <div className={style['modal']}>

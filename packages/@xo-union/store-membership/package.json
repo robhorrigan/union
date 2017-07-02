@@ -1,0 +1,11 @@
+{
+  "name": "@xo-union/store-membership",
+  "version": "0.1.0",
+  "main": "lib/index.js",
+  "dependencies": {
+    "babel-runtime": "^6.23.0"
+  },
+  "files": [
+    "lib/*"
+  ]
+}
