@@ -1,1 +1,0 @@
-/Users/pairing/Workspace/membership-modal/dist/index.js
