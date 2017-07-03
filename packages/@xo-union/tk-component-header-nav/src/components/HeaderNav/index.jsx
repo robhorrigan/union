@@ -4,7 +4,6 @@ import { autobind } from 'core-decorators';
 import ClickTracker from '@xo-union/tk-component-analytics/lib/click-tracker';
 import MobileHeaderNav from '../mobile/HeaderNav';
 import DesktopHeaderNav from '../desktop/HeaderNav';
-import XoModal from '../../__bundled_dependencies__/modal';
 
 const NOOP = () => { };
 

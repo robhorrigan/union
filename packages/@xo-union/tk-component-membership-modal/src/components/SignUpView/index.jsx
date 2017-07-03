@@ -10,16 +10,19 @@ import { NewWindowAnchor } from '@xo-union/component-standard-elements/lib/ancho
 import { autobind } from 'core-decorators';
 import { connect } from '@xo-union/tk-lib-core-state';
 
-
 @connect('membership')
-export default class SignUpView extends Component {
-  @autobind
-  handleSubmit(data, evt) {
-    evt.preventDefault();
-  }
-
+export default class SignUpContainer extends Component {
   render() {
-    const { onClickLogIn, onSubmit, membership } = this.props;
+    const { membership } = this.props;
+    return (
+      <SignUp onSubmit={membership.createMember} />
+    );
+  }
+}
+
+class SignUp extends Component {
+  render() {
+    const { onClickLogIn, onSubmit } = this.props;
 
     return (
       <div className={style['modal']}>
@@ -29,7 +32,7 @@ export default class SignUpView extends Component {
         <p className={style['sub-header']}>
           {"Advice, tools, and the best local vendors to have a wedding that's uniquely you (cue the confetti!)"}
         </p>
-        <Form onSubmit={this.handleSubmit}>
+        <Form onSubmit={onSubmit}>
           <FieldGroup>
             <Field
               name="email"

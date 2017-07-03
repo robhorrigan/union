@@ -4,6 +4,7 @@ import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
 import { Column } from '@xo-union/tk-component-grid';
 import { autobind } from 'core-decorators';
+import { inject, observer } from 'mobx-react';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -11,79 +12,32 @@ const classMap = {
   valid: FieldsCss.validField
 };
 
+@inject('formData')
+@observer
 export default class FieldContainer extends Component {
-  static contextTypes = {
-    fieldRegistry: PropTypes.shape()
-  }
+  constructor (props) {
+    super(props);
 
-  state = {
-    validityState: 'neutral',
-    value: ''
-  }
-
-  componentDidMount() {
-    const { fieldRegistry } = this.context;
-
-    if (fieldRegistry) {
-      const { name } = this.props;
-
-      fieldRegistry.add(name, {
-        validate: this.validate,
-        getValue: this.getValue
-      });
-    }
-  }
-
-  componentDidUnMount() {
-    const { fieldRegistry } = this.context;
-
-    if (fieldRegistry) {
-      fieldRegistry.delete(name);
-    }
-  }
-
-  @autobind
-  cacheRef(input) {
-    this.input = input;
-  }
-
-  @autobind
-  getValue() {
-    return this.state.value;
-  }
-
-  @autobind
-  validate() {
-    if (!this.input) {
-      return;
-    }
-
-    if (this.input.checkValidity()) {
-      this.setState({ validityState: 'neutral' });
-    } else {
-      this.setState({ validityState: 'invalid' });
-    }
-  }
-
-  @autobind
-  handleChange({ currentTarget }) {
-    this.setState({ value: currentTarget.value });
+    const { formData, name } = this.props;
+    formData.add(name);
   }
 
   getValidationMessage() {
-    return this.props.validationMessage || (this.input && this.input.validationMessage);
+    return this.props.validationMessage;
   }
 
   render() {
+    const { formData, ...props } = this.props;
+
     return (
       <Field
-        state={this.state.validityState}
-        onBlur={this.validate}
-        inputRef={this.cacheRef}
-        value={this.state.value}
-        onChange={this.handleChange}
+        state={formData.getVisualState(props.name)}
+        inputRef={formData.handleRef}
+        onBlur={formData.handleInputBlur}
+        value={formData.getValue(props.name)}
+        onChange={formData.handleInputChange}
         validationMessage={this.getValidationMessage()}
-        {...this.props}
+        {...props}
       />
     );
   }
