@@ -1,9 +1,12 @@
 import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
-export default function linkedField(C) {
+export default function linkedField(LowerOrderComponent) {
+  const WrappedComponent = inject('formData')(
+    observer(LowerOrderComponent)
+  );
+
   @inject('formData')
-  @observer
   class LinkedField extends Component {
     constructor(props) {
       super(props);
@@ -13,7 +16,7 @@ export default function linkedField(C) {
     }
 
     render() {
-      return (<C {...this.props} />);
+      return (<WrappedComponent {...this.props} />);
     }
   }
 
