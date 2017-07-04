@@ -5,6 +5,7 @@ import { labelize, fieldId } from '../../utilities';
 import { Column } from '@xo-union/tk-component-grid';
 import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
+import linkedField from '../Form/linkedField';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -12,36 +13,20 @@ const classMap = {
   valid: FieldsCss.validField
 };
 
-@inject('formData')
-@observer
-export default class FieldContainer extends Component {
-  constructor (props) {
-    super(props);
+const FieldContainer = linkedField(function FieldContainer({ formData, ...props }) {
+  return (
+    <Field
+      state={formData.getVisualState(props.name)}
+      inputRef={formData.handleRef}
+      onBlur={formData.handleInputBlur}
+      value={formData.getValue(props.name)}
+      onChange={formData.handleInputChange}
+      {...props}
+    />
+  );
+});
 
-    const { formData, name } = this.props;
-    formData.add(name);
-  }
-
-  getValidationMessage() {
-    return this.props.validationMessage;
-  }
-
-  render() {
-    const { formData, ...props } = this.props;
-
-    return (
-      <Field
-        state={formData.getVisualState(props.name)}
-        inputRef={formData.handleRef}
-        onBlur={formData.handleInputBlur}
-        value={formData.getValue(props.name)}
-        onChange={formData.handleInputChange}
-        validationMessage={this.getValidationMessage()}
-        {...props}
-      />
-    );
-  }
-}
+export default FieldContainer;
 
 function Field({
   name,

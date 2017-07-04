@@ -4,10 +4,10 @@ import { extendObservable, computed, action, observable } from 'mobx';
 export default class FormData {
   @observable fields = {};
 
-  add(name) {
+  add(name, { value = '' }) {
     extendObservable(this.fields, {
       [name]: {
-        value: '',
+        value,
         visualState: 'neutral',
         isValid: true
       }

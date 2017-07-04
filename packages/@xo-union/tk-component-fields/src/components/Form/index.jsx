@@ -11,6 +11,7 @@ export default class FormContainer extends Component {
 
   @autobind
   handleSubmit(evt) {
+
     if (!this.formData.isValid) {
       evt.preventDefault();
 
@@ -19,7 +20,7 @@ export default class FormContainer extends Component {
       return;
     }
 
-    this.props.onSubmit(this.formData.getFieldValues(), evt);
+    this.props.onSubmit(this.formData.fieldValues, evt);
   }
 
   render() {
