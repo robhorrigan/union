@@ -32,7 +32,7 @@ export default class MembershipModal extends Component {
   render() {
     return (
       <Modal>
-        <this.ViewComponent membershipModal={this.store}/>
+        <this.ViewComponent membershipModal={this.store} />
       </Modal>
     );
   }

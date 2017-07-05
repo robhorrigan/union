@@ -72,7 +72,6 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
           />
         </FieldGroup>
 
-
         <Button block isCTA>
           Sign Up
         </Button>

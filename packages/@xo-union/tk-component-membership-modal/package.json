@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "dependencies": {
-    "@xo-union/tk-lib-core-state": "^0.1.0",
+    "@xo-union/tk-component-core-provider": "^0.1.0",
     "babel-runtime": "^6.23.0",
     "css-module-builder": "^1.0.0-beta.7",
     "prop-types": "^15.5.10",

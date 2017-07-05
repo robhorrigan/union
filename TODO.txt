@@ -1,1 +1,38 @@
-(A) - Support smart field elements for Dropdowns and Textarea
+
+Features
+- update 'logged in state' after create account (potentiall store all member data)
+- update 'logged in state' after log in (potentiall store all member data)
+- Analytics call for showing sign up modal
+- Analytics call for showing log in modal
+- Analytics call for creating account
+- Analytics call for logging in
+- Render modal when clicking sign up in header
+- Render modal when clicking log in in header
+- Redirect to onboarding after creating account
+- Redirect to dashboard after log in
+
+Tests
+- FormData
+- Form
+- Field
+- HiddenField
+- MembershipModal
+- SignUpView
+- LogInView
+- Membership (store)
+- Provider (core-provider)
+- Column
+
+Documentation
+- FormData
+- Form
+- Field
+- HiddenField
+- MembershipModal
+- SignUpView
+- LogInView
+- Membership (store)
+- Provider (core-provider)
+- Column
+
+- Support smart field elements for Dropdowns and Textarea (Wrte story?)
