@@ -4,34 +4,35 @@ import Modal from '@xo-union/tk-component-modal';
 import { autobind } from 'core-decorators';
 import SignUpView from './SignUpView';
 import LogInView from './LogInView';
+import MembershipModalStore from '../stores/MembershipModalStore';
+import { computed } from 'mobx';
+import { observer } from 'mobx-react';
 
+@observer
 export default class MembershipModal extends Component {
-  state = {
-    viewElement: <SignUpView onClickLogIn={this.renderLogInView} />
+  static defaultProps = {
+    initialView: MembershipModalStore.SIGN_UP
   }
 
-  @autobind
-  renderLogInView() {
-    this.setState({
-      viewElement: (
-        <LogInView onClickSignUp={this.renderSignUpView} />
-      )
-    })
-  }
+  store = new MembershipModalStore({
+    initialView: this.props.initialView
+  })
 
-  @autobind
-  renderSignUpView() {
-    this.setState({
-      viewElement: (
-        <SignUpView onClickLogIn={this.renderLogInView} />
-      )
-    })
+  @computed
+  get ViewComponent() {
+    if (this.store.isSignUp) {
+      return SignUpView;
+    }
+
+    if (this.store.isLogIn) {
+      return LogInView;
+    }
   }
 
   render() {
     return (
       <Modal>
-        {this.state.viewElement}
+        <this.ViewComponent membershipModal={this.store}/>
       </Modal>
     );
   }

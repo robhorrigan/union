@@ -9,22 +9,27 @@ import {
 import { Button } from '@xo-union/tk-component-buttons';
 import { NewWindowAnchor } from '@xo-union/component-standard-elements/lib/anchor';
 import { autobind } from 'core-decorators';
-import { connect } from '@xo-union/tk-lib-core-state';
+import { inject } from 'mobx-react';
 
-@connect('membership')
+@inject('membership')
 export default class SignUpContainer extends Component {
   @autobind
   handleSubmit(data, evt) {
     evt.preventDefault();
 
-    this.props.membership.createMember(data);
+    this.props.membership.create(data);
   }
 
+
   render() {
+    const { membershipModal } = this.props;
+
     return (
       <SignUp
         onSubmit={this.handleSubmit}
-        metadata={{ applicationName: 'fashion', userAction: 'favorite' }}/>
+        onClickLogIn={membershipModal.changeToLogIn}
+        metadata={{ applicationName: 'fashion', userAction: 'favorite' }}
+      />
     );
   }
 }

@@ -78,6 +78,7 @@ export default {
     ]
   },
   devServer: {
-    historyApiFallback: true
+    historyApiFallback: true,
+    disableHostCheck: true
   }
 };

@@ -3,7 +3,8 @@
   "version": "0.1.0",
   "main": "lib/index.js",
   "dependencies": {
-    "babel-runtime": "^6.23.0"
+    "babel-runtime": "^6.23.0",
+    "superagent": "^3.5.2"
   },
   "files": [
     "lib/*"

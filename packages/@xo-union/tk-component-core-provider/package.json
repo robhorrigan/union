@@ -1,5 +1,5 @@
 {
-  "name": "@xo-union/tk-lib-core-state",
+  "name": "@xo-union/tk-component-core-provider",
   "version": "0.1.0",
   "main": "lib/index.js",
   "dependencies": {
