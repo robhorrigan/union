@@ -36,7 +36,7 @@ function Field({
   state = 'neutral',
   type = 'text',
   id = fieldId(name),
-  columns = { xs: 12 },
+  columns = { xs: true },
   ...props
 }) {
   const inputClass = classMap[state];
@@ -46,7 +46,7 @@ function Field({
   }
 
   return (
-    <Column {...columns}>
+    <Column className={FieldsCss['field-col']} {...columns}>
       <div className={FieldsCss.container}>
         <input ref={inputRef} type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
         <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>

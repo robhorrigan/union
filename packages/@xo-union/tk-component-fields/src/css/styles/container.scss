@@ -1,3 +1,7 @@
 .container {
   position: relative;
 }
+
+.field-col ~ .field-col {
+  margin-left: 0.6rem;
+}

@@ -1,8 +1,9 @@
 /* Static classes */
-@value ( container ) from './styles/container';
+@value ( container, field-col ) from './styles/container';
 @value ( field-label, invalid-field, valid-field, requirements ) from './styles/field';
 @value ( dropdown-caret ) from './styles/dropdown-field';
 @value ( dropdown-item, dropdown-item-check ) from './styles/dropdown-item';
+@value ( field-group ) from './styles/field-group';
 
 @value (
   /* Themeble classes */
