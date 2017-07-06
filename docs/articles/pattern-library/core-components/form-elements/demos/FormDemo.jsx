@@ -7,7 +7,8 @@ import {
   Dropdown,
   DropdownItem,
   Textarea,
-  TextareaWithoutLabel
+  TextareaWithoutLabel,
+  Form
 } from '@xo-union/tk-component-fields';
 
 import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
@@ -55,80 +56,60 @@ export default class FormDemo extends Component {
 
     return (
       <div className={themeClassMap[theme]}>
-        <FormTheme name={theme} className={bsGrid.container}>
-          <FormContainer>
+        <FormContainer>
+          <Form theme={theme} className={bsGrid.container}>
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <Dropdown name="theme" value={theme} onSelect={this.updateTheme}>
-                  <DropdownItem label="gray" />
-                  <DropdownItem label="white" />
-                </Dropdown>
-              </div>
+              <Dropdown name="theme" value={theme} onSelect={this.updateTheme}>
+                <DropdownItem label="gray" />
+                <DropdownItem label="white" />
+              </Dropdown>
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <Field
-                  name="email"
-                  state="invalid"
-                  validationMessage="Must be a valid email"
-                  defaultValue="email@email.com"
-                />
-              </div>
+              <Field
+                name="email"
+                state="invalid"
+                validationMessage="Must be a valid email"
+                defaultValue="email@email.com"
+              />
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <Field name="address" state="valid" defaultValue="232 Boerum St." />
-              </div>
+              <Field name="address" state="valid" defaultValue="232 Boerum St." />
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <Field name="city" />
-              </div>
+              <Field name="city" />
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col7}>
-                <Field name="state" />
-              </div>
+              <Field name="state" />
 
-              <div className={bsGrid.col5}>
-                <Field name="zipcode" />
-              </div>
+              <Field name="zipcode" />
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <Field name="country" disabled />
-              </div>
+              <Field name="country" disabled />
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <Dropdown name="wedding-season">
-                  <DropdownItem label="Winter" />
-                  <DropdownItem label="Spring" />
-                  <DropdownItem label="Summer" />
-                  <DropdownItem label="Fall" />
-                </Dropdown>
-              </div>
+              <Dropdown name="wedding-season">
+                <DropdownItem label="Winter" />
+                <DropdownItem label="Spring" />
+                <DropdownItem label="Summer" />
+                <DropdownItem label="Fall" />
+              </Dropdown>
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <Textarea name="optional-message" />
-              </div>
+              <Textarea name="optional-message" />
             </FieldGroup>
 
             <FieldGroup>
-              <div className={bsGrid.col12}>
-                <TextareaWithoutLabel name="optional-message" rows="5" placeholder={textareaText} />
-              </div>
+              <Textarea label={false} name="optional-message" rows="5" placeholder={textareaText} />
             </FieldGroup>
-          </FormContainer>
-        </FormTheme>
+          </Form>
+        </FormContainer>
       </div>
     );
   }

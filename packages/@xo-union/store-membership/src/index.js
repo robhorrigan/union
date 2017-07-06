@@ -39,7 +39,6 @@ export default class Membership {
       .send({ sessions: params })
       .end((resp) => {
         console.log(resp);
-      })
+      });
   }
-
 }

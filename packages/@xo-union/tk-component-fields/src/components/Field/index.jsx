@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
-import { Column } from '@xo-union/tk-component-grid';
+import { isColumn } from '@xo-union/tk-component-grid';
 import { autobind } from 'core-decorators';
 import { inject, observer } from 'mobx-react';
 import linkedField from '../Form/linkedField';
@@ -13,7 +13,7 @@ const classMap = {
   valid: FieldsCss.validField
 };
 
-const FieldContainer = linkedField(function FieldContainer({ formData, ...props }) {
+function FieldContainer({ formData, ...props }) {
   return (
     <Field
       state={formData.getVisualState(props.name)}
@@ -24,11 +24,11 @@ const FieldContainer = linkedField(function FieldContainer({ formData, ...props 
       {...props}
     />
   );
-});
+};
 
-export default FieldContainer;
 
-function Field({
+const Field = isColumn({ className: FieldsCss['field-col'] })
+(function Field({
   name,
   validationMessage,
   inputRef,
@@ -36,7 +36,6 @@ function Field({
   state = 'neutral',
   type = 'text',
   id = fieldId(name),
-  columns = { xs: true },
   ...props
 }) {
   const inputClass = classMap[state];
@@ -46,27 +45,29 @@ function Field({
   }
 
   return (
-    <Column className={FieldsCss['field-col']} {...columns}>
-      <div className={FieldsCss.container}>
-        <input ref={inputRef} type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
-        <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
-        <div className={FieldsCss.requirements}>{validationMessage}</div>
-      </div>
-    </Column>
+    <div className={FieldsCss.container}>
+      <input ref={inputRef} type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
+      <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
+      <div className={FieldsCss.requirements}>{validationMessage}</div>
+    </div>
   );
-}
+});
 
-Field.propTypes = {
+FieldContainer.propTypes = {
   /**
    * Name used for input element
    */
   name: PropTypes.string.isRequired,
   /**
-   * The input's label string
+   * Field column overrides. See [Column](/pattern-library/core-components/grid/components).
+   */
+  columns: PropTypes.shape(),
+  /**
+   * The input's label string. If not provided, it is assumed from the name.
    */
   label: PropTypes.string,
   /**
-   * Render state
+   * Force the visual state
    */
   state: PropTypes.oneOf(['neutral', 'valid', 'invalid']),
   /**
@@ -78,7 +79,9 @@ Field.propTypes = {
    */
   type: PropTypes.string,
   /**
-   * Override the id which is derived from the name
+   * The input's id. If not provided, it is assumed from the name.
    */
   id: PropTypes.string
 };
+
+export default linkedField(FieldContainer);

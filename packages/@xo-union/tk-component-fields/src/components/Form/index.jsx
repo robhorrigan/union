@@ -6,7 +6,17 @@ import { autobind } from 'core-decorators';
 import FormData from './FormData';
 import { Provider } from 'mobx-react';
 
+/**
+ * Use this component as the container to all forms.
+ */
 export default class FormContainer extends Component {
+  static propTypes = {
+    /**
+     * Called when user submits. **Signature:** (data, event) => void
+     */
+    onSubmit: PropTypes.func
+  }
+
   formData = new FormData();
 
   @autobind

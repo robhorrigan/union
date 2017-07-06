@@ -2,8 +2,12 @@ import React, { Component } from 'react';
 import { inject, observer } from 'mobx-react';
 
 export default function linkedField(LowerOrderComponent) {
-  const WrappedComponent = inject('formData')(
-    observer(LowerOrderComponent)
+  const WrappedComponent = inject(
+    'formData'
+  )(
+    observer(
+      LowerOrderComponent
+    )
   );
 
   @inject('formData')

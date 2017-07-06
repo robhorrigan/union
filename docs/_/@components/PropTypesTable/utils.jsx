@@ -1,4 +1,5 @@
 import React, { createElement } from 'react';
+import compile from '#docs/markdown_compiler';
 import PropTypes from 'prop-types';
 import { parseType } from './prop-types-util';
 
@@ -33,7 +34,7 @@ function propTypesData({ data, name }) {
   };
 }
 
-function propTypesDictionary(propTypesMetadata) {
+function propTypesDictionary(propTypesMetadata = {}) {
   return Object.keys(propTypesMetadata).map(name =>
     propTypesData({ name, data: propTypesMetadata[name] })
   );
@@ -41,7 +42,13 @@ function propTypesDictionary(propTypesMetadata) {
 
 export function TableBody({ metadata, columns }) {
   const tableBody = propTypesDictionary(metadata).map((propTypeMetadata) => {
-    const columnValues = columns.map(columnName => propTypeMetadata[columnName]);
+    const columnValues = columns.map(columnName => {
+      if (columnName === 'description') {
+        return compile(propTypeMetadata[columnName] || '').tree;
+      }
+
+      return propTypeMetadata[columnName]
+    });
 
     return <TableRow columns={columnValues} key={propTypeMetadata.name} />;
   });

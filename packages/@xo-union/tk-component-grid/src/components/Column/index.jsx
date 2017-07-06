@@ -14,7 +14,7 @@ function getGridClasses(breakpoints) {
   }, '');
 }
 
-export function Column({ xs, sm, md, lg, xl, children, className = '' }) {
+export default function Column({ xs = true, sm, md, lg, xl, children, className = '' }) {
   return (
     <div className={`${getGridClasses({ xs, sm, md, lg, xl })} ${className}`}>
       {children}

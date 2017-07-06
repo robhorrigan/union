@@ -1,8 +1,9 @@
 ---
 $imports:
-  '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
+  '{ Form, Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
 
   Demo: '@components/Demo'
+  Snippet: '@components/Snippet'
   PropTypesTable: '@components/PropTypesTable'
   InstallSnippet: '@components/InstallSnippet'
 
@@ -23,133 +24,20 @@ $imports:
 
 <FormDemo />
 
-#### Install
+## Install
 
 <InstallSnippet packageJson={packageJson} />
 
-#### Import
+## Recipes
 
-```javascript
-import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk-component-fields';
-```
+- [Form with validation](/pattern-library/core-components/form-elements/recipes/validation)
 
-### FormTheme component
+## Components
 
-<p>{FormThemeMeta.description}</p>
+- [Field](/pattern-library/core-components/form-elements/components/Field)
+- [Dropdown](/pattern-library/core-components/form-elements/components/Dropdown)
+- [FieldGroup](/pattern-library/core-components/form-elements/components/FieldGroup)
+- [Textarea](/pattern-library/core-components/form-elements/components/Textarea)
+- [Form](/pattern-library/core-components/form-elements/components/Form)
+- [HiddenField](/pattern-library/core-components/form-elements/components/HiddenField)
 
-<Demo>
-  <div>
-    <FormTheme>
-      <FieldGroup>
-        <Field name="email" />
-      </FieldGroup>
-    </FormTheme>
-
-    <FormTheme name="white">
-      <FieldGroup>
-        <Field name="email" />
-      </FieldGroup>
-    </FormTheme>
-  </div>
-</Demo>
-
-#### Properties
-
-<PropTypesTable metadata={FormThemeMeta.props} />
-
-### Field Component
-
-<Demo>
-  <FormTheme>
-    <Field name="email" />
-  </FormTheme>
-</Demo>
-
-#### Properties
-
-<PropTypesTable metadata={FieldMeta.props} />
-
-#### Invalid State
-
-<Demo>
-  <Field name="email" state="invalid" validationMessage="Something went wrong" />
-</Demo>
-
-#### Successful State
-
-<Demo>
-  <Field name="address" state="valid" defaultValue="232 Boerum St." />
-</Demo>
-
-#### Disabled State
-
-<Demo>
-  <Field name="email" disabled />
-</Demo>
-
-### Dropdown Component
-
-<Demo>
-  <FormTheme>
-    <Dropdown name="Season">
-      <DropdownItem label="Winter" />
-      <DropdownItem label="Spring" />
-      <DropdownItem label="Summer" />
-      <DropdownItem label="Fall"/>
-    </Dropdown>
-  </FormTheme>
-</Demo>
-
-#### Properties
-
-#### Dropdown
-
-<PropTypesTable metadata={DropdownMeta.props} exclude={["default"]}/>
-
-#### DropdownItem
-
-<PropTypesTable metadata={DropdownItemMeta.props} exclude={["default"]}/>
-
-### FieldGroup Component
-
-<p>{FieldGroupMeta.description}</p>
-
-<Demo>
-  <FormTheme>
-    <FieldGroup>
-      <Field name="email" columns={{ xs: 6 }} />
-
-      <Field name="domain" columns={{ xs: 6 }} />
-    </FieldGroup>
-
-    <FieldGroup>
-      <Field name="password" />
-    </FieldGroup>
-  </FormTheme>
-</Demo>
-
-#### Properties
-
-<PropTypesTable metadata={FieldGroupMeta.props} exclude={["default"]} />
-
-### Textarea Component(s)
-
-<p>{TextareaMeta.description}</p>
-
-<Demo>
-  <FormTheme>
-    <Textarea name="optional-message" />
-  </FormTheme>
-</Demo>
-
-<Demo>
-  <FormTheme>
-    <TextareaWithoutLabel name="optional-message" placeholder="Optional message" />
-  </FormTheme>
-</Demo>
-
-#### Properties
-
-##### Textarea
-
-<PropTypesTable metadata={TextareaMeta.props} />

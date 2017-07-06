@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
+import { isColumn } from '@xo-union/tk-component-grid';
 
+@isColumn({ className: FieldsCss['field-col'] })
 export default class Dropdown extends Component {
   static childContextTypes = {
     selectedValue: PropTypes.string,
@@ -63,8 +65,9 @@ export default class Dropdown extends Component {
       children,
       // Disabling eslint rule here, this pattern is really useful to remove keys from objects
       // eslint-disable-next-line no-unused-vars
-      value, onSelect,
-      ...props
+      value,
+      onSelect,
+      ...props,
     } = this.props;
 
     return (
