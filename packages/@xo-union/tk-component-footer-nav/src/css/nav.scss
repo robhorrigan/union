@@ -1,4 +1,5 @@
 @value ( safe-gray-5 ) from '@xo-union/tk-css-colors';
+@value ( row ) from '@xo-union/tk-css-bootstrap/lib/grid';
 
 .nav-item-text {
   composes: sans-serif font-down-1 from '@xo-union/tk-css-typography';
@@ -17,11 +18,13 @@
 .nav-item {
   composes: nav-item-horizontal-spacing;
   composes: nav-item-vertical-spacing;
+  composes: d-md-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 
 .nav-item-list {
-  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
-  composes: justify-content-center from '@xo-union/tk-css-utilities/lib/flexbox';
+  list-style: none;
+  text-align: center;
+
 }
 
 .nav-link {
@@ -33,7 +36,6 @@
 }
 
 .nav-link-with-icon {
-  display: inline-block;
   composes: disable-children-pointer-events from '@xo-union/tk-css-utilities/lib/pointer-events';
-  composes: nav-link;   
+  composes: nav-link;
 }

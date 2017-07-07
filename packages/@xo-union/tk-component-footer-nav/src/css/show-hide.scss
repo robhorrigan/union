@@ -1,0 +1,12 @@
+.hide-sm {
+  composes: d-none d-md-inline-block from '@xo-union/tk-css-utilities/lib/display'
+}
+
+.show-sm {
+  composes: d-md-none d-lg-none from '@xo-union/tk-css-utilities/lib/display';
+}
+
+.hide-md {
+  composes: d-none d-lg-inline-block from '@xo-union/tk-css-utilities/lib/display'
+}
+

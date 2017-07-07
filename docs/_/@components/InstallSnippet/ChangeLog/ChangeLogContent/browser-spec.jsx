@@ -29,6 +29,7 @@ describe('<ChangeLogContent>', () => {
       const mdHeader = subject.find('h3').at(0);
 
       expect(firstHeader.text()).toBe('1');
+
       expect(mdHeader.text()).toBe('Hello');
     });
   });

@@ -1,8 +1,19 @@
 @value non-standard-footer-gray from './colors';
+@value (
+  nav-item,
+  nav-item-horizontal-spacing,
+  nav-item-vertical-spacing
+) from './nav.scss';
+@value (
+  hide-sm,
+  hide-md,
+  show-sm
+) from './show-hide.scss';
 
 .business-section {
   composes: section section-links from './section';
   composes: align-bottom from '@xo-union/tk-css-utilities/lib/vertical-align';
+  composes: container-fuild from '@xo-union/tk-css-bootstrap/lib/grid';
 
   background-color: non-standard-footer-gray;
 }
@@ -25,10 +36,54 @@
   margin-left: 10px;
 }
 
-.divider {
-  font-size: 1.3em;
+.hide-sm {
+  composes: d-none d-md-inline-block from '@xo-union/tk-css-utilities/lib/display'
+}
+
+.hide-md {
+  composes: d-none d-lg-inline-block from '@xo-union/tk-css-utilities/lib/display'
+}
+
+.show-sm {
+  composes: d-md-none d-lg-none from '@xo-union/tk-css-utilities/lib/display';
+}
+
+.copyright-col {
+  composes: col-12 from '@xo-union/tk-css-bootstrap/lib/grid';
+}
+
+.copyright-nav-item {
+  composes: show-sm;
+  composes: row from '@xo-union/tk-css-bootstrap/lib/grid';
+
+}
+
+.tb-text {
+  composes: nav-item-horizontal-spacing;
+  composes: nav-item-vertical-spacing;
+  composes: show-sm;
+
+  white-space: nowrap;
 }
 
 .sister-sites-nav-item {
   composes: nav-item-horizontal-spacing from './nav';
+  composes: hide-sm;
+}
+
+.divider {
+  font-size: 1.3em;
+  display: none;
+  composes: d-xl-inline-block from '@xo-union/tk-css-utilities/lib/display'
+}
+
+.xo-logo-nav-item {
+  composes: hide-sm;
+  composes: nav-item;
+  vertical-align: middle;
+}
+
+.business-col {
+  composes: col-5 offset-1 col-md-10 offset-md-1 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: text-left text-md-center from '@xo-union/tk-css-typography/lib/utilities';
 }

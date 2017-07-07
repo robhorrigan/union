@@ -16,7 +16,18 @@
   sister-sites-nav-item,
   heart-icon,
   divider,
-  keep-vertical-position
+  keep-vertical-position,
+  xo-logo-nav-item,
+  business-col,
+  tb-text,
+  copyright-col,
+  copyright-nav-item
+) from './business-section';
+
+@value (
+  hide-sm,
+  hide-md,
+  show-sm
 ) from './business-section';
 
 @value (
@@ -26,12 +37,13 @@
   custom-section-container
 ) from './custom-section';
 
-@value ( 
+@value (
   nav-item-list,
   nav-item,
   nav-item-text,
   nav-link,
-  nav-link-with-icon
+  nav-link-with-icon,
+  row
 ) from './nav';
 
 @value ( footer ) from './footer';

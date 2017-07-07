@@ -1,4 +1,6 @@
+@import '~@sass/bootstrap-mixins-and-variables';
 @value ( white, knot-blue, safe-gray-7 ) from '@xo-union/tk-css-colors';
+@value ( font-up-2, font-up-3 ) from '@xo-union/tk-css-typography/lib/sizes';
 
 .round-icon-container {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
@@ -27,11 +29,14 @@
 
 .social-nav-item {
   padding: 0 .3rem;
+  composes: d-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 
 .follow-us-nav-item {
   padding-top: 1.3rem;
   padding-right: 1.3rem;
+  display: d-block from '@xo-union/tk-css-utilities/lib/display';
+  composes: d-md-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 
 .follow-us {
@@ -46,3 +51,17 @@
   border-bottom: 1px solid safe-gray-7;
 }
 
+@include media-breakpoint-down(sm) {
+  .follow-us {
+    font-size: font-up-2;
+    padding-bottom: 1.25rem;
+  }
+
+  .round-icon-container {
+    height: 1.8em;
+    width: 1.8em;
+  }
+  .social-section {
+    font-size: font-up-3;
+  }
+}

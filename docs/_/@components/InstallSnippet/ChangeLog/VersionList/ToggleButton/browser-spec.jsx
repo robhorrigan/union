@@ -8,6 +8,7 @@ describe('<ToggleButton>', () => {
       const subject = mount(<ToggleButton isOn />);
 
       const button = subject.find('Button');
+
       expect(button.props().color).toBe('primary');
     });
   });
@@ -17,6 +18,7 @@ describe('<ToggleButton>', () => {
       const subject = mount(<ToggleButton isOn={false} />);
 
       const button = subject.find('Button');
+
       expect(button.props().color).toBe('tertiary');
     });
   });
