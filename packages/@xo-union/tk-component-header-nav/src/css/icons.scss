@@ -24,8 +24,7 @@
 .icon-container {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
   composes: align-items-center from '@xo-union/tk-css-utilities/lib/flexbox';
-
-  padding: .5rem .85rem;
+  composes: py-down-2 px-down-1 from '@xo-union/tk-css-spacing';
 }
 
 .icon-button {

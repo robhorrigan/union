@@ -10,6 +10,7 @@
     "@xo-union/tk-css-colors": "^0.3.5",
     "@xo-union/tk-css-typography": "^0.1.11",
     "@xo-union/tk-css-utilities": "^0.3.3",
+    "@xo-union/tk-css-spacing": "^0.1.0",
     "babel-runtime": "^6.23.0",
     "css-module-builder": "^1.0.0-beta.7",
     "prop-types": "^15.5.10",

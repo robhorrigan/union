@@ -1,0 +1,7 @@
+@import '~@sass/bootstrap-mixins-and-variables';
+
+@each $name, $length in $spacers {
+  @if ($name != 0) {
+    @value spacing-#{$name} #{map-get($length, x)};
+  }
+}

@@ -11,13 +11,13 @@
 .main-menu-item-right-offset {
   composes: main-menu-item;
 
+  /* Not using a standard spacing class but adheres to the scale */
   margin-left: 6.25rem;
 }
 
 .main-menu-item-link {
   composes: text-uppercase from '@xo-union/tk-css-typography/lib/utilities';
-
-  padding: 1.43rem .85rem;
+  composes: py-up-2 px-down-1 from '@xo-union/tk-css-spacing';
   display: block;
   transition: opacity .25s ease-in-out 0s;
   color: inherit;
@@ -37,7 +37,7 @@
 }
 
 .sub-menu-item-spacing {
-  padding: .7rem 1rem;
+  composes: px-base py-down-1 from '@xo-union/tk-css-spacing';
 }
 
 .sub-menu-item-link {
@@ -60,13 +60,13 @@
 
   position: absolute;
   left: 0;
-  margin-left: 10px;
+  composes: ml-down-1 from '@xo-union/tk-css-spacing';
 }
 
 .sub-menu-copy-right-item {
   composes: gray-6-fg from '@xo-union/tk-css-colors/lib/utilities';
   composes: sub-menu-item-border;
-  padding: .37rem .6rem;
+  composes: py-down-3 px-down-2 from '@xo-union/tk-css-spacing';
   font-size: .6rem;
 }
 
@@ -84,5 +84,5 @@
 
 .sub-menu-account-item-primary-button {
   composes: button from './buttons';
-  margin-bottom: .7rem;
+  composes: mb-down-1 from '@xo-union/tk-css-spacing';
 }

@@ -2,7 +2,7 @@
 
 .arrow-right {
   composes: align-middle from '@xo-union/tk-css-utilities/lib/vertical-align';
-  composes: mr-3 from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: mr-base from '@xo-union/tk-css-spacing';
 
   display: inline-block;
   width: 0;

@@ -145,6 +145,7 @@
     "react-test-renderer": "^15.6.1",
     "sass-loader": "^6.0.6",
     "semver": "https://registry.npmjs.org/semver/-/semver-5.3.0.tgz",
+    "sha.js": "^2.4.8",
     "string-loader": "^0.0.1",
     "style-loader": "^0.18.2",
     "svgo-loader": "^1.2.1",

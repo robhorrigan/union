@@ -7,17 +7,12 @@
 }
 
 .nav-item-horizontal-spacing {
-  padding-left: .75em;
-  padding-right: .75em;
-}
-
-.nav-item-vertical-spacing {
-  padding-top: .5em;
+  composes: px-down-1 from '@xo-union/tk-css-spacing';
 }
 
 .nav-item {
+  composes: pt-down-2 from '@xo-union/tk-css-spacing';  
   composes: nav-item-horizontal-spacing;
-  composes: nav-item-vertical-spacing;
   composes: d-md-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 

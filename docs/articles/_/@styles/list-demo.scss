@@ -1,8 +1,10 @@
+@value ( spacing-base ) from '@xo-union/tk-css-spacing/lib/variables';
+
 .list-demo {
   composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
   composes: flex-column from '@xo-union/tk-css-utilities/lib/flexbox';
 
   li {
-    margin-bottom: 1em;
+    margin-bottom: spacing-base;
   }
 }

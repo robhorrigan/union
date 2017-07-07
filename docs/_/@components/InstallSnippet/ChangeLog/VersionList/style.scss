@@ -1,7 +1,7 @@
-@value ( nav ) from '@xo-union/tk-css-bootstrap/lib/nav';
-
-@value version-list: nav;
+.version-list {
+  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
+}
 
 .version-item {
-  padding: .3rem;
+  composes: p-down-3 from '@xo-union/tk-css-spacing';
 }

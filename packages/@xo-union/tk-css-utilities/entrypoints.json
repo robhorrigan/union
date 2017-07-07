@@ -2,7 +2,6 @@
   "effects.scss",
   "display.scss",
   "flexbox.scss",
-  "spacing.scss",
   "vertical-align.scss",
   "pointer-events.scss"
 ]

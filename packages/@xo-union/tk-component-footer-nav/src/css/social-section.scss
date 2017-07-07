@@ -24,23 +24,22 @@
 }
 
 .centered-icon {
-  composes: m-auto from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: m-auto from '@xo-union/tk-css-spacing';
 }
 
 .social-nav-item {
-  padding: 0 .3rem;
+  composes: py-0 px-down-3 from '@xo-union/tk-css-spacing';
   composes: d-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 
 .follow-us-nav-item {
-  padding-top: 1.3rem;
-  padding-right: 1.3rem;
-  display: d-block from '@xo-union/tk-css-utilities/lib/display';
+  composes: pt-up-1 pr-up-1 from '@xo-union/tk-css-spacing';
   composes: d-md-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 
 .follow-us {
   composes: font-up-7 sans-serif from '@xo-union/tk-css-typography';
+  composes: pb-sm-up-1 from '@xo-union/tk-css-spacing';
   line-height: 1em;
 }
 
@@ -54,7 +53,6 @@
 @include media-breakpoint-down(sm) {
   .follow-us {
     font-size: font-up-2;
-    padding-bottom: 1.25rem;
   }
 
   .round-icon-container {

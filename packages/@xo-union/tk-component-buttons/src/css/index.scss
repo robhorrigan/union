@@ -27,30 +27,27 @@
 
 .papa {
   composes: font-up-1 from '@xo-union/tk-css-typography';
+  composes: px-up-8 from '@xo-union/tk-css-spacing';
   min-width: papa-min-width;
   line-height: 3rem;
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 .mama {
+  composes: px-up-4 from '@xo-union/tk-css-spacing';
+  
   min-width: mama-min-width;
   line-height: 2.5rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 
 .baby {
   composes: font-down-2 from '@xo-union/tk-css-typography';
+  composes: px-base from '@xo-union/tk-css-spacing';  
   min-width: baby-min-width;
   line-height: 1.5rem;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .primary {
-  color: white;
-  background: coral-lighter-20;
+  composes: coral-lighter-20-bg white-fg from '@xo-union/tk-css-colors/lib/utilities';
   border: 1px solid coral-lighter-20;
 
   &:hover,
@@ -67,8 +64,7 @@
 }
 
 .secondary {
-  color: coral-lighter-20;
-  background: white;
+  composes: coral-lighter-20-fg white-bg from '@xo-union/tk-css-colors/lib/utilities';
   border: 1px solid coral-lighter-40;
 
   &:hover,
@@ -84,19 +80,18 @@
 }
 
 .tertiary {
-  color: coral-lighter-20;
-  background: white;
-  border: 1px hidden coral-lighter-40;
+  composes: coral-lighter-20-fg white-bg from '@xo-union/tk-css-colors/lib/utilities';  
+  border: none;
 
   &:hover,
   &:focus {
     color: coral;
-    border: 1px hidden coral-lighter-10;
+    border: none;
   }
 
   &:active {
     color: coral-lighter-8-saturated;
-    border: 1px hidden coral-lighter-8-saturated;
+    border: none;
   }
 }
 

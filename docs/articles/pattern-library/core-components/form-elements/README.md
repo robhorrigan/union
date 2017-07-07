@@ -2,7 +2,7 @@
 $imports:
   '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
   bsGrid: '@xo-union/tk-css-bootstrap/lib/grid'
-  spacing: '@xo-union/tk-css-utilities/lib/spacing'
+  spacing: '@xo-union/tk-css-spacing'
 
   Demo: '@components/Demo'
   PropTypesTable: '@components/PropTypesTable'

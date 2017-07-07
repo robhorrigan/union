@@ -20,5 +20,5 @@
 }
 
 .sub-nav-item {
-  padding: .8rem 2.4rem;
+  composes: py-down-1 px-up-6 from '@xo-union/tk-css-spacing';
 }

@@ -2,8 +2,8 @@
 @value ( font-up-1 ) from '@xo-union/tk-css-typography/lib/sizes';
 
 .dropdown-item {
-  font-size: font-up-1;
-  padding: 10px;
+  composes: p-down-1 from '@xo-union/tk-css-spacing';
+  composes: font-up-1 from '@xo-union/tk-css-typography';
   cursor: pointer;
   position: relative;
   color: gray-4;
@@ -26,11 +26,10 @@
 
 .dropdown-item-check {
   composes: icon-checkmark-selected-state from '@xo-union/tk-component-icons/lib/legacy';
-
+  composes: m-up-1 from '@xo-union/tk-css-spacing';
   display: none;
   position: absolute;
   right: 0;
   top: 0;
-  margin: 15px;
   font-size: 10px;
 }

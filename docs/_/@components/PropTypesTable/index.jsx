@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import bsTables from '@xo-union/tk-css-bootstrap/lib/tables';
+import Table from '@components/Table';
 import { TableBody, TableRow, MetadataShape } from './utils';
 
 /**
@@ -11,12 +11,12 @@ export default function PropTypesTable({ metadata, exclude = [] }) {
   const columnsNames = ['name', 'description', 'type', 'default'].filter(shouldStay);
 
   return (
-    <table className={[bsTables.table, bsTables.tableBordered].join(' ')}>
+    <Table>
       <thead>
         <TableRow columns={columnsNames} header />
       </thead>
       <TableBody metadata={metadata} columns={columnsNames} />
-    </table>
+    </Table>
   );
 }
 

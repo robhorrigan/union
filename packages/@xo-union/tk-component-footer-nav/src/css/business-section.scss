@@ -25,15 +25,13 @@
 .tb-logo {
   composes: d-inline-block from '@xo-union/tk-css-utilities/lib/display';
   composes: align-bottom from '@xo-union/tk-css-utilities/lib/vertical-align';
-
-  margin: 0 .25em;
+  composes: my-0 mx-down-3 from '@xo-union/tk-css-spacing';
 }
 
 .heart-icon {
   composes: coral-fg from '@xo-union/tk-css-colors/lib/utilities';
   composes: font-down-2 from '@xo-union/tk-css-typography';
-
-  margin-left: 10px;
+  composes: ml-down-1 from '@xo-union/tk-css-spacing';
 }
 
 .hide-sm {

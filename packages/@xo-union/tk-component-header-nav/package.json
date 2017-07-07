@@ -4,6 +4,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@xo-union/tk-component-analytics": "^0.3.0",
+    "@xo-union/tk-css-spacing": "^0.1.0",
     "@xo-union/tk-component-buttons": "^0.1.14",
     "@xo-union/tk-component-icons": "^0.4.3",
     "@xo-union/tk-css-bootstrap": "^0.2.9",

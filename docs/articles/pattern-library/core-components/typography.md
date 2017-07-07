@@ -1,6 +1,5 @@
 ---
 $imports:
-  spacing: '@xo-union/tk-css-utilities/lib/spacing'
   type: '@xo-union/tk-css-typography'
   Demo: '@components/Demo'
   InstallSnippet: '@components/InstallSnippet'
@@ -101,8 +100,6 @@ Root size / 16px / 1rem
 
 <div className={type['font-down-5']}>Pack my box with five dozen liquor jugs</div>
 `font-down-5`
-
-<div className={spacing.mt5}></div>
 
 Base line height is 1.55, however the header line height (1.25) can be applied with `type['lh-header']`
 

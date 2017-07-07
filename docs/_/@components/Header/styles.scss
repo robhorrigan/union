@@ -1,6 +1,7 @@
+@value ( spacing-up-8 ) from '@xo-union/tk-css-spacing/lib/variables';
 .article-header {
   &:not(h1) {
-    margin-top: 3rem;
+    margin-top: spacing-up-8;
   }
 
   a {

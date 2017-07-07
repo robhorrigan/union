@@ -7,7 +7,7 @@
   composes: col-md-4 col-6 from '@xo-union/tk-css-bootstrap/lib/grid';
   composes: section section-links from './section';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
-  padding: 3px 10px;
+  composes: py-down-3 px-down-1 from '@xo-union/tk-css-spacing';
 }
 
 .custom-section {

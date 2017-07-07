@@ -28,18 +28,16 @@
 
 .dropdown-caret {
   composes: icon from '@xo-union/tk-component-icons/lib/legacy';
+  composes: mr-base mt-base from '@xo-union/tk-css-spacing';
 
   position: absolute;
   right: 0;
   top: 0;
-  margin-top: 1rem;
-  margin-right: 1rem;
 }
 
 .dropdown-list {
+  composes: p-0 m-0 from '@xo-union/tk-css-spacing';
   /*ul-reset*/
-  padding: 0;
-  margin: 0;
   list-style: none;
 
   display: none;

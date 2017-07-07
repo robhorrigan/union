@@ -26,20 +26,16 @@
 
 .textarea-without-label {
   composes: textarea;
-
-  padding: 14px spacer-x 4px;
+  composes: pt-down-1 px-down-1 pb-down-3 from '@xo-union/tk-css-spacing';
 }
 
 .textarea-with-label {
   composes: textarea;
-
-  padding: 26px spacer-x 1px;
+  composes: pt-up-2 px-down-1 pb-down-5 from '@xo-union/tk-css-spacing';
 }
 
 .textarea-label {
   composes: small-label from '../styles/label';
-
-  margin-left: 10px;
-  margin-top: 10px;
-  color: black;
+  composes: ml-down-1 mt-down-1 from '@xo-union/tk-css-spacing';
+  composes: black-fg from '@xo-union/tk-css-colors/lib/utilities';
 }

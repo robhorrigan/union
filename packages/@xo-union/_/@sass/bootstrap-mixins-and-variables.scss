@@ -2,6 +2,7 @@
 
 @import '~bootstrap/scss/variables';
 @import '~bootstrap/scss/mixins';
+@import './spacer-functions';
 
 /**
  * Bootstrap overrides
@@ -41,3 +42,25 @@ $container-max-widths: (
   xl: 1296px
 );
 @include _assert-ascending($container-max-widths, "$container-max-widths");
+
+$spacers: (
+  up-12: create-up-spacer(12),
+  up-11: create-up-spacer(11),
+  up-10: create-up-spacer(10),
+  up-9: create-up-spacer(9),
+  up-8: create-up-spacer(8),
+  up-7: create-up-spacer(7),
+  up-6: create-up-spacer(6),
+  up-5: create-up-spacer(5),
+  up-4: create-up-spacer(4),
+  up-3: create-up-spacer(3),
+  up-2: create-up-spacer(2),
+  up-1: create-up-spacer(1), 
+  0: create-spacer(0),
+  base: create-spacer(1rem),
+  down-1: create-spacer(.75rem),
+  down-2: create-spacer(.5rem),
+  down-3: create-spacer(.25rem),
+  down-4: create-spacer(.125rem),
+  down-5: create-spacer(.0625rem)
+);

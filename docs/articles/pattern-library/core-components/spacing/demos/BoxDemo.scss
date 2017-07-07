@@ -1,0 +1,38 @@
+@value ( coral-lighter-20, coral-lighter-40 ) from '@xo-union/tk-css-colors';
+@value ( spacing-up-4, spacing-down-5 ) from '@xo-union/tk-css-spacing/lib/variables';
+
+@value ( container ) from '@xo-union/tk-css-bootstrap/lib/grid';
+
+.row {
+  composes: row no-gutters from '@xo-union/tk-css-bootstrap/lib/grid'
+}
+
+.box-base {
+  composes: col col-sm-4 col-md-2 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: p-down-3 mb-down-1 from '@xo-union/tk-css-spacing';
+  composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
+  composes: font-down-1 from '@xo-union/tk-css-typography';
+  height: spacing-up-4;
+}
+
+.box-primary {
+  composes: box-base;
+  composes: white-fg coral-lighter-20-bg from '@xo-union/tk-css-colors/lib/utilities';
+}
+
+.box-secondary {
+  composes: box-base;
+  composes: white-fg coral-lighter-40-bg from '@xo-union/tk-css-colors/lib/utilities';
+}
+
+.box-outline {
+  composes: box-base;
+  composes: white-fg coral-lighter-20-fg from '@xo-union/tk-css-colors/lib/utilities';
+  
+  border: solid;
+  border-width: spacing-down-5;
+  
+  ~ .box-outline {
+    border-left: 0;
+  }
+}

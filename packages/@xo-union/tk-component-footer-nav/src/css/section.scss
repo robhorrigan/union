@@ -3,5 +3,5 @@
 }
 
 .section {
-  padding: .6em;
+  composes: p-down-2 from '@xo-union/tk-css-spacing';
 }

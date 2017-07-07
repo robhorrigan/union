@@ -5,6 +5,7 @@ import { Link } from 'react-router';
 import { AssumedTargetAnchor } from '@xo-union/component-standard-elements/lib/anchor';
 import Snippet from '@components/Snippet';
 import Header from '@components/Header';
+import Table from '@components/Table';
 
 const RouterLinkWrapper = ({ href, children }) => <Link to={href}>{children}</Link>;
 
@@ -33,5 +34,8 @@ export default marksy({
   },
   h4(props) {
     return <Header size={4} {...props} />;
+  },
+  table(props) {
+    return <Table {...props} />;
   }
 });
