@@ -12,7 +12,7 @@ export default class Membership {
     production: {
       host: 'membership-api.theknot.com',
       apiKey: 'default'
-    },
+    }
   }
 
   constructor({ host, apiKey } = Membership.presets.qa) {
