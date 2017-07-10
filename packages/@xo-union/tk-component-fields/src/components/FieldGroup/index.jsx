@@ -9,7 +9,7 @@ import style from '@xo-union/tk-component-fields/lib/css';
  */
 export default function FieldGroup({ children, ...props }) {
   return (
-    <div className={spacing.mb3} {...props}>
+    <div className={spacing['mb-base']} {...props}>
       <div className={style['field-group']}>
         {children}
       </div>

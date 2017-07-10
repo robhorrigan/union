@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 import { init } from '@xo-union/tk-component-icons/lib/setup';
 import style from '@xo-union/tk-component-icons/lib/css';
 import { hash } from '@xo-union/tk-component-icons/lib/data';
-import colorUtilityStyles from '@xo-union/tk-css-colors/lib/utilities';
+import colorUtilityStyles from '@xo-union/tk-css-colors';
 
 /**
  * Initialize icons -- This will be no-op if this version of the icons
@@ -48,6 +48,6 @@ export function IconButton({ name, isCTA, className = '', ...props }) {
 
 export function TheKnotLogo() {
   return (
-    <Icon name="tk-logo" className={colorUtilityStyles['knot-blue-fg']} />
+    <Icon name="tk-logo" className={colorUtilityStyles['fg-knot-blue']} />
   )
 }

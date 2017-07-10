@@ -4,13 +4,13 @@
     font-up-3
     font-up-2-sm
   from '@xo-union/tk-css-typography';
-  composes: mt-3 from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: mt-base from '@xo-union/tk-css-spacing';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
 }
 
 .log-in-header {
   composes: header;
-  composes: mb-3 from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: mb-base from '@xo-union/tk-css-spacing';
 }
 
 .sub-header {
@@ -19,12 +19,12 @@
     font-down-1
     font-up-1-sm
   from '@xo-union/tk-css-typography';
-  composes: mt-2 from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: mt-down-2 from '@xo-union/tk-css-spacing';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
 }
 
 .form-sub-text {
-  composes: mt-2 from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: mt-down-2 from '@xo-union/tk-css-spacing';
   composes: font-down-2 from '@xo-union/tk-css-typography';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
 
@@ -33,7 +33,7 @@
   }
 }
 
-@value ( black ) from '@xo-union/tk-css-colors';
+@value ( var-black ) from '@xo-union/tk-css-colors';
 
 .modal {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
@@ -41,12 +41,12 @@
   height: 100%;
 
   a, a:hover {
-    color: black;
+    color: var-black;
     text-decoration: underline !important;
   }
 }
 
 .footer {
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
-  composes: mt-auto mb-5 mb-md-0 from '@xo-union/tk-css-utilities/lib/spacing';
+  composes: mt-auto mb-up-8 mb-md-0 from '@xo-union/tk-css-spacing';
 }

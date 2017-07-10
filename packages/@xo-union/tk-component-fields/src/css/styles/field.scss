@@ -5,7 +5,7 @@
   var-red-lighter-90
 ) from '@xo-union/tk-css-colors';
 
-@value ( var-fs-down-4, var-fs-down-1 ) from '@xo-union/tk-css-typography';
+@value ( var-fs-down-4, var-fs-down-1, var-fs-base ) from '@xo-union/tk-css-typography';
 
 @value (
   var-sp-down-1,
@@ -14,7 +14,7 @@
 
 .field {
   composes: field-base from '../styles/field-base';
-  composes: px-down-2 pt-base pb-down-1 from '@xo-union/tk-css-spacing';
+  composes: px-down-2 pt-base pb-down-3 from '@xo-union/tk-css-spacing';
 
   &:not(:placeholder-shown) ~ .field-label,
   &:focus ~ .field-label {
@@ -34,7 +34,7 @@
   composes: bg-red-lighter-90 from '@xo-union/tk-css-colors';
   composes: field;
 
-  transition: background-color 0.2s ease-out 1.5s;
+  transition: background-color 0.1s ease-out 0.1s;
 }
 
 .valid-field {
@@ -49,7 +49,7 @@
 
   max-height: 0;
   overflow: hidden;
-  transition: all 0.2s ease-out 1.5s;
+  transition: all 0.1s ease-out 0.1s;
 }
 
 /* Contextual styles */
@@ -65,8 +65,9 @@
 
   composes: label from '../styles/label';
 
-  font-size: var-fs-down-1;
+  font-size: var-fs-base;
   margin-top: var-sp-down-1;
   transition: all 0.2s ease-out;
+  transition-property: font-size,margin;
 }
 

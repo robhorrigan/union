@@ -25,16 +25,16 @@
 
 .textarea-without-label {
   composes: textarea;
-  composes: pt-down-1 px-down-1 pb-down-3 from '@xo-union/tk-css-spacing';
+  composes: pt-down-1 px-down-2 pb-down-3 from '@xo-union/tk-css-spacing';
 }
 
 .textarea-with-label {
   composes: textarea;
-  composes: pt-up-2 px-down-1 pb-down-5 from '@xo-union/tk-css-spacing';
+  composes: pt-up-1 px-down-2 pb-down-5 from '@xo-union/tk-css-spacing';
 }
 
 .textarea-label {
   composes: small-label from '../styles/label';
-  composes: ml-down-1 mt-down-1 from '@xo-union/tk-css-spacing';
+  composes: ml-down-2 mt-down-2 from '@xo-union/tk-css-spacing';
   composes: fg-black from '@xo-union/tk-css-colors';
 }

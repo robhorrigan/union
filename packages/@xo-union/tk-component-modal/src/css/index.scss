@@ -1,7 +1,7 @@
 @import '~@sass/common-breakpoints-mixins';
 
 .overlay {
-  composes: x-overlay-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-x-overlay from '@xo-union/tk-css-colors';
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
   composes: justify-content-center from '@xo-union/tk-css-utilities/lib/flexbox';
   position: fixed;
@@ -17,7 +17,7 @@
 }
 
 .container {
-  composes: white-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-white from '@xo-union/tk-css-colors';
 
   @include in-mobile {
     width: 100%;
@@ -35,7 +35,7 @@
 .close-button {
   composes: d-md-none from '@xo-union/tk-css-utilities/lib/display';
   composes: font-up-2 from '@xo-union/tk-css-typography';
-  composes: safe-gray-7-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-safe-gray-7 from '@xo-union/tk-css-colors';
 }
 
 .button-container {
