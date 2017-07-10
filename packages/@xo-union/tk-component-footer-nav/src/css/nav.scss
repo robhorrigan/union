@@ -1,4 +1,4 @@
-@value ( safe-gray-5 ) from '@xo-union/tk-css-colors';
+@value ( var-safe-gray-5 ) from '@xo-union/tk-css-colors';
 @value ( row ) from '@xo-union/tk-css-bootstrap/lib/grid';
 
 .nav-item-text {
@@ -24,7 +24,7 @@
 
 .nav-link {
   &:hover, &:focus {
-    color: safe-gray-5;
+    color: var-safe-gray-5;
     opacity: .6;
     outline: none;
   }

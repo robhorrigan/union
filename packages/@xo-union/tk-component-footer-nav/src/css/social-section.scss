@@ -1,6 +1,7 @@
 @import '~@sass/bootstrap-mixins-and-variables';
-@value ( white, knot-blue, safe-gray-7 ) from '@xo-union/tk-css-colors';
-@value ( font-up-2, font-up-3 ) from '@xo-union/tk-css-typography/lib/sizes';
+
+@value ( var-white, var-knot-blue, var-safe-gray-7 ) from '@xo-union/tk-css-colors';
+@value ( var-fs-up-2, var-fs-up-3 ) from '@xo-union/tk-css-typography';
 
 .round-icon-container {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
@@ -11,15 +12,15 @@
 
 .social-icon-container {
   composes: round-icon-container;
-  composes: white-bg knot-blue-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-white fg-knot-blue from '@xo-union/tk-css-colors';
   composes: disable-children-pointer-events from '@xo-union/tk-css-utilities/lib/pointer-events';
 
   transition: color,background-color .2s ease-in-out 0s;
 
   &:hover, &:focus {
     outline: none;
-    background-color: knot-blue;
-    color: white;
+    background-color: var-knot-blue;
+    color: var-white;
   }
 }
 
@@ -45,14 +46,14 @@
 
 .social-section {
   composes: section from './section';
-  composes: background-gray-8-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-background-gray-8 from '@xo-union/tk-css-colors';
   composes: font-up-7 from '@xo-union/tk-css-typography';
-  border-bottom: 1px solid safe-gray-7;
+  border-bottom: 1px solid var-safe-gray-7;
 }
 
 @include media-breakpoint-down(sm) {
   .follow-us {
-    font-size: font-up-2;
+    font-size: var-fs-up-2;
   }
 
   .round-icon-container {
@@ -60,6 +61,6 @@
     width: 1.8em;
   }
   .social-section {
-    font-size: font-up-3;
+    font-size: var-fs-up-3;
   }
 }

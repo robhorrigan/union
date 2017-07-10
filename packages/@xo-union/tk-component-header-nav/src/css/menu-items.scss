@@ -1,5 +1,4 @@
-@value ( knot-blue-lighter-70 ) from '@xo-union/tk-css-colors';
-
+@value ( var-knot-blue-lighter-70 ) from '@xo-union/tk-css-colors';
 @value menu-border from './menu-border';
 
 .main-menu-item {
@@ -10,9 +9,7 @@
 
 .main-menu-item-right-offset {
   composes: main-menu-item;
-
-  /* Not using a standard spacing class but adheres to the scale */
-  margin-left: 6.25rem;
+  composes: ml-0 ml-xl-up-12 from '@xo-union/tk-css-spacing';
 }
 
 .main-menu-item-link {
@@ -45,7 +42,7 @@
   composes: sub-menu-item-spacing;
 
   &:hover {
-    background-color: knot-blue-lighter-70;
+    background-color: var-knot-blue-lighter-70;
   }
 }
 
@@ -55,7 +52,7 @@
 }
 
 .sub-menu-back-button-caret {
-  composes: knot-blue-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-knot-blue from '@xo-union/tk-css-colors';
   composes: font-up-3 from '@xo-union/tk-css-typography';
 
   position: absolute;
@@ -64,14 +61,14 @@
 }
 
 .sub-menu-copy-right-item {
-  composes: gray-6-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-gray-6 from '@xo-union/tk-css-colors';
   composes: sub-menu-item-border;
   composes: py-down-3 px-down-2 from '@xo-union/tk-css-spacing';
-  font-size: .6rem;
+  composes: font-down-4 from '@xo-union/tk-css-typography';
 }
 
 .sub-menu-divider-item {
-  composes: background-gray-9-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-background-gray-9 from '@xo-union/tk-css-colors';
   composes: sub-menu-item;
   height: .6em;
 }

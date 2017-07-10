@@ -1,7 +1,7 @@
 {
   "name": "@xo-union/tk-css-colors",
   "version": "0.3.5",
-  "main": "lib/variables.cssm",
+  "main": "lib/index.cssm",
   "dependencies": {
     "css-module-builder": "^1.0.0-beta.7"
   },

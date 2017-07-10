@@ -1,0 +1,8 @@
+.scale-name {
+  composes: font-down-2 from '@xo-union/tk-css-typography';
+  composes: fg-jay bg-gray-10 from '@xo-union/tk-css-colors';
+}
+
+.scale-example {
+  composes: fg-gray-4 from '@xo-union/tk-css-colors';
+}

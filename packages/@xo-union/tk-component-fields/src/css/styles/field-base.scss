@@ -1,9 +1,8 @@
 @value ( gray-9-border, gray-10-border, black-border ) from '../shared/borders';
-@value ( gray-10 ) from '@xo-union/tk-css-colors';
-@value ( font-up-1 ) from '@xo-union/tk-css-typography/lib/sizes';
+@value ( var-gray-10 ) from '@xo-union/tk-css-colors';
 
 .field-base {
-  font-size: font-up-1;
+  composes: font-up-1 from '@xo-union/tk-css-typography';
   -webkit-appearance: none;
   border: gray-9-border;
   // Fix firefox render error
@@ -12,14 +11,19 @@
   position: relative;
   display: block;
 
-  &:hover,
   &:focus {
-    border: black-border;
     outline: 0;
   }
 
+  &:not(.disable-interactive-states) {
+    &:hover,
+    &:focus {
+      border: black-border;
+    }
+  }
+
   &:disabled {
-    background-color: gray-10;
+    background-color: var-gray-10;
     border: gray-10-border;
   }
 }

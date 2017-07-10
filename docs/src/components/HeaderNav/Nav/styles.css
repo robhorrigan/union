@@ -1,9 +1,9 @@
-@value ( white, background-gray-8 ) from '@xo-union/tk-css-colors';
-@value nav-border: 1px solid background-gray-8;
+@value ( var-white, var-background-gray-8 ) from '@xo-union/tk-css-colors';
+@value nav-border: 1px solid var-background-gray-8;
 
 .nav {
   border-bottom: nav-border;
-  background-color: white;
+  background-color: var-white;
 }
 
 .groups-container {

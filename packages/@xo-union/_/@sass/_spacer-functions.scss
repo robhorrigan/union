@@ -1,7 +1,3 @@
-@function create-spacer($spacing) {
-  @return ( x: $spacing, y: $spacing );
-}
-
-@function create-up-spacer($number) {
-  @return create-spacer(4 - (0.25 * (12 - $number)) * 1rem);
+@function create-spacer($number) {
+  @return (4 - (0.25 * (12 - $number))) * 1rem;
 }

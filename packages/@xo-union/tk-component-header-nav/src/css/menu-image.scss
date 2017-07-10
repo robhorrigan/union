@@ -1,8 +1,8 @@
-@value ( spacing-down-1 ) from '@xo-union/tk-css-spacing/lib/variables';
+@value ( var-sp-down-1 ) from '@xo-union/tk-css-spacing';
 
 .has-menu-image {
   img {
     max-height: 15px;
-    margin-right: spacing-down-1;
+    margin-right: var-sp-down-1;
   }
 }

@@ -1,6 +1,5 @@
-@value black from '@xo-union/tk-css-colors';
+@value var-black from '@xo-union/tk-css-colors';
 @value ( caret-up, caret-down ) from '@xo-union/tk-component-icons/lib/legacy';
-@value ( spacer-x ) from '../shared/spacing';
 @value ( black-border ) from '../shared/borders';
 
 .dropdown-field {
@@ -15,7 +14,7 @@
   cursor: default;
 
   color: transparent;
-  text-shadow: 0 0 0 black;
+  text-shadow: 0 0 0 var-black;
 
   &:not(:focus) ~ .dropdown-caret::before {
     content: caret-down;

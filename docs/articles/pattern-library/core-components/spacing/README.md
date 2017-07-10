@@ -32,16 +32,6 @@ The spacing modules follow a predictable naming convention. The pattern is as fo
 | breakpoint | `sm`, `md`, `lg`, `xl` -- Will apply to all if not specified |
 | scale | See demo at the top. You can also use `auto` |
 
-### Variable example
-
-```css
-@value ( spacing-up-2, spacing-down-2 ) from '@xo-union/tk-css-spacing/lib/variables';
-
-.link:hover {
-  margin-top: spacing-up-2;
-  height: spacing-down-2;
-}
-```
 
 ### Class composition example
 
@@ -50,13 +40,23 @@ The spacing modules follow a predictable naming convention. The pattern is as fo
   composes: mb-up-2 mb-md-up-4 from '@xo-union/tk-css-spacing';
 }
 ```
+### Variable example
+
+```css
+@value ( var-sp-up-2, var-sp-down-2 ) from '@xo-union/tk-css-spacing';
+
+.link:hover {
+  margin-top: var-sp-up-2;
+  height: var-sp-down-2;
+}
+```
 
 #### Important note on immutability
 
 Note: all utility classes are immutable. This means that you cannot combine them with rules that would otherwise override them. For example, the following is not recommended (partly because it will not work).
 
 ```css
-@value ( spacing-up-3 ) from '@xo-union/tk-css-spacing/lib/variables';
+@value ( var-sp-up-3 ) from '@xo-union/tk-css-spacing';
 
 .my-class {
   composes: mb-up-2 from '@xo-union/tk-css-spacing';
@@ -64,20 +64,20 @@ Note: all utility classes are immutable. This means that you cannot combine them
 
 .my-class:hover {
   /* This will not work because the mb-up-2 class is immutable */
-  margin-bottom: spacing-up-3;
+  margin-bottom: var-sp-up-3;
 }
 ```
 
 When you need a mutable css object, use the spacing variables instead.
 
 ```css
-@value ( spacing-up-3, spacing-up-2 ) from '@xo-union/tk-css-spacing/lib/variables';
+@value ( var-sp-up-3, var-sp-up-2 ) from '@xo-union/tk-css-spacing';
 
 .my-class {
-  margin-bottom: spacing-up-2;
+  margin-bottom: var-sp-up-2;
 }
 
 .my-class:hover {
-  margin-bottom: spacing-up-3;
+  margin-bottom: var-sp-up-3;
 }
 ```

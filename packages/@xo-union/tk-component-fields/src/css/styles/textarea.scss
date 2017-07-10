@@ -1,26 +1,25 @@
-@value ( black, gray-6 ) from '@xo-union/tk-css-colors';
-@value ( spacer-x ) from '../shared/spacing';
-@value ( font-up-1 ) from '@xo-union/tk-css-typography/lib/sizes';
+@value ( var-gray-6 ) from '@xo-union/tk-css-colors';
+@value ( var-fs-up-1 ) from '@xo-union/tk-css-typography';
 
 .textarea {
   composes: radius-reset from '../shared/resets';
   composes: field-base from '../styles/field-base.scss';
 
   outline: 0;
-  color: black;
+  composes: fg-black from '@xo-union/tk-css-colors';
   resize: none;
 
   &::placeholder {
-    color: gray-6;
-    font-size: font-up-1;
+    color: var-gray-6;
+    font-size: var-fs-up-1;
   }
   &::-ms-input-placeholder {
-    color: gray-6;
-    font-size: font-up-1;
+    color: var-gray-6;
+    font-size: var-fs-up-1;
   }
   &::-webkit-input-placeholder {
-    color: gray-6;
-    font-size: font-up-1;
+    color: var-gray-6;
+    font-size: var-fs-up-1;
   }
 }
 
@@ -37,5 +36,5 @@
 .textarea-label {
   composes: small-label from '../styles/label';
   composes: ml-down-1 mt-down-1 from '@xo-union/tk-css-spacing';
-  composes: black-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-black from '@xo-union/tk-css-colors';
 }

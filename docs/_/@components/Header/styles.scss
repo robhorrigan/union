@@ -1,7 +1,7 @@
-@value ( spacing-up-8 ) from '@xo-union/tk-css-spacing/lib/variables';
+@value ( var-sp-up-8 ) from '@xo-union/tk-css-spacing';
 .article-header {
   &:not(h1) {
-    margin-top: spacing-up-8;
+    margin-top: var-sp-up-8;
   }
 
   a {

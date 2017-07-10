@@ -11,10 +11,11 @@
 }
 
 .custom-section {
-  composes: col-md-8 offset-md-2 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: col-md-8 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: mx-auto from '@xo-union/tk-css-spacing';
 }
 
 .custom-section-container {
-  composes: background-gray-8-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-background-gray-8 from '@xo-union/tk-css-colors';
   composes: footer from './footer';
 }
