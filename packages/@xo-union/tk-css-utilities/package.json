@@ -1,10 +1,10 @@
 {
   "name": "@xo-union/tk-css-utilities",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "main": null,
   "dependencies": {
-    "@xo-union/tk-css-colors": "^0.3.5",
-    "@xo-union/tk-css-typography": "^0.1.11",
+    "@xo-union/tk-css-colors": "^1.0.0",
+    "@xo-union/tk-css-typography": "^1.0.0",
     "css-module-builder": "^1.0.0-beta.7"
   },
   "files": [

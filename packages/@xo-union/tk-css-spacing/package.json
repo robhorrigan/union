@@ -1,10 +1,10 @@
 {
   "name": "@xo-union/tk-css-spacing",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "lib/index.cssm",
   "dependencies": {
-    "css-module-builder": "^1.0.0-beta.7",
-    "@xo-union/tk-css-typography": "^0.1.11"
+    "@xo-union/tk-css-typography": "^1.0.0",
+    "css-module-builder": "^1.0.0-beta.7"
   },
   "files": [
     "lib/*"

@@ -1,13 +1,13 @@
 {
   "name": "@xo-union/tk-component-icons",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "main": "lib/components/index.js",
   "dependencies": {
     "babel-runtime": "^6.23.0",
     "css-module-builder": "^1.0.0-beta.7",
     "prop-types": "^15.5.10",
     "react": "^15.6.1",
-    "xojs": "^0.5.0"
+    "xojs": "^0.5.1"
   },
   "files": [
     "lib/*"
