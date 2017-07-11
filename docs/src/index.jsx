@@ -15,11 +15,15 @@ import ReactDOM from 'react-dom';
 import { init as initializeIcons } from '@xo-union/tk-component-icons/lib/setup';
 
 import App from '#docs/components/App';
+import { Provider } from 'react-redux';
+import store from './store';
 
 initializeIcons();
 
 ReactDOM.render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   document.getElementById('root')
 );
 

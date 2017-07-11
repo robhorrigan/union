@@ -34,6 +34,7 @@
     "node": "node -r babel-register",
     "open": "open http://localhost:8080",
     "pm2": "pm2",
+    "postinstall": "yarn bootstrap",
     "prebuild.patterns": "yarn run build.xojs",
     "publish.assets": "sh ./scripts/publish-assets.sh",
     "publish.docs": "sh ./scripts/publish-docs.sh",
@@ -74,7 +75,9 @@
     "react-addons-test-utils": "^15.6.0",
     "react-css-modules": "^4.3.0",
     "react-dom": "^15.6.1",
+    "react-redux": "^5.0.5",
     "react-router": "^3.0.5",
+    "redux": "^3.7.1",
     "split-array": "^1.0.1",
     "whatwg-fetch": "^2.0.3",
     "xojs": "^0.5.0"

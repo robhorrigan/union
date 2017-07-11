@@ -5,3 +5,4 @@ export { default as DropdownItem } from './components/DropdownItem';
 export { default as Dropdown } from './components/Dropdown';
 export { default as Form } from './components/Form';
 export { default as HiddenField } from './components/HiddenField';
+export { default as formReducer } from './reducers';

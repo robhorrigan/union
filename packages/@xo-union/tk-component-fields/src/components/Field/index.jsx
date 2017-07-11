@@ -4,8 +4,10 @@ import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
 import { isColumn } from '@xo-union/tk-component-grid';
 import { autobind } from 'core-decorators';
+import { connect } from 'react-redux';
 import { inject, observer } from 'mobx-react';
-import linkedField from '../Form/linkedField';
+
+import { change, updateVisualState } from '../../actions';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -13,22 +15,35 @@ const classMap = {
   valid: FieldsCss.validField
 };
 
-function FieldContainer({ formData, ...props }) {
-  return (
-    <Field
-      state={formData.getVisualState(props.name)}
-      inputRef={formData.handleRef}
-      onBlur={formData.handleInputBlur}
-      value={formData.getValue(props.name)}
-      onChange={formData.handleInputChange}
-      {...props}
-    />
-  );
+const mapStateToProps = ({ membershipForm }, { name }) => {
+  const fieldState = membershipForm.fields[name] || {};
+
+  return {
+    value: fieldState.value,
+    state: fieldState.visualState
+  };
 };
 
+const mapDispatchToProps = (dispatch, { name }) => ({
+  onChange: ({ currentTarget }) => {
+    const isValid = currentTarget.checkValidity();
+    const { value } = currentTarget;
 
-const Field = isColumn({ className: FieldsCss['field-col'] })
-(function Field({
+    dispatch(change(name, value, isValid));
+  },
+  onBlur: () => dispatch(updateVisualState(name)),
+  inputRef: (input) => {
+    const isValid = input.checkValidity();
+    const { value } = input;
+
+    dispatch(change(name, value, isValid));
+  }
+});
+
+const Field = 
+connect(mapStateToProps, mapDispatchToProps)(
+isColumn({ className: FieldsCss['field-col'] })(
+({
   name,
   validationMessage,
   inputRef,
@@ -36,8 +51,9 @@ const Field = isColumn({ className: FieldsCss['field-col'] })
   state = 'neutral',
   type = 'text',
   id = fieldId(name),
+  value = '',
   ...props
-}) {
+}) => {
   const inputClass = classMap[state];
 
   if (!inputClass) {
@@ -46,14 +62,14 @@ const Field = isColumn({ className: FieldsCss['field-col'] })
 
   return (
     <div className={FieldsCss.container}>
-      <input ref={inputRef} type={type} className={inputClass} id={id} name={name} {...props} placeholder=" " />
+      <input ref={inputRef} type={type} className={inputClass} id={id} name={name} value={value} placeholder=" " {...props} />
       <label className={FieldsCss.fieldLabel} htmlFor={id}>{label}</label>
       <div className={FieldsCss.requirements}>{validationMessage}</div>
     </div>
   );
-});
+}));
 
-FieldContainer.propTypes = {
+Field.propTypes = {
   /**
    * Name used for input element
    */
@@ -84,4 +100,4 @@ FieldContainer.propTypes = {
   id: PropTypes.string
 };
 
-export default linkedField(FieldContainer);
+export default Field;

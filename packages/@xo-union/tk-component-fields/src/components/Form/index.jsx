@@ -5,10 +5,26 @@ import Field from '../Field';
 import { autobind } from 'core-decorators';
 import FormData from './FormData';
 import { Provider } from 'mobx-react';
+import { connect } from 'react-redux';
+import { updateVisualStateOfAll } from '../../actions';
 
+function mapStateToProps(state) {
+  return {
+    isValid: state.membershipForm.isValid
+  };
+}
+
+function mapDispatchToProps(dispatch) {
+  return {
+    handleInvalidSubmit: () => {
+      dispatch(updateVisualStateOfAll());
+    }
+  };
+}
 /**
  * Use this component as the container to all forms.
  */
+@connect(mapStateToProps, mapDispatchToProps)
 export default class FormContainer extends Component {
   static propTypes = {
     /**
@@ -17,15 +33,11 @@ export default class FormContainer extends Component {
     onSubmit: PropTypes.func
   }
 
-  formData = new FormData();
-
   @autobind
   handleSubmit(evt) {
-
-    if (!this.formData.isValid) {
+    if (!this.props.isValid) {
       evt.preventDefault();
-
-      this.formData.updateVisualStateOfInvalidFields();
+      this.props.handleInvalidSubmit();
 
       return;
     }
