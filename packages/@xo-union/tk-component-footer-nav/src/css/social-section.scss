@@ -1,7 +1,6 @@
 @import '~@sass/bootstrap-mixins-and-variables';
 
 @value ( var-white, var-knot-blue, var-safe-gray-7 ) from '@xo-union/tk-css-colors';
-@value ( var-fs-up-2, var-fs-up-3 ) from '@xo-union/tk-css-typography';
 
 .round-icon-container {
   composes: d-flex from '@xo-union/tk-css-utilities/lib/display';
@@ -34,33 +33,26 @@
 }
 
 .follow-us-nav-item {
-  composes: pt-up-1 pr-up-1 from '@xo-union/tk-css-spacing';
+  composes: pt-up-1 pr-md-up-1 from '@xo-union/tk-css-spacing';
   composes: d-md-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 
 .follow-us {
-  composes: font-up-7 sans-serif from '@xo-union/tk-css-typography';
-  composes: pb-sm-up-1 from '@xo-union/tk-css-spacing';
+  composes: font-up-2 font-md-up-7 sans-serif from '@xo-union/tk-css-typography';
+  composes: pb-up-1 from '@xo-union/tk-css-spacing';
   line-height: 1em;
 }
 
 .social-section {
   composes: section from './section';
   composes: bg-background-gray-8 from '@xo-union/tk-css-colors';
-  composes: font-up-7 from '@xo-union/tk-css-typography';
+  composes: font-up-3 font-md-up-7 sans-serif from '@xo-union/tk-css-typography';
   border-bottom: 1px solid var-safe-gray-7;
 }
 
 @include media-breakpoint-down(sm) {
-  .follow-us {
-    font-size: var-fs-up-2;
-  }
-
   .round-icon-container {
     height: 1.8em;
     width: 1.8em;
-  }
-  .social-section {
-    font-size: var-fs-up-3;
   }
 }

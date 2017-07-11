@@ -1,6 +1,7 @@
 .custom-row {
   composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
   composes: row from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: m-auto from '@xo-union/tk-css-spacing';
 }
 
 .custom-col {
