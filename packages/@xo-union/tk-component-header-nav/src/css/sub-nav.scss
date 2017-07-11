@@ -5,10 +5,8 @@
 }
 
 .sub-nav-item-list {
-  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
   composes: justify-content-center from '@xo-union/tk-css-utilities/lib/flexbox';
-
-  flex-wrap: nowrap !important;
+  composes: nav-item-list from './nav-item-list';
 }
 
 .sub-nav-item-link {
