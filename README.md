@@ -1,22 +1,30 @@
 # Union
 The Knot's Design System and Pattern Library
 
-# Development
+* [Getting Started](#getting-started) 
+* [Development](#development) 
+* [Publishing](#publishing) 
 
-*Read [here](https://github.com/xogroup/union/blob/master/internal-docs/README.md) to learn more about the internals of the project.*
+Or if you just want to consume Union Patterns, visit the [Union Pattern Library Documentation](http://docs.union.theknot.com/pattern-library/getting-started)
 
+# Getting Started
 
-<details>
-<summary>
-Short setup
-</summary>
+## Guides
+* [Project Internals](https://github.com/xogroup/union/blob/master/internal-docs/README.md)
+* [Benchmarking](https://github.com/xogroup/union/blob/master/internal-docs/how-to/benchmarks.md)
+* [Upgrading](https://github.com/xogroup/union/blob/master/internal-docs/how-to/upgrade.md)
+* [Folder Structure](https://github.com/xogroup/union/blob/master/internal-docs/conventions/pods.md)
+* [Private Modules](https://github.com/xogroup/union/blob/master/internal-docs/conventions/private-modules.md)
+* [Shared Modules](https://github.com/xogroup/union/blob/master/internal-docs/conventions/shared-modules.md)
+* [Testing](https://github.com/xogroup/union/blob/master/internal-docs/conventions/specs.md)
 
+## Quick Setup (if you already have Node and Yarn installed)
 
-Install packages for project union and run the tests.
 ```sh
-# Test your node version
-node -v | grep -e '^v7' && echo "You are good to go"
+# Verify your Node version
+node -v | grep -e '^v8' && echo "You are good to go"
 
+# Install dependencies, build necessary packages, and link internal packages
 yarn run setup
 
 # Run all tests
@@ -25,52 +33,52 @@ yarn test
 # Start dev server
 yarn start
 
-# Open docs page
+# Open documentation page
 yarn run open
 
 # Run this when configurations or dependencies change
 yarn restart
 ```
-</details>
 
+## Complete Setup Guide
 ### Install Node
-Install node version manager [nvm](https://github.com/creationix/nvm#install-script)
+Install Node version manager [NVM](https://github.com/creationix/nvm#install-script)
 ```sh
-# With brew (recommended in osx)
+# With brew (recommended in OSX)
 brew install nvm
 
 # With curl
 curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.0/install.sh | bash
 ```
-If you run into any issues with installing NVM on your platform follow the [instructions](https://github.com/creationix/nvm#install-script) on the NVM install page.
+***If you run into any issues installing NVM on your platform follow these [instructions](https://github.com/creationix/nvm#install-script) on the NVM install page.***
 
-Install node version >= 8.0.0
+Install Node version >= 8.0.0
 
 ```sh
-nvm install
+nvm install 8
 node -v
-# v8.0.0
+# v8.*.*
 ```
 
-### Install yarn
+### Install Yarn
 
-> This is an optional tool but it significantly improves the development experience
+> Yarn is an alternative to NPM that provides some important advantages. You can read about why it was created [here](https://code.facebook.com/posts/1840075619545360/yarn-a-new-package-manager-for-javascript/) or check out the [Yarn documentation](https://yarnpkg.com/lang/en/docs/).
 
 ```sh
 brew install yarn
 ```
 
-### Setup environment
-> Install dependencies, build necessary packages, and link internal packages. You should need to run this once before begining development
+### Setup local development environment
+> Install dependencies, build necessary packages, and link internal packages. 
 
 ```sh
 yarn run setup
 ```
+> NOTE: You will need to run this once before beginning development.
 
 ### Install dependencies
 ***You do not need to run this if you just ran `yarn run setup`***
 > The first step is to install all dependencies.
-
 ```sh
 yarn install
 ```
@@ -83,65 +91,48 @@ yarn install
 yarn run bootstrap
 ```
 
-> NOTE: This step will need to be run each time a new internal dependency is established.
+> NOTE: You will need to run this each time a new internal dependency added.
+
+## Development
+This project utilizes two development approaches: Documentation Driven Development and Test Driven Development(TDD). You can use either approach depending on the type of contribution and your preferred style.
 
 ### Documentation Driven Development
 
-**Start dev server + watch mode**
-> The next step is to start a webpack-dev-server which will host the documentation app and a webpack process which will compile the union packages
-
-> NOTE: This will run the processes as daemons, so it will exit immediately.
-
+**Start the dev server and watch for changes**
+> This starts a webpack-dev-server which will host the documentation app and a Webpack process which will compile the Union packages.
 ```sh
 yarn start
 ```
-> At this point, you should be able to run the following command to get to the docs page
+> NOTE: This will run the processes as daemons, so it will exit immediately.
 
+**Next, open the documentation page in your preferred browser**
 ```sh
 yarn run open
 ```
 
-**Configuration changes**
-> When making configuration changes or adding packages to the ecosystem, you will need to restart the webpack processes, to do this, run:
+**Restart on configuration or dependency changes**
+> When making configuration changes or adding packages to the ecosystem, you will need to restart the Webpack processes, to do this, run:
 
 ```sh
 yarn restart
 ```
 
-### Generators
-
-*First step*
-
-> This is a temporary step, likely to be removed in the future
-```bash
-yarn run bootstrap.generators
-```
-
-##### Pattern
-
-This generator will help you create new patterns
-
-```bash
-yarn run new.pattern
-```
-
 ### Test Driven Development
 
 ```sh
-# There is a dependency on building the patterns before executing the tests
-# otherwise the packages being tested are not yet available
+# Patterns must be built before executing the tests, otherwise they won't be available.
 yarn run build.patterns
-# All tests
+# Run all tests
 yarn test
 
-# Browser tests
+# Run browser tests
 yarn run test.browser
 yarn run test.browser.chrome # Useful when using debuggers
 
-# Node tests
+# Run Node tests
 yarn run test.node
 
-# Tools tests
+# Run tools tests
 yarn run test.tools
 ```
 
@@ -153,12 +144,38 @@ yarn run test.tools
 yarn run test.browser.watch
 ```
 
-> In order to improve the test output, make sure to `focus` on the tests which you are currently working on. You do this by using [`jasmine`'s focus feature](https://jasmine.github.io/2.1/focused_specs.html).
+> NOTE: In order to improve the test output, make sure to `focus` on the tests which you are currently working on. You do this by using [`Jasmine`'s focus feature](https://jasmine.github.io/2.1/focused_specs.html).
+
+
+### Generators
+
+##### Setup Generators (required)
+
+> This is a temporary step, likely to be removed in the future
+```bash
+yarn run bootstrap.generators
+```
+
+##### Pattern Generator
+
+This generator will help you create new patterns
+
+```bash
+yarn run new.pattern
+```
 
 # Publishing
+Publish assets
+```sh
+yarn run publish.assets
+```
 
-To publish the assets use the script in `yarn run publish.assets`
+Publish documentation
+```sh
+yarn run publish.docs
+```
 
-To publish the documentation use the script in `yarn run publish.docs`
-
-To publish the packages use the script in `yarn run publish.packages`
+Publish packages
+```sh
+yarn run publish.packages
+```
