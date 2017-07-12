@@ -24,13 +24,14 @@ export function updateVisualStateOfAll({ formName }) {
   return { type: UPDATE_VISUAL_STATE_OF_ALL, formName };
 }
 
-export function initializeFieldState({ value, fieldName, onValidState, formName }) {
+export function initializeFieldState({ value, fieldName, onValidState, formName, enabledValidators }) {
   return {
     type: INITIALIZE_FIELD,
     fieldName,
     value,
     onValidState,
-    formName
+    formName,
+    enabledValidators
   };
 }
 

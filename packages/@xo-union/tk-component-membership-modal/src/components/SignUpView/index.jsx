@@ -11,7 +11,7 @@ import { autobind } from 'core-decorators';
 import { inject } from 'mobx-react';
 import { getFormName } from '@utilities/stateManagement';
 
-const { Form, Field } = createFormComponents({ name: getFormName('sign-up') })
+const { Form, Field } = createFormComponents({ name: getFormName('sign-up') });
 
 @inject('membership')
 export default class SignUpContainer extends Component {
@@ -55,6 +55,9 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
             name="email"
 
             /* Validation props */
+            validates={[
+              'required'
+            ]}
             onValidState="neutral"
             validationMessage="Must be a valid email"
             type="email"

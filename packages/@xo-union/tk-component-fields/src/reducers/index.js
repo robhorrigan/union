@@ -12,8 +12,9 @@ const initialState = {
   fields: {}
 };
 
-function changeReducer(oldState, { fieldName, value, enabledValidators = [] }, validators) {
+function changeReducer(oldState, { fieldName, value }, validators) {
   const errors = [];
+  const { enabledValidators } = oldState.fields[fieldName];
   const newState = {
     ...oldState,
     fields: {
@@ -29,7 +30,7 @@ function changeReducer(oldState, { fieldName, value, enabledValidators = [] }, v
   Object.keys(validators::keep(...enabledValidators)).forEach((validatorName) => {
     const validator = validators[validatorName];
 
-    const result = validator(fieldName, value, /* messageOverride */);
+    const result = validator({ name: fieldName, value });
 
     if (result !== null) {
       errors.push({
@@ -79,8 +80,8 @@ function updateVisualStateOfAllReducer(oldState) {
 function initializeFieldReducer(oldState, {
   fieldName,
   onValidState,
-  errors,
-  value
+  value,
+  enabledValidators
 }) {
   return {
     ...oldState,
@@ -89,7 +90,9 @@ function initializeFieldReducer(oldState, {
       [fieldName]: {
         ...oldState.fields[fieldName],
         onValidState,
-        errors: []
+        enabledValidators,
+        value,
+        errors: [],
       }
     }
   };
@@ -112,7 +115,7 @@ export default function createFormReducers(forms) {
         case UPDATE_VISUAL_STATE_OF_ALL:
           return updateVisualStateOfAllReducer(oldState);
         case INITIALIZE_FIELD:
-          return initializeFieldReducer(oldState, action)
+          return initializeFieldReducer(oldState, action);
         default:
           return oldState;
       }

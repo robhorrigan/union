@@ -11,6 +11,7 @@ import {
   initializeFieldState
 } from '@actions/fields';
 import { getFormName } from '@utilities/stateManagement';
+import { getErrorMessages } from '@models/field';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -23,7 +24,8 @@ function mapStateToProps(state, { ownedBy, name }) {
 
   return {
     value: fieldState.value,
-    state: fieldState.visualState
+    state: fieldState.visualState,
+    validationMessage: fieldState::getErrorMessages()[0]
   };
 }
 
@@ -31,7 +33,8 @@ function mapDispatchToProps(dispatch, {
   value,
   ownedBy: formName,
   name: fieldName,
-  onValidState = 'valid'
+  onValidState = 'valid',
+  validates = []
 }) {
   return {
     initializeState() {
@@ -39,7 +42,8 @@ function mapDispatchToProps(dispatch, {
         onValidState,
         value,
         formName,
-        fieldName
+        fieldName,
+        enabledValidators: validates
       }));
     },
     onChange({ currentTarget }) {
@@ -52,7 +56,7 @@ function mapDispatchToProps(dispatch, {
       }));
     },
     onBlur() {
-      dispatch(updateVisualState({ fieldName, formName }))
+      dispatch(updateVisualState({ fieldName, formName }));
     }
   };
 }
