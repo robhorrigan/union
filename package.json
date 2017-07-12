@@ -78,6 +78,7 @@
     "react-redux": "^5.0.5",
     "react-router": "^3.0.5",
     "redux": "^3.7.1",
+    "redux-logger": "^3.0.6",
     "split-array": "^1.0.1",
     "whatwg-fetch": "^2.0.3",
     "xojs": "^0.5.0"

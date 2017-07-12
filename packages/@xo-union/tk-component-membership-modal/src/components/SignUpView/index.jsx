@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
 import style from '@xo-union/tk-component-membership-modal/lib/css';
 import {
-  Form,
-  Field,
+  createFormComponents,
   FieldGroup,
   HiddenField
 } from '@xo-union/tk-component-fields';
@@ -10,6 +9,9 @@ import { Button } from '@xo-union/tk-component-buttons';
 import { NewWindowAnchor } from '@xo-union/component-standard-elements/lib/anchor';
 import { autobind } from 'core-decorators';
 import { inject } from 'mobx-react';
+import { getFormName } from '@utilities/stateManagement';
+
+const { Form, Field } = createFormComponents({ name: getFormName('sign-up') })
 
 @inject('membership')
 export default class SignUpContainer extends Component {
@@ -53,6 +55,7 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
             name="email"
 
             /* Validation props */
+            onValidState="neutral"
             validationMessage="Must be a valid email"
             type="email"
             required
@@ -66,6 +69,7 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
             label="Password (6 or more characters)"
 
             /* Validation props */
+            onValidState="neutral"
             validationMessage="Must be at least 6 characters long"
             minLength="6"
             required

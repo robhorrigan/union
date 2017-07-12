@@ -3,21 +3,22 @@ import PropTypes from 'prop-types';
 import FormTheme from '../FormTheme';
 import Field from '../Field';
 import { autobind } from 'core-decorators';
-import FormData from './FormData';
-import { Provider } from 'mobx-react';
-import { connect } from 'react-redux';
-import { updateVisualStateOfAll } from '../../actions';
 
-function mapStateToProps(state) {
+import { connect } from 'react-redux';
+import { updateVisualStateOfAll } from '@actions/fields';
+import { isValid } from '@models/form';
+import { getFormName } from '@utilities/stateManagement';
+
+function mapStateToProps(state, { name }) {
   return {
-    isValid: state.membershipForm.isValid
+    isValid: state[getFormName(name)]::isValid()
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch, { name: formName }) {
   return {
     handleInvalidSubmit: () => {
-      dispatch(updateVisualStateOfAll());
+      dispatch(updateVisualStateOfAll({ formName }));
     }
   };
 }
@@ -46,22 +47,14 @@ export default class FormContainer extends Component {
   }
 
   render() {
-    const { onSubmit, ...props } = this.props;
+    const { onSubmit, theme, children, ...props } = this.props;
 
     return (
-      <Provider formData={this.formData}>
-        <Form onSubmit={this.handleSubmit} {...props} />
-      </Provider>
+      <form noValidate onSubmit={this.handleSubmit} {...props}>
+        <FormTheme name={theme}>
+          {children}
+        </FormTheme>
+      </form>
     );
   }
-}
-
-function Form({ children, theme, ...props }) {
-  return (
-    <form noValidate {...props}>
-      <FormTheme name={theme}>
-        {children}
-      </FormTheme>
-    </form>
-  );
 }

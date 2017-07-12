@@ -5,6 +5,7 @@ import { Button } from '@xo-union/tk-component-buttons';
 import { TheKnotLogo } from '@xo-union/tk-component-icons';
 import { autobind } from 'core-decorators';
 import { inject } from 'mobx-react';
+import { getFormName } from '@utilities/stateManagement';
 
 @inject('membership')
 export default class LogInContainer extends Component {
@@ -35,7 +36,7 @@ function LogIn({ onClickSignUp, onSubmit }) {
       <div className={style['log-in-header']}>
         Log into <TheKnotLogo />
       </div>
-      <Form onSubmit={onSubmit}>
+      <Form name={getFormName('log-in')} onSubmit={onSubmit}>
         <FieldGroup>
           <Field name="email" label="Your email address" />
         </FieldGroup>

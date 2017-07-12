@@ -15,7 +15,10 @@ function doNotStartWith(patterns) {
 export default function allPackages() {
   return doNotStartWith([
     '.',
-    '@shared',
+    '@models',
+    '@components',
+    '@actions',
+    '@utilities',
     ...Object.keys(resolveDefaults.alias)
   ]);
 }
