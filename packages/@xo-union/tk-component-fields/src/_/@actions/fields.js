@@ -32,10 +32,10 @@ export function updateVisualStateOfAll({ formName }) {
   return { type: UPDATE_VISUAL_STATE_OF_ALL, formName };
 }
 
+
 export function initializeField({
   fieldName,
   formName,
-  errors,
   value,
   onValidState,
   enabledValidators
@@ -52,7 +52,6 @@ export function initializeField({
         enabledValidators
       },
       model: {
-        errors,
         value
       }
     }

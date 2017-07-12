@@ -1,4 +1,3 @@
-import keep from 'xojs/lib/object/keep';
 import dig from 'xojs/lib/object/dig';
 import {
   CHANGE,
@@ -9,116 +8,12 @@ import {
 import { visualState } from '@models/field';
 import { getFormName } from '@utilities/stateManagement';
 
-const formInitialState = {
-  fields: {}
-};
+import changeReducer from './changeReducer';
+import initializeFieldReducer from './initializeFieldReducer';
+import updateVisualStateReducer from './updateVisualStateReducer';
+import updateVisualStateOfAllReducer from './updateVisualStateOfAllReducer';
 
-const fieldInitialState = {
-  config: {
-    enabledValidators: [],
-    onValidVisualState: 'valid'
-  },
-  model: {
-    value: '',
-    errors: []
-  },
-  ui: {
-    currentErrorMessage: '',
-    visualState: 'neutral'
-  }
-};
-
-function errorsReducer({ enabledValidators }, { meta, payload }, validators) {
-  const errors = [];
-  const { fieldName } = meta;
-  const { value } = payload;
-
-  Object.keys(validators::keep(...enabledValidators)).forEach((validatorName) => {
-    const { validate, createMessage } = validators[validatorName];
-
-    if (!validate(value)) {
-      errors.push({
-        validator: validatorName,
-        message: createMessage({ name: fieldName, value })
-      });
-    }
-  });
-
-  return errors;
-}
-
-function changeReducer(oldState, action, validators) {
-  const { value } = action.payload;
-  const { fieldName } = action.meta;
-  const oldFieldState = oldState[fieldName];
-
-  return {
-    ...oldState,
-    [fieldName]: {
-      ...oldFieldState,
-      model: {
-        errors: errorsReducer(oldFieldState, action, validators),
-        value
-      }
-    }
-  };
-}
-
-function updateVisualStateReducer(oldState, { meta: { fieldName } }) {
-  const oldFieldState = oldState[fieldName];
-
-  return {
-    ...oldState,
-    [fieldName]: {
-      ...oldFieldState,
-      ui: {
-        visualState: oldFieldState::visualState()
-      }
-    }
-  };
-}
-
-function updateVisualStateOfAllReducer(oldState) {
-  const newFieldsState = {};
-
-  Object.keys(oldState.fields).forEach((fieldName) => {
-    newFieldsState[fieldName] = {
-      ...oldState.fields[fieldName],
-      visualState: oldState.fields[fieldName]::visualState()
-    };
-  });
-
-  const newState = {
-    ...oldState,
-    fields: newFieldsState
-  };
-
-
-  return newState;
-}
-
-function initializeFieldReducer(oldState, {
-  payload,
-  meta: { fieldName }
-}) {
-  return {
-    ...oldState,
-    [fieldName]: {
-      model: {
-        ...fieldInitialState.model,
-        ...payload.model
-      },
-      ui: {
-        ...fieldInitialState.ui,
-        ...payload.ui
-      },
-      config: {
-        ...fieldInitialState.config,
-        ...payload.config
-      }
-    }
-  };
-}
+import formInitialState from './formInitialState';
 
 export default function createFormReducers(forms) {
   const reducers = {};
@@ -133,7 +28,7 @@ export default function createFormReducers(forms) {
         case INITIALIZE_FIELD:
           return {
             ...oldState,
-            fields: initializeFieldReducer(oldState.fields, action)
+            fields: initializeFieldReducer(oldState.fields, action, validators)
           };
         case CHANGE:
           return {

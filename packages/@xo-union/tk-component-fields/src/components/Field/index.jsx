@@ -11,7 +11,6 @@ import {
   initializeField
 } from '@actions/fields';
 import { getFormName } from '@utilities/stateManagement';
-import { getErrorMessages } from '@models/field';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -36,9 +35,9 @@ function mapDispatchToProps(dispatch, {
   value,
   ownedBy: formName,
   name: fieldName,
-  onValidState = 'valid',
-  validates = [],
-  errors = []
+  onValidState,
+  validates,
+  errors
 }) {
   return {
     initializeState() {
@@ -47,7 +46,8 @@ function mapDispatchToProps(dispatch, {
         onValidVisualState: onValidState,
         value,
         formName,
-        enabledValidators: validates
+        enabledValidators: validates,
+        errors
       }));
     },
     onChange({ currentTarget }) {

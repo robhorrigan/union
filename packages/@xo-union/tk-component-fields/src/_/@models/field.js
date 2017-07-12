@@ -3,6 +3,5 @@ export function visualState() {
 }
 
 export function getErrorMessages() {
-  console.log(this);
   return (this.model.errors || []).map(({ message }) => message);
 }

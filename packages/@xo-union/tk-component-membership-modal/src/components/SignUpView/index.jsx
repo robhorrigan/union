@@ -56,10 +56,10 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
             type="email"
 
             /* Validation props */
-            validates={[
-              'required',
-              'email'
-            ]}
+            validates={{
+              required: true,
+              email: true
+            }}
             onValidState="neutral"
           />
         </FieldGroup>
@@ -69,12 +69,13 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
             name="password"
             type="password"
             label="Password (6 or more characters)"
-
+          
             /* Validation props */
             onValidState="neutral"
-            validationMessage="Must be at least 6 characters long"
-            minLength="6"
-            required
+            validates={{
+              required: true,
+              minLength: 6
+            }}
           />
         </FieldGroup>
 
