@@ -29,7 +29,12 @@ export function updateVisualState({ fieldName, formName }) {
 }
 
 export function updateVisualStateOfAll({ formName }) {
-  return { type: UPDATE_VISUAL_STATE_OF_ALL, formName };
+  return {
+    type: UPDATE_VISUAL_STATE_OF_ALL,
+    meta: {
+      formName
+    }
+  };
 }
 
 

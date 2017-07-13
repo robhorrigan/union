@@ -15,6 +15,36 @@ import updateVisualStateOfAllReducer from './updateVisualStateOfAllReducer';
 
 import formInitialState from './formInitialState';
 
+const fieldReducerMap = {
+  [INITIALIZE_FIELD]: initializeFieldReducer,
+  [CHANGE]: changeReducer,
+  [UPDATE_VISUAL_STATE]: updateVisualStateReducer,
+};
+
+function individualFieldReducer(oldState, action, validators) {
+  const dedicatedReducer = fieldReducerMap[action.type];
+
+  if (dedicatedReducer) {
+    return dedicatedReducer(oldState, action, validators);
+  }
+
+  return oldState
+}
+
+function fieldsReducer(oldState, action, validators) {
+  const { fieldName } = action.meta;
+
+  switch (action.type) {
+    case UPDATE_VISUAL_STATE_OF_ALL:
+      return updateVisualStateOfAllReducer(oldState);
+    default:
+      return {
+        ...oldState,
+        [fieldName]: individualFieldReducer(oldState[fieldName], action, validators)
+      };
+  }
+}
+
 export default function createFormReducers(forms) {
   const reducers = {};
 
@@ -24,27 +54,9 @@ export default function createFormReducers(forms) {
         return oldState;
       }
 
-      switch (action.type) {
-        case INITIALIZE_FIELD:
-          return {
-            ...oldState,
-            fields: initializeFieldReducer(oldState.fields, action, validators)
-          };
-        case CHANGE:
-          return {
-            ...oldState,
-            fields: changeReducer(oldState.fields, action, validators)
-          }
-        case UPDATE_VISUAL_STATE:
-          return {
-            ...oldState,
-            fields: updateVisualStateReducer(oldState.fields, action)
-          }
-        case UPDATE_VISUAL_STATE_OF_ALL:
-          return updateVisualStateOfAllReducer(oldState);
-        default:
-          return oldState;
-      }
+      return {
+        fields: fieldsReducer(oldState.fields, action, validators)
+      };
     };
   });
 

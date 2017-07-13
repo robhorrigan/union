@@ -1,7 +1,7 @@
 import errorsReducer from './errorsReducer';
 
 export default function changeReducer(oldState, action, validators) {
-  const { 
+  const {
     payload: {
       model: { value }
     },
@@ -9,16 +9,13 @@ export default function changeReducer(oldState, action, validators) {
       fieldName
     }
   } = action;
-  const oldFieldState = oldState[fieldName];
 
   return {
     ...oldState,
-    [fieldName]: {
-      ...oldFieldState,
-      model: {
-        errors: errorsReducer(oldFieldState, action, validators),
-        value
-      }
+    model: {
+      ...oldState.model,
+      errors: errorsReducer(oldState, action, validators),
+      value
     }
   };
 }

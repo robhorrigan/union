@@ -9,7 +9,7 @@ export default function errorsReducer({ config }, { meta, payload }, validators)
   Object.keys(enabledValidators).forEach((validatorName) => {
     const validatorConfig = enabledValidators[validatorName];
     const { validate, createMessage } = validators[validatorName];
-    
+
     if (!validate(value, validatorConfig)) {
       errors.push({
         validator: validatorName,

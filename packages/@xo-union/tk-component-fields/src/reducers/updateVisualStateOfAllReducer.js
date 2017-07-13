@@ -1,19 +1,17 @@
 import { visualState } from '@models/field';
+import updateVisualStateReducer from './updateVisualStateReducer';
 
 export default function updateVisualStateOfAllReducer(oldState) {
-  const newFieldsState = {};
+  const newState = {};
 
-  Object.keys(oldState.fields).forEach((fieldName) => {
-    newFieldsState[fieldName] = {
-      ...oldState.fields[fieldName],
-      visualState: oldState.fields[fieldName]::visualState()
-    };
+  Object.keys(oldState).forEach((fieldName) => {
+    newState[fieldName] = updateVisualStateReducer(oldState[fieldName], {
+      meta: {
+        fieldName
+      }
+    });
   });
 
-  const newState = {
-    ...oldState,
-    fields: newFieldsState
-  };
 
   return newState;
 }
