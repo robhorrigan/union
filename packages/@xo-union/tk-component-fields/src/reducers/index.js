@@ -8,42 +8,8 @@ import {
 import { visualState } from '@models/field';
 import { getFormName } from '@utilities/stateManagement';
 
-import changeReducer from './changeReducer';
-import initializeFieldReducer from './initializeFieldReducer';
-import updateVisualStateReducer from './updateVisualStateReducer';
-import updateVisualStateOfAllReducer from './updateVisualStateOfAllReducer';
-
+import fieldsReducer from './fieldsReducer';
 import formInitialState from './formInitialState';
-
-const fieldReducerMap = {
-  [INITIALIZE_FIELD]: initializeFieldReducer,
-  [CHANGE]: changeReducer,
-  [UPDATE_VISUAL_STATE]: updateVisualStateReducer,
-};
-
-function individualFieldReducer(oldState, action, validators) {
-  const dedicatedReducer = fieldReducerMap[action.type];
-
-  if (dedicatedReducer) {
-    return dedicatedReducer(oldState, action, validators);
-  }
-
-  return oldState
-}
-
-function fieldsReducer(oldState, action, validators) {
-  const { fieldName } = action.meta;
-
-  switch (action.type) {
-    case UPDATE_VISUAL_STATE_OF_ALL:
-      return updateVisualStateOfAllReducer(oldState);
-    default:
-      return {
-        ...oldState,
-        [fieldName]: individualFieldReducer(oldState[fieldName], action, validators)
-      };
-  }
-}
 
 export default function createFormReducers(forms) {
   const reducers = {};
