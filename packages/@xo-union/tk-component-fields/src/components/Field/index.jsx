@@ -8,7 +8,7 @@ import { connect } from 'react-redux';
 import {
   change,
   updateVisualState,
-  initializeFieldState
+  initializeField
 } from '@actions/fields';
 import { getFormName } from '@utilities/stateManagement';
 import { getErrorMessages } from '@models/field';
@@ -20,12 +20,15 @@ const classMap = {
 };
 
 function mapStateToProps(state, { ownedBy, name }) {
-  const fieldState = state[getFormName(ownedBy)].fields[name] || {};
+  const fieldState = state[getFormName(ownedBy)].fields[name] || {
+    ui: {},
+    model: {}
+  };
 
   return {
-    value: fieldState.value,
-    state: fieldState.visualState,
-    validationMessage: fieldState::getErrorMessages()[0]
+    value: fieldState.model.value,
+    state: fieldState.ui.visualState,
+    validationMessage: fieldState.ui.currentErrorMessage
   };
 }
 
@@ -34,15 +37,16 @@ function mapDispatchToProps(dispatch, {
   ownedBy: formName,
   name: fieldName,
   onValidState = 'valid',
-  validates = []
+  validates = [],
+  errors = []
 }) {
   return {
     initializeState() {
-      dispatch(initializeFieldState({
-        onValidState,
+      dispatch(initializeField({
+        fieldName,
+        onValidVisualState: onValidState,
         value,
         formName,
-        fieldName,
         enabledValidators: validates
       }));
     },

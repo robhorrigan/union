@@ -6,17 +6,25 @@ export const INITIALIZE_FIELD           = '@xo-union/tk-component-fields/INITIAL
 export function change({ fieldName, value, formName }) {
   return {
     type: CHANGE,
-    fieldName,
-    value,
-    formName
+    meta: {
+      fieldName,
+      formName
+    },
+    payload: {
+      model: {
+        value
+      }
+    }
   };
 }
 
 export function updateVisualState({ fieldName, formName }) {
   return {
     type: UPDATE_VISUAL_STATE,
-    fieldName,
-    formName
+    meta: {
+      fieldName,
+      formName
+    }
   };
 }
 
@@ -24,14 +32,30 @@ export function updateVisualStateOfAll({ formName }) {
   return { type: UPDATE_VISUAL_STATE_OF_ALL, formName };
 }
 
-export function initializeFieldState({ value, fieldName, onValidState, formName, enabledValidators }) {
+export function initializeField({
+  fieldName,
+  formName,
+  errors,
+  value,
+  onValidState,
+  enabledValidators
+}) {
   return {
     type: INITIALIZE_FIELD,
-    fieldName,
-    value,
-    onValidState,
-    formName,
-    enabledValidators
+    meta: {
+      fieldName,
+      formName
+    },
+    payload: {
+      config: {
+        onValidVisualState: onValidState,
+        enabledValidators
+      },
+      model: {
+        errors,
+        value
+      }
+    }
   };
 }
 

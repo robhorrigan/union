@@ -1,7 +1,8 @@
 export function visualState() {
-  return this.errors.length === 0 ? this.onValidState : 'invalid';
+  return this.model.errors.length === 0 ? this.config.onValidState : 'invalid';
 }
 
 export function getErrorMessages() {
-  return (this.errors || []).map(({ message }) => message);
+  console.log(this);
+  return (this.model.errors || []).map(({ message }) => message);
 }

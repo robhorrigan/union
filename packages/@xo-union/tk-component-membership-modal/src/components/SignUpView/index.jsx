@@ -53,15 +53,14 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
         <FieldGroup>
           <Field
             name="email"
+            type="email"
 
             /* Validation props */
             validates={[
-              'required'
+              'required',
+              'email'
             ]}
             onValidState="neutral"
-            validationMessage="Must be a valid email"
-            type="email"
-            required
           />
         </FieldGroup>
 

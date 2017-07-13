@@ -6,16 +6,21 @@ function capitalize() {
 }
 
 const validators = {
-  required({
-    name,
-    value = '',
-    messageOverride = ''
-  }) {
-    if (value.length === 0) {
-      return messageOverride || `${name::capitalize()} is required`;
+  required: {
+    createMessage({ name }) {
+      return `${name::capitalize()} is required`;
+    },
+    validate(value = '') {
+      return value.length > 0;
     }
-
-    return null;
+  },
+  email: {
+    createMessage() {
+      return `Must be a valid email.`
+    },
+    validate(value = '') {
+      return /@.+\..+/.test(value);
+    }
   }
 };
 
