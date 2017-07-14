@@ -1,0 +1,12 @@
+{
+  "name": "@xo-union/tk-css-grid",
+  "version": "0.1.0",
+  "main": "lib/index.cssm",
+  "dependencies": {
+    "css-module-builder": "^1.0.0-beta.7",
+    "@xo-union/tk-css-typography": "^1.0.0"
+  },
+  "files": [
+    "lib/*"
+  ]
+}

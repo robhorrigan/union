@@ -1,5 +1,5 @@
 @value ( var-safe-gray-5 ) from '@xo-union/tk-css-colors';
-@value ( row ) from '@xo-union/tk-css-bootstrap/lib/grid';
+@value ( row ) from '@xo-union/tk-css-grid';
 
 .nav-item-text {
   composes: sans-serif font-down-1 from '@xo-union/tk-css-typography';

@@ -4,7 +4,7 @@
   "main": "lib/index.js",
   "dependencies": {
     "@xo-union/tk-component-icons": "^0.4.4",
-    "@xo-union/tk-css-bootstrap": "^1.0.0",
+    "@xo-union/tk-css-grid": "^0.1.0",
     "@xo-union/tk-css-colors": "^1.0.0",
     "@xo-union/tk-css-spacing": "^0.2.0",
     "@xo-union/tk-css-typography": "^1.0.0",

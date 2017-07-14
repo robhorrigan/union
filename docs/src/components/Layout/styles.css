@@ -1,4 +1,4 @@
 .article {
-  composes: container from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: container from '@xo-union/tk-css-grid';
   composes: py-up-2 from '@xo-union/tk-css-spacing';
 }

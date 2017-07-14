@@ -1,5 +1,5 @@
 import React from 'react';
-import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
+import bsGrid from '@xo-union/tk-css-grid';
 import { Link, Button } from '@xo-union/tk-component-buttons';
 import Demo from '@components/Demo';
 

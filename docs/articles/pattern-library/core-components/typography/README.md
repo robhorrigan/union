@@ -82,7 +82,7 @@ All exported variables follow the naming convention of: `var-fs-{scale-name}`.
 
 ## Class composition example
 
-All exported classes follow the naming convention of: `font-{breakpoint}-{scale-name}` where the `breakpoint` is optional. 
+All exported classes follow the naming convention of: `font-{breakpoint}-{scale-name}` where the `breakpoint` is optional.
 
 ```css
 .my-class {
@@ -117,7 +117,7 @@ All font-scale (`font-{scale-name}`) utility classes are immutable. This means t
 }
 ```
 
-When you need a mutable css object, use the spacing variables instead.
+When you need a mutable css object, use the typography variables instead.
 
 ```css
 @value ( var-fs-up-3, var-fs-up-2 ) from '@xo-union/tk-css-typography';

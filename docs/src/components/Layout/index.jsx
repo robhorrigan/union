@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
+import bsGrid from '@xo-union/tk-css-grid';
 import HeaderNav from '#docs/components/HeaderNav';
 
 import styles from './styles.css';

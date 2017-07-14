@@ -31,7 +31,7 @@ describe('distributed packages', () => {
     });
 
     Promise.all(promises).catch(fail).then(done);
-  }, 10e3);
+  }, 10e4);
 
   it('define the correct dependencies in package.json', (done) => {
     const promises = packages.map(async (packageObj) => {

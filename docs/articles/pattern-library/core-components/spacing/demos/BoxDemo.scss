@@ -1,13 +1,13 @@
 @value ( var-sp-up-4, var-sp-down-5 ) from '@xo-union/tk-css-spacing';
 
-@value ( container ) from '@xo-union/tk-css-bootstrap/lib/grid';
+@value ( container ) from '@xo-union/tk-css-grid';
 
 .row {
-  composes: row no-gutters from '@xo-union/tk-css-bootstrap/lib/grid'
+  composes: row no-gutters from '@xo-union/tk-css-grid'
 }
 
 .box-base {
-  composes: col col-sm-4 col-md-2 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: col col-sm-4 col-md-2 from '@xo-union/tk-css-grid';
   composes: p-down-3 mb-down-1 from '@xo-union/tk-css-spacing';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
   composes: font-down-1 from '@xo-union/tk-css-typography';
@@ -27,10 +27,10 @@
 .box-outline {
   composes: box-base;
   composes: fg-coral-lighter-20 from '@xo-union/tk-css-colors';
-  
+
   border: solid;
   border-width: var-sp-down-5;
-  
+
   ~ .box-outline {
     border-left: 0;
   }

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
+import bsGrid from '@xo-union/tk-css-grid';
 import spacing from '@xo-union/tk-css-spacing';
 
 /**

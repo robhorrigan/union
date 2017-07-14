@@ -13,7 +13,7 @@
 .business-section {
   composes: section section-links from './section';
   composes: align-bottom from '@xo-union/tk-css-utilities/lib/vertical-align';
-  composes: container-fuild from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: container-fuild from '@xo-union/tk-css-grid';
 
   background-color: non-standard-footer-gray;
 }
@@ -47,12 +47,12 @@
 }
 
 .copyright-col {
-  composes: col-12 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: col-12 from '@xo-union/tk-css-grid';
 }
 
 .copyright-nav-item {
   composes: show-sm;
-  composes: row from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: row from '@xo-union/tk-css-grid';
 
 }
 
@@ -82,7 +82,7 @@
 }
 
 .business-col {
-  composes: col-5 col-md-10 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: col-5 col-md-10 from '@xo-union/tk-css-grid';
   composes: mx-auto from '@xo-union/tk-css-spacing';
   composes: text-left text-md-center from '@xo-union/tk-css-typography/lib/utilities';
 }

@@ -10,7 +10,7 @@ import {
   TextareaWithoutLabel
 } from '@xo-union/tk-component-fields';
 
-import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
+import bsGrid from '@xo-union/tk-css-grid';
 import styles from './styles.css';
 
 const themeClassMap = {

@@ -1,18 +1,18 @@
 .custom-row {
   composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
-  composes: row from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: row from '@xo-union/tk-css-grid';
   composes: m-auto from '@xo-union/tk-css-spacing';
 }
 
 .custom-col {
-  composes: col-md-4 col-6 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: col-md-4 col-6 from '@xo-union/tk-css-grid';
   composes: section section-links from './section';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
   composes: py-down-3 px-down-1 from '@xo-union/tk-css-spacing';
 }
 
 .custom-section {
-  composes: col-md-8 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: col-md-8 from '@xo-union/tk-css-grid';
   composes: mx-auto from '@xo-union/tk-css-spacing';
 }
 
