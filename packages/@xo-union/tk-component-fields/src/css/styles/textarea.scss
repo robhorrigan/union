@@ -1,26 +1,19 @@
-<<<<<<< HEAD
-@value ( black, gray-6, green-lighter-80 ) from '@xo-union/tk-css-colors';
-@value ( font-up-1 ) from '@xo-union/tk-css-typography/lib/sizes';
-@value (
-  spacing-down-1,
-  spacing-down-3,
-  spacing-down-5,
-  spacing-up-2
-) from '@xo-union/tk-css-spacing/lib/variables';
-@value ( spacer-x ) from '../shared/spacing';
-@value ( red-border ) from '../shared/borders';
-=======
 @value ( var-gray-6 ) from '@xo-union/tk-css-colors';
 @value ( var-fs-up-1 ) from '@xo-union/tk-css-typography';
->>>>>>> origin/master
+@value (
+  var-sp-down-1,
+  var-sp-down-3,
+  var-sp-down-5,
+  var-sp-up-2
+) from '@xo-union/tk-css-spacing';
 
 .textarea {
   composes: radius-reset from '../shared/resets';
   composes: field-base from '../styles/field-base.scss';
-  padding-top: spacing-down-1;
-  padding-right: spacing-down-1;
-  padding-bottom: spacing-down-3;
-  padding-left: spacing-down-1;
+  padding-top: var-sp-down-1;
+  padding-right: var-sp-down-1;
+  padding-bottom: var-sp-down-3;
+  padding-left: var-sp-down-1;
 
   outline: 0;
   composes: fg-black from '@xo-union/tk-css-colors';
@@ -42,23 +35,22 @@
 
 .invalid-textarea {
   composes: textarea;
-  composes: red-lighter-90-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: disable-interactive-states from './field-base';
+  composes: bg-red-lighter-90 from '@xo-union/tk-css-colors';
 
-  // Annoying that !important is
-  // necessary for this to work
-  border: red-border !important;
-  transition: all 0.2s ease-out 1.5s;
+  transition: background-color 0.2s ease-out 1.5s;
 }
 
 .valid-textarea {
   composes: textarea;
-  composes: green-lighter-80-bg from '@xo-union/tk-css-colors/lib/utilities';
-  border-color: green-lighter-80 !important;
+  composes: bg-green-lighter-80 from '@xo-union/tk-css-colors';
+  composes: disable-interactive-states from './field-base';
 }
 
 .textarea-requirements {
-  composes: red-bg white-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-red fg-white from '@xo-union/tk-css-colors';
   composes: font-down-2 from '@xo-union/tk-css-typography';
+
   max-height: 0;
   overflow: hidden;
   transition: all 0.2s ease-out 1.5s;
@@ -68,7 +60,7 @@
 .invalid-textarea ~ .textarea-requirements {
   max-height: 200px;
   
-  padding: spacing-down-3 spacing-down-1;
+  padding: var-sp-down-3 var-sp-down-1;
 }
 
 .textarea-label {
@@ -79,7 +71,7 @@
   z-index: 1;
 
   & + .textarea {
-    padding-top: spacing-up-2;
-    padding-bottom: spacing-down-5;
+    padding-top: var-sp-up-2;
+    padding-bottom: var-sp-down-5;
   }
 }
