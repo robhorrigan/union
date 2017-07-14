@@ -1,12 +1,12 @@
 {
   "name": "@xo-union/tk-component-footer-nav",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "main": "lib/index.js",
   "dependencies": {
     "@xo-union/component-standard-elements": "^0.1.2",
     "@xo-union/tk-component-analytics": "^0.4.0",
     "@xo-union/tk-component-icons": "^0.4.4",
-    "@xo-union/tk-css-bootstrap": "^1.0.0",
+    "@xo-union/tk-css-bootstrap": "^2.0.0",
     "@xo-union/tk-css-colors": "^1.0.0",
     "@xo-union/tk-css-grid": "^0.1.0",
     "@xo-union/tk-css-spacing": "^0.2.0",

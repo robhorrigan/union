@@ -1,12 +1,12 @@
 {
   "name": "@xo-union/tk-component-header-nav",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "main": "lib/index.js",
   "dependencies": {
     "@xo-union/tk-component-analytics": "^0.4.0",
     "@xo-union/tk-component-buttons": "^0.1.15",
     "@xo-union/tk-component-icons": "^0.4.4",
-    "@xo-union/tk-css-bootstrap": "^1.0.0",
+    "@xo-union/tk-css-bootstrap": "^2.0.0",
     "@xo-union/tk-css-colors": "^1.0.0",
     "@xo-union/tk-css-spacing": "^0.2.0",
     "@xo-union/tk-css-typography": "^1.0.0",
