@@ -16,7 +16,7 @@ export const coreValidators = {
       return `Must be a valid email.`
     },
     validate(value = '') {
-      return /@.+\..+/.test(value);
+      return /[^.]+@[^.]+\.[^.]+/.test(value);
     }
   },
   minLength: {

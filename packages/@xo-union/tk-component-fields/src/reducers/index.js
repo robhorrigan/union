@@ -1,20 +1,15 @@
 import dig from 'xojs/lib/object/dig';
-import {
-  CHANGE,
-  UPDATE_VISUAL_STATE,
-  UPDATE_VISUAL_STATE_OF_ALL,
-  INITIALIZE_FIELD
-} from '@actions/fields';
 import { visualState } from '@models/field';
 import { getFormName } from '@utilities/stateManagement';
+import { coreValidators } from '@xo-union/tk-component-fields/lib/validations';
 
 import fieldsReducer from './fieldsReducer';
 import formInitialState from './formInitialState';
 
-export default function createFormReducers(forms) {
+export default function createFormReducers(forms, { validators = coreValidators } = {}) {
   const reducers = {};
 
-  forms.forEach(({ name, validators }) => {
+  forms.forEach((name) => {
     reducers[getFormName(name)] = function formReducer(oldState = formInitialState, action) {
       if (action::dig('meta', 'formName') !== name) {
         return oldState;
