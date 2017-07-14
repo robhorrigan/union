@@ -5,12 +5,17 @@
 @value ( dropdown-item, dropdown-item-check ) from './styles/dropdown-item';
 
 @value (
+  invalid-textarea,
+  valid-textarea,
+  textarea-requirements
+) from './styles/textarea';
+
+@value (
   /* Themeble classes */
   field,
   dropdown-field,
   dropdown-list,
-  textarea-with-label,
-  textarea-without-label,
+  textarea,
   textarea-label,
   dropdown-item-is-selected,
   /* Themes */

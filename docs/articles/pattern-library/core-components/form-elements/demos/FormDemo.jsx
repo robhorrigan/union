@@ -6,8 +6,7 @@ import {
   Field,
   Dropdown,
   DropdownItem,
-  Textarea,
-  TextareaWithoutLabel
+  Textarea
 } from '@xo-union/tk-component-fields';
 
 import bsGrid from '@xo-union/tk-css-bootstrap/lib/grid';
@@ -118,13 +117,13 @@ export default class FormDemo extends Component {
 
             <FieldGroup>
               <div className={bsGrid.col12}>
-                <Textarea name="optional-message" />
+                <Textarea name="optional-message" label="Optional Message" />
               </div>
             </FieldGroup>
 
             <FieldGroup>
               <div className={bsGrid.col12}>
-                <TextareaWithoutLabel name="optional-message" rows="5" placeholder={textareaText} />
+                <Textarea name="optional-message" rows="5" placeholder={textareaText} />
               </div>
             </FieldGroup>
           </FormContainer>

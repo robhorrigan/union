@@ -1,6 +1,6 @@
 ---
 $imports:
-  '{ Field, Dropdown, DropdownItem, Textarea, TextareaWithoutLabel, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
+  '{ Field, Dropdown, DropdownItem, Textarea, FieldGroup, FormTheme }': '@xo-union/tk-component-fields'
   bsGrid: '@xo-union/tk-css-bootstrap/lib/grid'
   spacing: '@xo-union/tk-css-spacing'
 
@@ -16,7 +16,6 @@ $imports:
   FieldGroupMeta:           '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/FieldGroup'
   FormThemeMeta:            '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/FormTheme'
   TextareaMeta:             '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/Textarea'
-  TextareaWithoutLabelMeta: '!!react-docgen-loader!@xo-union/tk-component-fields/src/components/TextareaWithoutLabel'
 
   FormDemo: './demos/FormDemo'
 ---
@@ -144,19 +143,19 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
 
 <PropTypesTable metadata={FieldGroupMeta.props} exclude={["default"]} />
 
-### Textarea Component(s)
+### Textarea Component
 
 <p>{TextareaMeta.description}</p>
 
 <Demo cssDependencies={{ bsGrid }}>
   <FormTheme>
-    <Textarea name="optional-message" />
+    <Textarea name="optional-message" label="Optional Message"/>
   </FormTheme>
 </Demo>
 
 <Demo cssDependencies={{ bsGrid }}>
   <FormTheme>
-    <TextareaWithoutLabel name="optional-message" placeholder="Optional message" />
+    <Textarea name="optional-message" placeholder="Optional message" />
   </FormTheme>
 </Demo>
 
@@ -165,3 +164,15 @@ import { Field, Dropdown, DropdownItem, Textarea, FormTheme } from '@xo-union/tk
 ##### Textarea
 
 <PropTypesTable metadata={TextareaMeta.props} />
+
+#### Invalid State
+
+<Demo>
+  <Textarea name="optional-message" label="Optional Message" state="invalid" validationMessage="Something went wrong" />
+</Demo>
+
+#### Successful State
+
+<Demo>
+  <Textarea name="optional-message" label="Optional Message" state="valid"/>
+</Demo>

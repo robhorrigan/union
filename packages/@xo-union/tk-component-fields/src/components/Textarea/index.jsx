@@ -1,18 +1,33 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import FieldsCss from '@xo-union/tk-component-fields/lib/css';
-import { labelize, fieldId } from '../../utilities';
+import { fieldId } from '../../utilities';
+
+const classMap = {
+  neutral: FieldsCss.textarea,
+  invalid: FieldsCss.invalidTextarea,
+  valid: FieldsCss.validTextarea
+};
 
 export default function Textarea({
   name,
-  label = labelize(name),
+  label,
+  state = 'neutral',
+  validationMessage,
   id = fieldId(name),
   ...props
 }) {
+  const inputClass = classMap[state];
+
+  if (!inputClass) {
+    throw new Error(`${state} state is not supported`);
+  }
+
   return (
     <div className={FieldsCss.container}>
-      <textarea className={FieldsCss.textareaWithLabel} id={id} name={name} {...props} />
-      <label className={FieldsCss.textareaLabel} htmlFor={id}>{ label }</label>
+      { label && <label className={FieldsCss.textareaLabel} htmlFor={id}>{ label }</label> }
+      <textarea className={inputClass} id={id} name={name} {...props} />
+      <div className={FieldsCss.textareaRequirements}>{validationMessage}</div>
     </div>
   );
 }
@@ -23,9 +38,17 @@ Textarea.propTypes = {
    **/
   name: PropTypes.string.isRequired,
   /**
-    * Override the default label (which is derived from the name)
+    * Text to display as label
     **/
   label: PropTypes.string,
+  /**
+   * Render state
+   */
+  state: PropTypes.oneOf(['neutral', 'valid', 'invalid']),
+  /**
+   * Validation message used when field is invalid
+   */
+  validationMessage: PropTypes.string,
   /**
     * Override the default id (which is derived from the name)
     **/

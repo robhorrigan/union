@@ -1,10 +1,21 @@
-@value ( black, gray-6 ) from '@xo-union/tk-css-colors';
-@value ( spacer-x ) from '../shared/spacing';
+@value ( black, gray-6, green-lighter-80 ) from '@xo-union/tk-css-colors';
 @value ( font-up-1 ) from '@xo-union/tk-css-typography/lib/sizes';
+@value (
+  spacing-down-1,
+  spacing-down-3,
+  spacing-down-5,
+  spacing-up-2
+) from '@xo-union/tk-css-spacing/lib/variables';
+@value ( spacer-x ) from '../shared/spacing';
+@value ( red-border ) from '../shared/borders';
 
 .textarea {
   composes: radius-reset from '../shared/resets';
   composes: field-base from '../styles/field-base.scss';
+  padding-top: spacing-down-1;
+  padding-right: spacing-down-1;
+  padding-bottom: spacing-down-3;
+  padding-left: spacing-down-1;
 
   outline: 0;
   color: black;
@@ -24,18 +35,46 @@
   }
 }
 
-.textarea-without-label {
+.invalid-textarea {
   composes: textarea;
-  composes: pt-down-1 px-down-1 pb-down-3 from '@xo-union/tk-css-spacing';
+  composes: red-lighter-90-bg from '@xo-union/tk-css-colors/lib/utilities';
+
+  // Annoying that !important is
+  // necessary for this to work
+  border: red-border !important;
+  transition: all 0.2s ease-out 1.5s;
 }
 
-.textarea-with-label {
+.valid-textarea {
   composes: textarea;
-  composes: pt-up-2 px-down-1 pb-down-5 from '@xo-union/tk-css-spacing';
+  composes: green-lighter-80-bg from '@xo-union/tk-css-colors/lib/utilities';
+  border-color: green-lighter-80 !important;
+}
+
+.textarea-requirements {
+  composes: red-bg white-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: font-down-2 from '@xo-union/tk-css-typography';
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.2s ease-out 1.5s;
+}
+
+/* Contextual styles */
+.invalid-textarea ~ .textarea-requirements {
+  max-height: 200px;
+  
+  padding: spacing-down-3 spacing-down-1;
 }
 
 .textarea-label {
   composes: small-label from '../styles/label';
   composes: ml-down-1 mt-down-1 from '@xo-union/tk-css-spacing';
   composes: black-fg from '@xo-union/tk-css-colors/lib/utilities';
+
+  z-index: 1;
+
+  & + .textarea {
+    padding-top: spacing-up-2;
+    padding-bottom: spacing-down-5;
+  }
 }

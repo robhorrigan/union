@@ -9,8 +9,7 @@
   .field,
   .dropdown-field,
   .dropdown-list,
-  .textarea-with-label,
-  .textarea-without-label,
+  .textarea,
   .textarea-label
   {
     background-color: $base;
@@ -37,12 +36,8 @@
   composes: dropdown-list from './styles/dropdown-field';
 }
 
-.textarea-with-label {
-  composes: textarea-with-label from './styles/textarea';
-}
-
-.textarea-without-label {
-  composes: textarea-without-label from './styles/textarea';
+.textarea {
+  composes: textarea from './styles/textarea';
 }
 
 .textarea-label {
