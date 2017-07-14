@@ -4,12 +4,12 @@
 }
 
 .desktop-nav-item-list {
-  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
   composes: justify-content-center from '@xo-union/tk-css-utilities/lib/flexbox';
+  composes: nav-item-list from './nav-item-list';
 }
 
 .mobile-header-nav {
-  composes: knot-blue-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-knot-blue from '@xo-union/tk-css-colors';
   composes: nav-text-color from './nav-text-color';
   composes: hide-in-desktop from './hide-utilities';
   composes: has-menu-image from './menu-image';

@@ -1,0 +1,6 @@
+.nav-item-list {
+  composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
+
+  /* Temporary hack to deal with non-responsive reality of the header */
+  flex-wrap: nowrap !important;
+}

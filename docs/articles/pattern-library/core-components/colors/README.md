@@ -39,9 +39,6 @@ This way of consuming the colors is necessary when using the colors in non-compo
 <Snippet lang="css">{referencingValuesExampleString}</Snippet>
 <ReferencingValuesDemo />
 
-#### Applying class to component
-<Snippet lang="javascript">{classCompositionComponentExampleString}</Snippet>
-
 ### Palette
 
 <Palette />

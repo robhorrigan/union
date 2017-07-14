@@ -1,6 +1,6 @@
 .footer {
   composes: font-down-1 from '@xo-union/tk-css-typography';
-  composes: safe-gray-5-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-safe-gray-5 from '@xo-union/tk-css-colors';
 
   // Reset all headers
   h3, h2 {

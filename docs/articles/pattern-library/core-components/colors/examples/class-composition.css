@@ -1,4 +1,4 @@
 .my-component-class {
-  composes: salmon-bg coral-lighter-90-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-salmon fg-coral-lighter-90 from '@xo-union/tk-css-colors';
   font-size: 3em;
 }

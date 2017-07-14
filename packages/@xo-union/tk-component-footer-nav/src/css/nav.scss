@@ -1,4 +1,4 @@
-@value ( safe-gray-5 ) from '@xo-union/tk-css-colors';
+@value ( var-safe-gray-5 ) from '@xo-union/tk-css-colors';
 @value ( row ) from '@xo-union/tk-css-bootstrap/lib/grid';
 
 .nav-item-text {
@@ -10,9 +10,13 @@
   composes: px-down-1 from '@xo-union/tk-css-spacing';
 }
 
+.nav-item-vertical-spacing {
+  composes: pt-down-2 from '@xo-union/tk-css-spacing';
+}
+
 .nav-item {
-  composes: pt-down-2 from '@xo-union/tk-css-spacing';  
   composes: nav-item-horizontal-spacing;
+  composes: nav-item-vertical-spacing;
   composes: d-md-inline-block from '@xo-union/tk-css-utilities/lib/display';
 }
 
@@ -24,7 +28,7 @@
 
 .nav-link {
   &:hover, &:focus {
-    color: safe-gray-5;
+    color: var-safe-gray-5;
     opacity: .6;
     outline: none;
   }

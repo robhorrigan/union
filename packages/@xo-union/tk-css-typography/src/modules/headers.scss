@@ -1,0 +1,11 @@
+.lh-header { line-height: $headings-line-height; }
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  @include header-base;
+}
+
+@each $name, $size in $header-font-sizes {
+  .#{$name} {
+    font-size: $size * 1rem;
+  }
+}

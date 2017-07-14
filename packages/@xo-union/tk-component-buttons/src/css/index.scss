@@ -1,13 +1,14 @@
 @import '~@sass/bootstrap-mixins-and-variables';
 
 @value (
-  white,
-  coral,
-  coral-lighter-10,
-  coral-lighter-20,
-  coral-lighter-40,
-  coral-lighter-8-saturated
+  var-white,
+  var-coral,
+  var-coral-lighter-10,
+  var-coral-lighter-20,
+  var-coral-lighter-40,
+  var-coral-lighter-8-saturated
 ) from '@xo-union/tk-css-colors';
+
 
 @value papa-min-width: 220px;
 @value mama-min-width: 120px;
@@ -47,50 +48,50 @@
 }
 
 .primary {
-  composes: coral-lighter-20-bg white-fg from '@xo-union/tk-css-colors/lib/utilities';
-  border: 1px solid coral-lighter-20;
+  composes: bg-coral-lighter-20 fg-white from '@xo-union/tk-css-colors';
+  border: 1px solid var-coral-lighter-20;
 
   &:hover,
   &:focus {
-    color: white;
-    background: coral-lighter-10;
-    border: 1px solid coral-lighter-10;
+    color: var-white;
+    background-color: var-coral-lighter-10;
+    border: 1px solid var-coral-lighter-10;
   }
 
   &:active{
-    background: coral;
-    border: 1px solid coral-lighter-10;
+    background-color: var-coral;
+    border: 1px solid var-coral-lighter-10;
   }
 }
 
 .secondary {
-  composes: coral-lighter-20-fg white-bg from '@xo-union/tk-css-colors/lib/utilities';
-  border: 1px solid coral-lighter-40;
+  composes: fg-coral-lighter-20 bg-white from '@xo-union/tk-css-colors';
+  border: 1px solid var-coral-lighter-40;
 
   &:hover,
   &:focus {
-    color: coral;
-    border: 1px solid coral-lighter-10;
+    color: var-coral;
+    border: 1px solid var-coral-lighter-10;
   }
 
   &:active {
-    color: coral-lighter-8-saturated;
-    border: 1px solid coral-lighter-8-saturated;
+    color: var-coral-lighter-8-saturated;
+    border: 1px solid var-coral-lighter-8-saturated;
   }
 }
 
 .tertiary {
-  composes: coral-lighter-20-fg white-bg from '@xo-union/tk-css-colors/lib/utilities';  
+  composes: fg-coral-lighter-20 bg-white from '@xo-union/tk-css-colors';  
   border: none;
 
   &:hover,
   &:focus {
-    color: coral;
+    color: var-coral;
     border: none;
   }
 
   &:active {
-    color: coral-lighter-8-saturated;
+    color: var-coral-lighter-8-saturated;
     border: none;
   }
 }

@@ -1,10 +1,10 @@
-@value jay-lighter-60 from '@xo-union/tk-css-colors';
+@value var-jay-lighter-60 from '@xo-union/tk-css-colors';
 
 .my-component-class {
-  composes: salmon-bg coral-lighter-90-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-salmon fg-coral-lighter-90 from '@xo-union/tk-css-colors';
   font-size: 3em;
 }
 
 .my-component-class:hover {
-  background-color: jay-lighter-60;
+  background-color: var-jay-lighter-60;
 }

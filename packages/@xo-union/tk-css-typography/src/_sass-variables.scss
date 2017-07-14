@@ -1,0 +1,34 @@
+@import './sass-functions';
+
+// Font scale
+// largest to smallest
+$font-ratio: 1.125;
+
+$font-sizes: (
+  up-10: pow($font-ratio, 10),
+  up-9:  pow($font-ratio, 9),
+  up-8:  pow($font-ratio, 8),
+  up-7:  pow($font-ratio, 7),
+  up-6:  pow($font-ratio, 6),
+  up-5:  pow($font-ratio, 5),
+  up-4:  pow($font-ratio, 4),
+  up-3:  pow($font-ratio, 3),
+  up-2:  pow($font-ratio, 2),
+  up-1:  pow($font-ratio, 1),
+  base: 1,
+  down-1: div-x-times($font-ratio, 1),
+  down-2: div-x-times($font-ratio, 2),
+  down-3: div-x-times($font-ratio, 3),
+  down-4: div-x-times($font-ratio, 4),
+  down-5: div-x-times($font-ratio, 5)
+);
+
+$header-font-sizes: (
+  h1: map-get($font-sizes, up-7),
+  h2: map-get($font-sizes, up-6),
+  h3: map-get($font-sizes, up-5),
+  h4: map-get($font-sizes, up-4),
+  h5: map-get($font-sizes, up-3),
+  h6: map-get($font-sizes, up-2)
+);
+

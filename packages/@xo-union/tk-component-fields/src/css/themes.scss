@@ -1,9 +1,10 @@
+@value colors: '@xo-union/tk-css-colors';
 @value (
-  gray-10,
-  background-gray-9,
-  background-gray-8,
-  white
-) from '@xo-union/tk-css-colors';
+  var-gray-10,
+  var-background-gray-9,
+  var-background-gray-8,
+  var-white
+) from colors;
 
 @mixin theme($base, $accent) {
   .field,
@@ -15,7 +16,7 @@
     background-color: $base;
 
     &:disabled {
-      background-color: gray-10;
+      background-color: var-gray-10;
     }
   }
 
@@ -23,6 +24,7 @@
     background-color: $accent;
   }
 }
+
 
 .field {
   composes: field from './styles/field';
@@ -49,9 +51,9 @@
 }
 
 .gray-theme {
-  @include theme(background-gray-9, background-gray-8);
+  @include theme(var-background-gray-9, var-background-gray-8);
 }
 
 .white-theme {
-  @include theme(white, background-gray-9);
+  @include theme(var-white, var-background-gray-9);
 }

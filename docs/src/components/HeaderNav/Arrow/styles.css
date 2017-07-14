@@ -1,4 +1,4 @@
-@value ( knot-blue-darker-60 ) from '@xo-union/tk-css-colors';
+@value ( var-knot-blue-darker-60 ) from '@xo-union/tk-css-colors';
 
 .arrow-right {
   composes: align-middle from '@xo-union/tk-css-utilities/lib/vertical-align';
@@ -10,5 +10,5 @@
   border-top: .4em solid transparent;
   border-bottom: .4em solid transparent;
 
-  border-left: .5em solid knot-blue-darker-60;
+  border-left: .5em solid var-knot-blue-darker-60;
 }

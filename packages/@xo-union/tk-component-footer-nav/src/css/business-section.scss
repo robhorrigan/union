@@ -29,7 +29,7 @@
 }
 
 .heart-icon {
-  composes: coral-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-coral from '@xo-union/tk-css-colors';
   composes: font-down-2 from '@xo-union/tk-css-typography';
   composes: ml-down-1 from '@xo-union/tk-css-spacing';
 }
@@ -82,6 +82,7 @@
 }
 
 .business-col {
-  composes: col-5 offset-1 col-md-10 offset-md-1 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: col-5 col-md-10 from '@xo-union/tk-css-bootstrap/lib/grid';
+  composes: mx-auto from '@xo-union/tk-css-spacing';
   composes: text-left text-md-center from '@xo-union/tk-css-typography/lib/utilities';
 }

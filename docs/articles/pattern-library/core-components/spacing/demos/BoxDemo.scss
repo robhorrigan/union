@@ -1,5 +1,4 @@
-@value ( coral-lighter-20, coral-lighter-40 ) from '@xo-union/tk-css-colors';
-@value ( spacing-up-4, spacing-down-5 ) from '@xo-union/tk-css-spacing/lib/variables';
+@value ( var-sp-up-4, var-sp-down-5 ) from '@xo-union/tk-css-spacing';
 
 @value ( container ) from '@xo-union/tk-css-bootstrap/lib/grid';
 
@@ -12,25 +11,25 @@
   composes: p-down-3 mb-down-1 from '@xo-union/tk-css-spacing';
   composes: text-center from '@xo-union/tk-css-typography/lib/utilities';
   composes: font-down-1 from '@xo-union/tk-css-typography';
-  height: spacing-up-4;
+  height: var-sp-up-4;
 }
 
 .box-primary {
   composes: box-base;
-  composes: white-fg coral-lighter-20-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-white bg-coral-lighter-20 from '@xo-union/tk-css-colors';
 }
 
 .box-secondary {
   composes: box-base;
-  composes: white-fg coral-lighter-40-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-white bg-coral-lighter-40 from '@xo-union/tk-css-colors';
 }
 
 .box-outline {
   composes: box-base;
-  composes: white-fg coral-lighter-20-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-coral-lighter-20 from '@xo-union/tk-css-colors';
   
   border: solid;
-  border-width: spacing-down-5;
+  border-width: var-sp-down-5;
   
   ~ .box-outline {
     border-left: 0;

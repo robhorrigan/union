@@ -1,14 +1,11 @@
 @value (
-  black,
-  gray-10,
-  background-gray-9,
-  coral-lighter-80,
-  red-lighter-90
+  var-black,
+  var-gray-10,
+  var-background-gray-9
 ) from '@xo-union/tk-css-colors';
 
 /* Borders */
 @value solid-border: 1px solid;
-@value black-border: solid-border black;
-@value gray-10-border: solid-border gray-10;
-@value gray-9-border: solid-border background-gray-9;
-@value red-border: solid-border red-lighter-90;
+@value black-border: solid-border var-black;
+@value gray-10-border: solid-border var-gray-10;
+@value gray-9-border: solid-border var-background-gray-9;

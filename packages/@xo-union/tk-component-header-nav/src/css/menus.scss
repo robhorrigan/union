@@ -2,7 +2,7 @@
 
 .menu {
   composes: nav from '@xo-union/tk-css-bootstrap/lib/nav';
-  composes: white-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-white from '@xo-union/tk-css-colors';
   composes: flex-column from '@xo-union/tk-css-utilities/lib/flexbox';
   composes: light-shadow from '@xo-union/tk-css-utilities/lib/effects';
   composes: dropdown from './dropdown';

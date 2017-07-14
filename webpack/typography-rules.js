@@ -1,29 +1,9 @@
 import path from 'path';
-import cssByebye from 'css-byebye';
 
 const typographyPath = path.resolve.bind(
   null, __dirname, '..', 'packages', '@xo-union', 'tk-css-typography', 'src');
 
-const pureModulePath = typographyPath('modules.scss');
-
-function useRuleRemover(rulesToRemove) {
-  return {
-    loader: 'postcss-loader',
-    options: {
-      plugins: () => [cssByebye({ rulesToRemove })]
-    }
-  };
-}
-
 const UseEntries = {
-  removeGlobals: useRuleRemover([
-    /^h[\dr]/,
-    'small',
-    'mark'
-  ]),
-  removeClasses: useRuleRemover([
-    /^\..+$/
-  ]),
   keepFontFaces: {
     loader: 'a-css-loader',
     options: {
@@ -44,14 +24,6 @@ export const typographyCssRules = [
   {
     include: [typographyFontsPath],
     use: UseEntries.keepFontFaces
-  },
-  {
-    include: pureModulePath,
-    use: UseEntries.removeGlobals
-  },
-  {
-    include: typographyGlobalsPath,
-    use: UseEntries.removeClasses
   }
 ];
 

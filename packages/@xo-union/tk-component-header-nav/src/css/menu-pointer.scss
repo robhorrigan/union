@@ -1,5 +1,5 @@
 .menu-pointer {
-  composes: knot-blue-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-knot-blue from '@xo-union/tk-css-colors';
   composes: align-self-center from '@xo-union/tk-css-utilities/lib/flexbox';
   composes: popup from './dropdown';
 

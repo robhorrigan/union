@@ -1,4 +1,4 @@
-@value black from '@xo-union/tk-css-colors';
+@value var-black from '@xo-union/tk-css-colors';
 
 .label {
   position: absolute;
@@ -9,5 +9,5 @@
 
 .small-label {
   composes: label;
-  composes: fontDown4 from '@xo-union/tk-css-typography';
+  composes: font-down-4 from '@xo-union/tk-css-typography';
 }

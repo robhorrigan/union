@@ -1,23 +1,23 @@
 @import 'device-mixins';
 
 @value (
-  white,
-  knot-blue
+  var-white,
+  var-knot-blue
 ) from '@xo-union/tk-css-colors';
 
-@value ( font-up-8, font-up-6 ) from '@xo-union/tk-css-typography/lib/sizes';
+@value ( var-fs-up-8, var-fs-up-6 ) from '@xo-union/tk-css-typography';
 
 @include in-desktop() {
   .logo {
-    color: knot-blue !important;
-    font-size: font-up-8;
+    color: var-knot-blue !important;
+    font-size: var-fs-up-8;
   }
 }
 
 @include in-mobile() {
   .logo {
-    color: white !important;
-    font-size: font-up-6;
+    color: var-white !important;
+    font-size: var-fs-up-6;
   }
 }
 
@@ -35,6 +35,6 @@
 
 .menu-icon {
   composes: font-up-3 from '@xo-union/tk-css-typography';
-  composes: white-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: fg-white from '@xo-union/tk-css-colors';
 }
 

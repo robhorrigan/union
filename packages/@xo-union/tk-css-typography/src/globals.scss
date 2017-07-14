@@ -1,16 +1,21 @@
-// Use @require to bypass sass's @import
-// This is necessary because the 'fonts' module is a "runtime"
-// dependency and should not be compiled into this module
-@require '@xo-union/tk-css-typography/lib/fonts';
-
 @import '~@sass/bootstrap-mixins-and-variables';
-@import './variables';
-@import '~bootstrap/scss/type';
+@import './sass-variables';
+@import './sass-mixins';
 
 html {
   font-size: $font-size-base;
 }
 
 p {
-  font-size: $font-up-1;
+  font-size: map-get($font-sizes, up-1)  * 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  @include header-base;
+}
+
+@each $name, $size in $header-font-sizes {
+  #{$name} {
+    font-size: $size * 1em;
+  }
 }

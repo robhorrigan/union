@@ -1,19 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import spacing from '@xo-union/tk-css-spacing';
-import spacingVariables from '@xo-union/tk-css-spacing/lib/variables';
+import remToPixels from '@helpers/remToPixels';
 import styles from './BoxDemo.scss';
 
 function sizeForScale(scale) {
-  return spacingVariables[`spacing-${scale}`];
-}
-
-function remToPixels(remString) {
-  const match = remString.match(/^(\d+(?:\.\d+)?)rem$/);
-
-  const remNumber = Number(match[1]);
-
-  return `${remNumber * 16}px`;
+  return spacing[`var-sp-${scale}`];
 }
 
 function formatScaleSize(scale) {

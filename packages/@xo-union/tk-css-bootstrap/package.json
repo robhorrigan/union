@@ -1,9 +1,9 @@
 {
   "name": "@xo-union/tk-css-bootstrap",
-  "version": "0.2.9",
+  "version": "1.0.0",
   "main": null,
   "dependencies": {
-    "@xo-union/tk-css-typography": "^0.1.11",
+    "@xo-union/tk-css-typography": "^1.0.0",
     "css-module-builder": "^1.0.0-beta.7"
   },
   "files": [

@@ -1,6 +1,6 @@
 {
   "name": "directory-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "A webpack loader that loads all files in a folder",
   "main": "index.js",
   "dependencies": {

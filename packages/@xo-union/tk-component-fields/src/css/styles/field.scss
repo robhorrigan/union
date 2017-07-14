@@ -1,16 +1,16 @@
 @value (
-  safe-gray-7,
-  black,
-  green-lighter-80
+  var-safe-gray-7,
+  var-black,
+  var-green-lighter-80
+  var-red-lighter-90
 ) from '@xo-union/tk-css-colors';
 
-@value ( red-border ) from '../shared/borders';
-@value ( font-down-4 ) from '@xo-union/tk-css-typography/lib/sizes';
+@value ( var-fs-down-4, var-fs-down-1 ) from '@xo-union/tk-css-typography';
 
 @value (
-  spacing-down-1,
-  spacing-down-3
-) from '@xo-union/tk-css-spacing/lib/variables';
+  var-sp-down-1,
+  var-sp-down-3
+) from '@xo-union/tk-css-spacing';
 
 .field {
   composes: field-base from '../styles/field-base';
@@ -18,36 +18,35 @@
 
   &:not(:placeholder-shown) ~ .field-label,
   &:focus ~ .field-label {
-    font-size: font-down-4;
-    margin-top: spacing-down-3;
-    color: black;
+    font-size: var-fs-down-4;
+    margin-top: var-sp-down-3;
+    color: var-black;
   }
 
   &:disabled ~ .field-label {
-    color: safe-gray-7;
+    color: var-safe-gray-7;
     text-decoration: line-through;
   }
 }
 
 .invalid-field {
+  composes: disable-interactive-states from './field-base';
+  composes: bg-red-lighter-90 from '@xo-union/tk-css-colors';
   composes: field;
-  composes: red-lighter-90-bg from '@xo-union/tk-css-colors/lib/utilities';
 
-  // Annoying that !important is
-  // necessary for this to work
-  border: red-border !important;
-  transition: all 0.2s ease-out 1.5s;
+  transition: background-color 0.2s ease-out 1.5s;
 }
 
 .valid-field {
-  composes: green-lighter-80-bg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-green-lighter-80 from '@xo-union/tk-css-colors';
+  composes: disable-interactive-states from './field-base';
   composes: field;
-  border-color: green-lighter-80 !important;
 }
 
 .requirements {
-  composes: red-bg white-fg from '@xo-union/tk-css-colors/lib/utilities';
+  composes: bg-red fg-white from '@xo-union/tk-css-colors';
   composes: font-down-2 from '@xo-union/tk-css-typography';
+
   max-height: 0;
   overflow: hidden;
   transition: all 0.2s ease-out 1.5s;
@@ -56,16 +55,18 @@
 /* Contextual styles */
 .invalid-field ~ .requirements {
   max-height: 200px;
-  
-  padding: spacing-down-3 spacing-down-1;
+
+  padding: var-sp-down-3 var-sp-down-1;
 }
 
 .field-label {
-  composes: label from '../styles/label';
   composes: ml-down-2 from '@xo-union/tk-css-spacing';
-  composes: font-up-1 from '@xo-union/tk-css-typography';
-  composes: gray-6-fg from '@xo-union/tk-css-colors/lib/utilities';
-  margin-top: spacing-down-1;
+  composes: fg-gray-6 from '@xo-union/tk-css-colors';
+
+  composes: label from '../styles/label';
+
+  font-size: var-fs-down-1;
+  margin-top: var-sp-down-1;
   transition: all 0.2s ease-out;
 }
 

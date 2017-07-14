@@ -1,5 +1,5 @@
-@value ( background-gray-8 ) from '@xo-union/tk-css-colors';
+@value ( var-background-gray-8 ) from '@xo-union/tk-css-colors';
 
 .light-shadow {
-  box-shadow: 0 .125rem .188rem 0 background-gray-8;
+  box-shadow: 0 .125rem .188rem 0 var-background-gray-8;
 }

@@ -6,4 +6,4 @@ When you see an import state that looks like
 import Module from '@styles/***';
 ```
 
-this means we are making a reference to a module living in the nearest [`__private_modules__`](./private-modules.md) folder.
+this means we are making a reference to a module living at the nearest [`_`] folder.

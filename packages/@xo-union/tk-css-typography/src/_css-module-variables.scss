@@ -1,0 +1,3 @@
+@each $name, $size in $font-sizes {
+  @value var-fs-#{$name}: #{$size * 1rem};
+}
