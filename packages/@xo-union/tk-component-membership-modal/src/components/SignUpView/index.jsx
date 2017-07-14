@@ -69,7 +69,7 @@ function SignUp({ onClickLogIn, onSubmit, metadata }) {
             name="password"
             type="password"
             label="Password (6 or more characters)"
-          
+
             /* Validation props */
             onValidState="neutral"
             validates={{

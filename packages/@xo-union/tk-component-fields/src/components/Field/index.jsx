@@ -4,13 +4,6 @@ import FieldsCss from '@xo-union/tk-component-fields/lib/css';
 import { labelize, fieldId } from '../../utilities';
 import { isColumn } from '@xo-union/tk-component-grid';
 import { autobind } from 'core-decorators';
-import { connect } from 'react-redux';
-import {
-  change,
-  updateVisualState,
-  initializeField
-} from '@actions/fields';
-import { getFormName } from '@utilities/stateManagement';
 
 const classMap = {
   neutral: FieldsCss.field,
@@ -18,54 +11,6 @@ const classMap = {
   valid: FieldsCss.validField
 };
 
-function mapStateToProps(state, { ownedBy, name }) {
-  const fieldState = state[getFormName(ownedBy)].fields[name] || {
-    ui: {},
-    model: {}
-  };
-
-  return {
-    value: fieldState.model.value,
-    state: fieldState.ui.visualState,
-    validationMessage: fieldState.ui.currentErrorMessage
-  };
-}
-
-function mapDispatchToProps(dispatch, {
-  value,
-  ownedBy: formName,
-  name: fieldName,
-  onValidState,
-  validates,
-  errors
-}) {
-  return {
-    initializeState() {
-      dispatch(initializeField({
-        fieldName,
-        onValidVisualState: onValidState,
-        value,
-        formName,
-        enabledValidators: validates,
-        errors
-      }));
-    },
-    onChange({ currentTarget }) {
-      const { value } = currentTarget;
-
-      dispatch(change({
-        fieldName,
-        value,
-        formName
-      }));
-    },
-    onBlur() {
-      dispatch(updateVisualState({ fieldName, formName }));
-    }
-  };
-}
-
-@connect(mapStateToProps, mapDispatchToProps)
 @isColumn({ className: FieldsCss['field-col'] })
 export default class Field extends Component {
   static propTypes = {
@@ -97,12 +42,6 @@ export default class Field extends Component {
      * The input's id. If not provided, it is assumed from the name.
      */
     id: PropTypes.string
-  }
-
-  constructor(props) {
-    super(props);
-
-    this.props.initializeState();
   }
 
   render() {
