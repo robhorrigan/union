@@ -19,4 +19,5 @@
 .custom-section-container {
   composes: bg-background-gray-8 from '@xo-union/tk-css-colors';
   composes: footer from './footer';
+  composes: pt-up-5 pb-down-5 pb-md-base from '@xo-union/tk-css-spacing';
 }
